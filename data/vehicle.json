@@ -1,0 +1,37 @@
+[
+  {
+    "type": "sedancar",
+    "passengers": 3,
+    "weightFactor": 2
+  },
+  {
+    "type": "minivan",
+    "passengers": 6,
+    "weightFactor": 1.4
+  },
+  {
+    "type": "mpv",
+    "passengers": 4,
+    "weightFactor": 1.8
+  },
+  {
+    "type": "minibus",
+    "passengers": 7,
+    "weightFactor": 2.4
+  },
+  {
+    "type": "privatetransfer",
+    "passengers": 15,
+    "weightFactor": 4.5
+  },
+  {
+    "type": "bus",
+    "passengers": 20,
+    "weightFactor": 8
+  },
+  {
+    "type": "Mercedence E Class",
+    "passengers": 3,
+    "weightFactor": 7
+  }
+]
