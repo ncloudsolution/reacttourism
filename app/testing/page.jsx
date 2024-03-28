@@ -1,11 +1,13 @@
-import MapComponent from "@/components/MapComponent";
+import MapComponent from "@/components/maps/MapComponent";
+import MapDirections from "@/components/maps/MapDirections";
 import React from "react";
 
 const Testing = () => {
   return (
     <>
       <div>Testing</div>
-      <MapComponent />
+      {/* <MapComponent />*/}
+      <MapDirections />
     </>
   );
 };
