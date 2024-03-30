@@ -3,6 +3,7 @@ import "./globals.css";
 import SingleVehicleContextProvider from "../context/SingleVehicalContextProvider";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import AbsoluteFooter from "@/components/AbsoluteFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
           <Navigation />
           {children}
           <Footer />
+          <AbsoluteFooter/>
         </SingleVehicleContextProvider>
       </body>
     </html>
