@@ -10,19 +10,24 @@ import {
   useMapsLibrary,
 } from "@vis.gl/react-google-maps";
 
-const MapComponent = () => {
+const MapComponent = ({ fromValue, toValue }) => {
   const position = { lat: 43.6532, lng: -79.3832 };
   const apikey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
   const mapid = process.env.NEXT_PUBLIC_GOOGLE_MAP_ID;
 
   console.log("apikey", apikey);
+
   return (
     <APIProvider apiKey={apikey}>
       <div>Map direction Component</div>
       <div className="h-[80vh]">
-        <Map defaultZoom={14} defaultCenter={position} mapId={mapid}>
-          <Directions />
-        </Map>
+        {fromValue && toValue ? (
+          <Map defaultZoom={14} defaultCenter={position} mapId={mapid}>
+            <Directions fromValue={fromValue} toValue={toValue} />
+          </Map>
+        ) : (
+          <div>search first</div>
+        )}
       </div>
     </APIProvider>
   );
@@ -30,15 +35,18 @@ const MapComponent = () => {
 
 export default MapComponent;
 
-function Directions() {
+function Directions({ fromValue, toValue }) {
   const map = useMap();
   const routesLibrary = useMapsLibrary("routes");
-  const [startPosition, setStartPosition] = useState(
-    "100 Front St, Toronto ON"
-  );
-  const [destinationPosition, setDestinationPosition] = useState(
-    "500 Collage St, Toronto ON"
-  );
+  // //const [startPosition, setStartPosition] = useState(
+  //   "100 Front St, Toronto ON"
+  // );
+  // const [destinationPosition, setDestinationPosition] = useState(
+  //   "500 Collage St, Toronto ON"
+  // );
+
+  console.log("from", fromValue);
+  console.log("to", toValue);
 
   const [directionsService, setDirectionsService] = useState();
   const [directionsRenderer, setDirectionsRenderer] = useState();
@@ -57,8 +65,8 @@ function Directions() {
     if (!directionsService || !directionsRenderer) return;
     directionsService
       .route({
-        origin: startPosition,
-        destination: destinationPosition,
+        origin: fromValue,
+        destination: toValue,
         travelMode: google.maps.TravelMode.DRIVING,
         provideRouteAlternatives: true,
       })
@@ -66,12 +74,7 @@ function Directions() {
         directionsRenderer.setDirections(response);
         setRoutes(response.routes);
       });
-  }, [
-    directionsService,
-    directionsRenderer,
-    startPosition,
-    destinationPosition,
-  ]);
+  }, [directionsService, directionsRenderer, fromValue, toValue]);
 
   console.log(routes);
 
@@ -132,7 +135,7 @@ function Directions() {
           </div>
         </div>
 
-        <div className="absolute top-[600px] left-6">
+        {/* <div className="absolute top-[600px] left-6">
           <div className="flex items-center">
             <div className=" bg-black rounded text-white text-[14px] px-3 py-2">
               From
@@ -158,7 +161,7 @@ function Directions() {
               className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

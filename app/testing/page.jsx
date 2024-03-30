@@ -1,3 +1,7 @@
+import {
+  MapAutoSearch,
+  MapFinalCongifs,
+} from "@/components/maps/MapAutoSearch";
 import MapComponent from "@/components/maps/MapComponent";
 import MapDirections from "@/components/maps/MapDirections";
 import React from "react";
@@ -7,7 +11,7 @@ const Testing = () => {
     <>
       <div>Testing</div>
       {/* <MapComponent />*/}
-      <MapDirections />
+      <MapFinalCongifs />
     </>
   );
 };
