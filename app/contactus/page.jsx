@@ -6,7 +6,7 @@ const Contact = () => {
   const { vehicle, setVehical } = useContext(SingleVehicleContext);
   return (
     <>
-      <div className="bg-slate-400  h-[400px] flex flex-col">
+      <div className="bg-blue-300/50  h-[400px] flex flex-col">
         <h1 className="text-center text-[50px] pt-[70px] font-semibold">
           Contact Us
         </h1>
