@@ -11,11 +11,11 @@ function AbsoluteFooter() {
   return (
 
     <>
-        <div className=' flex justify-between px-[5%] bg-gradient-to-r from-primary via-Secondary to-white py-4 items-center'>
+        <div className=' px-[5%] bg-gradient-to-r from-primary via-Secondary to-white py-4 items-center md:flex md:justify-between'>
             
-            <div className='flex items-center'>
+            <div className='w-full flex justify-center items-center md:w-[70%] md:justify-start'>
                 <div>
-                    <p className=' text-white text-sm'> Copyright 2024 © <a href="#"> Ceylon Taxi and Tours (PVT) Ltd</a> - All Rights Reserved. Web by</p>
+                    <p className='  text-white text-sm '> Copyright 2024 © <a href="#"> Ceylon Taxi and Tours (PVT) Ltd</a> - All Rights Reserved. Web by</p>
                 </div>
 
                 <div>
@@ -23,10 +23,11 @@ function AbsoluteFooter() {
                 </div>
             </div>
             
-            <div className='flex items-center'>
+            <div className='w-full flex justify-center items-center md:w-[30%] md:justify-end '>
                 <Image className='w-[60px] h-auto' src={CashOnDelivery} alt="Cash on Delivery" />
                 <Image className='w-[60px] h-auto' src={Visa} alt="Visa" />
                 <Image className='w-[60px] h-auto' src={MasterCard} alt="MasterCard" />
+                
             </div>
         </div>
     </>
