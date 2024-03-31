@@ -19,5 +19,10 @@
   .image {
     @apply w-[80%] aspect-square  my-[10px] rounded-lg;
   }
+
+  .FooterLink {
+    margin-bottom: 20px; /* Adjust this value as per your requirement */
+  }
+  
 }
 
