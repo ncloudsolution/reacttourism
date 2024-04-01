@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,12 +8,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+
+      colors: {
+        primary: "#0e6313",
+        Secondary: "#14d01f",
+        errorpink: "#be185d",
+        navgray: "#93939311",
+      }
+
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss'), require('autoprefixer')],
 };
