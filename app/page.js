@@ -5,6 +5,8 @@ import Link from "next/link";
 import AbooutSrilanka from "@/components/AboutSrilanka";
 import MainSlider from "@/components/MainSlider";
 import AboutUs from "@/components/AboutUs";
+import Activities from "@/components/Activities";
+
 import Navigation from "@/components/Navbar";
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
   <MainSlider/>
   <AboutUs/>
   <AbooutSrilanka/>
+  <Activities/>
   
   </>;
 }

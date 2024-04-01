@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <SingleVehicleContextProvider>
           <Navbar/>
+         
           {children}
           <Footer />
           <AbsoluteFooter/>
