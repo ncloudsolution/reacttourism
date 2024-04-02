@@ -14,6 +14,7 @@ export function SelectVehiclesList(noOfPassengers, distance) {
       passengers: v.passengers,
       weightFactor: v.weightFactor,
       price: price,
+      img: v.img,
     };
   });
 
