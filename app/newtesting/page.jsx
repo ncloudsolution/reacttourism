@@ -1,3 +1,4 @@
+import First from "@/components/First";
 import MainMapConfigs from "@/components/NewMap/MainMapConfigs";
 import React from "react";
 
