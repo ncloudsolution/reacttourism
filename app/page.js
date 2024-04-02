@@ -6,16 +6,20 @@ import AbooutSrilanka from "@/components/AboutSrilanka";
 import MainSlider from "@/components/MainSlider";
 import AboutUs from "@/components/AboutUs";
 import Activities from "@/components/Activities";
+import Packages from "@/components/Packages";
+
 
 import Navigation from "@/components/Navbar";
+
 
 export default function Home() {
   return <>
   
-  <MainSlider/>
+  <MainSlider />
   <AboutUs/>
   <AbooutSrilanka/>
   <Activities/>
+  <Packages/>
   
   </>;
 }

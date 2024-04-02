@@ -21,7 +21,11 @@ function NavBar() {
           <div>
             <div className="flex items-center justify-between py-1 md:py-1 md:block">
               {/* LOGO */}
+
+              <a href='/'>
               <Image className='w-[100px] h-auto' src={logo} alt='logo'/>
+
+              </a>
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
                 <button
@@ -29,6 +33,7 @@ function NavBar() {
                   onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
+                    
                     <Image src={close} width={30} height={30} alt="close" />
                   ) : (
                     <Image src={menu} width={30} height={30} alt="menu" className="focus:border-none active:border-none"/>

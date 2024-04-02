@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
         <SingleVehicleContextProvider>
           <Navbar/>
          
-          {children}
+          <main className=" mt-[100px] mobile:mt-[120px]">
+            {children}
+          </main>
           <Footer />
           <AbsoluteFooter/>
         </SingleVehicleContextProvider>

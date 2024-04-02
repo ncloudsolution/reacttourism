@@ -37,7 +37,7 @@ const Activity = ({ imageSrc, name}) => {
 
 const Activities = () => {
   return (
-    <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
+    <section className="pt-[30px] pb-[30px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -55,59 +55,45 @@ const Activities = () => {
         </div>
 
         <div className="-mx-4 flex flex-wrap justify-center">
-          
-          
+    
           <Activity
             name="Yala National Park"
-            
             imageSrc={destination1}
-
           />
           <Activity
-            name="Sigiriya"
-            
+            name="Sigiriya" 
             imageSrc={destination2}
           />
           <Activity
-            name="Kandy"
-            
+            name="Kandy"       
             imageSrc={destination3}
           />
           <Activity
-            name="Ella"
-            
+            name="Ella"       
             imageSrc={destination4}
           />
              <Activity
-            name="Galle"
-            
+            name="Galle"          
             imageSrc={destination5}
           />
-
-           <Activity
-            name="Nuwaraeliya"
-            
+          <Activity
+            name="Nuwaraeliya"  
             imageSrc={destination6}
-
           />
           <Activity
-            name="Mirissa"
-            
+            name="Mirissa" 
             imageSrc={destination7}
           />
           <Activity
-            name="Polonnaruwa"
-            
+            name="Polonnaruwa"  
             imageSrc={destination8}
           />
           <Activity
-            name="Arugambay"
-            
+            name="Arugambay"  
             imageSrc={destination9}
           />
-             <Activity
+          <Activity
             name="Hortain Plains"
-            
             imageSrc={destination10}
           />
         </div>
