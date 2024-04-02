@@ -24,9 +24,7 @@ const Activity = ({ imageSrc, name}) => {
               <div className="relative mx-5 overflow-hidden rounded-lg ">
                 <h3 className="text-base font-semibold text-white">
                   {name}
-                </h3> 
-  
-            
+                </h3>        
               </div>
             </div>
           </div>

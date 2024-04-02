@@ -2,19 +2,17 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-import image1 from "@/public/mainSlider/b1.jpeg";
-import image2 from "@/public/mainSlider/b2.jpeg";
-import image3 from "@/public/mainSlider/b3.jpeg";
-import image4 from "@/public/mainSlider/b4.jpeg";
-import image5 from "@/public/mainSlider/b5.jpeg";
-
-
+import image1 from "@/public/mainSlider/s1.jpeg";
+import image2 from "@/public/mainSlider/s2.jpeg";
+import image3 from "@/public/mainSlider/s3.jpeg";
+import image4 from "@/public/mainSlider/s4.jpeg";
+import image5 from "@/public/mainSlider/s5.jpeg";
 
 import btn1 from "@/public/mainSlider/right-arrow.png";
 import btn2 from "@/public/mainSlider/left-arrow.png";
 
-import { FaChevronLeft } from "react-icons/fa6";
-import { FaChevronRight } from "react-icons/fa6";
+//import { FaChevronLeft } from "react-icons/fa6";
+//import { FaChevronRight } from "react-icons/fa6";
 
 const MainSlider = () => {
   const [current, setCurrent] = useState(0);

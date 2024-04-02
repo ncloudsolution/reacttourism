@@ -1,92 +1,89 @@
 "use client";
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState } from 'react';
 
+import Image from 'next/image';
+import logo from '@/public/NavBar/bgremovedlogo.png';
+import menu from '@/public/NavBar/menu.svg';
+import close from '@/public/NavBar/close.svg';
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
+import Link from 'next/link';
 
+// Import SVG icons
+import FacebookIcon from '@/public/NavBar/facebook.svg';
+import EmailIcon from '@/public/NavBar/email.svg';
+
+function NavBar() {
+  const [navbar, setNavbar] = useState(false);
   return (
-    <header className={`flex w-full items-center bg-white dark:bg-dark`}>
-      <div className="container">
-        <div className="relative -mx-4 flex items-center justify-between">
-          <div className="w-60 max-w-full px-4">
-            <a href="/#" className="block w-full py-5">
-              <img
-                src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo-primary.svg"
-                alt="logo"
-                className="dark:hidden"
-              />
-              <img
-                src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo-white.svg"
-                alt="logo"
-                className="hidden dark:block"
-              />
-            </a>
-          </div>
-          <div className="flex w-full items-center justify-between px-4">
-            <div>
-              <button
-                onClick={() => setOpen(!open)}
-                id="navbarToggler"
-                className={` ${
-                  open && "navbarTogglerActive"
-                } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
-              >
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
-              </button>
-              <nav
-                // :className="!navbarOpen && 'hidden' "
-                id="navbarCollapse"
-                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white px-6 py-5 shadow dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent ${
-                  !open && "hidden"
-                } `}
-              >
-                <ul className="block lg:flex">
-                  <ListItem NavLink="/#">Home</ListItem>
-                  <ListItem NavLink="/#">Payment</ListItem>
-                  <ListItem NavLink="/#">About</ListItem>
-                  <ListItem NavLink="/#">Blog</ListItem>
-                </ul>
-              </nav>
+    <div>
+      <nav className="w-full bg-white bg-opacity-70 fixed top-0 left-0 right-0 z-10">
+        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+          <div>
+            <div className="flex items-center justify-between py-1 md:py-1 md:block">
+              {/* LOGO */}
+              <Image className='w-[100px] h-auto' src={logo} alt='logo'/>
+              {/* HAMBURGER BUTTON FOR MOBILE */}
+              <div className="md:hidden">
+                <button
+                  className="p-2 text-primary rounded-md outline-none focus:border-primary focus:border"
+                  onClick={() => setNavbar(!navbar)}
+                >
+                  {navbar ? (
+                    <Image src={close} width={30} height={30} alt="close" />
+                  ) : (
+                    <Image src={menu} width={30} height={30} alt="menu" className="focus:border-none active:border-none"/>
+                  )}
+                </button>
+              </div>
             </div>
-            <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
-              <a
-                href="/#"
-                className="px-7 py-3 text-base font-medium text-dark hover:text-primary dark:text-white"
-              >
-                Sign in
-              </a>
+          </div>
+          <div>
+            <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+                navbar ? 'p-12 md:p-0 block' : 'hidden'
+              }`}
+            >
+              <ul className="h-screen md:h-auto items-center justify-center md:flex ">
+                <li className=" text-lg font-semibold py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
+                  <Link href="/" onClick={() => setNavbar(!navbar)}>
+                    Home
+                  </Link>
+                </li>
+                <li className=" text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
+                  <Link href="/About" onClick={() => setNavbar(!navbar)}>
+                    About
+                  </Link>
+                </li>
+                <li className="text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
+                  <Link href="/booking" onClick={() => setNavbar(!navbar)}>
+                    Booking
+                  </Link>
+                </li>
+                <li className=" text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
+                  <Link href="/contactus" onClick={() => setNavbar(!navbar)}>
+                    Contact
+                  </Link>
+                </li>
+                <div className=' flex justify-center'>
+                <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    <Image className=' md:hover:text-secondary' src={FacebookIcon} width={30} height={30} alt="Facebook" />
+                  </a>
+                </li>
+                <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    <Image className=' md:hover:text-secondary' src={EmailIcon} width={30} height={30} alt="Facebook" />
+                  </a>
+                </li>
+                </div>
+                
+              </ul>
 
-              <a
-                href="/#"
-                className="rounded-md bg-primary px-7 py-3 text-base font-medium text-white hover:bg-primary/90"
-              >
-                Sign Up
-              </a>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </nav>
+    </div>
   );
-};
+}
 
-export default Navbar;
-
-const ListItem = ({ children, NavLink }) => {
-  return (
-    <>
-      <li>
-        <a
-          href={NavLink}
-          className="flex py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white lg:ml-12 lg:inline-flex"
-        >
-          {children}
-        </a>
-      </li>
-    </>
-  );
-};
+export default NavBar;

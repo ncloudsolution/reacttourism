@@ -16,7 +16,6 @@ const AboutUs = () => {
               <div className="flex items-center -mx-3 sm:-mx-4">
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="py-3 sm:py-4 px-4">
-                    
                     <Image
                       src={Aboutus1}
                       alt="ffff"
@@ -32,7 +31,7 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
-                  <div className="relative z-10 my-4 px-4">
+                  <div className=" py-3 z-10 my-4 px-4">
                     <Image
                       src={Aboutus2}
                       alt=""
