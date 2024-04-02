@@ -80,6 +80,7 @@ const MainMapConfigs = () => {
     setDuration("");
     originRef.current.value = "";
     destinationRef.current.value = "";
+    passengerCountRef.current.value = "";
   }
 
   return (
