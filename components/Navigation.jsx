@@ -1,12 +1,10 @@
 import React from "react";
 
 const Navigation = () => {
-  return 
+  return;
   <>
-  <div>Navigation</div>;
-
-  </>
-  
+    <div>Navigation</div>;
+  </>;
 };
 
 export default Navigation;

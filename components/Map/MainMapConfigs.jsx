@@ -6,18 +6,23 @@ import {
   Autocomplete,
   DirectionsRenderer,
 } from "@react-google-maps/api";
-import React, { useContext, useRef, useState } from "react";
-import First from "../First";
+
+import React, { useContext, useRef, useState, useEffect } from "react";
+
 import { SelectVehiclesList } from "@/libs/calculations";
 import { SingleVehicleContext } from "@/context/SingleVehicalContextProvider";
 import Image from "next/image";
+import CarSkeleton from "../Skeleton/CarSkeleton";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
+const libraries = ["places"];
+
 const MainMapConfigs = () => {
+  setTimeout(() => {}, 1000);
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
-    libraries: ["places"],
+    libraries: libraries,
   });
 
   const [map, setMap] = useState(/** @type google.maps.Map*/ (null));
@@ -33,17 +38,24 @@ const MainMapConfigs = () => {
   const destinationRef = useRef();
   const passengerCountRef = useRef();
 
-  console.log(vehicle);
+  console.log(isLoaded, "is loaded 1");
 
-  if (!isLoaded) {
+  const [showSkeleton, setShowSkeleton] = useState(true);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowSkeleton(false);
+    }, 2000); // 3 seconds delay - 1s for google api load and 2 second timeout
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  if (!isLoaded || showSkeleton) {
     return (
       <>
-        <div className="w-full h-[100vh] flex justify-center items-center border-2 border-black">
-          <div>Loading.....................</div>
-        </div>
+        <CarSkeleton />
       </>
     );
   }
+  console.log(isLoaded, "is loaded 2");
 
   async function calculateRoute() {
     if (
@@ -149,6 +161,7 @@ const MainMapConfigs = () => {
             </button>
           </div>
         </div>
+
         {isSubmit && (
           <div className="w-full flex justify-center">
             <div className=" w-[1400px] flex gap-x-10 mt-8 mb-16">

@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import { SingleVehicleContext } from "../context/SingleVehicalContextProvider";
+import { SingleVehicleContext } from "../../context/SingleVehicalContextProvider";
 import Link from "next/link";
 
 const Comp2 = () => {

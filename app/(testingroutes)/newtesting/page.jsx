@@ -1,5 +1,5 @@
-import First from "@/components/First";
-import MainMapConfigs from "@/components/NewMap/MainMapConfigs";
+import First from "@/components/testingComponents/First";
+import MainMapConfigs from "@/components/Map/MainMapConfigs";
 import React from "react";
 
 const newtesting = () => {

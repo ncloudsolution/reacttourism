@@ -1,7 +1,7 @@
 "use client";
 import { useContext, useState } from "react";
-import { SelectVehiclesList } from "../libs/calculations";
-import { SingleVehicleContext } from "../context/SingleVehicalContextProvider";
+import { SelectVehiclesList } from "../../libs/calculations";
+import { SingleVehicleContext } from "../../context/SingleVehicalContextProvider";
 
 const First = () => {
   const [distance, setDistance] = useState("");

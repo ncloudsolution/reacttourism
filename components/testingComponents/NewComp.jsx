@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import { SingleVehicleContext } from "../context/SingleVehicalContextProvider";
+import { SingleVehicleContext } from "../../context/SingleVehicalContextProvider";
 
 const NewComp = () => {
   //const { vehicle, setVehical } = useContext(SingleVehicleContext);
