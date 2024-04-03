@@ -13,6 +13,7 @@ import { SelectVehiclesList } from "@/libs/calculations";
 import { SingleVehicleContext } from "@/context/SingleVehicalContextProvider";
 import Image from "next/image";
 import CarSkeleton from "../Skeleton/CarSkeleton";
+import Footer from "../Footer";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 

@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import React, { useContext } from "react";
+import React from "react";
 
 const Contact = () => {
   return (
@@ -33,7 +33,6 @@ const Contact = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

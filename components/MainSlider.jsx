@@ -47,8 +47,20 @@ const MainSlider = () => {
 
   //related data array
   const images = [image1, image2, image3, image4, image5];
-  const titles = ["Nature's Canvas", "Wild Encounters", "Timeless Treasures", "Sandy Serenity", "Cultural Tapestry"];
-  const titlesminor = ["Sri Lanka's Flora & Fauna", " Sri Lanka's Diverse Wildlife Adventures", "Exploring Sri Lanka's Heritage Sites", "Discover Sri Lanka's Beach Paradise",  " Immerse in Sri Lanka's Rich Traditions"];
+  const titles = [
+    "Nature's Canvas",
+    "Wild Encounters",
+    "Timeless Treasures",
+    "Sandy Serenity",
+    "Cultural Tapestry",
+  ];
+  const titlesminor = [
+    "Sri Lanka's Flora & Fauna",
+    " Sri Lanka's Diverse Wildlife Adventures",
+    "Exploring Sri Lanka's Heritage Sites",
+    "Discover Sri Lanka's Beach Paradise",
+    " Immerse in Sri Lanka's Rich Traditions",
+  ];
 
   return (
     //animated slider area
@@ -84,7 +96,7 @@ const MainSlider = () => {
             } midxl:w-[600px] lg:w-[500px] sm:w-[450px] w-[350px] midxl:py-[40px] lg:py-[25px] sm:py-[15px] py-[10px] bg-black opacity-50 absolute z-40 bottom-[20%] rounded-lg flex flex-col justify-center items-center shadow-xl`}
           >
             <div className="text-white midxl:text-[40px] lg:text-[30px] sm:text-[24px] text-[18px] font-bold">
-            {titles[index]}
+              {titles[index]}
             </div>
 
             <div className=" text-white midxl:text-[24px] lg:text-[18px] sm:text-[14px] text-[10px] font-normal midxl:mt-[10px] sm:mt-[6px] mt-[2px]">
@@ -96,11 +108,15 @@ const MainSlider = () => {
 
       {/*slider nav buttons*/}
       <div className="absolute top-1/2 -translate-y-1/2 flex w-full  justify-between px-[30px] ">
-        <Image src={btn2}
+        <Image
+          src={btn2}
+          alt=""
           className=" w-[20px] sm:w-[30px] rounded-full xs:p-[10px]  p-[5px] bg-transparent xs:border-[2px] border-[1px] border-white bg-opacity-70 text-white xs:text-[40px] text-[25px] md:hover:bg-primary md:hover:border-primary  cursor-pointer transition-all duration-300"
           onClick={previousSlide}
         />
-        <Image src={btn1}
+        <Image
+          src={btn1}
+          alt=""
           className="w-[20px] sm:w-[30px] rounded-full xs:p-[10px]  p-[5px] bg-transparent xs:border-[2px] border-[1px] border-white bg-opacity-70 text-white xs:text-[40px] text-[25px] md:hover:bg-primary md:hover:border-primary  cursor-pointer transition-all duration-300"
           onClick={nextSlide}
         />

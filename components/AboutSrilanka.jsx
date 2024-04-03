@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import bgimage from "@/public/AboutSl/sl4.png";
-import srilanka2 from "@/public/AboutSl/sl2.webp";
+import srilanka2 from "@/public/AboutSl/sl2.jpg";
 import srilanka4 from "@/public/AboutSl/sl6.png";
+import text from "@/data/text.json";
 
 function AbooutSrilanka() {
+  const textcontent = text[0];
   return (
     <>
       <div
@@ -21,17 +23,7 @@ function AbooutSrilanka() {
 
           <div className="w-full text-justify md:w-1/2 md:text-center">
             <h1 className="mb-[40px]">Welcome to Sri Lanka</h1>
-            <p>
-              Welcome to Sri Lanka, an island nation in the Indian Ocean
-              renowned for its diverse landscapes, rich history, and vibrant
-              culture. Explore ancient cities like Sigiriya and Anuradhapura,
-              relax on palm-fringed beaches, or trek through lush tea
-              plantations in Nuwara Eliya. Encounter majestic wildlife in
-              national parks, savor exotic cuisine, and experience the warmth of
-              Sri Lankan hospitality. Discover why Sri Lanka is a treasure trove
-              for travelers seeking adventure, relaxation, and cultural
-              immersion.
-            </p>
+            <p>{textcontent.aboutsl_txt1}</p>
           </div>
         </div>
       </div>

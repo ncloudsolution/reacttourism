@@ -18,10 +18,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <SingleVehicleContextProvider>
-          <NavBar />
           <div className=" relative flex flex-col min-h-[100vh] ">
+            <NavBar />
+
             <main className=" mt-[100px] mobile:mt-[120px]">{children}</main>
-            {/*<Footer />*/}
+
+            <Footer />
             <AbsoluteFooter />
           </div>
         </SingleVehicleContextProvider>

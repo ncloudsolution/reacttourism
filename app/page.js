@@ -3,9 +3,10 @@ import AboutUs from "@/components/AboutUs";
 import Activities from "@/components/Activities";
 import MainSlider from "@/components/MainSlider";
 import MainMapConfigs from "@/components/Map/MainMapConfigs";
-import Packages from "./packages/page";
+
 import AbsoluteFooter from "@/components/AbsoluteFooter";
 import Footer from "@/components/Footer";
+import Packages from "@/components/Packages";
 
 export default function Home() {
   return (
@@ -16,7 +17,6 @@ export default function Home() {
         <AbooutSrilanka />
         <Activities />
         <Packages />
-        <Footer />
       </MainMapConfigs>
     </>
   );
