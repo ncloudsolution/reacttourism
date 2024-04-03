@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  h1 {
+    @apply text-3xl bg-gradient-to-r from-primary via-Secondary to-white mr-[10%] ml-[10%] py-1  font-serif;
+  }
+
+  p{
+    @apply text-zinc-600
+  }
+
+  .paymentstyle {
+    @apply bg-[#FFFFFF26] hover:bg-[#FFFFFF30]  rounded p-[5px] fill-[#FFFFFF90] hover:fill-white transition-all duration-300;
+  }
+
+  .image {
+    @apply w-[80%] aspect-square  my-[10px] rounded-lg;
+  }
+}
+
