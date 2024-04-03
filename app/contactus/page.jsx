@@ -1,9 +1,7 @@
-"use client";
-import { SingleVehicleContext } from "@/context/SingleVehicalContextProvider";
+import Footer from "@/components/Footer";
 import React, { useContext } from "react";
 
 const Contact = () => {
-  const { vehicle, setVehical } = useContext(SingleVehicleContext);
   return (
     <>
       <div className="bg-blue-300/50  h-[400px] flex flex-col">
@@ -35,6 +33,7 @@ const Contact = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

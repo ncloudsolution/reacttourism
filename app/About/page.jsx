@@ -1,12 +1,12 @@
 import Footer from "@/components/Footer";
 import React from "react";
 
-const Packages = () => {
+function page() {
   return (
     <>
-      <div>pakages</div> <Footer />
+      <div>page</div> <Footer />
     </>
   );
-};
+}
 
-export default Packages;
+export default page;

@@ -18,7 +18,7 @@ const center = { lat: 6.9271, lng: 79.8612 };
 
 const libraries = ["places"];
 
-const MainMapConfigs = () => {
+const MainMapConfigs = ({ children }) => {
   setTimeout(() => {}, 1000);
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
@@ -234,6 +234,7 @@ const MainMapConfigs = () => {
           </div>
         )}
       </div>
+      {children}
     </>
   );
 };

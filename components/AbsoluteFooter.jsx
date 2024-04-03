@@ -10,10 +10,10 @@ import Link from "next/link";
 function AbsoluteFooter() {
   return (
     <>
-      <div className="absolute bottom-0 left-0 right-0 flex justify-between px-[5%] bg-gradient-to-r from-primary via-Secondary to-white py-4 items-center">
-        <div className="flex items-center">
+      <div className=" px-[5%] bg-gradient-to-r from-primary via-Secondary to-white py-4 items-center md:flex md:justify-between">
+        <div className="w-full flex justify-center items-center md:w-[70%] md:justify-start">
           <div>
-            <p className=" text-white text-sm">
+            <p className="  text-white text-sm ">
               {" "}
               Copyright 2024 © <a href="#">
                 {" "}
@@ -28,7 +28,7 @@ function AbsoluteFooter() {
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div className="w-full flex justify-center items-center md:w-[30%] md:justify-end ">
           <Image
             className="w-[60px] h-auto"
             src={CashOnDelivery}

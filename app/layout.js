@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SingleVehicleContextProvider from "../context/SingleVehicalContextProvider";
-import Navigation from "@/components/Navigation";
 
 import AbsoluteFooter from "@/components/AbsoluteFooter";
+import NavBar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,10 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <SingleVehicleContextProvider>
+          <NavBar />
           <div className=" relative flex flex-col min-h-[100vh] ">
-            <Navigation />
-            {children}
-
+            <main className=" mt-[100px] mobile:mt-[120px]">{children}</main>
+            {/*<Footer />*/}
             <AbsoluteFooter />
           </div>
         </SingleVehicleContextProvider>

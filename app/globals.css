@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   h1 {
-    @apply text-3xl bg-gradient-to-r from-primary via-Secondary to-white mr-[10%] ml-[10%] py-1  font-serif;
+    @apply text-3xl md:text-4xl mr-[10%] ml-[10%] py-1  font-serif;
   }
 
-  p{
-    @apply text-zinc-600
+  p {
+    @apply text-zinc-600;
   }
 
   .paymentstyle {
@@ -19,5 +18,8 @@
   .image {
     @apply w-[80%] aspect-square  my-[10px] rounded-lg;
   }
-}
 
+  .FooterLink {
+    margin-bottom: 20px; /* Adjust this value as per your requirement */
+  }
+}
