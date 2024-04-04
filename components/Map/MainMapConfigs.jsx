@@ -34,6 +34,7 @@ const MainMapConfigs = ({ children }) => {
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const originRef = useRef();
   const destinationRef = useRef();
@@ -64,7 +65,7 @@ const MainMapConfigs = ({ children }) => {
       destinationRef.current.value === "" ||
       passengerCountRef.current.value === ""
     )
-      return;
+      return setSubmitError("Please fill the feilds");
 
     const directionService = new google.maps.DirectionsService();
     const results = await directionService.route({
@@ -73,6 +74,7 @@ const MainMapConfigs = ({ children }) => {
       travelMode: google.maps.TravelMode.DRIVING,
     });
 
+    setSubmitError("");
     setIsSubmit(!isSubmit);
     setDirectionsResponse(results);
     setDistance(results.routes[0].legs[0].distance.text);
@@ -103,7 +105,7 @@ const MainMapConfigs = ({ children }) => {
           <div className="text-[30px] mt-[50px] mb-[30px] font-medium">
             Find your Driver
           </div>
-          <div className="flex my-2 mx-3 gap-x-3">
+          <div className="flex my-4 mx-3 gap-x-3">
             <Autocomplete>
               <input
                 ref={originRef}
@@ -130,6 +132,10 @@ const MainMapConfigs = ({ children }) => {
               className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
             />
           </div>
+
+          {submitError && (
+            <div className="text-errorpink">Please fill all the feilds</div>
+          )}
 
           {distance && duration && (
             <div className="flex gap-x-3 bg-yellow-400 text-black my-2 px-3">
