@@ -2,15 +2,15 @@
 import { useState } from "react";
 
 import Image from "next/image";
-import logo from "@/public/NavBar/bgremovedlogo.png";
-import menu from "@/public/NavBar/menu.svg";
-import close from "@/public/NavBar/close.svg";
+import logo from "@/public/Navbar/bgremovedlogo.png";
+import menu from "@/public/Navbar/menu.svg";
+import close from "@/public/Navbar/close.svg";
 
 import Link from "next/link";
 
 // Import SVG icons
-import FacebookIcon from "@/public/NavBar/facebook.svg";
-import EmailIcon from "@/public/NavBar/email.svg";
+import FacebookIcon from "@/public/Navbar/facebook.svg";
+import EmailIcon from "@/public/Navbar/email.svg";
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
