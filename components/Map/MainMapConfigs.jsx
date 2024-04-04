@@ -23,6 +23,7 @@ const MainMapConfigs = ({ children }) => {
   setTimeout(() => {}, 1000);
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+    region: "lk",
     libraries: libraries,
   });
 
