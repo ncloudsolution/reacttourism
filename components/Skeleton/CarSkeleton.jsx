@@ -17,9 +17,18 @@ const CarSkeleton = () => {
           Find your Driver
         </div>
 
-        <div className="h-[200px]">
-          {/** <Image src={car} alt="" className="size-[100%] animate-carmoving" /> **/}
-          <Image src={car2} alt="" className="size-[100%] animate-carmoving2" />
+        {/** <Image src={car} alt="" className="size-[100%] animate-carmoving" /> **/}
+        <div className="w-[350px] h-[250px]">
+          {/** line 1 give hieght and width to container**/}
+          <Image
+            layout="responsive"
+            src={car2}
+            alt=""
+            className=" animate-carmoving2 object-cover border-2 border-transparent"
+            priority
+          />
+          {/** line 2 give layout as responsible**/}
+          {/** line 3 give priority to load first line 4 give placeholder="blur" to give initial blur as before loading**/}
         </div>
       </div>
     </>

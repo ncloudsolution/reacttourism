@@ -17,8 +17,11 @@ const AboutUs = () => {
             <div className="w-full px-4 lg:w-6/12">
               <div className="flex items-center -mx-3 sm:-mx-4">
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
-                  <div className="py-3 sm:py-4 px-4 saturate-150 transition-transform duration-500 ease-in-out transform hover:scale-105">
+                  <div className=" py-3 sm:py-4 px-4 saturate-150 transition-transform duration-500 ease-in-out transform hover:scale-105">
+                    {/** w-[300px] h-[400px] **/}
                     <Image
+                      placeholder="blur"
+                      layout="responsive"
                       src={Aboutus1}
                       alt="ffff"
                       className="w-full rounded-2xl "
@@ -26,6 +29,7 @@ const AboutUs = () => {
                   </div>
                   <div className="py-3 sm:py-4 px-4 saturate-150 transition-transform duration-500 ease-in-out transform hover:scale-105">
                     <Image
+                      placeholder="blur"
                       src={Aboutus3}
                       alt=""
                       className="w-full rounded-2xl"
@@ -35,6 +39,7 @@ const AboutUs = () => {
                 <div className="w-full px-3 sm:px-4 xl:w-1/2 ">
                   <div className=" py-3 z-10 my-4 px-4 saturate-150 transition-transform duration-500 ease-in-out transform hover:scale-105">
                     <Image
+                      placeholder="blur"
                       src={Aboutus2}
                       alt=""
                       className="w-full rounded-2xl"
