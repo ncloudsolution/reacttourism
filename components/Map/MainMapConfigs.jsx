@@ -14,6 +14,11 @@ import { SingleVehicleContext } from "@/context/SingleVehicalContextProvider";
 import Image from "next/image";
 import CarSkeleton from "../Skeleton/CarSkeleton";
 import Footer from "../Footer";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { MdOutlineDateRange } from "react-icons/md";
+import CustomDatePicker from "../CustomDatePicker";
+import { IoIosCloseCircle } from "react-icons/io";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -37,9 +42,15 @@ const MainMapConfigs = ({ children }) => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
+  const [returnTour, setReturnTour] = useState(false);
+
+  // const [startDate, setStartDate] = useState(new Date());
+
   const originRef = useRef();
   const destinationRef = useRef();
   const passengerCountRef = useRef();
+
+  // const datePickerRef = useRef(null);
 
   console.log(isLoaded, "is loaded 1");
 
@@ -99,6 +110,12 @@ const MainMapConfigs = ({ children }) => {
     passengerCountRef.current.value = "";
   }
 
+  // const handleOuterDivClick = () => {
+  //   // Programmatically trigger click event on the DatePicker (to set click the outer div)
+  //   datePickerRef.current && datePickerRef.current.setOpen(true);
+  // };
+
+  // console.log(startDate, "start date");
   return (
     <>
       <div>
@@ -106,33 +123,91 @@ const MainMapConfigs = ({ children }) => {
           <div className="text-[30px] mt-[50px] mb-[30px] font-medium">
             Find your Driver
           </div>
-          <div className="flex my-4 mx-3 gap-x-3">
-            <Autocomplete>
-              <input
-                ref={originRef}
-                placeholder="Origin"
-                type="text"
-                className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
-              />
-            </Autocomplete>
+          <div className="flex my-4 border-2 border-transparent">
+            <div className="flex flex-col gap-y-3">
+              <div className="flex gap-x-3">
+                <Autocomplete>
+                  <input
+                    ref={originRef}
+                    placeholder="Origin"
+                    type="text"
+                    className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
+                  />
+                </Autocomplete>
 
-            <Autocomplete>
-              <input
-                ref={destinationRef}
-                placeholder="Destination"
-                type="text"
-                className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
-              />
-            </Autocomplete>
+                <Autocomplete>
+                  <input
+                    ref={destinationRef}
+                    placeholder="Destination"
+                    type="text"
+                    className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
+                  />
+                </Autocomplete>
 
-            <input
-              ref={passengerCountRef}
-              placeholder="No.Passengers"
-              type="number"
-              min="1"
-              className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
-            />
+                <input
+                  ref={passengerCountRef}
+                  placeholder="No.Passengers"
+                  type="number"
+                  min="1"
+                  className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
+                />
+              </div>
+
+              <div className="flex gap-x-3 relative">
+                <CustomDatePicker />
+                {returnTour ? (
+                  <>
+                    <CustomDatePicker />
+
+                    <IoIosCloseCircle
+                      size={25}
+                      className="absolute cursor-pointer left-[450px] top-[6px]"
+                      onClick={() => setReturnTour(false)}
+                    />
+                  </>
+                ) : (
+                  <div
+                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black cursor-pointer"
+                    onClick={() => setReturnTour(true)}
+                  >
+                    Add Reurn
+                  </div>
+                )}
+
+                <div className="flex flex-1 justify-between">
+                  <button
+                    type="submit"
+                    className="bg-black text-white p-2 rounded"
+                    onClick={calculateRoute}
+                  >
+                    calculate Route
+                  </button>
+                  <button
+                    className="bg-black text-white p-2 rounded"
+                    onClick={clearRoute}
+                  >
+                    clear Route
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* <div
+            className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black flex justify-between"
+            onClick={handleOuterDivClick}
+          >
+            <DatePicker
+              ref={datePickerRef}
+              className="outline-none"
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              showTimeSelect
+              dateFormat="Pp"
+              minDate={new Date()}
+            />
+            <MdOutlineDateRange className="text-[20px]" />
+          </div> */}
 
           {submitError && (
             <div className="text-errorpink">Please fill all the feilds</div>
@@ -146,27 +221,13 @@ const MainMapConfigs = ({ children }) => {
             </div>
           )}
 
-          <div className="flex px-3 my-4 gap-x-3 ">
+          <div className="flex my-4 gap-x-3 ">
             {/* <button
               className="bg-black text-white p-2 rounded"
               onClick={() => map.panTo(center)}
             >
               to center map
             </button> */}
-
-            <button
-              type="submit"
-              className="bg-black text-white p-2 rounded"
-              onClick={calculateRoute}
-            >
-              calculate Route
-            </button>
-            <button
-              className="bg-black text-white p-2 rounded"
-              onClick={clearRoute}
-            >
-              clear Route
-            </button>
           </div>
         </div>
 
