@@ -1,13 +1,13 @@
 "use client";
 import { useContext, useState } from "react";
 import { SelectVehiclesList } from "../../libs/calculations";
-import { SingleVehicleContext } from "../../context/SingleVehicalContextProvider";
+import { TourContext } from "../../context/TourContextProvider";
 
 const First = () => {
   const [distance, setDistance] = useState("");
   const [passengers, setPassengers] = useState("");
   const [selectedVehiclesList, setSelectedVehiclesList] = useState([]);
-  const { vehicle, setVehicle } = useContext(SingleVehicleContext);
+  const { tourDetails, setTourDetails } = useContext(TourContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,7 +77,7 @@ const First = () => {
             className="bg-yellow-500 px-6 ml-5"
             onClick={() => {
               //console.log(vehicle.price);
-              setVehicle({
+              setTourDetails({
                 type: vehicle.type,
                 passengers: vehicle.passengers,
                 weightFactor: vehicle.weightFactor,

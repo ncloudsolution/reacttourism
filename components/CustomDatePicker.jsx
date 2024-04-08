@@ -2,12 +2,10 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MdOutlineDateRange } from "react-icons/md";
-import { useState, useRef } from "react";
+import { useState, useRef, forwardRef } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 
-const CustomDatePicker = ({ type }) => {
-  const [startDate, setStartDate] = useState(new Date());
-
+const CustomDatePicker = ({ selectedDate, onChange }) => {
   const datePickerRef = useRef(null);
 
   const handleOuterDivClick = () => {
@@ -23,8 +21,8 @@ const CustomDatePicker = ({ type }) => {
       <DatePicker
         ref={datePickerRef}
         className="outline-none"
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
+        selected={selectedDate}
+        onChange={onChange}
         showTimeSelect
         dateFormat="Pp"
         minDate={new Date()}

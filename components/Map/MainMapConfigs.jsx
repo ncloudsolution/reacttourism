@@ -10,15 +10,18 @@ import {
 import React, { useContext, useRef, useState, useEffect } from "react";
 
 import { SelectVehiclesList } from "@/libs/calculations";
-import { SingleVehicleContext } from "@/context/SingleVehicalContextProvider";
+import { TourContext } from "@/context/TourContextProvider";
 import Image from "next/image";
 import CarSkeleton from "../Skeleton/CarSkeleton";
 import Footer from "../Footer";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { setHours, setMinutes } from "date-fns";
+
 import { MdOutlineDateRange } from "react-icons/md";
 import CustomDatePicker from "../CustomDatePicker";
 import { IoIosCloseCircle } from "react-icons/io";
+import { RetrunTimeValidity, StartTimeValidity } from "@/libs/TimeValidity";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -34,11 +37,13 @@ const MainMapConfigs = ({ children }) => {
 
   const [map, setMap] = useState(/** @type google.maps.Map*/ (null));
   /** js docs types for suggesions**/
-  const { vehicle, setVehicle } = useContext(SingleVehicleContext);
+  const { tourDetails, setTourDetails } = useContext(TourContext);
+
   const [selectedVehiclesList, setSelectedVehiclesList] = useState([]);
   const [directionsRespone, setDirectionsResponse] = useState(null);
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
+  const [durationForCalc, setDurationForCalc] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -49,6 +54,10 @@ const MainMapConfigs = ({ children }) => {
   const originRef = useRef();
   const destinationRef = useRef();
   const passengerCountRef = useRef();
+
+  const [startDate, setStartDate] = useState(new Date());
+
+  const [returnDate, setReturnDate] = useState(new Date());
 
   // const datePickerRef = useRef(null);
 
@@ -75,36 +84,66 @@ const MainMapConfigs = ({ children }) => {
     if (
       originRef.current.value === "" ||
       destinationRef.current.value === "" ||
-      passengerCountRef.current.value === ""
-    )
-      return setSubmitError("Please fill the feilds");
+      passengerCountRef.current.value === "" ||
+      startDate === ""
+    ) {
+      return setSubmitError("Please fill all the fields");
+    }
 
-    const directionService = new google.maps.DirectionsService();
-    const results = await directionService.route({
-      origin: originRef.current.value,
-      destination: destinationRef.current.value,
-      travelMode: google.maps.TravelMode.DRIVING,
-    });
+    const ValidStartTime = StartTimeValidity(startDate); // Assuming TimeValidity is synchronous
 
-    setSubmitError("");
-    setIsSubmit(!isSubmit);
-    setDirectionsResponse(results);
-    setDistance(results.routes[0].legs[0].distance.text);
-    setDuration(results.routes[0].legs[0].duration.text);
+    if (ValidStartTime) {
+      setSubmitError(ValidStartTime);
+      return;
+    }
 
-    const selectedVehiclesListValue = SelectVehiclesList(
-      passengerCountRef.current.value,
-      Math.ceil(results.routes[0].legs[0].distance.value / 1000)
-    );
-    setSelectedVehiclesList(selectedVehiclesListValue);
+    try {
+      const directionService = new google.maps.DirectionsService();
+      const results = await directionService.route({
+        origin: originRef.current.value,
+        destination: destinationRef.current.value,
+        travelMode: google.maps.TravelMode.DRIVING,
+      });
 
-    console.log(Math.ceil(results.routes[0].legs[0].distance.value / 1000));
+      setSubmitError("");
+      setIsSubmit(true);
+      setDirectionsResponse(results);
+      setDistance(results.routes[0].legs[0].distance.text);
+      setDuration(results.routes[0].legs[0].duration.text);
+      setDurationForCalc(results.routes[0].legs[0].duration.value);
+
+      const selectedVehiclesListValue = SelectVehiclesList(
+        passengerCountRef.current.value,
+        Math.ceil(results.routes[0].legs[0].distance.value / 1000)
+      );
+      setSelectedVehiclesList(selectedVehiclesListValue);
+
+      console.log(Math.ceil(results.routes[0].legs[0].distance.value / 1000));
+
+      if (returnTour) {
+        const ValidReturnTime = RetrunTimeValidity(
+          startDate.getTime() / (1000 * 60),
+          returnDate.getTime() / (1000 * 60),
+          durationForCalc / 60
+        );
+        setSubmitError(ValidReturnTime);
+        return;
+      }
+
+      console.log(ValidReturnTime, "RETURN VALID");
+    } catch (error) {
+      console.error("Error occurred while calculating route:", error);
+      // Handle error as needed
+    }
+
+    console.log(durationForCalc, "calc");
   }
 
   function clearRoute() {
     setDirectionsResponse(null);
     setDistance("");
     setDuration("");
+    setIsSubmit(false);
     originRef.current.value = "";
     destinationRef.current.value = "";
     passengerCountRef.current.value = "";
@@ -116,6 +155,7 @@ const MainMapConfigs = ({ children }) => {
   // };
 
   // console.log(startDate, "start date");
+
   return (
     <>
       <div>
@@ -154,10 +194,16 @@ const MainMapConfigs = ({ children }) => {
               </div>
 
               <div className="flex gap-x-3 relative">
-                <CustomDatePicker />
+                <CustomDatePicker
+                  selectedDate={startDate}
+                  onChange={(date) => setStartDate(date)}
+                />
                 {returnTour ? (
                   <>
-                    <CustomDatePicker />
+                    <CustomDatePicker
+                      selectedDate={returnDate}
+                      onChange={(date) => setReturnDate(date)}
+                    />
 
                     <IoIosCloseCircle
                       size={25}
@@ -209,11 +255,9 @@ const MainMapConfigs = ({ children }) => {
             <MdOutlineDateRange className="text-[20px]" />
           </div> */}
 
-          {submitError && (
-            <div className="text-errorpink">Please fill all the feilds</div>
-          )}
+          {submitError && <div className="text-errorpink">{submitError}</div>}
 
-          {distance && duration && (
+          {!submitError && distance && duration && (
             <div className="flex gap-x-3 bg-yellow-400 text-black my-2 px-3">
               <div>Distance : {distance}</div>
               <div className="font-bold">||</div>
@@ -231,7 +275,7 @@ const MainMapConfigs = ({ children }) => {
           </div>
         </div>
 
-        {isSubmit && (
+        {isSubmit && !submitError && (
           <div className="w-full flex justify-center">
             <div className=" w-[1400px] flex gap-x-10 mt-8 mb-16">
               <div className="w-[800px] h-[500px] aspect-square flex rounded-lg overflow-hidden shadow-md">
@@ -278,12 +322,23 @@ const MainMapConfigs = ({ children }) => {
                       <button
                         className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                         onClick={() => {
+                          console.log(startDate, "date");
                           //console.log(vehicle.price);
-                          setVehicle({
-                            type: vehicle.type,
-                            passengers: vehicle.passengers,
+                          setTourDetails({
+                            vehicleType: vehicle.type,
+                            vehicalSeatCapacity: vehicle.passengers,
                             weightFactor: vehicle.weightFactor,
                             price: vehicle.price,
+
+                            origin: originRef.current.value,
+                            destination: destinationRef.current.value,
+                            noOfPassengers: passengerCountRef.current.value,
+                            startDate: startDate,
+                            returnDate: returnTour
+                              ? returnDate
+                              : " No any end date it's One way Trip",
+                            distance: distance,
+                            duration: duration,
                           });
                         }}
                       >
@@ -297,9 +352,33 @@ const MainMapConfigs = ({ children }) => {
           </div>
         )}
 
-        {vehicle.type && (
-          <div className="bg-yellow-400 py-2 mb-14 font-semibold">
-            Selected Vehicle : {vehicle.type}
+        {tourDetails.vehicleType && (
+          <div className="bg-yellow-400 py-2 mb-14 font-semibold gap-y-1">
+            <div>Selected Vehicle : {tourDetails.vehicleType}</div>
+            <div>Seat Capacity : {tourDetails.vehicalSeatCapacity}</div>
+            <div>Price : {tourDetails.price}</div>
+            <div> Origin : {tourDetails.origin}</div>
+            <div>Destination : {tourDetails.destination}</div>
+            <div>No Of Passengers : {tourDetails.noOfPassengers}</div>
+            <div className="flex gap-x-5 ">
+              <div>Start Date : {tourDetails.startDate.toDateString()}</div>
+              <div>Time : {tourDetails.startDate.toTimeString()}</div>
+            </div>
+
+            <div className="flex gap-x-5">
+              <div>
+                Return Date :
+                {tourDetails.returnDate instanceof Date
+                  ? tourDetails.returnDate.toDateString()
+                  : tourDetails.returnDate}
+              </div>
+              {tourDetails.returnDate instanceof Date && (
+                <div>Time : {tourDetails.returnDate.toTimeString()}</div>
+              )}
+            </div>
+
+            <div> Distance : {tourDetails.distance}</div>
+            <div>Duration : {tourDetails.duration}</div>
           </div>
         )}
       </div>

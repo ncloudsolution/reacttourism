@@ -1,15 +1,15 @@
 "use client";
 import React, { useContext } from "react";
-import { SingleVehicleContext } from "../../context/SingleVehicalContextProvider";
+import { TourContext } from "../../context/TourContextProvider";
 import Link from "next/link";
 
 const Comp2 = () => {
-  const { vehicle, setVehical } = useContext(SingleVehicleContext);
-  console.log("context Comp2", vehicle);
+  const { tourDetails, setTourDetails } = useContext(TourContext);
+  console.log("context Comp2", tourDetails);
   return (
     <>
       <div>Comp2</div>
-      <div className="my-3 bg-yellow-300">{vehicle.type}</div>
+      <div className="my-3 bg-yellow-300">{tourDetails.vehicletype}</div>
       <Link href={"/contactus"} className="p-3 bg-green-300">
         CLICK HERE TO CONTACT US
       </Link>

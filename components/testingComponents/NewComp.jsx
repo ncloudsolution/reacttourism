@@ -1,14 +1,14 @@
 "use client";
 import React, { useContext } from "react";
-import { SingleVehicleContext } from "../../context/SingleVehicalContextProvider";
+import { TourContext } from "../../context/TourContextProvider";
 
 const NewComp = () => {
-  //const { vehicle, setVehical } = useContext(SingleVehicleContext);
+  //const { tourDetails, setTourDetails } = useContext(TourContext);
   console.log("no context newcomp");
   return (
     <>
       <div>NewComp</div>
-      {/* {vehicle && <div>{vehicle}</div>} */}
+      {/* {tourDetails && <div>{tourDetails.type}</div>} */}
     </>
   );
 };

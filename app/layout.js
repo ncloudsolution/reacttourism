@@ -1,10 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SingleVehicleContextProvider from "../context/SingleVehicalContextProvider";
 
 import AbsoluteFooter from "@/components/AbsoluteFooter";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TourContextProvider from "../context/TourContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SingleVehicleContextProvider>
+        <TourContextProvider>
           <div className=" relative flex flex-col min-h-[100vh] ">
             <NavBar />
 
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
             <Footer />
             <AbsoluteFooter />
           </div>
-        </SingleVehicleContextProvider>
+        </TourContextProvider>
       </body>
     </html>
   );
