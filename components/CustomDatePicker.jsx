@@ -21,7 +21,7 @@ const CustomDatePicker = ({ selectedDate, onChange }) => {
     >
       <DatePicker
         ref={datePickerRef}
-        className="outline-none flex flex-1"
+        className="outline-none"
         selected={selectedDate}
         onChange={onChange}
         showTimeSelect

@@ -50,6 +50,10 @@ const MainMapConfigs = ({ children }) => {
   const destinationRef = useRef();
   const passengerCountRef = useRef();
 
+  const mapRef = useRef();
+
+  //scroll to after the submission
+
   const [startDate, setStartDate] = useState(new Date());
 
   const [returnDate, setReturnDate] = useState(new Date());
@@ -122,7 +126,10 @@ const MainMapConfigs = ({ children }) => {
         setSubmitError(ValidReturnTime);
         return;
       }
-
+      window.scrollBy({
+        top: 300, // Scroll down by 200px
+        behavior: "smooth", // Smooth scrolling
+      });
       console.log(ValidReturnTime, "RETURN VALID");
     } catch (error) {
       console.error("Error occurred while calculating route:", error);
@@ -228,9 +235,9 @@ const MainMapConfigs = ({ children }) => {
           {submitError && <div className="text-errorpink">{submitError}</div>}
 
           {!submitError && distance && duration && (
-            <div className="flex gap-x-3 bg-yellow-400 text-black my-2 px-3">
+            <div className="flex xs:flex-row flex-col text-center py-2 px-5 gap-x-3 bg-yellow-400 text-black my-2 rounded">
               <div>Distance : {distance}</div>
-              <div className="font-bold">||</div>
+              <div className="font-bold xs:flex hidden">||</div>
               <div>Duration : {duration}</div>
             </div>
           )}
@@ -248,9 +255,9 @@ const MainMapConfigs = ({ children }) => {
         </div>
 
         {isSubmit && !submitError && (
-          <div className="w-full flex justify-center">
-            <div className=" w-[1400px] flex gap-x-10 mt-8 mb-16">
-              <div className="w-[800px] h-[500px] aspect-square flex rounded-lg overflow-hidden shadow-md">
+          <div className="w-full flex justify-center" ref={mapRef}>
+            <div className=" midxl:w-[1400px] mobile:w-[1000px] w-[800px] flex gap-x-10 xs:mt-8 mt-4 mb-16 bigmd:flex-row flex-col bigmd:items-start items-center border-2 border-transparent gap-5 p-4">
+              <div className="midxl:w-[800px] xs:w-[400px] xxxs:w-[300px] w-[250px]  midxl:h-[500px] bigmd:h-[300px]  xs:h-[400px] xxxs:h-[300px] h-[250px] aspect-square flex rounded-lg overflow-hidden shadow-md ">
                 <GoogleMap
                   center={center}
                   zoom={15}
@@ -263,17 +270,17 @@ const MainMapConfigs = ({ children }) => {
                   )}
                 </GoogleMap>
               </div>
-              <div className="w-full ">
+              <div className="w-full">
                 {selectedVehiclesList.map((vehicle, index) => (
                   <div
                     key={index}
-                    className="bg-transparent text-black w-full flex mb-6 p-4 rounded-lg border-[2px] border-black shadow-md justify-between hover:scale-[1.03] transition-all duration-500"
+                    className="bg-transparent text-black w-full flex flex-col xs:flex-row mb-6 p-4 rounded-lg border-[2px] border-black shadow-md justify-between hover:scale-[1.03] transition-all duration-500"
                   >
-                    <div className="flex flex-col">
+                    <div className="flex flex-col items-center xs:items-start ">
                       <div className="font-semibold text-[30px] px-8">
                         {vehicle.type}
                       </div>
-                      <div className="w-[300px] h-[150px] ">
+                      <div className="sm:w-[300px] w-[250px] sm:h-[150px] h-[120px]">
                         <Image
                           src={vehicle.img}
                           alt=""
@@ -284,7 +291,7 @@ const MainMapConfigs = ({ children }) => {
                       </div>
                     </div>
 
-                    <div className="flex flex-col mr-10 gap-y-3 items-center justify-center border-2 border-transparent">
+                    <div className="flex flex-col sm:mr-10 mr-3 gap-y-3  items-center justify-center border-2 border-transparent">
                       <div className="text-black text-[20px] ">
                         Passengers {vehicle.passengers}
                       </div>

@@ -9,7 +9,7 @@ const ContextCheckerComp = () => {
     <>
       <div>
         {tourDetails.vehicleType && (
-          <div className="bg-yellow-400 py-2 mb-14 font-semibold gap-y-1">
+          <div className="bg-yellow-400 py-2 mb-14 font-semibold gap-y-1 px-2">
             <div>Selected Vehicle : {tourDetails.vehicleType}</div>
             <div>Seat Capacity : {tourDetails.vehicalSeatCapacity}</div>
             <div>Price : {tourDetails.price}</div>
