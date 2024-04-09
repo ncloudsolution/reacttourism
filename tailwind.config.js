@@ -66,11 +66,39 @@ module.exports = {
         cartext2: {
           "0%": {
             transform: "translateY(-180px) scascale(1)",
-            opacity: 0.7,
+            opacity: 0.1,
+            fontSize: "25px",
           },
           "100%": {
             opacity: 1,
-            transform: "translateY(-205px) scale(1.4)",
+            transform: "translateY(-215px) scale(1.4)",
+            fontSize: "35px",
+          },
+        },
+
+        cartext2formid: {
+          "0%": {
+            transform: "translateY(-150px) scascale(1)",
+            opacity: 0.1,
+            fontSize: "15px",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateY(-145px) scale(1.3)",
+            fontSize: "25px",
+          },
+        },
+
+        cartext2forsmall: {
+          "0%": {
+            transform: "translateY(-80px) scascale(1)",
+            opacity: 0.1,
+            fontSize: "12px",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateY(-105px) scale(1.3)",
+            fontSize: "20px",
           },
         },
       },
@@ -80,6 +108,8 @@ module.exports = {
         carmoving2: "carmoving2 2s ease-out infinite alternate",
         cartext: "cartext 2s ease-out alternate",
         cartext2: "cartext2 2s ease-out infinite alternate",
+        cartext2formid: "cartext2formid 2s ease-out infinite alternate",
+        cartext2forsmall: "cartext2forsmall 2s ease-out infinite alternate",
       },
     },
   },
