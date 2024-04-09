@@ -22,4 +22,21 @@
   .FooterLink {
     margin-bottom: 20px; /* Adjust this value as per your requirement */
   }
+
+  /*testing*/
+  /* .rasta-stripes {
+    .react-datepicker__week:nth-child(3n + 1) {
+      background-color: #215005;
+    }
+    .react-datepicker__week:nth-child(3n + 2) {
+      background-color: #eea429;
+    }
+    .react-datepicker__week:nth-child(3n + 3) {
+      background-color: #a82a15;
+    }
+  } */
+
+  .date-style {
+    display: flex !important;
+  }
 }

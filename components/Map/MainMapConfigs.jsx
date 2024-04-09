@@ -193,7 +193,7 @@ const MainMapConfigs = ({ children }) => {
 
                     <IoIosCloseCircle
                       size={25}
-                      className="absolute cursor-pointer bigmd:left-[450px] bigmd:top-[6px] left-[320px] top-[58px]"
+                      className="absolute cursor-pointer bigmd:left-[450px] bxs:left-[320px] left-[195px] bigmd:top-[6px] bxs:top-[58px] top-[58px]"
                       onClick={() => setReturnTour(false)}
                     />
                   </>

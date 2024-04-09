@@ -21,13 +21,15 @@ const CustomDatePicker = ({ selectedDate, onChange }) => {
     >
       <DatePicker
         ref={datePickerRef}
-        className="outline-none"
+        className="outline-none flex flex-1"
         selected={selectedDate}
         onChange={onChange}
         showTimeSelect
         dateFormat="Pp"
         minDate={new Date()}
+        calendarClassName="date-style"
       />
+
       <MdOutlineDateRange className="text-[20px]" />
     </div>
   );
