@@ -8,6 +8,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xxxs: "330px",
+        xxs: "380px",
+        xs: "480px",
+        bxs: "540px",
+
+        bigmd: "860px",
+
+        mobile: "1150px",
+        midxl: "1400px",
+
+        //   'sm': '640px',
+        //   'md': '768px',
+        //   'lg': '1024px',
+        //   'xl': '1280px',
+        //   '2xl': '1536px',**/
+      },
       colors: {
         primary: "#0e6313",
         Secondary: "#14d01f",
@@ -48,14 +65,12 @@ module.exports = {
         },
         cartext2: {
           "0%": {
-            transform: "translateY(-180px)",
+            transform: "translateY(-180px) scascale(1)",
             opacity: 0.7,
-            fontSize: "30px",
           },
           "100%": {
             opacity: 1,
-            transform: "translateY(-205px)",
-            fontSize: "42px",
+            transform: "translateY(-205px) scale(1.4)",
           },
         },
       },

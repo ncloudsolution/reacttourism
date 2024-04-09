@@ -13,18 +13,18 @@ const CarSkeleton = () => {
         </div> **/}
 
         {/** for car 2**/}
-        <div className=" font-medium absolute animate-cartext2 ">
+        <div className=" font-medium absolute  text-[30px] bg-transparent z-[-1] animate-cartext2">
           Find your Driver
         </div>
 
         {/** <Image src={car} alt="" className="size-[100%] animate-carmoving" /> **/}
-        <div className="w-[350px] h-[250px]">
+        <div className="bxs:w-[350px] w-[250px] bxs:h-[250px] h-[150px] ">
           {/** line 1 give hieght and width to container**/}
           <Image
             layout="responsive"
             src={car2}
             alt=""
-            className=" animate-carmoving2 object-cover border-2 border-transparent"
+            className="object-cover border-2 border-transparent animate-carmoving2 "
             priority
           />
           {/** line 2 give layout as responsible**/}

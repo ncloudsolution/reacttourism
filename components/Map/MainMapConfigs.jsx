@@ -7,21 +7,18 @@ import {
   DirectionsRenderer,
 } from "@react-google-maps/api";
 
-import React, { useContext, useRef, useState, useEffect } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 import { SelectVehiclesList } from "@/libs/calculations";
 import { TourContext } from "@/context/TourContextProvider";
-import Image from "next/image";
-import CarSkeleton from "../Skeleton/CarSkeleton";
-import Footer from "../Footer";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { setHours, setMinutes } from "date-fns";
-
-import { MdOutlineDateRange } from "react-icons/md";
-import CustomDatePicker from "../CustomDatePicker";
-import { IoIosCloseCircle } from "react-icons/io";
 import { RetrunTimeValidity, StartTimeValidity } from "@/libs/TimeValidity";
+
+import CarSkeleton from "../Skeleton/CarSkeleton";
+import CustomDatePicker from "../CustomDatePicker";
+import ContextCheckerComp from "../testingComponents/ContextCheckerComp";
+
+import { IoIosCloseCircle } from "react-icons/io";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -49,8 +46,6 @@ const MainMapConfigs = ({ children }) => {
 
   const [returnTour, setReturnTour] = useState(false);
 
-  // const [startDate, setStartDate] = useState(new Date());
-
   const originRef = useRef();
   const destinationRef = useRef();
   const passengerCountRef = useRef();
@@ -58,8 +53,6 @@ const MainMapConfigs = ({ children }) => {
   const [startDate, setStartDate] = useState(new Date());
 
   const [returnDate, setReturnDate] = useState(new Date());
-
-  // const datePickerRef = useRef(null);
 
   console.log(isLoaded, "is loaded 1");
 
@@ -149,13 +142,6 @@ const MainMapConfigs = ({ children }) => {
     passengerCountRef.current.value = "";
   }
 
-  // const handleOuterDivClick = () => {
-  //   // Programmatically trigger click event on the DatePicker (to set click the outer div)
-  //   datePickerRef.current && datePickerRef.current.setOpen(true);
-  // };
-
-  // console.log(startDate, "start date");
-
   return (
     <>
       <div>
@@ -163,15 +149,15 @@ const MainMapConfigs = ({ children }) => {
           <div className="text-[30px] mt-[50px] mb-[30px] font-medium">
             Find your Driver
           </div>
-          <div className="flex my-4 border-2 border-transparent">
-            <div className="flex flex-col gap-y-3">
-              <div className="flex gap-x-3">
+          <div className="flex my-4 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-fit xxxs:w-[250px] w-[230px]">
+            <div className="flex flex-col gap-y-3 w-full">
+              <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
                 <Autocomplete>
                   <input
                     ref={originRef}
                     placeholder="Origin"
                     type="text"
-                    className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
+                    className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black"
                   />
                 </Autocomplete>
 
@@ -180,7 +166,7 @@ const MainMapConfigs = ({ children }) => {
                     ref={destinationRef}
                     placeholder="Destination"
                     type="text"
-                    className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
+                    className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black "
                   />
                 </Autocomplete>
 
@@ -189,11 +175,11 @@ const MainMapConfigs = ({ children }) => {
                   placeholder="No.Passengers"
                   type="number"
                   min="1"
-                  className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black "
+                  className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black "
                 />
               </div>
 
-              <div className="flex gap-x-3 relative">
+              <div className="flex gap-x-3 relative  flex-col bigmd:flex-row gap-y-3">
                 <CustomDatePicker
                   selectedDate={startDate}
                   onChange={(date) => setStartDate(date)}
@@ -207,53 +193,37 @@ const MainMapConfigs = ({ children }) => {
 
                     <IoIosCloseCircle
                       size={25}
-                      className="absolute cursor-pointer left-[450px] top-[6px]"
+                      className="absolute cursor-pointer bigmd:left-[450px] bigmd:top-[6px] left-[320px] top-[58px]"
                       onClick={() => setReturnTour(false)}
                     />
                   </>
                 ) : (
                   <div
-                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black cursor-pointer"
+                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black cursor-pointer py-[6px]"
                     onClick={() => setReturnTour(true)}
                   >
                     Add Reurn
                   </div>
                 )}
 
-                <div className="flex flex-1 justify-between">
+                <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-2  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
                   <button
                     type="submit"
-                    className="bg-black text-white p-2 rounded"
+                    className="bg-black text-white p-2 rounded bigmd:w-fit flex-1 bigmd:block "
                     onClick={calculateRoute}
                   >
-                    calculate Route
+                    Calculate Route
                   </button>
                   <button
-                    className="bg-black text-white p-2 rounded"
+                    className="bg-black text-white p-2 rounded bigmd:w-fit :flex-1 bigmd:block"
                     onClick={clearRoute}
                   >
-                    clear Route
+                    Clear Route
                   </button>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* <div
-            className="p-2 text-[14px] outline-none w-[250px] shadow-md rounded border-[1px] border-black flex justify-between"
-            onClick={handleOuterDivClick}
-          >
-            <DatePicker
-              ref={datePickerRef}
-              className="outline-none"
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              showTimeSelect
-              dateFormat="Pp"
-              minDate={new Date()}
-            />
-            <MdOutlineDateRange className="text-[20px]" />
-          </div> */}
 
           {submitError && <div className="text-errorpink">{submitError}</div>}
 
@@ -265,14 +235,16 @@ const MainMapConfigs = ({ children }) => {
             </div>
           )}
 
-          <div className="flex my-4 gap-x-3 ">
+          {/* <div className="flex my-4 gap-x-3 ">
             {/* <button
               className="bg-black text-white p-2 rounded"
               onClick={() => map.panTo(center)}
             >
               to center map
-            </button> */}
-          </div>
+            </button> 
+          </div> */}
+
+          {/** map center smoothly**/}
         </div>
 
         {isSubmit && !submitError && (
@@ -352,35 +324,8 @@ const MainMapConfigs = ({ children }) => {
           </div>
         )}
 
-        {tourDetails.vehicleType && (
-          <div className="bg-yellow-400 py-2 mb-14 font-semibold gap-y-1">
-            <div>Selected Vehicle : {tourDetails.vehicleType}</div>
-            <div>Seat Capacity : {tourDetails.vehicalSeatCapacity}</div>
-            <div>Price : {tourDetails.price}</div>
-            <div> Origin : {tourDetails.origin}</div>
-            <div>Destination : {tourDetails.destination}</div>
-            <div>No Of Passengers : {tourDetails.noOfPassengers}</div>
-            <div className="flex gap-x-5 ">
-              <div>Start Date : {tourDetails.startDate.toDateString()}</div>
-              <div>Time : {tourDetails.startDate.toTimeString()}</div>
-            </div>
-
-            <div className="flex gap-x-5">
-              <div>
-                Return Date :
-                {tourDetails.returnDate instanceof Date
-                  ? tourDetails.returnDate.toDateString()
-                  : tourDetails.returnDate}
-              </div>
-              {tourDetails.returnDate instanceof Date && (
-                <div>Time : {tourDetails.returnDate.toTimeString()}</div>
-              )}
-            </div>
-
-            <div> Distance : {tourDetails.distance}</div>
-            <div>Duration : {tourDetails.duration}</div>
-          </div>
-        )}
+        {/** context usage **/}
+        <ContextCheckerComp />
       </div>
       {children}
     </>
