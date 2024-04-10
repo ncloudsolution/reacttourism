@@ -39,4 +39,9 @@
   .date-style {
     display: flex !important;
   }
+
+  .PhoneInputInput {
+    outline: none;
+    /* Anything you want  */
+  }
 }

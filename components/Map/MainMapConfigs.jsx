@@ -9,6 +9,7 @@ import {
 
 import { useContext, useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { SelectVehiclesList } from "@/libs/calculations";
 import { TourContext } from "@/context/TourContextProvider";
@@ -16,7 +17,7 @@ import { RetrunTimeValidity, StartTimeValidity } from "@/libs/TimeValidity";
 
 import CarSkeleton from "../Skeleton/CarSkeleton";
 import CustomDatePicker from "../CustomDatePicker";
-import ContextCheckerComp from "../testingComponents/ContextCheckerComp";
+import ContextCheckerComp from "../TourSummary";
 
 import { IoIosCloseCircle } from "react-icons/io";
 
@@ -31,6 +32,8 @@ const MainMapConfigs = ({ children }) => {
     region: "lk",
     libraries: libraries,
   });
+
+  const router = useRouter();
 
   const [map, setMap] = useState(/** @type google.maps.Map*/ (null));
   /** js docs types for suggesions**/
@@ -308,6 +311,7 @@ const MainMapConfigs = ({ children }) => {
                             vehicalSeatCapacity: vehicle.passengers,
                             weightFactor: vehicle.weightFactor,
                             price: vehicle.price,
+                            image: vehicle.img,
 
                             origin: originRef.current.value,
                             destination: destinationRef.current.value,
@@ -315,10 +319,12 @@ const MainMapConfigs = ({ children }) => {
                             startDate: startDate,
                             returnDate: returnTour
                               ? returnDate
-                              : " No any end date it's One way Trip",
+                              : "No any Return",
                             distance: distance,
                             duration: duration,
                           });
+                          console.log("redirect");
+                          router.push("/tourbooking");
                         }}
                       >
                         Select
@@ -332,7 +338,6 @@ const MainMapConfigs = ({ children }) => {
         )}
 
         {/** context usage **/}
-        <ContextCheckerComp />
       </div>
       {children}
     </>
