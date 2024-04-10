@@ -2,43 +2,43 @@
   {
     "type": "Sedan Car",
     "passengers": 3,
-    "weightFactor": 2,
+    "weightFactor": 150,
     "img": "/Vehicles/sedan.png"
   },
   {
     "type": "Mini Van",
     "passengers": 6,
-    "weightFactor": 1.4,
+    "weightFactor": 200,
     "img": "/Vehicles/minivan.png"
   },
   {
     "type": "MPV",
     "passengers": 4,
-    "weightFactor": 1.8,
+    "weightFactor": 220,
     "img": "/Vehicles/mpv4.png"
   },
   {
     "type": "Mini Bus",
     "passengers": 7,
-    "weightFactor": 2.4,
+    "weightFactor": 250,
     "img": "/Vehicles/minibus.png"
   },
   {
     "type": "Private Transfer",
     "passengers": 15,
-    "weightFactor": 4.5,
+    "weightFactor": 300,
     "img": "/Vehicles/privatetransport.png"
   },
   {
     "type": "Bus",
     "passengers": 20,
-    "weightFactor": 8,
+    "weightFactor": 320,
     "img": "/Vehicles/bus.png"
   },
   {
     "type": "Mercedence E Class",
     "passengers": 3,
-    "weightFactor": 7,
+    "weightFactor": 250,
     "img": "/Vehicles/mercedence_eclass.png"
   }
 ]
