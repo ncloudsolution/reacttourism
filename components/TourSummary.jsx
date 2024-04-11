@@ -48,10 +48,10 @@ const TourSummary = () => {
     console.log(tourDetails.customerName, "nameff");
 
     const emailText = `New Customer Details:
-Name: ${tourDetails.customerName}
-Email: ${tourDetails.customerEmail}
-Mobile No: ${tourDetails.customerMobileNo}
-Luggage Count: ${tourDetails.customerLuggageCount}
+Name: ${cusNameRef.current.value}
+Email: ${cusEmailRef.current.value}
+Mobile No: ${cusMobileRef.current.value}
+Luggage Count: ${cusLuggageCountRef.current.value}
 selected Vehicle: ${tourDetails.vehicleType}`;
 
     setIsLoading(true); // Start loading
