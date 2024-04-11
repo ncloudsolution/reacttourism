@@ -9,7 +9,7 @@ const Comp2 = () => {
   return (
     <>
       <div>Comp2</div>
-      <div className="my-3 bg-yellow-300">{tourDetails.vehicletype}</div>
+      <div className="my-3 bg-yellow-300 ">{tourDetails.vehicleType}</div>
       <Link href={"/contactus"} className="p-3 bg-green-300">
         CLICK HERE TO CONTACT US
       </Link>

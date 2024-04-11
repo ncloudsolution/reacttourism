@@ -9,17 +9,94 @@ import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 const TourSummary = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
+  const [responseMessage, setResponseMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const cusNameRef = useRef();
   const cusEmailRef = useRef();
   const cusMobileRef = useRef();
+  const cusDocRef = useRef();
   const cusLuggageCountRef = useRef();
 
   const [mobValue, setMobValue] = useState();
+  const [submitError, setSubmitError] = useState();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (
+      cusNameRef.current.value === "" ||
+      cusEmailRef.current.value === "" ||
+      cusMobileRef.current.value === "" ||
+      cusDocRef.current.value === "" ||
+      cusLuggageCountRef.current.value === ""
+    ) {
+      return setSubmitError(
+        "Fill all the fields & submit the reference document"
+      );
+    }
+
+    setTourDetails((prevDetails) => ({
+      ...prevDetails,
+      customerName: cusNameRef.current.value,
+      customerEmail: cusEmailRef.current.value,
+      customerMobileNo: cusMobileRef.current.value,
+      customerLuggageCount: cusLuggageCountRef.current.value,
+    }));
+
+    console.log(cusNameRef.current.value, "name");
+    console.log(tourDetails.customerName, "nameff");
+
+    const emailText = `New Customer Details:
+Name: ${tourDetails.customerName}
+Email: ${tourDetails.customerEmail}
+Mobile No: ${tourDetails.customerMobileNo}
+Luggage Count: ${tourDetails.customerLuggageCount}
+selected Vehicle: ${tourDetails.vehicleType}`;
+
+    setIsLoading(true); // Start loading
+    setResponseMessage("");
+
+    fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: process.env.NEXT_PUBLIC_MY_EMAIL,
+        subject: "New Customer Here!",
+        text: emailText,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setIsLoading(false); // Stop loading
+        setResponseMessage(data.message); // Set the message from the server
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setIsLoading(false); // Stop loading
+        setResponseMessage("Failed to make the order. Please try again."); // Set a generic error message
+      });
+
+    setSubmitError("");
+  }
 
   return (
     <>
       <div className="my-4">
-        {tourDetails.vehicleType && (
+        {(isLoading || responseMessage) && (
+          <div className="w-full h-[90vh] flex items-center justify-center">
+            {/* Your form or component elements go here */}
+            {isLoading && <div>Sending email...</div>}{" "}
+            {/* Display a loading message */}
+            {responseMessage && <div>{responseMessage}</div>}
+            {/* Display the response message */}
+          </div>
+        )}
+
+        {!responseMessage && tourDetails.vehicleType && (
           <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">
             <div className="text-center text-[30px]">Tour Summary</div>
 
@@ -77,56 +154,57 @@ const TourSummary = () => {
                 <div className="mt-4 flex-1 border-2 border-transparent">
                   <div>Customer</div>
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
-                  <div className="flex gap-y-1 flex-col">
-                    <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        Passengers Name
-                      </span>
-                      <input
-                        ref={cusNameRef}
-                        placeholder="No.Passengers"
-                        type="text"
-                        min="1"
-                        className="p-1 text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
-                      />
-                    </div>
-
-                    <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        Email
-                      </span>
-                      <input
-                        ref={cusEmailRef}
-                        placeholder="No.Passengers"
-                        type="email"
-                        className="p-1 text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
-                      />
-                    </div>
-
-                    <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        Mobile No
-                      </span>
-                      <div className="shadow-md rounded border-[1px] border-black bxs:w-[220px] w-full bg-white p-1 ">
-                        <PhoneInput
-                          international
-                          countryCallingCodeEditable={false}
-                          defaultCountry="LK"
-                          value={mobValue}
-                          onChange={setMobValue}
-                          className="PhoneInputInput"
-                          ref={cusMobileRef}
-                          error={
-                            mobValue
-                              ? isValidPhoneNumber(mobValue)
-                                ? undefined
-                                : "Invalid phone number"
-                              : "Phone number required"
-                          }
+                  <form onSubmit={handleSubmit}>
+                    <div className="flex gap-y-1 flex-col">
+                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                          Passengers Name
+                        </span>
+                        <input
+                          ref={cusNameRef}
+                          placeholder="No.Passengers"
+                          type="text"
+                          min="1"
+                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
                         />
                       </div>
 
-                      {/**
+                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                          Email
+                        </span>
+                        <input
+                          ref={cusEmailRef}
+                          placeholder="No.Passengers"
+                          type="email"
+                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                        />
+                      </div>
+
+                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                          Mobile No
+                        </span>
+                        <div className="shadow-md rounded border-[1px] border-black bxs:w-[220px] w-full bg-white p-1 font-normal ">
+                          <PhoneInput
+                            international
+                            countryCallingCodeEditable={false}
+                            defaultCountry="LK"
+                            value={mobValue}
+                            onChange={setMobValue}
+                            className="PhoneInputInput"
+                            ref={cusMobileRef}
+                            error={
+                              mobValue
+                                ? isValidPhoneNumber(mobValue)
+                                  ? undefined
+                                  : "Invalid phone number"
+                                : "Phone number required"
+                            }
+                          />
+                        </div>
+
+                        {/**
                     <input
                       ref={cusMobileRef}
                       placeholder="No.Passengers"
@@ -134,51 +212,58 @@ const TourSummary = () => {
                       min="1"
                       className="p-1 text-[14px] outline-none w-[220px] shadow-md rounded border-[1px] border-black "
                     />**/}
-                    </div>
+                      </div>
 
-                    <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        No of Luggagues
-                      </span>
+                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                          No of Luggagues
+                        </span>
+                        <input
+                          ref={cusLuggageCountRef}
+                          placeholder="No.Passengers"
+                          type="number"
+                          min="0"
+                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                        />
+                      </div>
+
+                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                          No of Passengers
+                        </span>
+                        <span className="font-normal">
+                          {tourDetails.noOfPassengers}{" "}
+                          {tourDetails.noOfPassengers == 1
+                            ? "Passenger"
+                            : "Passengers"}
+                        </span>
+                      </div>
+
+                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 mb-4">
+                        <span className="bxs:w-[180px] pr-3 w-full bg-transparent">
+                          NIC / Passport / Driving Licience
+                        </span>
+                        <input
+                          ref={cusDocRef}
+                          placeholder="No.Passengers"
+                          type="file"
+                          className="text-[14px] font-normal outline-none w-[220px] rounded border-[1px] border-transparent "
+                        />
+                      </div>
+
+                      {submitError && (
+                        <div className="text-errorpink my-2 font-normal">
+                          {submitError}
+                        </div>
+                      )}
+
                       <input
-                        ref={cusLuggageCountRef}
-                        placeholder="No.Passengers"
-                        type="number"
-                        min="0"
-                        className="p-1 text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                        type="submit"
+                        className="w-full py-2 bg-black text-white rounded-md"
+                        value="Submit"
                       />
                     </div>
-
-                    <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        No of Passengers
-                      </span>
-                      <span className="font-normal">
-                        {tourDetails.noOfPassengers}{" "}
-                        {tourDetails.noOfPassengers == 1
-                          ? "Passenger"
-                          : "Passengers"}
-                      </span>
-                    </div>
-
-                    <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 mb-4">
-                      <span className="bxs:w-[180px] w-full bg-transparent">
-                        NIC / Passport / Driving Licience
-                      </span>
-                      <input
-                        ref={cusEmailRef}
-                        placeholder="No.Passengers"
-                        type="file"
-                        className="text-[14px] outline-none w-[220px] rounded border-[1px] border-transparent "
-                      />
-                    </div>
-
-                    <input
-                      type="submit"
-                      className="w-full py-2 bg-black text-white rounded-md"
-                      value="Submit"
-                    />
-                  </div>
+                  </form>
                 </div>
                 {/**customer over**/}
 
