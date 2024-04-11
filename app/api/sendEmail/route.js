@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
   try {
-    const { to, subject, text } = await request.json();
+    const { to, subject, text, clientmail, filename } = await request.json();
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -17,9 +17,15 @@ export async function POST(request) {
 
     const mailOptions = {
       from: process.env.MAIL_USERNAME,
-      to: to,
+      to: [to, clientmail],
       subject: subject,
       text: text,
+      attachments: [
+        {
+          filename: filename, // You might want to dynamically set this based on the file you receive
+          path: "/path/to/your/document.pdf", // or use `content` with the file's Buffer if you're not saving the file to disk
+        },
+      ],
     };
 
     await transporter.sendMail(mailOptions);

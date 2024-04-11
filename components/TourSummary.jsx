@@ -66,6 +66,8 @@ selected Vehicle: ${tourDetails.vehicleType}`;
         to: process.env.NEXT_PUBLIC_MY_EMAIL,
         subject: "New Customer Here!",
         text: emailText,
+        clientmail: cusEmailRef.current.value,
+        filename: cusDocRef.current.files[0]?.name,
       }),
     })
       .then((response) => response.json())
