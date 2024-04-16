@@ -18,20 +18,37 @@ export async function POST(request) {
       },
     });
 
-    const mailOptions = {
+    // Email options for the main recipient (to)
+    const mailOptionsTo = {
       from: process.env.MAIL_USERNAME,
-      to: [to, clientmail],
-      subject: subject,
+      to: to,
+      subject: "New Order Received",
       text: text,
       attachments: [
         {
           filename: file.name,
-          content: new Buffer.from(await file.arrayBuffer()), // Convert file to buffer
+          content: new Buffer.from(await file.arrayBuffer()),
         },
       ],
     };
 
-    await transporter.sendMail(mailOptions);
+    const mailOptionsClient = {
+      from: process.env.MAIL_USERNAME,
+      to: clientmail,
+      subject: "Here's your new ride from Pikme",
+      text: text, // Assuming you want to send the same text; adjust if different
+      attachments: [
+        {
+          filename: file.name,
+          content: new Buffer.from(await file.arrayBuffer()),
+        },
+      ],
+    };
+
+    // Send the email to the main recipient
+    await transporter.sendMail(mailOptionsTo);
+    // Send the email to the client
+    await transporter.sendMail(mailOptionsClient);
 
     return NextResponse.json(
       { message: "Order completed Successfully" },
