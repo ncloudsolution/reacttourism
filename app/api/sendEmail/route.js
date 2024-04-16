@@ -20,7 +20,7 @@ export async function POST(request) {
 
     // Email options for the main recipient (to)
     const mailOptionsTo = {
-      from: process.env.MAIL_USERNAME,
+      from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
       to: to,
       subject: "New Order Received",
       text: text,
@@ -33,7 +33,7 @@ export async function POST(request) {
     };
 
     const mailOptionsClient = {
-      from: process.env.MAIL_USERNAME,
+      from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
       to: clientmail,
       subject: "Here's your new ride from Pikme",
       text: text, // Assuming you want to send the same text; adjust if different
