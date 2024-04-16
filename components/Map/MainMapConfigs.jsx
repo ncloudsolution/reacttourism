@@ -162,7 +162,7 @@ const MainMapConfigs = ({ children }) => {
           <div className="flex my-4 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-fit xxxs:w-[250px] w-[230px]">
             <div className="flex flex-col gap-y-3 w-full">
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
-                <Autocomplete>
+                <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
                     ref={originRef}
                     placeholder="Origin"
@@ -171,7 +171,7 @@ const MainMapConfigs = ({ children }) => {
                   />
                 </Autocomplete>
 
-                <Autocomplete>
+                <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
                     ref={destinationRef}
                     placeholder="Destination"
