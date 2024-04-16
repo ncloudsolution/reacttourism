@@ -1,11 +1,14 @@
-// pages/api/send-email.js
-
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
   try {
-    const { to, subject, text, clientmail, filename } = await request.json();
+    const formData = await request.formData(); // Use formData directly
+    const to = formData.get("to");
+    const subject = formData.get("subject");
+    const text = formData.get("text");
+    const clientmail = formData.get("clientmail");
+    const file = formData.get("file");
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -22,8 +25,8 @@ export async function POST(request) {
       text: text,
       attachments: [
         {
-          filename: filename, // You might want to dynamically set this based on the file you receive
-          path: "/path/to/your/document.pdf", // or use `content` with the file's Buffer if you're not saving the file to disk
+          filename: file.name,
+          content: new Buffer.from(await file.arrayBuffer()), // Convert file to buffer
         },
       ],
     };

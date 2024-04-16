@@ -12,23 +12,24 @@ const TourSummary = () => {
   const [responseMessage, setResponseMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const [file, setFile] = useState();
+
   const cusNameRef = useRef();
   const cusEmailRef = useRef();
   const cusMobileRef = useRef();
-  const cusDocRef = useRef();
+
   const cusLuggageCountRef = useRef();
 
   const [mobValue, setMobValue] = useState();
   const [submitError, setSubmitError] = useState();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     if (
       cusNameRef.current.value === "" ||
       cusEmailRef.current.value === "" ||
       cusMobileRef.current.value === "" ||
-      cusDocRef.current.value === "" ||
       cusLuggageCountRef.current.value === ""
     ) {
       return setSubmitError(
@@ -57,30 +58,30 @@ selected Vehicle: ${tourDetails.vehicleType}`;
     setIsLoading(true); // Start loading
     setResponseMessage("");
 
-    fetch("/api/sendEmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        to: process.env.NEXT_PUBLIC_MY_EMAIL,
-        subject: "New Customer Here!",
-        text: emailText,
-        clientmail: cusEmailRef.current.value,
-        filename: cusDocRef.current.files[0]?.name,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setIsLoading(false); // Stop loading
-        setResponseMessage(data.message); // Set the message from the server
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        setIsLoading(false); // Stop loading
-        setResponseMessage("Failed to make the order. Please try again."); // Set a generic error message
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("to", process.env.NEXT_PUBLIC_MY_EMAIL); // Set the recipient's email here
+    formData.append("subject", "Sending you a file!");
+    formData.append("text", emailText);
+    formData.append("clientmail", cusEmailRef.current.value); // Set the sender's email here
+
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        body: formData, // FormData will be sent as `multipart/form-data`
       });
+      const result = await response.json();
+      console.log(result);
+      //alert(result.message);
+      setIsLoading(false); // Stop loading
+      setResponseMessage(result.message); // Set the message from the server
+      console.log("msg send");
+    } catch (error) {
+      console.error("Error:", error);
+      // alert("Failed to send the file.");
+      setIsLoading(false); // Stop loading
+      setResponseMessage("Failed to make the order. Please try again.");
+    }
 
     setSubmitError("");
   }
@@ -246,10 +247,10 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                           NIC / Passport / Driving Licience
                         </span>
                         <input
-                          ref={cusDocRef}
                           placeholder="No.Passengers"
                           type="file"
                           className="text-[14px] font-normal outline-none w-[220px] rounded border-[1px] border-transparent "
+                          onChange={(e) => setFile(e.target.files?.[0])}
                         />
                       </div>
 
