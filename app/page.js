@@ -7,17 +7,19 @@ import MainMapConfigs from "@/components/Map/MainMapConfigs";
 import AbsoluteFooter from "@/components/AbsoluteFooter";
 import Footer from "@/components/Footer";
 import Packages from "@/components/Packages";
+import TourSlider from "@/components/TourSlider";
 
 export default function Home() {
   return (
     <>
-      <MainMapConfigs>
-        {/** <MainSlider />**/}
-        <AboutUs />
-        <AbooutSrilanka />
-        <Activities />
-        <Packages />
-      </MainMapConfigs>
+      {/** <MainMapConfigs> **/}
+      {/** <MainSlider />**/}
+      <TourSlider />
+      <AboutUs />
+      <AbooutSrilanka />
+      <Activities />
+      <Packages />
+      {/** </MainMapConfigs> **/}
     </>
   );
 }

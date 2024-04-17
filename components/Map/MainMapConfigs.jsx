@@ -15,7 +15,7 @@ import { SelectVehiclesList } from "@/libs/calculations";
 import { TourContext } from "@/context/TourContextProvider";
 import { RetrunTimeValidity, StartTimeValidity } from "@/libs/TimeValidity";
 
-import CarSkeleton from "../Skeleton/CarSkeleton";
+import CarSkeleton from "../skeletonUI/compoundElements/CarSkeleton";
 import CustomDatePicker from "../CustomDatePicker";
 import ContextCheckerComp from "../TourSummary";
 

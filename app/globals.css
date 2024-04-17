@@ -15,12 +15,21 @@
     @apply bg-[#FFFFFF26] hover:bg-[#FFFFFF30]  rounded p-[5px] fill-[#FFFFFF90] hover:fill-white transition-all duration-300;
   }
 
-  .image {
-    @apply w-[80%] aspect-square  my-[10px] rounded-lg;
-  }
-
   .FooterLink {
     margin-bottom: 20px; /* Adjust this value as per your requirement */
+  }
+
+  .skeleton {
+    @apply bg-[#ddd] rounded-sm;
+  }
+  .title {
+    @apply w-[50%] h-[20px] mb-[12px] mt-[10px];
+  }
+  .description {
+    @apply w-[80%] h-[12px] mb-[8px];
+  }
+  .image {
+    @apply w-[80%] aspect-square  my-[10px] rounded-lg;
   }
 
   /*testing*/

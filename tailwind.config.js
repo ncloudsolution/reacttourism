@@ -8,6 +8,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionDuration: {
+        2000: "2000ms",
+        3000: "3000ms",
+      },
+
+      boxShadow: {
+        shimmershadow: "0 0 30px 30px rgba(255, 255, 255, 0.05)",
+      },
+
       screens: {
         xxxs: "330px",
         xxs: "380px",
@@ -101,6 +110,18 @@ module.exports = {
             fontSize: "20px",
           },
         },
+
+        shimmer: {
+          "0%": {
+            transform: "translateX(-150%)",
+          },
+          "50%": {
+            transform: "translateX(-60%)",
+          },
+          "100%": {
+            transform: "translateX(150%)",
+          },
+        },
       },
 
       animation: {
@@ -110,6 +131,7 @@ module.exports = {
         cartext2: "cartext2 2s ease-out infinite alternate",
         cartext2formid: "cartext2formid 2s ease-out infinite alternate",
         cartext2forsmall: "cartext2forsmall 2s ease-out infinite alternate",
+        shimmer: "shimmer 2.5s infinite ",
       },
     },
   },

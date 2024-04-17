@@ -1,4 +1,4 @@
-import CarSkeleton from "@/components/Skeleton/CarSkeleton";
+import CarSkeleton from "@/components/skeletonUI/compoundElements/CarSkeleton";
 import React from "react";
 
 const AB = () => {
