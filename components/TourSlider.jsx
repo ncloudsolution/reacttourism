@@ -23,8 +23,8 @@ const TourSlider = () => {
 
     return result;
   }
-
-  const repeatedArray = generateRepeatedArray(places, 4); // Repeats array 3 times
+  const multiplier = 4;
+  const repeatedArray = generateRepeatedArray(places, multiplier); // Repeats array 3 times
   console.log(repeatedArray);
 
   //array repeat over
@@ -54,7 +54,7 @@ const TourSlider = () => {
       return 4;
     } else if (windowWidth >= 1150) {
       return 3;
-    } else if (windowWidth >= 640) {
+    } else if (windowWidth >= 860) {
       return 2;
     } else {
       return 1;
@@ -68,13 +68,20 @@ const TourSlider = () => {
     return Math.ceil(repeatedArray.length / columnSizebyScreenSizeValue);
   }
 
+  // function dottedSize() {
+  //   return Math.ceil(places.length / columnSizebyScreenSizeValue);
+  // }
+
   const hoppingSizeValue = hoppingSize();
 
   const [count, setCount] = useState(0);
+  // const [dotcount, setDotCount] = useState(1);
   console.log("count", count);
+  // console.log("dotcount", dotcount);
   const leftHandler = () => {
     if (count > 0) {
       setCount(count - 1);
+      // setDotCount((count % (multiplier + 1)) - 1);
       console.log(count);
     }
   };
@@ -82,12 +89,33 @@ const TourSlider = () => {
   const rightHandler = () => {
     if (count < hoppingSizeValue - 1) {
       setCount(count + 1);
+      // setDotCount((count % (multiplier + 1)) + 1);
       console.log(count);
+      // console.log(dotcount);
     }
   };
 
   const translationOffset = count > 0 ? count * -3 : 0;
   console.log("trans", translationOffset);
+
+  // const dottedSizeValue = dottedSize();
+
+  const dots = [];
+  for (let i = 0; i < hoppingSizeValue / multiplier; i++) {
+    dots.push(
+      <div
+        key={i}
+        onClick={() => {
+          setCount(i);
+        }}
+        className={` ${
+          i === count % (hoppingSizeValue / multiplier)
+            ? "bg-primary"
+            : "bg-slate-500"
+        } size-[12px] rounded-full  flex`}
+      />
+    );
+  }
 
   return (
     <>
@@ -99,7 +127,7 @@ const TourSlider = () => {
           </div>
           <div
             ref={elementRef}
-            className="midxl:w-[1330px] mobile:w-[1000px] bigmd:w-[666px] xs:w-[350px] xxs:w-[310px] xxxs:w-[285px] w-[240px] overflow-hidden flex border-2 border-transparent  "
+            className="midxl:w-[1330px] mobile:w-[1000px] bigmd:w-[666px] sm:w-[300px] xs:w-[350px] xxs:w-[310px] xxxs:w-[285px] w-[240px] overflow-hidden flex border-2 border-transparent  "
           >
             <div className="py-4 flex ">
               {repeatedArray.map((place, index) => (
@@ -143,13 +171,7 @@ const TourSlider = () => {
             <SliderBtn side={"right"} />
           </div>
         </div>
-        <div className="flex gap-2 flex-row bg-transparent">
-          {places.map((place, index) => (
-            <div key={index}>
-              <div className="size-[12px] rounded-full bg-primary flex"></div>
-            </div>
-          ))}
-        </div>
+        <div className="flex gap-2 flex-row bg-transparent">{dots}</div>
       </div>
     </>
   );

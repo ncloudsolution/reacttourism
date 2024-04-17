@@ -18,5 +18,15 @@
     "img": "/Tours/nallur.jpg",
     "description": "Sri Lanka Classic & Northern Tour -10 Days / 09 Nights",
     "price": "USD 350 "
+  },
+  {
+    "img": "/Tours/kandy.jpg",
+    "description": "06 Days / 05 Nights Excursions from Kandy, Sigiriya & Colombo",
+    "price": "USD 250 "
+  },
+  {
+    "img": "/Tours/nallur.jpg",
+    "description": "Sri Lanka Classic & Northern Tour -10 Days / 09 Nights",
+    "price": "USD 350 "
   }
 ]
