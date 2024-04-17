@@ -12,14 +12,17 @@ import TourSlider from "@/components/TourSlider";
 export default function Home() {
   return (
     <>
-      {/** <MainMapConfigs> **/}
-      {/** <MainSlider />**/}
-      <TourSlider />
-      <AboutUs />
-      <AbooutSrilanka />
-      <Activities />
-      <Packages />
-      {/** </MainMapConfigs> **/}
+      <MainMapConfigs>
+        {/** <MainSlider />**/}
+        <div className="my-10">
+          <TourSlider />
+        </div>
+
+        <AboutUs />
+        <AbooutSrilanka />
+        <Activities />
+        <Packages />
+      </MainMapConfigs>
     </>
   );
 }
