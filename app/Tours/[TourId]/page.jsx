@@ -1,7 +1,7 @@
 import React from "react";
 
-const TourDetails = () => {
-  return <div>TourDetails</div>;
+const TourDetails = ({ params }) => {
+  return <div>TourDetails {params.tourId}</div>;
 };
 
 export default TourDetails;

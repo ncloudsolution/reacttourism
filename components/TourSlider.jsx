@@ -8,6 +8,7 @@ import SliderBtn from "./standalone/SliderBtn";
 import useWindowSize from "@/hooks/useWindowSize";
 import Title from "./standalone/Title";
 import TourSliderSkeleton from "./skeletonUI/compoundElements/TourSliderSkeleton";
+import Link from "next/link";
 
 const TourSlider = () => {
   const [windowWidth, windowHeight] = useWindowSize();
@@ -143,7 +144,8 @@ const TourSlider = () => {
             <div className="py-4 flex ">
               {repeatedArray.map((place, index) => (
                 //{placearray.map((place, index) => (
-                <div
+                <Link
+                  href={`/tours/${index}`}
                   style={{
                     transform: `translateX(-${
                       count * sliderWidth + translationOffset
@@ -174,7 +176,7 @@ const TourSlider = () => {
                     </span>
                     Price starts from
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
