@@ -11,6 +11,11 @@ import TourSliderSkeleton from "./skeletonUI/compoundElements/TourSliderSkeleton
 
 const TourSlider = () => {
   const [windowWidth, windowHeight] = useWindowSize();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Component has mounted in the client
+  }, []);
 
   console.log("customhook", windowWidth);
 
@@ -50,6 +55,8 @@ const TourSlider = () => {
   const [sliderWidth, setSliderWidth] = useState(0);
 
   function columnSizeByScreenSize() {
+    if (!isClient) return 1;
+
     if (windowWidth >= 1400) {
       return 4;
     } else if (windowWidth >= 1150) {
@@ -109,13 +116,17 @@ const TourSlider = () => {
           setCount(i);
         }}
         className={` ${
-          i === count % (hoppingSizeValue / multiplier)
+          i === count % Math.ceil(hoppingSizeValue / multiplier)
             ? "bg-primary"
             : "bg-slate-500"
         } size-[12px] rounded-full  flex`}
       />
     );
   }
+
+  console.log("count", count);
+  console.log("hop", hoppingSizeValue);
+  console.log(count % Math.ceil(hoppingSizeValue / multiplier));
 
   return (
     <>
@@ -171,7 +182,9 @@ const TourSlider = () => {
             <SliderBtn side={"right"} />
           </div>
         </div>
-        <div className="flex gap-2 flex-row bg-transparent">{dots}</div>
+        {isClient && ( // Render this div only on the client side
+          <div className="flex gap-2 flex-row bg-transparent">{dots}</div>
+        )}
       </div>
     </>
   );
