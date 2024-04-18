@@ -1,0 +1,74 @@
+[
+  {
+    "type": "adventure",
+    "img": "/DayTrips/adventureTiger.webp",
+    "duration": "8.5",
+    "description": "Arugambay to Yala: Wild Safari + Drop-off Flexibility",
+    "initialPrice": 234.77,
+    "discountedPrice": 206.6,
+    "tags": ["Small Groups", "Pickup available"]
+  },
+  {
+    "type": "water activity",
+    "img": "/DayTrips/waterActivity.webp",
+    "duration": "12",
+    "description": "Galle and Bentota Day-Tour From Colombo",
+    "initialPrice": null,
+    "discountedPrice": 60,
+    "tags": ["Pickup available"]
+  },
+  {
+    "type": "day trip",
+    "img": "/DayTrips/sigiriya.webp",
+    "duration": "14-16",
+    "description": "From Colombo: Sigiriya and Dambulla Day Trip and Safari",
+    "initialPrice": 70,
+    "discountedPrice": 63,
+    "tags": ["Pickup available"]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/udawalawa.webp",
+    "duration": "6-10",
+    "description": "Udawalawe: Private Safari All Inclusive Day Trip with Lunch",
+    "initialPrice": 118,
+    "discountedPrice": 112.1,
+    "tags": ["Pickup available"]
+  },
+  {
+    "type": "adventure",
+    "img": "/DayTrips/adventureTiger.webp",
+    "duration": "8.5",
+    "description": "Arugambay to Yala: Wild Safari + Drop-off Flexibility",
+    "initialPrice": 234.77,
+    "discountedPrice": 206.6,
+    "tags": ["Small Groups", "Pickup available"]
+  },
+  {
+    "type": "water activity",
+    "img": "/DayTrips/waterActivity.webp",
+    "duration": "12",
+    "description": "Galle and Bentota Day-Tour From Colombo",
+    "initialPrice": null,
+    "discountedPrice": 60,
+    "tags": ["Pickup available"]
+  },
+  {
+    "type": "day trip",
+    "img": "/DayTrips/sigiriya.webp",
+    "duration": "14-16",
+    "description": "From Colombo: Sigiriya and Dambulla Day Trip and Safari",
+    "initialPrice": 70,
+    "discountedPrice": 63,
+    "tags": ["Pickup available"]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/udawalawa.webp",
+    "duration": "6-10",
+    "description": "Udawalawe: Private Safari All Inclusive Day Trip with Lunch",
+    "initialPrice": 118,
+    "discountedPrice": 112.1,
+    "tags": ["Pickup available"]
+  }
+]
