@@ -4,27 +4,77 @@ import Title from "./standalone/Title";
 import Link from "next/link";
 import Image from "next/image";
 import daytrips from "@/data/daytrips.json";
-import { PriceLowToHigh } from "@/libs/priceSortings";
+import {
+  PriceLowToHigh,
+  PriceHighToLow,
+  PriceRange,
+} from "@/libs/PriceSortings";
 
 const DayTrips = () => {
+  const [minVal, setMinVal] = useState(0);
+  const [maxVal, setMaxVal] = useState(100);
+
   const [finalFilterdArray, setFinalFilterdArray] = useState([...daytrips]);
 
   const handlePriceLowToHigh = () => {
-    console.log("hi");
     const lowToHighValue = PriceLowToHigh();
-    console.log(lowToHighValue);
     setFinalFilterdArray(lowToHighValue);
-    console.log("hello");
+    console.log("low to high");
   };
+
+  const handlePriceHighToLow = () => {
+    const highToLowValue = PriceHighToLow();
+    setFinalFilterdArray(highToLowValue);
+    console.log("high to low");
+  };
+
+  const handleSubmitRange = (e) => {
+    e.preventDefault();
+    const priceRangeValue = PriceRange(minVal, maxVal);
+    setFinalFilterdArray(priceRangeValue);
+    console.log("hi");
+  };
+
   return (
     <div className="w-full flex flex-col text-center items-center">
       <Title title={"Day Trips"} />
-      <button
-        className="bg-black text-white p-2"
-        onClick={handlePriceLowToHigh}
-      >
-        sort
-      </button>
+      <div className="flex gap-2">
+        <div className="flex gap-1 border-[1px] border-primary p-3">
+          <form onSubmit={handleSubmitRange}>
+            <input
+              type="number"
+              onChange={(e) => setMinVal(e.target.value)}
+              value={minVal}
+              min={0}
+              className="border-[1px] border-slate-600"
+            />
+            <input
+              type="number"
+              onChange={(e) => setMaxVal(e.target.value)}
+              value={maxVal}
+              className="border-[1px] border-slate-600"
+            />
+            <input
+              type="submit"
+              value="submit"
+              className="bg-black text-white p-2"
+            />
+          </form>
+        </div>
+        <button
+          className="bg-black text-white p-2"
+          onClick={handlePriceLowToHigh}
+        >
+          sort low to high
+        </button>
+        <button
+          className="bg-black text-white p-2"
+          onClick={handlePriceHighToLow}
+        >
+          sort high to low
+        </button>
+      </div>
+
       <div className="flex items-center">
         <div className="py-4 w-full grid midxl:grid-cols-4 mobile:grid-cols-3 bigmd:grid-cols-2 grid-cols-1">
           {finalFilterdArray.map((place, index) => (
