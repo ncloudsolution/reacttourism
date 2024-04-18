@@ -45,7 +45,7 @@ const Activities = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[600px] text-center">
-              <h1 className=" mb-[30px]">Top Destination in Sri Lanka</h1>
+              <h1 className=" mb-[30px]">Top Activities in Sri Lanka</h1>
               <p className="text-base ">{textcontent.activities_txt1}</p>
             </div>
           </div>
