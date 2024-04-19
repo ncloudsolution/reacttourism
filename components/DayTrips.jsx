@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Title from "./standalone/Title";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,22 +9,79 @@ import {
   PriceHighToLow,
   PriceRange,
 } from "@/libs/PriceSortings";
+import { SelectiveMinMaxDuration } from "@/libs/TimeDurationSorting";
+
+import BlankFilter from "./Exceptions/BlankFilter";
 
 const DayTrips = () => {
   const [minVal, setMinVal] = useState(0);
   const [maxVal, setMaxVal] = useState(100);
 
+  const [durationMinVal, setDurationMinVal] = useState(0);
+  const [durationMaxVal, setDurationMaxVal] = useState(100);
+
   const [finalFilterdArray, setFinalFilterdArray] = useState([...daytrips]);
+
+  const [isClickedPrice, setIsClickedPrice] = useState(false);
+  const PriceRef = useRef();
+
+  const selectOptions = [
+    { lable: "Duration", minvalue: 0, maxvalue: 100 },
+    { lable: "0-3", minvalue: 0, maxvalue: 3 },
+    { lable: "3-5", minvalue: 3, maxvalue: 5 },
+    { lable: "5-7", minvalue: 5, maxvalue: 7 },
+    { lable: "Full day (7+ hours)", minvalue: 7, maxvalue: 24 },
+    { lable: "2 days", minvalue: 24, maxvalue: 48 },
+  ];
+
+  const handleChangeDuration = (e) => {
+    const selectedOption = selectOptions[e.target.value];
+    setDurationMinVal(selectedOption.minvalue);
+    setDurationMaxVal(selectedOption.maxvalue);
+  };
+
+  const handleClickOutside = (e) => {
+    if (PriceRef.current && !PriceRef.current.contains(e.target)) {
+      setIsClickedPrice(false);
+    }
+  };
+
+  //use for selctive hour range instant ui update and initial rendering
+  useEffect(() => {
+    console.log(`Min Duration: ${durationMinVal}`);
+    console.log(`Max Duration: ${durationMaxVal}`);
+    const SelectiveMinMaxDurationValue = SelectiveMinMaxDuration(
+      durationMinVal,
+      durationMaxVal
+    );
+    setFinalFilterdArray(SelectiveMinMaxDurationValue);
+  }, [durationMinVal, durationMaxVal]);
+
+  //for click outside events
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [isClickedPrice]);
 
   const handlePriceLowToHigh = () => {
     const lowToHighValue = PriceLowToHigh();
     setFinalFilterdArray(lowToHighValue);
+    setTimeout(() => {
+      setIsClickedPrice(false);
+    }, 100);
+
     console.log("low to high");
   };
 
   const handlePriceHighToLow = () => {
     const highToLowValue = PriceHighToLow();
     setFinalFilterdArray(highToLowValue);
+    setTimeout(() => {
+      setIsClickedPrice(false);
+    }, 100);
+
     console.log("high to low");
   };
 
@@ -32,48 +89,104 @@ const DayTrips = () => {
     e.preventDefault();
     const priceRangeValue = PriceRange(minVal, maxVal);
     setFinalFilterdArray(priceRangeValue);
+    setIsClickedPrice(false);
     console.log("hi");
   };
 
   return (
-    <div className="w-full flex flex-col text-center items-center">
+    <div className="w-full flex flex-col text-center items-center ">
       <Title title={"Day Trips"} />
-      <div className="flex gap-2">
-        <div className="flex gap-1 border-[1px] border-primary p-3">
-          <form onSubmit={handleSubmitRange}>
-            <input
-              type="number"
-              onChange={(e) => setMinVal(e.target.value)}
-              value={minVal}
-              min={0}
-              className="border-[1px] border-slate-600"
-            />
-            <input
-              type="number"
-              onChange={(e) => setMaxVal(e.target.value)}
-              value={maxVal}
-              className="border-[1px] border-slate-600"
-            />
-            <input
-              type="submit"
-              value="submit"
-              className="bg-black text-white p-2"
-            />
-          </form>
+      <div className="flex gap-2 flex-col midxl:w-[1330px] mobile:w-[1000px] bigmd:w-[666px] sm:w-[300px] xs:w-[350px] xxs:w-[310px] xxxs:w-[285px] w-[240px] px-4">
+        <div className="flex flex-col">
+          <div className="flex items-center gap-x-3">
+            <div
+              className="font-semibold px-4 h-[40px] text-primary flex items-center border-[1px] border-primary rounded "
+              onClick={() => setIsClickedPrice(true)}
+            >
+              Price
+            </div>
+
+            {/** duration drop down**/}
+            <div className="flex gap-2 w-[300px] h-[40px]  border-primary border-[1px] outline-none my-2 rounded overflow-hidden ">
+              <select
+                className="w-full outline-none font-semibold text-primary bg-white"
+                onChange={handleChangeDuration}
+              >
+                {selectOptions.map((option, index) => (
+                  <option key={index} value={index} className="text-black">
+                    {option.lable}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="flex justify-start relative">
+            {isClickedPrice && (
+              <div className="flex absolute z-50 ">
+                <div
+                  className="flex flex-col gap-1  p-3 rounded bg-white shadow-popshadow"
+                  ref={PriceRef}
+                >
+                  <div className="flex gap-x-3 sm:justify-start   justify-between mb-2">
+                    <button
+                      className="active:bg-primary active:text-white transition-all duration-200 border-black border-[1px] p-2 rounded text-[14px] xxxs:text-[16px]"
+                      onClick={handlePriceLowToHigh}
+                    >
+                      Low to high
+                    </button>
+                    <button
+                      className="active:bg-primary active:text-white border-black transition-all duration-200 border-[1px] p-2 rounded text-[14px] xxxs:text-[16px]"
+                      onClick={handlePriceHighToLow}
+                    >
+                      High to low
+                    </button>
+                  </div>
+
+                  <form onSubmit={handleSubmitRange} className="flex flex-col">
+                    <div className="flex bigmd:flex-row flex-col gap-x-2">
+                      <div>
+                        <div className="text-left mb-1">Min. price</div>
+                        <div className="flex border-[1px] border-slate-600 p-2 bigmd:w-[200px] w-full">
+                          <div className="px-2">$</div>
+                          <input
+                            type="number"
+                            onChange={(e) => setMinVal(e.target.value)}
+                            value={minVal}
+                            min={0}
+                            className="outline-none w-full"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="text-left mb-1">Max. price</div>
+                        <div className="flex border-[1px] border-slate-600 p-2 bigmd:w-[200px] w-full ">
+                          <div className="px-2">$</div>
+                          <input
+                            type="number"
+                            onChange={(e) => setMaxVal(e.target.value)}
+                            value={maxVal}
+                            className="outline-none w-full"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <input
+                      type="submit"
+                      value="Submit"
+                      className="bg-primary text-white p-2 my-2 rounded"
+                    />
+                  </form>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-        <button
-          className="bg-black text-white p-2"
-          onClick={handlePriceLowToHigh}
-        >
-          sort low to high
-        </button>
-        <button
-          className="bg-black text-white p-2"
-          onClick={handlePriceHighToLow}
-        >
-          sort high to low
-        </button>
       </div>
+
+      {/** when there is no search on filter**/}
+      {finalFilterdArray.length == 0 && <BlankFilter />}
 
       <div className="flex items-center">
         <div className="py-4 w-full grid midxl:grid-cols-4 mobile:grid-cols-3 bigmd:grid-cols-2 grid-cols-1">
@@ -82,7 +195,7 @@ const DayTrips = () => {
             <Link
               href={`/daytrips/${index}`}
               key={index}
-              className="flex flex-col text-left  overflow-hidden   bigmd:w-[300px] sm:w-[265px] xs:w-[315px] xxs:w-[275px] xxxs:w-[250px] w-[220px] h-[450px]  rounded-xl shadow-lg xxxs:m-4 m-2 transition-all duration-3000 "
+              className="flex flex-col text-left  overflow-hidden   bigmd:w-[300px] sm:w-[500px] xs:w-[315px] xxs:w-[275px] xxxs:w-[250px] w-[220px] h-[450px]  rounded-xl shadow-lg xxxs:m-4 m-2 transition-all duration-3000 "
             >
               <div className="h-[550px] rounded-t-lg relative overflow-hidden">
                 <Image
@@ -107,8 +220,13 @@ const DayTrips = () => {
                   </div>
 
                   <div className="flex flex-wrap text-[14px] my-2 ">
-                    <span className="font-semibold  mr-2">
-                      {place.duration} hours
+                    <span className="font-semibold mr-2">
+                      {place.minduration}
+                      {place.maxduration &&
+                      place.maxduration !== place.minduration
+                        ? ` - ${place.maxduration}`
+                        : ""}{" "}
+                      hours
                     </span>
                     {place.tags.map((tag, index) => (
                       <div key={index} className="flex items-center">

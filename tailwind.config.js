@@ -12,9 +12,10 @@ module.exports = {
         2000: "2000ms",
         3000: "3000ms",
       },
-
       boxShadow: {
         shimmershadow: "0 0 30px 30px rgba(255, 255, 255, 0.05)",
+        popshadow:
+          "-2px 8px 10px 4px rgba(0, 0, 0, 0.05), 2px -8px 10px 4px rgba(0, 0, 0, 0.05)",
       },
 
       screens: {

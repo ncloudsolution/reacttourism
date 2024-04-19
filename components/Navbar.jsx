@@ -59,7 +59,7 @@ function NavBar() {
                   </Link>
                 </li>
                 <li className=" text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/About" onClick={() => setNavbar(!navbar)}>
+                  <Link href="/about" onClick={() => setNavbar(!navbar)}>
                     About
                   </Link>
                 </li>
