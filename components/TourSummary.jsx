@@ -5,8 +5,11 @@ import Image from "next/image";
 
 import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import { useRouter } from "next/navigation";
 
 const TourSummary = () => {
+  const router = useRouter();
+
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
   const [responseMessage, setResponseMessage] = useState("");
@@ -66,7 +69,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
     formData.append("clientmail", cusEmailRef.current.value); // Set the sender's email here
 
     try {
-      const response = await fetch("/api/sendEmail", {
+      const response = await fetch("/api/bookingEmail", {
         method: "POST",
         body: formData, // FormData will be sent as `multipart/form-data`
       });
@@ -75,12 +78,21 @@ selected Vehicle: ${tourDetails.vehicleType}`;
       //alert(result.message);
       setIsLoading(false); // Stop loading
       setResponseMessage(result.message); // Set the message from the server
+
+      setTimeout(() => {
+        router.push("/"); // Redirect to the homepage after 2 seconds
+      }, 2000);
+
       console.log("msg send");
     } catch (error) {
       console.error("Error:", error);
       // alert("Failed to send the file.");
       setIsLoading(false); // Stop loading
       setResponseMessage("Failed to make the order. Please try again.");
+
+      setTimeout(() => {
+        router.push("/"); // Redirect to the homepage after 2 seconds
+      }, 2000);
     }
 
     setSubmitError("");
