@@ -28,6 +28,7 @@ const TourSummary = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     if (
       cusNameRef.current.value === "" ||
@@ -58,7 +59,7 @@ Mobile No: ${cusMobileRef.current.value}
 Luggage Count: ${cusLuggageCountRef.current.value}
 selected Vehicle: ${tourDetails.vehicleType}`;
 
-    setIsLoading(true); // Start loading
+    // Start loading
     setResponseMessage("");
 
     const formData = new FormData();
