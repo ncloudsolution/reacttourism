@@ -97,7 +97,7 @@ const ContactUsForm = () => {
     <>
       <div className="w-full border-2 border-transparent relative flex flex-col items-center xs:my-28 my-5">
         {(isLoading || responseMessage) && (
-          <div className="absolute top-0 left-0 bottom-0 bg-white right-0 w-full  z-50 border-2 border-red-700  flex justify-center items-center">
+          <div className="absolute top-0 left-0 bottom-0 bg-white right-0 w-full  z-50 border-2 border-transparent flex justify-center items-center">
             {/* Your form or component elements go here */}
             {isLoading && <div>Sending email...</div>}{" "}
             {/* Display a loading message */}
