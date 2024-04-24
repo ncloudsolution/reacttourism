@@ -68,7 +68,7 @@ const MainTab = () => {
           <div
             className={`${
               isPointToPointClicked ? "bg-primary" : "bg-black"
-            } p-1 px-2  text-white rounded cursor-pointer`}
+            } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
             onClick={handlePointToPoint}
           >
             Point to Point
@@ -76,7 +76,7 @@ const MainTab = () => {
           <div
             className={`${
               isAirportClicked ? "bg-primary" : "bg-black"
-            } p-1 px-2  text-white rounded cursor-pointer`}
+            } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
             onClick={handleAirport}
           >
             Airport Transport
@@ -84,7 +84,7 @@ const MainTab = () => {
           <div
             className={`${
               isTrainClicked ? "bg-primary" : "bg-black"
-            } p-1 px-2  text-white rounded cursor-pointer`}
+            } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
             onClick={handleTrain}
           >
             Train booking
