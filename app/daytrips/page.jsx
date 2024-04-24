@@ -1,7 +1,12 @@
+import DayTrips from "@/components/DayTrips";
 import React from "react";
 
-const DayTrips = () => {
-  return <div>DayTrips</div>;
-};
+function page() {
+  return (
+    <>
+      <DayTrips />
+    </>
+  );
+}
 
-export default DayTrips;
+export default page;

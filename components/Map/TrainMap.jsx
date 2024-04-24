@@ -1,6 +1,5 @@
 "use client";
 import {
-  useJsApiLoader,
   GoogleMap,
   Marker,
   Autocomplete,
@@ -15,24 +14,14 @@ import { SelectVehiclesList } from "@/libs/calculations";
 import { TourContext } from "@/context/TourContextProvider";
 import { RetrunTimeValidity, StartTimeValidity } from "@/libs/TimeValidity";
 
-import CarSkeleton from "../skeletonUI/compoundElements/CarSkeleton";
 import CustomDatePicker from "../CustomDatePicker";
-import ContextCheckerComp from "../TourSummary";
 
 import { IoIosCloseCircle } from "react-icons/io";
+import { FaTrain } from "react-icons/fa6";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
-const libraries = ["places"];
-
-const MainMapConfigs = ({ children }) => {
-  setTimeout(() => {}, 1000);
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
-    region: "lk",
-    libraries: libraries,
-  });
-
+const AirportMap = ({ children }) => {
   const router = useRouter();
 
   const [map, setMap] = useState(/** @type google.maps.Map*/ (null));
@@ -61,25 +50,6 @@ const MainMapConfigs = ({ children }) => {
 
   const [returnDate, setReturnDate] = useState(new Date());
 
-  console.log(isLoaded, "is loaded 1");
-
-  const [showSkeleton, setShowSkeleton] = useState(true);
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShowSkeleton(false);
-    }, 2000); // 3 seconds delay - 1s for google api load and 2 second timeout
-    return () => clearTimeout(timeoutId);
-  }, []);
-
-  if (!isLoaded || showSkeleton) {
-    return (
-      <>
-        <CarSkeleton />
-      </>
-    );
-  }
-  console.log(isLoaded, "is loaded 2");
-
   async function calculateRoute() {
     if (
       originRef.current.value === "" ||
@@ -102,7 +72,7 @@ const MainMapConfigs = ({ children }) => {
       const results = await directionService.route({
         origin: originRef.current.value,
         destination: destinationRef.current.value,
-        travelMode: google.maps.TravelMode.DRIVING,
+        travelMode: google.maps.TravelMode.TRANSIT,
       });
 
       setSubmitError("");
@@ -154,11 +124,12 @@ const MainMapConfigs = ({ children }) => {
 
   return (
     <>
-      <div>
-        <div className="w-full flex flex-col items-center justify-center ">
-          <div className="text-[30px] mt-[50px] mb-[30px] font-medium">
-            Find your Driver
+      <div className="flex flex-col items-center w-full">
+        <div className="w-fit flex flex-col items-center justify-center ">
+          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[50px] mb-[10px] font-medium ">
+            Journey On Rails
           </div>
+          <FaTrain className="text-[30px] text-primary mb-2" />
           <div className="flex my-4 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-fit xxxs:w-[250px] w-[230px]">
             <div className="flex flex-col gap-y-3 w-full">
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
@@ -344,4 +315,4 @@ const MainMapConfigs = ({ children }) => {
   );
 };
 
-export default MainMapConfigs;
+export default AirportMap;
