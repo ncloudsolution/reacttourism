@@ -205,7 +205,7 @@ const PointToPointMap = ({ children }) => {
 
                     <IoIosCloseCircle
                       size={25}
-                      className="absolute cursor-pointer bigmd:left-[450px] bxs:left-[320px] left-[195px] bigmd:top-[6px] bxs:top-[58px] top-[58px]"
+                      className="absolute cursor-pointer bigmd:left-[450px] bxs:left-[320px] xxxs:left-[180px] left-[165px] bigmd:top-[6px] bxs:top-[58px] top-[58px]"
                       onClick={() => setReturnTour(false)}
                     />
                   </>

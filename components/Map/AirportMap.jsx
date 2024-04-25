@@ -151,9 +151,14 @@ const AirportMap = ({ children }) => {
     setDistance("");
     setDuration("");
     setIsSubmit(false);
-    originRef.current.value = "";
-    destinationRef.current.value = "";
+
     passengerCountRef.current.value = "";
+
+    if (isDrop) {
+      originRef.current.value = "";
+    } else {
+      destinationRef.current.value = "";
+    }
   }
 
   return (
@@ -232,7 +237,7 @@ const AirportMap = ({ children }) => {
 
                     <IoIosCloseCircle
                       size={25}
-                      className="absolute cursor-pointer bigmd:left-[450px] bxs:left-[320px] left-[195px] bigmd:top-[6px] bxs:top-[58px] top-[58px]"
+                      className="absolute cursor-pointer bigmd:left-[450px] bxs:left-[320px] xxxs:left-[180px] left-[165px] bigmd:top-[6px] bxs:top-[58px] top-[58px]"
                       onClick={() => setReturnTour(false)}
                     />
                   </>
