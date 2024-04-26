@@ -7,13 +7,7 @@
         "trainPoints": ["Colombo Fort", "Badulla"],
         "trainTime": ["06:30", "17:37"],
         "travelTime": ["06:30", "09:18"],
-        "availableDays": [
-          "Sunday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
+        "availableDays": ["Sun", "Tue - Fri"],
         "types": [
           {
             "class": "Air Conditioned Saloon",
@@ -37,13 +31,7 @@
         "trainPoints": ["Colombo Fort", "Badulla"],
         "trainTime": ["05:30", "17:30"],
         "travelTime": ["05:30", "08:13"],
-        "availableDays": [
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
+        "availableDays": ["Tue - Sat"],
 
         "types": [
           {
@@ -73,7 +61,7 @@
         "trainPoints": ["Colombo Fort", "Batticaloa"],
         "trainTime": ["06:05", "14:20"],
         "travelTime": ["06:30", "12:37"],
-        "availableDays": ["Sunday", "Tuesday", "Wednesday"],
+        "availableDays": ["Sun", "Tue - Wed", "Fri"],
         "types": [
           {
             "class": "Second Class Reserved Seats",
@@ -84,10 +72,10 @@
       },
       {
         "trainName": "6075 Batticalo Special ",
-        "trainPoints": ["Colombo Fort", "Batticalo"],
+        "trainPoints": ["Colombo Fort", "Batticaloa"],
         "trainTime": ["15:05", "21:52"],
         "travelTime": ["15:05", "20:13"],
-        "availableDays": ["Thursday", "Friday", "Saturday"],
+        "availableDays": ["Thu - Sat"],
 
         "types": [
           {
@@ -104,10 +92,10 @@
       },
       {
         "trainName": "6079 Intercity Express",
-        "trainPoints": ["Colombo Fort", "Batticalo"],
+        "trainPoints": ["Colombo Fort", "Batticaloa"],
         "trainTime": ["19:00", "01:36"],
         "travelTime": ["19:00", "00:13"],
-        "availableDays": ["Thursday", "Friday", "Saturday"],
+        "availableDays": ["Mon", "Thu - Sat"],
 
         "types": [
           {

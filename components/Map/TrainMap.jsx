@@ -67,7 +67,7 @@ const TrainMap = ({ children }) => {
             Journey On Rails
           </div>
           <FaTrain className="text-[30px] text-primary mb-2" />
-          <div className="flex my-4 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-[330px] xxxs:w-[250px] w-[230px]">
+          <div className="flex my-4 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]">
             <div className="flex flex-col gap-y-3 w-full">
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 bigmd:w-[778px] w-full">
                 {/**750px**/}
@@ -137,39 +137,107 @@ const TrainMap = ({ children }) => {
               {filterdTrains.map((train, index) => (
                 <div
                   key={index}
-                  className="bigmd:w-full bxs:w-[400px] xxs:w-[330px] xxxs:w-[250px] w-[230px]"
+                  className="bigmd:w-full bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]"
                 >
                   <div className="flex flex-col ">
                     <div>
                       {train.trainList.map((train, index) => (
                         <div
                           key={index}
-                          className="my-3 w-full p-2 border-[1px] border-black rounded"
+                          className="my-3 w-full  px-4 border-[1px] border-black rounded"
                         >
-                          <div>{train.trainName}</div>
-                          <div>
-                            {train.trainPoints[0]} to {train.trainPoints[1]}
-                          </div>
-                          <div>
-                            {train.travelTime[0]} to {train.travelTime[1]}
-                          </div>
-                          <div className="flex bxs:flex-row flex-col">
-                            {train.availableDays.map((day, index) => (
-                              <div key={index}>
-                                <div className="pr-2"> {day}</div>
+                          {" "}
+                          {/**upper section over the line**/}
+                          <div className="w-full bigmd:py-3 py-[10px] bigmd:gap-y-0 gap-y-[2px] flex bigmd:flex-row flex-col justify-between items-center  border-b-black border-b-[2px]">
+                            <div className="bigmd:text-[26px] bxs:text-[20px]  xxs:text-[18px] text-[17px] font-semibold ">
+                              {train.trainName}
+                            </div>
+                            <div className="flex bigmd:gap-x-4  gap-x-6  text-[#6c6c6c]">
+                              <div className="flex flex-col items-center ">
+                                <div className="font-semibold text-[12px] bxs:text-[16px] ">
+                                  {train.trainPoints[0]}
+                                </div>
+                                <div className="bigmd:text-[12px] text-[11px]">
+                                  {train.trainTime[0]}
+                                </div>
                               </div>
-                            ))}
+                              <div className="flex flex-col items-center">
+                                <div className="font-semibold text-[12px] bxs:text-[16px]">
+                                  {train.trainPoints[1]}
+                                </div>
+                                <div className="bigmd:text-[12px] text-[11px]">
+                                  {train.trainTime[1]}
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div>
+                          {/**arrive departs**/}
+                          <div className="flex justify-between items-center my-3">
+                            <div className="flex flex-col my-2 bxs:text-[18px] xxs:text-[16px] text-[14px]">
+                              <div className="flex gap-x-3">
+                                <div className="bxs:w-[70px] w-[50px] font-semibold ">
+                                  Departs
+                                </div>
+                                <div className="font-medium text-primary">
+                                  {train.travelTime[0]}
+                                </div>
+                              </div>
+                              <div className="flex gap-x-3">
+                                <div className="bxs:w-[70px] w-[50px] font-semibold">
+                                  Arrives
+                                </div>
+                                <div className="font-medium text-errorpink">
+                                  {train.travelTime[1]}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/**days**/}
+                            <div className="flex gap-2 flex-wrap justify-end">
+                              {train.availableDays.map((day, index) => (
+                                <div key={index}>
+                                  <div className="bigmd:py-2 py-[6px] bigmd:text-[16px] text-[14px] bigmd:px-3 px-2 rounded bg-[#eeeeee] shadow font-medium">
+                                    {day}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          {/**class**/}
+                          <div className="my-5">
                             {train.types.map((type, index) => (
-                              <div key={index}>
-                                <div className="flex gap-2">
+                              <div key={index} className="my-2">
+                                <div
+                                  className={` ${
+                                    type.class === "Air Conditioned Saloon"
+                                      ? "bg-yellow-200 text-black"
+                                      : type.class === "Observation Saloon"
+                                      ? "bg-green-200 text-white"
+                                      : type.class ===
+                                        "Second Class Reserved Seats"
+                                      ? "bg-primary text-white"
+                                      : type.class ===
+                                        "Third Class Reserved Seats"
+                                      ? "bg-red-700 text-white"
+                                      : type.class === "First Class Sleeperetts"
+                                      ? "bg-amber-500 text-white"
+                                      : type.class ===
+                                        "Second Class Sleeperetts"
+                                      ? "bg-slate-500 text-white"
+                                      : type.class === "Third Class Sleeperetts"
+                                      ? "bg-purple-400"
+                                      : "bg-pink-300"
+                                  } flex  justify-between gap-2 p-2 text-[11px] xxxs:text-[12px] xxs:text-[14px] bxs:text-[16px] rounded`}
+                                >
                                   <div>{type.class}</div>
-                                  <div>----</div>
                                   <div>{type.price}</div>
                                 </div>
                               </div>
                             ))}
+                          </div>
+                          {/**select button**/}
+                          <div className="bg-black rounded w-full text-white font-semibold p-3 text-center mb-3 -mt-1">
+                            Select This Train
                           </div>
                         </div>
                       ))}
