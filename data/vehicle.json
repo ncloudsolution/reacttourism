@@ -2,43 +2,43 @@
   {
     "type": "Sedan Car",
     "passengers": 3,
-    "weightFactor": 150,
-    "img": "/Vehicles/sedan.png"
+    "weightFactor": 160,
+    "img": "/Vehicles/sedan.png",
+    "luggages": 3
   },
   {
     "type": "Mini Van",
-    "passengers": 6,
-    "weightFactor": 200,
-    "img": "/Vehicles/minivan.png"
+    "passengers": 4,
+    "weightFactor": 150,
+    "img": "/Vehicles/minivan.png",
+    "luggages": 4
   },
   {
-    "type": "MPV",
-    "passengers": 4,
-    "weightFactor": 220,
-    "img": "/Vehicles/mpv4.png"
+    "type": "Mini Car",
+    "passengers": 2,
+    "weightFactor": 125,
+    "img": "/Vehicles/mpv4.png",
+    "luggages": 0
   },
   {
     "type": "Mini Bus",
-    "passengers": 7,
+    "passengers": 8,
     "weightFactor": 250,
-    "img": "/Vehicles/minibus.png"
+    "img": "/Vehicles/highroof.png",
+    "luggages": 10
   },
   {
-    "type": "Private Transfer",
-    "passengers": 15,
-    "weightFactor": 300,
-    "img": "/Vehicles/privatetransport.png"
+    "type": "Flex",
+    "passengers": 2,
+    "weightFactor": 115,
+    "img": "/Vehicles/alto.png",
+    "luggages": 2
   },
   {
-    "type": "Bus",
-    "passengers": 20,
-    "weightFactor": 320,
-    "img": "/Vehicles/bus.png"
-  },
-  {
-    "type": "Mercedence E Class",
-    "passengers": 3,
-    "weightFactor": 250,
-    "img": "/Vehicles/mercedence_eclass.png"
+    "type": "Van",
+    "passengers": 5,
+    "weightFactor": 220,
+    "img": "/Vehicles/kdh.png",
+    "luggages": 6
   }
 ]

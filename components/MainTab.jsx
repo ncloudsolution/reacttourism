@@ -14,8 +14,8 @@ import { FaTrain } from "react-icons/fa6";
 import { IoCarSportSharp } from "react-icons/io5";
 
 const MainTab = () => {
-  const [isPointToPointClicked, setIsPointToPointClicked] = useState(true);
-  const [isAirportClicked, setIsAirportClicked] = useState(false);
+  const [isPointToPointClicked, setIsPointToPointClicked] = useState(false);
+  const [isAirportClicked, setIsAirportClicked] = useState(true);
   const [isTrainClicked, setIsTrainClicked] = useState(false);
 
   const [showSkeleton, setShowSkeleton] = useState(true);
@@ -67,20 +67,22 @@ const MainTab = () => {
         <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px] translate-y-8">
           <div
             className={`${
-              isPointToPointClicked ? "bg-primary" : "bg-black"
-            } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
-            onClick={handlePointToPoint}
-          >
-            Point to Point
-          </div>
-          <div
-            className={`${
               isAirportClicked ? "bg-primary" : "bg-black"
             } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
             onClick={handleAirport}
           >
             Airport Transport
           </div>
+
+          <div
+            className={`${
+              isPointToPointClicked ? "bg-primary" : "bg-black"
+            } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
+            onClick={handlePointToPoint}
+          >
+            Point to Point
+          </div>
+
           <div
             className={`${
               isTrainClicked ? "bg-primary" : "bg-black"

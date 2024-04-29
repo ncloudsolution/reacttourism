@@ -332,6 +332,9 @@ const AirportMap = ({ children }) => {
                       <div className="text-black text-[20px] ">
                         Passengers {vehicle.passengers}
                       </div>
+                      <div className="text-black text-[20px] ">
+                        Luggages {vehicle.luggages}
+                      </div>
                       <div className="bg-black text-white py-2 rounded w-full text-center">
                         Price Rs.{vehicle.price}
                       </div>
@@ -346,6 +349,7 @@ const AirportMap = ({ children }) => {
                             weightFactor: vehicle.weightFactor,
                             price: vehicle.price,
                             image: vehicle.img,
+                            luggages: vehicle.luggages,
 
                             origin: originRef.current.value,
                             destination: destinationRef.current.value,

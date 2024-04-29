@@ -28,7 +28,6 @@ const TourSummary = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true);
 
     if (
       cusNameRef.current.value === "" ||
@@ -40,6 +39,17 @@ const TourSummary = () => {
         "Fill all the fields & submit the reference document"
       );
     }
+
+    if (
+      cusLuggageCountRef.current.value != 0 &&
+      cusLuggageCountRef.current.value >= tourDetails.luggages
+    ) {
+      return setSubmitError(
+        "You Exceeded the luggage maximum count of this vehical please change the luggage count or change the vehical"
+      );
+    }
+
+    setIsLoading(true);
 
     setTourDetails((prevDetails) => ({
       ...prevDetails,
@@ -288,7 +298,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                   <div className="mt-4">Tour</div>
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
 
-                  <div className="bxs:bxs:w-[400px] w-full flex ">
+                  <div className="bxs:bxs:w-[400px] w-full ">
                     <span className="bxs:w-[180px] w-[150px] bg-transparent">
                       Origin
                     </span>
@@ -296,10 +306,10 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:w-[180px] w-[150px] bg-transparent ">
                       Destination
                     </span>
-                    <span className="font-normal">
+                    <span className="font-normal ">
                       {tourDetails.destination}
                     </span>
                   </div>
