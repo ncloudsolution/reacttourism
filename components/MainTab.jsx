@@ -99,18 +99,19 @@ const MainTab = () => {
           </Link>
         </div>
         <div className="bigmd:hidden  flex gap-3 my-3 text-[30px] text-white translate-y-8 bxs:justify-start justify-center w-full">
-          <RiPinDistanceFill
-            onClick={handlePointToPoint}
-            className={`${
-              isPointToPointClicked ? "bg-primary" : "bg-black"
-            } bxs:size-[40px] size-[35px] rounded p-[6px]`}
-          />
           <MdLocalAirport
             onClick={handleAirport}
             className={` ${
               isAirportClicked ? "bg-primary" : "bg-black"
             } bxs:size-[40px] size-[35px]   rounded p-[6px]`}
           />
+          <RiPinDistanceFill
+            onClick={handlePointToPoint}
+            className={`${
+              isPointToPointClicked ? "bg-primary" : "bg-black"
+            } bxs:size-[40px] size-[35px] rounded p-[6px]`}
+          />
+
           <FaTrain
             onClick={handleTrain}
             className={`${
@@ -121,8 +122,9 @@ const MainTab = () => {
             <IoCarSportSharp className="bxs:size-[40px] size-[35px]  bg-black rounded p-[6px]" />
           </Link>
         </div>
-        {isPointToPointClicked && <PointToPointMap isLoaded={isLoaded} />}
-        {isAirportClicked && <AirportMap />}
+        {isAirportClicked && <AirportMap isLoaded={isLoaded} />}
+        {isPointToPointClicked && <PointToPointMap />}
+
         {isTrainClicked && <TrainMap />}
       </div>
     </div>

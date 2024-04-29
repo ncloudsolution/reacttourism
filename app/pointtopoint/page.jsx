@@ -29,7 +29,7 @@ const PtoP = () => {
     );
   }
   return (
-    <div className="min-h-[90vh] flex justify-center items-center">
+    <div className="xs:min-h-[90vh] min-h-[70vh] flex justify-center items-center">
       <div className=" -translate-y-9">
         <PointToPointMap />
       </div>
