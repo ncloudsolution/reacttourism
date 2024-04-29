@@ -294,22 +294,24 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                 {/**customer over**/}
 
                 {/**Tour**/}
-                <div className="bigmd:w-[360px] w-full border-2 border-transparent">
+                <div className="bigmd:w-[380px] w-full border-2 border-transparent">
                   <div className="mt-4">Tour</div>
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
 
-                  <div className="bxs:bxs:w-[400px] w-full ">
+                  <div className="bxs:bxs:w-[400px] w-full  flex ">
                     <span className="bxs:w-[180px] w-[150px] bg-transparent">
                       Origin
                     </span>
-                    <span className="font-normal">{tourDetails.origin}</span>
+                    <span className="font-normal  w-[200px]">
+                      {tourDetails.origin}
+                    </span>
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex ">
                     <span className="bxs:w-[180px] w-[150px] bg-transparent ">
                       Destination
                     </span>
-                    <span className="font-normal ">
+                    <span className="font-normal w-[200px] ">
                       {tourDetails.destination}
                     </span>
                   </div>

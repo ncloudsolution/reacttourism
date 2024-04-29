@@ -18,7 +18,7 @@
     "passengers": 2,
     "weightFactor": 125,
     "img": "/Vehicles/mpv4.png",
-    "luggages": 0
+    "luggages": 2
   },
   {
     "type": "Mini Bus",
@@ -40,5 +40,12 @@
     "weightFactor": 220,
     "img": "/Vehicles/kdh.png",
     "luggages": 6
+  },
+  {
+    "type": "SUV",
+    "passengers": 3,
+    "weightFactor": 180,
+    "img": "/Vehicles/vezzel.png",
+    "luggages": 3
   }
 ]
