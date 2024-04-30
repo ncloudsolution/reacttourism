@@ -18,7 +18,6 @@ import CustomDatePicker from "../CustomDatePicker";
 
 import { IoIosCloseCircle } from "react-icons/io";
 import { MdLocalAirport } from "react-icons/md";
-import { extractInterchanges } from "@/libs/HighwayExits";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -129,47 +128,7 @@ const AirportMap = ({ children }) => {
         // You can add more properties as needed
         //  };
       });
-
-      //exit
-      let lastExitTowardInstruction;
-      for (let i = roadDetails.length - 1; i >= 0; i--) {
-        if (/exit toward/.test(roadDetails[i])) {
-          lastExitTowardInstruction = roadDetails[i];
-          break;
-        }
-      }
-
-      let englishName;
-      if (lastExitTowardInstruction) {
-        const matches = lastExitTowardInstruction.match(/<b>(.*?)<\/b>/g);
-        if (matches.length >= 4) {
-          englishName = matches[3].replace(/<\/?b>/g, "");
-        }
-      }
-
-      if (englishName) {
-        setRouteSummary(englishName);
-      } else {
-        console.log("English name not found.");
-      }
-      // // Render the route without markers
-      // const directionsRenderer = new google.maps.DirectionsRenderer({
-      //   suppressMarkers: true,
-      //   map: YOUR_MAP_OBJECT, // Replace YOUR_MAP_OBJECT with your map object
-      // });
-      // directionsRenderer.setDirections(results);
-
-      // // Extract highway exit names
-      // const steps = results.routes[0].legs[0].steps;
-      // const highwayExits = steps.map((step) => {
-      //   // Access step instructions to get highway exit names
-      //   return step.instructions;
-      // });
-
-      // // Store highway exit names in a variable for further use
-      // // You can use this variable to display or process the names as needed
-
-      // setHighwayExitNamesState(highwayExits);
+      setRouteSummary(roadDetails);
 
       const selectedVehiclesListValue = SelectVehiclesList(
         passengerCountRef.current.value,
@@ -334,9 +293,12 @@ const AirportMap = ({ children }) => {
             </div>
           )}
 
-          {routeSummary && (
-            <div className="my-5 bg-red-500">{routeSummary}</div>
-          )}
+          {routeSummary &&
+            routeSummary.map((path, index) => (
+              <div key={index} className="bg-red-400 my-5">
+                {path}
+              </div>
+            ))}
 
           {/* <div className="flex my-4 gap-x-3 ">
             {/* <button
