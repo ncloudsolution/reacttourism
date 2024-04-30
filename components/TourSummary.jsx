@@ -15,7 +15,7 @@ const TourSummary = () => {
   const [responseMessage, setResponseMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const [file, setFile] = useState();
+  //const [file, setFile] = useState(null);
 
   const cusNameRef = useRef();
   const cusEmailRef = useRef();
@@ -34,10 +34,13 @@ const TourSummary = () => {
       cusEmailRef.current.value === "" ||
       cusMobileRef.current.value === "" ||
       cusLuggageCountRef.current.value === ""
+
+      /*file === null*/
     ) {
-      return setSubmitError(
-        "Fill all the fields & submit the reference document"
-      );
+      return setSubmitError("Fill all the fields ");
+      {
+        /**& submit the reference document**/
+      }
     }
 
     if (
@@ -66,15 +69,25 @@ const TourSummary = () => {
 Name: ${cusNameRef.current.value}
 Email: ${cusEmailRef.current.value}
 Mobile No: ${cusMobileRef.current.value}
-Luggage Count: ${cusLuggageCountRef.current.value}
-selected Vehicle: ${tourDetails.vehicleType}`;
+-------------------------------------------------
+selected Vehicle: ${tourDetails.vehicleType}
+No.of Passengers: ${tourDetails.noOfPassengers}
+Requested Luggage Count: ${cusLuggageCountRef.current.value}
+Estimated Price: ${tourDetails.price}
+-------------------------------------------------
+Origin: ${tourDetails.origin}
+Destination: ${tourDetails.destination}
+Start Date : ${tourDetails.startDate}
+Return: ${tourDetails.returnDate}
+Distance : ${tourDetails.distance}
+Duration: ${tourDetails.duration}`;
 
     // Start loading
     setResponseMessage("");
 
     const formData = new FormData();
-    formData.append("file", file);
-    formData.append("to", process.env.NEXT_PUBLIC_MY_EMAIL); // Set the recipient's email here
+    //formData.append("file", file);
+    formData.append("to", process.env.NEXT_PUBLIC_MY_EMAIL.split(",")); // Set the recipient's email here
     formData.append("subject", "Sending you a file!");
     formData.append("text", emailText);
     formData.append("clientmail", cusEmailRef.current.value); // Set the sender's email here
@@ -122,7 +135,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
           </div>
         )}
 
-        {!responseMessage && tourDetails.vehicleType && (
+        {!isLoading && !responseMessage && tourDetails.vehicleType && (
           <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">
             <div className="text-center text-[30px]">Tour Summary</div>
 
@@ -188,7 +201,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                         </span>
                         <input
                           ref={cusNameRef}
-                          placeholder="No.Passengers"
+                          placeholder="Passenger Name"
                           type="text"
                           min="1"
                           className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
@@ -201,7 +214,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                         </span>
                         <input
                           ref={cusEmailRef}
-                          placeholder="No.Passengers"
+                          placeholder="Passenger Email"
                           type="email"
                           className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
                         />
@@ -246,7 +259,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                         </span>
                         <input
                           ref={cusLuggageCountRef}
-                          placeholder="No.Passengers"
+                          placeholder="No.Luggages"
                           type="number"
                           min="0"
                           className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
@@ -264,7 +277,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                             : "Passengers"}
                         </span>
                       </div>
-
+                      {/* 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 mb-4">
                         <span className="bxs:w-[180px] pr-3 w-full bg-transparent">
                           NIC / Passport / Driving Licience
@@ -275,7 +288,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                           className="text-[14px] font-normal outline-none w-[220px] rounded border-[1px] border-transparent "
                           onChange={(e) => setFile(e.target.files?.[0])}
                         />
-                      </div>
+                      </div> */}
 
                       {submitError && (
                         <div className="text-errorpink my-2 font-normal">
@@ -298,11 +311,11 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                   <div className="mt-4">Tour</div>
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
 
-                  <div className="bxs:bxs:w-[400px] w-full  flex ">
+                  <div className="bxs:w-[400px] w-full  flex ">
                     <span className="bxs:w-[180px] w-[150px] bg-transparent">
                       Origin
                     </span>
-                    <span className="font-normal  w-[200px]">
+                    <span className="font-normal  bxs:w-[200px] w-[150px]">
                       {tourDetails.origin}
                     </span>
                   </div>
@@ -311,7 +324,7 @@ selected Vehicle: ${tourDetails.vehicleType}`;
                     <span className="bxs:w-[180px] w-[150px] bg-transparent ">
                       Destination
                     </span>
-                    <span className="font-normal w-[200px] ">
+                    <span className="font-normal bxs:w-[200px] w-[150px] ">
                       {tourDetails.destination}
                     </span>
                   </div>

@@ -336,7 +336,8 @@ const AirportMap = ({ children }) => {
                         Luggages {vehicle.luggages}
                       </div>
                       <div className="bg-black text-white py-2 rounded w-full text-center">
-                        Price Rs.{vehicle.price}
+                        Price Rs.
+                        {returnTour ? vehicle.price * 2 : vehicle.price}
                       </div>
                       <button
                         className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
@@ -347,7 +348,9 @@ const AirportMap = ({ children }) => {
                             vehicleType: vehicle.type,
                             vehicalSeatCapacity: vehicle.passengers,
                             weightFactor: vehicle.weightFactor,
-                            price: vehicle.price,
+                            price: returnTour
+                              ? vehicle.price * 2
+                              : vehicle.price,
                             image: vehicle.img,
                             luggages: vehicle.luggages,
 

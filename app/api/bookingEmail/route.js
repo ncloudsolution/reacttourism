@@ -24,26 +24,34 @@ export async function POST(request) {
       to: to,
       subject: "New Order Received",
       text: text,
-      attachments: [
+    };
+
+    // Add attachment if file exists
+    if (file) {
+      mailOptionsTo.attachments = [
         {
           filename: file.name,
           content: new Buffer.from(await file.arrayBuffer()),
         },
-      ],
-    };
+      ];
+    }
 
     const mailOptionsClient = {
       from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
       to: clientmail,
-      subject: "Here's your new ride from Pikme",
+      subject: "Here's your new ride from Tour Booking sri Lanka",
       text: text, // Assuming you want to send the same text; adjust if different
-      attachments: [
+    };
+
+    // Add attachment if file exists
+    if (file) {
+      mailOptionsClient.attachments = [
         {
           filename: file.name,
           content: new Buffer.from(await file.arrayBuffer()),
         },
-      ],
-    };
+      ];
+    }
 
     // Send the email to the main recipient
     await transporter.sendMail(mailOptionsTo);
