@@ -120,17 +120,38 @@ const AirportMap = ({ children }) => {
       setDurationForCalc(results.routes[0].legs[0].duration.value);
 
       const roadDetails = results.routes[0].legs[0].steps.map((step) => {
-        return {
-          instruction: step.instructions,
-          distance: step.distance.text,
-          duration: step.duration.text,
-          startLocation: step.start_location,
-          endLocation: step.end_location,
-          // You can add more properties as needed
-        };
+        return step.instructions; //{
+        // instruction: ,
+        // distance: step.distance.text,
+        // duration: step.duration.text,
+        // startLocation: step.start_location,
+        // endLocation: step.end_location,
+        // You can add more properties as needed
+        //  };
       });
-      setRouteSummary(roadDetails);
 
+      //exit
+      let lastExitTowardInstruction;
+      for (let i = roadDetails.length - 1; i >= 0; i--) {
+        if (/exit toward/.test(roadDetails[i])) {
+          lastExitTowardInstruction = roadDetails[i];
+          break;
+        }
+      }
+
+      let englishName;
+      if (lastExitTowardInstruction) {
+        const matches = lastExitTowardInstruction.match(/<b>(.*?)<\/b>/g);
+        if (matches.length >= 4) {
+          englishName = matches[3].replace(/<\/?b>/g, "");
+        }
+      }
+
+      if (englishName) {
+        setRouteSummary(englishName);
+      } else {
+        console.log("English name not found.");
+      }
       // // Render the route without markers
       // const directionsRenderer = new google.maps.DirectionsRenderer({
       //   suppressMarkers: true,
@@ -313,16 +334,9 @@ const AirportMap = ({ children }) => {
             </div>
           )}
 
-          {routeSummary &&
-            routeSummary.map((step, index) => (
-              <div key={index} className="my-5 bg-red-500">
-                <div>Instruction: {step.instruction}</div>
-                <div>Distance: {step.distance}</div>
-                <div>Duration: {step.duration}</div>
-                <div>Start Location: {JSON.stringify(step.startLocation)}</div>
-                <div>End Location: {JSON.stringify(step.endLocation)}</div>
-              </div>
-            ))}
+          {routeSummary && (
+            <div className="my-5 bg-red-500">{routeSummary}</div>
+          )}
 
           {/* <div className="flex my-4 gap-x-3 ">
             {/* <button
