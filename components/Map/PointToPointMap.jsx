@@ -269,7 +269,6 @@ const PointToPointMap = ({ children }) => {
                   mapContainerStyle={{ width: "100%", height: "100%" }}
                   onLoad={(map) => setMap(map)}
                 >
-                  <Marker position={center} />
                   {directionsRespone && (
                     <DirectionsRenderer directions={directionsRespone} />
                   )}

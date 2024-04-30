@@ -18,6 +18,7 @@ import CustomDatePicker from "../CustomDatePicker";
 
 import { IoIosCloseCircle } from "react-icons/io";
 import { MdLocalAirport } from "react-icons/md";
+import { extractInterchanges } from "@/libs/HighwayExits";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -44,6 +45,8 @@ const AirportMap = ({ children }) => {
 
   const mapRef = useRef();
 
+  const [highwayExitNamesState, setHighwayExitNamesState] = useState();
+  const [routeSummary, setRouteSummary] = useState();
   //scroll to after the submission
 
   const [startDate, setStartDate] = useState(new Date());
@@ -115,6 +118,37 @@ const AirportMap = ({ children }) => {
       setDistance(results.routes[0].legs[0].distance.text);
       setDuration(results.routes[0].legs[0].duration.text);
       setDurationForCalc(results.routes[0].legs[0].duration.value);
+
+      const roadDetails = results.routes[0].legs[0].steps.map((step) => {
+        return {
+          instruction: step.instructions,
+          distance: step.distance.text,
+          duration: step.duration.text,
+          startLocation: step.start_location,
+          endLocation: step.end_location,
+          // You can add more properties as needed
+        };
+      });
+      setRouteSummary(roadDetails);
+
+      // // Render the route without markers
+      // const directionsRenderer = new google.maps.DirectionsRenderer({
+      //   suppressMarkers: true,
+      //   map: YOUR_MAP_OBJECT, // Replace YOUR_MAP_OBJECT with your map object
+      // });
+      // directionsRenderer.setDirections(results);
+
+      // // Extract highway exit names
+      // const steps = results.routes[0].legs[0].steps;
+      // const highwayExits = steps.map((step) => {
+      //   // Access step instructions to get highway exit names
+      //   return step.instructions;
+      // });
+
+      // // Store highway exit names in a variable for further use
+      // // You can use this variable to display or process the names as needed
+
+      // setHighwayExitNamesState(highwayExits);
 
       const selectedVehiclesListValue = SelectVehiclesList(
         passengerCountRef.current.value,
@@ -279,6 +313,17 @@ const AirportMap = ({ children }) => {
             </div>
           )}
 
+          {routeSummary &&
+            routeSummary.map((step, index) => (
+              <div key={index} className="my-5 bg-red-500">
+                <div>Instruction: {step.instruction}</div>
+                <div>Distance: {step.distance}</div>
+                <div>Duration: {step.duration}</div>
+                <div>Start Location: {JSON.stringify(step.startLocation)}</div>
+                <div>End Location: {JSON.stringify(step.endLocation)}</div>
+              </div>
+            ))}
+
           {/* <div className="flex my-4 gap-x-3 ">
             {/* <button
               className="bg-black text-white p-2 rounded"
@@ -301,7 +346,6 @@ const AirportMap = ({ children }) => {
                   mapContainerStyle={{ width: "100%", height: "100%" }}
                   onLoad={(map) => setMap(map)}
                 >
-                  <Marker position={center} />
                   {directionsRespone && (
                     <DirectionsRenderer directions={directionsRespone} />
                   )}
@@ -328,16 +372,21 @@ const AirportMap = ({ children }) => {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:mr-10 mr-3 gap-y-3  items-center justify-center border-2 border-transparent">
+                    <div className="flex flex-col mobile:mr-3 mr-1  gap-y-3  items-center justify-center border-2 border-transparent">
                       <div className="text-black text-[20px] ">
                         Passengers {vehicle.passengers}
                       </div>
                       <div className="text-black text-[20px] ">
                         Luggages {vehicle.luggages}
                       </div>
-                      <div className="bg-black text-white py-2 rounded w-full text-center">
-                        Price Rs.
-                        {returnTour ? vehicle.price * 2 : vehicle.price}
+                      <div className="bg-black text-white py-2 rounded w-full text-center flex flex-col items-center">
+                        <div>
+                          Price Rs.
+                          {returnTour ? vehicle.price * 2 : vehicle.price}
+                        </div>
+                        <div className="bigmd:text-[12px] text-[10px] text-yellow-500  bigmd:w-[200px] xs:w-[150px] w-[170px] text-center">
+                          Highway Charges and other Charges are Not Included
+                        </div>
                       </div>
                       <button
                         className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
