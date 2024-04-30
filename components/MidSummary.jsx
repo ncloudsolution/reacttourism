@@ -3,96 +3,66 @@ import React, { useContext, useRef, useState } from "react";
 import { TourContext } from "../context/TourContextProvider";
 import Image from "next/image";
 
+import "react-phone-number-input/style.css";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import { useRouter } from "next/navigation";
 
-const TourSummary = () => {
+const MidSummary = () => {
   const router = useRouter();
 
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
-  const [responseMessage, setResponseMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
   //const [file, setFile] = useState(null);
 
+  const cusNameRef = useRef();
+  const cusEmailRef = useRef();
+  const cusMobileRef = useRef();
+
+  const cusLuggageCountRef = useRef();
+
+  const [mobValue, setMobValue] = useState();
   const [submitError, setSubmitError] = useState();
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    setIsLoading(true);
+    if (
+      cusNameRef.current.value === "" ||
+      cusEmailRef.current.value === "" ||
+      cusMobileRef.current.value === "" ||
+      cusLuggageCountRef.current.value === ""
 
-    const emailText = `New Customer Details:
-Name: ${tourDetails.customerName}
-Email: ${tourDetails.customerEmail}
-Mobile No: ${tourDetails.customerMobileNo}
--------------------------------------------------
-selected Vehicle: ${tourDetails.vehicleType}
-No.of Passengers: ${tourDetails.noOfPassengers}
-Requested Luggage Count: ${tourDetails.customerLuggageCount}
-Estimated Price: ${tourDetails.price}
--------------------------------------------------
-Origin: ${tourDetails.origin}
-Destination: ${tourDetails.destination}
-Start Date : ${tourDetails.startDate}
-Return: ${tourDetails.returnDate}
-Distance : ${tourDetails.distance}
-Duration: ${tourDetails.duration}`;
-
-    // Start loading
-    setResponseMessage("");
-
-    const formData = new FormData();
-    //formData.append("file", file);
-    formData.append("to", process.env.NEXT_PUBLIC_MY_EMAIL.split(",")); // Set the recipient's email here
-    //formData.append("subject", "Sending you a file!");
-    formData.append("text", emailText);
-    formData.append("clientmail", tourDetails.customerEmail); // Set the sender's email here
-
-    try {
-      const response = await fetch("/api/bookingEmail", {
-        method: "POST",
-        body: formData, // FormData will be sent as `multipart/form-data`
-      });
-      const result = await response.json();
-      console.log(result);
-      //alert(result.message);
-      setIsLoading(false); // Stop loading
-      setResponseMessage(result.message); // Set the message from the server
-
-      setTimeout(() => {
-        router.push("/"); // Redirect to the homepage after 2 seconds
-      }, 2000);
-
-      console.log("msg send");
-    } catch (error) {
-      console.error("Error:", error);
-      // alert("Failed to send the file.");
-      setIsLoading(false); // Stop loading
-      setResponseMessage("Failed to make the order. Please try again.");
-
-      setTimeout(() => {
-        router.push("/"); // Redirect to the homepage after 2 seconds
-      }, 2000);
+      /*file === null*/
+    ) {
+      return setSubmitError("Fill all the fields ");
+      {
+        /**& submit the reference document**/
+      }
     }
 
-    setSubmitError("");
+    if (
+      cusLuggageCountRef.current.value != 0 &&
+      cusLuggageCountRef.current.value >= tourDetails.luggages
+    ) {
+      return setSubmitError(
+        "You Exceeded the luggage maximum count of this vehical please change the luggage count or change the vehical"
+      );
+    }
+
+    setTourDetails((prevDetails) => ({
+      ...prevDetails,
+      customerName: cusNameRef.current.value,
+      customerEmail: cusEmailRef.current.value,
+      customerMobileNo: cusMobileRef.current.value,
+      customerLuggageCount: cusLuggageCountRef.current.value,
+    }));
+    router.push("/tourbooking/summary");
   }
 
   return (
     <>
       <div className="my-4">
-        {(isLoading || responseMessage) && (
-          <div className="w-full h-[90vh] flex items-center justify-center">
-            {/* Your form or component elements go here */}
-            {isLoading && <div>Sending email...</div>}{" "}
-            {/* Display a loading message */}
-            {responseMessage && <div>{responseMessage}</div>}
-            {/* Display the response message */}
-          </div>
-        )}
-
-        {!isLoading && !responseMessage && tourDetails.vehicleType && (
+        {tourDetails.vehicleType && (
           <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">
             <div className="text-center text-[30px]">Tour Summary</div>
 
@@ -156,26 +126,48 @@ Duration: ${tourDetails.duration}`;
                         <span className="bxs:w-[180px] w-[150px] bg-transparent">
                           Passengers Name
                         </span>
-                        <div className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded  ">
-                          {tourDetails.customerName}
-                        </div>
+                        <input
+                          ref={cusNameRef}
+                          placeholder="Passenger Name"
+                          type="text"
+                          min="1"
+                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                        />
                       </div>
 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                         <span className="bxs:w-[180px] w-[150px] bg-transparent">
                           Email
                         </span>
-                        <div className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded ">
-                          {tourDetails.customerEmail}
-                        </div>
+                        <input
+                          ref={cusEmailRef}
+                          placeholder="Passenger Email"
+                          type="email"
+                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                        />
                       </div>
 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                         <span className="bxs:w-[180px] w-[150px] bg-transparent">
                           Mobile No
                         </span>
-                        <div className="shadow-md rounded  bxs:w-[220px] w-full bg-white p-1 font-normal ">
-                          <div>{tourDetails.customerMobileNo}</div>
+                        <div className="shadow-md rounded border-[1px] border-black bxs:w-[220px] w-full bg-white p-1 font-normal ">
+                          <PhoneInput
+                            international
+                            countryCallingCodeEditable={false}
+                            defaultCountry="LK"
+                            value={mobValue}
+                            onChange={setMobValue}
+                            className="PhoneInputInput"
+                            ref={cusMobileRef}
+                            error={
+                              mobValue
+                                ? isValidPhoneNumber(mobValue)
+                                  ? undefined
+                                  : "Invalid phone number"
+                                : "Phone number required"
+                            }
+                          />
                         </div>
 
                         {/**
@@ -192,9 +184,13 @@ Duration: ${tourDetails.duration}`;
                         <span className="bxs:w-[180px] w-[150px] bg-transparent">
                           No of Luggagues
                         </span>
-                        <div className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded ">
-                          {tourDetails.customerLuggageCount}
-                        </div>
+                        <input
+                          ref={cusLuggageCountRef}
+                          placeholder="No.Luggages"
+                          type="number"
+                          min="0"
+                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                        />
                       </div>
 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
@@ -229,8 +225,8 @@ Duration: ${tourDetails.duration}`;
 
                       <input
                         type="submit"
-                        className="w-full py-2 bg-primary text-white rounded-md"
-                        value="Submit"
+                        className="w-full py-2 bg-black text-white rounded-md"
+                        value="Next"
                       />
                     </div>
                   </form>
@@ -324,4 +320,4 @@ Duration: ${tourDetails.duration}`;
   );
 };
 
-export default TourSummary;
+export default MidSummary;
