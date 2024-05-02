@@ -66,7 +66,9 @@ const MainTab = () => {
     <>
       <div className="flex justify-center items-center flex-col">
         <div className="bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] flex justify-center">
-          <Hierarchy />
+          <div className="my-1 bxs:my-2 bigmd:my-3 w-full flex justify-center">
+            <Hierarchy />
+          </div>
         </div>
         <div className="flex flex-col bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] items-start">
           <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px] translate-y-8">
