@@ -48,6 +48,14 @@ const AirportMap = ({ children }) => {
   const [routeSummary, setRouteSummary] = useState();
   //scroll to after the submission
 
+  // const [startDate, setStartDate] = useState(
+  //   tourDetails.startDate || new Date()
+  // );
+
+  // const [returnDate, setReturnDate] = useState(
+  //   tourDetails.returnDate || new Date()
+  // );
+
   const [startDate, setStartDate] = useState(new Date());
 
   const [returnDate, setReturnDate] = useState(new Date());
@@ -175,6 +183,14 @@ const AirportMap = ({ children }) => {
     }
   }
 
+  // const handlePassengerCountChange = (e) => {
+  //   const newPassengerCount = parseInt(e.target.value); // Parse input value to integer
+  //   setTourDetails((prevTourDetails) => ({
+  //     ...prevTourDetails,
+  //     noOfPassengers: newPassengerCount, // Update noOfPassengers in tourDetails
+  //   }));
+  // };
+
   return (
     <>
       <div className="flex flex-col items-center w-full">
@@ -210,7 +226,6 @@ const AirportMap = ({ children }) => {
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
                 <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
-                    value={tourDetails.origin}
                     disabled={isPickDisable}
                     ref={originRef}
                     placeholder="Origin"
@@ -221,7 +236,6 @@ const AirportMap = ({ children }) => {
 
                 <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
-                    value={tourDetails.destination}
                     disabled={isDropDisable}
                     ref={destinationRef}
                     placeholder="Destination"
@@ -231,7 +245,8 @@ const AirportMap = ({ children }) => {
                 </Autocomplete>
 
                 <input
-                  value={tourDetails.noOfPassengers}
+                  // value={tourDetails.noOfPassengers}
+                  // onChange={handlePassengerCountChange}
                   ref={passengerCountRef}
                   placeholder="No.Passengers"
                   type="number"
@@ -242,13 +257,13 @@ const AirportMap = ({ children }) => {
 
               <div className="flex gap-x-3 relative  flex-col bigmd:flex-row gap-y-3">
                 <CustomDatePicker
-                  selectedDate={tourDetails.startDate || startDate}
+                  selectedDate={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
                 {returnTour ? (
                   <>
                     <CustomDatePicker
-                      selectedDate={tourDetails.returnDate || returnDate}
+                      selectedDate={returnDate}
                       onChange={(date) => setReturnDate(date)}
                     />
 
@@ -391,6 +406,7 @@ const AirportMap = ({ children }) => {
                               : "No any Return",
                             distance: distance,
                             duration: duration,
+                            pageTwoToken: true,
                           });
                           console.log("redirect");
                           router.push("/tourbooking");

@@ -60,6 +60,31 @@ const MidSummary = () => {
     router.push("/tourbooking/summary");
   }
 
+  // Function to handle changes in the input field for customer name
+  const handleCustomerNameChange = (e) => {
+    const newCustomerName = e.target.value; // Get input value
+    setTourDetails((prevTourDetails) => ({
+      ...prevTourDetails,
+      customerName: newCustomerName, // Update customerName in tourDetails
+    }));
+  };
+
+  const handleCustomerEmailChange = (e) => {
+    const newCustomerEmail = e.target.value; // Get input value
+    setTourDetails((prevTourDetails) => ({
+      ...prevTourDetails,
+      customerEmail: newCustomerEmail, // Update customerEmail in tourDetails
+    }));
+  };
+
+  const handleLuggageCountChange = (e) => {
+    const newLuggageCount = parseInt(e.target.value); // Parse input value to integer
+    setTourDetails((prevTourDetails) => ({
+      ...prevTourDetails,
+      customerLuggageCount: newLuggageCount,
+    }));
+  };
+
   return (
     <>
       <div className="my-4">
@@ -128,6 +153,7 @@ const MidSummary = () => {
                           Passengers Name
                         </span>
                         <input
+                          onChange={handleCustomerNameChange} // Handle changes to the input field
                           ref={cusNameRef}
                           value={tourDetails.customerName}
                           placeholder="Passenger Name"
@@ -142,6 +168,7 @@ const MidSummary = () => {
                           Email
                         </span>
                         <input
+                          onChange={handleCustomerEmailChange} // Handle changes to the input field
                           value={tourDetails.customerEmail}
                           ref={cusEmailRef}
                           placeholder="Passenger Email"
@@ -189,6 +216,7 @@ const MidSummary = () => {
                         </span>
                         <input
                           value={tourDetails.customerLuggageCount}
+                          onChange={handleLuggageCountChange} // Handle changes to the input field
                           ref={cusLuggageCountRef}
                           placeholder="No.Luggages"
                           type="number"
