@@ -125,7 +125,7 @@ Duration: ${tourDetails.duration}`;
                       Customer Email
                     </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px] break-words ">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px] break-words">
                       {tourDetails.customerEmail}
                     </div>
                   </div>
