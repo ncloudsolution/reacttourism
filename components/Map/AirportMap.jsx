@@ -118,17 +118,17 @@ const AirportMap = ({ children }) => {
       setDuration(results.routes[0].legs[0].duration.text);
       setDurationForCalc(results.routes[0].legs[0].duration.value);
 
-      const roadDetails = results.routes[0].legs[0].steps.map((step) => {
-        return step.instructions; //{
-        // instruction: ,
-        // distance: step.distance.text,
-        // duration: step.duration.text,
-        // startLocation: step.start_location,
-        // endLocation: step.end_location,
-        // You can add more properties as needed
-        //  };
-      });
-      setRouteSummary(roadDetails);
+      // const roadDetails = results.routes[0].legs[0].steps.map((step) => {
+      //   return step.instructions; //{
+      //   // instruction: ,
+      //   // distance: step.distance.text,
+      //   // duration: step.duration.text,
+      //   // startLocation: step.start_location,
+      //   // endLocation: step.end_location,
+      //   // You can add more properties as needed
+      //   //  };
+      // });
+      // setRouteSummary(roadDetails);
 
       const selectedVehiclesListValue = SelectVehiclesList(
         passengerCountRef.current.value,
@@ -293,12 +293,12 @@ const AirportMap = ({ children }) => {
             </div>
           )}
 
-          {routeSummary &&
+          {/* {routeSummary &&
             routeSummary.map((path, index) => (
               <div key={index} className="bg-red-400 my-5">
                 {path}
               </div>
-            ))}
+            ))} */}
 
           {/* <div className="flex my-4 gap-x-3 ">
             {/* <button
@@ -360,7 +360,7 @@ const AirportMap = ({ children }) => {
                           Price Rs.
                           {returnTour ? vehicle.price * 2 : vehicle.price}
                         </div>
-                        <div className="bigmd:text-[12px] text-[10px] text-yellow-500  bigmd:w-[200px] xs:w-[150px] w-[170px] text-center">
+                        <div className="bigmd:text-[12px] text-[10px] text-yellow-500 bigmd:w-[200px]  xs:w-[150px] w-[170px] px-2 text-center">
                           Highway Charges and other Charges are Not Included
                         </div>
                       </div>

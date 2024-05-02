@@ -64,7 +64,7 @@ const MidSummary = () => {
       <div className="my-4">
         {tourDetails.vehicleType && (
           <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">
-            <div className="text-center text-[30px]">Tour Summary</div>
+            <div className="text-center text-[30px]">Registration details</div>
 
             <div className="flex flex-col border-2 border-transparent bxs:my-3 my-1 bxs:text-[16px] text-[14px]">
               <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col">

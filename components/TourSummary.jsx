@@ -93,22 +93,131 @@ Duration: ${tourDetails.duration}`;
         )}
 
         {!isLoading && !responseMessage && tourDetails.vehicleType && (
-          <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">
+          <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 w-fit">
             <div className="text-center text-[30px]">Tour Summary</div>
 
-            <div className="flex flex-col border-2 border-transparent bxs:my-3 my-1 bxs:text-[16px] text-[14px]">
-              <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col">
+            <div className="flex flex-col border-2 border-transparent bxs:my-3 my-1 bxs:text-[18px] text-[16px]">
+              <div className="flex flex-col gap-x-4 border-2 border-transparent items-center">
                 <div className=" flex-1  h-[200px]  flex items-center justify-center border-2 border-transparent ">
                   <Image
                     src={tourDetails.image}
                     alt=""
-                    width={300}
-                    height={300}
-                    className="border-2 border-transparent object-cover"
+                    width={350}
+                    height={350}
+                    className="border-2 border-transparent object-cover -translate-y-10"
                   />
                 </div>
 
-                {/**vehicle**/}
+                <div className="bg-transparent w-[400px] -translate-y-12">
+                  {/**Name**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Customer Name</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.customerName}
+                    </div>
+                  </div>
+                  {/**Email**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Customer Email</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.customerEmail}
+                    </div>
+                  </div>
+                  {/**Mobile**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Mobile No</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.customerMobileNo}
+                    </div>
+                  </div>
+
+                  <div className="border-b-[1px] border-black border-dashed my-2"></div>
+
+                  {/**vehical**/}
+                  <div className="flex">
+                    <div className="w-[150px]">selected Vehicle</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.vehicleType}
+                    </div>
+                  </div>
+                  {/**no fo passengers**/}
+                  <div className="flex">
+                    <div className="w-[150px]">No.of Passengers</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.noOfPassengers}
+                    </div>
+                  </div>
+                  {/**luggages**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Requested Luggage Count</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.customerLuggageCount}
+                    </div>
+                  </div>
+                  {/**price**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Estimated Price</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">{tourDetails.price}</div>
+                  </div>
+
+                  <div className="border-b-[1px] border-black border-dashed my-2"></div>
+
+                  {/**origin**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Origin</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">{tourDetails.origin}</div>
+                  </div>
+                  {/**no fo passengers**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Destination</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.destination}
+                    </div>
+                  </div>
+                  {/**start date**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Start Date</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.startDate}
+                    </div>
+                  </div>
+                  {/**return**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Return</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.returnDate}
+                    </div>
+                  </div>
+                  {/**distance**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Distance</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.distance}
+                    </div>
+                  </div>
+                  {/**return**/}
+                  <div className="flex">
+                    <div className="w-[150px]">Duration</div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal">
+                      {tourDetails.duration}
+                    </div>
+                  </div>
+                </div>
+                {/* 
+                //vehical
                 <div className="border-2 border-transparent bigmd:w-[360px] w-full py-4">
                   <div className="text-[16px]">Vehicle</div>
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
@@ -140,13 +249,14 @@ Duration: ${tourDetails.duration}`;
                     </span>
                   </div>
                 </div>
-                {/**vehicle end**/}
+              //vehicalend
+                 */}
               </div>
 
               {/****/}
 
-              <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col-reverse ">
-                {/**customer**/}
+              {/* <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col-reverse ">
+                //customer
                 <div className="mt-4 flex-1 border-2 border-transparent">
                   <div>Customer</div>
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
@@ -178,14 +288,14 @@ Duration: ${tourDetails.duration}`;
                           <div>{tourDetails.customerMobileNo}</div>
                         </div>
 
-                        {/**
+                        //
                     <input
                       ref={cusMobileRef}
                       placeholder="No.Passengers"
                       type="number"
                       min="1"
                       className="p-1 text-[14px] outline-none w-[220px] shadow-md rounded border-[1px] border-black "
-                    />**/}
+                   //
                       </div>
 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
@@ -208,7 +318,7 @@ Duration: ${tourDetails.duration}`;
                             : "Passengers"}
                         </span>
                       </div>
-                      {/* 
+                      // 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 mb-4">
                         <span className="bxs:w-[180px] pr-3 w-full bg-transparent">
                           NIC / Passport / Driving Licience
@@ -219,7 +329,7 @@ Duration: ${tourDetails.duration}`;
                           className="text-[14px] font-normal outline-none w-[220px] rounded border-[1px] border-transparent "
                           onChange={(e) => setFile(e.target.files?.[0])}
                         />
-                      </div> */}
+                      </div> //
 
                       {submitError && (
                         <div className="text-errorpink my-2 font-normal">
@@ -235,9 +345,9 @@ Duration: ${tourDetails.duration}`;
                     </div>
                   </form>
                 </div>
-                {/**customer over**/}
+              //cusover
 
-                {/**Tour**/}
+              //tour
                 <div className="bigmd:w-[380px] w-full border-2 border-transparent">
                   <div className="mt-4">Tour</div>
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
@@ -314,8 +424,8 @@ Duration: ${tourDetails.duration}`;
                     )}
                   </div>
                 </div>
-                {/**Tour end**/}
-              </div>
+               //tour end
+              </div> */}
             </div>
           </div>
         )}
