@@ -96,7 +96,7 @@ Duration: ${tourDetails.duration}`;
           <div className=" rounded border-[2px] border-primary  bg-primary text-white  p-4 mb-14 font-semibold gap-y-1 w-fit">
             <div className="text-center text-[30px]">Tour Summary</div>
 
-            <div className="flex flex-col border-2 border-transparent  xs:text-[16px] xxs:text-[14px] text-[12px]">
+            <div className="flex flex-col border-2 border-transparent  xs:text-[15px] xxs:text-[13px] text-[11px]">
               <div className="flex flex-col ">
                 <div className=" flex-1  flex items-center justify-center border-2 border-transparent ">
                   <Image
@@ -120,12 +120,12 @@ Duration: ${tourDetails.duration}`;
                     </div>
                   </div>
                   {/**Email**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                  <div className="flex ">
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px] ">
                       Customer Email
                     </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px] break-words ">
                       {tourDetails.customerEmail}
                     </div>
                   </div>
