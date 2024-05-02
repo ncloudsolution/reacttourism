@@ -210,6 +210,7 @@ const AirportMap = ({ children }) => {
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
                 <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
+                    value={tourDetails.origin}
                     disabled={isPickDisable}
                     ref={originRef}
                     placeholder="Origin"
@@ -220,6 +221,7 @@ const AirportMap = ({ children }) => {
 
                 <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
+                    value={tourDetails.destination}
                     disabled={isDropDisable}
                     ref={destinationRef}
                     placeholder="Destination"
@@ -229,6 +231,7 @@ const AirportMap = ({ children }) => {
                 </Autocomplete>
 
                 <input
+                  value={tourDetails.noOfPassengers}
                   ref={passengerCountRef}
                   placeholder="No.Passengers"
                   type="number"
@@ -239,13 +242,13 @@ const AirportMap = ({ children }) => {
 
               <div className="flex gap-x-3 relative  flex-col bigmd:flex-row gap-y-3">
                 <CustomDatePicker
-                  selectedDate={startDate}
+                  selectedDate={tourDetails.startDate || startDate}
                   onChange={(date) => setStartDate(date)}
                 />
                 {returnTour ? (
                   <>
                     <CustomDatePicker
-                      selectedDate={returnDate}
+                      selectedDate={tourDetails.returnDate || returnDate}
                       onChange={(date) => setReturnDate(date)}
                     />
 

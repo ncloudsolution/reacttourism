@@ -55,6 +55,7 @@ const MidSummary = () => {
       customerEmail: cusEmailRef.current.value,
       customerMobileNo: cusMobileRef.current.value,
       customerLuggageCount: cusLuggageCountRef.current.value,
+      pageThreeToken: true,
     }));
     router.push("/tourbooking/summary");
   }
@@ -128,6 +129,7 @@ const MidSummary = () => {
                         </span>
                         <input
                           ref={cusNameRef}
+                          value={tourDetails.customerName}
                           placeholder="Passenger Name"
                           type="text"
                           min="1"
@@ -140,6 +142,7 @@ const MidSummary = () => {
                           Email
                         </span>
                         <input
+                          value={tourDetails.customerEmail}
                           ref={cusEmailRef}
                           placeholder="Passenger Email"
                           type="email"
@@ -156,7 +159,7 @@ const MidSummary = () => {
                             international
                             countryCallingCodeEditable={false}
                             defaultCountry="LK"
-                            value={mobValue}
+                            value={tourDetails.customerMobileNo || mobValue}
                             onChange={setMobValue}
                             className="PhoneInputInput"
                             ref={cusMobileRef}
@@ -185,6 +188,7 @@ const MidSummary = () => {
                           No of Luggagues
                         </span>
                         <input
+                          value={tourDetails.customerLuggageCount}
                           ref={cusLuggageCountRef}
                           placeholder="No.Luggages"
                           type="number"

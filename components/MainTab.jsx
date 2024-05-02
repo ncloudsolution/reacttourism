@@ -12,6 +12,7 @@ import { RiPinDistanceFill } from "react-icons/ri";
 import { MdLocalAirport } from "react-icons/md";
 import { FaTrain } from "react-icons/fa6";
 import { IoCarSportSharp } from "react-icons/io5";
+import Hierarchy from "./standalone/Hierarchy";
 
 const MainTab = () => {
   const [isPointToPointClicked, setIsPointToPointClicked] = useState(false);
@@ -62,72 +63,77 @@ const MainTab = () => {
   };
 
   return (
-    <div className="flex justify-center items-center ">
-      <div className="flex flex-col bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] items-start">
-        <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px] translate-y-8">
-          <div
-            className={`${
-              isAirportClicked ? "bg-primary" : "bg-black"
-            } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
-            onClick={handleAirport}
-          >
-            Airport Transport
-          </div>
-
-          <div
-            className={`${
-              isPointToPointClicked ? "bg-primary" : "bg-black"
-            } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
-            onClick={handlePointToPoint}
-          >
-            Point to Point
-          </div>
-
-          <div
-            className={`${
-              isTrainClicked ? "bg-primary" : "bg-black"
-            } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
-            onClick={handleTrain}
-          >
-            Train booking
-          </div>
-          <Link
-            className="p-1 px-2 bg-black text-white rounded cursor-pointer"
-            href={"/daytrips"}
-          >
-            Day tours
-          </Link>
+    <>
+      <div className="flex justify-center items-center flex-col">
+        <div className="bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] flex justify-center">
+          <Hierarchy />
         </div>
-        <div className="bigmd:hidden  flex gap-3 my-3 text-[30px] text-white translate-y-8 bxs:justify-start justify-center w-full">
-          <MdLocalAirport
-            onClick={handleAirport}
-            className={` ${
-              isAirportClicked ? "bg-primary" : "bg-black"
-            } bxs:size-[40px] size-[35px]   rounded p-[6px]`}
-          />
-          <RiPinDistanceFill
-            onClick={handlePointToPoint}
-            className={`${
-              isPointToPointClicked ? "bg-primary" : "bg-black"
-            } bxs:size-[40px] size-[35px] rounded p-[6px]`}
-          />
+        <div className="flex flex-col bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] items-start">
+          <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px] translate-y-8">
+            <div
+              className={`${
+                isAirportClicked ? "bg-primary" : "bg-black"
+              } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
+              onClick={handleAirport}
+            >
+              Airport Transport
+            </div>
 
-          <FaTrain
-            onClick={handleTrain}
-            className={`${
-              isTrainClicked ? "bg-primary" : "bg-black"
-            } bxs:size-[40px] size-[35px]  rounded p-[8px]`}
-          />
-          <Link href={"/daytrips"}>
-            <IoCarSportSharp className="bxs:size-[40px] size-[35px]  bg-black rounded p-[6px]" />
-          </Link>
+            <div
+              className={`${
+                isPointToPointClicked ? "bg-primary" : "bg-black"
+              } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
+              onClick={handlePointToPoint}
+            >
+              Point to Point
+            </div>
+
+            <div
+              className={`${
+                isTrainClicked ? "bg-primary" : "bg-black"
+              } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
+              onClick={handleTrain}
+            >
+              Train booking
+            </div>
+            <Link
+              className="p-1 px-2 bg-black text-white rounded cursor-pointer"
+              href={"/daytrips"}
+            >
+              Day tours
+            </Link>
+          </div>
+          <div className="bigmd:hidden  flex gap-3 my-3 text-[30px] text-white translate-y-8 bxs:justify-start justify-center w-full">
+            <MdLocalAirport
+              onClick={handleAirport}
+              className={` ${
+                isAirportClicked ? "bg-primary" : "bg-black"
+              } bxs:size-[40px] size-[35px]   rounded p-[6px]`}
+            />
+            <RiPinDistanceFill
+              onClick={handlePointToPoint}
+              className={`${
+                isPointToPointClicked ? "bg-primary" : "bg-black"
+              } bxs:size-[40px] size-[35px] rounded p-[6px]`}
+            />
+
+            <FaTrain
+              onClick={handleTrain}
+              className={`${
+                isTrainClicked ? "bg-primary" : "bg-black"
+              } bxs:size-[40px] size-[35px]  rounded p-[8px]`}
+            />
+            <Link href={"/daytrips"}>
+              <IoCarSportSharp className="bxs:size-[40px] size-[35px]  bg-black rounded p-[6px]" />
+            </Link>
+          </div>
+          {isAirportClicked && <AirportMap isLoaded={isLoaded} />}
+          {isPointToPointClicked && <PointToPointMap />}
+
+          {isTrainClicked && <TrainMap />}
         </div>
-        {isAirportClicked && <AirportMap isLoaded={isLoaded} />}
-        {isPointToPointClicked && <PointToPointMap />}
-
-        {isTrainClicked && <TrainMap />}
       </div>
-    </div>
+    </>
   );
 };
 
