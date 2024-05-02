@@ -93,128 +93,199 @@ Duration: ${tourDetails.duration}`;
         )}
 
         {!isLoading && !responseMessage && tourDetails.vehicleType && (
-          <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 w-fit">
+          <div className=" rounded border-[2px] border-primary  bg-primary text-white  p-4 mb-14 font-semibold gap-y-1 w-fit">
             <div className="text-center text-[30px]">Tour Summary</div>
 
-            <div className="flex flex-col border-2 border-transparent bxs:my-3 my-1 bxs:text-[18px] text-[16px]">
-              <div className="flex flex-col gap-x-4 border-2 border-transparent items-center">
-                <div className=" flex-1  h-[200px]  flex items-center justify-center border-2 border-transparent ">
+            <div className="flex flex-col border-2 border-transparent  xs:text-[16px] xxs:text-[14px] text-[12px]">
+              <div className="flex flex-col ">
+                <div className=" flex-1  flex items-center justify-center border-2 border-transparent ">
                   <Image
                     src={tourDetails.image}
                     alt=""
-                    width={350}
-                    height={350}
-                    className="border-2 border-transparent object-cover -translate-y-10"
+                    width={200}
+                    height={200}
+                    className="border-2 border-transparent object-cover xxs:w-[300px]"
                   />
                 </div>
 
-                <div className="bg-transparent w-[400px] -translate-y-12">
+                <div className="bg-transparent xs:w-[400px] xxs:w-[300px] w-[260px] -translate-y-2">
                   {/**Name**/}
                   <div className="flex">
-                    <div className="w-[150px]">Customer Name</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Customer Name
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.customerName}
                     </div>
                   </div>
                   {/**Email**/}
                   <div className="flex">
-                    <div className="w-[150px]">Customer Email</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Customer Email
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.customerEmail}
                     </div>
                   </div>
                   {/**Mobile**/}
                   <div className="flex">
-                    <div className="w-[150px]">Mobile No</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Mobile No
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.customerMobileNo}
                     </div>
                   </div>
 
-                  <div className="border-b-[1px] border-black border-dashed my-2"></div>
+                  <div className="border-b-[1px] border-white border-dashed my-4"></div>
 
                   {/**vehical**/}
                   <div className="flex">
-                    <div className="w-[150px]">selected Vehicle</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Selected Vehicle
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.vehicleType}
                     </div>
                   </div>
                   {/**no fo passengers**/}
                   <div className="flex">
-                    <div className="w-[150px]">No.of Passengers</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      No.of Passengers
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.noOfPassengers}
                     </div>
                   </div>
                   {/**luggages**/}
                   <div className="flex">
-                    <div className="w-[150px]">Requested Luggage Count</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Luggage Count
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.customerLuggageCount}
                     </div>
                   </div>
                   {/**price**/}
                   <div className="flex">
-                    <div className="w-[150px]">Estimated Price</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Estimated Price
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">{tourDetails.price}</div>
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                      Rs. {tourDetails.price}
+                    </div>
                   </div>
 
-                  <div className="border-b-[1px] border-black border-dashed my-2"></div>
+                  <div className="border-b-[1px] border-white border-dashed my-4"></div>
 
                   {/**origin**/}
                   <div className="flex">
-                    <div className="w-[150px]">Origin</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Origin
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">{tourDetails.origin}</div>
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                      {tourDetails.origin}
+                    </div>
                   </div>
                   {/**no fo passengers**/}
                   <div className="flex">
-                    <div className="w-[150px]">Destination</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Destination
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.destination}
                     </div>
                   </div>
                   {/**start date**/}
                   <div className="flex">
-                    <div className="w-[150px]">Start Date</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Start Date
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
-                      {tourDetails.startDate}
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                      {tourDetails.startDate.toDateString()}
                     </div>
                   </div>
-                  {/**return**/}
+                  {/**start time**/}
                   <div className="flex">
-                    <div className="w-[150px]">Return</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Start Time
+                    </div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                      {tourDetails.startDate.toTimeString()}
+                    </div>
+                  </div>
+                  {/**return date**/}
+                  <div className="flex">
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Return Date
+                    </div>
+                    <div>:</div>
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                      {tourDetails.returnDate instanceof Date
+                        ? tourDetails.returnDate.toDateString()
+                        : tourDetails.returnDate}
+                    </div>
+                  </div>
+                  {/**return time**/}
+                  {tourDetails.returnDate instanceof Date && (
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Return Time
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.returnDate.toTimeString()}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 
+                  <div className="flex">
+                    <div className="xs:w-[180px] xxs:w-[130px]">Return</div>
                     <div>:</div>
                     <div className="ml-4 font-normal">
                       {tourDetails.returnDate}
                     </div>
-                  </div>
+                  </div> */}
+
                   {/**distance**/}
                   <div className="flex">
-                    <div className="w-[150px]">Distance</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Distance
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.distance}
                     </div>
                   </div>
-                  {/**return**/}
+                  {/**duration**/}
                   <div className="flex">
-                    <div className="w-[150px]">Duration</div>
+                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                      Duration
+                    </div>
                     <div>:</div>
-                    <div className="ml-4 font-normal">
+                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
                       {tourDetails.duration}
                     </div>
                   </div>
+                  <form onSubmit={handleSubmit}>
+                    <input
+                      type="submit"
+                      className="w-full py-2 bg-black text-white rounded-md mt-10"
+                      value="Submit"
+                    />
+                  </form>
                 </div>
                 {/* 
                 //vehical
@@ -223,7 +294,7 @@ Duration: ${tourDetails.duration}`;
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
 
                   <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Selected Vehicle
                     </span>
                     <span className="font-normal">
@@ -232,7 +303,7 @@ Duration: ${tourDetails.duration}`;
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Seat Capacity
                     </span>
                     <span className="font-normal">
@@ -241,7 +312,7 @@ Duration: ${tourDetails.duration}`;
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Price
                     </span>
                     <span className="font-normal">
@@ -263,7 +334,7 @@ Duration: ${tourDetails.duration}`;
                   <form onSubmit={handleSubmit}>
                     <div className="flex gap-y-1 flex-col">
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                           Passengers Name
                         </span>
                         <div className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded  ">
@@ -272,7 +343,7 @@ Duration: ${tourDetails.duration}`;
                       </div>
 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                           Email
                         </span>
                         <div className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded ">
@@ -281,7 +352,7 @@ Duration: ${tourDetails.duration}`;
                       </div>
 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                           Mobile No
                         </span>
                         <div className="shadow-md rounded  bxs:w-[220px] w-full bg-white p-1 font-normal ">
@@ -294,12 +365,12 @@ Duration: ${tourDetails.duration}`;
                       placeholder="No.Passengers"
                       type="number"
                       min="1"
-                      className="p-1 text-[14px] outline-none w-[220px] shadow-md rounded border-[1px] border-black "
+                      className="p-1 text-[14px] outline-none w-[220px] shadow-md rounded border-[1px] border-white "
                    //
                       </div>
 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                           No of Luggagues
                         </span>
                         <div className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded ">
@@ -308,7 +379,7 @@ Duration: ${tourDetails.duration}`;
                       </div>
 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                           No of Passengers
                         </span>
                         <span className="font-normal">
@@ -320,7 +391,7 @@ Duration: ${tourDetails.duration}`;
                       </div>
                       // 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 mb-4">
-                        <span className="bxs:w-[180px] pr-3 w-full bg-transparent">
+                        <span className="bxs:xs:w-[180px] xxs:w-[130px] pr-3 w-full bg-transparent">
                           NIC / Passport / Driving Licience
                         </span>
                         <input
@@ -353,39 +424,39 @@ Duration: ${tourDetails.duration}`;
                   <div className="w-full bg-primary h-[2px] mb-4"></div>
 
                   <div className="bxs:w-[400px] w-full  flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Origin
                     </span>
-                    <span className="font-normal  bxs:w-[200px] w-[150px]">
+                    <span className="font-normal  bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px]">
                       {tourDetails.origin}
                     </span>
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent ">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent ">
                       Destination
                     </span>
-                    <span className="font-normal bxs:w-[200px] w-[150px] ">
+                    <span className="font-normal bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] ">
                       {tourDetails.destination}
                     </span>
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Distance
                     </span>
                     <span className="font-normal">{tourDetails.distance}</span>
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Duration
                     </span>
                     <span className="font-normal">{tourDetails.duration}</span>
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex mt-4 mb-1">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Pickup Date
                     </span>
                     <span className="font-normal">
@@ -393,19 +464,19 @@ Duration: ${tourDetails.duration}`;
                     </span>
                   </div>
                   <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Pickup Time
                     </span>
-                    <span className="bxs:w-[180px] w-[150px] font-normal">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] font-normal">
                       {tourDetails.startDate.toTimeString()}
                     </span>
                   </div>
 
                   <div className="bxs:w-[400px] w-full flex mt-4 mb-1">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                    <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                       Return Date
                     </span>
-                    <div className="bxs:w-[180px] w-[150px] font-normal">
+                    <div className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] font-normal">
                       {tourDetails.returnDate instanceof Date
                         ? tourDetails.returnDate.toDateString()
                         : tourDetails.returnDate}
@@ -414,10 +485,10 @@ Duration: ${tourDetails.duration}`;
                   <div className="bxs:w-[400px] w-full flex">
                     {tourDetails.returnDate instanceof Date && (
                       <div className="flex">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        <span className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] bg-transparent">
                           Return Time
                         </span>
-                        <div className="bxs:w-[180px] w-[150px] font-normal">
+                        <div className="bxs:xs:w-[180px] xxs:w-[130px] xs:w-[180px] xxs:w-[130px] font-normal">
                           {tourDetails.returnDate.toTimeString()}
                         </div>
                       </div>
