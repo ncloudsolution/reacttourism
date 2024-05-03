@@ -7,6 +7,9 @@ import "react-phone-number-input/style.css";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import { useRouter } from "next/navigation";
 
+import otherPrices from "@/data/otherPrices.json";
+import Hierarchy from "./standalone/Hierarchy";
+
 const MidSummary = () => {
   const router = useRouter();
 
@@ -22,6 +25,8 @@ const MidSummary = () => {
 
   const [mobValue, setMobValue] = useState();
   const [submitError, setSubmitError] = useState();
+
+  const [boardShow, setBoardShow] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -55,6 +60,9 @@ const MidSummary = () => {
       customerEmail: cusEmailRef.current.value,
       customerMobileNo: cusMobileRef.current.value,
       customerLuggageCount: cusLuggageCountRef.current.value,
+      boardShow: boardShow ? otherPrices[0].boardShow : "Rejected",
+      totalPrice:
+        tourDetails.price + (boardShow ? otherPrices[0]?.boardShow : 0),
       pageThreeToken: true,
     }));
     router.push("/tourbooking/summary");
@@ -89,118 +97,146 @@ const MidSummary = () => {
     <>
       <div className="my-4">
         {tourDetails.vehicleType && (
-          <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">
-            <div className="text-center text-[30px]">Registration details</div>
-
-            <div className="flex flex-col border-2 border-transparent bxs:my-3 my-1 bxs:text-[16px] text-[14px]">
-              <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col">
-                <div className=" flex-1  h-[200px]  flex items-center justify-center border-2 border-transparent ">
-                  <Image
-                    src={tourDetails.image}
-                    alt=""
-                    width={300}
-                    height={300}
-                    className="border-2 border-transparent object-cover"
-                  />
-                </div>
-
-                {/**vehicle**/}
-                <div className="border-2 border-transparent bigmd:w-[360px] w-full py-4">
-                  <div className="text-[16px]">Vehicle</div>
-                  <div className="w-full bg-primary h-[2px] mb-4"></div>
-
-                  <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Selected Vehicle
-                    </span>
-                    <span className="font-normal">
-                      {tourDetails.vehicleType}
-                    </span>
-                  </div>
-
-                  <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Seat Capacity
-                    </span>
-                    <span className="font-normal">
-                      {tourDetails.vehicalSeatCapacityMax} Seats
-                    </span>
-                  </div>
-
-                  <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Price
-                    </span>
-                    <span className="font-normal">
-                      Rs.{tourDetails.price}.00
-                    </span>
-                  </div>
-                </div>
-                {/**vehicle end**/}
+          <>
+            <div className="my-2 bxs:my-4 bigmd:my-6 w-full flex justify-center">
+              <Hierarchy />
+            </div>
+            <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">
+              <div className="text-center text-[30px]">
+                Registration details
               </div>
 
-              {/****/}
+              <div className="flex flex-col border-2 border-transparent bxs:my-3 my-1 bxs:text-[16px] text-[14px]">
+                <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col">
+                  <div className=" flex-1  h-[200px]  flex items-center justify-center border-2 border-transparent ">
+                    <Image
+                      src={tourDetails.image}
+                      alt=""
+                      width={300}
+                      height={300}
+                      className="border-2 border-transparent object-cover"
+                    />
+                  </div>
 
-              <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col-reverse ">
-                {/**customer**/}
-                <div className="mt-4 flex-1 border-2 border-transparent">
-                  <div>Customer</div>
-                  <div className="w-full bg-primary h-[2px] mb-4"></div>
-                  <form onSubmit={handleSubmit}>
-                    <div className="flex gap-y-1 flex-col">
-                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                  {/**vehicle**/}
+                  <div className="border-2 border-transparent bigmd:w-[360px] w-full py-4">
+                    <div className="text-[16px]">Vehicle</div>
+                    <div className="w-full bg-primary h-[2px] mb-4"></div>
+
+                    <div className="bxs:w-[400px] w-full flex ">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Selected Vehicle
+                      </span>
+                      <span className="font-normal">
+                        {tourDetails.vehicleType}
+                      </span>
+                    </div>
+
+                    <div className="bxs:w-[400px] w-full flex ">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Seat Capacity
+                      </span>
+                      <span className="font-normal">
+                        {tourDetails.vehicalSeatCapacityMax} Seats
+                      </span>
+                    </div>
+
+                    <div className="bxs:w-[400px] w-full flex ">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Price for Vehical
+                      </span>
+                      <span className="font-normal">
+                        Rs.{tourDetails.price}.00
+                      </span>
+                    </div>
+
+                    {boardShow && (
+                      <div className="bxs:w-[400px] w-full flex ">
                         <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                          Passengers Name
+                          Board Show
                         </span>
-                        <input
-                          onChange={handleCustomerNameChange} // Handle changes to the input field
-                          ref={cusNameRef}
-                          value={tourDetails.customerName}
-                          placeholder="Passenger Name"
-                          type="text"
-                          min="1"
-                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
-                        />
+                        <span className="font-normal">
+                          Rs.{otherPrices[0].boardShow}.00
+                        </span>
                       </div>
+                    )}
+                    <div className="bxs:w-[400px] w-full flex mt-2">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Total Price
+                      </span>
+                      <span className="font-normal border-double border-y-4  border-black">
+                        Rs.
+                        {tourDetails.price +
+                          (boardShow ? otherPrices[0]?.boardShow : 0)}
+                        .00
+                      </span>
+                    </div>
+                  </div>
+                  {/**vehicle end**/}
+                </div>
 
-                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                          Email
-                        </span>
-                        <input
-                          onChange={handleCustomerEmailChange} // Handle changes to the input field
-                          value={tourDetails.customerEmail}
-                          ref={cusEmailRef}
-                          placeholder="Passenger Email"
-                          type="email"
-                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
-                        />
-                      </div>
+                {/****/}
 
-                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                          Mobile No
-                        </span>
-                        <div className="shadow-md rounded border-[1px] border-black bxs:w-[220px] w-full bg-white p-1 font-normal ">
-                          <PhoneInput
-                            international
-                            countryCallingCodeEditable={false}
-                            defaultCountry="LK"
-                            value={tourDetails.customerMobileNo || mobValue}
-                            onChange={setMobValue}
-                            className="PhoneInputInput"
-                            ref={cusMobileRef}
-                            error={
-                              mobValue
-                                ? isValidPhoneNumber(mobValue)
-                                  ? undefined
-                                  : "Invalid phone number"
-                                : "Phone number required"
-                            }
+                <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col-reverse ">
+                  {/**customer**/}
+                  <div className="mt-4 flex-1 border-2 border-transparent">
+                    <div>Customer</div>
+                    <div className="w-full bg-primary h-[2px] mb-4"></div>
+                    <form onSubmit={handleSubmit}>
+                      <div className="flex gap-y-1 flex-col">
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Passengers Name
+                          </span>
+                          <input
+                            onChange={handleCustomerNameChange} // Handle changes to the input field
+                            ref={cusNameRef}
+                            value={tourDetails.customerName}
+                            placeholder="Passenger Name"
+                            type="text"
+                            min="1"
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
 
-                        {/**
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Email
+                          </span>
+                          <input
+                            onChange={handleCustomerEmailChange} // Handle changes to the input field
+                            value={tourDetails.customerEmail}
+                            ref={cusEmailRef}
+                            placeholder="Passenger Email"
+                            type="email"
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                          />
+                        </div>
+
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Mobile No
+                          </span>
+                          <div className="shadow-md rounded border-[1px] border-black bxs:w-[220px] w-full bg-white p-1 font-normal ">
+                            <PhoneInput
+                              international
+                              countryCallingCodeEditable={false}
+                              defaultCountry="LK"
+                              value={tourDetails.customerMobileNo || mobValue}
+                              onChange={setMobValue}
+                              className="PhoneInputInput"
+                              ref={cusMobileRef}
+                              error={
+                                mobValue
+                                  ? isValidPhoneNumber(mobValue)
+                                    ? undefined
+                                    : "Invalid phone number"
+                                  : "Phone number required"
+                              }
+                            />
+                          </div>
+
+                          {/**
                     <input
                       ref={cusMobileRef}
                       placeholder="No.Passengers"
@@ -208,35 +244,71 @@ const MidSummary = () => {
                       min="1"
                       className="p-1 text-[14px] outline-none w-[220px] shadow-md rounded border-[1px] border-black "
                     />**/}
-                      </div>
+                        </div>
 
-                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                          No of Luggagues
-                        </span>
-                        <input
-                          value={tourDetails.customerLuggageCount}
-                          onChange={handleLuggageCountChange} // Handle changes to the input field
-                          ref={cusLuggageCountRef}
-                          placeholder="No.Luggages"
-                          type="number"
-                          min="0"
-                          className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
-                        />
-                      </div>
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            No of Luggagues
+                          </span>
+                          <input
+                            value={tourDetails.customerLuggageCount}
+                            onChange={handleLuggageCountChange} // Handle changes to the input field
+                            ref={cusLuggageCountRef}
+                            placeholder="No.Luggages"
+                            type="number"
+                            min="0"
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                          />
+                        </div>
 
-                      <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                          No of Passengers
-                        </span>
-                        <span className="font-normal">
-                          {tourDetails.noOfPassengers}{" "}
-                          {tourDetails.noOfPassengers == 1
-                            ? "Passenger"
-                            : "Passengers"}
-                        </span>
-                      </div>
-                      {/* 
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            No of Passengers
+                          </span>
+                          <span className="font-normal">
+                            {tourDetails.noOfPassengers}{" "}
+                            {tourDetails.noOfPassengers == 1
+                              ? "Passenger"
+                              : "Passengers"}
+                          </span>
+                        </div>
+
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent bxs:mb-0 mb-1">
+                            Board Show
+                          </span>
+                          <div className="flex flex-1 text-center gap-x-3 font-normal text-[14px] outline-none bxs:w-[220px] w-full  rounded  ">
+                            <div
+                              onClick={() => {
+                                if (!boardShow) {
+                                  setBoardShow(true);
+                                }
+                              }}
+                              className={` ${
+                                boardShow
+                                  ? "bg-primary text-black shadow-md"
+                                  : "border-[1px] border-black"
+                              } w-full p-1 rounded transition-all duration-500`}
+                            >
+                              Accept
+                            </div>
+                            <div
+                              onClick={() => {
+                                if (boardShow) {
+                                  setBoardShow(false);
+                                }
+                              }}
+                              className={` ${
+                                !boardShow
+                                  ? "bg-primary text-black shadow-md"
+                                  : "border-[1px] border-black"
+                              } w-full p-1 rounded transition-all duration-500`}
+                            >
+                              Reject
+                            </div>
+                          </div>
+                        </div>
+                        {/* 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 mb-4">
                         <span className="bxs:w-[180px] pr-3 w-full bg-transparent">
                           NIC / Passport / Driving Licience
@@ -249,103 +321,108 @@ const MidSummary = () => {
                         />
                       </div> */}
 
-                      {submitError && (
-                        <div className="text-errorpink my-2 font-normal">
-                          {submitError}
+                        {submitError && (
+                          <div className="text-errorpink my-2 font-normal">
+                            {submitError}
+                          </div>
+                        )}
+
+                        <input
+                          type="submit"
+                          className="w-full py-2 my-3 bg-black text-white rounded-md"
+                          value="Next"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  {/**customer over**/}
+
+                  {/**Tour**/}
+                  <div className="bigmd:w-[380px] w-full border-2 border-transparent">
+                    <div className="mt-4">Tour</div>
+                    <div className="w-full bg-primary h-[2px] mb-4"></div>
+
+                    <div className="bxs:w-[400px] w-full  flex ">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Origin
+                      </span>
+                      <span className="font-normal  bxs:w-[200px] w-[150px]">
+                        {tourDetails.origin}
+                      </span>
+                    </div>
+
+                    <div className="bxs:w-[400px] w-full flex ">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent ">
+                        Destination
+                      </span>
+                      <span className="font-normal bxs:w-[200px] w-[150px] ">
+                        {tourDetails.destination}
+                      </span>
+                    </div>
+
+                    <div className="bxs:w-[400px] w-full flex ">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Distance
+                      </span>
+                      <span className="font-normal">
+                        {tourDetails.distance}
+                      </span>
+                    </div>
+
+                    <div className="bxs:w-[400px] w-full flex ">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Duration
+                      </span>
+                      <span className="font-normal">
+                        {tourDetails.duration}
+                      </span>
+                    </div>
+
+                    <div className="bxs:w-[400px] w-full flex mt-4 mb-1">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Pickup Date
+                      </span>
+                      <span className="font-normal">
+                        {tourDetails.startDate.toDateString()}
+                      </span>
+                    </div>
+                    <div className="bxs:w-[400px] w-full flex ">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Pickup Time
+                      </span>
+                      <span className="bxs:w-[180px] w-[150px] font-normal">
+                        {tourDetails.startDate.toTimeString()}
+                      </span>
+                    </div>
+
+                    <div className="bxs:w-[400px] w-full flex mt-4 mb-1">
+                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                        Return Date
+                      </span>
+                      <div className="bxs:w-[180px] w-[150px] font-normal">
+                        {tourDetails.returnDate instanceof Date
+                          ? tourDetails.returnDate.toDateString()
+                          : tourDetails.returnDate}
+                      </div>
+                    </div>
+                    <div className="bxs:w-[400px] w-full flex">
+                      {tourDetails.returnDate instanceof Date && (
+                        <div className="flex">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Return Time
+                          </span>
+                          <div className="bxs:w-[180px] w-[150px] font-normal">
+                            {tourDetails.returnDate.toTimeString()}
+                          </div>
                         </div>
                       )}
-
-                      <input
-                        type="submit"
-                        className="w-full py-2 bg-black text-white rounded-md"
-                        value="Next"
-                      />
-                    </div>
-                  </form>
-                </div>
-                {/**customer over**/}
-
-                {/**Tour**/}
-                <div className="bigmd:w-[380px] w-full border-2 border-transparent">
-                  <div className="mt-4">Tour</div>
-                  <div className="w-full bg-primary h-[2px] mb-4"></div>
-
-                  <div className="bxs:w-[400px] w-full  flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Origin
-                    </span>
-                    <span className="font-normal  bxs:w-[200px] w-[150px]">
-                      {tourDetails.origin}
-                    </span>
-                  </div>
-
-                  <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent ">
-                      Destination
-                    </span>
-                    <span className="font-normal bxs:w-[200px] w-[150px] ">
-                      {tourDetails.destination}
-                    </span>
-                  </div>
-
-                  <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Distance
-                    </span>
-                    <span className="font-normal">{tourDetails.distance}</span>
-                  </div>
-
-                  <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Duration
-                    </span>
-                    <span className="font-normal">{tourDetails.duration}</span>
-                  </div>
-
-                  <div className="bxs:w-[400px] w-full flex mt-4 mb-1">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Pickup Date
-                    </span>
-                    <span className="font-normal">
-                      {tourDetails.startDate.toDateString()}
-                    </span>
-                  </div>
-                  <div className="bxs:w-[400px] w-full flex ">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Pickup Time
-                    </span>
-                    <span className="bxs:w-[180px] w-[150px] font-normal">
-                      {tourDetails.startDate.toTimeString()}
-                    </span>
-                  </div>
-
-                  <div className="bxs:w-[400px] w-full flex mt-4 mb-1">
-                    <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                      Return Date
-                    </span>
-                    <div className="bxs:w-[180px] w-[150px] font-normal">
-                      {tourDetails.returnDate instanceof Date
-                        ? tourDetails.returnDate.toDateString()
-                        : tourDetails.returnDate}
                     </div>
                   </div>
-                  <div className="bxs:w-[400px] w-full flex">
-                    {tourDetails.returnDate instanceof Date && (
-                      <div className="flex">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                          Return Time
-                        </span>
-                        <div className="bxs:w-[180px] w-[150px] font-normal">
-                          {tourDetails.returnDate.toTimeString()}
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  {/**Tour end**/}
                 </div>
-                {/**Tour end**/}
               </div>
             </div>
-          </div>
+          </>
         )}
       </div>
     </>

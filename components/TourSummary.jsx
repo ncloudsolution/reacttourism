@@ -4,6 +4,7 @@ import { TourContext } from "../context/TourContextProvider";
 import Image from "next/image";
 
 import { useRouter } from "next/navigation";
+import Hierarchy from "./standalone/Hierarchy";
 
 const TourSummary = () => {
   const router = useRouter();
@@ -30,7 +31,10 @@ Mobile No: ${tourDetails.customerMobileNo}
 selected Vehicle: ${tourDetails.vehicleType}
 No.of Passengers: ${tourDetails.noOfPassengers}
 Requested Luggage Count: ${tourDetails.customerLuggageCount}
-Estimated Price: ${tourDetails.price}
+Vehical Price: ${tourDetails.price}
+Boardshow: ${tourDetails.boardShow}
+
+Total Price:  ${tourDetails.totalPrice}
 -------------------------------------------------
 Origin: ${tourDetails.origin}
 Destination: ${tourDetails.destination}
@@ -93,164 +97,188 @@ Duration: ${tourDetails.duration}`;
         )}
 
         {!isLoading && !responseMessage && tourDetails.vehicleType && (
-          <div className=" rounded border-[2px] border-primary  bg-primary text-white  p-4 mb-14 font-semibold gap-y-1 w-fit">
-            <div className="text-center text-[30px]">Tour Summary</div>
+          <div className="flex flex-col items-center">
+            <div className="my-2 bxs:my-4 bigmd:my-6 w-full flex justify-center">
+              <Hierarchy />
+            </div>
+            <div className=" rounded border-[2px] border-primary  bg-primary text-white  p-4 mb-14 font-semibold gap-y-1 w-fit">
+              <div className="text-center text-[30px]">Tour Summary</div>
 
-            <div className="flex flex-col border-2 border-transparent  xs:text-[15px] xxs:text-[13px] text-[11px]">
-              <div className="flex flex-col ">
-                <div className=" flex-1  flex items-center justify-center border-2 border-transparent ">
-                  <Image
-                    src={tourDetails.image}
-                    alt=""
-                    width={200}
-                    height={200}
-                    className="border-2 border-transparent object-cover xxs:w-[300px]"
-                  />
-                </div>
-
-                <div className="bg-transparent xs:w-[400px] xxs:w-[300px] w-[260px] -translate-y-2">
-                  {/**Name**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Customer Name
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.customerName}
-                    </div>
-                  </div>
-                  {/**Email**/}
-                  <div className="flex ">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px] ">
-                      Customer Email
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px] break-words">
-                      {tourDetails.customerEmail}
-                    </div>
-                  </div>
-                  {/**Mobile**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Mobile No
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.customerMobileNo}
-                    </div>
+              <div className="flex flex-col border-2 border-transparent  xs:text-[15px] xxs:text-[13px] text-[11px]">
+                <div className="flex flex-col ">
+                  <div className=" flex-1  flex items-center justify-center border-2 border-transparent ">
+                    <Image
+                      src={tourDetails.image}
+                      alt=""
+                      width={200}
+                      height={200}
+                      className="border-2 border-transparent object-cover xxs:w-[300px]"
+                    />
                   </div>
 
-                  <div className="border-b-[1px] border-white border-dashed my-4"></div>
-
-                  {/**vehical**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Selected Vehicle
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.vehicleType}
-                    </div>
-                  </div>
-                  {/**no fo passengers**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      No.of Passengers
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.noOfPassengers}
-                    </div>
-                  </div>
-                  {/**luggages**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Luggage Count
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.customerLuggageCount}
-                    </div>
-                  </div>
-                  {/**price**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Estimated Price
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      Rs. {tourDetails.price}
-                    </div>
-                  </div>
-
-                  <div className="border-b-[1px] border-white border-dashed my-4"></div>
-
-                  {/**origin**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Origin
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.origin}
-                    </div>
-                  </div>
-                  {/**no fo passengers**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Destination
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.destination}
-                    </div>
-                  </div>
-                  {/**start date**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Start Date
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.startDate.toDateString()}
-                    </div>
-                  </div>
-                  {/**start time**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Start Time
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.startDate.toTimeString()}
-                    </div>
-                  </div>
-                  {/**return date**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Return Date
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.returnDate instanceof Date
-                        ? tourDetails.returnDate.toDateString()
-                        : tourDetails.returnDate}
-                    </div>
-                  </div>
-                  {/**return time**/}
-                  {tourDetails.returnDate instanceof Date && (
+                  <div className="bg-transparent xs:w-[400px] xxs:w-[300px] w-[260px] -translate-y-2">
+                    {/**Name**/}
                     <div className="flex">
                       <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                        Return Time
+                        Customer Name
                       </div>
                       <div>:</div>
                       <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                        {tourDetails.returnDate.toTimeString()}
+                        {tourDetails.customerName}
                       </div>
                     </div>
-                  )}
+                    {/**Email**/}
+                    <div className="flex ">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px] ">
+                        Customer Email
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px] break-words">
+                        {tourDetails.customerEmail}
+                      </div>
+                    </div>
+                    {/**Mobile**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Mobile No
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.customerMobileNo}
+                      </div>
+                    </div>
 
-                  {/* 
+                    <div className="border-b-[1px] border-white border-dashed my-4"></div>
+
+                    {/**vehical**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Selected Vehicle
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.vehicleType}
+                      </div>
+                    </div>
+                    {/**no fo passengers**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        No.of Passengers
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.noOfPassengers}
+                      </div>
+                    </div>
+                    {/**luggages**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Luggage Count
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.customerLuggageCount}
+                      </div>
+                    </div>
+                    {/**price**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Vehical Price
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        Rs. {tourDetails.price}.00
+                      </div>
+                    </div>
+                    {tourDetails.boardShow != 0 && (
+                      <div className="flex">
+                        <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                          Board Show
+                        </div>
+                        <div>:</div>
+                        <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                          Rs. {tourDetails.boardShow}.00
+                        </div>
+                      </div>
+                    )}
+                    <div className="flex mt-3">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px] ">
+                        Total Price
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        Rs. {tourDetails.totalPrice}.00
+                      </div>
+                    </div>
+
+                    <div className="border-b-[1px] border-white border-dashed my-4"></div>
+
+                    {/**origin**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Origin
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.origin}
+                      </div>
+                    </div>
+                    {/**no fo passengers**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Destination
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.destination}
+                      </div>
+                    </div>
+                    {/**start date**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Start Date
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.startDate.toDateString()}
+                      </div>
+                    </div>
+                    {/**start time**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Start Time
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.startDate.toTimeString()}
+                      </div>
+                    </div>
+                    {/**return date**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Return Date
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.returnDate instanceof Date
+                          ? tourDetails.returnDate.toDateString()
+                          : tourDetails.returnDate}
+                      </div>
+                    </div>
+                    {/**return time**/}
+                    {tourDetails.returnDate instanceof Date && (
+                      <div className="flex">
+                        <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                          Return Time
+                        </div>
+                        <div>:</div>
+                        <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                          {tourDetails.returnDate.toTimeString()}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* 
                   <div className="flex">
                     <div className="xs:w-[180px] xxs:w-[130px]">Return</div>
                     <div>:</div>
@@ -259,35 +287,35 @@ Duration: ${tourDetails.duration}`;
                     </div>
                   </div> */}
 
-                  {/**distance**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Distance
+                    {/**distance**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Distance
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.distance}
+                      </div>
                     </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.distance}
+                    {/**duration**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Duration
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.duration}
+                      </div>
                     </div>
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        type="submit"
+                        className="w-full py-2 bg-black text-white rounded-md mt-10"
+                        value="Submit"
+                      />
+                    </form>
                   </div>
-                  {/**duration**/}
-                  <div className="flex">
-                    <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                      Duration
-                    </div>
-                    <div>:</div>
-                    <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                      {tourDetails.duration}
-                    </div>
-                  </div>
-                  <form onSubmit={handleSubmit}>
-                    <input
-                      type="submit"
-                      className="w-full py-2 bg-black text-white rounded-md mt-10"
-                      value="Submit"
-                    />
-                  </form>
-                </div>
-                {/* 
+                  {/* 
                 //vehical
                 <div className="border-2 border-transparent bigmd:w-[360px] w-full py-4">
                   <div className="text-[16px]">Vehicle</div>
@@ -322,11 +350,11 @@ Duration: ${tourDetails.duration}`;
                 </div>
               //vehicalend
                  */}
-              </div>
+                </div>
 
-              {/****/}
+                {/****/}
 
-              {/* <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col-reverse ">
+                {/* <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col-reverse ">
                 //customer
                 <div className="mt-4 flex-1 border-2 border-transparent">
                   <div>Customer</div>
@@ -497,6 +525,7 @@ Duration: ${tourDetails.duration}`;
                 </div>
                //tour end
               </div> */}
+              </div>
             </div>
           </div>
         )}

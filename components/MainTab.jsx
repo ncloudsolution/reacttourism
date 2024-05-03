@@ -105,7 +105,7 @@ const MainTab = () => {
               Day tours
             </Link>
           </div>
-          <div className="bigmd:hidden  flex gap-3 my-3 text-[30px] text-white translate-y-8 bxs:justify-start justify-center w-full">
+          <div className="bigmd:hidden  flex gap-3 bigmd:my-3 my-0 text-[30px] text-white translate-y-8 bxs:justify-start justify-center w-full">
             <MdLocalAirport
               onClick={handleAirport}
               className={` ${
