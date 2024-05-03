@@ -98,13 +98,13 @@ Duration: ${tourDetails.duration}`;
 
         {!isLoading && !responseMessage && tourDetails.vehicleType && (
           <div className="flex flex-col items-center">
-            <div className="my-2 bxs:my-4 bigmd:my-6 w-full flex justify-center">
+            <div className="mt-2 mb-8 w-full flex justify-center">
               <Hierarchy />
             </div>
-            <div className=" rounded border-[2px] border-primary  bg-primary text-white  p-4 mb-14 font-semibold gap-y-1 w-fit">
+            <div className=" rounded border-[2px] border-primary  bg-primary text-black p-4 mb-14 font-semibold gap-y-1 w-fit">
               <div className="text-center text-[30px]">Tour Summary</div>
 
-              <div className="flex flex-col border-2 border-transparent  xs:text-[15px] xxs:text-[13px] text-[11px]">
+              <div className="flex flex-col border-2 border-transparent  xs:text-[15px] xxs:text-[13px] text-[12px]">
                 <div className="flex flex-col ">
                   <div className=" flex-1  flex items-center justify-center border-2 border-transparent ">
                     <Image

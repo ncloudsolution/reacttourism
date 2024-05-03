@@ -290,7 +290,7 @@ const AirportMap = ({ children }) => {
                   </div>
                 )}
 
-                <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-2  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
+                <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-[6px]  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
                   <button
                     type="submit"
                     className="bg-primary text-black p-2 rounded bigmd:w-fit flex-1 bigmd:block "
@@ -299,7 +299,7 @@ const AirportMap = ({ children }) => {
                     Calculate Route
                   </button>
                   <button
-                    className="bg-primary text-black p-2 rounded bigmd:w-fit :flex-1 bigmd:block"
+                    className="bg-black text-primary border-[1px] border-primary bigmd:px-1 px-2 py-2 rounded bigmd:w-fit :flex-1 bigmd:block"
                     onClick={clearRoute}
                   >
                     Clear Route
