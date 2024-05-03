@@ -97,13 +97,13 @@ const MidSummary = () => {
     <>
       <div className="my-4">
         {tourDetails.vehicleType && (
-          <>
-            <div className="my-2 bxs:my-4 bigmd:my-6 w-full flex justify-center">
+          <div className="flex flex-col items-center">
+            <div className="mt-2 mb-8 w-full flex justify-center">
               <Hierarchy />
             </div>
             <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">
               <div className="text-center text-[30px]">
-                Registration details
+                Registration Details
               </div>
 
               <div className="flex flex-col border-2 border-transparent bxs:my-3 my-1 bxs:text-[16px] text-[14px]">
@@ -274,9 +274,13 @@ const MidSummary = () => {
                         </div>
 
                         <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                          <span className="bxs:w-[180px] w-[150px] bg-transparent bxs:mb-0 mb-1">
+                          <span className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-1">
                             Board Show
+                            <span className="text-gray-400 text-[12px] font-normal ml-2">
+                              Rs.{otherPrices[0].boardShow}.00
+                            </span>
                           </span>
+
                           <div className="flex flex-1 text-center gap-x-3 font-normal text-[14px] outline-none bxs:w-[220px] w-full  rounded  ">
                             <div
                               onClick={() => {
@@ -422,7 +426,7 @@ const MidSummary = () => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
     </>
