@@ -31,7 +31,7 @@ const AirPage = () => {
   }
   return (
     <div className=" flex flex-col justify-center items-center">
-      <div className="my-2 bxs:my-4 bigmd:my-6 w-full flex justify-center">
+      <div className="mt-2 mb-8 w-full flex justify-center">
         <Hierarchy />
       </div>
       <div className="min-h-[60vh] flex items-center">
