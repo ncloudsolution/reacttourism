@@ -19,13 +19,13 @@ const Hierarchy = () => {
   const router = useRouter();
 
   const sections = [
-    { name: "SEARCH", url: "/", icon: <FaSearch /> },
-    { name: "BOOKING", url: "/tourbooking", icon: <FaFileAlt /> },
     {
-      name: "DONE",
-      url: "/tourbooking/summary",
-      icon: <FaCircleCheck />,
+      name: "SEARCH",
+      url: ["/", "/airportp&d", "/pointtopoint"],
+      icon: <FaSearch />,
     },
+    { name: "BOOKING", url: ["/tourbooking"], icon: <FaFileAlt /> },
+    { name: "DONE", url: ["/tourbooking/summary"], icon: <FaCircleCheck /> },
   ];
 
   const isButtonEnabled = (index) => {
@@ -38,20 +38,22 @@ const Hierarchy = () => {
   };
 
   return (
-    <div className="flex px-2">
+    <div className="flex py-3 px-4 rounded bg-black">
       {sections.map((section, index) => {
-        const isActive = index <= sections.findIndex((s) => s.url === pathname);
+        const isActive =
+          index <= sections.findIndex((s) => s.url.includes(pathname));
         const isActiveforLine =
-          index + 1 <= sections.findIndex((s) => s.url === pathname);
+          index + 1 <= sections.findIndex((s) => s.url.includes(pathname));
+
         return (
           <div key={index} className="flex items-center">
             <button
-              disabled={!isButtonEnabled(index)} // Disable the button if isButtonEnabled returns false
-              onClick={() => router.push(section.url)} // Navigate using router.push
+              disabled={!isButtonEnabled(index)}
+              onClick={() => router.push(section.url[0])}
               className={`${
                 isActive
                   ? "text-primary border-primary"
-                  : "text-black border-black"
+                  : "text-white border-white"
               } xs:text-[30px] text-[16px] font-normal text-center border-[2px] rounded bigmd:p-2 p-1`}
             >
               {section.icon}
@@ -59,7 +61,7 @@ const Hierarchy = () => {
             {index < sections.length - 1 && (
               <div
                 className={`${
-                  isActiveforLine ? "bg-primary " : "bg-black "
+                  isActiveforLine ? "bg-primary " : "bg-white "
                 }  xs:mx-6 mx-4 xs:text-[24px] text-[16px] bigmd:w-[150px] xs:w-[60px] w-[40px] xs:h-1 h-[2px] rounded`}
               />
             )}

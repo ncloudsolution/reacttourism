@@ -312,7 +312,8 @@ const PointToPointMap = ({ children }) => {
                           //console.log(vehicle.price);
                           setTourDetails({
                             vehicleType: vehicle.type,
-                            vehicalSeatCapacity: vehicle.passengers,
+                            vehicalSeatCapacityMin: vehicle.minpassengers,
+                            vehicalSeatCapacityMax: vehicle.maxpassengers,
                             weightFactor: vehicle.weightFactor,
                             price: vehicle.price,
                             image: vehicle.img,

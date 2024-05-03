@@ -64,9 +64,9 @@ const MainTab = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center flex-col">
+      <div className="flex justify-center items-center flex-col bg-black ">
         <div className="bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] flex justify-center">
-          <div className="my-1 bxs:my-2 bigmd:my-3 w-full flex justify-center">
+          <div className="mt-2 bxs:mt-4 bigmd:mt-6 w-full flex justify-center">
             <Hierarchy />
           </div>
         </div>
@@ -74,8 +74,8 @@ const MainTab = () => {
           <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px] translate-y-8">
             <div
               className={`${
-                isAirportClicked ? "bg-primary" : "bg-black"
-              } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
+                isAirportClicked ? "bg-primary" : "bg-white"
+              } p-1 px-2  text-black rounded cursor-pointer transition-all duration-500`}
               onClick={handleAirport}
             >
               Airport Transport
@@ -83,8 +83,8 @@ const MainTab = () => {
 
             <div
               className={`${
-                isPointToPointClicked ? "bg-primary" : "bg-black"
-              } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
+                isPointToPointClicked ? "bg-primary" : "bg-white"
+              } p-1 px-2  text-black rounded cursor-pointer transition-all duration-500`}
               onClick={handlePointToPoint}
             >
               Point to Point
@@ -92,14 +92,14 @@ const MainTab = () => {
 
             <div
               className={`${
-                isTrainClicked ? "bg-primary" : "bg-black"
-              } p-1 px-2  text-white rounded cursor-pointer transition-all duration-500`}
+                isTrainClicked ? "bg-primary" : "bg-white"
+              } p-1 px-2  text-black rounded cursor-pointer transition-all duration-500`}
               onClick={handleTrain}
             >
               Train booking
             </div>
             <Link
-              className="p-1 px-2 bg-black text-white rounded cursor-pointer"
+              className="p-1 px-2 bg-white text-black rounded cursor-pointer"
               href={"/daytrips"}
             >
               Day tours
@@ -109,26 +109,27 @@ const MainTab = () => {
             <MdLocalAirport
               onClick={handleAirport}
               className={` ${
-                isAirportClicked ? "bg-primary" : "bg-black"
-              } bxs:size-[40px] size-[35px]   rounded p-[6px]`}
+                isAirportClicked ? "bg-primary" : "bg-white"
+              } bxs:size-[40px] size-[35px] text-black  rounded p-[6px]`}
             />
             <RiPinDistanceFill
               onClick={handlePointToPoint}
               className={`${
-                isPointToPointClicked ? "bg-primary" : "bg-black"
-              } bxs:size-[40px] size-[35px] rounded p-[6px]`}
+                isPointToPointClicked ? "bg-primary" : "bg-white"
+              } bxs:size-[40px] size-[35px] text-black  rounded p-[6px]`}
             />
 
             <FaTrain
               onClick={handleTrain}
               className={`${
-                isTrainClicked ? "bg-primary" : "bg-black"
-              } bxs:size-[40px] size-[35px]  rounded p-[8px]`}
+                isTrainClicked ? "bg-primary" : "bg-white"
+              } bxs:size-[40px] size-[35px] text-black  rounded p-[8px]`}
             />
             <Link href={"/daytrips"}>
-              <IoCarSportSharp className="bxs:size-[40px] size-[35px]  bg-black rounded p-[6px]" />
+              <IoCarSportSharp className="bxs:size-[40px] text-black  size-[35px] bg-white rounded p-[6px]" />
             </Link>
           </div>
+
           {isAirportClicked && <AirportMap isLoaded={isLoaded} />}
           {isPointToPointClicked && <PointToPointMap />}
 

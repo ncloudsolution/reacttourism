@@ -4,7 +4,7 @@ import React from "react";
 export default function AllCartPages({ children }) {
   return (
     <>
-      <div className="my-1 bxs:my-2 bigmd:my-3 w-full flex justify-center">
+      <div className="mt-2 bxs:mt-4 bigmd:mt-6 w-full flex justify-center">
         <Hierarchy />
       </div>
       {children}

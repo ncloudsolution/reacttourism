@@ -16,7 +16,7 @@ const CustomDatePicker = ({ selectedDate, onChange }) => {
 
   return (
     <div
-      className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full  shadow-md rounded border-[1px] border-black flex justify-between"
+      className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full  shadow-md rounded border-[1px] border-black bg-white flex justify-between"
       onClick={handleOuterDivClick}
     >
       <DatePicker

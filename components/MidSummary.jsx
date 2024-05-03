@@ -123,7 +123,7 @@ const MidSummary = () => {
                       Seat Capacity
                     </span>
                     <span className="font-normal">
-                      {tourDetails.vehicalSeatCapacity} Seats
+                      {tourDetails.vehicalSeatCapacityMax} Seats
                     </span>
                   </div>
 

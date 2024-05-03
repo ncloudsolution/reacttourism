@@ -1,70 +1,80 @@
 [
   {
     "type": "Flex",
-    "passengers": 2,
+    "minpassengers": 1,
+    "maxpassengers": 2,
     "weightFactor": 115,
     "img": "/Vehicles/alto.png",
     "luggages": 2
   },
   {
     "type": "Mini Car",
-    "passengers": 2,
+    "minpassengers": 1,
+    "maxpassengers": 2,
     "weightFactor": 125,
     "img": "/Vehicles/mpv4.png",
     "luggages": 2
   },
   {
     "type": "Sedan Car",
-    "passengers": 3,
+    "minpassengers": 1,
+    "maxpassengers": 3,
     "weightFactor": 160,
     "img": "/Vehicles/sedan.png",
     "luggages": 3
   },
   {
     "type": "SUV",
-    "passengers": 3,
+    "minpassengers": 1,
+    "maxpassengers": 3,
     "weightFactor": 180,
     "img": "/Vehicles/vezzel.png",
     "luggages": 3
   },
   {
     "type": "Mini Van",
-    "passengers": 3,
+    "minpassengers": 1,
+    "maxpassengers": 3,
     "weightFactor": 150,
     "img": "/Vehicles/wagonR.png",
     "luggages": 4
   },
   {
     "type": "Mini Van",
-    "passengers": 5,
+    "minpassengers": 1,
+    "maxpassengers": 5,
     "weightFactor": 150,
     "img": "/Vehicles/miniVanEvery.png",
     "luggages": 4
   },
   {
     "type": "Van",
-    "passengers": 6,
+    "minpassengers": 1,
+    "maxpassengers": 6,
     "weightFactor": 220,
     "img": "/Vehicles/kdh.png",
     "luggages": 6
   },
   {
     "type": "Mini Bus",
-    "passengers": 8,
+    "minpassengers": 1,
+    "maxpassengers": 8,
     "weightFactor": 250,
     "img": "/Vehicles/highroof.png",
     "luggages": 10
   },
   {
     "type": "Bus",
-    "passengers": 16,
+    "minpassengers": 10,
+    "maxpassengers": 16,
     "weightFactor": 250,
     "img": "/Vehicles/rosaBus.png",
     "luggages": 10
   },
   {
     "type": "Coach Bus",
-    "passengers": 45,
+    "minpassengers": 16,
+    "maxpassengers": 45,
     "weightFactor": 250,
     "img": "/Vehicles/coachBus.png",
     "luggages": 10

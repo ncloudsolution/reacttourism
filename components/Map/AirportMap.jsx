@@ -195,19 +195,19 @@ const AirportMap = ({ children }) => {
     <>
       <div className="flex flex-col items-center w-full">
         <div className="w-fit flex flex-col items-center justify-center ">
-          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[50px] mb-[10px] font-medium">
+          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[50px] mb-[10px] font-medium text-white">
             Airport Pickup / Drop
           </div>
           <MdLocalAirport className="text-[35px] text-primary" />
-          <div className="flex my-4 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-fit xxxs:w-[250px] w-[230px]">
+          <div className="flex mt-6 mb-8  bigmd:w-fit bxs:w-[400px] xxs:w-fit xxxs:w-[250px] w-[230px]">
             <div className="flex flex-col gap-y-3 w-full text-center  ">
               <div className="flex w-full gap-x-3">
                 <div
                   onClick={handlePickup}
                   className={`${
                     isPickup
-                      ? "bg-primary text-white"
-                      : "border-[1px] border-black"
+                      ? "bg-primary text-black"
+                      : "border-[1px] border-white text-white"
                   } w-1/2  py-2 rounded transition-all duration-500`}
                 >
                   Pickup
@@ -216,8 +216,8 @@ const AirportMap = ({ children }) => {
                   onClick={handleDrop}
                   className={`${
                     isDrop
-                      ? "bg-primary text-white"
-                      : "border-[1px] border-black"
+                      ? "bg-primary text-black"
+                      : "border-[1px] border-white text-white"
                   } w-1/2  py-2 rounded transition-all duration-500`}
                 >
                   Drop
@@ -230,7 +230,9 @@ const AirportMap = ({ children }) => {
                     ref={originRef}
                     placeholder="Origin"
                     type="text"
-                    className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black"
+                    className={` ${
+                      isPickDisable ? "bg-white" : ""
+                    } p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black`}
                   />
                 </Autocomplete>
 
@@ -240,7 +242,9 @@ const AirportMap = ({ children }) => {
                     ref={destinationRef}
                     placeholder="Destination"
                     type="text"
-                    className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black "
+                    className={` ${
+                      isDropDisable ? "bg-white" : ""
+                    } p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black`}
                   />
                 </Autocomplete>
 
@@ -275,7 +279,7 @@ const AirportMap = ({ children }) => {
                   </>
                 ) : (
                   <div
-                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black cursor-pointer py-[6px]"
+                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black bg-white cursor-pointer py-[6px]"
                     onClick={() => setReturnTour(true)}
                   >
                     Add Reurn
@@ -285,13 +289,13 @@ const AirportMap = ({ children }) => {
                 <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-2  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
                   <button
                     type="submit"
-                    className="bg-black text-white p-2 rounded bigmd:w-fit flex-1 bigmd:block "
+                    className="bg-primary text-black p-2 rounded bigmd:w-fit flex-1 bigmd:block "
                     onClick={calculateRoute}
                   >
                     Calculate Route
                   </button>
                   <button
-                    className="bg-black text-white p-2 rounded bigmd:w-fit :flex-1 bigmd:block"
+                    className="bg-primary text-black p-2 rounded bigmd:w-fit :flex-1 bigmd:block"
                     onClick={clearRoute}
                   >
                     Clear Route
@@ -304,10 +308,12 @@ const AirportMap = ({ children }) => {
           {submitError && <div className="text-errorpink">{submitError}</div>}
 
           {!submitError && distance && duration && (
-            <div className="flex xs:flex-row flex-col text-center py-2 px-5 gap-x-3 bg-yellow-400 text-black my-2 rounded">
-              <div>Distance : {distance}</div>
-              <div className="font-bold xs:flex hidden">||</div>
-              <div>Duration : {duration}</div>
+            <div className="w-[100vw] bg-white flex justify-center">
+              <div className="flex xs:flex-row flex-col text-center py-2 px-5 gap-x-3 bg-yellow-400 text-black rounded mt-8 mb-6 w-fit">
+                <div>Distance : {distance}</div>
+                <div className="font-bold xs:flex hidden">||</div>
+                <div>Duration : {duration}</div>
+              </div>
             </div>
           )}
 
@@ -331,8 +337,11 @@ const AirportMap = ({ children }) => {
         </div>
 
         {isSubmit && !submitError && (
-          <div className="w-full flex justify-center" ref={mapRef}>
-            <div className=" midxl:w-[1400px] mobile:w-[1000px] w-[800px] flex gap-x-10 xs:mt-8 mt-4 mb-16 bigmd:flex-row flex-col bigmd:items-start items-center border-2 border-transparent gap-5 p-4">
+          <div
+            className="w-[100vw] bg-white flex justify-center border-b-[1px] border-b-black"
+            ref={mapRef}
+          >
+            <div className=" midxl:w-[1400px] mobile:w-[1000px]  w-[800px] flex gap-x-10 xs:mt-8 mt-4 mb-16 bigmd:flex-row flex-col bigmd:items-start items-center border-2 border-transparent gap-5 p-4">
               <div className="midxl:w-[800px] xs:w-[400px] xxxs:w-[300px] w-[250px]  midxl:h-[500px] bigmd:h-[300px]  xs:h-[400px] xxxs:h-[300px] h-[250px] aspect-square flex rounded-lg overflow-hidden shadow-md ">
                 <GoogleMap
                   center={center}
@@ -368,7 +377,8 @@ const AirportMap = ({ children }) => {
 
                     <div className="flex flex-col mobile:mr-3 mr-1  gap-y-3  items-center justify-center border-2 border-transparent">
                       <div className="text-black text-[20px] ">
-                        Passengers {vehicle.passengers}
+                        Passengers {vehicle.minpassengers} -{" "}
+                        {vehicle.maxpassengers}
                       </div>
                       <div className="text-black text-[20px] ">
                         Luggages {vehicle.luggages}
@@ -389,7 +399,8 @@ const AirportMap = ({ children }) => {
                           //console.log(vehicle.price);
                           setTourDetails({
                             vehicleType: vehicle.type,
-                            vehicalSeatCapacity: vehicle.passengers,
+                            vehicalSeatCapacityMin: vehicle.minpassengers,
+                            vehicalSeatCapacityMax: vehicle.maxpassengers,
                             weightFactor: vehicle.weightFactor,
                             price: returnTour
                               ? vehicle.price * 2
@@ -421,9 +432,10 @@ const AirportMap = ({ children }) => {
             </div>
           </div>
         )}
-
-        {/** context usage **/}
       </div>
+
+      {/** context usage **/}
+
       {children}
     </>
   );
