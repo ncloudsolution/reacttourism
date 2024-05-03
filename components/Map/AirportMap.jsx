@@ -18,6 +18,10 @@ import CustomDatePicker from "../CustomDatePicker";
 
 import { IoIosCloseCircle } from "react-icons/io";
 import { MdLocalAirport } from "react-icons/md";
+import { FaUser } from "react-icons/fa6";
+import { FaBriefcase } from "react-icons/fa";
+import { FaRegSnowflake } from "react-icons/fa";
+import { BsHandbagFill } from "react-icons/bs";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -341,8 +345,8 @@ const AirportMap = ({ children }) => {
             className="w-[100vw] bg-white flex justify-center border-b-[1px] border-b-black"
             ref={mapRef}
           >
-            <div className=" midxl:w-[1400px] mobile:w-[1000px]  w-[800px] flex gap-x-10 xs:mt-8 mt-4 mb-16 bigmd:flex-row flex-col bigmd:items-start items-center border-2 border-transparent gap-5 p-4">
-              <div className="midxl:w-[800px] xs:w-[400px] xxxs:w-[300px] w-[250px]  midxl:h-[500px] bigmd:h-[300px]  xs:h-[400px] xxxs:h-[300px] h-[250px] aspect-square flex rounded-lg overflow-hidden shadow-md ">
+            <div className=" midxl:w-[1400px] mobile:w-[1000px]  w-[800px] flex gap-x-10 xs:mt-8 mt-4 mb-16 mobile:flex-row flex-col bigmd:items-start items-center border-2 border-transparent gap-5 p-4">
+              <div className="midxl:w-[800px] bxs:w-full xs:w-[400px] xxxs:w-[300px] w-[250px]  midxl:h-[500px] bigmd:h-[300px]  xs:h-[400px] xxxs:h-[300px] h-[250px] aspect-square flex rounded-lg overflow-hidden shadow-md ">
                 <GoogleMap
                   center={center}
                   zoom={15}
@@ -364,7 +368,7 @@ const AirportMap = ({ children }) => {
                       <div className="font-semibold text-[30px] px-8">
                         {vehicle.type}
                       </div>
-                      <div className="sm:w-[300px] w-[250px] sm:h-[150px] h-[120px]">
+                      <div className="sm:w-[300px] w-[250px] sm:h-[150px] h-[120px] xs:translate-y-5 translate-y-0">
                         <Image
                           src={vehicle.img}
                           alt=""
@@ -375,20 +379,38 @@ const AirportMap = ({ children }) => {
                       </div>
                     </div>
 
-                    <div className="flex flex-col mobile:mr-3 mr-1  gap-y-3  items-center justify-center border-2 border-transparent">
-                      <div className="text-black text-[20px] ">
-                        Passengers {vehicle.minpassengers} -{" "}
-                        {vehicle.maxpassengers}
+                    <div className="flex flex-col mobile:mr-3 mr-1  gap-y-3  items-center justify-center border-2 border-transparent  xs:w-[200px] w-full">
+                      <div className="flex flex-col xs:gap-y-[2px]  w-full">
+                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                          <FaUser className="text-[28px] p-1 mr-1" />
+                          <div>
+                            {vehicle.minpassengers} - {vehicle.maxpassengers}{" "}
+                            Passengers
+                          </div>
+                        </div>
+
+                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                          <FaBriefcase className="text-[28px] p-1 mr-1" />
+                          <div>{vehicle.luggages} Luggages </div>
+                        </div>
+
+                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                          <BsHandbagFill className="text-[28px] p-1 mr-1" />
+                          <div>{vehicle.handbaggages} Hand Baggages</div>
+                        </div>
+
+                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                          <FaRegSnowflake className="text-[28px] p-1 mr-1" />
+                          <div>Air Conditioning</div>
+                        </div>
                       </div>
-                      <div className="text-black text-[20px] ">
-                        Luggages {vehicle.luggages}
-                      </div>
+
                       <div className="bg-black text-white py-2 rounded w-full text-center flex flex-col items-center">
                         <div>
                           Price Rs.
                           {returnTour ? vehicle.price * 2 : vehicle.price}
                         </div>
-                        <div className="bigmd:text-[12px] text-[10px] text-yellow-500 bigmd:w-[200px]  xs:w-[150px] w-[170px] px-2 text-center">
+                        <div className="bigmd:text-[12px] text-[10px] text-yellow-500 w-full  px-2 text-center">
                           Highway Charges and other Charges are Not Included
                         </div>
                       </div>

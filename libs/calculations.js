@@ -18,6 +18,7 @@ export function SelectVehiclesList(noOfPassengers, distance) {
       price: price,
       img: v.img,
       luggages: v.luggages,
+      handbaggages: v.handbaggages,
     };
   });
 
