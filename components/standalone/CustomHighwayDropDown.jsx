@@ -12,7 +12,7 @@ const CustomHighwayDropDown = () => {
 
   const [stations] = useState(Object.keys(highway));
   const [inputValue, setInputValue] = useState("");
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState(tourDetails.highwayExit || "");
   const [open, setOpen] = useState(false);
 
   const handleSelectStation = (station) => {

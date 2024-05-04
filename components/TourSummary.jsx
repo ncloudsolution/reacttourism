@@ -201,12 +201,26 @@ Duration: ${tourDetails.duration}`;
                         </div>
                       </div>
                     )}
+                    {tourDetails.highwayExit &&
+                      tourDetails.highwayExit !== "None" &&
+                      tourDetails.highwayCharge !== "No any Charge" && (
+                        <div className="flex">
+                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                            Highway Charges
+                          </div>
+                          <div>:</div>
+                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                            Rs.{tourDetails.highwayCharge}.00
+                          </div>
+                        </div>
+                      )}
+
                     <div className="flex mt-3">
                       <div className="xs:w-[180px] xxs:w-[130px] w-[100px] ">
                         Total Price
                       </div>
                       <div>:</div>
-                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                      <div className="ml-4 font-normal w-fit border-double border-y-4 border-black">
                         Rs. {tourDetails.totalPrice}.00
                       </div>
                     </div>

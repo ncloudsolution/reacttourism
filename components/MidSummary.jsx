@@ -27,9 +27,13 @@ const MidSummary = () => {
   const [mobValue, setMobValue] = useState();
   const [submitError, setSubmitError] = useState();
 
-  const [boardShow, setBoardShow] = useState(false);
-  const [highwayCharge, setHighwayCharge] = useState(null);
-  const [highwayExit, setHighwayExit] = useState(null);
+  const [boardShow, setBoardShow] = useState(tourDetails.boardShow || false);
+  const [highwayCharge, setHighwayCharge] = useState(
+    tourDetails.highwayCharge || null
+  );
+  const [highwayExit, setHighwayExit] = useState(
+    tourDetails.highwayExit || null
+  );
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -65,7 +69,13 @@ const MidSummary = () => {
       customerLuggageCount: cusLuggageCountRef.current.value,
       boardShow: boardShow ? otherPrices[0].boardShow : "Rejected",
       totalPrice:
-        tourDetails.price + (boardShow ? otherPrices[0]?.boardShow : 0),
+        tourDetails.price +
+        (boardShow ? otherPrices[0]?.boardShow : 0) +
+        (highwayExit &&
+        highwayExit !== "None" &&
+        highwayCharge !== "No any Charge"
+          ? highwayCharge
+          : 0),
       pageThreeToken: true,
     }));
     router.push("/tourbooking/summary");
