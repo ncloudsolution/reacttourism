@@ -23,6 +23,12 @@ const TourSummary = () => {
 
     setIsLoading(true);
 
+    const highwayChargesText = `${
+      tourDetails.highwayExit
+        ? `Highway Charges : ${tourDetails.highwayExit} - ${tourDetails.highwayCharge}`
+        : `Highway Charges : ${tourDetails.highwayCharge}`
+    }`;
+
     const emailText = `New Customer Details:
 Name: ${tourDetails.customerName}
 Email: ${tourDetails.customerEmail}
@@ -33,6 +39,7 @@ No.of Passengers: ${tourDetails.noOfPassengers}
 Requested Luggage Count: ${tourDetails.customerLuggageCount}
 Vehical Price: ${tourDetails.price}
 Boardshow: ${tourDetails.boardShow}
+${highwayChargesText}
 
 Total Price:  ${tourDetails.totalPrice}
 -------------------------------------------------
