@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import { TourContext } from "../context/TourContextProvider";
 import Image from "next/image";
 
@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 
 import otherPrices from "@/data/otherPrices.json";
 import Hierarchy from "./standalone/Hierarchy";
+import CustomHighwayDropDown from "./standalone/CustomHighwayDropDown";
 
 const MidSummary = () => {
   const router = useRouter();
@@ -27,6 +28,8 @@ const MidSummary = () => {
   const [submitError, setSubmitError] = useState();
 
   const [boardShow, setBoardShow] = useState(false);
+  const [highwayCharge, setHighwayCharge] = useState(null);
+  const [highwayExit, setHighwayExit] = useState(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -92,6 +95,12 @@ const MidSummary = () => {
       customerLuggageCount: newLuggageCount,
     }));
   };
+
+  useEffect(() => {
+    console.log("ui updated");
+    setHighwayCharge(tourDetails.highwayCharge);
+    setHighwayExit(tourDetails.highwayExit);
+  }, [tourDetails.highwayExit, tourDetails.highwayCharge]);
 
   return (
     <>
@@ -160,6 +169,24 @@ const MidSummary = () => {
                         </span>
                       </div>
                     )}
+
+                    {/* 
+highwayExit: station,
+                    highwayCharge: highwayChargeValue, */}
+
+                    {highwayExit &&
+                      highwayExit !== "None" &&
+                      highwayCharge !== "No any Charge" && (
+                        <div className="bxs:w-[400px] w-full flex ">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Highway Charges
+                          </span>
+                          <span className="font-normal">
+                            Rs.{highwayCharge}.00
+                          </span>
+                        </div>
+                      )}
+
                     <div className="bxs:w-[400px] w-full flex mt-2">
                       <span className="bxs:w-[180px] w-[150px] bg-transparent">
                         Total Price
@@ -167,7 +194,12 @@ const MidSummary = () => {
                       <span className="font-normal border-double border-y-4  border-black">
                         Rs.
                         {tourDetails.price +
-                          (boardShow ? otherPrices[0]?.boardShow : 0)}
+                          (boardShow ? otherPrices[0]?.boardShow : 0) +
+                          (highwayExit &&
+                          highwayExit !== "None" &&
+                          highwayCharge !== "No any Charge"
+                            ? highwayCharge
+                            : 0)}
                         .00
                       </span>
                     </div>
@@ -184,7 +216,7 @@ const MidSummary = () => {
                     <div className="w-full bg-primary h-[2px] mb-4"></div>
                     <form onSubmit={handleSubmit}>
                       <div className="flex gap-y-1 flex-col">
-                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 ">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             Passengers Name
                           </span>
@@ -195,11 +227,11 @@ const MidSummary = () => {
                             placeholder="Passenger Name"
                             type="text"
                             min="1"
-                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
 
-                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             Email
                           </span>
@@ -209,15 +241,15 @@ const MidSummary = () => {
                             ref={cusEmailRef}
                             placeholder="Passenger Email"
                             type="email"
-                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
 
-                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             Mobile No
                           </span>
-                          <div className="shadow-md rounded border-[1px] border-black bxs:w-[220px] w-full bg-white p-1 font-normal ">
+                          <div className="shadow-md rounded border-[1px] border-black bxs:w-[240px] w-full bg-white p-1 font-normal ">
                             <PhoneInput
                               international
                               countryCallingCodeEditable={false}
@@ -246,7 +278,7 @@ const MidSummary = () => {
                     />**/}
                         </div>
 
-                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             No of Luggagues
                           </span>
@@ -257,11 +289,11 @@ const MidSummary = () => {
                             placeholder="No.Luggages"
                             type="number"
                             min="0"
-                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
 
-                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             No of Passengers
                           </span>
@@ -273,7 +305,7 @@ const MidSummary = () => {
                           </span>
                         </div>
 
-                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-1">
                             Board Show
                             <span className="text-gray-400 text-[12px] font-normal ml-2">
@@ -290,9 +322,9 @@ const MidSummary = () => {
                               }}
                               className={` ${
                                 boardShow
-                                  ? "bg-primary text-black shadow-md"
+                                  ? "bg-primary text-black shadow-md "
                                   : "border-[1px] border-black"
-                              } w-full p-1 rounded transition-all duration-500`}
+                              } w-full p-1 rounded transition-all duration-500 hover:cursor-pointer`}
                             >
                               Accept
                             </div>
@@ -306,12 +338,22 @@ const MidSummary = () => {
                                 !boardShow
                                   ? "bg-primary text-black shadow-md"
                                   : "border-[1px] border-black"
-                              } w-full p-1 rounded transition-all duration-500`}
+                              } w-full p-1 rounded transition-all duration-500 hover:cursor-pointer`}
                             >
                               Reject
                             </div>
                           </div>
                         </div>
+
+                        <div className=" flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:mt-2 bxs:my-0 my-1 justify-center">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Highway Exit
+                          </span>
+                          <div className="bxs:w-[240px] w-full relative">
+                            <CustomHighwayDropDown />
+                          </div>
+                        </div>
+
                         {/* 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 mb-4">
                         <span className="bxs:w-[180px] pr-3 w-full bg-transparent">

@@ -429,6 +429,7 @@ const AirportMap = ({ children }) => {
                               : vehicle.price,
                             image: vehicle.img,
                             luggages: vehicle.luggages,
+                            category: vehicle.category,
 
                             origin: originRef.current.value,
                             destination: destinationRef.current.value,

@@ -6,7 +6,8 @@
     "weightFactor": 115,
     "img": "/Vehicles/alto.png",
     "luggages": 2,
-    "handbaggages": 2
+    "handbaggages": 2,
+    "category": "A"
   },
   {
     "type": "Mini Car",
@@ -15,7 +16,8 @@
     "weightFactor": 125,
     "img": "/Vehicles/mpv4.png",
     "luggages": 2,
-    "handbaggages": 3
+    "handbaggages": 3,
+    "category": "A"
   },
   {
     "type": "Sedan Car",
@@ -24,7 +26,8 @@
     "weightFactor": 160,
     "img": "/Vehicles/sedan.png",
     "luggages": 3,
-    "handbaggages": 3
+    "handbaggages": 3,
+    "category": "A"
   },
   {
     "type": "SUV",
@@ -33,7 +36,8 @@
     "weightFactor": 180,
     "img": "/Vehicles/vezzel.png",
     "luggages": 3,
-    "handbaggages": 3
+    "handbaggages": 3,
+    "category": "A"
   },
   {
     "type": "Mini Van",
@@ -42,7 +46,8 @@
     "weightFactor": 150,
     "img": "/Vehicles/wagonR.png",
     "luggages": 4,
-    "handbaggages": 4
+    "handbaggages": 4,
+    "category": "B"
   },
   {
     "type": "Mini Van",
@@ -51,7 +56,8 @@
     "weightFactor": 150,
     "img": "/Vehicles/miniVanEvery.png",
     "luggages": 6,
-    "handbaggages": 6
+    "handbaggages": 6,
+    "category": "B"
   },
   {
     "type": "Van",
@@ -60,7 +66,8 @@
     "weightFactor": 220,
     "img": "/Vehicles/kdh.png",
     "luggages": 7,
-    "handbaggages": 7
+    "handbaggages": 7,
+    "category": "B"
   },
   {
     "type": "Mini Bus",
@@ -69,7 +76,8 @@
     "weightFactor": 250,
     "img": "/Vehicles/highroof.png",
     "luggages": 10,
-    "handbaggages": 10
+    "handbaggages": 10,
+    "category": "C"
   },
   {
     "type": "Bus",
@@ -78,7 +86,8 @@
     "weightFactor": 250,
     "img": "/Vehicles/rosaBus.png",
     "luggages": 20,
-    "handbaggages": 20
+    "handbaggages": 20,
+    "category": "C"
   },
   {
     "type": "Coach Bus",
@@ -87,6 +96,7 @@
     "weightFactor": 250,
     "img": "/Vehicles/coachBus.png",
     "luggages": 45,
-    "handbaggages": 50
+    "handbaggages": 50,
+    "category": "C"
   }
 ]

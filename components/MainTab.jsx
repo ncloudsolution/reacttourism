@@ -13,6 +13,7 @@ import { MdLocalAirport } from "react-icons/md";
 import { FaTrain } from "react-icons/fa6";
 import { IoCarSportSharp } from "react-icons/io5";
 import Hierarchy from "./standalone/Hierarchy";
+import { SetHighwayCharge } from "@/libs/HighwayFair";
 
 const MainTab = () => {
   const [isPointToPointClicked, setIsPointToPointClicked] = useState(false);
@@ -61,6 +62,9 @@ const MainTab = () => {
     setIsAirportClicked(false);
     setIsPointToPointClicked(false);
   };
+
+  // const hi = SetHighwayCharge("A", "Athurugiriya");
+  // console.log(hi, "highwaycharge");
 
   return (
     <>
