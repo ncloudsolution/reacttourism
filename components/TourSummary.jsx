@@ -43,13 +43,15 @@ Mobile No: ${tourDetails.customerMobileNo}
 selected Vehicle: ${tourDetails.vehicleType}
 No.of Passengers: ${tourDetails.noOfPassengers}
 Requested Luggage Count: ${tourDetails.customerLuggageCount}
-Vehical Price: ${tourDetails.price}
-Boardshow: ${tourDetails.converedCurrencySymbol}{" "} ${(
+Vehical Price:  ${tourDetails.converedCurrencySymbol}${(
+      tourDetails.price * tourDetails.conversionRate
+    ).toFixed(2)}
+Boardshow: ${tourDetails.converedCurrencySymbol}${(
       tourDetails.boardShow * tourDetails.conversionRate
     ).toFixed(2)}
 ${highwayChargesText}
 
-Total Price with selected currency:${tourDetails.converedCurrencySymbol}{" "} ${
+Total Price with selected currency:${tourDetails.converedCurrencySymbol}${
       tourDetails.totalPrice
     }
 Total Price in LKR: Rs.${tourDetails.totalLKRPrice}
