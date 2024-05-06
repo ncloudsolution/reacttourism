@@ -25,8 +25,14 @@ const TourSummary = () => {
 
     const highwayChargesText = `${
       tourDetails.highwayExit
-        ? `Highway Charges : ${tourDetails.highwayExit} - ${tourDetails.highwayCharge}`
-        : `Highway Charges : ${tourDetails.highwayCharge}`
+        ? `Highway Charges : ${tourDetails.highwayExit} - ${
+            tourDetails.converedCurrencySymbol
+          }{" "}${(
+            tourDetails.highwayCharge * tourDetails.conversionRate
+          ).toFixed(2)}`
+        : `Highway Charges :  ${tourDetails.converedCurrencySymbol}{" "}${(
+            tourDetails.highwayCharge * tourDetails.conversionRate
+          ).toFixed(2)}`
     }`;
 
     const emailText = `New Customer Details:
@@ -38,10 +44,15 @@ selected Vehicle: ${tourDetails.vehicleType}
 No.of Passengers: ${tourDetails.noOfPassengers}
 Requested Luggage Count: ${tourDetails.customerLuggageCount}
 Vehical Price: ${tourDetails.price}
-Boardshow: ${tourDetails.boardShow}
+Boardshow: ${tourDetails.converedCurrencySymbol}{" "} ${(
+      tourDetails.boardShow * tourDetails.conversionRate
+    ).toFixed(2)}
 ${highwayChargesText}
 
-Total Price:  ${tourDetails.totalPrice}
+Total Price with selected currency:${tourDetails.converedCurrencySymbol}{" "} ${
+      tourDetails.totalPrice
+    }
+Total Price in LKR: Rs.${tourDetails.totalLKRPrice}
 -------------------------------------------------
 Origin: ${tourDetails.origin}
 Destination: ${tourDetails.destination}
@@ -194,7 +205,8 @@ Duration: ${tourDetails.duration}`;
                       </div>
                       <div>:</div>
                       <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                        Rs. {tourDetails.price}.00
+                        {tourDetails.converedCurrencySymbol}{" "}
+                        {tourDetails.convertedPrice}
                       </div>
                     </div>
                     {tourDetails.boardShow != 0 && (
@@ -204,7 +216,10 @@ Duration: ${tourDetails.duration}`;
                         </div>
                         <div>:</div>
                         <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                          Rs. {tourDetails.boardShow}.00
+                          {tourDetails.converedCurrencySymbol}{" "}
+                          {(
+                            tourDetails.boardShow * tourDetails.conversionRate
+                          ).toFixed(2)}
                         </div>
                       </div>
                     )}
@@ -217,7 +232,11 @@ Duration: ${tourDetails.duration}`;
                           </div>
                           <div>:</div>
                           <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                            Rs.{tourDetails.highwayCharge}.00
+                            {tourDetails.converedCurrencySymbol}{" "}
+                            {(
+                              tourDetails.highwayCharge *
+                              tourDetails.conversionRate
+                            ).toFixed(2)}
                           </div>
                         </div>
                       )}
@@ -228,7 +247,8 @@ Duration: ${tourDetails.duration}`;
                       </div>
                       <div>:</div>
                       <div className="ml-4 font-normal w-fit border-double border-y-4 border-black">
-                        Rs. {tourDetails.totalPrice}.00
+                        {tourDetails.converedCurrencySymbol}{" "}
+                        {tourDetails.totalPrice}
                       </div>
                     </div>
 

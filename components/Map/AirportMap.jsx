@@ -406,9 +406,21 @@ const AirportMap = ({ children }) => {
                       </div>
 
                       <div className="bg-black text-white py-2 rounded w-full text-center flex flex-col items-center">
-                        <div>
-                          Price Rs.
-                          {returnTour ? vehicle.price * 2 : vehicle.price}
+                        <div className="flex text-[18px]">
+                          <div className="pr-1">
+                            {tourDetails.converedCurrencySymbol}
+                          </div>
+                          <div>
+                            {returnTour
+                              ? (
+                                  tourDetails.conversionRate *
+                                  vehicle.price *
+                                  2
+                                ).toFixed(2)
+                              : (
+                                  tourDetails.conversionRate * vehicle.price
+                                ).toFixed(2)}
+                          </div>
                         </div>
                         <div className="bigmd:text-[12px] text-[10px] text-yellow-500 w-full  px-2 text-center">
                           Highway Charges and other Charges are Not Included
@@ -419,14 +431,23 @@ const AirportMap = ({ children }) => {
                         onClick={() => {
                           console.log(startDate, "date");
                           //console.log(vehicle.price);
-                          setTourDetails({
+                          setTourDetails((prevTourDetails) => ({
+                            ...prevTourDetails,
                             vehicleType: vehicle.type,
                             vehicalSeatCapacityMin: vehicle.minpassengers,
                             vehicalSeatCapacityMax: vehicle.maxpassengers,
                             weightFactor: vehicle.weightFactor,
-                            price: returnTour
-                              ? vehicle.price * 2
-                              : vehicle.price,
+                            price: vehicle.price,
+                            convertedPrice: returnTour
+                              ? (
+                                  tourDetails.conversionRate *
+                                  vehicle.price *
+                                  2
+                                ).toFixed(2)
+                              : (
+                                  tourDetails.conversionRate * vehicle.price
+                                ).toFixed(2),
+
                             image: vehicle.img,
                             luggages: vehicle.luggages,
                             category: vehicle.category,
@@ -441,7 +462,12 @@ const AirportMap = ({ children }) => {
                             distance: distance,
                             duration: duration,
                             pageTwoToken: true,
-                          });
+                          }));
+                          console.log(
+                            "Conversion rate:",
+                            tourDetails.conversionRate
+                          );
+                          console.log("Vehicle price:", vehicle.price);
                           console.log("redirect");
                           router.push("/tourbooking");
                         }}

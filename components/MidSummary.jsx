@@ -29,7 +29,7 @@ const MidSummary = () => {
 
   const [boardShow, setBoardShow] = useState(tourDetails.boardShow || false);
   const [highwayCharge, setHighwayCharge] = useState(
-    tourDetails.highwayCharge || null
+    tourDetails.highwayCharge * tourDetails.conversionRate || null
   );
   const [highwayExit, setHighwayExit] = useState(
     tourDetails.highwayExit || null
@@ -68,14 +68,30 @@ const MidSummary = () => {
       customerMobileNo: cusMobileRef.current.value,
       customerLuggageCount: cusLuggageCountRef.current.value,
       boardShow: boardShow ? otherPrices[0].boardShow : "Rejected",
-      totalPrice:
-        tourDetails.price +
-        (boardShow ? otherPrices[0]?.boardShow : 0) +
+      totalPrice: (
+        parseFloat(tourDetails.convertedPrice) +
+        (boardShow
+          ? parseFloat(
+              (otherPrices[0]?.boardShow * tourDetails.conversionRate).toFixed(
+                2
+              )
+            )
+          : 0) +
         (highwayExit &&
         highwayExit !== "None" &&
         highwayCharge !== "No any Charge"
-          ? highwayCharge
-          : 0),
+          ? parseFloat(highwayCharge * tourDetails.conversionRate)
+          : 0)
+      ).toFixed(2),
+      totalLKRPrice: (
+        parseFloat(tourDetails.price) +
+        (boardShow ? parseFloat((otherPrices[0]?.boardShow).toFixed(2)) : 0) +
+        (highwayExit &&
+        highwayExit !== "None" &&
+        highwayCharge !== "No any Charge"
+          ? parseFloat(highwayCharge)
+          : 0)
+      ).toFixed(2),
       pageThreeToken: true,
     }));
     router.push("/tourbooking/summary");
@@ -165,7 +181,8 @@ const MidSummary = () => {
                         Price for Vehical
                       </span>
                       <span className="font-normal">
-                        Rs.{tourDetails.price}.00
+                        {tourDetails.converedCurrencySymbol}{" "}
+                        {tourDetails.convertedPrice}
                       </span>
                     </div>
 
@@ -175,7 +192,11 @@ const MidSummary = () => {
                           Board Show
                         </span>
                         <span className="font-normal">
-                          Rs.{otherPrices[0].boardShow}.00
+                          {tourDetails.converedCurrencySymbol}{" "}
+                          {(
+                            otherPrices[0].boardShow *
+                            tourDetails.conversionRate
+                          ).toFixed(2)}
                         </span>
                       </div>
                     )}
@@ -192,7 +213,10 @@ highwayExit: station,
                             Highway Charges
                           </span>
                           <span className="font-normal">
-                            Rs.{highwayCharge}.00
+                            {tourDetails.converedCurrencySymbol}{" "}
+                            {(
+                              highwayCharge * tourDetails.conversionRate
+                            ).toFixed(2)}
                           </span>
                         </div>
                       )}
@@ -202,15 +226,25 @@ highwayExit: station,
                         Total Price
                       </span>
                       <span className="font-normal border-double border-y-4  border-black">
-                        Rs.
-                        {tourDetails.price +
-                          (boardShow ? otherPrices[0]?.boardShow : 0) +
+                        {tourDetails.converedCurrencySymbol}{" "}
+                        {(
+                          parseFloat(tourDetails.convertedPrice) + // Convert to float to handle potential string values
+                          (boardShow
+                            ? parseFloat(
+                                (
+                                  otherPrices[0]?.boardShow *
+                                  tourDetails.conversionRate
+                                ).toFixed(2)
+                              ) // Apply toFixed to the product of boardShow and conversionRate
+                            : 0) +
                           (highwayExit &&
                           highwayExit !== "None" &&
                           highwayCharge !== "No any Charge"
-                            ? highwayCharge
-                            : 0)}
-                        .00
+                            ? parseFloat(
+                                highwayCharge * tourDetails.conversionRate
+                              ) // Convert to float to handle potential string values
+                            : 0)
+                        ).toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -319,7 +353,11 @@ highwayExit: station,
                           <span className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-1">
                             Board Show
                             <span className="text-gray-400 text-[12px] font-normal ml-2">
-                              Rs.{otherPrices[0].boardShow}.00
+                              {tourDetails.converedCurrencySymbol}{" "}
+                              {(
+                                otherPrices[0].boardShow *
+                                tourDetails.conversionRate
+                              ).toFixed(2)}
                             </span>
                           </span>
 

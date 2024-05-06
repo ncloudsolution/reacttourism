@@ -10,6 +10,7 @@ export function SelectVehiclesList(noOfPassengers, distance) {
   // Creating a new array with filtered vehicles and calculated price
   const selectedVehiclesList = filteredVehicles.map((v) => {
     const price = Math.ceil(v.weightFactor * distance);
+
     return {
       type: v.type,
       minpassengers: v.minpassengers,

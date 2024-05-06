@@ -2,32 +2,54 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
-import { TbRoadSign } from "react-icons/tb";
-import highway from "@/data/highwayCharges.json";
+import { GiTwoCoins } from "react-icons/gi";
+import currency from "@/data/currency.json";
 import { TourContext } from "@/context/TourContextProvider";
 import { SetHighwayCharge } from "@/libs/HighwayFair";
+import useCurrency from "@/hooks/useCurrency";
 
-const CustomHighwayDropDown = () => {
+const CustomCurrencyDropDown = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
-  const [stations] = useState(Object.keys(highway));
+  const [currencies] = useState(Object.keys(currency));
   const [inputValue, setInputValue] = useState("");
-  const [selected, setSelected] = useState(tourDetails.highwayExit || "");
+  const [selected, setSelected] = useState(
+    tourDetails.convertedCurrencyType || currencies[0]
+  );
   const [open, setOpen] = useState(false);
 
-  const handleSelectStation = (station) => {
-    setSelected(station);
-    const highwayChargeValue = SetHighwayCharge(tourDetails.category, station);
+  const selectedCurrency = useCurrency();
+
+  console.log(selectedCurrency, "selected");
+
+  const handleSelectcurrency = (currencies) => {
+    setSelected(currencies);
+    console.log(currencies, "what currency");
+
+    //instead of selected we use currencies
+
+    console.log(
+      350 * selectedCurrency[currencies.toLowerCase()],
+      "converted value"
+    );
+
+    const conversionRate = selectedCurrency[currencies.toLowerCase()] || 1;
+
+    const convertedCurrencyType = currencies;
+    const converedCurrencySymbol = currency[currencies];
+
+    console.log(convertedCurrencyType, converedCurrencySymbol, "both");
+
     setTourDetails((prevTourDetails) => ({
       ...prevTourDetails,
-      highwayExit: station,
-      highwayCharge: highwayChargeValue,
+      conversionRate: conversionRate,
+      convertedCurrencyType: convertedCurrencyType,
+      converedCurrencySymbol: converedCurrencySymbol,
     }));
     setOpen(false);
     setInputValue("");
   };
 
-  //outer click hidden function
   const DropDownRef = useRef();
 
   const handleClickOutside = (e) => {
@@ -44,12 +66,12 @@ const CustomHighwayDropDown = () => {
   }, [open]);
 
   return (
-    <div className="relative font-normal ">
-      <div className="w-full left-0 right-0 h-[30px]">
+    <div className="font-normal">
+      <div className="w-full absolute z-[1] left-0 right-0  h-[50px]">
         {/* Dropdown button */}
         <div
           onClick={() => setOpen(!open)}
-          className={`bg-white w-full border-[1px] text-[14px] border-black p-1 flex items-center justify-between rounded ${
+          className={`bg-primary w-full border-[1px] text-[14px] border-black p-1 flex items-center justify-between rounded ${
             !selected && "text-[#8e8e8e]"
           }`}
         >
@@ -57,7 +79,7 @@ const CustomHighwayDropDown = () => {
             ? selected?.length > 25
               ? selected?.substring(0, 25) + "..."
               : selected
-            : "Select Your Highway Exit"}
+            : "Currency Type"}
           {/* Dropdown icon */}
           <BiChevronDown size={20} className={`${open && "rotate-180"}`} />
         </div>
@@ -66,7 +88,7 @@ const CustomHighwayDropDown = () => {
           ref={DropDownRef}
           className={`bg-white mt-2 overflow-y-auto cursor-pointer ${
             open
-              ? "max-h-[220px] border-[1px] border-black rounded mb-2"
+              ? "max-h-[250px] border-[1px] border-black rounded mb-2"
               : "max-h-0"
           }`}
         >
@@ -77,26 +99,26 @@ const CustomHighwayDropDown = () => {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value.toLowerCase())}
-              placeholder="Enter Your Favorite Stations"
+              placeholder="Preferd Currency"
               className="placeholder:text-gray-700 placeholder:text-[12px] bxs:placeholder:text-[14px] px-2 py-1 outline-none w-full"
             />
           </div>
           {/* Dropdown items */}
-          {stations.map((station) => (
+          {currencies.map((currency) => (
             <li
-              key={station}
-              className={`py-2 px-3 text-[12px] bxs:text-[14px] hover:bg-sky-600 hover:text-white flex items-center  ${
-                station?.toLowerCase() === selected?.toLowerCase() &&
-                "bg-sky-600 text-white"
+              key={currency}
+              className={`py-2 px-3 text-[12px] bxs:text-[14px] hover:bg-black hover:text-white flex items-center m-1 rounded ${
+                currency?.toLowerCase() === selected?.toLowerCase() &&
+                "bg-primary text-black "
               } ${
-                station?.toLowerCase().startsWith(inputValue)
+                currency?.toLowerCase().startsWith(inputValue)
                   ? "block"
                   : "hidden"
               }`}
-              onClick={() => handleSelectStation(station)}
+              onClick={() => handleSelectcurrency(currency)}
             >
-              <TbRoadSign size={20} className="mr-2" />
-              {station}
+              <GiTwoCoins size={20} className="mr-2" />
+              {currency}
             </li>
           ))}
         </ul>
@@ -105,4 +127,4 @@ const CustomHighwayDropDown = () => {
   );
 };
 
-export default CustomHighwayDropDown;
+export default CustomCurrencyDropDown;

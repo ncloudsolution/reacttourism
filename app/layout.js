@@ -5,6 +5,7 @@ import AbsoluteFooter from "@/components/AbsoluteFooter";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TourContextProvider from "../context/TourContextProvider";
+import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDown";
 
 const inter = Inter({ subsets: ["latin"] });
 

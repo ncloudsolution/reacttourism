@@ -14,6 +14,7 @@ import { FaTrain } from "react-icons/fa6";
 import { IoCarSportSharp } from "react-icons/io5";
 import Hierarchy from "./standalone/Hierarchy";
 import { SetHighwayCharge } from "@/libs/HighwayFair";
+import CustomCurrencyDropDown from "./standalone/CustomCurrencyDropDown";
 
 const MainTab = () => {
   const [isPointToPointClicked, setIsPointToPointClicked] = useState(false);
@@ -68,6 +69,9 @@ const MainTab = () => {
 
   return (
     <>
+      <div className="mt-[30px] fixed w-[200px] right-10">
+        <CustomCurrencyDropDown />
+      </div>
       <div className="flex justify-center items-center flex-col bg-black ">
         <div className="bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] flex justify-center">
           <div className="mt-2 bxs:mt-4 bigmd:mt-6 w-full flex justify-center">

@@ -4,12 +4,13 @@ import React from "react";
 import TimeChecker from "@/components/testingComponents/TimeChecker";
 import CustomTrainDropDown from "@/components/standalone/CustomTrainDropDown";
 import CustomHighwayDropDown from "@/components/standalone/CustomHighwayDropDown";
+import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDown";
 
 const newtesting = () => {
   return (
     <div>
       {/* {<MainMapConfigs />} */}
-      <CustomHighwayDropDown />
+      <CustomCurrencyDropDown />
     </div>
   );
 };
