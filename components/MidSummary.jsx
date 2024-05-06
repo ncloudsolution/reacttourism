@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import otherPrices from "@/data/otherPrices.json";
 import Hierarchy from "./standalone/Hierarchy";
 import CustomHighwayDropDown from "./standalone/CustomHighwayDropDown";
+import CurrencyTab from "./testingComponents/CurrencyTab";
 
 const MidSummary = () => {
   const router = useRouter();
@@ -67,7 +68,7 @@ const MidSummary = () => {
       customerEmail: cusEmailRef.current.value,
       customerMobileNo: cusMobileRef.current.value,
       customerLuggageCount: cusLuggageCountRef.current.value,
-      boardShow: boardShow ? otherPrices[0].boardShow : "Rejected",
+      boardShow: boardShow ? otherPrices[0].boardShow : 0,
       totalPrice: (
         parseFloat(tourDetails.convertedPrice) +
         (boardShow
@@ -133,6 +134,7 @@ const MidSummary = () => {
       <div className="my-4">
         {tourDetails.vehicleType && (
           <div className="flex flex-col items-center">
+            <CurrencyTab />
             <div className="mt-2 mb-8 w-full flex justify-center">
               <Hierarchy />
             </div>

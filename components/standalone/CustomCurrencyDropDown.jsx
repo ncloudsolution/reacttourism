@@ -5,7 +5,6 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { GiTwoCoins } from "react-icons/gi";
 import currency from "@/data/currency.json";
 import { TourContext } from "@/context/TourContextProvider";
-import { SetHighwayCharge } from "@/libs/HighwayFair";
 import useCurrency from "@/hooks/useCurrency";
 
 const CustomCurrencyDropDown = () => {
@@ -43,8 +42,10 @@ const CustomCurrencyDropDown = () => {
     setTourDetails((prevTourDetails) => ({
       ...prevTourDetails,
       conversionRate: conversionRate,
+      convertedPrice: (tourDetails.price * conversionRate).toFixed(2),
       convertedCurrencyType: convertedCurrencyType,
       converedCurrencySymbol: converedCurrencySymbol,
+      totalPrice: (tourDetails.totalLKRPrice * conversionRate).toFixed(2),
     }));
     setOpen(false);
     setInputValue("");
@@ -67,11 +68,11 @@ const CustomCurrencyDropDown = () => {
 
   return (
     <div className="font-normal">
-      <div className="w-full absolute z-[1] left-0 right-0  h-[50px]">
+      <div className="w-full absolute z-[1] left-0 right-0">
         {/* Dropdown button */}
         <div
           onClick={() => setOpen(!open)}
-          className={`bg-primary w-full border-[1px] text-[14px] border-black p-1 flex items-center justify-between rounded ${
+          className={`bg-primary w-full border-[1px] text-[14px] border-black p-1 flex items-center justify-between rounded  ${
             !selected && "text-[#8e8e8e]"
           }`}
         >
@@ -86,10 +87,8 @@ const CustomCurrencyDropDown = () => {
         {/* Dropdown list */}
         <ul
           ref={DropDownRef}
-          className={`bg-white mt-2 overflow-y-auto cursor-pointer ${
-            open
-              ? "max-h-[250px] border-[1px] border-black rounded mb-2"
-              : "max-h-0"
+          className={`bg-white  overflow-y-auto cursor-pointer  my-2 ${
+            open ? "max-h-[250px] border-[1px] border-black rounded" : "max-h-0"
           }`}
         >
           {/* Search input */}

@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { useRouter } from "next/navigation";
 import Hierarchy from "./standalone/Hierarchy";
+import CurrencyTab from "./testingComponents/CurrencyTab";
 
 const TourSummary = () => {
   const router = useRouter();
@@ -27,9 +28,9 @@ const TourSummary = () => {
       tourDetails.highwayExit
         ? `Highway Charges : ${tourDetails.highwayExit} - ${
             tourDetails.converedCurrencySymbol
-          }{" "}${(
-            tourDetails.highwayCharge * tourDetails.conversionRate
-          ).toFixed(2)}`
+          }${(tourDetails.highwayCharge * tourDetails.conversionRate).toFixed(
+            2
+          )}`
         : `Highway Charges :  ${tourDetails.converedCurrencySymbol}{" "}${(
             tourDetails.highwayCharge * tourDetails.conversionRate
           ).toFixed(2)}`
@@ -118,6 +119,7 @@ Duration: ${tourDetails.duration}`;
 
         {!isLoading && !responseMessage && tourDetails.vehicleType && (
           <div className="flex flex-col items-center">
+            <CurrencyTab />
             <div className="mt-2 mb-8 w-full flex justify-center">
               <Hierarchy />
             </div>

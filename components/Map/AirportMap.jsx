@@ -309,7 +309,11 @@ const AirportMap = ({ children }) => {
             </div>
           </div>
 
-          {submitError && <div className="text-errorpink">{submitError}</div>}
+          {submitError && (
+            <div className="text-errorpink bg-white px-4 py-2 rounded mb-4">
+              {submitError}
+            </div>
+          )}
 
           {!submitError && distance && duration && (
             <div className="w-[100vw] bg-white flex justify-center">
