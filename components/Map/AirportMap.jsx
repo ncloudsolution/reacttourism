@@ -22,6 +22,8 @@ import { FaUser } from "react-icons/fa6";
 import { FaBriefcase } from "react-icons/fa";
 import { FaRegSnowflake } from "react-icons/fa";
 import { BsHandbagFill } from "react-icons/bs";
+import { MdFlightLand } from "react-icons/md";
+import { MdFlightTakeoff } from "react-icons/md";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -212,9 +214,10 @@ const AirportMap = ({ children }) => {
                     isPickup
                       ? "bg-primary text-black"
                       : "border-[1px] border-white text-white"
-                  } w-1/2  py-2 rounded transition-all duration-500`}
+                  } w-1/2  py-2 rounded transition-all duration-500 flex items-center justify-center bxs:gap-x-5 gap-x-2`}
                 >
-                  Pickup
+                  <MdFlightLand className="bxs:text-[35px] text-[30px]" />
+                  <div>Pickup</div>
                 </div>
                 <div
                   onClick={handleDrop}
@@ -222,9 +225,10 @@ const AirportMap = ({ children }) => {
                     isDrop
                       ? "bg-primary text-black"
                       : "border-[1px] border-white text-white"
-                  } w-1/2  py-2 rounded transition-all duration-500`}
+                  } w-1/2  py-2 rounded transition-all duration-500 flex items-center justify-center bxs:gap-x-5 gap-x-2`}
                 >
-                  Drop
+                  <MdFlightTakeoff className="bxs:text-[35px] text-[30px]" />
+                  <div>Drop</div>
                 </div>
               </div>
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
@@ -437,6 +441,9 @@ const AirportMap = ({ children }) => {
                           //console.log(vehicle.price);
                           setTourDetails((prevTourDetails) => ({
                             ...prevTourDetails,
+
+                            isReturntour: returnTour,
+                            isPickup: isPickup,
                             vehicleType: vehicle.type,
                             vehicalSeatCapacityMin: vehicle.minpassengers,
                             vehicalSeatCapacityMax: vehicle.maxpassengers,

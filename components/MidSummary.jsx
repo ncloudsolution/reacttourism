@@ -11,6 +11,8 @@ import otherPrices from "@/data/otherPrices.json";
 import Hierarchy from "./standalone/Hierarchy";
 import CustomHighwayDropDown from "./standalone/CustomHighwayDropDown";
 import CurrencyTab from "./testingComponents/CurrencyTab";
+import CustomDatePicker from "./CustomDatePicker";
+import CustomMiniDatePicker from "./CustomMiniDatePicker";
 
 const MidSummary = () => {
   const router = useRouter();
@@ -22,6 +24,7 @@ const MidSummary = () => {
   const cusNameRef = useRef();
   const cusEmailRef = useRef();
   const cusMobileRef = useRef();
+  const cusFlightNoRef = useRef();
 
   const cusLuggageCountRef = useRef();
 
@@ -35,6 +38,8 @@ const MidSummary = () => {
   const [highwayExit, setHighwayExit] = useState(
     tourDetails.highwayExit || null
   );
+
+  const [arrivalDate, setArrivalDate] = useState(tourDetails.arrivalDate || "");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -62,28 +67,46 @@ const MidSummary = () => {
       );
     }
 
+    if (boardShow) {
+      if (arrivalDate === "") {
+        return setSubmitError("Fill the Arrival Date Correctly");
+      }
+    }
+
+    if (boardShow) {
+      if (cusFlightNoRef.current.value === "") {
+        return setSubmitError("Fill the flight No");
+      }
+    }
+
     setTourDetails((prevDetails) => ({
       ...prevDetails,
       customerName: cusNameRef.current.value,
       customerEmail: cusEmailRef.current.value,
       customerMobileNo: cusMobileRef.current.value,
+      customerFlightNo: boardShow ? cusFlightNoRef.current.value : "",
+      arrivalDate: boardShow ? arrivalDate : 0,
       customerLuggageCount: cusLuggageCountRef.current.value,
       boardShow: boardShow ? otherPrices[0].boardShow : 0,
+      highwayCharge:
+        highwayCharge !== "No any Charge" && tourDetails.isReturntour
+          ? parseFloat(
+              (highwayCharge * tourDetails.conversionRate * 2).toFixed(2)
+            ) // Convert to float to handle potential string values
+          : parseFloat((highwayCharge * tourDetails.conversionRate).toFixed(2)),
+
       totalPrice: (
-        parseFloat(tourDetails.convertedPrice) +
+        parseFloat(tourDetails.convertedPrice) + // Convert to float to handle potential string values
         (boardShow
           ? parseFloat(
               (otherPrices[0]?.boardShow * tourDetails.conversionRate).toFixed(
                 2
               )
-            )
+            ) // Apply toFixed to the product of boardShow and conversionRate
           : 0) +
-        (highwayExit &&
-        highwayExit !== "None" &&
-        highwayCharge !== "No any Charge"
-          ? parseFloat(highwayCharge * tourDetails.conversionRate)
-          : 0)
+        tourDetails.highwayCharge
       ).toFixed(2),
+
       totalLKRPrice: (
         parseFloat(tourDetails.price) +
         (boardShow ? parseFloat((otherPrices[0]?.boardShow).toFixed(2)) : 0) +
@@ -93,6 +116,7 @@ const MidSummary = () => {
           ? parseFloat(highwayCharge)
           : 0)
       ).toFixed(2),
+
       pageThreeToken: true,
     }));
     router.push("/tourbooking/summary");
@@ -123,6 +147,14 @@ const MidSummary = () => {
     }));
   };
 
+  const handleFlightNoChange = (e) => {
+    const newFlightNo = e.target.value; // Parse input value to integer
+    setTourDetails((prevTourDetails) => ({
+      ...prevTourDetails,
+      customerFlightNo: newFlightNo,
+    }));
+  };
+
   useEffect(() => {
     console.log("ui updated");
     setHighwayCharge(tourDetails.highwayCharge);
@@ -144,13 +176,13 @@ const MidSummary = () => {
               </div>
 
               <div className="flex flex-col border-2 border-transparent bxs:my-3 my-1 bxs:text-[16px] text-[14px]">
-                <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col">
-                  <div className=" flex-1  h-[200px]  flex items-center justify-center border-2 border-transparent ">
+                <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col justify-center items-center">
+                  <div className=" flex-1 bigmd:h-[400px] h-[200px]  flex items-center justify-center border-2 border-transparent ">
                     <Image
                       src={tourDetails.image}
                       alt=""
-                      width={300}
-                      height={300}
+                      width={380}
+                      height={380}
                       className="border-2 border-transparent object-cover"
                     />
                   </div>
@@ -216,18 +248,24 @@ highwayExit: station,
                           </span>
                           <span className="font-normal">
                             {tourDetails.converedCurrencySymbol}{" "}
-                            {(
-                              highwayCharge * tourDetails.conversionRate
-                            ).toFixed(2)}
+                            {tourDetails.isReturntour
+                              ? (
+                                  highwayCharge *
+                                  tourDetails.conversionRate *
+                                  2
+                                ).toFixed(2)
+                              : (
+                                  highwayCharge * tourDetails.conversionRate
+                                ).toFixed(2)}
                           </span>
                         </div>
                       )}
 
-                    <div className="bxs:w-[400px] w-full flex mt-2">
+                    <div className="bxs:w-[400px] w-full flex mt-5">
                       <span className="bxs:w-[180px] w-[150px] bg-transparent">
                         Total Price
                       </span>
-                      <span className="font-normal border-double border-y-4  border-black">
+                      <span className="font-normal border-double border-y-4 border-black">
                         {tourDetails.converedCurrencySymbol}{" "}
                         {(
                           parseFloat(tourDetails.convertedPrice) + // Convert to float to handle potential string values
@@ -243,11 +281,30 @@ highwayExit: station,
                           highwayExit !== "None" &&
                           highwayCharge !== "No any Charge"
                             ? parseFloat(
-                                highwayCharge * tourDetails.conversionRate
+                                tourDetails.isReturntour
+                                  ? highwayCharge *
+                                      tourDetails.conversionRate *
+                                      2 // If true, multiply by 2
+                                  : highwayCharge * tourDetails.conversionRate // If false, don't multiply by 2
                               ) // Convert to float to handle potential string values
                             : 0)
                         ).toFixed(2)}
                       </span>
+                    </div>
+
+                    {/**highway section**/}
+                    <div className="my-5  text-[12px] bg-primary p-3 rounded">
+                      Highway charges are optional. If selected, no extra fees
+                      are needed during the tour. Otherwise, you can be paid at
+                      the highway counter.
+                    </div>
+                    <div className=" flex bigmd:w-[360px] bxs:w-[400px]  w-full bxs:items-center bxs:flex-row flex-col bxs:mt-3 bxs:my-0 my-1 justify-between">
+                      <span className="bigmd:w-[140px]   bxs:w-[180px] w-[140px] bg-transparent">
+                        Highway {tourDetails.isPickup ? "Exit" : "Entrance"}
+                      </span>
+                      <div className=" bigmd:w-[220px]  bxs:w-[220px] w-full relative ">
+                        <CustomHighwayDropDown />
+                      </div>
                     </div>
                   </div>
                   {/**vehicle end**/}
@@ -255,14 +312,14 @@ highwayExit: station,
 
                 {/****/}
 
-                <div className="flex gap-x-4 border-2 border-transparent bigmd:flex-row flex-col-reverse ">
+                <div className="flex gap-x-8 border-2 border-transparent bigmd:flex-row flex-col-reverse ">
                   {/**customer**/}
-                  <div className="mt-4 flex-1 border-2 border-transparent">
+                  <div className="mt-4 border-2 border-transparent bxs:w-[402px] w-full">
                     <div>Customer</div>
                     <div className="w-full bg-primary h-[2px] mb-4"></div>
                     <form onSubmit={handleSubmit}>
                       <div className="flex gap-y-1 flex-col">
-                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 ">
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 ">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             Passengers Name
                           </span>
@@ -273,11 +330,11 @@ highwayExit: station,
                             placeholder="Passenger Name"
                             type="text"
                             min="1"
-                            className="p-1 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
 
-                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             Email
                           </span>
@@ -287,15 +344,15 @@ highwayExit: station,
                             ref={cusEmailRef}
                             placeholder="Passenger Email"
                             type="email"
-                            className="p-1 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
 
-                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             Mobile No
                           </span>
-                          <div className="shadow-md rounded border-[1px] border-black bxs:w-[240px] w-full bg-white p-1 font-normal ">
+                          <div className="shadow-md rounded border-[1px] border-black bxs:w-[220px] w-full bg-white p-1 font-normal ">
                             <PhoneInput
                               international
                               countryCallingCodeEditable={false}
@@ -324,7 +381,7 @@ highwayExit: station,
                     />**/}
                         </div>
 
-                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             No of Luggagues
                           </span>
@@ -335,7 +392,7 @@ highwayExit: station,
                             placeholder="No.Luggages"
                             type="number"
                             min="0"
-                            className="p-1 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
 
@@ -351,7 +408,7 @@ highwayExit: station,
                           </span>
                         </div>
 
-                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-1">
                             Board Show
                             <span className="text-gray-400 text-[12px] font-normal ml-2">
@@ -395,14 +452,38 @@ highwayExit: station,
                           </div>
                         </div>
 
-                        <div className=" flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:mt-2 bxs:my-0 my-1 justify-center">
-                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                            Highway Exit
-                          </span>
-                          <div className="bxs:w-[240px] w-full relative">
-                            <CustomHighwayDropDown />
+                        {boardShow && (
+                          <div className="transition-all duration-1000 bxs:w-[400px] w-full bg-black rounded pt-3 pb-5  my-2 flex flex-col gap-y-2 items-center px-2">
+                            <div className="text-primary text-[18px] mb-2">
+                              Flight Details
+                            </div>
+                            <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 font-normal">
+                              <span className="bxs:w-[180px] w-[150px] bg-transparent text-white ml-2 font-semibold">
+                                Arrival Date/time
+                              </span>
+                              <div className="mr-2">
+                                <CustomMiniDatePicker
+                                  selectedDate={arrivalDate}
+                                  onChange={(date) => setArrivalDate(date)}
+                                />
+                              </div>
+                            </div>
+
+                            <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 ">
+                              <span className="bxs:w-[180px] w-[150px] bg-transparent text-white ml-2">
+                                Flight No
+                              </span>
+                              <input
+                                value={tourDetails.customerFlightNo}
+                                onChange={handleFlightNoChange} // Handle changes to the input field
+                                ref={cusFlightNoRef}
+                                placeholder="UL-108"
+                                type="text"
+                                className="p-1 mr-2 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
+                              />
+                            </div>
                           </div>
-                        </div>
+                        )}
 
                         {/* 
                       <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 mb-4">
@@ -425,7 +506,9 @@ highwayExit: station,
 
                         <input
                           type="submit"
-                          className="w-full py-2 my-3 bg-black text-white rounded-md"
+                          className={` ${
+                            boardShow ? "my-3" : "my-6"
+                          } bxs:w-[402px] w-full py-2  bg-black text-white rounded-md`}
                           value="Next"
                         />
                       </div>
@@ -434,7 +517,7 @@ highwayExit: station,
                   {/**customer over**/}
 
                   {/**Tour**/}
-                  <div className="bigmd:w-[380px] w-full border-2 border-transparent">
+                  <div className="bigmd:w-[340px] w-full border-2 border-transparent">
                     <div className="mt-4">Tour</div>
                     <div className="w-full bg-primary h-[2px] mb-4"></div>
 

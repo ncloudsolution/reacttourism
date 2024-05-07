@@ -36,10 +36,23 @@ const TourSummary = () => {
           ).toFixed(2)}`
     }`;
 
+    const flightDetails = `${
+      tourDetails.customerFlightNo != 0 &&
+      `-------------------------------------------------
+       Flight No : ${tourDetails.customerFlightNo}
+          }${(tourDetails.highwayCharge * tourDetails.conversionRate).toFixed(
+            2
+          )}`
+    }`;
+
     const emailText = `New Customer Details:
 Name: ${tourDetails.customerName}
 Email: ${tourDetails.customerEmail}
 Mobile No: ${tourDetails.customerMobileNo}
+
+
+${flightDetails}
+
 -------------------------------------------------
 selected Vehicle: ${tourDetails.vehicleType}
 No.of Passengers: ${tourDetails.noOfPassengers}
@@ -171,6 +184,42 @@ Duration: ${tourDetails.duration}`;
                     </div>
 
                     <div className="border-b-[1px] border-white border-dashed my-4"></div>
+                    {tourDetails.customerFlightNo && (
+                      <>
+                        {/**flight no**/}
+                        <div className="flex">
+                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                            Flight No
+                          </div>
+                          <div>:</div>
+                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                            {tourDetails.customerFlightNo}
+                          </div>
+                        </div>
+
+                        <div className="flex">
+                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                            Arrival Date
+                          </div>
+                          <div>:</div>
+                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                            {tourDetails.arrivalDate.toDateString()}
+                          </div>
+                        </div>
+
+                        <div className="flex">
+                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                            Arrival Time
+                          </div>
+                          <div>:</div>
+                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                            {tourDetails.arrivalDate.toTimeString()}
+                          </div>
+                        </div>
+
+                        <div className="border-b-[1px] border-white border-dashed my-4"></div>
+                      </>
+                    )}
 
                     {/**vehical**/}
                     <div className="flex">
@@ -213,7 +262,7 @@ Duration: ${tourDetails.duration}`;
                         {tourDetails.convertedPrice}
                       </div>
                     </div>
-                    {tourDetails.boardShow != 0 && (
+                    {tourDetails.boardShow !== 0 && (
                       <div className="flex">
                         <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
                           Board Show

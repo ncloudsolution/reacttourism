@@ -10,45 +10,34 @@ import useCurrency from "@/hooks/useCurrency";
 const CustomCurrencyDropDown = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
-  const [currencies] = useState(Object.keys(currency));
+  const [currencies] = useState(Object.entries(currency)); // Convert object to array of key-value pairs
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState(
-    tourDetails.convertedCurrencyType || currencies[0]
+    tourDetails.convertedCurrencyType || currencies[0][0] // Initialize selected with the first currency key
   );
   const [open, setOpen] = useState(false);
 
   const selectedCurrency = useCurrency();
 
-  console.log(selectedCurrency, "selected");
+  const handleSelectCurrency = (currencyKey) => {
+    setSelected(currencyKey);
 
-  const handleSelectcurrency = (currencies) => {
-    setSelected(currencies);
-    console.log(currencies, "what currency");
-
-    //instead of selected we use currencies
-
-    console.log(
-      350 * selectedCurrency[currencies.toLowerCase()],
-      "converted value"
-    );
-
-    const conversionRate = selectedCurrency[currencies.toLowerCase()] || 1;
-
-    const convertedCurrencyType = currencies;
-    const converedCurrencySymbol = currency[currencies];
-
-    console.log(convertedCurrencyType, converedCurrencySymbol, "both");
+    const conversionRate = selectedCurrency[currencyKey.toLowerCase()] || 1;
+    const convertedCurrencyType = currencyKey;
+    const convertedCurrencySymbol = currency[currencyKey];
 
     setTourDetails((prevTourDetails) => ({
       ...prevTourDetails,
       conversionRate: conversionRate,
       convertedPrice: (tourDetails.price * conversionRate).toFixed(2),
       convertedCurrencyType: convertedCurrencyType,
-      converedCurrencySymbol: converedCurrencySymbol,
+      converedCurrencySymbol: convertedCurrencySymbol, // Save selected currency symbol
       totalPrice: (tourDetails.totalLKRPrice * conversionRate).toFixed(2),
     }));
     setOpen(false);
     setInputValue("");
+
+    console.log(convertedCurrencySymbol, "symbol");
   };
 
   const DropDownRef = useRef();
@@ -76,11 +65,14 @@ const CustomCurrencyDropDown = () => {
             !selected && "text-[#8e8e8e]"
           }`}
         >
-          {selected
-            ? selected?.length > 25
-              ? selected?.substring(0, 25) + "..."
-              : selected
-            : "Currency Type"}
+          {selected && (
+            <div className="flex items-center">
+              <span>{selected}</span>
+              <span className="mx-1">-</span>
+              <span>{currency[selected]}</span>
+              {/* Display selected currency symbol */}
+            </div>
+          )}
           {/* Dropdown icon */}
           <BiChevronDown size={20} className={`${open && "rotate-180"}`} />
         </div>
@@ -98,26 +90,28 @@ const CustomCurrencyDropDown = () => {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value.toLowerCase())}
-              placeholder="Preferd Currency"
+              placeholder="Preferred Currency"
               className="placeholder:text-gray-700 placeholder:text-[12px] bxs:placeholder:text-[14px] px-2 py-1 outline-none w-full"
             />
           </div>
           {/* Dropdown items */}
-          {currencies.map((currency) => (
+          {currencies.map(([currencyKey, currencyValue]) => (
             <li
-              key={currency}
+              key={currencyKey}
               className={`py-2 px-3 text-[12px] bxs:text-[14px] hover:bg-black hover:text-white flex items-center m-1 rounded ${
-                currency?.toLowerCase() === selected?.toLowerCase() &&
+                currencyKey.toLowerCase() === selected.toLowerCase() &&
                 "bg-primary text-black "
               } ${
-                currency?.toLowerCase().startsWith(inputValue)
-                  ? "block"
-                  : "hidden"
+                currencyKey.toLowerCase().startsWith(inputValue) &&
+                inputValue &&
+                "block"
               }`}
-              onClick={() => handleSelectcurrency(currency)}
+              onClick={() => handleSelectCurrency(currencyKey)}
             >
               <GiTwoCoins size={20} className="mr-2" />
-              {currency}
+              <span>{currencyKey}</span> {/* Display currency key */}
+              <span className="mx-1">-</span>
+              <span>{currencyValue}</span> {/* Display currency symbol */}
             </li>
           ))}
         </ul>

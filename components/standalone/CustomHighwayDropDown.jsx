@@ -49,7 +49,7 @@ const CustomHighwayDropDown = () => {
         {/* Dropdown button */}
         <div
           onClick={() => setOpen(!open)}
-          className={`bg-white w-full border-[1px] text-[14px] border-black p-1 flex items-center justify-between rounded ${
+          className={`bg-black w-full border-[1px] text-[14px] text-white p-1 flex items-center justify-between rounded ${
             !selected && "text-[#8e8e8e]"
           }`}
         >
@@ -57,21 +57,21 @@ const CustomHighwayDropDown = () => {
             ? selected?.length > 25
               ? selected?.substring(0, 25) + "..."
               : selected
-            : "Select Your Highway Exit"}
+            : "None"}
           {/* Dropdown icon */}
           <BiChevronDown size={20} className={`${open && "rotate-180"}`} />
         </div>
         {/* Dropdown list */}
         <ul
           ref={DropDownRef}
-          className={`bg-white mt-2 overflow-y-auto cursor-pointer ${
+          className={`bg-black text-white mt-2 overflow-y-auto cursor-pointer ${
             open
               ? "max-h-[220px] border-[1px] border-black rounded mb-2"
               : "max-h-0"
           }`}
         >
           {/* Search input */}
-          <div className="flex items-center px-2 sticky top-0 bg-white shadow">
+          <div className="flex items-center px-2 sticky top-0 bg-white text-black shadow">
             <AiOutlineSearch size={18} className="text-gray-700" />
             <input
               type="text"
@@ -85,9 +85,9 @@ const CustomHighwayDropDown = () => {
           {stations.map((station) => (
             <li
               key={station}
-              className={`py-2 px-3 text-[12px] bxs:text-[14px] hover:bg-sky-600 hover:text-white flex items-center  ${
+              className={`py-2 px-3 text-[12px] bxs:text-[14px] hover:bg-primary hover:text-black flex items-center  ${
                 station?.toLowerCase() === selected?.toLowerCase() &&
-                "bg-sky-600 text-white"
+                "bg-white text-black"
               } ${
                 station?.toLowerCase().startsWith(inputValue)
                   ? "block"
