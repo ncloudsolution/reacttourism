@@ -14,6 +14,8 @@ import CurrencyTab from "./testingComponents/CurrencyTab";
 import CustomDatePicker from "./CustomDatePicker";
 import CustomMiniDatePicker from "./CustomMiniDatePicker";
 
+import boardimg from "@/public/Others/boardshow.png";
+
 const MidSummary = () => {
   const router = useRouter();
 
@@ -88,12 +90,9 @@ const MidSummary = () => {
       arrivalDate: boardShow ? arrivalDate : 0,
       customerLuggageCount: cusLuggageCountRef.current.value,
       boardShow: boardShow ? otherPrices[0].boardShow : 0,
-      highwayCharge:
-        highwayCharge !== "No any Charge" && tourDetails.isReturntour
-          ? parseFloat(
-              (highwayCharge * tourDetails.conversionRate * 2).toFixed(2)
-            ) // Convert to float to handle potential string values
-          : parseFloat((highwayCharge * tourDetails.conversionRate).toFixed(2)),
+      highwayCharge: parseFloat(
+        (tourDetails.highwayCharge * tourDetails.conversionRate).toFixed(2)
+      ),
 
       totalPrice: (
         parseFloat(tourDetails.convertedPrice) + // Convert to float to handle potential string values
@@ -104,17 +103,18 @@ const MidSummary = () => {
               )
             ) // Apply toFixed to the product of boardShow and conversionRate
           : 0) +
-        tourDetails.highwayCharge
-      ).toFixed(2),
+        parseFloat(
+          (tourDetails.highwayCharge * tourDetails.conversionRate).toFixed(2)
+        )
+      ) //issue here
+        .toFixed(2),
 
       totalLKRPrice: (
         parseFloat(tourDetails.price) +
         (boardShow ? parseFloat((otherPrices[0]?.boardShow).toFixed(2)) : 0) +
-        (highwayExit &&
-        highwayExit !== "None" &&
-        highwayCharge !== "No any Charge"
-          ? parseFloat(highwayCharge)
-          : 0)
+        parseFloat(
+          (tourDetails.highwayCharge * tourDetails.conversionRate).toFixed(2)
+        )
       ).toFixed(2),
 
       pageThreeToken: true,
@@ -154,6 +154,8 @@ const MidSummary = () => {
       customerFlightNo: newFlightNo,
     }));
   };
+
+  console.log(tourDetails.highwayCharge, "charge"); //issue here
 
   useEffect(() => {
     console.log("ui updated");
@@ -248,15 +250,10 @@ highwayExit: station,
                           </span>
                           <span className="font-normal">
                             {tourDetails.converedCurrencySymbol}{" "}
-                            {tourDetails.isReturntour
-                              ? (
-                                  highwayCharge *
-                                  tourDetails.conversionRate *
-                                  2
-                                ).toFixed(2)
-                              : (
-                                  highwayCharge * tourDetails.conversionRate
-                                ).toFixed(2)}
+                            {(
+                              tourDetails.highwayCharge *
+                              tourDetails.conversionRate
+                            ).toFixed(2)}
                           </span>
                         </div>
                       )}
@@ -277,17 +274,10 @@ highwayExit: station,
                                 ).toFixed(2)
                               ) // Apply toFixed to the product of boardShow and conversionRate
                             : 0) +
-                          (highwayExit &&
-                          highwayExit !== "None" &&
-                          highwayCharge !== "No any Charge"
-                            ? parseFloat(
-                                tourDetails.isReturntour
-                                  ? highwayCharge *
-                                      tourDetails.conversionRate *
-                                      2 // If true, multiply by 2
-                                  : highwayCharge * tourDetails.conversionRate // If false, don't multiply by 2
-                              ) // Convert to float to handle potential string values
-                            : 0)
+                          parseFloat(
+                            tourDetails.highwayCharge *
+                              tourDetails.conversionRate
+                          )
                         ).toFixed(2)}
                       </span>
                     </div>
@@ -409,16 +399,27 @@ highwayExit: station,
                         </div>
 
                         <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                          <span className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-1">
-                            Board Show
-                            <span className="text-gray-400 text-[12px] font-normal ml-2">
-                              {tourDetails.converedCurrencySymbol}{" "}
-                              {(
-                                otherPrices[0].boardShow *
-                                tourDetails.conversionRate
-                              ).toFixed(2)}
-                            </span>
-                          </span>
+                          <div className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-1 flex">
+                            <div className="flex gap-x-3 mb-3 bxs:mb-0">
+                              <div className="flex flex-col justify-center items-center">
+                                <div> Board Show</div>
+                                <div className="text-gray-400 text-[12px] font-normal ">
+                                  {tourDetails.converedCurrencySymbol}{" "}
+                                  {(
+                                    otherPrices[0].boardShow *
+                                    tourDetails.conversionRate
+                                  ).toFixed(2)}
+                                </div>
+                              </div>
+                              <div className="size-[50px]">
+                                <Image
+                                  src={boardimg}
+                                  alt=""
+                                  className="size-[100%]"
+                                />
+                              </div>
+                            </div>
+                          </div>
 
                           <div className="flex flex-1 text-center gap-x-3 font-normal text-[14px] outline-none bxs:w-[220px] w-full  rounded  ">
                             <div

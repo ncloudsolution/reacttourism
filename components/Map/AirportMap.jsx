@@ -441,7 +441,9 @@ const AirportMap = ({ children }) => {
                           //console.log(vehicle.price);
                           setTourDetails((prevTourDetails) => ({
                             ...prevTourDetails,
-
+                            highwayCharge: tourDetails.highwayCharge
+                              ? tourDetails.highwayCharge
+                              : 0,
                             isReturntour: returnTour,
                             isPickup: isPickup,
                             vehicleType: vehicle.type,

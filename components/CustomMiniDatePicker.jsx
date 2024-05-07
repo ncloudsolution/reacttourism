@@ -19,7 +19,7 @@ const CustomMiniDatePicker = ({ selectedDate, onChange }) => {
       className="px-2 py-1.5 text-[14px] outline-none bigmd:w-[220px]  w-full  shadow-md rounded border-[1px] border-black bg-white flex justify-between"
       onClick={handleOuterDivClick}
     >
-      <div className="w-[50px]">
+      <div className="w-[180px]">
         <DatePicker
           ref={datePickerRef}
           className="outline-none"

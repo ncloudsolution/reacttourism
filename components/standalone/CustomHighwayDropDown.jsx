@@ -17,7 +17,11 @@ const CustomHighwayDropDown = () => {
 
   const handleSelectStation = (station) => {
     setSelected(station);
-    const highwayChargeValue = SetHighwayCharge(tourDetails.category, station);
+    const highwayChargeValue = SetHighwayCharge(
+      tourDetails.category,
+      station,
+      tourDetails.isReturntour
+    );
     setTourDetails((prevTourDetails) => ({
       ...prevTourDetails,
       highwayExit: station,
