@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Hierarchy from "./standalone/Hierarchy";
 import CurrencyTab from "./testingComponents/CurrencyTab";
+import BlankContext from "./Exceptions/BlankContext";
 
 const TourSummary = () => {
   const router = useRouter();
@@ -262,7 +263,7 @@ Duration: ${tourDetails.duration}`;
                         {tourDetails.convertedPrice}
                       </div>
                     </div>
-                    {tourDetails.boardShow !== 0 && (
+                    {tourDetails.boardShow != 0 && (
                       <div className="flex">
                         <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
                           Board Show
@@ -623,6 +624,7 @@ Duration: ${tourDetails.duration}`;
             </div>
           </div>
         )}
+        {!tourDetails.vehicleType && <BlankContext />}
       </div>
     </>
   );

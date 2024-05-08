@@ -15,6 +15,7 @@ import CustomDatePicker from "./CustomDatePicker";
 import CustomMiniDatePicker from "./CustomMiniDatePicker";
 
 import boardimg from "@/public/Others/boardshow.png";
+import BlankContext from "./Exceptions/BlankContext";
 
 const MidSummary = () => {
   const router = useRouter();
@@ -700,6 +701,8 @@ highwayExit: station,
             </div>
           </div>
         )}
+
+        {!tourDetails.vehicleType && <BlankContext />}
       </div>
     </>
   );
