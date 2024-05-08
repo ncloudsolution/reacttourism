@@ -95,25 +95,26 @@ const CustomCurrencyDropDown = () => {
             />
           </div>
           {/* Dropdown items */}
-          {currencies.map(([currencyKey, currencyValue]) => (
-            <li
-              key={currencyKey}
-              className={`py-2 px-3 text-[12px] bxs:text-[14px] hover:bg-black hover:text-white flex items-center m-1 rounded ${
-                currencyKey.toLowerCase() === selected.toLowerCase() &&
-                "bg-primary text-black "
-              } ${
-                currencyKey.toLowerCase().startsWith(inputValue) &&
-                inputValue &&
-                "block"
-              }`}
-              onClick={() => handleSelectCurrency(currencyKey)}
-            >
-              <GiTwoCoins size={20} className="mr-2" />
-              <span>{currencyKey}</span> {/* Display currency key */}
-              <span className="mx-1">-</span>
-              <span>{currencyValue}</span> {/* Display currency symbol */}
-            </li>
-          ))}
+          {currencies.map(
+            ([currencyKey, currencyValue]) =>
+              // Filter currencies based on input value
+              (currencyKey.toLowerCase().includes(inputValue) ||
+                currencyValue.toLowerCase().includes(inputValue)) && (
+                <li
+                  key={currencyKey}
+                  className={`py-2 px-3 text-[12px] bxs:text-[14px] hover:bg-black hover:text-white flex items-center m-1 rounded ${
+                    currencyKey.toLowerCase() === selected.toLowerCase() &&
+                    "bg-primary text-black "
+                  }`}
+                  onClick={() => handleSelectCurrency(currencyKey)}
+                >
+                  <GiTwoCoins size={20} className="mr-2" />
+                  <span>{currencyKey}</span>
+                  <span className="mx-1">-</span>
+                  <span>{currencyValue}</span>
+                </li>
+              )
+          )}
         </ul>
       </div>
     </div>

@@ -430,9 +430,9 @@ const AirportMap = ({ children }) => {
                                 ).toFixed(2)}
                           </div>
                         </div>
-                        <div className="bigmd:text-[12px] text-[10px] text-yellow-500 w-full  px-2 text-center">
+                        {/* <div className="bigmd:text-[12px] text-[10px] text-yellow-500 w-full  px-2 text-center">
                           Highway Charges and other Charges are Not Included
-                        </div>
+                        </div> */}
                       </div>
                       <button
                         className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"

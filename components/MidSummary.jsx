@@ -26,11 +26,15 @@ const MidSummary = () => {
   const cusNameRef = useRef();
   const cusEmailRef = useRef();
   const cusMobileRef = useRef();
+  const cusWhatsappMobileRef = useRef();
   const cusFlightNoRef = useRef();
+  const cusNicPassportRef = useRef();
+  const cusDisplayNameRef = useRef();
 
   const cusLuggageCountRef = useRef();
 
   const [mobValue, setMobValue] = useState();
+  const [whatsappMobValue, setWhatsappMobValue] = useState();
   const [submitError, setSubmitError] = useState();
 
   const [boardShow, setBoardShow] = useState(tourDetails.boardShow || false);
@@ -50,7 +54,8 @@ const MidSummary = () => {
       cusNameRef.current.value === "" ||
       cusEmailRef.current.value === "" ||
       cusMobileRef.current.value === "" ||
-      cusLuggageCountRef.current.value === ""
+      cusLuggageCountRef.current.value === "" ||
+      cusNicPassportRef.current.value === ""
 
       /*file === null*/
     ) {
@@ -81,11 +86,20 @@ const MidSummary = () => {
       }
     }
 
+    if (boardShow) {
+      if (cusDisplayNameRef.current.value === "") {
+        return setSubmitError("Fill the display Name");
+      }
+    }
+
     setTourDetails((prevDetails) => ({
       ...prevDetails,
       customerName: cusNameRef.current.value,
       customerEmail: cusEmailRef.current.value,
+      customerNicPassport: cusNicPassportRef.current.value,
+      cusDisplayName: boardShow ? cusDisplayNameRef.current.value : "",
       customerMobileNo: cusMobileRef.current.value,
+      customerWhatsappMobileNo: cusWhatsappMobileRef.current.value,
       customerFlightNo: boardShow ? cusFlightNoRef.current.value : "",
       arrivalDate: boardShow ? arrivalDate : 0,
       customerLuggageCount: cusLuggageCountRef.current.value,
@@ -139,6 +153,14 @@ const MidSummary = () => {
     }));
   };
 
+  const handleCustomerNicPassport = (e) => {
+    const newCustomerNicPassport = e.target.value; // Get input value
+    setTourDetails((prevTourDetails) => ({
+      ...prevTourDetails,
+      customerNicPassport: newCustomerNicPassport, // Update nic/passport in tourDetails
+    }));
+  };
+
   const handleLuggageCountChange = (e) => {
     const newLuggageCount = parseInt(e.target.value); // Parse input value to integer
     setTourDetails((prevTourDetails) => ({
@@ -152,6 +174,14 @@ const MidSummary = () => {
     setTourDetails((prevTourDetails) => ({
       ...prevTourDetails,
       customerFlightNo: newFlightNo,
+    }));
+  };
+
+  const handleCusDisplayNameChange = (e) => {
+    const newDisplayName = e.target.value; // Parse input value to integer
+    setTourDetails((prevTourDetails) => ({
+      ...prevTourDetails,
+      cusDisplayName: newDisplayName,
     }));
   };
 
@@ -319,7 +349,6 @@ highwayExit: station,
                             value={tourDetails.customerName}
                             placeholder="Passenger Name"
                             type="text"
-                            min="1"
                             className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
@@ -334,6 +363,20 @@ highwayExit: station,
                             ref={cusEmailRef}
                             placeholder="Passenger Email"
                             type="email"
+                            className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                          />
+                        </div>
+
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            NIC/Passport No
+                          </span>
+                          <input
+                            onChange={handleCustomerNicPassport} // Handle changes to the input field
+                            value={tourDetails.customerNicPassport}
+                            ref={cusNicPassportRef}
+                            placeholder="NIC / Passport No"
+                            type="text"
                             className="p-1 font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
                           />
                         </div>
@@ -373,6 +416,45 @@ highwayExit: station,
 
                         <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Whatsapp No
+                          </span>
+                          <div className="shadow-md rounded border-[1px] border-black bxs:w-[220px] w-full bg-white p-1 font-normal ">
+                            <PhoneInput
+                              international
+                              countryCallingCodeEditable={false}
+                              defaultCountry="LK"
+                              value={
+                                tourDetails.customerWhatsappMobileNo ||
+                                whatsappMobValue
+                              }
+                              onChange={setWhatsappMobValue}
+                              className="PhoneInputInput"
+                              ref={cusWhatsappMobileRef}
+                              error={
+                                whatsappMobValue
+                                  ? isValidPhoneNumber(
+                                      tourDetails.customerMobileNo ||
+                                        whatsappMobValue
+                                    )
+                                    ? undefined
+                                    : "Invalid phone number"
+                                  : "Phone number required"
+                              }
+                            />
+                          </div>
+
+                          {/**
+                    <input
+                      ref={cusMobileRef}
+                      placeholder="No.Passengers"
+                      type="number"
+                      min="1"
+                      className="p-1 text-[14px] outline-none w-[220px] shadow-md rounded border-[1px] border-black "
+                    />**/}
+                        </div>
+
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             No of Luggagues
                           </span>
                           <input
@@ -386,7 +468,7 @@ highwayExit: station,
                           />
                         </div>
 
-                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
+                        <div className="flex bxs:w-[420px] w-full bxs:items-center bxs:flex-row flex-col my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             No of Passengers
                           </span>
@@ -398,12 +480,12 @@ highwayExit: station,
                           </span>
                         </div>
 
-                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
-                          <div className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-1 flex">
-                            <div className="flex gap-x-3 mb-3 bxs:mb-0">
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-1 my-3">
+                          <div className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-3 flex">
+                            <div className="flex gap-x-3 mt-3 bxs:mt-0">
                               <div className="flex flex-col justify-center items-center">
                                 <div> Board Show</div>
-                                <div className="text-gray-400 text-[12px] font-normal ">
+                                <div className="text-gray-700 text-[12px] font-normal ">
                                   {tourDetails.converedCurrencySymbol}{" "}
                                   {(
                                     otherPrices[0].boardShow *
@@ -454,12 +536,26 @@ highwayExit: station,
                         </div>
 
                         {boardShow && (
-                          <div className="transition-all duration-1000 bxs:w-[400px] w-full bg-black rounded pt-3 pb-5  my-2 flex flex-col gap-y-2 items-center px-2">
+                          <div className="transition-all font-normal duration-1000 bxs:w-[400px] w-full bg-black rounded pt-3 pb-5  my-2 flex flex-col gap-y-2 items-center px-2">
                             <div className="text-primary text-[18px] mb-2">
-                              Flight Details
+                              Board Details
                             </div>
+                            <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 ">
+                              <span className="bxs:w-[180px] w-[150px] bg-transparent text-white ml-2">
+                                Display Name
+                              </span>
+                              <input
+                                value={tourDetails.cusDisplayName}
+                                onChange={handleCusDisplayNameChange} // Handle changes to the input field
+                                ref={cusDisplayNameRef}
+                                placeholder="John"
+                                type="text"
+                                className="p-1 mr-2 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
+                              />
+                            </div>
+
                             <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 font-normal">
-                              <span className="bxs:w-[180px] w-[150px] bg-transparent text-white ml-2 font-semibold">
+                              <span className="bxs:w-[180px] w-[150px] bg-transparent text-white ml-2 ">
                                 Arrival Date/time
                               </span>
                               <div className="mr-2">

@@ -14,7 +14,7 @@
     "minpassengers": 1,
     "maxpassengers": 2,
     "weightFactor": 125,
-    "img": "/Vehicles/mpv4.png",
+    "img": "/Vehicles/wagonR.png",
     "luggages": 2,
     "handbaggages": 3,
     "category": "A"
@@ -44,7 +44,7 @@
     "minpassengers": 1,
     "maxpassengers": 3,
     "weightFactor": 150,
-    "img": "/Vehicles/wagonR.png",
+    "img": "/Vehicles/miniVanEvery.png",
     "luggages": 4,
     "handbaggages": 4,
     "category": "B"
@@ -54,7 +54,7 @@
     "minpassengers": 1,
     "maxpassengers": 5,
     "weightFactor": 150,
-    "img": "/Vehicles/miniVanEvery.png",
+    "img": "/Vehicles/nissane200.png",
     "luggages": 6,
     "handbaggages": 6,
     "category": "B"
