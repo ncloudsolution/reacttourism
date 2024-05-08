@@ -157,7 +157,7 @@ const PointToPointMap = ({ children }) => {
     <>
       <div className="flex flex-col items-center w-full">
         <div className="w-fit flex flex-col items-center justify-center ">
-          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[50px] mb-[10px] font-medium">
+          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[70px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
             Point To Point
           </div>
           <RiPinDistanceFill className="text-[35px] text-primary" />
