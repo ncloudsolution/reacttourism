@@ -2,9 +2,12 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { render } from "@react-email/render";
 import NewComp from "@/components/testingComponents/NewComp";
+import TestingMail from "@/components/emailTemplates/TestingMail";
 
 export async function POST(request) {
   try {
+    const tourDetails = insertsomething;
+
     const formData = await request.formData(); // Use formData directly
     const to = formData.get("to");
     const subject = formData.get("subject");
@@ -21,7 +24,7 @@ export async function POST(request) {
     });
 
     // Render the NewComp component to HTML markup
-    const newCompHtml = render(<NewComp />);
+    const newCompHtml = render(<TestingMail tourDetails={tourDetails} />);
 
     // Email options for the main recipient (to)
     const mailOptionsTo = {

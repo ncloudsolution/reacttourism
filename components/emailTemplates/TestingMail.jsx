@@ -1,17 +1,9 @@
-"use client";
-
-import React, { useContext } from "react";
-import { useRouter } from "next/navigation";
-import { TourContext } from "@/context/TourContextProvider";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/Navbar/bgremovedlogo.png";
 import { Tailwind, Button } from "@react-email/components";
 
-const TestingMail = () => {
-  const router = useRouter();
-  const { tourDetails, setTourDetails } = useContext(TourContext);
-
+const TestingMail = ({ tourDetails }) => {
   return (
     <Tailwind
       config={{
@@ -41,14 +33,14 @@ const TestingMail = () => {
         {tourDetails.vehicleType && (
           <div className="flex flex-col items-center ">
             <div className=" rounded-xl  font-semibold gap-y-1 w-fit border-2 border-black overflow-hidden">
-              <div className="bg-black text-primary rounded-lg">
+              <div className="bg-black  text-primary rounded-lg">
                 <div className="text-center text-[30px] pt-5 pb-2 text-white border-b-2 border-white mx-5">
                   New Order Received
                 </div>
 
                 <div className="flex flex-col p-5 ">
                   <div
-                    className="bg-transparent xs:w-[400px] xxs:w-[300px] w-[260px] -translate-y-2"
+                    className="bg-transparent  -translate-y-2"
                     style={{
                       maxWidth: "400px",
                       width: "300px",
@@ -61,7 +53,7 @@ const TestingMail = () => {
                         className=""
                         style={{
                           maxWidth: "180px",
-                          width: "130px",
+                          width: "170px",
                           minWidth: "100px",
                         }}
                       >
@@ -85,7 +77,7 @@ const TestingMail = () => {
                         className=""
                         style={{
                           maxWidth: "180px",
-                          width: "130px",
+                          width: "170px",
                           minWidth: "100px",
                         }}
                       >
@@ -109,7 +101,7 @@ const TestingMail = () => {
                         className=""
                         style={{
                           maxWidth: "180px",
-                          width: "130px",
+                          width: "170px",
                           minWidth: "100px",
                         }}
                       >
@@ -133,7 +125,7 @@ const TestingMail = () => {
                         className=""
                         style={{
                           maxWidth: "180px",
-                          width: "130px",
+                          width: "170px",
                           minWidth: "100px",
                         }}
                       >
@@ -158,7 +150,7 @@ const TestingMail = () => {
                         className=""
                         style={{
                           maxWidth: "180px",
-                          width: "130px",
+                          width: "170px",
                           minWidth: "100px",
                         }}
                       >
@@ -194,7 +186,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -218,7 +210,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -242,7 +234,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -268,7 +260,7 @@ const TestingMail = () => {
                         className=""
                         style={{
                           maxWidth: "180px",
-                          width: "130px",
+                          width: "150px",
                           minWidth: "100px",
                         }}
                       >
@@ -296,7 +288,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -320,7 +312,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -344,7 +336,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -368,7 +360,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -392,7 +384,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -419,7 +411,7 @@ const TestingMail = () => {
                         className=""
                         style={{
                           maxWidth: "180px",
-                          width: "130px",
+                          width: "150px",
                           minWidth: "100px",
                         }}
                       >
@@ -445,7 +437,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -469,7 +461,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -498,7 +490,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -523,7 +515,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -547,7 +539,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -571,7 +563,7 @@ const TestingMail = () => {
                       className=""
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >
@@ -596,7 +588,7 @@ const TestingMail = () => {
                         className=""
                         style={{
                           maxWidth: "180px",
-                          width: "130px",
+                          width: "150px",
                           minWidth: "100px",
                         }}
                       >
@@ -626,7 +618,7 @@ const TestingMail = () => {
                           className=""
                           style={{
                             maxWidth: "180px",
-                            width: "130px",
+                            width: "150px",
                             minWidth: "100px",
                           }}
                         >
@@ -655,7 +647,7 @@ const TestingMail = () => {
                       className=" "
                       style={{
                         maxWidth: "180px",
-                        width: "130px",
+                        width: "150px",
                         minWidth: "100px",
                       }}
                     >

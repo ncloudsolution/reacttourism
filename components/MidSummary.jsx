@@ -124,8 +124,8 @@ const MidSummary = () => {
 
       pageThreeToken: true,
     }));
-    router.push("/newtesting");
-    // router.push("/tourbooking/summary");
+    // router.push("/newtesting");
+    router.push("/tourbooking/summary");
   }
 
   // Function to handle changes in the input field for customer name
