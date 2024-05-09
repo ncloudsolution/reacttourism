@@ -56,7 +56,9 @@ const MidSummary = () => {
       cusEmailRef.current.value === "" ||
       cusMobileRef.current.value === "" ||
       cusLuggageCountRef.current.value === "" ||
-      cusNicPassportRef.current.value === ""
+      cusNicPassportRef.current.value === "" ||
+      cusFlightNoRef.current.value === "" ||
+      arrivalDate === ""
 
       /*file === null*/
     ) {
@@ -73,18 +75,6 @@ const MidSummary = () => {
       return setSubmitError(
         "You Exceeded the luggage maximum count of this vehical please change the luggage count or change the vehical"
       );
-    }
-
-    if (boardShow) {
-      if (arrivalDate === "") {
-        return setSubmitError("Fill the Arrival Date Correctly");
-      }
-    }
-
-    if (boardShow) {
-      if (cusFlightNoRef.current.value === "") {
-        return setSubmitError("Fill the flight No");
-      }
     }
 
     if (boardShow) {
@@ -134,7 +124,8 @@ const MidSummary = () => {
 
       pageThreeToken: true,
     }));
-    router.push("/tourbooking/summary");
+    router.push("/newtesting");
+    // router.push("/tourbooking/summary");
   }
 
   // Function to handle changes in the input field for customer name
@@ -382,6 +373,32 @@ highwayExit: station,
                           />
                         </div>
 
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 font-normal">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent font-semibold  ">
+                            Arrival Date/time
+                          </span>
+                          <div className="">
+                            <CustomMiniDatePicker
+                              selectedDate={arrivalDate}
+                              onChange={(date) => setArrivalDate(date)}
+                            />
+                          </div>
+                        </div>
+
+                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 ">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent  ">
+                            Flight No
+                          </span>
+                          <input
+                            value={tourDetails.customerFlightNo}
+                            onChange={handleFlightNoChange} // Handle changes to the input field
+                            ref={cusFlightNoRef}
+                            placeholder="UL-108"
+                            type="text"
+                            className="p-1  font-normal text-[14px] outline-none bxs:w-[220px] w-full shadow-md rounded border-[1px] border-black "
+                          />
+                        </div>
+
                         <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
                             Mobile No
@@ -550,32 +567,6 @@ highwayExit: station,
                                 onChange={handleCusDisplayNameChange} // Handle changes to the input field
                                 ref={cusDisplayNameRef}
                                 placeholder="John"
-                                type="text"
-                                className="p-1 mr-2 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
-                              />
-                            </div>
-
-                            <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 font-normal">
-                              <span className="bxs:w-[180px] w-[150px] bg-transparent text-white ml-2 ">
-                                Arrival Date/time
-                              </span>
-                              <div className="mr-2">
-                                <CustomMiniDatePicker
-                                  selectedDate={arrivalDate}
-                                  onChange={(date) => setArrivalDate(date)}
-                                />
-                              </div>
-                            </div>
-
-                            <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 ">
-                              <span className="bxs:w-[180px] w-[150px] bg-transparent text-white ml-2">
-                                Flight No
-                              </span>
-                              <input
-                                value={tourDetails.customerFlightNo}
-                                onChange={handleFlightNoChange} // Handle changes to the input field
-                                ref={cusFlightNoRef}
-                                placeholder="UL-108"
                                 type="text"
                                 className="p-1 mr-2 font-normal text-[14px] outline-none bxs:w-[240px] w-full shadow-md rounded border-[1px] border-black "
                               />

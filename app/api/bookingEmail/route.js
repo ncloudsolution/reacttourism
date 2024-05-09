@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { render } from "@react-email/render";
+import NewComp from "@/components/testingComponents/NewComp";
 
 export async function POST(request) {
   try {
@@ -18,12 +20,16 @@ export async function POST(request) {
       },
     });
 
+    // Render the NewComp component to HTML markup
+    const newCompHtml = render(<NewComp />);
+
     // Email options for the main recipient (to)
     const mailOptionsTo = {
       from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
       to: to,
       subject: "New Order Received",
-      text: text,
+
+      html: newCompHtml,
     };
 
     // Add attachment if file exists

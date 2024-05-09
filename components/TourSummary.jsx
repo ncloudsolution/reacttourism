@@ -100,7 +100,7 @@ Duration: ${tourDetails.duration}`;
       setResponseMessage(result.message); // Set the message from the server
 
       setTimeout(() => {
-        router.push("/"); // Redirect to the homepage after 2 seconds
+        router.push("/newtesting"); // Redirect to the homepage after 2 seconds
       }, 2000);
 
       console.log("msg send");
@@ -185,42 +185,52 @@ Duration: ${tourDetails.duration}`;
                     </div>
 
                     <div className="border-b-[1px] border-white border-dashed my-4"></div>
-                    {tourDetails.customerFlightNo && (
-                      <>
-                        {/**flight no**/}
-                        <div className="flex">
-                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                            Flight No
-                          </div>
-                          <div>:</div>
-                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                            {tourDetails.customerFlightNo}
-                          </div>
-                        </div>
 
-                        <div className="flex">
-                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                            Arrival Date
-                          </div>
-                          <div>:</div>
-                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                            {tourDetails.arrivalDate.toDateString()}
-                          </div>
-                        </div>
+                    {/**flight no**/}
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Flight No
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.customerFlightNo}
+                      </div>
+                    </div>
 
-                        <div className="flex">
-                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                            Arrival Time
-                          </div>
-                          <div>:</div>
-                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                            {tourDetails.arrivalDate.toTimeString()}
-                          </div>
-                        </div>
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Arrival Date
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.arrivalDate.toDateString()}
+                      </div>
+                    </div>
 
-                        <div className="border-b-[1px] border-white border-dashed my-4"></div>
-                      </>
+                    <div className="flex">
+                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                        Arrival Time
+                      </div>
+                      <div>:</div>
+                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                        {tourDetails.arrivalDate.toTimeString()}
+                      </div>
+                    </div>
+
+                    {/**Board Name**/}
+                    {tourDetails.cusDisplayName != "" && (
+                      <div className="flex">
+                        <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                          Board Name
+                        </div>
+                        <div>:</div>
+                        <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                          {tourDetails.cusDisplayName}
+                        </div>
+                      </div>
                     )}
+
+                    <div className="border-b-[1px] border-white border-dashed my-4"></div>
 
                     {/**vehical**/}
                     <div className="flex">
@@ -232,6 +242,7 @@ Duration: ${tourDetails.duration}`;
                         {tourDetails.vehicleType}
                       </div>
                     </div>
+
                     {/**no fo passengers**/}
                     <div className="flex">
                       <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">

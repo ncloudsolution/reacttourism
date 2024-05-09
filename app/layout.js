@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           <div className=" relative flex flex-col min-h-[100vh] ">
             <NavBar />
 
-            <main className=" mt-[100px] mobile:mt-[120px] ">{children}</main>
+            <main className=" mt-[95px] mobile:mt-[120px] ">{children}</main>
 
             <Footer />
             <AbsoluteFooter />
