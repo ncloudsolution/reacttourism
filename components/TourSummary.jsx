@@ -100,7 +100,7 @@ Duration: ${tourDetails.duration}`;
       setResponseMessage(result.message); // Set the message from the server
 
       setTimeout(() => {
-        router.push("/newtesting"); // Redirect to the homepage after 2 seconds
+        router.push("/"); // Redirect to the homepage after 2 seconds
       }, 2000);
 
       console.log("msg send");
@@ -225,7 +225,9 @@ Duration: ${tourDetails.duration}`;
                         </div>
                         <div>:</div>
                         <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                          {tourDetails.cusDisplayName}
+                          {tourDetails.cusDisplayName
+                          
+                          }
                         </div>
                       </div>
                     )}
