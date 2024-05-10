@@ -3,17 +3,17 @@ import { NextResponse } from "next/server";
 import { render } from "@react-email/render";
 import NewComp from "@/components/testingComponents/NewComp";
 import TestingMail from "@/components/emailTemplates/TestingMail";
+import SuperTest from "@/components/emailTemplates/SuperTest";
 
 export async function POST(request) {
   try {
-    const tourDetails = insertsomething;
-
     const formData = await request.formData(); // Use formData directly
     const to = formData.get("to");
     const subject = formData.get("subject");
     const text = formData.get("text");
     const clientmail = formData.get("clientmail");
     const file = formData.get("file");
+    const tourDetails = JSON.parse(formData.get("allDataBundle"));
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -25,6 +25,7 @@ export async function POST(request) {
 
     // Render the NewComp component to HTML markup
     const newCompHtml = render(<TestingMail tourDetails={tourDetails} />);
+    // const newCompHtml = render(<SuperTest />);
 
     // Email options for the main recipient (to)
     const mailOptionsTo = {

@@ -78,6 +78,38 @@ Return: ${tourDetails.returnDate}
 Distance : ${tourDetails.distance}
 Duration: ${tourDetails.duration}`;
 
+    const TourDetails = {
+      customerName: tourDetails.customerName,
+      customerEmail: tourDetails.customerEmail,
+      customerMobileNo: tourDetails.customerMobileNo,
+      customerWhatsappMobileNo: tourDetails.customerWhatsappMobileNo,
+      customerNicPassport: tourDetails.customerNicPassport,
+      customerFlightNo: tourDetails.customerFlightNo,
+      arrivalDate: tourDetails.arrivalDate,
+
+      cusDisplayName: tourDetails.cusDisplayName,
+      origin: tourDetails.origin,
+      destination: tourDetails.destination,
+      startDate: tourDetails.startDate,
+
+      returnDate: tourDetails.returnDate,
+
+      distance: tourDetails.distance,
+      duration: tourDetails.duration,
+      vehicleType: tourDetails.vehicleType,
+      noOfPassengers: tourDetails.noOfPassengers,
+      customerLuggageCount: tourDetails.customerLuggageCount,
+      converedCurrencySymbol: tourDetails.converedCurrencySymbol,
+      convertedPrice: tourDetails.convertedPrice,
+      conversionRate: tourDetails.conversionRate,
+
+      boardShow: tourDetails.boardShow,
+      highwayExit: tourDetails.highwayExit,
+      highwayCharge: tourDetails.highwayCharge,
+      totalPrice: tourDetails.totalPrice,
+      totalPriceInLkr: tourDetails.totalLKRPrice,
+    };
+
     // Start loading
     setResponseMessage("");
 
@@ -87,7 +119,7 @@ Duration: ${tourDetails.duration}`;
     //formData.append("subject", "Sending you a file!");
     formData.append("text", emailText);
     formData.append("clientmail", tourDetails.customerEmail); // Set the sender's email here
-
+    formData.append("allDataBundle", JSON.stringify(TourDetails));
     try {
       const response = await fetch("/api/bookingEmail", {
         method: "POST",
@@ -225,9 +257,7 @@ Duration: ${tourDetails.duration}`;
                         </div>
                         <div>:</div>
                         <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                          {tourDetails.cusDisplayName
-                          
-                          }
+                          {tourDetails.cusDisplayName}
                         </div>
                       </div>
                     )}

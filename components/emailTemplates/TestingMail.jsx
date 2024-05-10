@@ -1,6 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
-import logo from "@/public/Navbar/bgremovedlogo.png";
 import { Tailwind, Button } from "@react-email/components";
 
 const TestingMail = ({ tourDetails }) => {
@@ -174,12 +171,6 @@ const TestingMail = ({ tourDetails }) => {
 
               <div className="bg-white text-black flex flex-col pt-5 overflow-hidden relative ">
                 <div className="px-5">
-                  <Image
-                    src={logo}
-                    alt=""
-                    className="size-[200px] absolute z-0 left-1/2 -translate-x-1/2 opacity-20 translate-y-[90px]"
-                  />
-
                   {/**flight no**/}
                   <div className="flex z-10">
                     <div
@@ -205,53 +196,57 @@ const TestingMail = ({ tourDetails }) => {
                     </div>
                   </div>
 
-                  <div className="flex">
-                    <div
-                      className=""
-                      style={{
-                        maxWidth: "180px",
-                        width: "150px",
-                        minWidth: "100px",
-                      }}
-                    >
-                      Arrival Date
+                  {tourDetails.arrivalDate instanceof Date && (
+                    <div className="flex">
+                      <div
+                        className=""
+                        style={{
+                          maxWidth: "180px",
+                          width: "150px",
+                          minWidth: "100px",
+                        }}
+                      >
+                        Arrival Date
+                      </div>
+                      <div>:</div>
+                      <div
+                        className="ml-4 font-normal "
+                        style={{
+                          maxWidth: "200px",
+                          width: "150px",
+                          minWidth: "120px",
+                        }}
+                      >
+                        {tourDetails.arrivalDate.toDateString()}
+                      </div>
                     </div>
-                    <div>:</div>
-                    <div
-                      className="ml-4 font-normal "
-                      style={{
-                        maxWidth: "200px",
-                        width: "150px",
-                        minWidth: "120px",
-                      }}
-                    >
-                      {tourDetails.arrivalDate.toDateString()}
-                    </div>
-                  </div>
+                  )}
 
-                  <div className="flex">
-                    <div
-                      className=""
-                      style={{
-                        maxWidth: "180px",
-                        width: "150px",
-                        minWidth: "100px",
-                      }}
-                    >
-                      Arrival Time
+                  {tourDetails.arrivalDate instanceof Date && (
+                    <div className="flex">
+                      <div
+                        className=""
+                        style={{
+                          maxWidth: "180px",
+                          width: "150px",
+                          minWidth: "100px",
+                        }}
+                      >
+                        Arrival Time
+                      </div>
+                      <div>:</div>
+                      <div
+                        className="ml-4 font-normal "
+                        style={{
+                          maxWidth: "200px",
+                          width: "150px",
+                          minWidth: "120px",
+                        }}
+                      >
+                        {tourDetails.arrivalDate.toTimeString()}
+                      </div>
                     </div>
-                    <div>:</div>
-                    <div
-                      className="ml-4 font-normal "
-                      style={{
-                        maxWidth: "200px",
-                        width: "150px",
-                        minWidth: "120px",
-                      }}
-                    >
-                      {tourDetails.arrivalDate.toTimeString()}
-                    </div>
-                  </div>
+                  )}
 
                   {/**Board Name**/}
                   {tourDetails.cusDisplayName != "" && (
@@ -330,54 +325,59 @@ const TestingMail = ({ tourDetails }) => {
                       {tourDetails.destination}
                     </div>
                   </div>
+
                   {/**start date**/}
-                  <div className="flex">
-                    <div
-                      className=""
-                      style={{
-                        maxWidth: "180px",
-                        width: "150px",
-                        minWidth: "100px",
-                      }}
-                    >
-                      Start Date
+                  {tourDetails.startDate instanceof Date && (
+                    <div className="flex">
+                      <div
+                        className=""
+                        style={{
+                          maxWidth: "180px",
+                          width: "150px",
+                          minWidth: "100px",
+                        }}
+                      >
+                        Start Date
+                      </div>
+                      <div>:</div>
+                      <div
+                        className="ml-4 font-normal "
+                        style={{
+                          maxWidth: "200px",
+                          width: "150px",
+                          minWidth: "120px",
+                        }}
+                      >
+                        {tourDetails.startDate.toDateString()}
+                      </div>
                     </div>
-                    <div>:</div>
-                    <div
-                      className="ml-4 font-normal "
-                      style={{
-                        maxWidth: "200px",
-                        width: "150px",
-                        minWidth: "120px",
-                      }}
-                    >
-                      {tourDetails.startDate.toDateString()}
-                    </div>
-                  </div>
+                  )}
                   {/**start time**/}
-                  <div className="flex">
-                    <div
-                      className=""
-                      style={{
-                        maxWidth: "180px",
-                        width: "150px",
-                        minWidth: "100px",
-                      }}
-                    >
-                      Start Time
+                  {tourDetails.stratDate instanceof Date && (
+                    <div className="flex">
+                      <div
+                        className=""
+                        style={{
+                          maxWidth: "180px",
+                          width: "150px",
+                          minWidth: "100px",
+                        }}
+                      >
+                        Start Time
+                      </div>
+                      <div>:</div>
+                      <div
+                        className="ml-4 font-normal "
+                        style={{
+                          maxWidth: "200px",
+                          width: "150px",
+                          minWidth: "120px",
+                        }}
+                      >
+                        {tourDetails.startDate.toTimeString()}
+                      </div>
                     </div>
-                    <div>:</div>
-                    <div
-                      className="ml-4 font-normal "
-                      style={{
-                        maxWidth: "200px",
-                        width: "150px",
-                        minWidth: "120px",
-                      }}
-                    >
-                      {tourDetails.startDate.toTimeString()}
-                    </div>
-                  </div>
+                  )}
                   {/**return date**/}
                   <div className="flex">
                     <div
@@ -613,33 +613,59 @@ const TestingMail = ({ tourDetails }) => {
                   {tourDetails.highwayExit &&
                     tourDetails.highwayExit !== "None" &&
                     tourDetails.highwayCharge !== "No any Charge" && (
-                      <div className="flex">
-                        <div
-                          className=""
-                          style={{
-                            maxWidth: "180px",
-                            width: "150px",
-                            minWidth: "100px",
-                          }}
-                        >
-                          Highway Charges
+                      <>
+                        <div className="flex">
+                          <div
+                            className=""
+                            style={{
+                              maxWidth: "180px",
+                              width: "150px",
+                              minWidth: "100px",
+                            }}
+                          >
+                            Highway Charges
+                          </div>
+                          <div>:</div>
+                          <div
+                            className="ml-4 font-normal "
+                            style={{
+                              maxWidth: "200px",
+                              width: "150px",
+                              minWidth: "120px",
+                            }}
+                          >
+                            {tourDetails.converedCurrencySymbol}{" "}
+                            {(
+                              tourDetails.highwayCharge *
+                              tourDetails.conversionRate
+                            ).toFixed(2)}
+                          </div>
                         </div>
-                        <div>:</div>
-                        <div
-                          className="ml-4 font-normal "
-                          style={{
-                            maxWidth: "200px",
-                            width: "150px",
-                            minWidth: "120px",
-                          }}
-                        >
-                          {tourDetails.converedCurrencySymbol}{" "}
-                          {(
-                            tourDetails.highwayCharge *
-                            tourDetails.conversionRate
-                          ).toFixed(2)}
+
+                        <div className="flex">
+                          <div
+                            className=""
+                            style={{
+                              maxWidth: "180px",
+                              width: "150px",
+                              minWidth: "100px",
+                            }}
+                          >
+                            Highway Exit
+                          </div>
+                          <div>:</div>
+                          <div
+                            className="ml-4 font-normal "
+                            style={{
+                              maxWidth: "200px",
+                              width: "150px",
+                              minWidth: "120px",
+                            }}
+                          >
+                            {tourDetails.highwayExit}
+                          </div>
                         </div>
-                      </div>
+                      </>
                     )}
 
                   <div className="flex mt-3">
@@ -660,12 +686,12 @@ const TestingMail = ({ tourDetails }) => {
                     </div>
                   </div>
                   <div className="flex w-full justify-start mt-5">
-                    <Link
-                      className="p-3 bg-black text-white rounded w-fit "
+                    <a
+                      className="p-3 bg-black text-white rounded w-fit"
                       href={`mailto:${tourDetails.customerEmail}`}
                     >
                       Connect Customer
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
