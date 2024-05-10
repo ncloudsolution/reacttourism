@@ -85,7 +85,8 @@ Duration: ${tourDetails.duration}`;
       customerWhatsappMobileNo: tourDetails.customerWhatsappMobileNo,
       customerNicPassport: tourDetails.customerNicPassport,
       customerFlightNo: tourDetails.customerFlightNo,
-      arrivalDate: tourDetails.arrivalDate,
+      arrivalDate: tourDetails.arrivalDate.toDateString(),
+      arrivalTime: tourDetails.arrivalDate.toTimeString(),
 
       cusDisplayName: tourDetails.cusDisplayName,
       origin: tourDetails.origin,
