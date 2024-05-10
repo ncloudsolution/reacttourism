@@ -4,6 +4,7 @@ import { render } from "@react-email/render";
 import NewComp from "@/components/testingComponents/NewComp";
 import TestingMail from "@/components/emailTemplates/TestingMail";
 import SuperTest from "@/components/emailTemplates/SuperTest";
+import Copied from "@/components/emailTemplates/Copied";
 
 export async function POST(request) {
   try {
@@ -25,6 +26,7 @@ export async function POST(request) {
 
     // Render the NewComp component to HTML markup
     const newCompHtml = render(<TestingMail tourDetails={tourDetails} />);
+    // const newCompHtml = render(<Copied />);
     // const newCompHtml = render(<SuperTest />);
 
     // Email options for the main recipient (to)

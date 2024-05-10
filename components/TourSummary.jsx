@@ -91,10 +91,17 @@ Duration: ${tourDetails.duration}`;
       cusDisplayName: tourDetails.cusDisplayName,
       origin: tourDetails.origin,
       destination: tourDetails.destination,
-      startDate: tourDetails.startDate,
+      startDate: tourDetails.startDate.toDateString(),
+      startTime: tourDetails.startDate.toTimeString(),
 
-      returnDate: tourDetails.returnDate,
-
+      returnDate:
+        tourDetails.returnDate instanceof Date
+          ? tourDetails.returnDate.toDateString()
+          : tourDetails.returnDate,
+      returnTime:
+        tourDetails.returnDate instanceof Date
+          ? tourDetails.returnDate.toTimeString()
+          : null,
       distance: tourDetails.distance,
       duration: tourDetails.duration,
       vehicleType: tourDetails.vehicleType,
