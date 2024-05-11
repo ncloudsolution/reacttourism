@@ -12,6 +12,7 @@ export function SetHighwayCharge(vehicleType, exitPoint, isReturn) {
   if (chargeArray) {
     // Return the array value based on vehicle type
     let charge;
+
     if (vehicleType === "A") {
       charge = chargeArray[0];
     } else if (vehicleType === "B") {
@@ -22,10 +23,9 @@ export function SetHighwayCharge(vehicleType, exitPoint, isReturn) {
 
     // If isReturn is true, double the charge
     if (isReturn) {
-      charge *= 2;
+      return (charge *= 2);
     }
 
     return charge;
   }
-  return 0;
 }
