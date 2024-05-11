@@ -233,9 +233,7 @@ export const BrandNew = ({ tourDetails }) => {
                       see our support page.
                     </Text> */}
 
-                <Row
-                  style={{ ...boxInfos, paddingTop: "0", padding: "0px 30px" }}
-                >
+                <Row style={{ ...boxInfos, paddingTop: "0" }}>
                   {/* <Column style={containerButton} colSpan={2}> */}
                   <Button
                     style={{ ...button, margin: "0px 10px 20px 0px" }}
