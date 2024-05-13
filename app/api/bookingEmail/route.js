@@ -6,6 +6,7 @@ import TestingMail from "@/components/emailTemplates/TestingMail";
 import SuperTest from "@/components/emailTemplates/SuperTest";
 import Copied from "@/components/emailTemplates/Copied";
 import BrandNew from "@/components/emailTemplates/BrandNew";
+import CustomerEmail from "@/components/emailTemplates/CustomerEmail";
 
 export async function POST(request) {
   try {
@@ -28,6 +29,9 @@ export async function POST(request) {
     // Render the NewComp component to HTML markup
     // const newCompHtml = render(<TestingMail tourDetails={tourDetails} />);
     const newCompHtml = render(<BrandNew tourDetails={tourDetails} />);
+    const newCompHtmlforCustomer = render(
+      <CustomerEmail tourDetails={tourDetails} />
+    );
     // const newCompHtml = render(<Copied />);
     // const newCompHtml = render(<SuperTest />);
 
@@ -54,7 +58,7 @@ export async function POST(request) {
       from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
       to: clientmail,
       subject: "Here's your new ride from Tour Booking sri Lanka",
-      text: text, // Assuming you want to send the same text; adjust if different
+      html: newCompHtmlforCustomer, // Assuming you want to send the same text; adjust if different
     };
 
     // Add attachment if file exists
