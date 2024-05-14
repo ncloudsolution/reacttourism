@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import otherPrices from "@/data/otherPrices.json";
 import Hierarchy from "./standalone/Hierarchy";
 import CustomHighwayDropDown from "./standalone/CustomHighwayDropDown";
-import CurrencyTab from "./testingComponents/CurrencyTab";
+import CurrencyTab from "./standalone/CurrencyTab";
 import CustomDatePicker from "./CustomDatePicker";
 import CustomMiniDatePicker from "./CustomMiniDatePicker";
 
@@ -91,8 +91,8 @@ const MidSummary = () => {
       cusDisplayName: boardShow ? cusDisplayNameRef.current.value : "",
       customerMobileNo: cusMobileRef.current.value,
       customerWhatsappMobileNo: cusWhatsappMobileRef.current.value,
-      customerFlightNo: boardShow ? cusFlightNoRef.current.value : "",
-      arrivalDate: boardShow ? arrivalDate : 0,
+      customerFlightNo: cusFlightNoRef.current.value,
+      arrivalDate: arrivalDate,
       customerLuggageCount: cusLuggageCountRef.current.value,
       boardShow: boardShow ? otherPrices[0].boardShow : 0,
       highwayCharge: parseFloat(
@@ -187,11 +187,11 @@ const MidSummary = () => {
 
   return (
     <>
-      <div className="my-4">
+      <div className="mt-0 mb-4">
         {tourDetails.vehicleType && (
           <div className="flex flex-col items-center">
             <CurrencyTab />
-            <div className="mt-2 mb-8 w-full flex justify-center">
+            <div className="mb-10 w-full flex justify-center bg-black">
               <Hierarchy />
             </div>
             <div className="bg-transparent rounded border-[2px] border-primary p-2 mb-14 font-semibold gap-y-1 bigmd:w-[820px] bxs:w-[450px] w-[330px]">

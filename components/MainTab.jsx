@@ -15,7 +15,7 @@ import { IoCarSportSharp } from "react-icons/io5";
 import Hierarchy from "./standalone/Hierarchy";
 import { SetHighwayCharge } from "@/libs/HighwayFair";
 import CustomCurrencyDropDown from "./standalone/CustomCurrencyDropDown";
-import CurrencyTab from "./testingComponents/CurrencyTab";
+import CurrencyTab from "./standalone/CurrencyTab";
 
 const MainTab = () => {
   const [isPointToPointClicked, setIsPointToPointClicked] = useState(false);
@@ -84,7 +84,7 @@ const MainTab = () => {
       <CurrencyTab />
       <div className="flex justify-center items-center flex-col bg-black ">
         <div className="bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] flex justify-center">
-          <div className="mt-2 bxs:mt-4 bigmd:mt-6 w-full flex justify-center">
+          <div className=" w-full flex justify-center">
             <Hierarchy />
           </div>
         </div>
@@ -125,7 +125,7 @@ const MainTab = () => {
           </div>
 
           {/**mobile area**/}
-          <div className="bigmd:hidden  flex flex-col gap-3 bigmd:my-3 my-0 text-[30px] text-white translate-y-8 bxs:justify-start justify-center w-full">
+          <div className="bigmd:hidden  flex flex-col gap-3 text-[30px] text-white my-4 bxs:justify-start justify-center w-full">
             <div className="flex items-center gap-x-4 " onClick={handleAirport}>
               <MdLocalAirport
                 className={` ${

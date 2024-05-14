@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { useRouter } from "next/navigation";
 import Hierarchy from "./standalone/Hierarchy";
-import CurrencyTab from "./testingComponents/CurrencyTab";
+import CurrencyTab from "./standalone/CurrencyTab";
 import BlankContext from "./Exceptions/BlankContext";
 
 const TourSummary = () => {
@@ -160,7 +160,7 @@ Duration: ${tourDetails.duration}`;
 
   return (
     <>
-      <div className="my-4">
+      <div className="mt-0 mb-4">
         {(isLoading || responseMessage) && (
           <div className="w-full h-[90vh] flex items-center justify-center">
             {/* Your form or component elements go here */}

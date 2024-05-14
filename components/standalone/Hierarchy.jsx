@@ -38,7 +38,7 @@ const Hierarchy = () => {
   };
 
   return (
-    <div className="flex py-3 px-4 rounded bg-black">
+    <div className="flex py-4 px-4 rounded bg-black">
       {sections.map((section, index) => {
         const isActive =
           index <= sections.findIndex((s) => s.url.includes(pathname));

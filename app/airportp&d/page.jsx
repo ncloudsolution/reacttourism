@@ -2,7 +2,7 @@
 import AirportMap from "@/components/Map/AirportMap";
 import CarSkeleton from "@/components/skeletonUI/compoundElements/CarSkeleton";
 import Hierarchy from "@/components/standalone/Hierarchy";
-import CurrencyTab from "@/components/testingComponents/CurrencyTab";
+import CurrencyTab from "@/components/standalone/CurrencyTab";
 import { useJsApiLoader } from "@react-google-maps/api";
 import React, { useEffect, useState } from "react";
 
@@ -34,7 +34,7 @@ const AirPage = () => {
     <>
       <CurrencyTab />
       <div className=" flex flex-col justify-center items-center">
-        <div className="mt-2 mb-8 w-full flex justify-center">
+        <div className=" w-full flex justify-center bg-black">
           <Hierarchy />
         </div>
         <div className="min-h-[60vh] flex items-center">

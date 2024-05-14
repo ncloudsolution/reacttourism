@@ -19,11 +19,15 @@ function NavBar() {
       <nav className="w-full bg-white bg-opacity-70 fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
-            <div className="flex items-center justify-between py-1 md:py-1 md:block">
+            <div className="flex items-center justify-between  md:block">
               {/* LOGO */}
 
               <a href="/">
-                <Image className="w-[100px] h-auto" src={logo} alt="logo" />
+                <Image
+                  className="xs:w-[80px] w-[60px] py-1 h-auto"
+                  src={logo}
+                  alt="logo"
+                />
               </a>
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
