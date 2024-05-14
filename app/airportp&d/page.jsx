@@ -5,6 +5,7 @@ import Hierarchy from "@/components/standalone/Hierarchy";
 import CurrencyTab from "@/components/standalone/CurrencyTab";
 import { useJsApiLoader } from "@react-google-maps/api";
 import React, { useEffect, useState } from "react";
+import Flow from "@/components/testingComponents/Flow";
 
 const AirPage = () => {
   const [showSkeleton, setShowSkeleton] = useState(true);
@@ -34,12 +35,15 @@ const AirPage = () => {
     <>
       <CurrencyTab />
       <div className=" flex flex-col justify-center items-center">
-        <div className=" w-full flex justify-center bg-black">
+        <div className="w-full flex justify-center bg-black">
           <Hierarchy />
         </div>
-        <div className="min-h-[60vh] flex items-center">
-          <div className=" bg-black px-8 rounded-lg">
+        <div className="min-h-[60vh] flex flex-col items-center">
+          <div className=" bg-black px-8 rounded-lg my-10">
             <AirportMap />
+          </div>
+          <div className="mb-10">
+            <Flow />
           </div>
         </div>
       </div>

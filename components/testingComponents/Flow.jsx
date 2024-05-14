@@ -27,20 +27,22 @@ const Flow = () => {
         <div className=" w-fit mb-7 pb-1 font-semibold text-[22px] border-b-4 border-b-black border-dashed">
           How does it work
         </div>
-        <div className="flex gap-5">
+        <div className="flex bigmd:flex-row flex-col gap-5">
           {lists.map((list, index) => (
             <div
               key={index}
-              className="flex items-start gap-3 w-full bxs:w-[290px]"
+              className="flex items-start gap-3 w-[230px] xxs:w-[260px] bxs:w-[400px] bigmd:w-[250px] mobile:w-[320px]"
             >
-              <div className="bg-black text-white rounded-full size-[40px]  flex justify-center items-center font-semibold text-[18px] ">
+              <div className="bg-black text-white rounded-full size-[40px]  flex justify-center items-center font-semibold xxs:text-[18px] text-[16px] ">
                 {list.id}
               </div>
-              <div className="flex flex-col w-[240px]">
-                <div className="pb-2 font-semibold text-[16px]">
+              <div className="flex flex-col w-[170px] xxs:w-[210px] bxs:w-[350px] bigmd:w-[200px] mobile:w-[270px]">
+                <div className="pb-2 font-semibold xxs:text-[16px] text-[14px]">
                   {list.heading}
                 </div>
-                <div className="text-[14px]">{list.description}</div>
+                <div className="xxs:text-[14px] text-[12px]">
+                  {list.description}
+                </div>
               </div>
             </div>
           ))}
