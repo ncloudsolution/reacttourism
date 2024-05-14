@@ -115,7 +115,9 @@ const MidSummary = () => {
         .toFixed(2),
 
       totalLKRPrice: (
-        parseFloat(tourDetails.price) +
+        parseFloat(
+          tourDetails.isReturntour ? tourDetails.price * 2 : tourDetails.price
+        ) +
         (boardShow ? parseFloat((otherPrices[0]?.boardShow).toFixed(2)) : 0) +
         parseFloat(
           (tourDetails.highwayCharge * tourDetails.conversionRate).toFixed(2)
