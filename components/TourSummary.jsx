@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 import Hierarchy from "./standalone/Hierarchy";
 import CurrencyTab from "./standalone/CurrencyTab";
 import BlankContext from "./Exceptions/BlankContext";
+import Processing from "./loaders&Responses/Processing";
+import SuccessSubmission from "./loaders&Responses/SuccessSubmission";
+import FailedSubmission from "./loaders&Responses/FailedSubmission";
 
 const TourSummary = () => {
   const router = useRouter();
@@ -150,9 +153,9 @@ Duration: ${tourDetails.duration}`;
       setIsLoading(false); // Stop loading
       setResponseMessage("Failed to make the order. Please try again.");
 
-      setTimeout(() => {
-        router.push("/"); // Redirect to the homepage after 2 seconds
-      }, 2000);
+      // setTimeout(() => {
+      //   router.push("/"); // Redirect to the homepage after 2 seconds
+      // }, 2000);
     }
 
     setSubmitError("");
@@ -164,9 +167,12 @@ Duration: ${tourDetails.duration}`;
         {(isLoading || responseMessage) && (
           <div className="w-full h-[90vh] flex items-center justify-center">
             {/* Your form or component elements go here */}
-            {isLoading && <div>Sending email...</div>}{" "}
-            {/* Display a loading message */}
-            {responseMessage && <div>{responseMessage}</div>}
+            {isLoading && <Processing />} {/* Display a loading message */}
+            {responseMessage === "Order completed Successfully" ? (
+              <SuccessSubmission />
+            ) : (
+              <FailedSubmission />
+            )}
             {/* Display the response message */}
           </div>
         )}

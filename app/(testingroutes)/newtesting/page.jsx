@@ -11,6 +11,9 @@ import OwnerEmail from "@/components/emailTemplates/OwnerEmail";
 import TestingMail from "@/components/emailTemplates/TestingMail";
 import { TourContext } from "@/context/TourContextProvider";
 import Flow from "@/components/testingComponents/Flow";
+import Processing from "@/components/loaders&Responses/Processing";
+import SuccessSubmission from "@/components/loaders&Responses/SuccessSubmission";
+import FailedSubmission from "@/components/loaders&Responses/FailedSubmission";
 
 const newtesting = () => {
   const tourDetails = {
@@ -47,7 +50,7 @@ const newtesting = () => {
   return (
     <div>
       {/* <TestingMail tourDetails={tourDetails} /> */}
-      <Flow />
+      <FailedSubmission />
     </div>
   );
 };

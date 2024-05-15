@@ -123,6 +123,54 @@ module.exports = {
             transform: "translateX(150%)",
           },
         },
+
+        line1: {
+          "0%": {
+            width: "50%",
+          },
+          "50%": {
+            width: "70%",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
+
+        line2: {
+          "0%": {
+            width: "20%",
+          },
+          "50%": {
+            width: "50%",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
+
+        line3: {
+          "0%": {
+            width: "30%",
+          },
+          "50%": {
+            width: "50%",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
+
+        line4: {
+          "0%": {
+            width: "40%",
+          },
+          "50%": {
+            width: "60%",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
       },
 
       animation: {
@@ -133,6 +181,10 @@ module.exports = {
         cartext2formid: "cartext2formid 2s ease-out infinite alternate",
         cartext2forsmall: "cartext2forsmall 2s ease-out infinite alternate",
         shimmer: "shimmer 2.5s infinite ",
+        line1: "line1 0.5s ease-out infinite alternate",
+        line2: "line2 0.5s ease-out infinite alternate",
+        line3: "line3 0.5s ease-out infinite alternate",
+        line4: "line4 0.5s ease-out infinite alternate",
       },
     },
   },
