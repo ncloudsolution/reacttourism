@@ -285,16 +285,7 @@ export const OwnerEmail = ({ tourDetails }) => {
                     >
                       WhatsApp
                     </Button>
-                    <Button
-                      style={{
-                        ...button,
-                        backgroundColor: "#24A1DE",
-                        margin: "0px 0px 0px 5px",
-                      }}
-                      href={`https://t.me/Tourbookingsrilanka`}
-                    >
-                      Telegram
-                    </Button>
+
                     {/* </Column> */}
                   </Row>
                 </Section>
@@ -314,6 +305,7 @@ export const OwnerEmail = ({ tourDetails }) => {
             style={{
               textAlign: "center",
               fontSize: 12,
+              paddingBottom: 10,
               color: "rgb(0,0,0, 0.7)",
             }}
           >

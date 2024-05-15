@@ -1,11 +1,8 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { render } from "@react-email/render";
-import NewComp from "@/components/testingComponents/NewComp";
-import TestingMail from "@/components/emailTemplates/TestingMail";
-import SuperTest from "@/components/emailTemplates/SuperTest";
-import Copied from "@/components/emailTemplates/Copied";
-import BrandNew, { OwnerEmail } from "@/components/emailTemplates/OwnerEmail";
+
+import OwnerEmail from "@/components/emailTemplates/OwnerEmail";
 import CustomerEmail from "@/components/emailTemplates/CustomerEmail";
 
 export async function POST(request) {
