@@ -142,9 +142,9 @@ Duration: ${tourDetails.duration}`;
       setIsLoading(false); // Stop loading
       setResponseMessage(result.message); // Set the message from the server
 
-      setTimeout(() => {
-        router.push("/"); // Redirect to the homepage after 2 seconds
-      }, 2000);
+      // setTimeout(() => {
+      //   router.push("/"); // Redirect to the homepage after 2 seconds
+      // }, 2000);
 
       console.log("msg send");
     } catch (error) {
@@ -168,9 +168,11 @@ Duration: ${tourDetails.duration}`;
           <div className="w-full h-[90vh] flex items-center justify-center">
             {/* Your form or component elements go here */}
             {isLoading && <Processing />} {/* Display a loading message */}
-            {responseMessage === "Order completed Successfully" ? (
-              <SuccessSubmission />
-            ) : (
+            {!isLoading &&
+              responseMessage === "Order completed Successfully" && (
+                <SuccessSubmission />
+              )}
+            {!isLoading && responseMessage === "Failed to Send Email" && (
               <FailedSubmission />
             )}
             {/* Display the response message */}
