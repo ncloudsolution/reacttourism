@@ -439,9 +439,19 @@ export const CustomerEmail = ({ tourDetails }) => {
                           backgroundColor: "#075e54",
                           margin: "0px 0px 0px 5px",
                         }}
-                        href={`https://wa.me/+94781720720`}
+                        href={`https://wa.me/+94712100500`}
                       >
                         WhatsApp
+                      </Button>
+                      <Button
+                        style={{
+                          ...button,
+                          backgroundColor: "#24A1DE",
+                          margin: "0px 0px 0px 5px",
+                        }}
+                        href={`https://t.me/Tourbookingsrilanka`}
+                      >
+                        Telegram
                       </Button>
                     </Column>
                   </Row>

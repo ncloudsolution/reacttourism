@@ -5,7 +5,7 @@ import NewComp from "@/components/testingComponents/NewComp";
 import TestingMail from "@/components/emailTemplates/TestingMail";
 import SuperTest from "@/components/emailTemplates/SuperTest";
 import Copied from "@/components/emailTemplates/Copied";
-import BrandNew from "@/components/emailTemplates/BrandNew";
+import BrandNew, { OwnerEmail } from "@/components/emailTemplates/OwnerEmail";
 import CustomerEmail from "@/components/emailTemplates/CustomerEmail";
 
 export async function POST(request) {
@@ -28,7 +28,9 @@ export async function POST(request) {
 
     // Render the NewComp component to HTML markup
     // const newCompHtml = render(<TestingMail tourDetails={tourDetails} />);
-    const newCompHtml = render(<BrandNew tourDetails={tourDetails} />);
+    const newCompHtmlforOwner = render(
+      <OwnerEmail tourDetails={tourDetails} />
+    );
     const newCompHtmlforCustomer = render(
       <CustomerEmail tourDetails={tourDetails} />
     );
@@ -41,7 +43,7 @@ export async function POST(request) {
       to: to,
       subject: "New Order Received",
 
-      html: newCompHtml,
+      html: newCompHtmlforOwner,
     };
 
     // Add attachment if file exists

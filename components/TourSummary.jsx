@@ -239,7 +239,7 @@ Duration: ${tourDetails.duration}`;
 
                     <div className="flex">
                       <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                        Arrival Date
+                        {tourDetails.isPickup ? "Arrival Date" : "Depart Date"}
                       </div>
                       <div>:</div>
                       <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
@@ -249,7 +249,7 @@ Duration: ${tourDetails.duration}`;
 
                     <div className="flex">
                       <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                        Arrival Time
+                        {tourDetails.isPickup ? "Arrival Time" : "Depart Time"}
                       </div>
                       <div>:</div>
                       <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">

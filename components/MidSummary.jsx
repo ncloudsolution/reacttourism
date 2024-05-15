@@ -377,7 +377,9 @@ highwayExit: station,
 
                         <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-0 my-1 font-normal">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent font-semibold  ">
-                            Arrival Date/time
+                            {tourDetails.isPickup
+                              ? " Arrival Date/time"
+                              : "Depart Date/time"}
                           </span>
                           <div className="">
                             <CustomMiniDatePicker
@@ -500,60 +502,62 @@ highwayExit: station,
                           </span>
                         </div>
 
-                        <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-1 my-3">
-                          <div className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-3 flex">
-                            <div className="flex gap-x-3 mt-3 bxs:mt-0">
-                              <div className="flex flex-col justify-center items-center">
-                                <div> Board Show</div>
-                                <div className="text-gray-700 text-[12px] font-normal ">
-                                  {tourDetails.converedCurrencySymbol}{" "}
-                                  {(
-                                    otherPrices[0].boardShow *
-                                    tourDetails.conversionRate
-                                  ).toFixed(2)}
+                        {tourDetails.isPickup && (
+                          <div className="flex bxs:w-[400px] w-full bxs:items-center bxs:flex-row flex-col bxs:my-1 my-3">
+                            <div className="bxs:w-[180px] w-full bg-transparent bxs:mb-0 mb-3 flex">
+                              <div className="flex gap-x-3 mt-3 bxs:mt-0">
+                                <div className="flex flex-col justify-center items-center">
+                                  <div> Board Show</div>
+                                  <div className="text-gray-700 text-[12px] font-normal ">
+                                    {tourDetails.converedCurrencySymbol}{" "}
+                                    {(
+                                      otherPrices[0].boardShow *
+                                      tourDetails.conversionRate
+                                    ).toFixed(2)}
+                                  </div>
+                                </div>
+                                <div className="size-[50px]">
+                                  <Image
+                                    src={boardimg}
+                                    alt=""
+                                    className="size-[100%]"
+                                  />
                                 </div>
                               </div>
-                              <div className="size-[50px]">
-                                <Image
-                                  src={boardimg}
-                                  alt=""
-                                  className="size-[100%]"
-                                />
+                            </div>
+
+                            <div className="flex flex-1 text-center gap-x-3 font-normal text-[14px] outline-none bxs:w-[220px] w-full  rounded  ">
+                              <div
+                                onClick={() => {
+                                  if (!boardShow) {
+                                    setBoardShow(true);
+                                  }
+                                }}
+                                className={` ${
+                                  boardShow
+                                    ? "bg-primary text-black shadow-md "
+                                    : "border-[1px] border-black"
+                                } w-full p-1 rounded transition-all duration-500 hover:cursor-pointer`}
+                              >
+                                Accept
+                              </div>
+                              <div
+                                onClick={() => {
+                                  if (boardShow) {
+                                    setBoardShow(false);
+                                  }
+                                }}
+                                className={` ${
+                                  !boardShow
+                                    ? "bg-primary text-black shadow-md"
+                                    : "border-[1px] border-black"
+                                } w-full p-1 rounded transition-all duration-500 hover:cursor-pointer`}
+                              >
+                                Reject
                               </div>
                             </div>
                           </div>
-
-                          <div className="flex flex-1 text-center gap-x-3 font-normal text-[14px] outline-none bxs:w-[220px] w-full  rounded  ">
-                            <div
-                              onClick={() => {
-                                if (!boardShow) {
-                                  setBoardShow(true);
-                                }
-                              }}
-                              className={` ${
-                                boardShow
-                                  ? "bg-primary text-black shadow-md "
-                                  : "border-[1px] border-black"
-                              } w-full p-1 rounded transition-all duration-500 hover:cursor-pointer`}
-                            >
-                              Accept
-                            </div>
-                            <div
-                              onClick={() => {
-                                if (boardShow) {
-                                  setBoardShow(false);
-                                }
-                              }}
-                              className={` ${
-                                !boardShow
-                                  ? "bg-primary text-black shadow-md"
-                                  : "border-[1px] border-black"
-                              } w-full p-1 rounded transition-all duration-500 hover:cursor-pointer`}
-                            >
-                              Reject
-                            </div>
-                          </div>
-                        </div>
+                        )}
 
                         {boardShow && (
                           <div className="transition-all font-normal duration-1000 bxs:w-[400px] w-full bg-black rounded pt-3 pb-5  my-2 flex flex-col gap-y-2 items-center px-2">
