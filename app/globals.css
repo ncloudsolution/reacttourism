@@ -12,7 +12,7 @@
   }
 
   .paymentstyle {
-    @apply bg-[#FFFFFF26] hover:bg-[#FFFFFF30]  rounded p-[5px] fill-[#FFFFFF90] hover:fill-white transition-all duration-300;
+    @apply bg-[#00000026] hover:bg-[#00000030] rounded p-[5px] fill-[#00000090] hover:fill-black transition-all duration-300;
   }
 
   .FooterLink {

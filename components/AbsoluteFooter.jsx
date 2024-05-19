@@ -1,49 +1,44 @@
 import React from "react";
 import ncloudlogo from "@/public/Footers/Ft1.png";
 import Image from "next/image";
-import CashOnDelivery from "@/public/Footers/cashondelivery.svg";
-import Visa from "@/public/Footers/visa.svg";
-import MasterCard from "@/public/Footers/mastercard.svg";
-
+import { CashOnDelivery, MasterCard, Visa } from "@/public/Footers";
 import Link from "next/link";
 
-function AbsoluteFooter() {
+const AbsoluteFooter = () => {
   return (
     <>
-      <div className=" px-[5%] bg-gradient-to-r from-white via-0% to-primary to-30% py-4 items-center md:flex md:justify-between">
-        <div className="w-full flex justify-center items-center md:w-[70%] md:justify-start">
-          <div>
-            <p className="  text-black text-sm ">
-              {" "}
-              Copyright 2024 © <a href="#">
-                {" "}
-                Ceylon Taxi and Tours (PVT) Ltd
-              </a>{" "}
-              - All Rights Reserved. Web by
-            </p>
+      <div className=" mobile:h-[80px]  bigmd:h-[60px] h-[180px] text-[14px] mobile:text-[16px] bg-gradient-to-r from-white via-0% to-primary md:to-30%  to-60% w-full   text-white flex  bigmd:flex-row  flex-col-reverse items-center justify-center bigmd:justify-around">
+        <div className="flex mobile:h-[40px] items-center justify-center bigmd:flex-row flex-col xxs:text-[14px] text-[12px] text-black">
+          {/*PART 1 */}
+          <div className="flex mb-2 bigmd:mb-0">Copyright 2024 ©</div>
+          {/*PART2 */}
+          <div className="font-semibold mx-[5px] flex xs:flex-row flex-col items-center ">
+            <div> Ceylon Taxi and Tours (PVT) Ltd </div>
+            <div className="xs:mx-[5px] hidden xs:flex"> - </div>
+            <div className="mb-2 xs:mb-0">All Rights Reserved.</div>
           </div>
-
-          <div>
-            <Image className=" w-[100px] ml-1" src={ncloudlogo} alt="" />
+          {/*PART3 */}
+          <div className="flex items-center">
+            <div>Web by</div>
+            <Link
+              href="https://ncloud.lk/"
+              target="_blank"
+              className="flex mx-[5px] mobile:h-[40px] h-[35px] py-[5px]"
+            >
+              <Image src={ncloudlogo} alt="" className="size-[100%] " />
+            </Link>
           </div>
         </div>
 
-        <div className="w-full flex justify-center items-center md:w-[30%] md:justify-end ">
-          <Image
-            className="w-[60px] h-auto"
-            src={CashOnDelivery}
-            alt="Cash on Delivery"
-          />
-          <Image className="w-[60px] h-auto" src={Visa} alt="Visa" />
-          <Image
-            className="w-[60px] h-auto"
-            src={MasterCard}
-            alt="MasterCard"
-          />
+        {/*icons */}
+        <div className="flex mobile:h-[40px] bigmd:h-[35px] py-[5px] w-[150px] gap-2 mb-2 bigmd:my-0">
+          <Visa className="paymentstyle" />
+          <MasterCard className="paymentstyle" />
+          <CashOnDelivery className="paymentstyle" />
         </div>
       </div>
     </>
   );
-}
+};
 
 export default AbsoluteFooter;

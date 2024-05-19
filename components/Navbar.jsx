@@ -7,6 +7,11 @@ import newlogo from "@/public/Navbar/tblogo.png";
 import menu from "@/public/Navbar/menu.svg";
 import close from "@/public/Navbar/close.svg";
 
+import { FaFacebook } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
+import { CgCloseR } from "react-icons/cg";
+import { LuMenuSquare } from "react-icons/lu";
+
 import Link from "next/link";
 
 // Import SVG icons
@@ -47,14 +52,16 @@ function NavBar() {
                   onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
-                    <Image src={close} width={30} height={30} alt="close" />
+                    <CgCloseR
+                      src={close}
+                      alt="close"
+                      className="text-[30px] text-black"
+                    />
                   ) : (
-                    <Image
+                    <LuMenuSquare
                       src={menu}
-                      width={30}
-                      height={30}
                       alt="menu"
-                      className="focus:border-none active:border-none"
+                      className="focus:border-none active:border-none text-[30px] text-black"
                     />
                   )}
                 </button>
@@ -98,22 +105,18 @@ function NavBar() {
                 <div className=" flex justify-center py-2">
                   <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
                     <a href="#" target="_blank" rel="noopener noreferrer">
-                      <Image
-                        className=" md:hover:text-secondary"
+                      <FaFacebook
+                        className=" md:hover:text-secondary text-[28px]"
                         src={FacebookIcon}
-                        width={30}
-                        height={30}
                         alt="Facebook"
                       />
                     </a>
                   </li>
                   <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
                     <a href="#" target="_blank" rel="noopener noreferrer">
-                      <Image
-                        className=" md:hover:text-secondary"
+                      <IoMdMail
+                        className=" md:hover:text-secondary text-[28px]"
                         src={EmailIcon}
-                        width={30}
-                        height={30}
                         alt="Facebook"
                       />
                     </a>
