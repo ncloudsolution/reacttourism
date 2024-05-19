@@ -6,6 +6,7 @@ import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TourContextProvider from "../context/TourContextProvider";
 import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDown";
+import UpperFooter from "@/components/UpperFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,8 @@ export default function RootLayout({ children }) {
 
             <main className=" xs:mt-[80px] mt-[60px]">{children}</main>
 
-            <Footer />
+            {/* <Footer /> */}
+            <UpperFooter />
             <AbsoluteFooter />
           </div>
         </TourContextProvider>

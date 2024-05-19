@@ -10,10 +10,10 @@ import Link from "next/link";
 function AbsoluteFooter() {
   return (
     <>
-      <div className=" px-[5%] bg-gradient-to-r from-primary via-Secondary to-white py-4 items-center md:flex md:justify-between">
+      <div className=" px-[5%] bg-gradient-to-r from-white via-0% to-primary to-30% py-4 items-center md:flex md:justify-between">
         <div className="w-full flex justify-center items-center md:w-[70%] md:justify-start">
           <div>
-            <p className="  text-white text-sm ">
+            <p className="  text-black text-sm ">
               {" "}
               Copyright 2024 © <a href="#">
                 {" "}
