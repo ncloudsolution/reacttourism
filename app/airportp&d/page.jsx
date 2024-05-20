@@ -6,6 +6,7 @@ import CurrencyTab from "@/components/standalone/CurrencyTab";
 import { useJsApiLoader } from "@react-google-maps/api";
 import React, { useEffect, useState } from "react";
 import Flow from "@/components/testingComponents/Flow";
+import DescriptionTile from "@/components/DescriptionTile";
 
 const AirPage = () => {
   const [showSkeleton, setShowSkeleton] = useState(true);
@@ -44,6 +45,10 @@ const AirPage = () => {
           </div>
           <div className="mb-10">
             <Flow />
+          </div>
+
+          <div className="mb-16 mt-3">
+            <DescriptionTile />
           </div>
         </div>
       </div>

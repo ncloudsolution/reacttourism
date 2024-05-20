@@ -94,7 +94,7 @@ const DayTrips = () => {
   };
 
   return (
-    <div className="w-full flex flex-col text-center items-center ">
+    <div className="w-full flex flex-col text-center items-center mt-10 mb-5">
       <Title title={"Day Trips"} />
       <div className="flex gap-2 flex-col midxl:w-[1330px] mobile:w-[1000px] bigmd:w-[666px] sm:w-[300px] xs:w-[350px] xxs:w-[310px] xxxs:w-[285px] w-[240px] px-4">
         <div className="flex flex-col">

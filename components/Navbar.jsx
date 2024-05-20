@@ -11,6 +11,8 @@ import { FaFacebook } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { CgCloseR } from "react-icons/cg";
 import { LuMenuSquare } from "react-icons/lu";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMdArrowDropup } from "react-icons/io";
 
 import Link from "next/link";
 
@@ -20,6 +22,7 @@ import EmailIcon from "@/public/Navbar/email.svg";
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
+  const [isServicesActive, setIsServicesActive] = useState(false);
   return (
     <div>
       {/* <nav class="w-full bg-gradient-to-r from-white from-40% to-primary bg-opacity-100 fixed top-0 left-0 right-0 z-10 "> */}
@@ -46,9 +49,9 @@ function NavBar() {
                 />
               </a> */}
               {/* HAMBURGER BUTTON FOR MOBILE */}
-              <div className="md:hidden absolute z-50 right-10 xs:top-5 top-2">
+              <div className="md:hidden absolute z-50 right-10 xs:top-7 top-4">
                 <button
-                  className="p-2 text-primary rounded-md outline-none focus:border-primary focus:border "
+                  className="p-2rounded-md outline-none focus:border-primary focus:border "
                   onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
@@ -70,7 +73,6 @@ function NavBar() {
           </div>
           <div>
             <div
-              onClick={() => setNavbar(!navbar)}
               className={` pb-3 xs:mt-[80px] mt-[60px] md:block md:pb-0 md:mt-0 ${
                 navbar ? "h-[100vh] bg-[#000000CC] relative" : "hidden"
               }`}
@@ -82,31 +84,81 @@ function NavBar() {
                     : "h-fit md:h-[80px] items-center justify-center  md:flex md:bg-transparent w-full "
                 } `}
               >
-                <li className=" text-lg font-semibold py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/" onClick={() => setNavbar(!navbar)}>
-                    Home
-                  </Link>
+                <li className=" text-black text-lg font-semibold py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
+                  <Link href="/">Home</Link>
                 </li>
-                <li className=" text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/about" onClick={() => setNavbar(!navbar)}>
-                    About
-                  </Link>
+                <li className=" text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
+                  <Link href="/about">About</Link>
                 </li>
-                <li className="text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/booking" onClick={() => setNavbar(!navbar)}>
-                    Booking
-                  </Link>
+                {/**dropdown**/}
+                <li className="flex flex-col items-center gap-2  cursor-pointer text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
+                  <div
+                    className="flex items-center"
+                    onClick={() => setIsServicesActive(!isServicesActive)}
+                  >
+                    <div>Services</div>
+                    {isServicesActive ? (
+                      <IoMdArrowDropup className="text-black text-[25px]" />
+                    ) : (
+                      <IoMdArrowDropdown className="text-black text-[25px]" />
+                    )}
+                  </div>
+                  {isServicesActive && (
+                    <div className="absolute md:top-[80px] top-[138px]  bg-primary md:border-t-2  md:border-t-black py-2 px-3 rounded-b-md">
+                      <div className="flex flex-col gap-1 items-start font-normal text-left">
+                        <Link
+                          href={"/airportp&d"}
+                          className="border-b-2 border-b-white w-full"
+                          onClick={() => {
+                            setIsServicesActive(!isServicesActive);
+                            setNavbar(!navbar);
+                          }}
+                        >
+                          Airport Transport
+                        </Link>
+                        <Link
+                          href={"/pointtopoint"}
+                          className="border-b-2 border-b-white  w-full"
+                          onClick={() => {
+                            setIsServicesActive(!isServicesActive);
+                            setNavbar(!navbar);
+                          }}
+                        >
+                          Point to Point
+                        </Link>
+                        <Link
+                          href={"/journeyonrails"}
+                          className="border-b-2 border-b-white  w-full"
+                          onClick={() => {
+                            setIsServicesActive(!isServicesActive);
+                            setNavbar(!navbar);
+                          }}
+                        >
+                          Train Booking
+                        </Link>
+                        <Link
+                          href={"/daytrips"}
+                          className="border-b-2 border-b-white  w-full"
+                          onClick={() => {
+                            setIsServicesActive(!isServicesActive);
+                            setNavbar(!navbar);
+                          }}
+                        >
+                          Day Tours
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </li>
-                <li className=" text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/contactus" onClick={() => setNavbar(!navbar)}>
-                    Contact
-                  </Link>
+
+                <li className="text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
+                  <Link href="/contactus">Contact</Link>
                 </li>
                 <div className=" flex justify-center py-2">
                   <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
                     <a href="#" target="_blank" rel="noopener noreferrer">
                       <FaFacebook
-                        className=" md:hover:text-secondary text-[28px]"
+                        className=" md:hover:text-secondary text-[28px] text-black"
                         src={FacebookIcon}
                         alt="Facebook"
                       />
@@ -115,7 +167,7 @@ function NavBar() {
                   <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
                     <a href="#" target="_blank" rel="noopener noreferrer">
                       <IoMdMail
-                        className=" md:hover:text-secondary text-[28px]"
+                        className=" md:hover:text-secondary text-[28px] text-black"
                         src={EmailIcon}
                         alt="Facebook"
                       />
