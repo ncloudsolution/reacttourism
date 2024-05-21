@@ -82,14 +82,21 @@ Distance : ${tourDetails.distance}
 Duration: ${tourDetails.duration}`;
 
     const TourDetails = {
+      tourType: tourDetails.tourType,
       customerName: tourDetails.customerName,
       customerEmail: tourDetails.customerEmail,
       customerMobileNo: tourDetails.customerMobileNo,
       customerWhatsappMobileNo: tourDetails.customerWhatsappMobileNo,
       customerNicPassport: tourDetails.customerNicPassport,
       customerFlightNo: tourDetails.customerFlightNo,
-      arrivalDate: tourDetails.arrivalDate.toDateString(),
-      arrivalTime: tourDetails.arrivalDate.toTimeString(),
+      arrivalDate:
+        tourDetails.tourType === "airport"
+          ? tourDetails.arrivalDate.toDateString()
+          : null,
+      arrivalTime:
+        tourDetails.tourType === "airport"
+          ? tourDetails.arrivalDate.toTimeString()
+          : null,
 
       cusDisplayName: tourDetails.cusDisplayName,
       origin: tourDetails.origin,
@@ -182,7 +189,7 @@ Duration: ${tourDetails.duration}`;
         {!isLoading && !responseMessage && tourDetails.vehicleType && (
           <div className="flex flex-col items-center">
             <CurrencyTab />
-            <div className="mt-2 mb-8 w-full flex justify-center">
+            <div className="mb-10 w-[100vw] flex justify-center bg-black">
               <Hierarchy />
             </div>
             <div className=" rounded border-[2px] border-primary  bg-primary text-black p-4 mb-14 font-semibold gap-y-1 w-fit">
@@ -235,50 +242,58 @@ Duration: ${tourDetails.duration}`;
                     <div className="border-b-[1px] border-white border-dashed my-4"></div>
 
                     {/**flight no**/}
-                    <div className="flex">
-                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                        Flight No
-                      </div>
-                      <div>:</div>
-                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                        {tourDetails.customerFlightNo}
-                      </div>
-                    </div>
-
-                    <div className="flex">
-                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                        {tourDetails.isPickup ? "Arrival Date" : "Depart Date"}
-                      </div>
-                      <div>:</div>
-                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                        {tourDetails.arrivalDate.toDateString()}
-                      </div>
-                    </div>
-
-                    <div className="flex">
-                      <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                        {tourDetails.isPickup ? "Arrival Time" : "Depart Time"}
-                      </div>
-                      <div>:</div>
-                      <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                        {tourDetails.arrivalDate.toTimeString()}
-                      </div>
-                    </div>
-
-                    {/**Board Name**/}
-                    {tourDetails.cusDisplayName != "" && (
-                      <div className="flex">
-                        <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
-                          Board Name
+                    {tourDetails.tourType === "airport" && (
+                      <>
+                        <div className="flex">
+                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                            Flight No
+                          </div>
+                          <div>:</div>
+                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                            {tourDetails.customerFlightNo}
+                          </div>
                         </div>
-                        <div>:</div>
-                        <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
-                          {tourDetails.cusDisplayName}
+
+                        <div className="flex">
+                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                            {tourDetails.isPickup
+                              ? "Arrival Date"
+                              : "Depart Date"}
+                          </div>
+                          <div>:</div>
+                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                            {tourDetails.arrivalDate.toDateString()}
+                          </div>
                         </div>
-                      </div>
+
+                        <div className="flex">
+                          <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                            {tourDetails.isPickup
+                              ? "Arrival Time"
+                              : "Depart Time"}
+                          </div>
+                          <div>:</div>
+                          <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                            {tourDetails.arrivalDate.toTimeString()}
+                          </div>
+                        </div>
+
+                        {/**Board Name**/}
+                        {tourDetails.cusDisplayName != "" && (
+                          <div className="flex">
+                            <div className="xs:w-[180px] xxs:w-[130px] w-[100px]">
+                              Board Name
+                            </div>
+                            <div>:</div>
+                            <div className="ml-4 font-normal xs:w-[200px] xxs:w-[150px] w-[120px]">
+                              {tourDetails.cusDisplayName}
+                            </div>
+                          </div>
+                        )}
+
+                        <div className="border-b-[1px] border-white border-dashed my-4"></div>
+                      </>
                     )}
-
-                    <div className="border-b-[1px] border-white border-dashed my-4"></div>
 
                     {/**vehical**/}
                     <div className="flex">

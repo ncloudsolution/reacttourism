@@ -85,10 +85,14 @@ function NavBar() {
                 } `}
               >
                 <li className=" text-black text-lg font-semibold py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/">Home</Link>
+                  <Link href="/" onClick={() => setNavbar(!navbar)}>
+                    Home
+                  </Link>
                 </li>
                 <li className=" text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/about">About</Link>
+                  <Link href="/about" onClick={() => setNavbar(!navbar)}>
+                    About
+                  </Link>
                 </li>
                 {/**dropdown**/}
                 <li className="flex flex-col items-center gap-2  cursor-pointer text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
@@ -148,11 +152,18 @@ function NavBar() {
                 </li>
 
                 <li className="text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/contactus">Contact</Link>
+                  <Link href="/contactus" onClick={() => setNavbar(!navbar)}>
+                    Contact
+                  </Link>
                 </li>
                 <div className=" flex justify-center py-2">
                   <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://www.facebook.com/tourbookingsrilankan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setNavbar(!navbar)}
+                    >
                       <FaFacebook
                         className=" md:hover:text-secondary text-[28px] text-black"
                         src={FacebookIcon}
@@ -161,7 +172,12 @@ function NavBar() {
                     </a>
                   </li>
                   <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="mailto:easycabandtours@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setNavbar(!navbar)}
+                    >
                       <IoMdMail
                         className=" md:hover:text-secondary text-[28px] text-black"
                         src={EmailIcon}
