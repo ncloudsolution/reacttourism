@@ -35,15 +35,15 @@ const AirPage = () => {
   return (
     <>
       <CurrencyTab />
-      <div className=" flex flex-col justify-center items-center">
+      <div className=" flex flex-col justify-center items-center ">
         <div className="w-full flex justify-center bg-black">
           <Hierarchy />
         </div>
-        <div className="min-h-[60vh] flex flex-col items-center">
-          <div className=" bg-black px-8 rounded-lg my-10">
+        <div className="flex flex-col items-center  -scroll-mb-14">
+          <div className="mt-10 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-[294px] px-8 ">
             <AirportMap />
           </div>
-          <div className="mb-10">
+          <div className="my-10">
             <Flow />
           </div>
 

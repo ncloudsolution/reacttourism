@@ -47,7 +47,7 @@ const DescriptionTile = () => {
           key={index}
           className="flex flex-col items-center shadow-md rounded-lg overflow-hidden"
         >
-          <div className="h-[200px] mobile:w-[300px] bigmd:w-[400px] bxs:w-[450px] xxs:w-[316px] xxxs:w-[306px] w-[280px] ">
+          <div className="h-[200px] xl:w-[300px] bigmd:w-[400px] bxs:w-[450px] xxs:w-[316px] xxxs:w-[306px] w-[280px] ">
             <Image
               src={list.img}
               alt=""

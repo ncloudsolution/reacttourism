@@ -22,6 +22,11 @@ import ContextCheckerComp from "../TourSummary";
 import { IoIosCloseCircle } from "react-icons/io";
 import { RiPinDistanceFill } from "react-icons/ri";
 
+import { FaUser } from "react-icons/fa6";
+import { FaBriefcase } from "react-icons/fa";
+import { FaRegSnowflake } from "react-icons/fa";
+import { BsHandbagFill } from "react-icons/bs";
+
 const center = { lat: 6.9271, lng: 79.8612 };
 
 // const libraries = ["places"];
@@ -161,7 +166,7 @@ const PointToPointMap = ({ children }) => {
             Point To Point
           </div>
           <RiPinDistanceFill className="text-[35px] text-primary" />
-          <div className="flex my-4 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-fit xxxs:w-[250px] w-[230px]">
+          <div className="flex mt-4 mb-8 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-fit xxxs:w-[250px] w-[230px]">
             <div className="flex flex-col gap-y-3 w-full">
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
                 <Autocomplete restrictions={{ country: ["lk"] }}>
@@ -211,7 +216,7 @@ const PointToPointMap = ({ children }) => {
                   </>
                 ) : (
                   <div
-                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black cursor-pointer py-[6px]"
+                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black bg-white cursor-pointer py-[6px]"
                     onClick={() => setReturnTour(true)}
                   >
                     Add Reurn
@@ -221,13 +226,13 @@ const PointToPointMap = ({ children }) => {
                 <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-2  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
                   <button
                     type="submit"
-                    className="bg-black text-white p-2 rounded bigmd:w-fit flex-1 bigmd:block "
+                    className="bg-primary text-black p-2 rounded bigmd:w-fit flex-1 bigmd:block "
                     onClick={calculateRoute}
                   >
                     Calculate Route
                   </button>
                   <button
-                    className="bg-black text-white p-2 rounded bigmd:w-fit :flex-1 bigmd:block"
+                    className="bg-black text-primary border-[1px] border-primary bigmd:px-1 px-2 py-2 rounded bigmd:w-fit :flex-1 bigmd:block"
                     onClick={clearRoute}
                   >
                     Clear Route
@@ -237,13 +242,19 @@ const PointToPointMap = ({ children }) => {
             </div>
           </div>
 
-          {submitError && <div className="text-errorpink">{submitError}</div>}
+          {submitError && (
+            <div className="text-errorpink bg-white px-4 py-2 rounded mb-4">
+              {submitError}
+            </div>
+          )}
 
           {!submitError && distance && duration && (
-            <div className="flex xs:flex-row flex-col text-center py-2 px-5 gap-x-3 bg-yellow-400 text-black my-2 rounded">
-              <div>Distance : {distance}</div>
-              <div className="font-bold xs:flex hidden">||</div>
-              <div>Duration : {duration}</div>
+            <div className="w-[100vw] bg-white flex justify-center">
+              <div className="flex xs:flex-row flex-col text-center py-2 px-5 gap-x-3 bg-yellow-400 text-black rounded mt-8 mb-6 w-fit">
+                <div>Distance : {distance}</div>
+                <div className="font-bold xs:flex hidden">||</div>
+                <div>Duration : {duration}</div>
+              </div>
             </div>
           )}
 
@@ -260,7 +271,10 @@ const PointToPointMap = ({ children }) => {
         </div>
 
         {isSubmit && !submitError && (
-          <div className="w-full flex justify-center" ref={mapRef}>
+          <div
+            className="w-[100vw] bg-white flex justify-center border-b-[1px] border-b-black"
+            ref={mapRef}
+          >
             <div className=" midxl:w-[1400px] mobile:w-[1000px] w-[800px] flex gap-x-10 xs:mt-8 mt-4 mb-16 bigmd:flex-row flex-col bigmd:items-start items-center border-2 border-transparent gap-5 p-4">
               <div className="midxl:w-[800px] xs:w-[400px] xxxs:w-[300px] w-[250px]  midxl:h-[500px] bigmd:h-[300px]  xs:h-[400px] xxxs:h-[300px] h-[250px] aspect-square flex rounded-lg overflow-hidden shadow-md ">
                 <GoogleMap
@@ -284,7 +298,7 @@ const PointToPointMap = ({ children }) => {
                       <div className="font-semibold text-[30px] px-8">
                         {vehicle.type}
                       </div>
-                      <div className="sm:w-[300px] w-[250px] sm:h-[150px] h-[120px]">
+                      <div className="sm:w-[300px] w-[250px] sm:h-[150px] h-[120px] xs:translate-y-5 translate-y-0">
                         <Image
                           src={vehicle.img}
                           alt=""
@@ -295,29 +309,84 @@ const PointToPointMap = ({ children }) => {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:mr-10 mr-3 gap-y-3  items-center justify-center border-2 border-transparent">
-                      <div className="text-black text-[20px] ">
-                        Passengers {vehicle.passengers}
+                    <div className="flex flex-col mobile:mr-3 mr-1  gap-y-3  items-center justify-center border-2 border-transparent  xs:w-[200px] w-full">
+                      <div className="flex flex-col xs:gap-y-[2px]  w-full">
+                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                          <FaUser className="text-[28px] p-1 mr-1" />
+                          <div>
+                            {vehicle.minpassengers} - {vehicle.maxpassengers}{" "}
+                            Passengers
+                          </div>
+                        </div>
+
+                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                          <FaBriefcase className="text-[28px] p-1 mr-1" />
+                          <div>{vehicle.luggages} Luggages </div>
+                        </div>
+
+                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                          <BsHandbagFill className="text-[28px] p-1 mr-1" />
+                          <div>{vehicle.handbaggages} Hand Baggages</div>
+                        </div>
+
+                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                          <FaRegSnowflake className="text-[28px] p-1 mr-1" />
+                          <div>Air Conditioning</div>
+                        </div>
                       </div>
-                      <div className="text-black text-[20px] ">
-                        Luggages {vehicle.luggages}
-                      </div>
-                      <div className="bg-black text-white py-2 rounded w-full text-center">
-                        Price Rs.{vehicle.price}
+
+                      <div className="bg-black text-white py-2 rounded w-full text-center flex flex-col items-center">
+                        <div className="flex text-[18px]">
+                          <div className="pr-1">
+                            {tourDetails.converedCurrencySymbol}
+                          </div>
+                          <div>
+                            {returnTour
+                              ? (
+                                  tourDetails.conversionRate *
+                                  vehicle.price *
+                                  2
+                                ).toFixed(2)
+                              : (
+                                  tourDetails.conversionRate * vehicle.price
+                                ).toFixed(2)}
+                          </div>
+                        </div>
+                        {/* <div className="bigmd:text-[12px] text-[10px] text-yellow-500 w-full  px-2 text-center">
+                          Highway Charges and other Charges are Not Included
+                        </div> */}
                       </div>
                       <button
                         className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                         onClick={() => {
                           console.log(startDate, "date");
                           //console.log(vehicle.price);
-                          setTourDetails({
+                          setTourDetails((prevTourDetails) => ({
+                            ...prevTourDetails,
+                            tourType: "p2p",
+                            highwayCharge: tourDetails.highwayCharge
+                              ? tourDetails.highwayCharge
+                              : 0,
+                            isReturntour: returnTour,
+                            isPickup: isPickup,
                             vehicleType: vehicle.type,
                             vehicalSeatCapacityMin: vehicle.minpassengers,
                             vehicalSeatCapacityMax: vehicle.maxpassengers,
                             weightFactor: vehicle.weightFactor,
                             price: vehicle.price,
+                            convertedPrice: returnTour
+                              ? (
+                                  tourDetails.conversionRate *
+                                  vehicle.price *
+                                  2
+                                ).toFixed(2)
+                              : (
+                                  tourDetails.conversionRate * vehicle.price
+                                ).toFixed(2),
+
                             image: vehicle.img,
                             luggages: vehicle.luggages,
+                            category: vehicle.category,
 
                             origin: originRef.current.value,
                             destination: destinationRef.current.value,
@@ -328,7 +397,13 @@ const PointToPointMap = ({ children }) => {
                               : "No any Return",
                             distance: distance,
                             duration: duration,
-                          });
+                            pageTwoToken: true,
+                          }));
+                          console.log(
+                            "Conversion rate:",
+                            tourDetails.conversionRate
+                          );
+                          console.log("Vehicle price:", vehicle.price);
                           console.log("redirect");
                           router.push("/tourbooking");
                         }}
