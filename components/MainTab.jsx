@@ -13,6 +13,8 @@ import { MdLocalAirport } from "react-icons/md";
 import { FaTrain } from "react-icons/fa6";
 import { IoCarSportSharp } from "react-icons/io5";
 import Hierarchy from "./standalone/Hierarchy";
+import { BsCoin } from "react-icons/bs";
+
 import { SetHighwayCharge } from "@/libs/HighwayFair";
 import CustomCurrencyDropDown from "./standalone/CustomCurrencyDropDown";
 import CurrencyTab from "./standalone/CurrencyTab";
@@ -22,6 +24,7 @@ const MainTab = () => {
   const [isAirportClicked, setIsAirportClicked] = useState(true);
   const [isTrainClicked, setIsTrainClicked] = useState(false);
   const [isDayTourClick, setDayTourClick] = useState(false);
+  const [isCurrencyActive, setIsCurrencyActive] = useState(false);
 
   const [showSkeleton, setShowSkeleton] = useState(true);
   useEffect(() => {
@@ -81,10 +84,19 @@ const MainTab = () => {
 
   return (
     <>
-      <CurrencyTab />
+      <BsCoin
+        className="text-primary absolute text-[30px] xxs:text-[40px] bxs:text-[35px] sm:text-[40px] bigmd:text-[30px] lg:text-[40px] lg:right-10 bigmd:right-2 sm:right-10 xxs:right-5 right-3 bxs:translate-y-12 xs:translate-y-32 translate-y-12 z-50"
+        onClick={() => setIsCurrencyActive(!isCurrencyActive)}
+      />
+      {isCurrencyActive && <CurrencyTab />}
+
       <div className="flex justify-center items-center flex-col bg-black ">
         <div className="bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] flex justify-center">
-          <div className=" w-full flex justify-center">
+          <div
+            className={` ${
+              isCurrencyActive ? "mt-0" : "mt-5"
+            } w-full flex justify-center  `}
+          >
             <Hierarchy />
           </div>
         </div>
