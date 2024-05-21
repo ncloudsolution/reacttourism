@@ -115,6 +115,7 @@ function NavBar() {
                           className="border-b-2 border-b-white w-full"
                           onClick={() => {
                             setIsServicesActive(!isServicesActive);
+                            setNavbar(!navbar);
                           }}
                         >
                           Airport Transport
@@ -124,6 +125,7 @@ function NavBar() {
                           className="border-b-2 border-b-white  w-full"
                           onClick={() => {
                             setIsServicesActive(!isServicesActive);
+                            setNavbar(!navbar);
                           }}
                         >
                           Point to Point
@@ -133,6 +135,7 @@ function NavBar() {
                           className="border-b-2 border-b-white  w-full"
                           onClick={() => {
                             setIsServicesActive(!isServicesActive);
+                            setNavbar(!navbar);
                           }}
                         >
                           Train Booking
@@ -142,6 +145,7 @@ function NavBar() {
                           className="border-b-2 border-b-white  w-full"
                           onClick={() => {
                             setIsServicesActive(!isServicesActive);
+                            setNavbar(!navbar);
                           }}
                         >
                           Day Tours
