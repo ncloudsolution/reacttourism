@@ -1,0 +1,82 @@
+[
+  {
+    "type": "adventure",
+    "img": "/DayTrips/adventureTiger.webp",
+    "minduration": 8.5,
+    "maxduration": null,
+    "description": "Arugambay to Yala: Wild Safari + Drop-off Flexibility",
+    "initialPrice": 234.77,
+    "discountedPrice": 206.6,
+    "tags": ["Small Groups", "Pickup available"]
+  },
+  {
+    "type": "water activity",
+    "img": "/DayTrips/waterActivity.webp",
+    "minduration": 12,
+    "maxduration": null,
+    "description": "Galle and Bentota Day-Tour From Colombo",
+    "initialPrice": null,
+    "discountedPrice": 60,
+    "tags": ["Pickup available"]
+  },
+  {
+    "type": "day trip",
+    "img": "/DayTrips/sigiriya.webp",
+    "minduration": 14,
+    "maxduration": 16,
+    "description": "From Colombo: Sigiriya and Dambulla Day Trip and Safari",
+    "initialPrice": 70,
+    "discountedPrice": 63,
+    "tags": ["Pickup available"]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/udawalawa.webp",
+    "minduration": 6,
+    "maxduration": 10,
+    "description": "Udawalawe: Private Safari All Inclusive Day Trip with Lunch",
+    "initialPrice": 118,
+    "discountedPrice": 112.1,
+    "tags": ["Pickup available"]
+  },
+  {
+    "type": "water activity",
+    "img": "/DayTrips/mirissa.webp",
+    "minduration": 2,
+    "maxduration": null,
+    "description": "Mirissa: Snorkeling Experience with Turtles",
+    "initialPrice": null,
+    "discountedPrice": 32.63,
+    "tags": ["Small Groups", "Pickup available"]
+  },
+  {
+    "type": "water activity",
+    "img": "/DayTrips/whale.webp",
+    "minduration": 3,
+    "maxduration": null,
+    "description": "Whale and Dolphin Watching Trincomalee",
+    "initialPrice": null,
+    "discountedPrice": 48.33,
+    "tags": ["Skip the line"]
+  },
+  {
+    "type": "entry ticket",
+    "img": "/DayTrips/ella.webp",
+    "minduration": 6,
+    "maxduration": null,
+    "description": "From Colombo: Sigiriya and Dambulla Day Trip and Safari",
+    "initialPrice": null,
+    "discountedPrice": 108.91,
+    "tags": ["Skip the line"]
+  },
+  {
+    "type": "guided tour",
+    "img": "/DayTrips/colombo.webp",
+    "minduration": 4,
+    "maxduration": null,
+    "description": "Udawalawe: Private Safari All Inclusive Day Trip with Lunch",
+    "initialPrice": null,
+    "discountedPrice": 37.98,
+    "tags": ["Pickup available"]
+  }
+]

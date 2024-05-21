@@ -1,8 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SingleVehicleContextProvider from "../context/SingleVehicalContextProvider";
-import Navigation from "@/components/Navigation";
+
+import AbsoluteFooter from "@/components/AbsoluteFooter";
+import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TourContextProvider from "../context/TourContextProvider";
+import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDown";
+import UpperFooter from "@/components/UpperFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,11 +19,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SingleVehicleContextProvider>
-          <Navigation />
-          {children}
-          <Footer />
-        </SingleVehicleContextProvider>
+        <TourContextProvider>
+          <div className=" relative flex flex-col min-h-[100vh] ">
+            <NavBar />
+
+            <main className=" xs:mt-[80px] mt-[60px]">{children}</main>
+
+            {/* <Footer /> */}
+            <UpperFooter />
+            <AbsoluteFooter />
+          </div>
+        </TourContextProvider>
       </body>
     </html>
   );

@@ -1,8 +1,19 @@
-import First from "@/components/First";
-import NewComp from "../components/NewComp";
-import Comp2 from "@/components/Comp2";
-import Link from "next/link";
+import Activities from "@/components/Activities";
+import MainTab from "@/components/MainTab";
+import MainMapConfigs from "@/components/Map/PointToPointMap";
+
+import TourSlider from "@/components/TourSlider";
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <MainTab />
+      {/** <MainSlider />**/}
+      <div className="my-10">
+        <TourSlider />
+      </div>
+
+      <Activities />
+    </>
+  );
 }

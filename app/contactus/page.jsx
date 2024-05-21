@@ -1,19 +1,20 @@
-"use client";
-import { SingleVehicleContext } from "@/context/SingleVehicalContextProvider";
-import Link from "next/link";
-import React, { useContext } from "react";
+import ConatactUsBanner from "@/components/ConatactUsBanner";
+import dynamic from "next/dynamic";
+import React from "react";
+
+const ContactUsFormNoSSR = dynamic(() => import("@/components/ContactUsForm"), {
+  ssr: false,
+});
 
 const Contact = () => {
-  const { vehicle, setVehical } = useContext(SingleVehicleContext);
   return (
     <>
-      <div className="my-3">page contact</div>
-
-      <div className="my-3 bg-yellow-300">{vehicle.type}</div>
-
-      <Link href={"/"} className="p-3 bg-green-300">
-        CLICK HERE tO HOME
-      </Link>
+      <div className="xxs:my-10 my-5">
+        <ConatactUsBanner />
+        <div className="bigmd:-translate-y-28">
+          <ContactUsFormNoSSR />
+        </div>
+      </div>
     </>
   );
 };

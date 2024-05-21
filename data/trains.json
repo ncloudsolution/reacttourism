@@ -1,0 +1,115 @@
+[
+  {
+    "travelPoints": "Colombo to Kandy",
+    "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["06:30", "09:18"],
+        "availableDays": ["Sun", "Tue - Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned Saloon",
+            "seats": 176,
+            "price": "LKR 10,000"
+          },
+          {
+            "class": "Second Class Reserved Seats",
+            "seats": 114,
+            "price": "LKR 8,000"
+          },
+          {
+            "class": "Third Class Reserved Seats",
+            "seats": 39,
+            "price": "LKR 8,000"
+          }
+        ]
+      },
+      {
+        "trainName": "11041 Ella Odyssey ",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["05:30", "17:30"],
+        "travelTime": ["05:30", "08:13"],
+        "availableDays": ["Tue - Sat"],
+
+        "types": [
+          {
+            "class": "Air Conditioned Saloon",
+            "seats": 176,
+            "price": "LKR 12,000"
+          },
+          {
+            "class": "Second Class Reserved Seats",
+            "seats": 114,
+            "price": "LKR 10,000"
+          },
+          {
+            "class": "Third Class Reserved Seats",
+            "seats": 39,
+            "price": "LKR 9,000"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "travelPoints": "Colombo to Polonnaruwa",
+    "trainList": [
+      {
+        "trainName": "6011 Intercity Express",
+        "trainPoints": ["Colombo Fort", "Batticaloa"],
+        "trainTime": ["06:05", "14:20"],
+        "travelTime": ["06:30", "12:37"],
+        "availableDays": ["Sun", "Tue - Wed", "Fri"],
+        "types": [
+          {
+            "class": "Second Class Reserved Seats",
+            "seats": 56,
+            "price": "LKR 1,600"
+          }
+        ]
+      },
+      {
+        "trainName": "6075 Batticaloa Special ",
+        "trainPoints": ["Colombo Fort", "Batticaloa"],
+        "trainTime": ["15:05", "21:52"],
+        "travelTime": ["15:05", "20:13"],
+        "availableDays": ["Thu - Sat"],
+
+        "types": [
+          {
+            "class": "Second Class Reserved Seats",
+            "seats": 64,
+            "price": "LKR 1,600"
+          },
+          {
+            "class": "Third Class Reserved Seats",
+            "seats": 90,
+            "price": "LKR 1,200"
+          }
+        ]
+      },
+      {
+        "trainName": "6079 Intercity Express",
+        "trainPoints": ["Colombo Fort", "Batticaloa"],
+        "trainTime": ["19:00", "01:36"],
+        "travelTime": ["19:00", "00:13"],
+        "availableDays": ["Mon", "Thu - Sat"],
+
+        "types": [
+          {
+            "class": "Second Class Sleeperetts",
+            "seats": 48,
+            "price": "LKR 2,600"
+          },
+          {
+            "class": "Third Class Sleeperetts",
+            "seats": 56,
+            "price": "LKR 1,400"
+          }
+        ]
+      }
+    ]
+  }
+]
