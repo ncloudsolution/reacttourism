@@ -71,7 +71,7 @@ const MidSummary = () => {
 
     if (
       cusLuggageCountRef.current.value != 0 &&
-      cusLuggageCountRef.current.value >= tourDetails.luggages
+      cusLuggageCountRef.current.value > tourDetails.luggages
     ) {
       return setSubmitError(
         "You Exceeded the luggage maximum count of this vehical please change the luggage count or change the vehical"
