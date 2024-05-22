@@ -467,7 +467,7 @@ export const CustomerEmail = ({ tourDetails }) => {
                             backgroundColor: "#CD201F",
                             margin: "0px 5px 0px 5px",
                           }}
-                          href={`https://youtube.com/@travelwithchamara`}
+                          href={`https://youtu.be/QXXXz8MipHA`}
                         >
                           Youtube
                         </Button>

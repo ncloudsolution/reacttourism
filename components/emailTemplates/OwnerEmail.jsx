@@ -93,34 +93,36 @@ export const OwnerEmail = ({ tourDetails }) => {
                 </Section>
 
                 {/**FLIGHT DETAILS**/}
-                <Section style={section}>
-                  <Text style={paragraph}>
-                    <b>Flight No : </b>
-                    {tourDetails.customerFlightNo}
-                  </Text>
-                  <Text style={paragraph}>
-                    <b>
-                      {tourDetails.isPickup
-                        ? "Arrival Date :"
-                        : "Depart Date :"}
-                    </b>
-                    {tourDetails.arrivalDate}
-                  </Text>
-                  <Text style={paragraph}>
-                    <b>
-                      {tourDetails.isPickup
-                        ? "Arrival Time :"
-                        : "Depart Time :"}
-                    </b>
-                    {tourDetails.arrivalTime}
-                  </Text>
-                  {tourDetails.cusDisplayName != "" && (
+                {tourDetails.tourType === "airport" && (
+                  <Section style={section}>
                     <Text style={paragraph}>
-                      <b>Board Name : </b>
-                      {tourDetails.cusDisplayName}
+                      <b>Flight No : </b>
+                      {tourDetails.customerFlightNo}
                     </Text>
-                  )}
-                </Section>
+                    <Text style={paragraph}>
+                      <b>
+                        {tourDetails.isPickup
+                          ? "Arrival Date :"
+                          : "Depart Date :"}
+                      </b>
+                      {tourDetails.arrivalDate}
+                    </Text>
+                    <Text style={paragraph}>
+                      <b>
+                        {tourDetails.isPickup
+                          ? "Arrival Time :"
+                          : "Depart Time :"}
+                      </b>
+                      {tourDetails.arrivalTime}
+                    </Text>
+                    {tourDetails.cusDisplayName != "" && (
+                      <Text style={paragraph}>
+                        <b>Board Name : </b>
+                        {tourDetails.cusDisplayName}
+                      </Text>
+                    )}
+                  </Section>
+                )}
 
                 {/**JOURNEY DETAILS**/}
                 <Section style={section}>
@@ -201,12 +203,13 @@ export const OwnerEmail = ({ tourDetails }) => {
                       </Text>
                     )}
 
-                  {tourDetails.highwayExit !== "None" && (
-                    <Text style={paragraph}>
-                      <b>Higway Exit : </b>
-                      {tourDetails.highwayExit}
-                    </Text>
-                  )}
+                  {tourDetails.tourType === "airport" &&
+                    tourDetails.highwayExit !== "None" && (
+                      <Text style={paragraph}>
+                        <b>Higway Exit : </b>
+                        {tourDetails.highwayExit}
+                      </Text>
+                    )}
                 </Section>
 
                 {/**TOTAL SECTION**/}

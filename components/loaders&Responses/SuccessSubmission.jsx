@@ -7,7 +7,7 @@ import success from "@/public/Others/successImg.jpg";
 const SuccessSubmission = () => {
   return (
     <div className="min-h-[90vh] flex justify-center items-center">
-      <div className="flex flex-col items-center xs:translate-y-0 -translate-y-8">
+      <div className="flex flex-col items-center ">
         <div className="sm:text-[45px] xs:text-[35px] xxs:text-[30px]  xxxs:text-[24px] text-[22px] font-bold mb-5">
           Booking Success
         </div>

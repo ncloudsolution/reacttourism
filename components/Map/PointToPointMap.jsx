@@ -161,12 +161,12 @@ const PointToPointMap = ({ children }) => {
   return (
     <>
       <div className="flex flex-col items-center w-full">
-        <div className="w-fit flex flex-col items-center justify-center ">
-          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[70px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
+        <div className=" flex flex-col items-center justify-center bg-black rounded-lg overflow-hidden ">
+          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[20px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
             Point To Point
           </div>
           <RiPinDistanceFill className="text-[35px] text-primary" />
-          <div className="flex mt-4 mb-8 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-fit xxxs:w-[250px] w-[230px]">
+          <div className="flex mt-6 mb-8 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-[294px] px-8  my-10">
             <div className="flex flex-col gap-y-3 w-full">
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
                 <Autocomplete restrictions={{ country: ["lk"] }}>
@@ -359,6 +359,10 @@ const PointToPointMap = ({ children }) => {
                       <button
                         className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                         onClick={() => {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
                           console.log(startDate, "date");
                           //console.log(vehicle.price);
                           setTourDetails((prevTourDetails) => ({
@@ -368,7 +372,7 @@ const PointToPointMap = ({ children }) => {
                               ? tourDetails.highwayCharge
                               : 0,
                             isReturntour: returnTour,
-                            isPickup: isPickup,
+
                             vehicleType: vehicle.type,
                             vehicalSeatCapacityMin: vehicle.minpassengers,
                             vehicalSeatCapacityMax: vehicle.maxpassengers,

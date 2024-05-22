@@ -117,7 +117,7 @@ const UpperFooter = () => {
                 </Link>
                 <Link
                   target="_blank"
-                  href="https://youtube.com/@travelwithchamara"
+                  href="https://youtu.be/QXXXz8MipHA"
                   className="xs:size-[50px] size-[45px]  rounded-full bg-primary flex justify-center items-center"
                 >
                   <FaYoutube className="text-white text-[28px] " />
