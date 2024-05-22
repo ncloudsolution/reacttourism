@@ -1,57 +1,15 @@
-"use client";
-import CarSkeleton from "@/components/skeletonUI/compoundElements/CarSkeleton";
-import Hierarchy from "@/components/standalone/Hierarchy";
-import CurrencyTab from "@/components/standalone/CurrencyTab";
-import { useJsApiLoader } from "@react-google-maps/api";
-import React, { useEffect, useState } from "react";
-import Flow from "@/components/testingComponents/Flow";
-import DescriptionTile from "@/components/DescriptionTile";
-import PointToPointMap from "@/components/Map/PointToPointMap";
+import P2PComp from "./p2pComp";
+
+export const metadata = {
+  title: "Point to Point Transfer",
+  description:
+    "Experience the convenience and flexibility of our point-to-point transfer services in Sri Lanka. Whether you need to travel from one city to another, or from any pickup point to your chosen drop-off location, we've got you covered. Our professional drivers and comfortable vehicles ensure a smooth and enjoyable journey. With our customizable routes, you have the freedom to explore Sri Lanka your way, making stops and detours as you wish. Reliable, efficient, and tailored to your needs, our point-to-point transfers provide a personalized travel experience across the beautiful landscapes and vibrant cities of Sri Lanka",
+};
 
 const PtoP = () => {
-  const [showSkeleton, setShowSkeleton] = useState(true);
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShowSkeleton(false);
-    }, 2000); // 3 seconds delay - 1s for google api load and 2 second timeout
-    return () => clearTimeout(timeoutId);
-  }, []);
-
-  const libraries = ["places"];
-  setTimeout(() => {}, 1000);
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
-    region: "lk",
-    libraries: libraries,
-  });
-
-  if (!isLoaded || showSkeleton) {
-    return (
-      <>
-        <CarSkeleton />
-      </>
-    );
-  }
   return (
     <>
-      <CurrencyTab />
-      <div className=" flex flex-col justify-center items-center ">
-        <div className="w-full flex justify-center bg-black">
-          <Hierarchy />
-        </div>
-        <div className="flex flex-col items-center  -scroll-mb-14">
-          <div className="mt-10 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-[294px] px-8 ">
-            <PointToPointMap />
-          </div>
-          <div className="my-10">
-            <Flow />
-          </div>
-
-          <div className="mb-16 mt-3">
-            <DescriptionTile type={"p2p"} />
-          </div>
-        </div>
-      </div>
+      <P2PComp />
     </>
   );
 };

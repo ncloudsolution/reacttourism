@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import logo from "@/public/Navbar/bgremovedlogo.png";
@@ -14,6 +14,8 @@ import { LuMenuSquare } from "react-icons/lu";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropup } from "react-icons/io";
 
+import useWindowSize from "@/hooks/useWindowSize";
+
 import Link from "next/link";
 
 // Import SVG icons
@@ -21,8 +23,30 @@ import FacebookIcon from "@/public/Navbar/facebook.svg";
 import EmailIcon from "@/public/Navbar/email.svg";
 
 function NavBar() {
-  const [navbar, setNavbar] = useState(false);
+  const [windowWidth, windowHeight] = useWindowSize();
+
+  const [mobilenavbar, setMobileNavbar] = useState(false);
   const [isServicesActive, setIsServicesActive] = useState(false);
+
+  console.log(windowWidth, "winwidth");
+
+  useEffect(() => {
+    if (windowWidth >= 768) {
+      setMobileNavbar(false);
+    }
+  }, [windowWidth]);
+
+  const NavFunction = () => {
+    if (windowWidth >= 768) {
+      setMobileNavbar(false);
+      setIsServicesActive(false);
+      return;
+    }
+    setMobileNavbar(false);
+    setIsServicesActive(false);
+    return;
+  };
+
   return (
     <div>
       {/* <nav class="w-full bg-gradient-to-r from-white from-40% to-primary bg-opacity-100 fixed top-0 left-0 right-0 z-10 "> */}
@@ -52,9 +76,9 @@ function NavBar() {
               <div className="md:hidden absolute z-50 right-10 xs:top-7 top-4">
                 <button
                   className="p-2rounded-md outline-none focus:border-primary focus:border "
-                  onClick={() => setNavbar(!navbar)}
+                  onClick={() => setMobileNavbar(!mobilenavbar)}
                 >
-                  {navbar ? (
+                  {mobilenavbar ? (
                     <CgCloseR
                       src={close}
                       alt="close"
@@ -74,23 +98,23 @@ function NavBar() {
           <div>
             <div
               className={` pb-3 xs:mt-[80px] mt-[60px] md:block md:pb-0 md:mt-0 ${
-                navbar ? "h-[100vh] bg-[#000000CC] relative" : "hidden"
+                mobilenavbar ? "h-[100vh] bg-[#000000CC] relative" : "hidden"
               }`}
             >
               <ul
                 className={`  ${
-                  navbar
+                  mobilenavbar
                     ? "bg-white absolute left-10 right-10 rounded-md top-1/2 -translate-y-[150px]  md:hidden"
                     : "h-fit md:h-[80px] items-center justify-center  md:flex md:bg-transparent w-full "
                 } `}
               >
                 <li className=" text-black text-lg font-semibold py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/" onClick={() => setNavbar(!navbar)}>
+                  <Link href="/" onClick={NavFunction}>
                     Home
                   </Link>
                 </li>
                 <li className=" text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/about" onClick={() => setNavbar(!navbar)}>
+                  <Link href="/about" onClick={NavFunction}>
                     About
                   </Link>
                 </li>
@@ -113,40 +137,28 @@ function NavBar() {
                         <Link
                           href={"/airportp&d"}
                           className="border-b-2 border-b-white w-full"
-                          onClick={() => {
-                            setIsServicesActive(!isServicesActive);
-                            setNavbar(!navbar);
-                          }}
+                          onClick={NavFunction}
                         >
                           Airport Transport
                         </Link>
                         <Link
                           href={"/pointtopoint"}
                           className="border-b-2 border-b-white  w-full"
-                          onClick={() => {
-                            setIsServicesActive(!isServicesActive);
-                            setNavbar(!navbar);
-                          }}
+                          onClick={NavFunction}
                         >
                           Point to Point
                         </Link>
                         <Link
                           href={"/journeyonrails"}
                           className="border-b-2 border-b-white  w-full"
-                          onClick={() => {
-                            setIsServicesActive(!isServicesActive);
-                            setNavbar(!navbar);
-                          }}
+                          onClick={NavFunction}
                         >
                           Train Booking
                         </Link>
                         <Link
                           href={"/daytrips"}
                           className="border-b-2 border-b-white  w-full"
-                          onClick={() => {
-                            setIsServicesActive(!isServicesActive);
-                            setNavbar(!navbar);
-                          }}
+                          onClick={NavFunction}
                         >
                           Day Tours
                         </Link>
@@ -156,7 +168,7 @@ function NavBar() {
                 </li>
 
                 <li className="text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/contactus" onClick={() => setNavbar(!navbar)}>
+                  <Link href="/contactus" onClick={NavFunction}>
                     Contact
                   </Link>
                 </li>
@@ -166,7 +178,7 @@ function NavBar() {
                       href="https://www.facebook.com/tourbookingsrilankan"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => setNavbar(!navbar)}
+                      onClick={NavFunction}
                     >
                       <FaFacebook
                         className=" md:hover:text-secondary text-[28px] text-black"
@@ -180,7 +192,7 @@ function NavBar() {
                       href="mailto:easycabandtours@gmail.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => setNavbar(!navbar)}
+                      onClick={NavFunction}
                     >
                       <IoMdMail
                         className=" md:hover:text-secondary text-[28px] text-black"

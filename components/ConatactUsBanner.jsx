@@ -16,15 +16,15 @@ const ContactDetails = () => {
       </div>
       <div className="flex flex-col bigmd:gap-3 gap-1 bigmd:mt-10 xs:mt-3 mt-2">
         <div className="flex items-center gap-x-2 xs:text-[18px] text-[14px]">
-          <FaPhoneVolume className="text-white xs:text-[20px] text-[16px]" />
+          <FaPhoneVolume className="bigmd:text-white text-black xs:text-[20px] text-[16px]" />
           <div>+94 760 588 588</div>
         </div>
         <div className="flex items-center gap-x-2 xs:text-[18px] text-[14px]">
-          <MdAttachEmail className="text-white xs:text-[20px] text-[16px]" />
+          <MdAttachEmail className="bigmd:text-white text-black xs:text-[20px] text-[16px]" />
           <div>ceylotaxiandtours@gmail.com</div>
         </div>
         <div className="flex items-center gap-x-2 xs:text-[18px] text-[14px]">
-          <IoLocation className="text-white xs:text-[20px] text-[16px]]" />
+          <IoLocation className="bigmd:text-white text-black xs:text-[20px] text-[16px]]" />
           <div>Temple road, Rathmalana</div>
         </div>
       </div>
@@ -35,7 +35,7 @@ const ContactDetails = () => {
 const ConatactUsBanner = () => {
   return (
     <div className="border-2 border-transparent w-full flex justify-center items-center">
-      <div className="shadow-lg border-transparent xs:h-[500px] xxs:h-[400px] h-[300px] w-[80%] bxs:mx-5 bxs:my-5 mx-3 my-0 rounded-lg bg-primary flex justify-between overflow-hidden relative">
+      <div className="shadow-lg border-transparent xs:h-[500px] xxs:h-[400px] h-[300px] w-[80%] bxs:mx-5 bxs:my-5 mx-3 my-0 rounded-lg bg-gradient-to-r from-black via-40% to-primary md:to-90%  to-60%   flex justify-between overflow-hidden relative">
         <div className="bigmd:flex hidden flex-col items-center justify-center flex-1 mx-5 my-10 text-white">
           <ContactDetails />
         </div>
@@ -43,7 +43,7 @@ const ConatactUsBanner = () => {
         <div className="midxl:w-[500px] bigmd:w-[400px] w-full bg-white flex justify-center">
           <Image src={girl} alt="" className="flex w-fit h-full" />
         </div>
-        <div className="bigmd:hidden absolute bg-[#0e631380] w-full text-center flex flex-col items-center text-white xs:pt-5 xs:pb-5 pt-2 pb-4 bottom-0">
+        <div className="bigmd:hidden absolute bg-[#eab308d9] w-full text-center flex flex-col items-center  text-black xs:pt-5 xs:pb-5 pt-2 pb-4 bottom-0">
           <ContactDetails />
         </div>
       </div>
