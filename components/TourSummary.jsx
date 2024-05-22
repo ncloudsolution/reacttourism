@@ -26,6 +26,10 @@ const TourSummary = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     setIsLoading(true);
 
     const highwayChargesText = `${

@@ -129,6 +129,10 @@ const MidSummary = () => {
       pageThreeToken: true,
     }));
     // router.push("/newtesting");
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     router.push("/tourbooking/summary");
   }
 

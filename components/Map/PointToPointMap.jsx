@@ -359,6 +359,10 @@ const PointToPointMap = ({ children }) => {
                       <button
                         className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                         onClick={() => {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
                           console.log(startDate, "date");
                           //console.log(vehicle.price);
                           setTourDetails((prevTourDetails) => ({
