@@ -48,7 +48,7 @@ const PtoP = () => {
           </div>
 
           <div className="mb-16 mt-3">
-            <DescriptionTile />
+            <DescriptionTile type={"p2p"} />
           </div>
         </div>
       </div>
