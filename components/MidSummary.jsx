@@ -96,9 +96,10 @@ const MidSummary = () => {
       arrivalDate: arrivalDate,
       customerLuggageCount: cusLuggageCountRef.current.value,
       boardShow: boardShow ? otherPrices[0].boardShow : 0,
-      highwayCharge: parseFloat(
-        (tourDetails.highwayCharge * tourDetails.conversionRate).toFixed(2)
-      ),
+      highwayCharge: highwayCharge,
+      // highwayCharge: parseFloat(
+      //   (tourDetails.highwayCharge * tourDetails.conversionRate).toFixed(2)
+      // ),
 
       totalPrice: (
         parseFloat(tourDetails.convertedPrice) + // Convert to float to handle potential string values
