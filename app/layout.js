@@ -8,6 +8,8 @@ import TourContextProvider from "../context/TourContextProvider";
 import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDown";
 import UpperFooter from "@/components/UpperFooter";
 
+import Script from "next/script";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -24,6 +26,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16563747465"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-16563747465');
+        `}
+        </Script>
+
         <TourContextProvider>
           <div className=" relative flex flex-col min-h-[100vh] ">
             <NavBar />
