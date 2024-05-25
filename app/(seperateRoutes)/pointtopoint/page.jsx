@@ -1,4 +1,4 @@
-import P2PComp from "./p2pComp";
+import P2PComp from "./P2PComp";
 
 export const metadata = {
   title: "Point to Point Transfer",
