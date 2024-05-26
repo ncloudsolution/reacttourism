@@ -161,7 +161,7 @@ const ContactUsForm = () => {
               )}
 
               <div className="flex justify-between my-2 gap-x-4">
-                <div className="xs:text-[18px] text-[16px] w-1/2  flex bg-primary text-white rounded items-center justify-center p-2">
+                <div className="xs:text-[18px] text-[16px] w-1/2  flex bg-black text-white rounded items-center justify-center p-2">
                   <div>{sumCaptchaValue[0]}</div>
                   <div className="xs:mx-2 mx-1">+</div>
                   <div>{sumCaptchaValue[1]}</div>
@@ -178,7 +178,7 @@ const ContactUsForm = () => {
                 <input
                   placeholder="Inquiry Regarding Tour Details and Booking Information"
                   type="submit"
-                  className="w-full p-2 mb-5 rounded bg-primary text-white outline-none xs:text-[18px] text-[16px]"
+                  className="w-full p-2 mb-5 rounded bg-primary text-black outline-none xs:text-[18px] text-[16px]"
                   value="Submit"
                 />
               </div>
