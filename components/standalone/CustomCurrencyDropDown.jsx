@@ -28,6 +28,7 @@ const CustomCurrencyDropDown = () => {
 
     setTourDetails((prevTourDetails) => ({
       ...prevTourDetails,
+      currencyType: currencyKey,
       conversionRate: conversionRate,
       convertedPrice: (tourDetails.price * conversionRate).toFixed(2),
       convertedCurrencyType: convertedCurrencyType,

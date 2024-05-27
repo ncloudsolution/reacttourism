@@ -214,12 +214,33 @@ export const OwnerEmail = ({ tourDetails }) => {
 
                 {/**TOTAL SECTION**/}
                 <Section style={section}>
-                  <Text style={paragraph}>
+                  {/* <Text style={paragraph}>
                     <b>Total Price : </b>
                     {tourDetails.converedCurrencySymbol} {""}
                     {tourDetails.totalPrice}
-                  </Text>
-
+                  </Text> */}
+                  <div
+                    style={{
+                      ...paragraph,
+                      marginTop: 5,
+                      display: "flex",
+                      width: "fit-content",
+                    }}
+                  >
+                    <span
+                      style={{
+                        backgroundColor: "#eab308",
+                        padding: "10px",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      <b>Total Price in {tourDetails.currencyType} : </b>
+                      <span>
+                        {tourDetails.converedCurrencySymbol} {""}
+                        {tourDetails.totalPrice}
+                      </span>{" "}
+                    </span>
+                  </div>
                   <div
                     style={{
                       ...paragraph,

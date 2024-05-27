@@ -122,6 +122,7 @@ Duration: ${tourDetails.duration}`;
       noOfPassengers: tourDetails.noOfPassengers,
       customerLuggageCount: tourDetails.customerLuggageCount,
       converedCurrencySymbol: tourDetails.converedCurrencySymbol,
+      currencyType: tourDetails.currencyType,
       convertedPrice: tourDetails.convertedPrice,
       conversionRate: tourDetails.conversionRate,
 
