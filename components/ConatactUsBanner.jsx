@@ -21,7 +21,7 @@ const ContactDetails = () => {
         </div>
         <div className="flex items-center gap-x-2 xs:text-[18px] text-[14px]">
           <MdAttachEmail className="bigmd:text-white text-black xs:text-[20px] text-[16px]" />
-          <div>ceylotaxiandtours@gmail.com</div>
+          <div>easycabandtours@gmail.com</div>
         </div>
         <div className="flex items-center gap-x-2 xs:text-[18px] text-[14px]">
           <IoLocation className="bigmd:text-white text-black xs:text-[20px] text-[16px]]" />

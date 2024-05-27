@@ -1,3 +1,4 @@
+import AboutUs from "@/components/AboutUs";
 import Activities from "@/components/Activities";
 import MainTab from "@/components/MainTab";
 import MainMapConfigs from "@/components/Map/PointToPointMap";
@@ -9,8 +10,13 @@ export default function Home() {
     <>
       <MainTab />
       {/** <MainSlider />**/}
+
       <div className="my-10">
         <TourSlider />
+      </div>
+
+      <div className="my-5">
+        <AboutUs />
       </div>
 
       <Activities />
