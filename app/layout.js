@@ -39,6 +39,14 @@ export default function RootLayout({ children }) {
           gtag('config', 'AW-16563747465');
         `}
         </Script>
+        <Script
+          id="google-conversion"
+          dangerouslySetInnerHTML={{
+            __html: `
+      gtag('event', 'conversion', {'send_to': 'AW-16563747465/h3caCMDywbIZEIn1mto9'});
+    `,
+          }}
+        />
 
         <TourContextProvider>
           <div className=" relative flex flex-col min-h-[100vh] ">
