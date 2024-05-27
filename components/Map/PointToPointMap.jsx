@@ -409,10 +409,6 @@ const PointToPointMap = ({ children }) => {
                             console.log("Vehicle price:", vehicle.price);
                             console.log("redirect");
                             router.push("/tourbooking");
-                            window.scrollTo({
-                              top: 0,
-                              behavior: "smooth",
-                            });
                           }}
                         >
                           Select
