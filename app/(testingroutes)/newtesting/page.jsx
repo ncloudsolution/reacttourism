@@ -14,6 +14,7 @@ import Flow from "@/components/testingComponents/Flow";
 import Processing from "@/components/loaders&Responses/Processing";
 import SuccessSubmission from "@/components/loaders&Responses/SuccessSubmission";
 import FailedSubmission from "@/components/loaders&Responses/FailedSubmission";
+import LoadingComponent from "@/components/loaders&Responses/LoadingComponent";
 
 const newtesting = () => {
   const tourDetails = {
@@ -50,7 +51,7 @@ const newtesting = () => {
   return (
     <div>
       {/* <TestingMail tourDetails={tourDetails} /> */}
-      <FailedSubmission />
+      <LoadingComponent />
     </div>
   );
 };

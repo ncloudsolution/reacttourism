@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { TourContext } from "../context/TourContextProvider";
 import Image from "next/image";
 
@@ -172,6 +172,15 @@ Duration: ${tourDetails.duration}`;
 
     setSubmitError("");
   }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollBy({
+        top: 0, // Scroll down by 200px
+        behavior: "smooth", // Smooth scrolling
+      });
+    }
+  }, []);
 
   return (
     <>

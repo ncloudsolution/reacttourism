@@ -17,6 +17,7 @@ module.exports = {
         popshadow:
           "-2px 8px 10px 4px rgba(0, 0, 0, 0.05), 2px -8px 10px 4px rgba(0, 0, 0, 0.05)",
         navshadow: "2px -9px 8px 7px rgba(0, 0, 0, 0.2)",
+        customercareshadow: "0px 3px 3px 2px rgba(0, 0, 0, 0.2)",
       },
 
       screens: {
