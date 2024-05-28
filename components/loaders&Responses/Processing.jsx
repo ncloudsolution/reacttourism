@@ -4,12 +4,12 @@ import Link from "next/link";
 
 import crashed from "@/public/Exceptions/crashed.png";
 
-const Processing = () => {
+const Processing = ({ title, msg }) => {
   return (
     <div className="min-h-[90vh] flex justify-center items-center">
       <div className="flex flex-col items-center ">
         <div className="sm:text-[45px] xs:text-[35px] xxs:text-[30px]  xxxs:text-[24px] text-[22px] font-bold mb-8">
-          Booking Processing
+          {title}
         </div>
 
         <div className="sm:h-[300px] h-[250px] sm:w-[450px] xs:w-[375px] xxs:w-[300px] w-[280px] -translate-y-5 flex justify-center items-center">
@@ -31,8 +31,9 @@ const Processing = () => {
           </div>
         </div>
         <div className="xs:w-[430px] xxs:w-[360px] xxxs:w-[300px] w-[250px] xs:text-[14px] text-[12px] text-center mt-1">
-          Thank you for your order! Your request is now being processed within
-          our system. Please wait for confirmation
+          Thank you for your {""}
+          {msg}
+          {""} within our system. Please wait for confirmation
         </div>
 
         {/* <Link

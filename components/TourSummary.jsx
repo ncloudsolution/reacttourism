@@ -11,6 +11,8 @@ import Processing from "./loaders&Responses/Processing";
 import SuccessSubmission from "./loaders&Responses/SuccessSubmission";
 import FailedSubmission from "./loaders&Responses/FailedSubmission";
 
+import success from "@/public/Others/successImg.jpg";
+
 const TourSummary = () => {
   const router = useRouter();
 
@@ -188,13 +190,27 @@ Duration: ${tourDetails.duration}`;
         {(isLoading || responseMessage) && (
           <div className="w-full h-[90vh] flex items-center justify-center">
             {/* Your form or component elements go here */}
-            {isLoading && <Processing />} {/* Display a loading message */}
+            {isLoading && (
+              <Processing
+                title={"Booking Processing"}
+                msg={"order! Your request is now being processed"}
+              />
+            )}{" "}
+            {/* Display a loading message */}
             {!isLoading &&
               responseMessage === "Order completed Successfully" && (
-                <SuccessSubmission />
+                <SuccessSubmission
+                  title={"Booking Success"}
+                  msg={"Your booking has been successfully completed"}
+                  navtext={"New Booking"}
+                  img={success}
+                />
               )}
             {!isLoading && responseMessage === "Failed to Send Email" && (
-              <FailedSubmission />
+              <FailedSubmission
+                navtext={"New Booking"}
+                msg={"booking was not completed"}
+              />
             )}
             {/* Display the response message */}
           </div>

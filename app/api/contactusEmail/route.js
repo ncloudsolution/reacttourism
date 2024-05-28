@@ -1,12 +1,16 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { render } from "@react-email/render";
+
+import ContactUsOwnerEmail from "@/components/emailTemplates/ContactUsOwnerEmail";
 
 export async function POST(request) {
   try {
     const formData = await request.formData(); // Use formData directly
-    const to = formData.get("to");
-    const subject = formData.get("subject");
-    const text = formData.get("text");
+    // const to = formData.get("to");
+    // const subject = formData.get("subject");
+    // const text = formData.get("text");
+    const ContactusDetails = JSON.parse(formData.get("allDataBundle"));
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -16,12 +20,16 @@ export async function POST(request) {
       },
     });
 
-    // Email options for the main recipient (to)
+    const newCompHtmlforOwner = render(
+      <ContactUsOwnerEmail ContactusDetails={ContactusDetails} />
+    );
+
+    // Email options for the main recipient - Businness Owner (to)
     const mailOptionsTo = {
-      from: `"TBSL - Contact Us" <${process.env.MAIL_USERNAME}>`,
-      to: to,
-      subject: subject,
-      text: text,
+      from: `"Someone Reach you" <${process.env.MAIL_USERNAME}>`,
+      to: ContactusDetails.ownerEmail,
+      subject: ContactusDetails.emailSubject,
+      html: newCompHtmlforOwner,
     };
 
     // Send the email to the main recipient
