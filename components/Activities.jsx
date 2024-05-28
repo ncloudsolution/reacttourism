@@ -13,6 +13,7 @@ import destination10 from "@/public/Destinations/dest10.jpg";
 import text from "@/data/text.json";
 
 import Image from "next/image";
+import Title from "./standalone/Title";
 
 const Activity = ({ imageSrc, name }) => {
   return (
@@ -45,7 +46,7 @@ const Activities = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[600px] text-center">
-              <h1 className=" mb-[30px]">Top Activities in Sri Lanka</h1>
+              <Title title={"Top Activities in Sri Lanka"} />
               <p className="text-base ">{textcontent.activities_txt1}</p>
             </div>
           </div>

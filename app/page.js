@@ -1,3 +1,4 @@
+import AboutSrilanka from "@/components/AboutSrilanka";
 import AboutUs from "@/components/AboutUs";
 import Activities from "@/components/Activities";
 import MainTab from "@/components/MainTab";
@@ -13,6 +14,10 @@ export default function Home() {
 
       <div className="my-10">
         <TourSlider />
+      </div>
+
+      <div className="xs:my-20 xxs:my-10 my-5">
+        <AboutSrilanka />
       </div>
 
       <div className="my-5">
