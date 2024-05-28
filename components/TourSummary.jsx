@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { TourContext } from "../context/TourContextProvider";
 import Image from "next/image";
 
@@ -122,6 +122,7 @@ Duration: ${tourDetails.duration}`;
       noOfPassengers: tourDetails.noOfPassengers,
       customerLuggageCount: tourDetails.customerLuggageCount,
       converedCurrencySymbol: tourDetails.converedCurrencySymbol,
+      currencyType: tourDetails.currencyType,
       convertedPrice: tourDetails.convertedPrice,
       conversionRate: tourDetails.conversionRate,
 
@@ -171,6 +172,15 @@ Duration: ${tourDetails.duration}`;
 
     setSubmitError("");
   }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollBy({
+        top: 0, // Scroll down by 200px
+        behavior: "smooth", // Smooth scrolling
+      });
+    }
+  }, []);
 
   return (
     <>

@@ -9,6 +9,7 @@ import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDo
 import UpperFooter from "@/components/UpperFooter";
 
 import Script from "next/script";
+import FoloatingActionBtn from "@/components/standalone/FoloatingActionBtn";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,11 +39,20 @@ export default function RootLayout({ children }) {
           gtag('config', 'AW-16563747465');
         `}
         </Script>
+        <Script
+          id="google-conversion"
+          dangerouslySetInnerHTML={{
+            __html: `
+      gtag('event', 'conversion', {'send_to': 'AW-16563747465/h3caCMDywbIZEIn1mto9'});
+    `,
+          }}
+        />
 
         <TourContextProvider>
           <div className=" relative flex flex-col min-h-[100vh] ">
             <NavBar />
 
+            <FoloatingActionBtn />
             <main className="min-h-[23vh] xs:mt-[80px] mt-[60px]">
               {children}
             </main>

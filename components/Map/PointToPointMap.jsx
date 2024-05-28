@@ -167,7 +167,7 @@ const PointToPointMap = ({ children }) => {
           </div>
           <RiPinDistanceFill className="text-[35px] text-primary" />
           <div className="flex mt-6 mb-8 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-[294px] px-8  my-10">
-            <div className="flex flex-col gap-y-3 w-full">
+            <div className="flex flex-col gap-y-3 w-full text-center">
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
                 <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
@@ -248,16 +248,6 @@ const PointToPointMap = ({ children }) => {
             </div>
           )}
 
-          {!submitError && distance && duration && (
-            <div className="w-[100vw] bg-white flex justify-center">
-              <div className="flex xs:flex-row flex-col text-center py-2 px-5 gap-x-3 bg-yellow-400 text-black rounded mt-8 mb-6 w-fit">
-                <div>Distance : {distance}</div>
-                <div className="font-bold xs:flex hidden">||</div>
-                <div>Duration : {duration}</div>
-              </div>
-            </div>
-          )}
-
           {/* <div className="flex my-4 gap-x-3 ">
             {/* <button
               className="bg-black text-white p-2 rounded"
@@ -270,160 +260,170 @@ const PointToPointMap = ({ children }) => {
           {/** map center smoothly**/}
         </div>
 
-        {isSubmit && !submitError && (
-          <div
-            className="w-[100vw] bg-white flex justify-center border-b-[1px] border-b-black"
-            ref={mapRef}
-          >
-            <div className=" midxl:w-[1400px] mobile:w-[1000px] w-[800px] flex gap-x-10 xs:mt-8 mt-4 mb-16 bigmd:flex-row flex-col bigmd:items-start items-center border-2 border-transparent gap-5 p-4">
-              <div className="midxl:w-[800px] xs:w-[400px] xxxs:w-[300px] w-[250px]  midxl:h-[500px] bigmd:h-[300px]  xs:h-[400px] xxxs:h-[300px] h-[250px] aspect-square flex rounded-lg overflow-hidden shadow-md ">
-                <GoogleMap
-                  center={center}
-                  zoom={15}
-                  mapContainerStyle={{ width: "100%", height: "100%" }}
-                  onLoad={(map) => setMap(map)}
-                >
-                  {directionsRespone && (
-                    <DirectionsRenderer directions={directionsRespone} />
-                  )}
-                </GoogleMap>
-              </div>
-              <div className="w-full">
-                {selectedVehiclesList.map((vehicle, index) => (
-                  <div
-                    key={index}
-                    className="bg-transparent text-black w-full flex flex-col xs:flex-row mb-6 p-4 rounded-lg border-[2px] border-black shadow-md justify-between hover:scale-[1.03] transition-all duration-500"
-                  >
-                    <div className="flex flex-col items-center xs:items-start ">
-                      <div className="font-semibold text-[30px] px-8">
-                        {vehicle.type}
-                      </div>
-                      <div className="sm:w-[300px] w-[250px] sm:h-[150px] h-[120px] xs:translate-y-5 translate-y-0">
-                        <Image
-                          src={vehicle.img}
-                          alt=""
-                          width={300}
-                          height={300}
-                          className="border-2 border-transparent object-cover w-[100%] h-[100%]"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col mobile:mr-3 mr-1  gap-y-3  items-center justify-center border-2 border-transparent  xs:w-[200px] w-full">
-                      <div className="flex flex-col xs:gap-y-[2px]  w-full">
-                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
-                          <FaUser className="text-[28px] p-1 mr-1" />
-                          <div>
-                            {vehicle.minpassengers} - {vehicle.maxpassengers}{" "}
-                            Passengers
-                          </div>
-                        </div>
-
-                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
-                          <FaBriefcase className="text-[28px] p-1 mr-1" />
-                          <div>{vehicle.luggages} Luggages </div>
-                        </div>
-
-                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
-                          <BsHandbagFill className="text-[28px] p-1 mr-1" />
-                          <div>{vehicle.handbaggages} Hand Baggages</div>
-                        </div>
-
-                        <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
-                          <FaRegSnowflake className="text-[28px] p-1 mr-1" />
-                          <div>Air Conditioning</div>
-                        </div>
-                      </div>
-
-                      <div className="bg-black text-white py-2 rounded w-full text-center flex flex-col items-center">
-                        <div className="flex text-[18px]">
-                          <div className="pr-1">
-                            {tourDetails.converedCurrencySymbol}
-                          </div>
-                          <div>
-                            {returnTour
-                              ? (
-                                  tourDetails.conversionRate *
-                                  vehicle.price *
-                                  2
-                                ).toFixed(2)
-                              : (
-                                  tourDetails.conversionRate * vehicle.price
-                                ).toFixed(2)}
-                          </div>
-                        </div>
-                        {/* <div className="bigmd:text-[12px] text-[10px] text-yellow-500 w-full  px-2 text-center">
-                          Highway Charges and other Charges are Not Included
-                        </div> */}
-                      </div>
-                      <button
-                        className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
-                        onClick={() => {
-                          console.log(startDate, "date");
-                          //console.log(vehicle.price);
-                          setTourDetails((prevTourDetails) => ({
-                            ...prevTourDetails,
-                            tourType: "p2p",
-                            highwayCharge: tourDetails.highwayCharge
-                              ? tourDetails.highwayCharge
-                              : 0,
-                            isReturntour: returnTour,
-
-                            vehicleType: vehicle.type,
-                            vehicalSeatCapacityMin: vehicle.minpassengers,
-                            vehicalSeatCapacityMax: vehicle.maxpassengers,
-                            weightFactor: vehicle.weightFactor,
-                            price: vehicle.price,
-                            convertedPrice: returnTour
-                              ? (
-                                  tourDetails.conversionRate *
-                                  vehicle.price *
-                                  2
-                                ).toFixed(2)
-                              : (
-                                  tourDetails.conversionRate * vehicle.price
-                                ).toFixed(2),
-
-                            image: vehicle.img,
-                            luggages: vehicle.luggages,
-                            category: vehicle.category,
-
-                            origin: originRef.current.value,
-                            destination: destinationRef.current.value,
-                            noOfPassengers: passengerCountRef.current.value,
-                            startDate: startDate,
-                            returnDate: returnTour
-                              ? returnDate
-                              : "No any Return",
-                            distance: distance,
-                            duration: duration,
-                            pageTwoToken: true,
-                          }));
-                          console.log(
-                            "Conversion rate:",
-                            tourDetails.conversionRate
-                          );
-                          console.log("Vehicle price:", vehicle.price);
-                          console.log("redirect");
-                          router.push("/tourbooking");
-                          window.scrollTo({
-                            top: 0,
-                            behavior: "smooth",
-                          });
-                        }}
-                      >
-                        Select
-                      </button>
-                    </div>
-                  </div>
-                ))}
+        <div>
+          {!submitError && distance && duration && (
+            <div className="w-[100vw] bg-white flex justify-center">
+              <div className="flex xs:flex-row flex-col text-center py-2 px-5 gap-x-3 bg-yellow-400 text-black rounded mt-8 mb-6 w-fit">
+                <div>Distance : {distance}</div>
+                <div className="font-bold xs:flex hidden">||</div>
+                <div>Duration : {duration}</div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
-        {/** context usage **/}
+        <div>
+          {isSubmit && !submitError && (
+            <div
+              className="w-[100vw] bg-white flex justify-center border-b-[1px] border-b-black"
+              ref={mapRef}
+            >
+              <div className="midxl:w-[1400px] mobile:w-[1000px]  w-[800px] flex gap-x-10 xs:mt-8 mt-4 mb-16 mobile:flex-row flex-col bigmd:items-start items-center border-2 border-transparent gap-5 p-4">
+                <div className="midxl:w-[800px] bxs:w-full xs:w-[400px] xxxs:w-[300px] w-[250px]  midxl:h-[500px] bigmd:h-[300px]  xs:h-[400px] xxxs:h-[300px] h-[250px] aspect-square flex rounded-lg overflow-hidden shadow-md ">
+                  <GoogleMap
+                    center={center}
+                    zoom={15}
+                    mapContainerStyle={{ width: "100%", height: "100%" }}
+                    onLoad={(map) => setMap(map)}
+                  >
+                    {directionsRespone && (
+                      <DirectionsRenderer directions={directionsRespone} />
+                    )}
+                  </GoogleMap>
+                </div>
+                <div className="w-full">
+                  {selectedVehiclesList.map((vehicle, index) => (
+                    <div
+                      key={index}
+                      className="bg-transparent text-black w-full flex flex-col xs:flex-row mb-6 p-4 rounded-lg border-[2px] border-black shadow-md justify-between hover:scale-[1.03] transition-all duration-500"
+                    >
+                      <div className="flex flex-col items-center xs:items-start ">
+                        <div className="font-semibold text-[30px] px-8">
+                          {vehicle.type}
+                        </div>
+                        <div className="sm:w-[300px] w-[250px] sm:h-[150px] h-[120px] xs:translate-y-5 translate-y-0">
+                          <Image
+                            src={vehicle.img}
+                            alt=""
+                            width={300}
+                            height={300}
+                            className="border-2 border-transparent object-cover w-[100%] h-[100%]"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col mobile:mr-3 mr-1  gap-y-3  items-center justify-center border-2 border-transparent  xs:w-[200px] w-full">
+                        <div className="flex flex-col xs:gap-y-[2px]  w-full">
+                          <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                            <FaUser className="text-[28px] p-1 mr-1" />
+                            <div>
+                              {vehicle.minpassengers} - {vehicle.maxpassengers}{" "}
+                              Passengers
+                            </div>
+                          </div>
+
+                          <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                            <FaBriefcase className="text-[28px] p-1 mr-1" />
+                            <div>{vehicle.luggages} Luggages </div>
+                          </div>
+
+                          <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                            <BsHandbagFill className="text-[28px] p-1 mr-1" />
+                            <div>{vehicle.handbaggages} Hand Baggages</div>
+                          </div>
+
+                          <div className="text-gray-600 xs:text-[16px] text-[14px] bg-transparent w-full flex items-center">
+                            <FaRegSnowflake className="text-[28px] p-1 mr-1" />
+                            <div>Air Conditioning</div>
+                          </div>
+                        </div>
+
+                        <div className="bg-black text-white py-2 rounded w-full text-center flex flex-col items-center">
+                          <div className="flex text-[18px]">
+                            <div className="pr-1">
+                              {tourDetails.converedCurrencySymbol}
+                            </div>
+                            <div>
+                              {returnTour
+                                ? (
+                                    tourDetails.conversionRate *
+                                    vehicle.price *
+                                    2
+                                  ).toFixed(2)
+                                : (
+                                    tourDetails.conversionRate * vehicle.price
+                                  ).toFixed(2)}
+                            </div>
+                          </div>
+                          {/* <div className="bigmd:text-[12px] text-[10px] text-yellow-500 w-full  px-2 text-center">
+                          Highway Charges and other Charges are Not Included
+                        </div> */}
+                        </div>
+                        <button
+                          className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
+                          onClick={() => {
+                            console.log(startDate, "date");
+                            //console.log(vehicle.price);
+                            setTourDetails((prevTourDetails) => ({
+                              ...prevTourDetails,
+                              tourType: "p2p",
+                              highwayCharge: tourDetails.highwayCharge
+                                ? tourDetails.highwayCharge
+                                : 0,
+                              isReturntour: returnTour,
+
+                              vehicleType: vehicle.type,
+                              vehicalSeatCapacityMin: vehicle.minpassengers,
+                              vehicalSeatCapacityMax: vehicle.maxpassengers,
+                              weightFactor: vehicle.weightFactor,
+                              price: vehicle.price,
+                              convertedPrice: returnTour
+                                ? (
+                                    tourDetails.conversionRate *
+                                    vehicle.price *
+                                    2
+                                  ).toFixed(2)
+                                : (
+                                    tourDetails.conversionRate * vehicle.price
+                                  ).toFixed(2),
+
+                              image: vehicle.img,
+                              luggages: vehicle.luggages,
+                              category: vehicle.category,
+
+                              origin: originRef.current.value,
+                              destination: destinationRef.current.value,
+                              noOfPassengers: passengerCountRef.current.value,
+                              startDate: startDate,
+                              returnDate: returnTour
+                                ? returnDate
+                                : "No any Return",
+                              distance: distance,
+                              duration: duration,
+                              pageTwoToken: true,
+                            }));
+                            console.log(
+                              "Conversion rate:",
+                              tourDetails.conversionRate
+                            );
+                            console.log("Vehicle price:", vehicle.price);
+                            console.log("redirect");
+                            router.push("/tourbooking");
+                          }}
+                        >
+                          Select
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
+      {/** context usage **/}
+
       {children}
     </>
   );

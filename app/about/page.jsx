@@ -1,7 +1,12 @@
+import AboutUs from "@/components/AboutUs";
 import React from "react";
 
 function page() {
-  return <></>;
+  return (
+    <>
+      <AboutUs />
+    </>
+  );
 }
 
 export default page;

@@ -129,10 +129,7 @@ const MidSummary = () => {
       pageThreeToken: true,
     }));
     // router.push("/newtesting");
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+
     router.push("/tourbooking/summary");
   }
 
@@ -198,6 +195,15 @@ const MidSummary = () => {
     setHighwayCharge(tourDetails.highwayCharge);
     setHighwayExit(tourDetails.highwayExit);
   }, [tourDetails.highwayExit, tourDetails.highwayCharge]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollBy({
+        top: 0, // Scroll down by 200px
+        behavior: "smooth", // Smooth scrolling
+      });
+    }
+  }, []);
 
   return (
     <>

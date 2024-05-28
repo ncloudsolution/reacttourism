@@ -148,11 +148,11 @@ export const CustomerEmail = ({ tourDetails }) => {
 
                       {/**TOTAL SECTION**/}
 
-                      <Text style={{ ...paragraph, marginTop: 10 }}>
+                      {/* <Text style={{ ...paragraph, marginTop: 10 }}>
                         <b>Total Price : </b>
                         {tourDetails.converedCurrencySymbol} {""}
                         {tourDetails.totalPrice}
-                      </Text>
+                      </Text> */}
 
                       <Text style={paragraph}>
                         <b>Including : </b>
@@ -180,6 +180,30 @@ export const CustomerEmail = ({ tourDetails }) => {
                           )}
                         </Text>
                       ) : null}
+
+                      {/**pricing**/}
+                      <div
+                        style={{
+                          ...paragraph,
+                          marginTop: 5,
+                          display: "flex",
+                          width: "fit-content",
+                        }}
+                      >
+                        <span
+                          style={{
+                            backgroundColor: "#eab308",
+                            padding: "10px",
+                            borderRadius: "5px",
+                          }}
+                        >
+                          <b>Total Price in {tourDetails.currencyType} : </b>
+                          <span>
+                            {tourDetails.converedCurrencySymbol} {""}
+                            {tourDetails.totalPrice}
+                          </span>{" "}
+                        </span>
+                      </div>
 
                       <div
                         style={{

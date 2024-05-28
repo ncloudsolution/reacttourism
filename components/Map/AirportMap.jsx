@@ -488,10 +488,6 @@ const AirportMap = ({ children }) => {
                             console.log("redirect");
 
                             router.push("/tourbooking");
-                            window.scrollTo({
-                              top: 0,
-                              behavior: "smooth",
-                            });
                           }}
                         >
                           Select
