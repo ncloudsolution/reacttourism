@@ -4,7 +4,9 @@ import React from "react";
 function page() {
   return (
     <>
-      <AboutUs />
+      <div className="lg:mt-0 mt-10">
+        <AboutUs />
+      </div>
     </>
   );
 }

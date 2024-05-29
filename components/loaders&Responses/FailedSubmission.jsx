@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import failed from "@/public/Others/failed.jpg";
 
-const FailedSubmission = () => {
+const FailedSubmission = ({ msg, navtext }) => {
   return (
     <div className="min-h-[90vh] flex justify-center items-center">
       <div className="flex flex-col items-center ">
@@ -16,16 +16,18 @@ const FailedSubmission = () => {
           <Image src={failed} alt="" className="h-full w-full" />
         </div>
         <div className="xs:w-[430px] xxs:w-[360px] xxxs:w-[300px] w-[250px] xs:text-[14px] text-[12px] text-center mb-5  -translate-y-4">
-          We apologize for the inconvenience, but your booking was not completed
-          due to an unexpected error. Please try booking again. Thank you for
-          your understanding
+          We apologize for the inconvenience, but your {""}
+          {msg}
+          {""}
+          due to an unexpected error. Please try again. Thank you for your
+          understanding.
         </div>
 
         <Link
           className=" sm:text-[24px] xxs:text-[20px]  xxxs:text-[18px] text-[16px] bg-primary px-8 py-2 font-semibold rounded mb-5 -translate-y-2 cursor-pointer"
           href="/"
         >
-          New Booking
+          {navtext}
         </Link>
       </div>
     </div>
