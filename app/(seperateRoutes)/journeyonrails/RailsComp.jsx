@@ -49,7 +49,7 @@ const PtoP = () => {
           </div>
 
           <div className="mb-16 mt-3">
-            <DescriptionTile type={"airport"} />
+            <DescriptionTile type={"rails"} />
           </div>
         </div>
       </div>

@@ -4,12 +4,17 @@ import React from "react";
 import driving from "@/public/Tiles/driving.jpg";
 import cardairport from "@/public/Tiles/card1.webp";
 import cardpointtopoint from "@/public/Tiles/card.webp";
+import cardtrain from "@/public/Tiles/card3.webp";
 import door from "@/public/Tiles/door.jpg";
 import door2 from "@/public/Tiles/door2.jpg";
+import door3 from "@/public/Tiles/door3.jpg";
 import lowprice from "@/public/Tiles/newyard.png";
 import lowprice2 from "@/public/Tiles/lowprice2.webp";
+import lowprice3 from "@/public/Tiles/lowprice3.jpg";
+
 import tour from "@/public/Tiles/tour.jpeg";
 import tour2 from "@/public/Tiles/tour2.jpg";
+import train from "@/public/Tiles/train.jpg";
 
 const DescriptionTile = ({ type }) => {
   const airport = [
@@ -79,6 +84,40 @@ const DescriptionTile = ({ type }) => {
     },
   ];
 
+  const rails = [
+    {
+      img: train,
+      title: "Rail Journeys",
+      Description:
+        "Discover Sri Lanka's scenic railways with our curated train experiences. Enjoy seamless travel and book your rail adventure online for an unforgettable journey experience.",
+    },
+    {
+      img: lowprice3,
+      title: "Always Low Prices",
+      Description:
+        "Ensuring your safety is our priority, and your comfort our goal. We compare prices from numerous renowned transportation providers in Colombo, aiming to provide the best service at affordable rates.",
+    },
+    // {
+    //   img: driving,
+    //   title: "Professional Service",
+    //   Description:
+    //     "We use reputable airport transfer service providers employing professional and reliable drivers",
+    // },
+    {
+      img: door3,
+      title: "Door to Door",
+      Description:
+        "Our Colombo airport transfer service features meet and greet and flight monitoring. It offers the most comfortable, stress-free travel experience, ensuring punctuality and personalized assistance.",
+    },
+
+    {
+      img: cardtrain,
+      title: "Secure Booking Process",
+      Description:
+        "This website secures your connection with advanced encryption and ensures your sensitive information is never stored. Rest assured, your privacy is our top priority, providing peace of mind for all transactions.",
+    },
+  ];
+
   const renderItems = (items) => {
     return (
       <div className="px-5 xl:gap-10 bigmd:gap-x-10 gap-10 grid xl:grid-cols-4 bigmd:grid-cols-2 grid-cols-1">
@@ -110,6 +149,7 @@ const DescriptionTile = ({ type }) => {
     <>
       {type === "airport" && renderItems(airport)}
       {type === "p2p" && renderItems(points)}
+      {type === "rails" && renderItems(rails)}
     </>
   );
 };
