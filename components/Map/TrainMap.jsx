@@ -62,13 +62,13 @@ const TrainMap = ({ children }) => {
   return (
     <>
       <div className="flex flex-col items-center w-full">
-        <div className="w-fit flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center bg-black rounded-lg  ">
           <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[20px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
             Journey On Rails
           </div>
           <FaTrain className="text-[30px] text-primary mb-2" />
-          <div className="flex my-4 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]">
-            <div className="flex flex-col gap-y-3 w-full">
+          <div className="flex mb-8 mt-6 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]">
+            <div className="flex flex-col gap-y-3 w-full px-8 ">
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 bigmd:w-[778px] w-full">
                 {/**750px**/}
                 <div className="relative w-full">
@@ -80,7 +80,7 @@ const TrainMap = ({ children }) => {
                   placeholder="No.Passengers"
                   type="number"
                   min="1"
-                  className="p-2 text-[14px] mt-[44px] bigmd:mt-0 outline-none bigmd:w-[250px] h-[43px]  w-full shadow-md rounded border-[1px] border-black "
+                  className="p-2 text-[12px] xs:text-[14px] mt-[44px] bigmd:mt-0 outline-none bigmd:w-[250px] h-[43px]  w-full shadow-md rounded border-[1px] border-black "
                 />
               </div>
 
@@ -88,7 +88,7 @@ const TrainMap = ({ children }) => {
                 <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-2  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
                   <button
                     type="submit"
-                    className="bg-black text-white p-2 rounded bigmd:w-fit flex-1 bigmd:block "
+                    className="bg-primary text-black p-2 rounded bigmd:w-fit flex-1 bigmd:block "
                     onClick={calculateRoute}
                   >
                     Search Train
@@ -102,9 +102,10 @@ const TrainMap = ({ children }) => {
         </div>
 
         {isSubmit && !submitError && (
-          <div className="w-full flex justify-center">
-            <div className="border-2 border-transparent midxl:w-[1400px] mobile:w-[1000px] w-[800px] flex gap-x-10 xs:my-8  bigmd:flex-row flex-col bigmd:items-start items-center gap-2 my-6">
-              {/* {filterdTrains.map((train, index) => (
+          <div className="w-[100vw] bg-white">
+            <div className="w-full flex justify-center">
+              <div className="border-2 border-transparent midxl:w-[1400px] mobile:w-[1000px] w-[800px] flex gap-x-10 xs:my-8  bigmd:flex-row flex-col bigmd:items-start items-center gap-2 my-6">
+                {/* {filterdTrains.map((train, index) => (
                 <div key={index}>
                   <div className="flex flex-col">
                     <div className="bg-red-400">
@@ -134,24 +135,23 @@ const TrainMap = ({ children }) => {
                   </div>
                 </div>
               ))} */}
-              <div className="flex flex-col w-full">
-                {/* {tourDetails.trainTourPoints && isSubmit && !submitError &&(
+                <div className="flex flex-col w-full items-center ">
+                  {/* {tourDetails.trainTourPoints && isSubmit && !submitError &&(
                   <div className="font-light text-[30px] text-center">
                     {tourDetails.trainTourPoints}
                   </div>
                 )} */}
 
-                {filterdTrains.map((train, index) => (
-                  <div
-                    key={index}
-                    className="bigmd:w-full bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]"
-                  >
-                    <div className="flex flex-col ">
-                      <div>
+                  {filterdTrains.map((train, index) => (
+                    <div
+                      key={index}
+                      className="2xl:w-[1056px] bigmd:w-[846px] bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]"
+                    >
+                      <div className="flex flex-col gap-y-5 md:gap-y-8">
                         {train.trainList.map((train, index) => (
                           <div
                             key={index}
-                            className="my-5 w-full  px-4 border-[1px] border-black rounded"
+                            className="w-full  px-4 border-[1px] border-black rounded"
                           >
                             {" "}
                             {/**upper section over the line**/}
@@ -252,8 +252,8 @@ const TrainMap = ({ children }) => {
                         ))}
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

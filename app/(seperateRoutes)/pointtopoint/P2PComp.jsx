@@ -4,7 +4,7 @@ import Hierarchy from "@/components/standalone/Hierarchy";
 import CurrencyTab from "@/components/standalone/CurrencyTab";
 import { useJsApiLoader } from "@react-google-maps/api";
 import React, { useEffect, useState } from "react";
-import Flow from "@/components/testingComponents/Flow";
+import Flow from "@/components/standalone/Flow";
 import DescriptionTile from "@/components/DescriptionTile";
 import PointToPointMap from "@/components/Map/PointToPointMap";
 

@@ -39,8 +39,8 @@ const CustomTrainDropDown = () => {
     <div className="w-full absolute z-[1] left-0 right-0  h-[50px]">
       <div
         onClick={() => setOpen(!open)}
-        className={`bg-white  w-full border-[1px] border-black p-2 flex items-center justify-between rounded ${
-          !selected && "text-[#8e8e8e] text-[14px]  h-[43px]"
+        className={`bg-white  w-full border-[1px] text-[12px] xs:text-[14px] border-black p-2 flex items-center justify-between rounded ${
+          !selected && "text-[#8e8e8e]   h-[43px]"
         }`}
       >
         {selected
@@ -63,16 +63,16 @@ const CustomTrainDropDown = () => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value.toLowerCase())}
             placeholder="Enter Your Favourite Stations"
-            className="placeholder:text-gray-700 placeholder:text-[14px] xs:placeholder:text-[16px] p-2 outline-none w-full"
+            className="placeholder:text-gray-700 placeholder:text-[12px] xs:placeholder:text-[14px] p-2 outline-none w-full"
           />
         </div>
         {stations?.map((station) => (
           <li
             key={station?.travelPoints}
-            className={`py-2 px-3 text-sm hover:bg-sky-600 hover:text-white flex items-center
+            className={`py-2 px-3 text-[12px] xs:text-[14px] hover:bg-black hover:text-white flex items-center m-1 rounded
             ${
               station?.travelPoints?.toLowerCase() ===
-                selected?.toLowerCase() && "bg-sky-600 text-white"
+                selected?.toLowerCase() && "bg-primary text-black"
             }
             ${
               station?.travelPoints?.toLowerCase().startsWith(inputValue)
