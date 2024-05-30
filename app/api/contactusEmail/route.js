@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { render } from "@react-email/render";
 
 import ContactUsOwnerEmail from "@/components/emailTemplates/ContactUsOwnerEmail";
+import ContactUsCustomerEmail from "@/components/emailTemplates/ContactUsCustomerEmail";
 
 export async function POST(request) {
   try {
@@ -24,6 +25,10 @@ export async function POST(request) {
       <ContactUsOwnerEmail ContactusDetails={ContactusDetails} />
     );
 
+    const newCompHtmlforCustomer = render(
+      <ContactUsCustomerEmail ContactusDetails={ContactusDetails} />
+    );
+
     // Email options for the main recipient - Businness Owner (to)
     const mailOptionsTo = {
       from: `"Someone Reach you" <${process.env.MAIL_USERNAME}>`,
@@ -32,8 +37,17 @@ export async function POST(request) {
       html: newCompHtmlforOwner,
     };
 
+    const mailOptionsClient = {
+      from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
+      to: ContactusDetails.customerEmail,
+      subject: "We Received Your Message",
+      html: newCompHtmlforCustomer, // Assuming you want to send the same text; adjust if different
+    };
+
     // Send the email to the main recipient
     await transporter.sendMail(mailOptionsTo);
+    // Send the email to the client
+    await transporter.sendMail(mailOptionsClient);
 
     return NextResponse.json(
       { message: "Email Send Successfully" },
