@@ -35,14 +35,16 @@ const DayTripDetails = ({ params, searchParams }) => {
       </div>
 
       <Image alt="" src={searchParams.img} width={300} height={300} /> */}
-      <div className="flex w-full justify-center my-10">
-        <div className="flex flex-col w-[1320px] border-2 border-transparent rounded-md p-5 ">
+      <div className="flex w-full justify-center xs:my-10 my-2">
+        <div className="flex flex-col  midxl:w-[1320px] mobile:w-[1100px] border-2 border-transparent rounded-md p-5 ">
           {/**heading**/}
-          <div className="text-slate-600 text-[16px] font-semibold uppercase translate-y-1">
+          <div className="text-slate-600 text-[16px] font-semibold uppercase translate-y-1 mb-2 bxs:mb-0">
             Day Trip
           </div>
           {/**name of package**/}
-          <div className="font-semibold text-[30px]">{decodedDescription}</div>
+          <div className="font-semibold midxl:text-[30px] bxs:text-[26px] xs:text-[22px] text-[18px] mb-1 bxs:mb-0">
+            {decodedDescription}
+          </div>
           {/**tag list**/}
           <div className="flex gap-3 my-1">
             {tagsArray.map((tag, index) => (
@@ -54,9 +56,9 @@ const DayTripDetails = ({ params, searchParams }) => {
             ))}
           </div>
           {/**image area and pricing**/}
-          <div className="my-3 flex justify-between">
-            <div className="w-[700px]">
-              <div className="h-[350px] rounded-lg relative overflow-hidden">
+          <div className="my-3 flex mobile:flex-row flex-col">
+            <div className="midxl:w-[700px] mobile:w-[500px] w-full">
+              <div className="midxl:h-[350px] bxs:h-[300px] xxs:h-[250px] xxxs:h-[200px] h-[150px] rounded-lg relative overflow-hidden mt-2 xxs:mt-0">
                 <Image
                   src={img}
                   alt=""
@@ -66,21 +68,43 @@ const DayTripDetails = ({ params, searchParams }) => {
                     objectFit: "cover",
                     overflow: "hidden",
                   }}
-                  className="transition-transform duration-500 ease-in-out transform hover:scale-105"
                 />
               </div>
             </div>
 
-            <div className="flex flex-col">
-              <div className="text-right flex-flex-col">
-                <div className="line-through text-[24px] ">
-                  $ {initialPrice}
+            <div className="flex flex-col justify-center mobile:ml-[100px] xs:w-fit w-full mobile:mt-0 xs:mt-10 mt-3">
+              <div className=" flex flex-col gap-y-0 ">
+                <div className="border-2 border-transparent flex-col shadow-lg xs:px-8 px-4 xxxs:pt-8 pt-5 rounded-lg">
+                  <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                    {type}
+                  </div>
+
+                  <div className="flex gap-2 text-primary midxl:text-[44px] xxs:text-[36px] text-[30px] font-semibold midxl:-translate-y-3 -translate-y-2">
+                    <div>{minDuration}</div>
+                    {maxDuration != "null" && (
+                      <div>
+                        {" - "} {maxDuration}
+                      </div>
+                    )}
+                    <div>hours</div>
+                  </div>
                 </div>
-                <div className="text-primary text-[84px] font-semibold -translate-y-6">
-                  $ {discountedPrice}
-                </div>
-                <div className="text-[24px] font-semibold -translate-y-12">
-                  Per Person
+
+                <div className="border-2 border-transparent xs:px-8 px-4 xs:py-8 py-5  rounded-lg">
+                  <div className="flex gap-3 ">
+                    <div className="midxl:text-[24px] xxs:text-[22px] text-[20px] font-serif ">
+                      Per Person
+                    </div>
+                    {initialPrice != "null" && (
+                      <div className="line-through midxl:text-[24px] xxs:text-[22px] text-[20px] font-semibold">
+                        $ {initialPrice}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="text-primary midxl:text-[84px] xxs:text-[70px] text-[50px] font-semibold leading-[80px] xxs:translate-y-0 -translate-y-3 ">
+                    $ {discountedPrice}
+                  </div>
                 </div>
               </div>
             </div>
