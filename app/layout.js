@@ -49,11 +49,11 @@ export default function RootLayout({ children }) {
         />
 
         <TourContextProvider>
-          <div className=" relative flex flex-col min-h-[100vh] ">
+          <div className="  relative  min-h-[100vh]   w-full">
             <NavBar />
 
             <FoloatingActionBtn />
-            <main className="min-h-[23vh] xs:mt-[80px] mt-[60px]">
+            <main className="min-h-[23vh] xs:mt-[80px] mt-[60px] px-0">
               {children}
             </main>
 
