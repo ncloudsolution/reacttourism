@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import { MdOutlineDateRange } from "react-icons/md";
 
-const CustomTrainDatePicker = ({ selectedDate, onChange }) => {
+const CustomDayTourDatePicker = ({ selectedDate, onChange }) => {
   const datePickerRef = useRef(null);
 
   const handleOuterDivClick = () => {
@@ -16,7 +16,7 @@ const CustomTrainDatePicker = ({ selectedDate, onChange }) => {
 
   return (
     <div
-      className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full  shadow-md rounded border-[1px] border-black flex justify-between"
+      className="px-3 py-1 sm:text-[16px] text-[14px] outline-none   w-full  rounded border-[1px] border-black bg-white flex justify-between"
       onClick={handleOuterDivClick}
     >
       <DatePicker
@@ -26,6 +26,7 @@ const CustomTrainDatePicker = ({ selectedDate, onChange }) => {
         onChange={onChange}
         minDate={new Date()}
         calendarClassName="date-style"
+        placeholderText="Select a Date"
       />
 
       <MdOutlineDateRange className="text-[20px]" />
@@ -33,4 +34,4 @@ const CustomTrainDatePicker = ({ selectedDate, onChange }) => {
   );
 };
 
-export default CustomTrainDatePicker;
+export default CustomDayTourDatePicker;

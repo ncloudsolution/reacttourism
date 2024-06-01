@@ -1,3 +1,4 @@
+import DayTripsForm from "@/components/DayTripsFoRm";
 import Image from "next/image";
 import React from "react";
 
@@ -36,7 +37,7 @@ const DayTripDetails = ({ params, searchParams }) => {
 
       <Image alt="" src={searchParams.img} width={300} height={300} /> */}
       <div className="flex w-full justify-center xs:my-10 my-2">
-        <div className="flex flex-col  midxl:w-[1320px] mobile:w-[1100px] border-2 border-transparent rounded-md p-5 ">
+        <div className="flex flex-col  midxl:w-[1320px] mobile:w-[1100px] border-2 border-transparent rounded-md xxs:py-7 xxs:px-7 py-5 px-5">
           {/**heading**/}
           <div className="text-slate-600 text-[16px] font-semibold uppercase translate-y-1 mb-2 bxs:mb-0">
             Day Trip
@@ -108,6 +109,10 @@ const DayTripDetails = ({ params, searchParams }) => {
                 </div>
               </div>
             </div>
+          </div>
+          {/**form area**/}
+          <div>
+            <DayTripsForm />
           </div>
         </div>
       </div>
