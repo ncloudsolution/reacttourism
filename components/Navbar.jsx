@@ -50,8 +50,8 @@ function NavBar() {
   return (
     <div>
       {/* <nav class="w-full bg-gradient-to-r from-white from-40% to-primary bg-opacity-100 fixed top-0 left-0 right-0 z-10 "> */}
-      <nav class="w-full  bg-primary xs:h-[80px] h-[60px] bg-opacity-100 fixed top-0 left-0 right-0 z-10 ">
-        <div className="bg-white midxl:w-[35%] md:w-[30%] xs:w-[40%] xxs:w-[50%] w-[60%] -translate-x-10 skew-x-[-30deg] absolute xs:h-[80px] h-[60px] z-20 shadow-navshadow">
+      <nav class="  bg-primary xs:h-[80px] h-[60px] bg-opacity-100 fixed top-0 left-0 right-0 z-30 w-[100vw]">
+        <div className="bg-white midxl:w-[35%] md:w-[30%] xs:w-[45%] xxs:w-[50%] w-[60%] -translate-x-10 skew-x-[-30deg] absolute xs:h-[80px] h-[60px] z-20 shadow-navshadow">
           <a href="/" className="h-full">
             <Image
               className="xs:w-[120px]  w-[80px] py-2 h-full z-30 skew-x-[30deg] midxl:translate-x-20 translate-x-16"

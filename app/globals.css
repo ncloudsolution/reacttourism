@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  body {
+    @apply p-0 m-0 box-border;
+  }
+
   h1 {
     @apply text-3xl md:text-4xl mr-[10%] ml-[10%] py-1  font-serif;
   }

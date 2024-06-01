@@ -43,7 +43,7 @@ const Activities = () => {
   return (
     <section className="pt-[30px] pb-[30px]">
       <div className="container mx-auto">
-        <div className="-mx-4 flex flex-wrap">
+        <div className=" flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[600px] text-center">
               <Title title={"Top Activities in Sri Lanka"} />
@@ -52,7 +52,7 @@ const Activities = () => {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap justify-center">
+        <div className=" flex flex-wrap justify-center">
           <Activity name="Yala National Park" imageSrc={destination1} />
           <Activity name="Sigiriya" imageSrc={destination2} />
           <Activity name="Kandy" imageSrc={destination3} />

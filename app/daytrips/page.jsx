@@ -1,4 +1,5 @@
 import DayTrips from "@/components/DayTrips";
+
 import React from "react";
 
 export const metadata = {
