@@ -1,20 +1,34 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
 import CustomDayTourDatePicker from "./CustomDayTourDatePicker";
+import { TourContext } from "@/context/TourContextProvider";
 
-const DayTripsForm = () => {
+const DayTripsForm = ({ planPrice }) => {
+  const { tourDetails, setTourDetails } = useContext(TourContext);
+
   const [mobValue, setMobValue] = useState();
   const [date, setDate] = useState();
+
+  const [noOfAdults, setNoOfAdults] = useState(1);
+  const [noOfKids, setNoOfKids] = useState(0);
+
+  useEffect(() => {
+    console.log(noOfAdults, "no");
+  }, [noOfAdults]);
 
   const cusMobileRef = useRef();
   async function handleSubmit(e) {
     e.preventDefault();
   }
+
   return (
     <div className="bxs:mt-5 mt-0 w-full bg-white ">
+      <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold mb-7">
+        Booking
+      </div>
       <form
         className=" flex mobile:flex-row flex-col w-full mobile:gap-0 gap-5 "
         onSubmit={handleSubmit}
@@ -90,11 +104,45 @@ const DayTripsForm = () => {
             </div>
             <div className="flex sm:flex-row flex-col w-full">
               <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
-                Passenger Count
+                Adult Count
               </div>
               <input
+                onChange={(e) => {
+                  let value = parseInt(e.target.value, 10);
+                  if (value < 1) {
+                    setNoOfAdults(1);
+                  } else {
+                    setNoOfAdults(value);
+                  }
+                }}
+                defaultValue={1}
+                value={noOfAdults}
+                min="1"
                 type="number"
-                min="3"
+                className="flex-1 px-3 py-1 rounded border-[1px] border-black outline-none sm:text-[16px] text-[14px]"
+                placeholder="Pssenger Count"
+              />
+            </div>
+            <div className="flex sm:flex-row flex-col w-full">
+              <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                Kids Count{" "}
+                <span className="text-[14px] text-slate-400 font-normal">
+                  (under 11y)
+                </span>
+              </div>
+              <input
+                onChange={(e) => {
+                  let value = parseInt(e.target.value, 10);
+                  if (value < 1) {
+                    setNoOfKids(0);
+                  } else {
+                    setNoOfKids(value);
+                  }
+                }}
+                defaultValue={0}
+                value={noOfKids}
+                min="1"
+                type="number"
                 className="flex-1 px-3 py-1 rounded border-[1px] border-black outline-none sm:text-[16px] text-[14px]"
                 placeholder="Pssenger Count"
               />
@@ -102,10 +150,25 @@ const DayTripsForm = () => {
           </div>
         </div>
         <div className="flex flex-1 justify-center items-center">
-          <div className="flex flex-col w-full mobile:w-fit bg-primary gap-3 xs:px-24 px-10 mobile:py-5 py-10 rounded-lg">
+          <div className="flex flex-col w-full mobile:w-fit bg-primary gap-3 xs:px-20 px-10 mobile:py-5 py-10 rounded-lg">
             <div>
-              <div className="text-[20px]">Tour Price</div>
-              <div className="text-[40px] leading-[40px]">Tour Price</div>
+              <div className="text-[20px]">Tour Price </div>
+              <div className="text-[25px] xxxs:text-[30px] xxs:text-[35px] xs:text-[40px] leading-[40px]">
+                {tourDetails.converedCurrencySymbol}{" "}
+                {(
+                  parseFloat(
+                    planPrice *
+                      tourDetails.conversionRate *
+                      (isNaN(noOfAdults) || noOfAdults < 1 ? 1 : noOfAdults)
+                  ) +
+                  parseFloat(
+                    0.5 *
+                      planPrice *
+                      tourDetails.conversionRate *
+                      (isNaN(noOfKids) || noOfKids < 1 ? 0 : noOfKids)
+                  )
+                ).toFixed(2)}
+              </div>
             </div>
 
             <input
