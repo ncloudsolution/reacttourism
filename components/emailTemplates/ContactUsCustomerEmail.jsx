@@ -372,7 +372,7 @@ export const ContactUsCustomerEmail = ({ ContactusDetails }) => {
                             backgroundColor: "#1877F2",
                             margin: "0px 0px 0px 5px",
                           }}
-                          href={`https://www.facebook.com/tourbookingsrilankan`}
+                          href={`https://web.facebook.com/easycabandtours?mibextid=ZbWKwL&_rdc=1&_rdr`}
                         >
                           Facebook
                         </Button>

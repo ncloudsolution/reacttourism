@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { render } from "@react-email/render";
 
 import DayTripOwner from "@/components/emailTemplates/DayTripOwner";
+import DayTripCustomer from "@/components/emailTemplates/DayTripCustomer";
 
 export async function POST(request) {
   try {
@@ -22,9 +23,9 @@ export async function POST(request) {
     const newCompHtmlforOwner = render(
       <DayTripOwner dayTripDetails={dayTripDetails} />
     );
-    // const newCompHtmlforCustomer = render(
-    //   <CustomerEmail dayTripDetails={dayTripDetails} />
-    // );
+    const newCompHtmlforCustomer = render(
+      <DayTripCustomer dayTripDetails={dayTripDetails} />
+    );
 
     const mailOptionsTo = {
       from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
@@ -34,17 +35,17 @@ export async function POST(request) {
       html: newCompHtmlforOwner,
     };
 
-    // const mailOptionsClient = {
-    //   from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
-    //   to: clientmail,
-    //   subject: "Here's your new day trip ride from Tour Booking Sri Lanka",
-    //   html: newCompHtmlforCustomer, // Assuming you want to send the same text; adjust if different
-    // };
+    const mailOptionsClient = {
+      from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
+      to: clientmail,
+      subject: "Here's your new day trip ride from Tour Booking Sri Lanka",
+      html: newCompHtmlforCustomer, // Assuming you want to send the same text; adjust if different
+    };
 
     // Send the email to the main recipient
     await transporter.sendMail(mailOptionsTo);
     // Send the email to the client
-    // await transporter.sendMail(mailOptionsClient);
+    await transporter.sendMail(mailOptionsClient);
 
     return NextResponse.json(
       { message: "Order completed Successfully" },

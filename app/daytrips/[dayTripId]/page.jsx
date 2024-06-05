@@ -165,7 +165,10 @@ const DayTripDetails = ({ params, searchParams }) => {
 
           {/**form area**/}
           <div>
-            <DayTripsForm planPrice={discountedPrice} />
+            <DayTripsForm
+              planPrice={discountedPrice}
+              trip={decodedDescription}
+            />
           </div>
         </div>
       </div>

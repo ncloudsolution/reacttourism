@@ -10,10 +10,11 @@ import SuccessSubmission from "./loaders&Responses/SuccessSubmission";
 import FailedSubmission from "./loaders&Responses/FailedSubmission";
 import success from "@/public/Others/successImg.jpg";
 
-const DayTripsForm = ({ planPrice }) => {
+const DayTripsForm = ({ planPrice, trip }) => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
   const [mobValue, setMobValue] = useState();
+  const [whatsappMobValue, setWhatsappMobValue] = useState();
   const [date, setDate] = useState();
 
   const [noOfAdults, setNoOfAdults] = useState(1);
@@ -28,6 +29,7 @@ const DayTripsForm = ({ planPrice }) => {
   const EmailRef = useRef(null);
   const NicPassportRef = useRef(null);
   const cusMobileRef = useRef();
+  const cusWhatsappRef = useRef();
 
   const loadingSectionRef = useRef(null);
 
@@ -48,6 +50,7 @@ const DayTripsForm = ({ planPrice }) => {
     if (
       date === "" ||
       mobValue == "" ||
+      whatsappMobValue == "" ||
       NameRef.current.value === "" ||
       EmailRef.current.value === "" ||
       NicPassportRef.current.value === "" ||
@@ -68,13 +71,16 @@ const DayTripsForm = ({ planPrice }) => {
     //lock the scrolling of the browser
 
     const dayTripDetails = {
-      pickUpDate: date,
+      pickUpDate: date.toDateString(),
+      selectedTrip: trip,
       cusName: NameRef.current.value,
       cusEmail: EmailRef.current.value,
       CusNicPassport: NicPassportRef.current.value,
       cusMobileNo: mobValue,
+      cusWhatsappNo: whatsappMobValue,
       noOfAdults: noOfAdults,
       noOfKids: noOfKids,
+      selectedCurrencyType: tourDetails.currencyType,
       selectedCurrencySymbol: tourDetails.converedCurrencySymbol,
       totalPriceInSelectedCurrency: (
         parseFloat(
@@ -239,6 +245,32 @@ const DayTripsForm = ({ planPrice }) => {
                     />
                   </div>
                 </div>
+                <div className="flex sm:flex-row flex-col w-full ">
+                  <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                    Whatsapp No
+                  </div>
+
+                  <div className="flex-row flex-1 px-3 py-1 rounded border-[1px] border-black outline-none bg-white">
+                    <PhoneInput
+                      international
+                      countryCallingCodeEditable={false}
+                      placeholder="77 123 4568"
+                      defaultCountry="LK"
+                      value={whatsappMobValue}
+                      onChange={setWhatsappMobValue}
+                      className="PhoneInputInput"
+                      ref={cusWhatsappRef}
+                      error={
+                        whatsappMobValue
+                          ? isValidPhoneNumber(whatsappMobValue)
+                            ? undefined
+                            : "Invalid phone number"
+                          : "Phone number required"
+                      }
+                    />
+                  </div>
+                </div>
+
                 <div className="flex sm:flex-row flex-col w-full">
                   <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
                     Adult Count
