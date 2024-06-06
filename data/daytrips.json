@@ -5,9 +5,33 @@
     "minduration": 8.5,
     "maxduration": null,
     "description": "Arugambay to Yala: Wild Safari + Drop-off Flexibility",
-    "initialPrice": 234.77,
-    "discountedPrice": 206.6,
-    "tags": ["Small Groups", "Pickup available"]
+    "initialPrice": 70583.44,
+    "discountedPrice": 62114.15,
+    "tags": ["Small Groups", "Pickup available"],
+    "experience": [
+      {
+        "heading": "Pickup Location Options",
+        "text": "Colombo, Gampaha"
+      },
+      {
+        "heading": "Jeep / SUV",
+        "text": "(4 hours)"
+      },
+      {
+        "heading": "Yala National Park",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing, Game drive, Safety briefing, Sunrise, Wildlife viewing (4.5 hours)"
+      },
+      {
+        "heading": "Finish at",
+        "text": "Tissamaharama"
+      }
+    ],
+    "fullDescriptionParas": [
+      "Set out on an enthralling journey with Arugambay Agenda’s Half-Day Wild Safari to Yala National Park from Arugambay. Begin your adventure in the morning aboard our comfortable and secure 4x4 vehicle, heading towards the captivating wilderness of Yala. Upon arrival, brace yourself for an immersive safari experience, promising the same excitement and natural marvels witnessed in our acclaimed safari adventures.",
+      "Explore the heart of Yala’s untamed terrain, encountering a diverse array of wildlife and mesmerizing landscapes. Our expert driver ensures close encounters with the park’s vibrant flora and fauna, guaranteeing an exhilarating safari adventure. Witness the natural habitats of leopards, elephants, and a rich birdlife, creating lasting memories of this wild paradise.",
+      "After an exciting expedition, your journey concludes, leaving you with cherished sightings and incredible experiences from Yala. Choose to return to Arugambay or opt for a convenient drop-off location.",
+      "Join us for an unforgettable Half-Day Wild Safari in Yala National Park, where every moment promises thrilling encounters and a profound connection with nature’s wonders."
+    ]
   },
   {
     "type": "water activity",
@@ -16,8 +40,30 @@
     "maxduration": null,
     "description": "Galle and Bentota Day-Tour From Colombo",
     "initialPrice": null,
-    "discountedPrice": 60,
-    "tags": ["Pickup available"]
+    "discountedPrice": 18038.96,
+    "tags": ["Pickup available"],
+    "experience": [
+      {
+        "heading": "Pickup Location Options",
+        "text": "Colombo, Gampaha"
+      },
+      {
+        "heading": "Jeep / SUV",
+        "text": "(4 hours)"
+      },
+      {
+        "heading": "Madu River",
+        "text": "Photo stop, Boat riding, Guided tour, Sightseeing,  (3 hours)"
+      },
+      {
+        "heading": "Finish at",
+        "text": "Galle"
+      }
+    ],
+    "fullDescriptionParas": [
+      "After being picked up at your hotel, hop onboard your Madu Ganga Magrove boat safari and explore the Madu River. See the mangrove forests and marshlands that surround the river. Stop at a cinnamon garden, and try some of the area’s famous cinnamon. The Madu Ganga River region is home to some of the best quality cinnamon in the world as well as a flourishing cinnamon industry. Afterward, marvel at the fishermen who stoically sit atop large branches planted in the middle of the water waiting for their catch.",
+      "Continue to a local Turtle Hatchery, where your guide will introduce you to the many local varieties of turtles. End your tour with a visit to the Galle Fort, a UNESCO World Heritage Site. This fort illustrates the unique interaction of European architecture and South Asian traditions from the 16th to the 19th centuries. After discovering the fort, you will be returned to your hotel in Colombo"
+    ]
   },
   {
     "type": "day trip",
@@ -25,8 +71,8 @@
     "minduration": 14,
     "maxduration": 16,
     "description": "From Colombo: Sigiriya and Dambulla Day Trip and Safari",
-    "initialPrice": 70,
-    "discountedPrice": 63,
+    "initialPrice": 21045.45,
+    "discountedPrice": 18940.91,
     "tags": ["Pickup available"]
   },
   {
@@ -35,8 +81,8 @@
     "minduration": 6,
     "maxduration": 10,
     "description": "Udawalawe: Private Safari All Inclusive Day Trip with Lunch",
-    "initialPrice": 118,
-    "discountedPrice": 112.1,
+    "initialPrice": 35476.62,
+    "discountedPrice": 33702.79,
     "tags": ["Pickup available"]
   },
   {
@@ -46,7 +92,7 @@
     "maxduration": null,
     "description": "Mirissa: Snorkeling Experience with Turtles",
     "initialPrice": null,
-    "discountedPrice": 32.63,
+    "discountedPrice": 9810.19,
     "tags": ["Small Groups", "Pickup available"]
   },
   {
@@ -56,7 +102,7 @@
     "maxduration": null,
     "description": "Whale and Dolphin Watching Trincomalee",
     "initialPrice": null,
-    "discountedPrice": 48.33,
+    "discountedPrice": 14530.38,
     "tags": ["Skip the line"]
   },
   {
@@ -66,7 +112,7 @@
     "maxduration": null,
     "description": "From Colombo: Sigiriya and Dambulla Day Trip and Safari",
     "initialPrice": null,
-    "discountedPrice": 108.91,
+    "discountedPrice": 32743.72,
     "tags": ["Skip the line"]
   },
   {
@@ -76,7 +122,7 @@
     "maxduration": null,
     "description": "Udawalawe: Private Safari All Inclusive Day Trip with Lunch",
     "initialPrice": null,
-    "discountedPrice": 37.98,
+    "discountedPrice": 11418.66,
     "tags": ["Pickup available"]
   }
 ]

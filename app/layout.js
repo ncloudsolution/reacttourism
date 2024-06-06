@@ -3,7 +3,7 @@ import "./globals.css";
 
 import AbsoluteFooter from "@/components/AbsoluteFooter";
 import NavBar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import TourContextProvider from "../context/TourContextProvider";
 import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDown";
 import UpperFooter from "@/components/UpperFooter";
@@ -57,7 +57,6 @@ export default function RootLayout({ children }) {
               {children}
             </main>
 
-            {/* <Footer /> */}
             <UpperFooter />
             <AbsoluteFooter />
           </div>

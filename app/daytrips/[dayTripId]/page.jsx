@@ -1,5 +1,11 @@
+import CurrencyFullBar from "@/components/CurrencyFullBar";
+import DayTripsForm from "@/components/DayTripsForm";
+import DayTripsPriceCrad from "@/components/DayTripsPriceCrad";
+import { GetDescriptionParaData } from "@/libs/JsonDataCatching";
 import Image from "next/image";
 import React from "react";
+import { FaLocationDot } from "react-icons/fa6";
+import { GoDotFill } from "react-icons/go";
 
 const DayTripDetails = ({ params, searchParams }) => {
   const decodedDescription = decodeURIComponent(params.dayTripId);
@@ -15,6 +21,14 @@ const DayTripDetails = ({ params, searchParams }) => {
   const decodedTagsString = decodeURIComponent(allTags);
   const tagsArray = decodedTagsString.split(",");
   console.log(tagsArray); // Output: ["Small Groups", "Pickup available"]
+
+  const allExperience = searchParams.experience; //plain text from frontend
+  const decodedExperience = decodeURIComponent(allExperience); // decode
+  const experienceArray = JSON.parse(decodedExperience); //convert it to again json format
+  console.log(experienceArray);
+
+  const DescriptionParagraph = GetDescriptionParaData(decodedDescription);
+  console.log(DescriptionParagraph);
 
   return (
     <>
@@ -35,10 +49,11 @@ const DayTripDetails = ({ params, searchParams }) => {
       </div>
 
       <Image alt="" src={searchParams.img} width={300} height={300} /> */}
-      <div className="flex w-full justify-center xs:my-10 my-2">
-        <div className="flex flex-col  midxl:w-[1320px] mobile:w-[1100px] border-2 border-transparent rounded-md p-5 ">
+      <CurrencyFullBar />
+      <div className="flex w-full justify-center xs:my-5 my-2">
+        <div className="flex flex-col  midxl:w-[1320px] mobile:w-[1100px] border-2 border-transparent rounded-md xxs:pb-7 xxs:px-7 pb-5 px-5">
           {/**heading**/}
-          <div className="text-slate-600 text-[16px] font-semibold uppercase translate-y-1 mb-2 bxs:mb-0">
+          <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold translate-y-1 mb-2 bxs:mb-0">
             Day Trip
           </div>
           {/**name of package**/}
@@ -90,24 +105,70 @@ const DayTripDetails = ({ params, searchParams }) => {
                   </div>
                 </div>
 
-                <div className="border-2 border-transparent xs:px-8 px-4 xs:py-8 py-5  rounded-lg">
-                  <div className="flex gap-3 ">
-                    <div className="midxl:text-[24px] xxs:text-[22px] text-[20px] font-serif ">
-                      Per Person
-                    </div>
-                    {initialPrice != "null" && (
-                      <div className="line-through midxl:text-[24px] xxs:text-[22px] text-[20px] font-semibold">
-                        $ {initialPrice}
-                      </div>
-                    )}
-                  </div>
+                <DayTripsPriceCrad
+                  initialPrice={initialPrice}
+                  discountedPrice={discountedPrice}
+                />
+              </div>
+            </div>
+          </div>
 
-                  <div className="text-primary midxl:text-[84px] xxs:text-[70px] text-[50px] font-semibold leading-[80px] xxs:translate-y-0 -translate-y-3 ">
-                    $ {discountedPrice}
-                  </div>
+          {/**description& experince area**/}
+          <div className="mobile:mt-7 bxs:mt-3 mt-0 flex mobile:flex-row flex-col items-start">
+            <div className="midxl:w-[700px] mobile:w-[500px] w-full ">
+              <div className="flex flex-col gap-2  w-full">
+                <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                  Description
+                </div>
+                <div className="my-2 ">
+                  {DescriptionParagraph.map((des, index) => (
+                    <div key={index}>
+                      <div className=" md:text-[15px] text-[14px]  w-full py-2">
+                        {des}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+            <div className="flex flex-col flex-1 justify-center mobile:ml-[100px] xs:w-fit w-full mobile:mt-0 xs:mt-10 mt-3">
+              <div className=" flex flex-col gap-y-0 ">
+                <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                  Experience
+                </div>
+                <div className="flex  flex-col gap-5 my-7 relative">
+                  <div className="border-dashed border-[1px] border-black absolute flex flex-col h-[85%] left-[18px] -z-10"></div>
+                  {experienceArray.map((experience, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="bg-black text-primary rounded-full size-[40px]  flex justify-center items-center font-semibold xxs:text-[18px] text-[16px] ">
+                        {index == 0 || index == experienceArray.length - 1 ? (
+                          <FaLocationDot />
+                        ) : (
+                          <GoDotFill />
+                        )}
+                      </div>
+
+                      <div className="flex flex-col flex-1">
+                        <div className="pb-2 font-semibold xxs:text-[16px] text-[14px]">
+                          {experience.heading}
+                        </div>
+                        <div className="xxs:text-[14px] text-[12px] w-full xs:w-3/4">
+                          {experience.text}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/**form area**/}
+          <div>
+            <DayTripsForm
+              planPrice={discountedPrice}
+              trip={decodedDescription}
+            />
           </div>
         </div>
       </div>

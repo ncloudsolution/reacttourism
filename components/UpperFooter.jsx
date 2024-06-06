@@ -96,7 +96,7 @@ const UpperFooter = () => {
                 </Link>
                 <Link
                   target="_blank"
-                  href="https://www.facebook.com/tourbookingsrilankan"
+                  href="https://web.facebook.com/easycabandtours?mibextid=ZbWKwL&_rdc=1&_rdr"
                   className="xs:size-[50px] size-[45px]   rounded-full bg-primary flex justify-center items-center"
                 >
                   <FaFacebookF className="text-white text-[25px]" />

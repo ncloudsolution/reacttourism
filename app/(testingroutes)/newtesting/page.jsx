@@ -1,20 +1,4 @@
-import First from "@/components/testingComponents/First";
-import MainMapConfigs from "@/components/Map/PointToPointMap";
-import React, { useContext } from "react";
-import TimeChecker from "@/components/testingComponents/TimeChecker";
-import CustomTrainDropDown from "@/components/standalone/CustomTrainDropDown";
-import CustomHighwayDropDown from "@/components/standalone/CustomHighwayDropDown";
-import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDown";
-import BlankContext from "@/components/Exceptions/BlankContext";
-import NewComp from "@/components/testingComponents/NewComp";
-import OwnerEmail from "@/components/emailTemplates/OwnerEmail";
-import TestingMail from "@/components/emailTemplates/TestingMail";
-import { TourContext } from "@/context/TourContextProvider";
-import Flow from "@/components/standalone/Flow";
-import Processing from "@/components/loaders&Responses/Processing";
-import SuccessSubmission from "@/components/loaders&Responses/SuccessSubmission";
-import FailedSubmission from "@/components/loaders&Responses/FailedSubmission";
-import LoadingComponent from "@/components/loaders&Responses/LoadingComponent";
+import React from "react";
 
 const newtesting = () => {
   const tourDetails = {
@@ -48,12 +32,7 @@ const newtesting = () => {
     totalPrice: 1,
     totalPriceInLkr: 1,
   };
-  return (
-    <div>
-      {/* <TestingMail tourDetails={tourDetails} /> */}
-      <LoadingComponent />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default newtesting;

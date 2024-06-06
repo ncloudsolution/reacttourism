@@ -1,24 +1,20 @@
+import React from "react";
 import {
-  Body,
-  Button,
-  Container,
-  Column,
-  Head,
-  Heading,
   Html,
-  Img,
+  Head,
   Preview,
-  Row,
+  Body,
+  Img,
+  Container,
   Section,
+  Row,
+  Column,
+  Heading,
   Text,
+  Button,
 } from "@react-email/components";
-import * as React from "react";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "";
-
-export const CustomerEmail = ({ tourDetails }) => {
+const DayTripCustomer = ({ dayTripDetails }) => {
   return (
     <Html>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,10 +23,6 @@ export const CustomerEmail = ({ tourDetails }) => {
       <Body style={main}>
         <Container style={{ padding: "10px 20px" }}>
           <Container style={container}>
-            {/* <Section style={logo}>
-        <Img src={`${baseUrl}/static/yelp-logo.png`} />
-      </Section> */}
-
             <Section>
               <Row style={{ padding: "10px 20px" }}>
                 <Column>
@@ -53,12 +45,12 @@ export const CustomerEmail = ({ tourDetails }) => {
 
             <Section style={content}>
               {/* <Row>
-          <Img
-            style={image}
-            width={620}
-            src={`${baseUrl}/static/yelp-header.png`}
-          />
-        </Row> */}
+              <Img
+                style={image}
+                width={620}
+                src={`${baseUrl}/static/yelp-header.png`}
+              />
+            </Row> */}
 
               <Row
                 style={{
@@ -70,21 +62,6 @@ export const CustomerEmail = ({ tourDetails }) => {
                 }}
               >
                 <Column>
-                  {/* <Heading
-              style={{
-                fontSize: 24,
-                fontWeight: "bold",
-                textAlign: "center",
-                paddingBottom: "15px",
-                borderBottom: "4px solid #eab308",
-                color: "black",
-                width: "fit-content",
-                margin: "10px auto",
-              }}
-            >
-              Thank You
-            </Heading> */}
-
                   <Row>
                     <Img
                       style={{ paddingBottom: 10, margin: "0 auto" }}
@@ -117,148 +94,110 @@ export const CustomerEmail = ({ tourDetails }) => {
                       marginBottom: 30,
                     }}
                   >
-                    Here&apos;s your tour details
+                    Here&apos;s your tour day trip details
                   </Heading>
-                  {/* <Heading
-              as="h2"
-              style={{
-                fontSize: 26,
-                fontWeight: "bold",
-                textAlign: "center",
-              }}
-            >
-              We noticed a recent login to your Yelp account.
-            </Heading> */}
-                  <Row style={{ marginTop: 20, width: "680px" }}>
-                    <Column style={{ paddingRight: 20 }}>
-                      {/**IDENTITY DETAILS**/}
 
+                  <Row style={{ marginTop: 20, width: "680px" }}>
+                    <Column
+                      style={{
+                        ...section,
+                        width: 380,
+                        margin: 0,
+                      }}
+                    >
+                      {/**JOURNEY DETAILS**/}
+                      <Section style={{ ...section, marginBottom: 20 }}>
+                        <Text style={paragraph}>
+                          <b>Selected Day Trip : </b>
+                          {dayTripDetails.selectedTrip}
+                        </Text>
+                        <Text style={paragraph}>
+                          <b>Pickup Date : </b>
+                          {dayTripDetails.pickUpDate}
+                        </Text>
+                      </Section>
+
+                      {/**IDENTITY DETAILS**/}
                       <Text style={paragraph}>
                         <b>Customer Name : </b>
-                        {tourDetails.customerName}
+                        {dayTripDetails.cusName}
                       </Text>
                       <Text style={paragraph}>
                         <b>Customer Email : </b>
-                        {tourDetails.customerEmail}
+                        {dayTripDetails.cusEmail}
                       </Text>
                       <Text style={paragraph}>
                         <b>Mobile No : </b>
-                        {tourDetails.customerMobileNo}
+                        {dayTripDetails.cusMobileNo}
                       </Text>
-
-                      {/**TOTAL SECTION**/}
-
-                      {/* <Text style={{ ...paragraph, marginTop: 10 }}>
-                        <b>Total Price : </b>
-                        {tourDetails.converedCurrencySymbol} {""}
-                        {tourDetails.totalPrice}
-                      </Text> */}
-
                       <Text style={paragraph}>
-                        <b>Including : </b>
-                        {tourDetails.convertedPrice && (
-                          <span>Vehical Price</span>
-                        )}
-                        {tourDetails.highwayCharge !== 0 && (
-                          <span>, Highway Charges</span>
-                        )}
-
-                        {tourDetails.boardShow != 0 && (
-                          <span>, Board Show</span>
-                        )}
+                        <b>No of Adults : </b>
+                        {dayTripDetails.noOfAdults}
                       </Text>
-
-                      {tourDetails.highwayCharge === 0 ||
-                      tourDetails.boardShow === 0 ? (
-                        <Text style={paragraph}>
-                          <b>Excluding : </b>
-                          {tourDetails.highwayCharge === 0 && (
-                            <span>Highway Charges</span>
-                          )}
-                          {tourDetails.boardShow === 0 && (
-                            <span>, Board Show</span>
-                          )}
-                        </Text>
-                      ) : null}
-
-                      {/**pricing**/}
-                      <div
-                        style={{
-                          ...paragraph,
-                          marginTop: 5,
-                          display: "flex",
-                          width: "fit-content",
-                        }}
-                      >
-                        <span
-                          style={{
-                            backgroundColor: "#eab308",
-                            padding: "10px",
-                            borderRadius: "5px",
-                          }}
-                        >
-                          <b>Total Price in {tourDetails.currencyType} : </b>
-                          <span>
-                            {tourDetails.converedCurrencySymbol} {""}
-                            {tourDetails.totalPrice}
-                          </span>{" "}
-                        </span>
-                      </div>
-
-                      <div
-                        style={{
-                          ...paragraph,
-                          marginTop: 5,
-                          display: "flex",
-                          width: "fit-content",
-                        }}
-                      >
-                        <span
-                          style={{
-                            backgroundColor: "#eab308",
-                            padding: "10px",
-                            borderRadius: "5px",
-                          }}
-                        >
-                          <b>Total Price in LKR : </b>
-                          <span>{`Rs. ${tourDetails.totalPriceInLkr}`}</span>{" "}
-                        </span>
-                      </div>
+                      <Text style={paragraph}>
+                        <b>No of Kids : </b>
+                        {dayTripDetails.noOfKids}
+                      </Text>
                     </Column>
 
                     <Column>
-                      {/**JOURNEY DETAILS**/}
-
-                      <Text style={paragraph}>
-                        <b>Origin : </b>
-                        {tourDetails.origin}
-                      </Text>
-                      <Text style={paragraph}>
-                        <b>Destination : </b>
-                        {tourDetails.destination}
-                      </Text>
-                      <Text style={paragraph}>
-                        <b>Start Date : </b>
-                        {tourDetails.startDate}
-                      </Text>
-                      <Text style={paragraph}>
-                        <b>Start Time : </b>
-                        {tourDetails.startTime}
-                      </Text>
-                      <Text style={paragraph}>
-                        <b>Return Date : </b>
-                        {tourDetails.returnDate}
-                      </Text>
-                      {tourDetails.returnTime && (
-                        <Text style={paragraph}>
-                          <b>Return Time : </b>
-                          {tourDetails.returnTime}
-                        </Text>
-                      )}
-                      <Text style={paragraph}>
-                        <b>Distance : </b>
-                        {tourDetails.distance}
-                      </Text>
+                      {/**TOTAL SECTION**/}
+                      <Section
+                        style={{
+                          ...section,
+                          width: 300,
+                          padding: 20,
+                        }}
+                      >
+                        <div
+                          style={{
+                            ...paragraph,
+                            marginTop: 5,
+                            display: "flex",
+                            width: "fit-content",
+                          }}
+                        >
+                          <span
+                            style={{
+                              backgroundColor: "#eab308",
+                              padding: "10px",
+                              borderRadius: "5px",
+                              marginBottom: 5,
+                            }}
+                          >
+                            <b>
+                              Total Price in{" "}
+                              {dayTripDetails.selectedCurrencyType} :{" "}
+                            </b>
+                            <span>
+                              {dayTripDetails.selectedCurrencySymbol} {""}
+                              {dayTripDetails.totalPriceInSelectedCurrency}
+                            </span>{" "}
+                          </span>
+                        </div>
+                        {dayTripDetails.selectedCurrencyType != "LKR" && (
+                          <div
+                            style={{
+                              ...paragraph,
+                              marginTop: 5,
+                              display: "flex",
+                              width: "fit-content",
+                            }}
+                          >
+                            <span
+                              style={{
+                                backgroundColor: "#eab308",
+                                padding: "10px",
+                                borderRadius: "5px",
+                                marginBottom: 5,
+                              }}
+                            >
+                              <b>Total Price in LKR : </b>
+                              <span>{`Rs ${dayTripDetails.totalPriceInLKR}`}</span>{" "}
+                            </span>
+                          </div>
+                        )}
+                      </Section>
                     </Column>
                   </Row>
 
@@ -426,16 +365,6 @@ export const CustomerEmail = ({ tourDetails }) => {
                     </Row>
                   </Section>
 
-                  {/* <Text
-              style={{
-                color: "rgb(0,0,0, 0.5)",
-                fontSize: 14,
-                marginTop: -5,
-              }}
-            >
-              *Approximate geographic location based on IP address:
-              {tourDetails.converedCurrencySymbol}
-            </Text> */}
                   <Section style={section}>
                     <Heading
                       style={{
@@ -451,11 +380,6 @@ export const CustomerEmail = ({ tourDetails }) => {
                     >
                       Connect The Tour Booking Sri Lanka
                     </Heading>
-
-                    {/* <Text style={{ ...paragraph, marginTop: -5 }}>
-              If this wasn't you or if you have additional questions, please
-              see our support page.
-            </Text> */}
 
                     <Row style={{ width: "680px", maxWidth: "100%" }}>
                       <Column align="center">
@@ -512,14 +436,6 @@ export const CustomerEmail = ({ tourDetails }) => {
               </Row>
             </Section>
 
-            {/* <Section style={containerImageFooter}>
-        <Img
-          style={image}
-          width={620}
-          src={`${baseUrl}/static/yelp-footer.png`}
-        />
-      </Section> */}
-
             <Text
               style={{
                 ...paragraph,
@@ -539,7 +455,7 @@ export const CustomerEmail = ({ tourDetails }) => {
   );
 };
 
-export default CustomerEmail;
+export default DayTripCustomer;
 
 const main = {
   backgroundColor: "#fff",

@@ -55,6 +55,14 @@
 
   .PhoneInputInput {
     outline: none;
+    width: 100%;
+    font-size: 16px;
+
     /* Anything you want  */
+  }
+  @media (max-width: 379px) {
+    .PhoneInputInput {
+      font-size: 14px;
+    }
   }
 }

@@ -5,6 +5,9 @@ import Link from "next/link";
 import success from "@/public/Others/successImg.jpg";
 
 const SuccessSubmission = ({ title, msg, navpath, navtext, img }) => {
+  const handleScrollActive = () => {
+    document.body.style.overflow = "auto";
+  };
   return (
     <div className="min-h-[90vh] flex justify-center items-center">
       <div className="flex flex-col items-center ">
@@ -23,6 +26,7 @@ const SuccessSubmission = ({ title, msg, navpath, navtext, img }) => {
         </div>
 
         <Link
+          onClick={handleScrollActive}
           className=" sm:text-[24px] xxs:text-[20px]  xxxs:text-[18px] text-[16px] bg-primary px-8 py-2 font-semibold rounded mb-5 -translate-y-2 cursor-pointer"
           href="/"
         >
