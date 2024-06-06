@@ -1,41 +1,7 @@
 [
   {
-    "type": "adventure",
-    "img": "/DayTrips/adventureTiger.webp",
-    "minduration": 8.5,
-    "maxduration": null,
-    "description": "Arugambay to Yala: Wild Safari + Drop-off Flexibility",
-    "initialPrice": 70583.44,
-    "discountedPrice": 62114.15,
-    "tags": ["Small Groups", "Pickup available"],
-    "experience": [
-      {
-        "heading": "Pickup Location Options",
-        "text": "Colombo, Gampaha"
-      },
-      {
-        "heading": "Jeep / SUV",
-        "text": "(4 hours)"
-      },
-      {
-        "heading": "Yala National Park",
-        "text": "Photo stop, Visit, Guided tour, Sightseeing, Game drive, Safety briefing, Sunrise, Wildlife viewing (4.5 hours)"
-      },
-      {
-        "heading": "Finish at",
-        "text": "Tissamaharama"
-      }
-    ],
-    "fullDescriptionParas": [
-      "Set out on an enthralling journey with Arugambay Agenda’s Half-Day Wild Safari to Yala National Park from Arugambay. Begin your adventure in the morning aboard our comfortable and secure 4x4 vehicle, heading towards the captivating wilderness of Yala. Upon arrival, brace yourself for an immersive safari experience, promising the same excitement and natural marvels witnessed in our acclaimed safari adventures.",
-      "Explore the heart of Yala’s untamed terrain, encountering a diverse array of wildlife and mesmerizing landscapes. Our expert driver ensures close encounters with the park’s vibrant flora and fauna, guaranteeing an exhilarating safari adventure. Witness the natural habitats of leopards, elephants, and a rich birdlife, creating lasting memories of this wild paradise.",
-      "After an exciting expedition, your journey concludes, leaving you with cherished sightings and incredible experiences from Yala. Choose to return to Arugambay or opt for a convenient drop-off location.",
-      "Join us for an unforgettable Half-Day Wild Safari in Yala National Park, where every moment promises thrilling encounters and a profound connection with nature’s wonders."
-    ]
-  },
-  {
     "type": "water activity",
-    "img": "/DayTrips/waterActivity.webp",
+    "img": "/DayTrips/maduriver.jpg",
     "minduration": 12,
     "maxduration": null,
     "description": "Galle and Bentota Day-Tour From Colombo",
@@ -65,15 +31,85 @@
       "Continue to a local Turtle Hatchery, where your guide will introduce you to the many local varieties of turtles. End your tour with a visit to the Galle Fort, a UNESCO World Heritage Site. This fort illustrates the unique interaction of European architecture and South Asian traditions from the 16th to the 19th centuries. After discovering the fort, you will be returned to your hotel in Colombo"
     ]
   },
+
   {
     "type": "day trip",
-    "img": "/DayTrips/sigiriya.webp",
+    "img": "/DayTrips/kandy.jpg",
+    "minduration": 13,
+    "maxduration": null,
+    "description": "From Colombo : Day Trip to Kandy | Pinnwala | Royal Gardens",
+    "initialPrice": 32000,
+    "discountedPrice": 16000,
+    "tags": ["Pickup available", "New activity"],
+    "experience": [
+      {
+        "heading": "Pickup Location Options",
+        "text": "Negambo, Colombo,"
+      },
+      {
+        "heading": "Kandy",
+        "text": "Visit, Guided tour, Sightseeing (10 hours)"
+      },
+      {
+        "heading": "drop-off locations",
+        "text": "Negambo, Colombo,"
+      }
+    ],
+    "fullDescriptionParas": [
+      "Experience the vibrant culture and natural beauty of Sri Lanka on this captivating tour from Colombo to Kandy. Your journey begins with a visit to the Pinnawala Elephant Orphanage, where you can observe and interact with orphaned elephants as they bathe and play in the river. This heartwarming experience offers a glimpse into the conservation efforts dedicated to protecting these magnificent creatures",
+      "Continue to the Temple of the Tooth in Kandy, a sacred Buddhist site that houses the relic of the tooth of the Buddha. Marvel at the intricate architecture and experience the spiritual atmosphere of this revered temple.",
+      "Next, immerse yourself in the tranquility of the Royal Botanical Gardens in Peradeniya. Explore the vast collection of plants, including orchids, palms, and medicinal plants, while enjoying the peaceful ambiance of this botanical paradise.",
+      "Afterwards, embark on a spice walk in Kandy, where you'll learn about the spices that are integral to Sri Lankan cuisine. Engage your senses as you smell and taste a variety of spices, gaining insight into their flavors and uses.",
+      "Conclude your tour with a visit to a tea factory, where you'll learn about the process of tea production from leaf to cup. Discover the art of tea making and sample some of the finest Ceylon tea",
+      "Finally, make your way to Kandy View Point, where you'll be rewarded with panoramic views of the city and its picturesque surroundings. Capture the breathtaking scenery and create lasting memories of your journey through Sri Lanka.",
+      "The tour will conclude with drop-off at the same location in Colombo where you were picked up."
+    ]
+  },
+  {
+    "type": "day trip",
+    "img": "/DayTrips/sigiriya.jpg",
     "minduration": 14,
     "maxduration": 16,
     "description": "From Colombo: Sigiriya and Dambulla Day Trip and Safari",
-    "initialPrice": 21045.45,
-    "discountedPrice": 18940.91,
-    "tags": ["Pickup available"]
+    "initialPrice": null,
+    "discountedPrice": 19000,
+    "tags": ["Pickup available"],
+    "experience": [
+      {
+        "heading": "Pickup Location Options",
+        "text": "Colombo, Bentota, Kalutara, Hikkaduwa, Galle"
+      },
+      {
+        "heading": "Kurunegala",
+        "text": "Breakfast (30 minutes)"
+      },
+      {
+        "heading": "Dambulla Royal Cave Temple and Golden Temple",
+        "text": "Visit, Sightseeing, Walk, Self-guided tour (1 hour)"
+      },
+      {
+        "heading": "Sigiriya Lion Rock",
+        "text": "Guided tour, Sightseeing, Walk (2 hours)"
+      },
+      {
+        "heading": "Hiriwadunna",
+        "text": "Lunch, Food tasting (2 hours)"
+      },
+      {
+        "heading": "Sigiriya",
+        "text": "Wildlife viewing (2 hours)"
+      },
+      {
+        "heading": "drop-off locations",
+        "text": "Hikkaduwa, Bentota, Kalutara, Colombo, Galle"
+      }
+    ],
+    "fullDescriptionParas": [
+      "Depart Colombo and travel by a shared vehicle, in a small group, to the city of Sigiriya, and head directly to Sigiriya Rock on arrival. Gaze in awe at the massive column of rock that, according to the ancient Sri Lankan chronicle The Culavamsa, was selected by King Kassyapa as the site of his new capital.",
+      "Admire numerous paintings of historic queens, princesses, and maids inside the rock fortress before getting a break for lunch at your own expense. Then, explore some of the traditional crafts of the region, such as wood carving and batik textiles, with time to purchase souvenirs before departing.",
+      "Start the journey back towards Colombo via Dambulla to explore the largest and best-preserved cave temple complex in Sri Lanka. Discover the magnificent Buddha images and rock paintings of vivid colors and different shapes, painted from around the 2nd century B.C. up to the 18th-century Kandyan era",
+      "Optionally Can be done the Wild Life Safari at Eco Park or Kaudulla National Park or Minneriya National park charges for National Park very on Pax Count ( For solo Passengers $ 100 & $ 60 )"
+    ]
   },
   {
     "type": "private tour",
@@ -124,5 +160,39 @@
     "initialPrice": null,
     "discountedPrice": 11418.66,
     "tags": ["Pickup available"]
+  },
+  {
+    "type": "adventure",
+    "img": "/DayTrips/adventureTiger.webp",
+    "minduration": 8.5,
+    "maxduration": null,
+    "description": "Arugambay to Yala: Wild Safari + Drop-off Flexibility",
+    "initialPrice": 70583.44,
+    "discountedPrice": 62114.15,
+    "tags": ["Small Groups", "Pickup available"],
+    "experience": [
+      {
+        "heading": "Pickup Location Options",
+        "text": "Colombo, Gampaha"
+      },
+      {
+        "heading": "Jeep / SUV",
+        "text": "(4 hours)"
+      },
+      {
+        "heading": "Yala National Park",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing, Game drive, Safety briefing, Sunrise, Wildlife viewing (4.5 hours)"
+      },
+      {
+        "heading": "Finish at",
+        "text": "Tissamaharama"
+      }
+    ],
+    "fullDescriptionParas": [
+      "Set out on an enthralling journey with Arugambay Agenda’s Half-Day Wild Safari to Yala National Park from Arugambay. Begin your adventure in the morning aboard our comfortable and secure 4x4 vehicle, heading towards the captivating wilderness of Yala. Upon arrival, brace yourself for an immersive safari experience, promising the same excitement and natural marvels witnessed in our acclaimed safari adventures.",
+      "Explore the heart of Yala’s untamed terrain, encountering a diverse array of wildlife and mesmerizing landscapes. Our expert driver ensures close encounters with the park’s vibrant flora and fauna, guaranteeing an exhilarating safari adventure. Witness the natural habitats of leopards, elephants, and a rich birdlife, creating lasting memories of this wild paradise.",
+      "After an exciting expedition, your journey concludes, leaving you with cherished sightings and incredible experiences from Yala. Choose to return to Arugambay or opt for a convenient drop-off location.",
+      "Join us for an unforgettable Half-Day Wild Safari in Yala National Park, where every moment promises thrilling encounters and a profound connection with nature’s wonders."
+    ]
   }
 ]

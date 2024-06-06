@@ -10,6 +10,8 @@ import { GoDotFill } from "react-icons/go";
 const DayTripDetails = ({ params, searchParams }) => {
   const decodedDescription = decodeURIComponent(params.dayTripId);
 
+  console.log(decodedDescription);
+
   const type = searchParams.type;
   const minDuration = searchParams.minduration;
   const maxDuration = searchParams.maxduration;

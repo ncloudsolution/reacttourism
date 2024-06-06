@@ -252,7 +252,7 @@ const DayTrips = () => {
                         hours
                       </span>
                       {place.tags.map((tag, index) => (
-                        <div key={index} className="flex items-center">
+                        <div key={index} className="flex items-center mx-1">
                           <div className="size-[5px] rounded-full bg-black mr-[6px]" />
                           <div>{tag}</div>
                         </div>
