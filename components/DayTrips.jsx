@@ -35,7 +35,7 @@ const DayTrips = () => {
     { lable: "3-5", minvalue: 3, maxvalue: 5 },
     { lable: "5-7", minvalue: 5, maxvalue: 7 },
     { lable: "Full day (7+ hours)", minvalue: 7, maxvalue: 24 },
-    { lable: "2 days", minvalue: 24, maxvalue: 48 },
+    { lable: "2 days", minvalue: 25, maxvalue: 48 },
   ];
 
   const handleChangeDuration = (e) => {
@@ -120,11 +120,11 @@ const DayTrips = () => {
             {/** duration drop down**/}
             <div className="flex gap-2 w-[300px] h-[40px]  border-primary border-[1px] outline-none my-2 rounded overflow-hidden ">
               <select
-                className="w-full outline-none font-semibold text-primary bg-white"
+                className="w-full outline-none font-semibold text-primary bg-white "
                 onChange={handleChangeDuration}
               >
                 {selectOptions.map((option, index) => (
-                  <option key={index} value={index} className="text-black">
+                  <option key={index} value={index} className="text-black ">
                     {option.lable}
                   </option>
                 ))}
@@ -252,7 +252,7 @@ const DayTrips = () => {
                         hours
                       </span>
                       {place.tags.map((tag, index) => (
-                        <div key={index} className="flex items-center">
+                        <div key={index} className="flex items-center mx-1">
                           <div className="size-[5px] rounded-full bg-black mr-[6px]" />
                           <div>{tag}</div>
                         </div>
@@ -263,14 +263,14 @@ const DayTrips = () => {
                   <div className="flex flex-col border-2 border-transparent">
                     {place.initialPrice && (
                       <div className="font-semibold line-through text-[15px]">
-                        From {tourDetails.converedCurrencySymbol}
+                        From {tourDetails.converedCurrencySymbol}{" "}
                         {(
                           place.initialPrice * tourDetails.conversionRate
                         ).toFixed(2)}
                       </div>
                     )}
                     <div className="text-primary font-semibold text-[15px]">
-                      From {tourDetails.converedCurrencySymbol}
+                      From {tourDetails.converedCurrencySymbol}{" "}
                       {(
                         place.discountedPrice * tourDetails.conversionRate
                       ).toFixed(2)}

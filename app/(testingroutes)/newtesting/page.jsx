@@ -1,3 +1,4 @@
+import CustomHotelDropDown from "@/components/standalone/CustomHotelDropDown";
 import React from "react";
 
 const newtesting = () => {
@@ -32,7 +33,11 @@ const newtesting = () => {
     totalPrice: 1,
     totalPriceInLkr: 1,
   };
-  return <div></div>;
+  return (
+    <div>
+      <CustomHotelDropDown />
+    </div>
+  );
 };
 
 export default newtesting;

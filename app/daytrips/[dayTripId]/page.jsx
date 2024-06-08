@@ -1,7 +1,12 @@
 import CurrencyFullBar from "@/components/CurrencyFullBar";
+import DayTripsDescriptionSection from "@/components/DayTripsDescriptionSection";
 import DayTripsForm from "@/components/DayTripsForm";
 import DayTripsPriceCrad from "@/components/DayTripsPriceCrad";
-import { GetDescriptionParaData } from "@/libs/JsonDataCatching";
+import {
+  GetDescriptionParaData,
+  GetExcludeData,
+  GetIncludeData,
+} from "@/libs/JsonDataCatching";
 import Image from "next/image";
 import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
@@ -9,6 +14,8 @@ import { GoDotFill } from "react-icons/go";
 
 const DayTripDetails = ({ params, searchParams }) => {
   const decodedDescription = decodeURIComponent(params.dayTripId);
+
+  console.log(decodedDescription);
 
   const type = searchParams.type;
   const minDuration = searchParams.minduration;
@@ -29,6 +36,9 @@ const DayTripDetails = ({ params, searchParams }) => {
 
   const DescriptionParagraph = GetDescriptionParaData(decodedDescription);
   console.log(DescriptionParagraph);
+
+  const IncludeArray = GetIncludeData(decodedDescription);
+  const ExcludeArray = GetExcludeData(decodedDescription);
 
   return (
     <>
@@ -116,51 +126,76 @@ const DayTripDetails = ({ params, searchParams }) => {
           {/**description& experince area**/}
           <div className="mobile:mt-7 bxs:mt-3 mt-0 flex mobile:flex-row flex-col items-start">
             <div className="midxl:w-[700px] mobile:w-[500px] w-full ">
-              <div className="flex flex-col gap-2  w-full">
-                <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
-                  Description
-                </div>
-                <div className="my-2 ">
-                  {DescriptionParagraph.map((des, index) => (
-                    <div key={index}>
-                      <div className=" md:text-[15px] text-[14px]  w-full py-2">
-                        {des}
+              <DayTripsDescriptionSection
+                DescriptionParagraph={DescriptionParagraph}
+              />
+              <div className="my-5">
+                <div className="flex flex-col gap-2  w-full">
+                  <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                    Include
+                  </div>
+                  <div className="my-1 ">
+                    {IncludeArray.map((include, index) => (
+                      <div key={index}>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
+                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-black shadow"></div>
+                          <div className="flex flex-1">{include}</div>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="my-5">
+                <div className="flex flex-col gap-2  w-full">
+                  <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                    Exclude
+                  </div>
+                  <div className="my-1 ">
+                    {ExcludeArray.map((exclude, index) => (
+                      <div key={index}>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
+                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-primary shadow"></div>
+                          <div className="flex flex-1">{exclude}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col flex-1 justify-center mobile:ml-[100px] xs:w-fit w-full mobile:mt-0 xs:mt-10 mt-3">
-              <div className=" flex flex-col gap-y-0 ">
-                <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
-                  Experience
-                </div>
-                <div className="flex  flex-col gap-5 my-7 relative">
-                  <div className="border-dashed border-[1px] border-black absolute flex flex-col h-[85%] left-[18px] -z-10"></div>
-                  {experienceArray.map((experience, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="bg-black text-primary rounded-full size-[40px]  flex justify-center items-center font-semibold xxs:text-[18px] text-[16px] ">
-                        {index == 0 || index == experienceArray.length - 1 ? (
-                          <FaLocationDot />
-                        ) : (
-                          <GoDotFill />
-                        )}
-                      </div>
+            {experienceArray.length != 0 && (
+              <div className="flex flex-col flex-1 justify-center mobile:ml-[100px] xs:w-fit w-full mobile:mt-0 xs:mt-10 mt-3">
+                <div className=" flex flex-col gap-y-0 ">
+                  <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                    Experience
+                  </div>
+                  <div className="flex  flex-col gap-5 my-7 relative">
+                    <div className="border-dashed border-[1px] border-black absolute flex flex-col h-[95%] left-[18px] -z-10"></div>
+                    {experienceArray.map((experience, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="bg-black text-primary rounded-full size-[40px]  flex justify-center items-center font-semibold xxs:text-[18px] text-[16px] ">
+                          {index == 0 || index == experienceArray.length - 1 ? (
+                            <FaLocationDot />
+                          ) : (
+                            <GoDotFill />
+                          )}
+                        </div>
 
-                      <div className="flex flex-col flex-1">
-                        <div className="pb-2 font-semibold xxs:text-[16px] text-[14px]">
-                          {experience.heading}
-                        </div>
-                        <div className="xxs:text-[14px] text-[12px] w-full xs:w-3/4">
-                          {experience.text}
+                        <div className="flex flex-col flex-1">
+                          <div className="pb-2 font-semibold xxs:text-[16px] text-[14px]">
+                            {experience.heading}
+                          </div>
+                          <div className="xxs:text-[14px] text-[12px] w-full xs:w-3/4">
+                            {experience.text}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/**form area**/}
