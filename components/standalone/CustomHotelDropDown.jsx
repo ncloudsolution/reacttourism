@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineSearch } from "react-icons/ai";
-import { FaTrain } from "react-icons/fa6";
+import { IoIosBed } from "react-icons/io";
 import hotelList from "@/data/hotelTypes.json";
 import { TourContext } from "@/context/TourContextProvider";
 
@@ -48,7 +48,7 @@ const CustomHotelDropDown = () => {
             ? selected?.length > 25
               ? selected?.substring(0, 25) + "..."
               : selected
-            : "Catch Your Train"}
+            : "Select Your Room Type"}
           <BiChevronDown size={20} className={`${open && "rotate-180"}`} />
         </div>
         <ul
@@ -65,7 +65,7 @@ const CustomHotelDropDown = () => {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value.toLowerCase())}
-              placeholder="Enter Your Favourite hotels"
+              placeholder="Enter Your Favourite Room Type"
               className="placeholder:text-gray-700 placeholder:text-[12px] xs:placeholder:text-[14px] p-2 outline-none w-full"
             />
           </div>
@@ -93,7 +93,7 @@ const CustomHotelDropDown = () => {
                 }
               }}
             >
-              <FaTrain size={15} className="mr-2" />
+              <IoIosBed size={20} className="mr-2" />
               {hotel}
             </li>
           ))}
