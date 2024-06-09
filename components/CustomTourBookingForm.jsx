@@ -10,6 +10,8 @@ import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import CustomTourDatePicker from "./CustomTourDatePicker";
 import CustomHotelDropDown from "./standalone/CustomHotelDropDown";
+import CheckBoxContainer from "./CheckBoxContainer";
+import RadioBtnContainer from "./RadioBtnContainer";
 
 const CustomTourBookingForm = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -67,12 +69,12 @@ const CustomTourBookingForm = () => {
         <>
           {/* <CurrencyFullBar />  */}
           <div className="flex flex-col items-center">
-            <div className="flex flex-col sm:gap-3 gap-2 sm:w-[600px] w-[450px]  mx-[30px] my-[60px]">
-              <div className="text-[35px] text-center mb-8 font-semibold">
+            <div className="flex flex-col sm:gap-3 gap-2 lg:w-[800px] sm:w-[600px] bxs:w-[450px] w-full  px-[30px] sm:my-[60px] my-[30px]">
+              <div className="text-[35px] text-center pb-1 mb-6 font-semibold border-b-[4px] border-primary border-dashed ">
                 Plan Your Own Trip
               </div>
               <div className="flex sm:flex-row flex-col w-full ">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Arrival Date / Time
                 </div>
                 <div className="flex-row flex-1 w-full rounded outline-none ">
@@ -84,7 +86,7 @@ const CustomTourBookingForm = () => {
                 </div>
               </div>
               <div className="flex sm:flex-row flex-col w-full ">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Depature Date / Time
                 </div>
                 <div className="flex-row flex-1 w-full rounded outline-none ">
@@ -96,7 +98,7 @@ const CustomTourBookingForm = () => {
                 </div>
               </div>
               <div className="flex sm:flex-row flex-col w-full">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Passenger Name
                 </div>
                 <input
@@ -107,7 +109,7 @@ const CustomTourBookingForm = () => {
                 />
               </div>
               <div className="flex sm:flex-row flex-col w-full">
-                <div className="w-[200px] sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px] sm:text-[18px] text-[16px] font-semibold">
                   Email
                 </div>
                 <input
@@ -118,7 +120,7 @@ const CustomTourBookingForm = () => {
                 />
               </div>
               <div className="flex sm:flex-row flex-col w-full">
-                <div className="w-[200px] sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px] sm:text-[18px] text-[16px] font-semibold">
                   NIC/Passport No
                 </div>
                 <input
@@ -130,7 +132,7 @@ const CustomTourBookingForm = () => {
               </div>
 
               <div className="flex sm:flex-row flex-col w-full ">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Mobile No
                 </div>
 
@@ -155,7 +157,7 @@ const CustomTourBookingForm = () => {
                 </div>
               </div>
               <div className="flex sm:flex-row flex-col w-full ">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Whatsapp No
                 </div>
 
@@ -181,7 +183,7 @@ const CustomTourBookingForm = () => {
               </div>
 
               <div className="flex sm:flex-row flex-col w-full">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Adult Count
                 </div>
                 <input
@@ -202,7 +204,7 @@ const CustomTourBookingForm = () => {
                 />
               </div>
               <div className="flex sm:flex-row flex-col w-full">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Kids Count{" "}
                   <span className="text-[14px] text-slate-400 font-normal">
                     (under 11y)
@@ -225,8 +227,8 @@ const CustomTourBookingForm = () => {
                   placeholder="Pssenger Count"
                 />
               </div>
-              <div className="flex sm:flex-row flex-col w-full justify-center items-center ">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+              <div className="flex sm:flex-row flex-col w-full justify-center sm:items-center items-start">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Accomodation
                   {/* <span className="text-[14px] text-slate-400 font-normal">
                     (under 11y)
@@ -235,8 +237,24 @@ const CustomTourBookingForm = () => {
                 <CustomHotelDropDown />
               </div>
 
+              <div className="flex sm:flex-row flex-col w-full sm:items-center items-start">
+                <div className="w-[200px] mt-10 sm:mt-0 sm:text-[18px] text-[16px] font-semibold">
+                  Meal Type
+                </div>
+                <div className="sm:mt-0 mt-[2px]">
+                  <RadioBtnContainer />
+                </div>
+              </div>
+
+              <div className="w-full text-center  sm:text-[18px] text-[16px] font-semibold sm:mt-5 mt-10">
+                Places You Would Like To Visit
+              </div>
+              <div className="my-5">
+                <CheckBoxContainer />
+              </div>
+
               <div className="flex sm:flex-row flex-col w-full mt-[6px]">
-                <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Special Request (if any)
                 </div>
                 <textarea
@@ -247,6 +265,12 @@ const CustomTourBookingForm = () => {
                   className="flex-1 px-3 py-1 rounded border-[1px] border-black outline-none w-full sm:text-[16px] text-[14px]"
                 />
               </div>
+
+              <input
+                value="Submit"
+                type="submit"
+                className="flex-1 px-3 py-2 rounded bg-black font-semibold text-white outline-none sm:text-[18px] text-[16px] my-3"
+              />
             </div>
           </div>
         </>

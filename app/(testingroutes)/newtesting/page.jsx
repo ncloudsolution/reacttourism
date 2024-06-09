@@ -1,3 +1,5 @@
+import CheckBoxContainer from "@/components/CheckBoxContainer";
+import RadioBtnContainer from "@/components/RadioBtnContainer";
 import CustomHotelDropDown from "@/components/standalone/CustomHotelDropDown";
 import React from "react";
 
@@ -35,7 +37,7 @@ const newtesting = () => {
   };
   return (
     <div>
-      <CustomHotelDropDown />
+      <RadioBtnContainer />
     </div>
   );
 };
