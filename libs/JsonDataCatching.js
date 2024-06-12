@@ -26,3 +26,12 @@ export function GetExcludeData(title) {
 
   return ExcludeArray;
 }
+
+export function GetPlacesData(title) {
+  // sorting time duration
+  const data = [...daytrips].find((trip) => trip.description === title);
+
+  const PlacesArray = data.places;
+
+  return PlacesArray;
+}

@@ -1,4 +1,5 @@
 import CheckBoxContainer from "@/components/CheckBoxContainer";
+import DayTripTimer from "@/components/DayTripTimer";
 import RadioBtnContainer from "@/components/RadioBtnContainer";
 import CustomHotelDropDown from "@/components/standalone/CustomHotelDropDown";
 import React from "react";
@@ -37,7 +38,7 @@ const newtesting = () => {
   };
   return (
     <div>
-      <RadioBtnContainer />
+      <DayTripTimer />
     </div>
   );
 };

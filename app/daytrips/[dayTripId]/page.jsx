@@ -6,6 +6,7 @@ import {
   GetDescriptionParaData,
   GetExcludeData,
   GetIncludeData,
+  GetPlacesData,
 } from "@/libs/JsonDataCatching";
 import Image from "next/image";
 import React from "react";
@@ -13,6 +14,11 @@ import { FaLocationDot } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
 
 const DayTripDetails = ({ params, searchParams }) => {
+  const NotsuitableArray = [
+    "Pregnant women",
+    "People with back problems",
+    "People with mobility impairments",
+  ];
   const decodedDescription = decodeURIComponent(params.dayTripId);
 
   console.log(decodedDescription);
@@ -39,6 +45,7 @@ const DayTripDetails = ({ params, searchParams }) => {
 
   const IncludeArray = GetIncludeData(decodedDescription);
   const ExcludeArray = GetExcludeData(decodedDescription);
+  const PlacesArray = GetPlacesData(decodedDescription);
 
   return (
     <>
@@ -128,6 +135,7 @@ const DayTripDetails = ({ params, searchParams }) => {
             <div className="midxl:w-[700px] mobile:w-[500px] w-full ">
               <DayTripsDescriptionSection
                 DescriptionParagraph={DescriptionParagraph}
+                PlacesArray={PlacesArray}
               />
               <div className="my-5">
                 <div className="flex flex-col gap-2  w-full">
@@ -163,6 +171,23 @@ const DayTripDetails = ({ params, searchParams }) => {
                   </div>
                 </div>
               </div>
+              <div className="my-5">
+                <div className="flex flex-col gap-2  w-full">
+                  <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                    Not Suitable For
+                  </div>
+                  <div className="my-1 ">
+                    {NotsuitableArray.map((notSuitable, index) => (
+                      <div key={index}>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
+                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-black shadow"></div>
+                          <div className="flex flex-1">{notSuitable}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
             {experienceArray.length != 0 && (
               <div className="flex flex-col flex-1 justify-center mobile:ml-[100px] xs:w-fit w-full mobile:mt-0 xs:mt-10 mt-3">
@@ -171,7 +196,7 @@ const DayTripDetails = ({ params, searchParams }) => {
                     Experience
                   </div>
                   <div className="flex  flex-col gap-5 my-7 relative">
-                    <div className="border-dashed border-[1px] border-black absolute flex flex-col h-[95%] left-[18px] -z-10"></div>
+                    <div className="border-dashed border-[1px] border-black absolute flex flex-col h-[93%] left-[18px] -z-10"></div>
                     {experienceArray.map((experience, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="bg-black text-primary rounded-full size-[40px]  flex justify-center items-center font-semibold xxs:text-[18px] text-[16px] ">

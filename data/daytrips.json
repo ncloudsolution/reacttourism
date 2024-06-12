@@ -6,11 +6,10 @@
     "maxduration": null,
     "description": "Galle and Bentota Day-Tour From Colombo",
     "initialPrice": null,
-    "discountedPrice": 18038.96,
+    "discountedPrice": 18206.69,
     "tags": ["Pickup available"],
     "include": [
       "Hotel pickup and drop-off in a shared vehicle",
-      "English-speaking chauffeur/guide",
       "A bottle of water"
     ],
     "exclude": [
@@ -22,21 +21,46 @@
     "experience": [
       {
         "heading": "Pickup Location Options",
-        "text": "Colombo, Gampaha"
+        "text": "Colombo"
       },
       {
-        "heading": "Jeep / SUV",
-        "text": "(4 hours)"
+        "heading": "Car",
+        "text": "(1 hours)"
       },
       {
-        "heading": "Madu River",
-        "text": "Photo stop, Boat riding, Guided tour, Sightseeing,  (3 hours)"
+        "heading": "Bentota",
+        "text": "Photo stop (10 minutes)"
       },
       {
-        "heading": "Finish at",
-        "text": "Galle"
+        "heading": "Car",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Kosgoda Sea Turtle Conservation",
+        "text": "Visit (45 minutes)"
+      },
+      {
+        "heading": "Madu Ganga",
+        "text": "Boat cruise (105 minutes)"
+      },
+      {
+        "heading": "Car",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Hikkaduwa",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Galle Fort",
+        "text": "Photo stop, Visit, Free time, Sightseeing, Walk, Sunset, Self-guided tour, Pass by (1 hour)"
+      },
+      {
+        "heading": "Arrive back at",
+        "text": "Colombo"
       }
     ],
+
     "fullDescriptionParas": [
       "After being picked up at your hotel, hop onboard your Madu Ganga Magrove boat safari and explore the Madu River. See the mangrove forests and marshlands that surround the river. Stop at a cinnamon garden, and try some of the area’s famous cinnamon. The Madu Ganga River region is home to some of the best quality cinnamon in the world as well as a flourishing cinnamon industry. Afterward, marvel at the fishermen who stoically sit atop large branches planted in the middle of the water waiting for their catch.",
       "Continue to a local Turtle Hatchery, where your guide will introduce you to the many local varieties of turtles. End your tour with a visit to the Galle Fort, a UNESCO World Heritage Site. This fort illustrates the unique interaction of European architecture and South Asian traditions from the 16th to the 19th centuries. After discovering the fort, you will be returned to your hotel in Colombo"
@@ -76,6 +100,14 @@
         "heading": "drop-off locations",
         "text": "Negambo, Colombo,"
       }
+    ],
+    "places": [
+      "Pinnawala Elephant Orphanage",
+      "Royal Botanical Gardens",
+      "Temple of the Tooth in Kandy",
+      "Kandy spice walk",
+      "Tea factory tour",
+      "Kandy View Point"
     ],
     "fullDescriptionParas": [
       "Experience the vibrant culture and natural beauty of Sri Lanka on this captivating tour from Colombo to Kandy. Your journey begins with a visit to the Pinnawala Elephant Orphanage, where you can observe and interact with orphaned elephants as they bathe and play in the river. This heartwarming experience offers a glimpse into the conservation efforts dedicated to protecting these magnificent creatures",
@@ -140,6 +172,7 @@
         "text": "Hikkaduwa, Bentota, Kalutara, Colombo, Galle"
       }
     ],
+
     "fullDescriptionParas": [
       "Depart Colombo and travel by a shared vehicle, in a small group, to the city of Sigiriya, and head directly to Sigiriya Rock on arrival. Gaze in awe at the massive column of rock that, according to the ancient Sri Lankan chronicle The Culavamsa, was selected by King Kassyapa as the site of his new capital.",
       "Admire numerous paintings of historic queens, princesses, and maids inside the rock fortress before getting a break for lunch at your own expense. Then, explore some of the traditional crafts of the region, such as wood carving and batik textiles, with time to purchase souvenirs before departing.",
