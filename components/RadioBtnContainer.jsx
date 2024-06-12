@@ -4,7 +4,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { IoIosDoneAll } from "react-icons/io";
 
 const RadioBtnContainer = () => {
-  const mealOptions = ["SS", "HB", "FB"];
+  const mealOptions = ["BB", "HB", "FB"];
   const [selectedMealOption, setSelectedMealOption] = useState("");
   const { tourDetails, setTourDetails } = useContext(TourContext);
 

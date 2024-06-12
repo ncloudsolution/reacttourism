@@ -9,6 +9,7 @@ import Processing from "./loaders&Responses/Processing";
 import SuccessSubmission from "./loaders&Responses/SuccessSubmission";
 import FailedSubmission from "./loaders&Responses/FailedSubmission";
 import success from "@/public/Others/successImg.jpg";
+import DayTripPricingAlgorithm from "@/libs/DayTripsPricingAlgorithm";
 
 const DayTripsForm = ({ planPrice, trip }) => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -24,6 +25,17 @@ const DayTripsForm = ({ planPrice, trip }) => {
 
   const [responseMessage, setResponseMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const [perAdult, setPerAdult] = useState(planPrice * 2);
+  const [totalForAdult, setTotalForAdult] = useState(planPrice * 2);
+
+  const [perchildren, setPerChildren] = useState(planPrice * 0.35);
+  const [totalForChildren, setTotalForChildren] = useState(planPrice * 0.35);
+
+  const [noOfAdultsFunc, setNoOfAdultsFunc] = useState(1);
+  const [noOfChildrensFunc, setNoOfChildrensFunc] = useState(0);
+
+  const [totalPrice, setTotalPrice] = useState(planPrice * 2);
 
   const NameRef = useRef(null);
   const EmailRef = useRef(null);
@@ -45,17 +57,40 @@ const DayTripsForm = ({ planPrice, trip }) => {
     console.log(noOfAdults, "no");
   }, [noOfAdults]);
 
+  useEffect(() => {
+    const dayTripPriceObject = DayTripPricingAlgorithm(
+      planPrice,
+      noOfAdults,
+      noOfKids
+    );
+
+    setPerAdult(dayTripPriceObject.pricePerAdult);
+    setPerChildren(dayTripPriceObject.pricePerChildren);
+
+    setTotalForAdult(dayTripPriceObject.totalPriceforAdult);
+    setTotalForChildren(dayTripPriceObject.totalPriceforChildren);
+
+    setNoOfAdultsFunc(dayTripPriceObject.noOfAdults);
+    setNoOfChildrensFunc(dayTripPriceObject.noOfChildren);
+
+    setTotalPrice(dayTripPriceObject.totalPrice);
+  }, [noOfAdults, noOfKids, planPrice]);
+
   async function handleSubmit(e) {
     e.preventDefault();
+    console.log("noOfAdults:", noOfAdults);
+    console.log("noOfKids:", noOfKids);
     if (
-      date === "" ||
+      date == "" ||
       mobValue == "" ||
       whatsappMobValue == "" ||
       NameRef.current.value === "" ||
       EmailRef.current.value === "" ||
       NicPassportRef.current.value === "" ||
-      noOfAdults === "" ||
-      noOfKids === ""
+      isNaN(noOfAdults) ||
+      noOfAdults <= 0 ||
+      isNaN(noOfKids) ||
+      noOfKids < 0
     ) {
       return setSubmitError("Fill all the fields ");
     }
@@ -83,26 +118,9 @@ const DayTripsForm = ({ planPrice, trip }) => {
       selectedCurrencyType: tourDetails.currencyType,
       selectedCurrencySymbol: tourDetails.converedCurrencySymbol,
       totalPriceInSelectedCurrency: (
-        parseFloat(
-          planPrice *
-            tourDetails.conversionRate *
-            (isNaN(noOfAdults) || noOfAdults < 1 ? 1 : noOfAdults)
-        ) +
-        parseFloat(
-          0.5 *
-            planPrice *
-            tourDetails.conversionRate *
-            (isNaN(noOfKids) || noOfKids < 1 ? 0 : noOfKids)
-        )
+        tourDetails.conversionRate * totalPrice
       ).toFixed(2),
-      totalPriceInLKR: (
-        parseFloat(
-          planPrice * (isNaN(noOfAdults) || noOfAdults < 1 ? 1 : noOfAdults)
-        ) +
-        parseFloat(
-          0.5 * planPrice * (isNaN(noOfKids) || noOfKids < 1 ? 0 : noOfKids)
-        )
-      ).toFixed(2),
+      totalPriceInLKR: totalPrice.toFixed(2),
     };
 
     console.log(dayTripDetails);
@@ -302,7 +320,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
                   <input
                     onChange={(e) => {
                       let value = parseInt(e.target.value, 10);
-                      if (value < 1) {
+                      if (value == "" || value < 1) {
                         setNoOfKids(0);
                       } else {
                         setNoOfKids(value);
@@ -319,24 +337,49 @@ const DayTripsForm = ({ planPrice, trip }) => {
               </div>
             </div>
             <div className="flex flex-col gap-5 flex-1 justify-center items-center">
-              <div className="flex flex-col w-full mobile:w-fit bg-primary gap-3 xs:px-20 px-10 mobile:py-5 py-10 rounded-lg">
+              <div className="flex flex-col w-full mobile:w-[450px] bg-primary gap-3 px-5 bxs:px-20 mobile:px-10  mobile:py-5 py-10 rounded-lg">
                 <div>
-                  <div className="text-[20px]">Tour Price </div>
-                  <div className="text-[25px] xxxs:text-[30px] xxs:text-[35px] xs:text-[40px] leading-[40px]">
+                  <div className="text-[20px] font-semibold">Tour Price </div>
+                  <div className="text-[25px] xxxs:text-[30px] xxs:text-[35px] xs:text-[40px] leading-[40px] font-semibold">
                     {tourDetails.converedCurrencySymbol}{" "}
-                    {(
-                      parseFloat(
-                        planPrice *
-                          tourDetails.conversionRate *
-                          (isNaN(noOfAdults) || noOfAdults < 1 ? 1 : noOfAdults)
-                      ) +
-                      parseFloat(
-                        0.5 *
-                          planPrice *
-                          tourDetails.conversionRate *
-                          (isNaN(noOfKids) || noOfKids < 1 ? 0 : noOfKids)
-                      )
-                    ).toFixed(2)}
+                    {(tourDetails.conversionRate * totalPrice).toFixed(2)}
+                  </div>
+                  <div className="xs:text-[20px] text-[18px] mt-[20px] font-semibold">
+                    Price Breakdown{" "}
+                  </div>
+                  <div className="flex flex-col w-full mt-[10px]">
+                    <div className="flex justify-between ">
+                      <div className="mobile:text-[16px] xs:text-[20px] xxs:text-[16px] text-[14px]">
+                        <span className="font-semibold">Adult</span>{" "}
+                        {noOfAdultsFunc} x {tourDetails.converedCurrencySymbol}{" "}
+                        {(tourDetails.conversionRate * perAdult).toFixed(2)}
+                      </div>
+                      <div className="mobile:text-[16px] xs:text-[20px] xxs:text-[16px] text-[14px]">
+                        {tourDetails.converedCurrencySymbol}{" "}
+                        {(tourDetails.conversionRate * totalForAdult).toFixed(
+                          2
+                        )}
+                      </div>
+                    </div>
+
+                    {noOfChildrensFunc > 0 && (
+                      <div className="flex justify-between">
+                        <div className="mobile:text-[16px] xs:text-[20px] xxs:text-[16px] text-[14px]">
+                          <span className="font-semibold">Kid</span>{" "}
+                          {noOfChildrensFunc} x{" "}
+                          {tourDetails.converedCurrencySymbol}{" "}
+                          {(tourDetails.conversionRate * perchildren).toFixed(
+                            2
+                          )}
+                        </div>
+                        <div className="mobile:text-[16px] xs:text-[20px] xxs:text-[16px] text-[14px]">
+                          {tourDetails.converedCurrencySymbol}{" "}
+                          {(
+                            tourDetails.conversionRate * totalForChildren
+                          ).toFixed(2)}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
 

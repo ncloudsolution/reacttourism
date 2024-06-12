@@ -21,7 +21,7 @@ const FailedSubmission = ({ msg, navtext }) => {
         <div className="xs:w-[430px] xxs:w-[360px] xxxs:w-[300px] w-[250px] xs:text-[14px] text-[12px] text-center mb-5  -translate-y-4">
           We apologize for the inconvenience, but your {""}
           {msg}
-          {""}
+          {"  "}
           due to an unexpected error. Please try again. Thank you for your
           understanding.
         </div>

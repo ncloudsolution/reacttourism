@@ -31,7 +31,7 @@ const CustomHotelDropDown = () => {
   }, [open]);
 
   useEffect(() => {
-    console.log(tourDetails.trainTourPoints, "train drop down component");
+    console.log(tourDetails.selectedHotel, "selected hotel");
   }, [tourDetails]);
 
   //function over
@@ -84,9 +84,10 @@ const CustomHotelDropDown = () => {
                   {
                     /**to context**/
                   }
-                  setTourDetails({
+                  setTourDetails((prevDetails) => ({
+                    ...prevDetails,
                     selectedHotel: hotel,
-                  });
+                  }));
 
                   setOpen(false);
                   setInputValue("");

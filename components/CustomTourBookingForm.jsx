@@ -12,6 +12,7 @@ import CustomTourDatePicker from "./CustomTourDatePicker";
 import CustomHotelDropDown from "./standalone/CustomHotelDropDown";
 import CheckBoxContainer from "./CheckBoxContainer";
 import RadioBtnContainer from "./RadioBtnContainer";
+import OwnerEmail from "./emailTemplates/OwnerEmail";
 
 const CustomTourBookingForm = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -34,6 +35,99 @@ const CustomTourBookingForm = () => {
   const NicPassportRef = useRef(null);
   const cusMobileRef = useRef();
   const cusWhatsappRef = useRef();
+  const SpecialRef = useRef();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (
+      arrivalDate === "" ||
+      depatureDate === "" ||
+      NameRef.current.value === "" ||
+      EmailRef.current.value === "" ||
+      NicPassportRef.current.value === "" ||
+      mobValue == "" ||
+      whatsappMobValue == "" ||
+      noOfAdults === "" ||
+      noOfKids === "" ||
+      tourDetails.selectedHotel === undefined ||
+      tourDetails.selectedMealOption === "" ||
+      tourDetails.checkedPlaces.length === 0
+    ) {
+      return setSubmitError("Fill all the fields ");
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    setIsLoading(true);
+    console.log("fine");
+    setSubmitError("");
+
+    const customTourDetails = {
+      OwnerEmail: process.env.NEXT_PUBLIC_MY_EMAIL.split(","),
+      arrivalDate: arrivalDate,
+      depatureDate: depatureDate,
+      customerName: NameRef.current.value,
+      customerEmail: EmailRef.current.value,
+      customerNicPassportNo: NicPassportRef.current.value,
+      customerMobileNo: mobValue,
+      customerWhatsappNo: whatsappMobValue,
+      noOfAdults: noOfAdults,
+      noOfKids: noOfKids,
+      selectedHotelType: tourDetails.selectedHotel,
+      selectedMealType: tourDetails.selectedMealOption,
+      selectedPlaces: tourDetails.checkedPlaces,
+      specialRequest: SpecialRef.current.value,
+    };
+
+    console.log(customTourDetails);
+
+    const formData = new FormData();
+    formData.append("allDataBundle", JSON.stringify(customTourDetails));
+
+    try {
+      const response = await fetch("/api/customTourBookingEmail", {
+        method: "POST",
+        body: formData, // FormData will be sent as `multipart/form-data`
+      });
+      const result = await response.json();
+      console.log(result);
+
+      setIsLoading(false); // Stop loading
+      setResponseMessage(result.message); // Set the message from the server
+
+      console.log("msg send");
+    } catch (error) {
+      console.error("Error:", error);
+
+      setIsLoading(false); // Stop loading
+      setResponseMessage("Failed to send the Message. Please try again.");
+    }
+
+    if (NameRef.current) NameRef.current.value = "";
+    if (EmailRef.current) EmailRef.current.value = "";
+    if (NicPassportRef.current) NicPassportRef.current.value = "";
+    if (arrivalDate) setArrivalDate("");
+    if (depatureDate) setDepatureDate("");
+    if (mobValue) setMobValue("");
+    if (whatsappMobValue) setWhatsappMobValue("");
+    if (noOfKids) setNoOfKids("");
+    if (noOfAdults) setNoOfAdults("");
+
+    setTourDetails({
+      converedCurrencySymbol: "Rs",
+      currencyType: "LKR",
+      conversionRate: 1,
+      pageTwoToken: false,
+      pageThreeToken: false,
+    });
+
+    console.log(tourDetails.selectedHotel),
+      console.log(tourDetails.selectedMealOption),
+      console.log(tourDetails.checkedPlaces);
+  };
   return (
     <div className="mt-0 mb-4">
       {(isLoading || responseMessage) && (
@@ -69,7 +163,10 @@ const CustomTourBookingForm = () => {
         <>
           {/* <CurrencyFullBar />  */}
           <div className="flex flex-col items-center">
-            <div className="flex flex-col sm:gap-3 gap-2 lg:w-[800px] sm:w-[600px] bxs:w-[450px] w-full  px-[30px] sm:my-[60px] my-[30px]">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:gap-3 gap-2 lg:w-[800px] sm:w-[600px] bxs:w-[450px] w-full  px-[30px] sm:my-[60px] my-[30px]"
+            >
               <div className="text-[35px] text-center pb-1 mb-6 font-semibold border-b-[4px] border-primary border-dashed ">
                 Plan Your Own Trip
               </div>
@@ -259,19 +356,25 @@ const CustomTourBookingForm = () => {
                 </div>
                 <textarea
                   rows={5}
-                  ref={NameRef}
+                  ref={SpecialRef}
                   placeholder="Your Requests and Ideas ..................."
                   type="text"
                   className="flex-1 px-3 py-1 rounded border-[1px] border-black outline-none w-full sm:text-[16px] text-[14px]"
                 />
               </div>
 
+              {submitError && (
+                <div className="w-full bg-errorpink p-2 mt-4  text-white rounded text-center">
+                  {submitError}
+                </div>
+              )}
+
               <input
                 value="Submit"
                 type="submit"
                 className="flex-1 px-3 py-2 rounded bg-black font-semibold text-white outline-none sm:text-[18px] text-[16px] my-3"
               />
-            </div>
+            </form>
           </div>
         </>
       )}
