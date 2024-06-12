@@ -115,6 +115,10 @@ const DayTripCustomer = ({ dayTripDetails }) => {
                           <b>Pickup Date : </b>
                           {dayTripDetails.pickUpDate}
                         </Text>
+                        <Text style={paragraph}>
+                          <b>Pickup Time : </b>
+                          {dayTripDetails.timeSlot}
+                        </Text>
                       </Section>
 
                       {/**IDENTITY DETAILS**/}

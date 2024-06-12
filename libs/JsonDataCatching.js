@@ -35,3 +35,16 @@ export function GetPlacesData(title) {
 
   return PlacesArray;
 }
+
+export function GetTimeSlot(title) {
+  // sorting time duration
+  const data = [...daytrips].find((trip) => trip.description === title);
+
+  const TimeSlotArray = data.timeSlots;
+
+  if (TimeSlotArray === undefined) {
+    return ["6.00 AM", "6.30 AM", "7.00 AM", "7.30 AM"];
+  }
+
+  return TimeSlotArray;
+}

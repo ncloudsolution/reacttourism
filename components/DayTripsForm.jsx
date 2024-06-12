@@ -10,6 +10,7 @@ import SuccessSubmission from "./loaders&Responses/SuccessSubmission";
 import FailedSubmission from "./loaders&Responses/FailedSubmission";
 import success from "@/public/Others/successImg.jpg";
 import DayTripPricingAlgorithm from "@/libs/DayTripsPricingAlgorithm";
+import DayTripTimer from "./DayTripTimer";
 
 const DayTripsForm = ({ planPrice, trip }) => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -87,6 +88,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
       NameRef.current.value === "" ||
       EmailRef.current.value === "" ||
       NicPassportRef.current.value === "" ||
+      tourDetails.selectedTimeSlot == "" ||
       isNaN(noOfAdults) ||
       noOfAdults <= 0 ||
       isNaN(noOfKids) ||
@@ -107,6 +109,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
 
     const dayTripDetails = {
       pickUpDate: date.toDateString(),
+      timeSlot: tourDetails.selectedTimeSlot,
       selectedTrip: trip,
       cusName: NameRef.current.value,
       cusEmail: EmailRef.current.value,
@@ -152,7 +155,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
   return (
     <>
       {(isLoading || responseMessage) && (
-        <div className="flex w-full pt-[20px] h-[100vh] justify-center items-center">
+        <div className="flex w-full pt-[50px] md:pt-[130px] 2xl:pt-[20px] h-[100vh] justify-center items-center">
           <div className="w-full h-[90vh] flex items-center justify-center ">
             {/* Your form or component elements go here */}
             {isLoading && (
@@ -202,6 +205,14 @@ const DayTripsForm = ({ planPrice, trip }) => {
                       selectedDate={date}
                       onChange={(date) => setDate(date)}
                     />
+                  </div>
+                </div>
+                <div className="flex sm:flex-row flex-col w-full">
+                  <div className="w-[200px]  sm:text-[18px] text-[14px] font-semibold">
+                    Pickup Time
+                  </div>
+                  <div className="flex-row flex-1  ">
+                    <DayTripTimer title={trip} />
                   </div>
                 </div>
                 <div className="flex sm:flex-row flex-col w-full">

@@ -426,6 +426,7 @@
     "description": "Colombo Full day city tour",
     "initialPrice": null,
     "discountedPrice": 12000,
+    "timeSlots": ["9:30 AM"],
     "tags": ["Pickup available", "New activity"],
     "include": [
       "Pick up and drop off",

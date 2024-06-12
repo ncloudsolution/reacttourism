@@ -9,6 +9,7 @@ export const metadata = {
 };
 
 function page() {
+  document.body.style.overflow = "auto";
   return (
     <>
       <DayTrips />
