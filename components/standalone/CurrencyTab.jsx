@@ -1,6 +1,6 @@
 import React from "react";
 import CustomCurrencyDropDown from "./CustomCurrencyDropDown";
-import CustomCurrencyDropDownWrapper from "./CustomCurrencyDropDown";
+// import CustomCurrencyDropDownWrapper from "./CustomCurrencyDropDown";
 
 const CurrencyTab = () => {
   return (
@@ -10,7 +10,7 @@ const CurrencyTab = () => {
           Currency
         </div>
         <div className="bigmd:w-[350px]  w-[200px] relative mb-6">
-          <CustomCurrencyDropDownWrapper />
+          <CustomCurrencyDropDown />
         </div>
       </div>
     </div>
