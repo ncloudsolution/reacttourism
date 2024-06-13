@@ -6,18 +6,58 @@ import { GiTwoCoins } from "react-icons/gi";
 import currency from "@/data/currency.json";
 import { TourContext } from "@/context/TourContextProvider";
 import useCurrency from "@/hooks/useCurrency";
+import { usePathname } from "next/navigation";
 
 const CustomCurrencyDropDown = () => {
+  const pathname = usePathname();
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
   const [currencies] = useState(Object.entries(currency)); // Convert object to array of key-value pairs
   const [inputValue, setInputValue] = useState("");
-  const [selected, setSelected] = useState(
-    tourDetails.convertedCurrencyType || currencies[0][0] // Initialize selected with the first currency key
-  );
-  const [open, setOpen] = useState(false);
 
-  const selectedCurrency = useCurrency();
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState("");
+  // Initialize selected with the first currency key
+
+  //function defining
+  function ChangingSymbol() {
+    if (selected == "LKR") return "Rs";
+    if (selected == "USD") return "$";
+    if (selected == "GBP") return "£";
+    if (selected == "EUR") return "€";
+    if (selected == "INR") return "₹";
+  }
+
+  useEffect(() => {
+    // Check the current route and set the initial selected currency accordingly
+    if (pathname.includes("/daytrips")) {
+      setSelected(tourDetails.convertedCurrencyType || currencies[1][0]);
+      const symbol = ChangingSymbol();
+      setTourDetails((prevTourDetails) => ({
+        ...prevTourDetails,
+        converedCurrencySymbol: symbol,
+      }));
+      console.log("jqoisjwdfhefuefdwqe");
+    } else {
+      setSelected(tourDetails.convertedCurrencyType || currencies[0][0]);
+    }
+  }, [
+    pathname,
+    tourDetails.convertedCurrencyType,
+    currencies,
+    selected,
+    setTourDetails,
+    ChangingSymbol,
+  ]);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [open]);
+
+  const selectedCurrency = useCurrency(pathname);
 
   const handleSelectCurrency = (currencyKey) => {
     setSelected(currencyKey);
@@ -49,12 +89,19 @@ const CustomCurrencyDropDown = () => {
     }
   };
 
+  // Trigger function when the browser back button is clicked
   useEffect(() => {
-    document.addEventListener("click", handleClickOutside, true);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
+    const handlePopState = () => {
+      console.log("Browser back button clicked");
+      // Your function logic here
     };
-  }, [open]);
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
   return (
     <div className="font-normal">
@@ -122,4 +169,9 @@ const CustomCurrencyDropDown = () => {
   );
 };
 
-export default CustomCurrencyDropDown;
+const CustomCurrencyDropDownWrapper = () => {
+  const pathname = usePathname();
+  return <CustomCurrencyDropDown key={pathname} />;
+};
+
+export default CustomCurrencyDropDownWrapper;

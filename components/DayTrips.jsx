@@ -18,8 +18,16 @@ import { TourContext } from "@/context/TourContextProvider";
 const DayTrips = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
+  useEffect(() => {
+    setTourDetails((prevDetails) => ({
+      ...prevDetails,
+      converedCurrencySymbol: "$",
+      currencyType: "USD",
+    }));
+  }, []);
+
   const [minVal, setMinVal] = useState(0);
-  const [maxVal, setMaxVal] = useState(30000);
+  const [maxVal, setMaxVal] = useState(100);
 
   const [durationMinVal, setDurationMinVal] = useState(0);
   const [durationMaxVal, setDurationMaxVal] = useState(100);

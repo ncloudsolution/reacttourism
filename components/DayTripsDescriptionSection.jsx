@@ -10,7 +10,7 @@ const DayTripsDescriptionSection = ({ DescriptionParagraph, PlacesArray }) => {
       </div>
       <div
         className={`${
-          isExpanded ? "h-fit" : "h-[180px] overflow-hidden"
+          isExpanded ? "h-fit" : "h-[170px] overflow-hidden"
         } my-2 `}
       >
         <div className="font-semibold">

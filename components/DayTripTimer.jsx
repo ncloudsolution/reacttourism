@@ -29,7 +29,7 @@ const DayTripTimer = ({ title }) => {
     const size = getWidthClass(timeSlotsValue.length);
     setClassName(size);
     console.log("heeeellll0");
-  }, []);
+  }, [title]);
 
   useEffect(() => {
     setTourDetails((prevDetails) => ({

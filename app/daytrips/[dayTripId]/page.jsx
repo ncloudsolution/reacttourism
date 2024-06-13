@@ -17,8 +17,28 @@ const DayTripDetails = ({ params, searchParams }) => {
   const NotsuitableArray = [
     "Pregnant women",
     "People with back problems",
-    "People with mobility impairments",
+    "People with animal allergies",
+    "People with a cold",
+    "People with kidney problems",
+    "People with recent surgeries",
+    "People with motion sickness",
+    "People with insect allergies",
   ];
+
+  const NotAllowedArray = [
+    "Pets",
+    "Explosive substances",
+    "Nudity",
+    "Fireworks",
+    "Alcohol and drugs",
+    "Drones",
+    "Glass object",
+    "Drinks in the vehicle",
+    "Making noise",
+    "Alcoholic drinks in the vehicle",
+    "Touching/Feeding animals",
+  ];
+
   const decodedDescription = decodeURIComponent(params.dayTripId);
 
   console.log(decodedDescription);
@@ -176,12 +196,29 @@ const DayTripDetails = ({ params, searchParams }) => {
                   <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
                     Not Suitable For
                   </div>
-                  <div className="my-1 ">
+                  <div className="my-1 grid xs:grid-cols-2 grid-cols-1">
                     {NotsuitableArray.map((notSuitable, index) => (
                       <div key={index}>
                         <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
                           <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-black shadow"></div>
                           <div className="flex flex-1">{notSuitable}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="my-5">
+                <div className="flex flex-col gap-2  w-full">
+                  <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                    Not Allowed
+                  </div>
+                  <div className="my-1 grid midxl:grid-cols-3 xs:grid-cols-2 grid-cols-1 midxl:gap-x-7 ">
+                    {NotAllowedArray.map((notAllowed, index) => (
+                      <div key={index}>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
+                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-primary shadow"></div>
+                          <div className="flex flex-1">{notAllowed}</div>
                         </div>
                       </div>
                     ))}
