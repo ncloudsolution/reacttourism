@@ -6,24 +6,26 @@ import { GiTwoCoins } from "react-icons/gi";
 import currency from "@/data/currency.json";
 import { TourContext } from "@/context/TourContextProvider";
 import useCurrency from "@/hooks/useCurrency";
+import { usePathname } from "next/navigation";
 
 const CustomCurrencyDropDown = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
+  const pathname = usePathname();
 
   const [currencies] = useState(Object.entries(currency)); // Convert object to array of key-value pairs
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState(
-    tourDetails.convertedCurrencyType || currencies[0][0] // Initialize selected with the first currency key
+    tourDetails.currencyType || currencies[1][0]
   );
   const [open, setOpen] = useState(false);
 
-  const selectedCurrency = useCurrency();
+  const selectedCurrency = useCurrency(pathname);
 
   const handleSelectCurrency = (currencyKey) => {
     setSelected(currencyKey);
 
     const conversionRate = selectedCurrency[currencyKey.toLowerCase()] || 1;
-    const convertedCurrencyType = currencyKey;
+    // const convertedCurrencyType = currencyKey;
     const convertedCurrencySymbol = currency[currencyKey];
 
     setTourDetails((prevTourDetails) => ({
@@ -31,7 +33,7 @@ const CustomCurrencyDropDown = () => {
       currencyType: currencyKey,
       conversionRate: conversionRate,
       convertedPrice: (tourDetails.price * conversionRate).toFixed(2),
-      convertedCurrencyType: convertedCurrencyType,
+      // convertedCurrencyType: convertedCurrencyType,
       converedCurrencySymbol: convertedCurrencySymbol, // Save selected currency symbol
       totalPrice: (tourDetails.totalLKRPrice * conversionRate).toFixed(2),
     }));
@@ -39,8 +41,9 @@ const CustomCurrencyDropDown = () => {
     setInputValue("");
 
     console.log(convertedCurrencySymbol, "symbol");
+    console.log(tourDetails.converedCurrencySymbol, "sym");
   };
-
+  console.log(tourDetails.converedCurrencySymbol, "outer sym");
   const DropDownRef = useRef();
 
   const handleClickOutside = (e) => {
@@ -48,6 +51,15 @@ const CustomCurrencyDropDown = () => {
       setOpen(false);
     }
   };
+
+  useEffect(() => {
+    // Check the current route and set the initial selected currency accordingly
+    if (pathname.includes("/daytrips")) {
+      setSelected(selected || currencies[1][0]);
+    } else {
+      setSelected(tourDetails.currencyType || currencies[0][0]);
+    }
+  }, [pathname, currencies, selected, tourDetails.currencyType]);
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);

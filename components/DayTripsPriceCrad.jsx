@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { TourContext } from "@/context/TourContextProvider";
 
 const DayTripsPriceCrad = ({ initialPrice, discountedPrice }) => {
