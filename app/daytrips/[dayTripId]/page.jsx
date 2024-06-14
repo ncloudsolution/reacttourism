@@ -12,17 +12,22 @@ import Image from "next/image";
 import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
+import { FaExclamationTriangle } from "react-icons/fa";
+import { FaSquareCheck } from "react-icons/fa6";
+import { AiFillCloseSquare } from "react-icons/ai";
+import { AiOutlineStop } from "react-icons/ai";
 
 const DayTripDetails = ({ params, searchParams }) => {
   const NotsuitableArray = [
+    "Back problems",
+    "Insect allergies",
+    "Cold",
+    "Kidney problems",
+    "Recent surgeries",
+    "Motion sickness",
+    "Animal allergies",
     "Pregnant women",
-    "People with back problems",
-    "People with animal allergies",
-    "People with a cold",
-    "People with kidney problems",
-    "People with recent surgeries",
-    "People with motion sickness",
-    "People with insect allergies",
+    "Wheelchair user",
   ];
 
   const NotAllowedArray = [
@@ -157,7 +162,7 @@ const DayTripDetails = ({ params, searchParams }) => {
                 DescriptionParagraph={DescriptionParagraph}
                 PlacesArray={PlacesArray}
               />
-              <div className="my-5">
+              <div className="grid xs:grid-cols-2  grid-cols-1 my-7">
                 <div className="flex flex-col gap-2  w-full">
                   <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
                     Include
@@ -165,16 +170,15 @@ const DayTripDetails = ({ params, searchParams }) => {
                   <div className="my-1 ">
                     {IncludeArray.map((include, index) => (
                       <div key={index}>
-                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
-                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-black shadow"></div>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex gap-x-3">
+                          <FaSquareCheck className="md:text-[20px] text-[18px]" />
                           <div className="flex flex-1">{include}</div>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
-              <div className="my-5">
+
                 <div className="flex flex-col gap-2  w-full">
                   <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
                     Exclude
@@ -182,8 +186,8 @@ const DayTripDetails = ({ params, searchParams }) => {
                   <div className="my-1 ">
                     {ExcludeArray.map((exclude, index) => (
                       <div key={index}>
-                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
-                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-primary shadow"></div>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex gap-x-3">
+                          <AiFillCloseSquare className="md:text-[22px] text-[20px] text-primary" />
                           <div className="flex flex-1">{exclude}</div>
                         </div>
                       </div>
@@ -191,16 +195,16 @@ const DayTripDetails = ({ params, searchParams }) => {
                   </div>
                 </div>
               </div>
-              <div className="my-5">
+              <div className="my-8">
                 <div className="flex flex-col gap-2  w-full">
                   <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
-                    Not Suitable For
+                    Not Suitable For - [ People with ]
                   </div>
-                  <div className="my-1 grid xs:grid-cols-2 grid-cols-1">
+                  <div className="my-1 grid midxl:grid-cols-3 xs:grid-cols-2 grid-cols-1 midxl:gap-x-7">
                     {NotsuitableArray.map((notSuitable, index) => (
                       <div key={index}>
-                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
-                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-black shadow"></div>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex gap-x-3">
+                          <AiOutlineStop className="md:text-[20px] text-[18px]" />
                           <div className="flex flex-1">{notSuitable}</div>
                         </div>
                       </div>
@@ -208,7 +212,7 @@ const DayTripDetails = ({ params, searchParams }) => {
                   </div>
                 </div>
               </div>
-              <div className="my-5">
+              <div className="my-7">
                 <div className="flex flex-col gap-2  w-full">
                   <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
                     Not Allowed
@@ -216,8 +220,8 @@ const DayTripDetails = ({ params, searchParams }) => {
                   <div className="my-1 grid midxl:grid-cols-3 xs:grid-cols-2 grid-cols-1 midxl:gap-x-7 ">
                     {NotAllowedArray.map((notAllowed, index) => (
                       <div key={index}>
-                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
-                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-primary shadow"></div>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex gap-x-3">
+                          <FaExclamationTriangle className="md:text-[20px] text-[18px] text-primary" />
                           <div className="flex flex-1">{notAllowed}</div>
                         </div>
                       </div>

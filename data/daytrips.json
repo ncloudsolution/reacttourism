@@ -65,7 +65,7 @@
       "Madu Gaga",
       "Local Cinnamon Garden",
       "Turtle Sanctuary",
-      "stilt fishermen in action",
+      "Stilt fishermen in action",
       "Galle Fort"
     ],
     "fullDescriptionParas": [
@@ -196,10 +196,10 @@
     "maxduration": null,
     "description": "From Colombo : Galle and Bentota Day Tour",
     "initialPrice": null,
-    "discountedPrice": 15500,
+    "discountedPrice": 50.22,
     "tags": ["New activity"],
     "include": [
-      "English-speaking chauffeur/guide",
+      "English-speaking driver",
       "Hotel pickup and drop-off in Colombo, Dehiwala, Mount Lavinia, Kalutara,Bentota, Beruwala, Kosgoda, Ahungalla, and Balapitiya area",
       "Transportation by an air-conditioned car"
     ],
@@ -209,6 +209,11 @@
       "Food and drinks"
     ],
     "experience": [],
+    "places": [
+      "Madu Ganga",
+      "Local Cinnamon Garden",
+      "Stilt fishermen in action"
+    ],
     "fullDescriptionParas": [
       "Start your day with a convenient pickup from your hotel. Hop aboard your comfortable tour vehicle and experience the wonders of Sri Lanka's Madu Ganga River Region with a thrilling boat safari. Witness the beauty of mangrove forests and marshlands as you sail through the Madu River. Discover the secrets of cinnamon at a local garden and taste the renowned spice.",
       "Be captivated by skilled fishermen perched on branches, patiently waiting for their catch. At the Turtle Hatchery, meet various turtle species and learn about their conservation efforts.",
@@ -360,11 +365,12 @@
   {
     "type": "private tour",
     "img": "/DayTrips/galle.jpg",
-    "minduration": 24,
+    "minduration": 14,
     "maxduration": null,
     "description": "Colombo: Galle and Bentota Day Trip From Colombo City",
-    "initialPrice": 22500,
-    "discountedPrice": 21500,
+    "initialPrice": 74,
+    "discountedPrice": 70.25,
+    "timeSlots": ["6.00 AM", "6.30 AM"],
     "tags": ["New activity"],
     "include": [
       "Hotel pickup and drop-off",
@@ -382,7 +388,7 @@
     "experience": [
       {
         "heading": "Starting location",
-        "text": "Colombo"
+        "text": "Colombo, Dehiwala, Mount laviniya , Negombo"
       },
       {
         "heading": "Car",
@@ -430,8 +436,14 @@
       },
       {
         "heading": "Arrive back at:",
-        "text": "Colombo"
+        "text": "Colombo, Dehiwala, Mount laviniya , Negombo"
       }
+    ],
+    "places": [
+      "Turtle Hatchery",
+      "Madu Ganga",
+      "Local Cinnamon Garden",
+      "stilt fishermen in action"
     ],
     "fullDescriptionParas": [
       "Discover the Madu Ganga River on a boat safari from Colombo. See the mangrove forests and marshlands that surround the river. Stop at a cinnamon garden, and try some of the area’s famous cinnamon. Visit a local turtle hatchery and the Galle Fort.",
@@ -447,7 +459,7 @@
     "maxduration": null,
     "description": "Colombo Full day city tour",
     "initialPrice": null,
-    "discountedPrice": 12000,
+    "discountedPrice": 39,
     "timeSlots": ["9:30 AM"],
     "tags": ["Pickup available", "New activity"],
     "include": [
@@ -463,6 +475,15 @@
       "Lunch"
     ],
     "experience": [],
+    "places": [
+      "Bandaranaike Memorial International Conference Hall (BMICH)",
+      "Independence Square",
+      "Colombo Museum",
+      "Gangarama Temple",
+      "The Lotus Tower",
+      "Colombo Lighthouse",
+      "Galle Face Green"
+    ],
     "fullDescriptionParas": [
       "Start your 6-hour city tour of Colombo with a visit to the famous Bandaranaike Memorial International Conference Hall (BMICH), which is renowned for its opulent architecture. Explore Independence Square, a representation of Sri Lankan independence, next.",
       "After learning about the island's lengthy history at the Colombo Museum, visit Gangarama Temple, a tranquil oasis in the middle of the busy city. The Lotus Tower, which provides sweeping city views, is not to be missed.",
