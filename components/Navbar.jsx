@@ -135,32 +135,32 @@ function NavBar() {
                     <div className="absolute md:top-[80px] top-[138px]  bg-primary md:border-t-2  md:border-t-black py-2 px-3 rounded-b-md">
                       <div className="flex flex-col gap-1 items-start font-normal text-left">
                         <Link
-                          href={"/airportp&d"}
+                          href={"/airport-p&d"}
                           className="border-b-2 border-b-white w-full"
                           onClick={NavFunction}
                         >
                           Airport Transport
                         </Link>
                         <Link
-                          href={"/pointtopoint"}
+                          href={"/point-to-point"}
                           className="border-b-2 border-b-white  w-full"
                           onClick={NavFunction}
                         >
                           Point to Point
                         </Link>
                         <Link
-                          href={"/journeyonrails"}
+                          href={"/journey-on-rails"}
                           className="border-b-2 border-b-white  w-full"
                           onClick={NavFunction}
                         >
                           Train Booking
                         </Link>
                         <Link
-                          href={"/daytrips"}
+                          href={"/day-trips"}
                           className="border-b-2 border-b-white  w-full"
                           onClick={NavFunction}
                         >
-                          Day Tours
+                          Day Trips
                         </Link>
                       </div>
                     </div>
@@ -168,7 +168,7 @@ function NavBar() {
                 </li>
 
                 <li className="text-black text-lg font-semibold py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-secondary  border-primary  md:hover:text-secondary md:hover:bg-transparent">
-                  <Link href="/contactus" onClick={NavFunction}>
+                  <Link href="/contact-us" onClick={NavFunction}>
                     Contact
                   </Link>
                 </li>

@@ -5,6 +5,7 @@ import { render } from "@react-email/render";
 import DayTripOwner from "@/components/emailTemplates/DayTripOwner";
 import DayTripCustomer from "@/components/emailTemplates/DayTripCustomer";
 import CustomTourPackageCustomerEmail from "@/components/emailTemplates/CustomTourPackageCustomerEmail";
+import CustomTourPackageOwnerEmail from "@/components/emailTemplates/CustomTourPackageOwnerEmail";
 
 export async function POST(request) {
   try {
@@ -19,20 +20,20 @@ export async function POST(request) {
       },
     });
 
-    // const newCompHtmlforOwner = render(
-    //   <DayTripOwner dayTripDetails={dayTripDetails} />
-    // );
+    const newCompHtmlforOwner = render(
+      <CustomTourPackageOwnerEmail customTourDetails={customTourDetails} />
+    );
     const newCompHtmlforCustomer = render(
       <CustomTourPackageCustomerEmail customTourDetails={customTourDetails} />
     );
 
-    // const mailOptionsTo = {
-    //   from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
-    //   to: customTourDetails.ownerEmail,
-    //   subject: "New Custom Tour Here",
+    const mailOptionsTo = {
+      from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
+      to: customTourDetails.ownerEmail,
+      subject: "New Custom Tour Here",
 
-    //   html: newCompHtmlforOwner,
-    // };
+      html: newCompHtmlforOwner,
+    };
 
     const mailOptionsClient = {
       from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
@@ -43,7 +44,7 @@ export async function POST(request) {
     };
 
     // Send the email to the main recipient
-    // await transporter.sendMail(mailOptionsTo);
+    await transporter.sendMail(mailOptionsTo);
     // Send the email to the client
     await transporter.sendMail(mailOptionsClient);
 

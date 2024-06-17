@@ -130,7 +130,7 @@ const MidSummary = () => {
     }));
     // router.push("/newtesting");
 
-    router.push("/tourbooking/summary");
+    router.push("/tour-booking/summary");
   }
 
   // Function to handle changes in the input field for customer name

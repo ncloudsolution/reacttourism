@@ -224,7 +224,7 @@ const DayTrips = () => {
             return (
               //{placearray.map((place, index) => (
               <Link
-                href={`/daytrips/${place.description}?type=${place.type}&minduration=${place.minduration}&maxduration=${place.maxduration}&initialPrice=${place.initialPrice}&discountedPrice=${place.discountedPrice}&tags=${place.tags}&img=${place.img}&experience=${encodedExperience}`}
+                href={`/day-trips/${place.description}?type=${place.type}&minduration=${place.minduration}&maxduration=${place.maxduration}&initialPrice=${place.initialPrice}&discountedPrice=${place.discountedPrice}&tags=${place.tags}&img=${place.img}&experience=${encodedExperience}`}
                 key={index}
                 className="flex flex-col text-left  overflow-hidden   bigmd:w-[300px] sm:w-[500px] xs:w-[315px] xxs:w-[275px] xxxs:w-[250px] w-[220px] h-[450px]  rounded-xl shadow-lg xxxs:m-4 m-2 transition-all duration-3000 "
               >

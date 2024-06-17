@@ -67,9 +67,11 @@ const CustomTourBookingForm = () => {
     setSubmitError("");
 
     const customTourDetails = {
-      OwnerEmail: process.env.NEXT_PUBLIC_MY_EMAIL.split(","),
-      arrivalDate: arrivalDate,
-      depatureDate: depatureDate,
+      ownerEmail: process.env.NEXT_PUBLIC_MY_EMAIL.split(","),
+      arrivalDate: arrivalDate.toDateString(),
+      arrivalTime: arrivalDate.toTimeString(),
+      depatureDate: depatureDate.toDateString(),
+      depatureTime: depatureDate.toTimeString(),
       customerName: NameRef.current.value,
       customerEmail: EmailRef.current.value,
       customerNicPassportNo: NicPassportRef.current.value,
