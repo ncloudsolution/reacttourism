@@ -13,6 +13,7 @@ import CustomHotelDropDown from "./standalone/CustomHotelDropDown";
 import CheckBoxContainer from "./CheckBoxContainer";
 import RadioBtnContainer from "./RadioBtnContainer";
 import OwnerEmail from "./emailTemplates/OwnerEmail";
+import success from "@/public/Others/successImgEmail.jpg";
 
 const CustomTourBookingForm = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -78,7 +79,7 @@ const CustomTourBookingForm = () => {
       noOfKids: noOfKids,
       selectedHotelType: tourDetails.selectedHotel,
       selectedMealType: tourDetails.selectedMealOption,
-      selectedPlaces: tourDetails.checkedPlaces,
+      checkedPlaces: tourDetails.checkedPlaces,
       specialRequest: SpecialRef.current.value,
     };
 

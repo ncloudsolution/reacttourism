@@ -38,7 +38,7 @@ const newtesting = () => {
   };
   return (
     <div>
-      <DayTripTimer />
+      <CheckBoxContainer />
     </div>
   );
 };
