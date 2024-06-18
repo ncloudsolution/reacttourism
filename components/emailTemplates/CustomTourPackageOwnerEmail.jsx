@@ -129,6 +129,10 @@ export const CustomTourPackageOwnerEmail = ({ customTourDetails }) => {
                           {customTourDetails.selectedMealOption}
                         </Text>
                         <Text style={paragraph}>
+                          <b>Preferences : </b>
+                          {customTourDetails.tourPreferences.join(", ")}
+                        </Text>
+                        <Text style={paragraph}>
                           <b>Requested Places : </b>
                           {customTourDetails.checkedPlaces.join(", ")}
                         </Text>

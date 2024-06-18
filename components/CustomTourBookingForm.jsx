@@ -17,8 +17,9 @@ import success from "@/public/Others/successImgEmail.jpg";
 import { GetCustomTourCheckedItems } from "@/libs/JsonDataCatching";
 import customTourPlaces from "@/data/customTourPlaces.json";
 import customTourTransport from "@/data/customTourTransport.json";
+import customTourPreferences from "@/data/customTourPreferences.json";
 
-const CustomTourBookingForm = () => {
+const CustomTourBookingForm = ({ children }) => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
   const [mobValue, setMobValue] = useState();
@@ -55,6 +56,7 @@ const CustomTourBookingForm = () => {
       noOfKids === "" ||
       tourDetails.selectedHotel === undefined ||
       tourDetails.selectedMealOption === "" ||
+      tourDetails.tourPreferences.length === 0 ||
       tourDetails.checkedPlaces.length === 0 ||
       tourDetails.transportationRequirement.length === 0
     ) {
@@ -87,6 +89,7 @@ const CustomTourBookingForm = () => {
       selectedMealType: tourDetails.selectedMealOption,
       checkedPlaces: tourDetails.checkedPlaces,
       transportationRequirement: tourDetails.transportationRequirement,
+      tourPreferences: tourDetails.tourPreferences,
       specialRequest: SpecialRef.current.value,
     };
 
@@ -171,12 +174,13 @@ const CustomTourBookingForm = () => {
         <>
           {/* <CurrencyFullBar />  */}
           <div className="flex flex-col items-center">
+            {children}
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:gap-3 gap-2 lg:w-[800px] sm:w-[600px] bxs:w-[450px] w-full  px-[30px] sm:my-[60px] my-[30px]"
+              className="flex flex-col sm:gap-3 gap-2 lg:w-[800px] sm:w-[600px] bxs:w-[450px] w-full  px-[30px] sm:my-[30px] my-[15px]"
             >
-              <div className="text-[35px] text-center pb-1 mb-6 font-semibold border-b-[4px] border-primary border-dashed ">
-                Plan Your Own Trip
+              <div className="bxs:text-[40px] text-[28px] text-center pb-3 mb-8 font-semibold border-b-[4px] border-primary border-dashed ">
+                Trip Planning Details
               </div>
               <div className="flex sm:flex-row flex-col w-full ">
                 <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
@@ -351,7 +355,20 @@ const CustomTourBookingForm = () => {
                 </div>
               </div>
 
-              <div className="w-full text-center  sm:text-[18px] text-[16px] font-semibold sm:mt-5 mt-10">
+              <div className="w-full text-center  sm:text-[18px] text-[16px] font-semibold xs:mt-[40px] mt-[20px]">
+                Tour Preferences
+              </div>
+              <div className="my-5">
+                <CheckBoxContainer
+                  contextName="tourPreferences"
+                  identifier="place"
+                  Selectfunction={GetCustomTourCheckedItems([
+                    ...customTourPreferences,
+                  ])}
+                />
+              </div>
+
+              <div className="w-full text-center  sm:text-[18px] text-[16px] font-semibold xs:mt-[40px] mt-[20px]">
                 Places You Would Like To Visit
               </div>
               <div className="my-5">
@@ -364,7 +381,7 @@ const CustomTourBookingForm = () => {
                 />
               </div>
 
-              <div className="w-full text-center  sm:text-[18px] text-[16px] font-semibold sm:mt-5 mt-10">
+              <div className="w-full text-center  sm:text-[18px] text-[16px] font-semibold xs:mt-[40px] mt-[20px]">
                 Transportation Requirement
               </div>
               <div className="my-5">
@@ -377,7 +394,7 @@ const CustomTourBookingForm = () => {
                 />
               </div>
 
-              <div className="flex sm:flex-row flex-col w-full mt-[6px]">
+              <div className="flex sm:flex-row flex-col w-full xs:mt-[40px] mt-[20px]">
                 <div className="w-[200px]  sm:text-[18px] text-[16px] font-semibold">
                   Special Request (if any)
                 </div>

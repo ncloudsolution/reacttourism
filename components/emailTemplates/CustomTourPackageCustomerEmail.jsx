@@ -21,6 +21,7 @@ const baseUrl = process.env.VERCEL_URL
 export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
   const placesArray = customTourDetails.checkedPlaces;
   const vehicalArray = customTourDetails.transportationRequirement;
+  const preferenceArray = customTourDetails.tourPreferences;
 
   return (
     <Html>
@@ -143,6 +144,18 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                         accommodations and{" "}
                         <b>{customTourDetails.selectedMealOption}</b> for your
                         meals. We understand you are interested in visiting,{" "}
+                      </Text>
+
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          textAlign: "justify",
+                          ...paragraph,
+                          marginTop: 20,
+                        }}
+                      >
+                        <b>{preferenceArray.join(", ")}</b> and Amazing places
+                        like
                       </Text>
 
                       <Text
