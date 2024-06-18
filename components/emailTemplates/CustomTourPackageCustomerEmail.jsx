@@ -20,6 +20,7 @@ const baseUrl = process.env.VERCEL_URL
 
 export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
   const placesArray = customTourDetails.checkedPlaces;
+  const vehicalArray = customTourDetails.transportationRequirement;
 
   return (
     <Html>
@@ -144,13 +145,29 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                         meals. We understand you are interested in visiting,{" "}
                       </Text>
 
-                      <Section
+                      <Text
                         style={{
+                          fontSize: "16px",
+                          textAlign: "justify",
+                          ...paragraph,
                           marginTop: 20,
                         }}
                       >
                         <b>{placesArray.join(", ")}</b>
-                      </Section>
+                      </Text>
+
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          textAlign: "justify",
+                          ...paragraph,
+                          marginTop: 20,
+                        }}
+                      >
+                        As your request, you would like to have{" "}
+                        <b>{vehicalArray.join(", ")}</b> for your
+                        transportation.
+                      </Text>
 
                       {/* <Section
                         style={{

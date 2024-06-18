@@ -132,6 +132,12 @@ export const CustomTourPackageOwnerEmail = ({ customTourDetails }) => {
                           <b>Requested Places : </b>
                           {customTourDetails.checkedPlaces.join(", ")}
                         </Text>
+                        <Text style={paragraph}>
+                          <b>Requested Transportation Modes : </b>
+                          {customTourDetails.transportationRequirement.join(
+                            ", "
+                          )}
+                        </Text>
                       </Section>
 
                       <Section style={section}>

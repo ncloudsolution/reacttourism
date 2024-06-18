@@ -14,6 +14,9 @@ import CheckBoxContainer from "./CheckBoxContainer";
 import RadioBtnContainer from "./RadioBtnContainer";
 import OwnerEmail from "./emailTemplates/OwnerEmail";
 import success from "@/public/Others/successImgEmail.jpg";
+import { GetCustomTourCheckedItems } from "@/libs/JsonDataCatching";
+import customTourPlaces from "@/data/customTourPlaces.json";
+import customTourTransport from "@/data/customTourTransport.json";
 
 const CustomTourBookingForm = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -52,7 +55,8 @@ const CustomTourBookingForm = () => {
       noOfKids === "" ||
       tourDetails.selectedHotel === undefined ||
       tourDetails.selectedMealOption === "" ||
-      tourDetails.checkedPlaces.length === 0
+      tourDetails.checkedPlaces.length === 0 ||
+      tourDetails.transportationRequirement.length === 0
     ) {
       return setSubmitError("Fill all the fields ");
     }
@@ -82,6 +86,7 @@ const CustomTourBookingForm = () => {
       selectedHotelType: tourDetails.selectedHotel,
       selectedMealType: tourDetails.selectedMealOption,
       checkedPlaces: tourDetails.checkedPlaces,
+      transportationRequirement: tourDetails.transportationRequirement,
       specialRequest: SpecialRef.current.value,
     };
 
@@ -350,7 +355,26 @@ const CustomTourBookingForm = () => {
                 Places You Would Like To Visit
               </div>
               <div className="my-5">
-                <CheckBoxContainer />
+                <CheckBoxContainer
+                  contextName="checkedPlaces"
+                  identifier="place"
+                  Selectfunction={GetCustomTourCheckedItems([
+                    ...customTourPlaces,
+                  ])}
+                />
+              </div>
+
+              <div className="w-full text-center  sm:text-[18px] text-[16px] font-semibold sm:mt-5 mt-10">
+                Transportation Requirement
+              </div>
+              <div className="my-5">
+                <CheckBoxContainer
+                  contextName="transportationRequirement"
+                  identifier="type"
+                  Selectfunction={GetCustomTourCheckedItems([
+                    ...customTourTransport,
+                  ])}
+                />
               </div>
 
               <div className="flex sm:flex-row flex-col w-full mt-[6px]">

@@ -48,3 +48,8 @@ export function GetTimeSlot(title) {
 
   return TimeSlotArray;
 }
+
+export function GetCustomTourCheckedItems(jsonfilelocation) {
+  const data = jsonfilelocation;
+  return data;
+}
