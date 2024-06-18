@@ -18,8 +18,17 @@ import { TourContext } from "@/context/TourContextProvider";
 const DayTrips = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
+  useEffect(() => {
+    setTourDetails((prevDetails) => ({
+      ...prevDetails,
+      converedCurrencySymbol: "$",
+      currencyType: "USD",
+      conversionRate: 1,
+    }));
+  }, [setTourDetails]);
+
   const [minVal, setMinVal] = useState(0);
-  const [maxVal, setMaxVal] = useState(30000);
+  const [maxVal, setMaxVal] = useState(1000);
 
   const [durationMinVal, setDurationMinVal] = useState(0);
   const [durationMaxVal, setDurationMaxVal] = useState(100);
@@ -92,12 +101,15 @@ const DayTrips = () => {
   const handleSubmitRange = (e) => {
     e.preventDefault();
     const priceRangeValue = PriceRange(
-      minVal * tourDetails.conversionRate,
-      maxVal * tourDetails.conversionRate
+      minVal,
+      maxVal,
+      tourDetails.conversionRate
     );
     setFinalFilterdArray(priceRangeValue);
     setIsClickedPrice(false);
-    console.log("hi");
+    console.log(minVal, "min val");
+    console.log(tourDetails.conversionRate, "rateX");
+    console.log(minVal * tourDetails.conversionRate, "minval");
   };
 
   return (
@@ -165,9 +177,7 @@ const DayTrips = () => {
                           <input
                             type="number"
                             onChange={(e) => setMinVal(e.target.value)}
-                            value={Math.ceil(
-                              minVal * tourDetails.conversionRate
-                            )}
+                            value={minVal}
                             min={0}
                             className="outline-none w-full"
                           />
@@ -183,9 +193,7 @@ const DayTrips = () => {
                           <input
                             type="number"
                             onChange={(e) => setMaxVal(e.target.value)}
-                            value={Math.ceil(
-                              maxVal * tourDetails.conversionRate
-                            )}
+                            value={maxVal}
                             className="outline-none w-full"
                           />
                         </div>
@@ -216,7 +224,7 @@ const DayTrips = () => {
             return (
               //{placearray.map((place, index) => (
               <Link
-                href={`/daytrips/${place.description}?type=${place.type}&minduration=${place.minduration}&maxduration=${place.maxduration}&initialPrice=${place.initialPrice}&discountedPrice=${place.discountedPrice}&tags=${place.tags}&img=${place.img}&experience=${encodedExperience}`}
+                href={`/day-trips/${place.description}?type=${place.type}&minduration=${place.minduration}&maxduration=${place.maxduration}&initialPrice=${place.initialPrice}&discountedPrice=${place.discountedPrice}&tags=${place.tags}&img=${place.img}&experience=${encodedExperience}`}
                 key={index}
                 className="flex flex-col text-left  overflow-hidden   bigmd:w-[300px] sm:w-[500px] xs:w-[315px] xxs:w-[275px] xxxs:w-[250px] w-[220px] h-[450px]  rounded-xl shadow-lg xxxs:m-4 m-2 transition-all duration-3000 "
               >

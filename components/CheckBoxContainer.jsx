@@ -78,12 +78,12 @@ const CheckBoxContainer = () => {
           {/* <div className="mt-4">
         <strong>Selected Places:</strong> {activePlaces.join(", ")}
       </div> */}
-          {/* {tourDetails.checkedPlaces &&
-            tourDetails.checkedPlaces.map((place, index) => (
-              <div key={index}>{place}</div>
-            ))} */}
         </div>
       </div>
+      {/* {tourDetails.checkedPlaces &&
+        tourDetails.checkedPlaces.map((place, index) => (
+          <div key={index}>{place}</div>
+        ))} */}
     </>
   );
 };

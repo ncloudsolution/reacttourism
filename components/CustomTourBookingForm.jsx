@@ -13,6 +13,7 @@ import CustomHotelDropDown from "./standalone/CustomHotelDropDown";
 import CheckBoxContainer from "./CheckBoxContainer";
 import RadioBtnContainer from "./RadioBtnContainer";
 import OwnerEmail from "./emailTemplates/OwnerEmail";
+import success from "@/public/Others/successImgEmail.jpg";
 
 const CustomTourBookingForm = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -66,9 +67,11 @@ const CustomTourBookingForm = () => {
     setSubmitError("");
 
     const customTourDetails = {
-      OwnerEmail: process.env.NEXT_PUBLIC_MY_EMAIL.split(","),
-      arrivalDate: arrivalDate,
-      depatureDate: depatureDate,
+      ownerEmail: process.env.NEXT_PUBLIC_MY_EMAIL.split(","),
+      arrivalDate: arrivalDate.toDateString(),
+      arrivalTime: arrivalDate.toTimeString(),
+      depatureDate: depatureDate.toDateString(),
+      depatureTime: depatureDate.toTimeString(),
       customerName: NameRef.current.value,
       customerEmail: EmailRef.current.value,
       customerNicPassportNo: NicPassportRef.current.value,
@@ -78,7 +81,7 @@ const CustomTourBookingForm = () => {
       noOfKids: noOfKids,
       selectedHotelType: tourDetails.selectedHotel,
       selectedMealType: tourDetails.selectedMealOption,
-      selectedPlaces: tourDetails.checkedPlaces,
+      checkedPlaces: tourDetails.checkedPlaces,
       specialRequest: SpecialRef.current.value,
     };
 

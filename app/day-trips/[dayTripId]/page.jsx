@@ -6,13 +6,44 @@ import {
   GetDescriptionParaData,
   GetExcludeData,
   GetIncludeData,
+  GetPlacesData,
 } from "@/libs/JsonDataCatching";
 import Image from "next/image";
 import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
+import { FaExclamationTriangle } from "react-icons/fa";
+import { FaSquareCheck } from "react-icons/fa6";
+import { AiFillCloseSquare } from "react-icons/ai";
+import { AiOutlineStop } from "react-icons/ai";
 
 const DayTripDetails = ({ params, searchParams }) => {
+  const NotsuitableArray = [
+    "Back problems",
+    "Insect allergies",
+    "Cold",
+    "Kidney problems",
+    "Recent surgeries",
+    "Motion sickness",
+    "Animal allergies",
+    "Pregnant women",
+    "Wheelchair user",
+  ];
+
+  const NotAllowedArray = [
+    "Pets",
+    "Explosive substances",
+    "Nudity",
+    "Fireworks",
+    "Alcohol and drugs",
+    "Drones",
+    "Glass object",
+    "Drinks in the vehicle",
+    "Making noise",
+    "Alcoholic drinks in the vehicle",
+    "Touching/Feeding animals",
+  ];
+
   const decodedDescription = decodeURIComponent(params.dayTripId);
 
   console.log(decodedDescription);
@@ -39,6 +70,7 @@ const DayTripDetails = ({ params, searchParams }) => {
 
   const IncludeArray = GetIncludeData(decodedDescription);
   const ExcludeArray = GetExcludeData(decodedDescription);
+  const PlacesArray = GetPlacesData(decodedDescription);
 
   return (
     <>
@@ -128,8 +160,9 @@ const DayTripDetails = ({ params, searchParams }) => {
             <div className="midxl:w-[700px] mobile:w-[500px] w-full ">
               <DayTripsDescriptionSection
                 DescriptionParagraph={DescriptionParagraph}
+                PlacesArray={PlacesArray}
               />
-              <div className="my-5">
+              <div className="grid xs:grid-cols-2  grid-cols-1 my-7">
                 <div className="flex flex-col gap-2  w-full">
                   <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
                     Include
@@ -137,16 +170,15 @@ const DayTripDetails = ({ params, searchParams }) => {
                   <div className="my-1 ">
                     {IncludeArray.map((include, index) => (
                       <div key={index}>
-                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
-                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-black shadow"></div>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex gap-x-3">
+                          <FaSquareCheck className="md:text-[20px] text-[18px]" />
                           <div className="flex flex-1">{include}</div>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
-              <div className="my-5">
+
                 <div className="flex flex-col gap-2  w-full">
                   <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
                     Exclude
@@ -154,9 +186,43 @@ const DayTripDetails = ({ params, searchParams }) => {
                   <div className="my-1 ">
                     {ExcludeArray.map((exclude, index) => (
                       <div key={index}>
-                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex items-start">
-                          <div className="size-[10px] rounded-full mr-2 mt-1.5 bg-primary shadow"></div>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex gap-x-3">
+                          <AiFillCloseSquare className="md:text-[22px] text-[20px] text-primary" />
                           <div className="flex flex-1">{exclude}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="my-8">
+                <div className="flex flex-col gap-2  w-full">
+                  <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                    Not Suitable For - [ People with ]
+                  </div>
+                  <div className="my-1 grid midxl:grid-cols-3 xs:grid-cols-2 grid-cols-1 midxl:gap-x-7">
+                    {NotsuitableArray.map((notSuitable, index) => (
+                      <div key={index}>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex gap-x-3">
+                          <AiOutlineStop className="md:text-[20px] text-[18px]" />
+                          <div className="flex flex-1">{notSuitable}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="my-7">
+                <div className="flex flex-col gap-2  w-full">
+                  <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold">
+                    Not Allowed
+                  </div>
+                  <div className="my-1 grid midxl:grid-cols-3 xs:grid-cols-2 grid-cols-1 midxl:gap-x-7 ">
+                    {NotAllowedArray.map((notAllowed, index) => (
+                      <div key={index}>
+                        <div className=" md:text-[15px] text-[14px]  w-full py-1 flex gap-x-3">
+                          <FaExclamationTriangle className="md:text-[20px] text-[18px] text-primary" />
+                          <div className="flex flex-1">{notAllowed}</div>
                         </div>
                       </div>
                     ))}
@@ -171,7 +237,7 @@ const DayTripDetails = ({ params, searchParams }) => {
                     Experience
                   </div>
                   <div className="flex  flex-col gap-5 my-7 relative">
-                    <div className="border-dashed border-[1px] border-black absolute flex flex-col h-[95%] left-[18px] -z-10"></div>
+                    <div className="border-dashed border-[1px] border-black absolute flex flex-col h-[93%] left-[18px] -z-10"></div>
                     {experienceArray.map((experience, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="bg-black text-primary rounded-full size-[40px]  flex justify-center items-center font-semibold xxs:text-[18px] text-[16px] ">

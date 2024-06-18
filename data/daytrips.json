@@ -6,11 +6,11 @@
     "maxduration": null,
     "description": "Galle and Bentota Day-Tour From Colombo",
     "initialPrice": null,
-    "discountedPrice": 18038.96,
+    "discountedPrice": 59,
+    "timeSlots": ["7:00 AM", "7.30 AM"],
     "tags": ["Pickup available"],
     "include": [
       "Hotel pickup and drop-off in a shared vehicle",
-      "English-speaking chauffeur/guide",
       "A bottle of water"
     ],
     "exclude": [
@@ -22,20 +22,51 @@
     "experience": [
       {
         "heading": "Pickup Location Options",
-        "text": "Colombo, Gampaha"
+        "text": "Colombo , Negombo, Dehiwala, Mount Laviniya, Wadduwa, Kalutara"
       },
       {
-        "heading": "Jeep / SUV",
-        "text": "(4 hours)"
+        "heading": "Car",
+        "text": "(1 hours)"
       },
       {
-        "heading": "Madu River",
-        "text": "Photo stop, Boat riding, Guided tour, Sightseeing,  (3 hours)"
+        "heading": "Bentota",
+        "text": "Photo stop (10 minutes)"
       },
       {
-        "heading": "Finish at",
-        "text": "Galle"
+        "heading": "Car",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Kosgoda Sea Turtle Conservation",
+        "text": "Visit (45 minutes)"
+      },
+      {
+        "heading": "Madu Ganga",
+        "text": "Boat cruise (105 minutes)"
+      },
+      {
+        "heading": "Car",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Hikkaduwa",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Galle Fort",
+        "text": "Photo stop, Visit, Free time, Sightseeing, Walk, Sunset, Self-guided tour, Pass by (1 hour)"
+      },
+      {
+        "heading": "Arrive back at",
+        "text": "Colombo, Negombo, Wadduwa, kalutara, Dehiwala, Mount Laviniya"
       }
+    ],
+    "places": [
+      "Madu Gaga",
+      "Local Cinnamon Garden",
+      "Turtle Sanctuary",
+      "Stilt fishermen in action",
+      "Galle Fort"
     ],
     "fullDescriptionParas": [
       "After being picked up at your hotel, hop onboard your Madu Ganga Magrove boat safari and explore the Madu River. See the mangrove forests and marshlands that surround the river. Stop at a cinnamon garden, and try some of the area’s famous cinnamon. The Madu Ganga River region is home to some of the best quality cinnamon in the world as well as a flourishing cinnamon industry. Afterward, marvel at the fishermen who stoically sit atop large branches planted in the middle of the water waiting for their catch.",
@@ -49,8 +80,9 @@
     "minduration": 13,
     "maxduration": null,
     "description": "From Colombo : Day Trip to Kandy | Pinnwala | Royal Gardens",
-    "initialPrice": 32000,
-    "discountedPrice": 16000,
+    "initialPrice": 102.26,
+    "discountedPrice": 50.63,
+    "timeSlots": ["5:40 AM", "6.00 AM", "6.20 AM", "6.40 AM"],
     "tags": ["Pickup available", "New activity"],
     "include": [
       "Complimentary pickup and drop-off ( Colombo, Dehiwala, Kadawatha, Gampaha, Kandy )",
@@ -66,7 +98,7 @@
     "experience": [
       {
         "heading": "Pickup Location Options",
-        "text": "Negambo, Colombo,"
+        "text": "Colombo, Negombo, wadduwa, Mount Laviniya"
       },
       {
         "heading": "Kandy",
@@ -76,6 +108,14 @@
         "heading": "drop-off locations",
         "text": "Negambo, Colombo,"
       }
+    ],
+    "places": [
+      "Pinnawala Elephant Orphanage",
+      "Royal Botanical Gardens",
+      "Temple of the Tooth in Kandy",
+      "Kandy spice walk",
+      "Tea factory tour",
+      "Kandy View Point"
     ],
     "fullDescriptionParas": [
       "Experience the vibrant culture and natural beauty of Sri Lanka on this captivating tour from Colombo to Kandy. Your journey begins with a visit to the Pinnawala Elephant Orphanage, where you can observe and interact with orphaned elephants as they bathe and play in the river. This heartwarming experience offers a glimpse into the conservation efforts dedicated to protecting these magnificent creatures",
@@ -94,7 +134,8 @@
     "maxduration": 16,
     "description": "From Colombo : Sigiriya and Dambulla Day Trip and Safari",
     "initialPrice": null,
-    "discountedPrice": 19000,
+    "discountedPrice": 69,
+    "timeSlots": ["6:00 AM"],
     "tags": ["Pickup available"],
     "include": [
       "Hotel pickup and drop-off",
@@ -113,7 +154,7 @@
     "experience": [
       {
         "heading": "Pickup Location Options",
-        "text": "Colombo, Bentota, Kalutara, Hikkaduwa, Galle"
+        "text": "Colombo, Negambo, Kalutara, Bentota,Hikkaduwa, Galle"
       },
       {
         "heading": "Kurunegala",
@@ -137,9 +178,10 @@
       },
       {
         "heading": "drop-off locations",
-        "text": "Hikkaduwa, Bentota, Kalutara, Colombo, Galle"
+        "text": "Colombo, Negambo, Kalutara, Bentota,Hikkaduwa, Galle"
       }
     ],
+
     "fullDescriptionParas": [
       "Depart Colombo and travel by a shared vehicle, in a small group, to the city of Sigiriya, and head directly to Sigiriya Rock on arrival. Gaze in awe at the massive column of rock that, according to the ancient Sri Lankan chronicle The Culavamsa, was selected by King Kassyapa as the site of his new capital.",
       "Admire numerous paintings of historic queens, princesses, and maids inside the rock fortress before getting a break for lunch at your own expense. Then, explore some of the traditional crafts of the region, such as wood carving and batik textiles, with time to purchase souvenirs before departing.",
@@ -154,10 +196,10 @@
     "maxduration": null,
     "description": "From Colombo : Galle and Bentota Day Tour",
     "initialPrice": null,
-    "discountedPrice": 15500,
+    "discountedPrice": 50.22,
     "tags": ["New activity"],
     "include": [
-      "English-speaking chauffeur/guide",
+      "English-speaking driver",
       "Hotel pickup and drop-off in Colombo, Dehiwala, Mount Lavinia, Kalutara,Bentota, Beruwala, Kosgoda, Ahungalla, and Balapitiya area",
       "Transportation by an air-conditioned car"
     ],
@@ -167,6 +209,11 @@
       "Food and drinks"
     ],
     "experience": [],
+    "places": [
+      "Madu Ganga",
+      "Local Cinnamon Garden",
+      "Stilt fishermen in action"
+    ],
     "fullDescriptionParas": [
       "Start your day with a convenient pickup from your hotel. Hop aboard your comfortable tour vehicle and experience the wonders of Sri Lanka's Madu Ganga River Region with a thrilling boat safari. Witness the beauty of mangrove forests and marshlands as you sail through the Madu River. Discover the secrets of cinnamon at a local garden and taste the renowned spice.",
       "Be captivated by skilled fishermen perched on branches, patiently waiting for their catch. At the Turtle Hatchery, meet various turtle species and learn about their conservation efforts.",
@@ -179,8 +226,9 @@
     "minduration": 24,
     "maxduration": null,
     "description": "From Colombo | Negambo : Sigiriya, Dambulla and Minneriya Day Trip",
-    "initialPrice": 40000,
-    "discountedPrice": 35000,
+    "initialPrice": 127,
+    "discountedPrice": 114.2,
+    "timeSlots": ["5.30 AM", "6:00 AM"],
     "tags": ["Small Groups"],
     "include": [
       "Free Hotel pickup and drop-off",
@@ -196,7 +244,7 @@
     "experience": [
       {
         "heading": "Pickup Location Options",
-        "text": "Colombo"
+        "text": "Colombo, Negombo, Dehiwala, Mount Laviniya , Wennapuwa"
       },
       {
         "heading": "Car",
@@ -220,8 +268,14 @@
       },
       {
         "heading": "Arrive back at:",
-        "text": "Colombo"
+        "text": "Colombo, Negombo, Dehiwala, Mount Laviniya , Wennapuwa"
       }
+    ],
+    "places": [
+      "Minneriya National Park",
+      "Sigiriya Rock Fortress",
+      "Dambulla Cave Temple",
+      "Hiriwadunna"
     ],
     "fullDescriptionParas": [
       "Explore the Sigiriya Lion Rock Fortress and Minneriya National Park on a day trip from Colombo. Visit the Hiriwadunna Village and enjoy a Sri Lankan buffet, take a jeep safari in Minneriya National Park, and visit the Dambulla Cave Temple.",
@@ -238,7 +292,8 @@
     "maxduration": null,
     "description": "Private Sigiriya and Dambulla Day Tour from Colombo",
     "initialPrice": null,
-    "discountedPrice": 30000,
+    "discountedPrice": 94,
+    "timeSlots": ["5.00 AM", "5.30 AM", "6:00 AM"],
     "tags": ["Pickup available"],
     "include": [
       "Hotel pickup and drop-off",
@@ -256,7 +311,7 @@
     "experience": [
       {
         "heading": "Pickup Location Options",
-        "text": "Colombo"
+        "text": "Colombo, Negombo, Dehiwala, Mount Laviniya , Wennapuwa"
       },
       {
         "heading": "Car",
@@ -292,8 +347,13 @@
       },
       {
         "heading": "Arrive back at:",
-        "text": "Colombo"
+        "text": "Colombo, Negombo, Dehiwala, Mount Laviniya , Wennapuwa"
       }
+    ],
+    "places": [
+      "Minneriya National Park",
+      "Sigiriya Rock Fortress",
+      "Dambulla Cave Temple"
     ],
     "fullDescriptionParas": [
       "Depart Colombo and travel by a Private vehicle, to the city of Sigiriya, and head directly to Sigiriya Rock on arrival. Gaze in awe at the massive column of rock that, according to the ancient Sri Lankan chronicle The Culavamsa, was selected by King Kassyapa as the site of his new capital.",
@@ -305,11 +365,12 @@
   {
     "type": "private tour",
     "img": "/DayTrips/galle.jpg",
-    "minduration": 24,
+    "minduration": 14,
     "maxduration": null,
     "description": "Colombo: Galle and Bentota Day Trip From Colombo City",
-    "initialPrice": 22500,
-    "discountedPrice": 21500,
+    "initialPrice": 74,
+    "discountedPrice": 70.25,
+    "timeSlots": ["6.00 AM", "6.30 AM"],
     "tags": ["New activity"],
     "include": [
       "Hotel pickup and drop-off",
@@ -327,7 +388,7 @@
     "experience": [
       {
         "heading": "Starting location",
-        "text": "Colombo"
+        "text": "Colombo, Dehiwala, Mount laviniya , Negombo"
       },
       {
         "heading": "Car",
@@ -375,8 +436,14 @@
       },
       {
         "heading": "Arrive back at:",
-        "text": "Colombo"
+        "text": "Colombo, Dehiwala, Mount laviniya , Negombo"
       }
+    ],
+    "places": [
+      "Turtle Hatchery",
+      "Madu Ganga",
+      "Local Cinnamon Garden",
+      "stilt fishermen in action"
     ],
     "fullDescriptionParas": [
       "Discover the Madu Ganga River on a boat safari from Colombo. See the mangrove forests and marshlands that surround the river. Stop at a cinnamon garden, and try some of the area’s famous cinnamon. Visit a local turtle hatchery and the Galle Fort.",
@@ -392,7 +459,8 @@
     "maxduration": null,
     "description": "Colombo Full day city tour",
     "initialPrice": null,
-    "discountedPrice": 12000,
+    "discountedPrice": 39,
+    "timeSlots": ["9:30 AM"],
     "tags": ["Pickup available", "New activity"],
     "include": [
       "Pick up and drop off",
@@ -407,6 +475,15 @@
       "Lunch"
     ],
     "experience": [],
+    "places": [
+      "Bandaranaike Memorial International Conference Hall (BMICH)",
+      "Independence Square",
+      "Colombo Museum",
+      "Gangarama Temple",
+      "The Lotus Tower",
+      "Colombo Lighthouse",
+      "Galle Face Green"
+    ],
     "fullDescriptionParas": [
       "Start your 6-hour city tour of Colombo with a visit to the famous Bandaranaike Memorial International Conference Hall (BMICH), which is renowned for its opulent architecture. Explore Independence Square, a representation of Sri Lankan independence, next.",
       "After learning about the island's lengthy history at the Colombo Museum, visit Gangarama Temple, a tranquil oasis in the middle of the busy city. The Lotus Tower, which provides sweeping city views, is not to be missed.",

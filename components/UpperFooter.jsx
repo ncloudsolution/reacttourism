@@ -45,17 +45,20 @@ const UpperFooter = () => {
               </div>
 
               <div className="flex flex-col text-center mb-[40px] ">
-                <Link href="/airportp&d" className="my-2 hover:text-white">
+                <Link href="/airport-p&d" className="my-2 hover:text-white">
                   Airport Transport
                 </Link>
-                <Link href="/pointtopoint" className="hover:text-white">
+                <Link href="/point-to-point" className="hover:text-white">
                   Point to Point
                 </Link>
-                <Link href="/journeyonrails" className="my-2 hover:text-white">
+                <Link
+                  href="/journey-on-rails"
+                  className="my-2 hover:text-white"
+                >
                   Train booking
                 </Link>
-                <Link href="/daytrips" className="hover:text-white">
-                  Day Tours
+                <Link href="/day-trips" className="hover:text-white">
+                  Day Trips
                 </Link>
               </div>
 

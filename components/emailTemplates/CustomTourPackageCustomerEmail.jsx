@@ -1,20 +1,26 @@
-import React from "react";
 import {
-  Html,
-  Head,
-  Preview,
   Body,
-  Img,
-  Container,
-  Section,
-  Row,
-  Column,
-  Heading,
-  Text,
   Button,
+  Container,
+  Column,
+  Head,
+  Heading,
+  Html,
+  Img,
+  Preview,
+  Row,
+  Section,
+  Text,
 } from "@react-email/components";
+import * as React from "react";
 
-const DayTripCustomer = ({ dayTripDetails }) => {
+const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "";
+
+export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
+  const placesArray = customTourDetails.checkedPlaces;
+
   return (
     <Html>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,12 +51,12 @@ const DayTripCustomer = ({ dayTripDetails }) => {
 
             <Section style={content}>
               {/* <Row>
-              <Img
-                style={image}
-                width={620}
-                src={`${baseUrl}/static/yelp-header.png`}
-              />
-            </Row> */}
+                <Img
+                  style={image}
+                  width={620}
+                  src={`${baseUrl}/static/yelp-header.png`}
+                />
+              </Row> */}
 
               <Row
                 style={{
@@ -94,114 +100,125 @@ const DayTripCustomer = ({ dayTripDetails }) => {
                       marginBottom: 30,
                     }}
                   >
-                    Here&apos;s your tour day trip details
+                    Here&apos;s your custom tour details
                   </Heading>
 
                   <Row style={{ marginTop: 20, width: "680px" }}>
-                    <Column
-                      style={{
-                        ...section,
-                        width: 380,
-                        margin: 0,
-                      }}
-                    >
+                    <Column style={{ paddingRight: 0 }}>
                       {/**JOURNEY DETAILS**/}
-                      <Section style={{ ...section, marginBottom: 20 }}>
-                        <Text style={paragraph}>
-                          <b>Selected Day Trip : </b>
-                          {dayTripDetails.selectedTrip}
-                        </Text>
-                        <Text style={paragraph}>
-                          <b>Pickup Date : </b>
-                          {dayTripDetails.pickUpDate}
-                        </Text>
-                        <Text style={paragraph}>
-                          <b>Pickup Time : </b>
-                          {dayTripDetails.timeSlot}
-                        </Text>
-                      </Section>
-
-                      {/**IDENTITY DETAILS**/}
-                      <Text style={paragraph}>
-                        <b>Customer Name : </b>
-                        {dayTripDetails.cusName}
-                      </Text>
-                      <Text style={paragraph}>
-                        <b>Customer Email : </b>
-                        {dayTripDetails.cusEmail}
-                      </Text>
-                      <Text style={paragraph}>
-                        <b>Mobile No : </b>
-                        {dayTripDetails.cusMobileNo}
-                      </Text>
-                      <Text style={paragraph}>
-                        <b>No of Adults : </b>
-                        {dayTripDetails.noOfAdults}
-                      </Text>
-                      <Text style={paragraph}>
-                        <b>No of Kids : </b>
-                        {dayTripDetails.noOfKids}
-                      </Text>
-                    </Column>
-
-                    <Column>
-                      {/**TOTAL SECTION**/}
-                      <Section
+                      {/**msg**/}
+                      <Text
                         style={{
-                          ...section,
-                          width: 300,
-                          padding: 20,
+                          fontSize: "16px",
+                          textAlign: "justify",
+                          ...paragraph,
+                          marginTop: 10,
                         }}
                       >
-                        <div
-                          style={{
-                            ...paragraph,
-                            marginTop: 5,
-                            display: "flex",
-                            width: "fit-content",
-                          }}
-                        >
-                          <span
-                            style={{
-                              backgroundColor: "#eab308",
-                              padding: "10px",
-                              borderRadius: "5px",
-                              marginBottom: 5,
-                            }}
-                          >
-                            <b>
-                              Total Price in{" "}
-                              {dayTripDetails.selectedCurrencyType} :{" "}
-                            </b>
-                            <span>
-                              {dayTripDetails.selectedCurrencySymbol} {""}
-                              {dayTripDetails.totalPriceInSelectedCurrency}
-                            </span>{" "}
-                          </span>
-                        </div>
-                        {dayTripDetails.selectedCurrencyType != "LKR" && (
-                          <div
-                            style={{
-                              ...paragraph,
-                              marginTop: 5,
-                              display: "flex",
-                              width: "fit-content",
-                            }}
-                          >
-                            <span
+                        Hi <b>{customTourDetails.customerName}</b>, Thank you
+                        for submitting your custom tour package request! We are
+                        excited to help you plan your perfect vacation. Based on
+                        the information you provided, you will be traveling with{" "}
+                        <b>
+                          {customTourDetails.noOfAdults > 1
+                            ? `${customTourDetails.noOfAdults} adults`
+                            : "1 adult"}
+                        </b>{" "}
+                        <b>
+                          {" "}
+                          {customTourDetails.noOfKids === 0 && "and no kids. "}
+                        </b>
+                        <b>
+                          {" "}
+                          {customTourDetails.noOfKids === 1 && "and 1 kid. "}
+                        </b>
+                        <b>
+                          {" "}
+                          {customTourDetails.noOfKids > 1 &&
+                            `and ${customTourDetails.noOfKids} kids. `}
+                        </b>
+                        You have selected{" "}
+                        <b>{customTourDetails.selectedHotel}</b> for your
+                        accommodations and{" "}
+                        <b>{customTourDetails.selectedMealOption}</b> for your
+                        meals. We understand you are interested in visiting,{" "}
+                      </Text>
+
+                      <Section
+                        style={{
+                          marginTop: 20,
+                        }}
+                      >
+                        <b>{placesArray.join(", ")}</b>
+                      </Section>
+
+                      {/* <Section
+                        style={{
+                          marginTop: 10,
+                        }}
+                      >
+                        <b>
+                          {placesArray.map((place, index) => (
+                            <div
+                              key={index}
                               style={{
-                                backgroundColor: "#eab308",
-                                padding: "10px",
-                                borderRadius: "5px",
-                                marginBottom: 5,
+                                display: "flex",
+                                flexDirection: "row",
+                                gap: 10,
+                                alignItems: "center",
                               }}
                             >
-                              <b>Total Price in LKR : </b>
-                              <span>{`Rs ${dayTripDetails.totalPriceInLKR}`}</span>{" "}
-                            </span>
-                          </div>
-                        )}
-                      </Section>
+                              <div
+                                style={{
+                                  width: 5,
+                                  height: 5,
+                                  borderRadius: "100%",
+                                  backgroundColor: "black",
+                                }}
+                              />
+                              <div>{place}</div>
+                            </div>
+                          ))}
+                        </b>
+                      </Section> */}
+
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          textAlign: "justify",
+                          ...paragraph,
+                          marginTop: 20,
+                        }}
+                      >
+                        Our team will review your request and get back to you
+                        with a customized itinerary and a quote as soon as
+                        possible. If you have any additional questions or need
+                        further assistance, please do not hesitate to reach out
+                        to us. Thank you for choosing{" "}
+                        <b>Tour Booking Sri Lanka</b>. We look forward to
+                        helping you create unforgettable travel experiences!
+                      </Text>
+
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          textAlign: "justify",
+                          ...paragraph,
+                          marginTop: 10,
+                        }}
+                      >
+                        <b>Best regards,</b>
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: "16px",
+                          textAlign: "justify",
+                          ...paragraph,
+                          marginTop: 0,
+                        }}
+                      >
+                        <b>Tour Booking Sri Lanka.</b>
+                      </Text>
                     </Column>
                   </Row>
 
@@ -429,7 +446,7 @@ const DayTripCustomer = ({ dayTripDetails }) => {
                             backgroundColor: "#1877F2",
                             margin: "0px 0px 0px 5px",
                           }}
-                          href={`https://web.facebook.com/easycabandtours?mibextid=ZbWKwL&_rdc=1&_rdr`}
+                          href={`https://www.facebook.com/tourbookingsrilankan`}
                         >
                           Facebook
                         </Button>
@@ -459,7 +476,7 @@ const DayTripCustomer = ({ dayTripDetails }) => {
   );
 };
 
-export default DayTripCustomer;
+export default CustomTourPackageCustomerEmail;
 
 const main = {
   backgroundColor: "#fff",

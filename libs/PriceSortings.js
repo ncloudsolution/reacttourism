@@ -26,13 +26,13 @@ export function PriceHighToLow() {
   return sortedTours;
 }
 
-export function PriceRange(input1, input2) {
+export function PriceRange(input1, input2, rate) {
   // selective range
   const sortedTours1 = [...daytrips].filter(
-    (tour) => tour.discountedPrice >= input1
+    (tour) => tour.discountedPrice * rate >= input1
   );
   const sortedTours2 = [...daytrips].filter(
-    (tour) => tour.discountedPrice <= input2
+    (tour) => tour.discountedPrice * rate <= input2
   );
 
   const finalSortedTour = sortedTours1.filter((tour) =>

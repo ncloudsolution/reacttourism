@@ -9,6 +9,11 @@ export const metadata = {
 };
 
 function page() {
+  if (typeof window !== "undefined") {
+    // Client-side only code
+    document.body.style.overflow = "auto";
+  }
+
   return (
     <>
       <DayTrips />

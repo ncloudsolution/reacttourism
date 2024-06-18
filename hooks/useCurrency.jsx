@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// "use client";
+// import React, { useEffect, useState } from "react";
 
 // const useCurrency = () => {
 //   const [data, setData] = useState({});
@@ -16,24 +17,41 @@ import React, { useEffect, useState } from "react";
 
 // export default useCurrency;
 
-const useCurrency = () => {
+"use client";
+import { useEffect, useState } from "react";
+
+const useCurrency = (pathname) => {
   const [data, setData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/lkr.json`
-        );
-        const result = await response.json();
-        setData(result["lkr"]);
-      } catch (error) {
-        console.error("Fetch error:", error);
+      if (pathname.includes("/daytrips")) {
+        try {
+          console.log("daytrips");
+          const response = await fetch(
+            `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json`
+          );
+          const result = await response.json();
+          setData(result["usd"]);
+        } catch (error) {
+          console.error("Fetch error:", error);
+        }
+      } else {
+        try {
+          console.log("otherRoutes");
+          const response = await fetch(
+            `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/lkr.json`
+          );
+          const result = await response.json();
+          setData(result["lkr"]);
+        } catch (error) {
+          console.error("Fetch error:", error);
+        }
       }
     };
 
     fetchData();
-  }, []);
+  }, [pathname]);
 
   console.log(data, "data");
   return data;

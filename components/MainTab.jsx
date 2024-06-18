@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PointToPointMap from "./Map/PointToPointMap";
 import AirportMap from "./Map/AirportMap";
 import TrainMap from "./Map/TrainMap";
@@ -18,6 +18,7 @@ import { BsCoin } from "react-icons/bs";
 import { SetHighwayCharge } from "@/libs/HighwayFair";
 import CustomCurrencyDropDown from "./standalone/CustomCurrencyDropDown";
 import CurrencyTab from "./standalone/CurrencyTab";
+import { TourContext } from "@/context/TourContextProvider";
 
 const MainTab = () => {
   const [isPointToPointClicked, setIsPointToPointClicked] = useState(false);
@@ -25,6 +26,17 @@ const MainTab = () => {
   const [isTrainClicked, setIsTrainClicked] = useState(false);
   const [isDayTourClick, setDayTourClick] = useState(false);
   const [isCurrencyActive, setIsCurrencyActive] = useState(false);
+
+  const { tourDetails, setTourDetails } = useContext(TourContext);
+
+  useEffect(() => {
+    setTourDetails((prevDetails) => ({
+      ...prevDetails,
+      converedCurrencySymbol: "Rs",
+      currencyType: "LKR",
+      conversionRate: 1,
+    }));
+  }, [setTourDetails]);
 
   const [showSkeleton, setShowSkeleton] = useState(true);
   useEffect(() => {
