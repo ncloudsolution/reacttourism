@@ -2,6 +2,12 @@ import CustomTourBookingForm from "@/components/CustomTourBookingForm";
 import Image from "next/image";
 import man2 from "@/public/Others/man2.png";
 
+export const metadata = {
+  title: "Custom Tour Package",
+  description:
+    "Discover tailored travel experiences with our custom tour packages. Book your dream vacation designed specifically to match your unique preferences and interests. Enjoy personalized itineraries, exclusive destinations, and exceptional service, ensuring a memorable journey. Start planning your perfect getaway today",
+};
+
 const page = () => {
   return (
     <CustomTourBookingForm>

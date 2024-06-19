@@ -25,7 +25,10 @@ const useCurrency = (pathname) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (pathname.includes("/daytrips")) {
+      if (
+        pathname.includes("/day-trips") ||
+        pathname.includes("/tour-packages")
+      ) {
         try {
           console.log("daytrips");
           const response = await fetch(
