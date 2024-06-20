@@ -3,7 +3,63 @@
     "img": "/Tours/kandy.jpg",
     "description": "06 Days | 05 Nights Excursions from Kandy, Sigiriya & Colombo",
     "price": 250,
-    "duration": 5
+    "duration": 5,
+    "experience": [
+      {
+        "day": "Day 1",
+        "heading": "Airport - Pinnawala - Kandy",
+        "text": "Upon arrival at Bandaranaike International Airport you will be greeted by the Airport Representative and Professional Chauffer of Ayubowan Tours & Travels. Your chauffer will drive you to Kandy. Visit the Elephant Orphanage en-route. It’s an orphanage, nursery and captive breeding ground for wild Asian elephants. The orphanage was established to feed, nurse and house young/baby elephants found abandoned by their mothers. You will be able to feed them according to their time table. Proceed to Kandy & visit the Temple of the Tooth which houses the Sacred Tooth of Lord Buddha. Visitors can observe poojas (offerings) the ancient traditions of drumming and sacred chanting in honor of the Tooth Relic. Witness the Cultural Dancing Show in the evening. It’s a stimulating of Sri Lankan Arts, Dance and Cultural Heritage with traditional dancer’s & drummer’s performance. Overnight Kandy.",
+        "hotelName": "The Swiss Residence",
+        "hotelLogo": "/Hotels/theSwissResidence.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.swissresidence.lk/"
+      },
+      {
+        "day": "Day 2",
+        "heading": "Kandy - Peradeniya - Nuwara Eliya - Kandy",
+        "text": "After breakfast proceed to Nuwaraeliya visiting the Royal Botanical Garden at Peradeniya. It is renowned for its collection of orchids. The garden includes more than 4000 species of plants, including orchids, spices, medicinal plants and palm trees. Then proceed to Nuwara Eliya by visiting a Tea Factory, Tea Plantations and Water Falls. Visit a tea factory around Ramboda will be a fantastic stop through misty mountains as you can enjoy with a cup of tea (world famous “Ceylon Tea”) and also you can buy fresh products from their outlet. If interested you can visit Shri Bhakta Hanuman temple at Ramboda which is dedicated to the God Hanuman and you can witness the 18 feet Hanuman statue. Visit Ramboda Falls and reach Nuwara Eliya by passing scenic misty mountains. Conduct a sightseeing tour in Nuwaraeliya to enjoy the beauty of the city which is locally called “Little England”. Return to the hotel in Kandy. Overnight Kandy.",
+        "hotelName": "The Swiss Residence",
+        "hotelLogo": "/Hotels/theSwissResidence.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.swissresidence.lk/"
+      },
+      {
+        "day": "Day 3",
+        "heading": "Kandy - Dambulla - Minneriya - Sigiriya",
+        "text": "After breakfast leave for Dambulla. It is recommended to visit an Herbal Spice Garden on your way to Kandy to learn about Sri Lanka’s world renowned spices and a lot of different herbs. Visit Dambulla Cave Temple en route. Dambulla is the largest and best preserved cave temple complex in Sri Lanka. Its rock ceiling is one large sweep of colorful paintings which related to Lord Buddha and his life. There are 80 documented caves in the surrounding and a total of 153 Buddha statues within the main 05 caves. Leave for Minnariya to experience a wild safari in the afternoon by a safari jeep. Minneriya is a hot spot for safari lovers because of its abundance of elephants. Over 200 elephants converge to enjoy the tank with the receding water level to play and make merry. Overnight Sigiriya.",
+        "hotelName": "Kassapa Lion Rock",
+        "hotelLogo": "/Hotels/kassapaLionRock.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.kassapalionsrock.com/"
+      },
+      {
+        "day": "Day 4",
+        "heading": "Sigiriya - Colombo",
+        "text": "After breakfast visit the rock fortress, which was built by King Kasyapa in the 5th century A.D. and was a royal citadel for more than 18 years. The Sigiriya site contains the ruins of an upper palace located on the flat top of the rock, a mid level terrace that includes the Lion Gate and the mirror wall with its frescoes, the lower palaces clings to the slopes below the rocks. The site was both a palace and a fortress. Proceed to Colombo. Overnight Colombo.",
+        "hotelName": "Cinnamon Red",
+        "hotelLogo": "/Hotels/cinnamonRed.png",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.cinnamonhotels.com/cinnamonredcolombo/offers/resident-offer-room-only?gad_source=1&gclid=CjwKCAjwps-zBhAiEiwALwsVYfAH6eaT4DjguTcaxDMry8p1ZuSzbregb1zqCuCBGG41O0ZWPazIsxoCiuwQAvD_BwE"
+      },
+      {
+        "day": "Day 5",
+        "heading": "Colombo - Bentota - Galle - Colombo",
+        "text": "After breakfast leave for Galle for the day excursion. Experience a River Boat Ride at Madu River which rewards you with an enthralling experience. As you sail through the rippling waters, watch out for water monitors, blue-eyed cormorants perched atop floating branches, fruit bats hanging asleep, upside down and the endearing sight of infant monkeys clinging onto fishermen as they sail across the river on narrow boats. One of the unique experiences you can have in the Madu Ganga River is a foot massage from hundreds of Doctor Fishes. Further you can visit the Kosgoda Turtle Hatchery. It is one of the very few hatcheries where all the five species in the country make their nests. They are the Olive Ridleys, Green Turtles, Leatherbacks, Loggerheads and Hawksbills. Visit Meetiyagoda Moonstone Mines. A guided tour will be conducted and you will witness the pitch of the mine and the filtering out of the precious stones and the workshops of the lapidaries. Visit Hikkaduwa and Bentota Beaches en-route. Proceed to Galle, visit the Galle Fort, in the Bay of Galle on the southwest coast of Sri Lanka, was built first in 1588 by the Portuguese, and then extensively fortified by the Dutch during the 17th century from 1649 onwards. It is declared as a World Heritage Site by UNESCO. Return to the hotel in Colombo by Southern Highway. About 90 Minutes’ drive from Galle to Colombo by highway. Overnight Colombo.",
+        "hotelName": "Cinnamon Red",
+        "hotelLogo": "/Hotels/cinnamonRed.png",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.cinnamonhotels.com/cinnamonredcolombo/offers/resident-offer-room-only?gad_source=1&gclid=CjwKCAjwps-zBhAiEiwALwsVYfAH6eaT4DjguTcaxDMry8p1ZuSzbregb1zqCuCBGG41O0ZWPazIsxoCiuwQAvD_BwE"
+      },
+      {
+        "day": "Day 6",
+        "heading": "Colombo - City Tour - Airport - Colombo",
+        "text": "After breakfast your chauffer will conduct a sightseeing tour in Colombo before leaving to the Airport. Places to be visited / witnessed in Colombo are, National Museum (entrance fee is applicable), Galle Face Green, Independence Square, BMICH, Old Parliament Building, Old Dutch Hospital, Harbour, Temple Trees, President’s House, Nelum Pokuna Theatre, Lotus Tower, Pettah Market, Central Bus Stand and Fort Railway Station. Proceed to the Bandaranaike International Airport according to the Departure Flight Time. It will be about 30 Minutes drive by highway from the heart of Colombo City.",
+        "hotelName": null,
+        "hotelLogo": null,
+        "hotelType": null,
+        "hotelLink": null
+      }
+    ]
   },
   {
     "img": "/Tours/nallur.jpg",

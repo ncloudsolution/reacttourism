@@ -1,12 +1,14 @@
 import CurrencyFullBar from "@/components/CurrencyFullBar";
 import Image from "next/image";
 import React from "react";
-import kandy from "@/public/Tours/beach.jpg";
 import TourPackageDayByDaySection from "@/components/TourPackageDayByDaySection";
+import { GetAllDataOfTourPackage } from "@/libs/JsonDataCatching";
 
 const PackageDetails = ({ params }) => {
   const decodedDescription = decodeURIComponent(params.packageId);
   console.log(decodedDescription, "des");
+
+  const DataObject = GetAllDataOfTourPackage(decodedDescription);
 
   return (
     <>
@@ -25,7 +27,7 @@ const PackageDetails = ({ params }) => {
             <div className="midxl:w-[700px] mobile:w-[500px] w-full">
               <div className="midxl:h-[350px] bxs:h-[300px] xxs:h-[250px] xxxs:h-[200px] h-[150px] rounded-lg relative overflow-hidden mt-2 xxs:mt-0">
                 <Image
-                  src={kandy}
+                  src={DataObject.image}
                   alt=""
                   fill
                   sizes="100vw"
@@ -36,8 +38,9 @@ const PackageDetails = ({ params }) => {
                 />
               </div>
               <div className="flex flex-col my-5 ">
-                <div className="text-[30px] mb-5">Itinerary</div>
-                <TourPackageDayByDaySection />
+                <TourPackageDayByDaySection
+                  experience={DataObject.experience}
+                />
               </div>
             </div>
           </div>
