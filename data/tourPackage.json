@@ -1,0 +1,62 @@
+[
+  {
+    "img": "/Tours/kandy.jpg",
+    "description": "06 Days | 05 Nights Excursions from Kandy, Sigiriya & Colombo",
+    "price": 250,
+    "duration": 5
+  },
+  {
+    "img": "/Tours/nallur.jpg",
+    "description": "Sri Lanka Classic & Northern Tour -10 Days | 09 Nights",
+    "price": 350,
+    "duration": 10
+  },
+  {
+    "img": "/Tours/nuwara.jpg",
+    "description": "08 Days Tour - Kandy, Nuwara Eliya & Bentota",
+    "price": 450,
+    "duration": 8
+  },
+  {
+    "img": "/Tours/buddhist.jpg",
+    "description": "07 Days | 06 Nights Buddhist Cultural Tour",
+    "price": 450,
+    "duration": 7
+  },
+  {
+    "img": "/Tours/beach.jpg",
+    "description": "10 Days - Nature, Culture & East Coast",
+    "price": 450,
+    "duration": 10
+  },
+  {
+    "img": "/Tours/kandy.jpg",
+    "description": "06 Days | 05 Nights Excursions from Kandy, Sigiriya & Colombo",
+    "price": 250,
+    "duration": 5
+  },
+  {
+    "img": "/Tours/nallur.jpg",
+    "description": "Sri Lanka Classic & Northern Tour -10 Days | 09 Nights",
+    "price": 350,
+    "duration": 10
+  },
+  {
+    "img": "/Tours/nuwara.jpg",
+    "description": "08 Days Tour - Kandy, Nuwara Eliya & Bentota",
+    "price": 450,
+    "duration": 8
+  },
+  {
+    "img": "/Tours/buddhist.jpg",
+    "description": "07 Days | 06 Nights Buddhist Cultural Tour",
+    "price": 450,
+    "duration": 7
+  },
+  {
+    "img": "/Tours/beach.jpg",
+    "description": "10 Days - Nature, Culture & East Coast",
+    "price": 450,
+    "duration": 10
+  }
+]

@@ -1,18 +1,29 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 
 import Image from "next/image";
 
-import places from "@/data/places.json";
+import tourPackage from "@/data/tourPackage.json";
 import SliderBtn from "./standalone/SliderBtn";
 import useWindowSize from "@/hooks/useWindowSize";
 import Title from "./standalone/Title";
 import TourSliderSkeleton from "./skeletonUI/compoundElements/TourSliderSkeleton";
 import Link from "next/link";
+import { TourContext } from "@/context/TourContextProvider";
 
 const TourSlider = () => {
+  const { tourDetails, setTourDetails } = useContext(TourContext);
   const [windowWidth, windowHeight] = useWindowSize();
   const [isClient, setIsClient] = useState(false);
+
+  // useEffect(() => {
+  //   setTourDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     converedCurrencySymbol: "$",
+  //     currencyType: "USD",
+  //     conversionRate: 1,
+  //   }));
+  // }, [setTourDetails]);
 
   useEffect(() => {
     setIsClient(true); // Component has mounted in the client
@@ -30,7 +41,7 @@ const TourSlider = () => {
     return result;
   }
   const multiplier = 4;
-  const repeatedArray = generateRepeatedArray(places, multiplier); // Repeats array 3 times
+  const repeatedArray = generateRepeatedArray(tourPackage, multiplier); // Repeats array 3 times
   console.log(repeatedArray);
 
   //array repeat over
@@ -139,20 +150,20 @@ const TourSlider = () => {
           </div>
           <div
             ref={elementRef}
-            className="midxl:w-[1330px] mobile:w-[1000px] bigmd:w-[666px] sm:w-[300px] xs:w-[350px] xxs:w-[310px] xxxs:w-[285px] w-[240px] overflow-hidden flex border-2 border-transparent  "
+            className="midxl:w-[1330px] mobile:w-[1000px] bigmd:w-[666px] sm:w-[300px] xs:w-[350px] xxs:w-[310px] xxxs:w-[285px] w-[240px] overflow-hidden flex  "
           >
             <div className="py-4 flex ">
               {repeatedArray.map((place, index) => (
                 //{placearray.map((place, index) => (
                 <Link
-                  href={`/tours/${index}`}
+                  href={`/tour-packages/${place.description}`}
                   style={{
                     transform: `translateX(-${
                       count * sliderWidth + translationOffset
                     }px)`,
                   }}
                   key={index}
-                  className="flex flex-col text-left  overflow-hidden   bigmd:w-[300px] sm:w-[265px] xs:w-[315px] xxs:w-[275px] xxxs:w-[250px] w-[220px] h-[450px]  rounded-xl shadow xxxs:m-4 m-2 transition-all duration-3000 "
+                  className="flex flex-col text-left  overflow-hidden   bigmd:w-[300px] sm:w-[265px] xs:w-[315px] xxs:w-[275px] xxxs:w-[250px] w-[220px]  shadow xxxs:m-4 m-2 transition-all duration-3000 rounded-xl"
                 >
                   <div className="h-[320px] rounded-lg relative ">
                     <Image
@@ -165,17 +176,23 @@ const TourSlider = () => {
                         overflow: "hidden",
                       }}
                     />
+                    <div className="bg-black bg-opacity-60 absolute bottom-0">
+                      <div className="px-[15px]  py-[15px] text-center text-white font-semibold flex break-keep overflow-y-auto scrollbar-thin scrollbar-thumb-customGray-900 scrollbar-track-customGray-400 ">
+                        {place.description}
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="px-[15px] xxs:text-left text-center py-[15px] text-primary hover:text-black font-semibold flex break-keep overflow-y-auto scrollbar-thin scrollbar-thumb-customGray-900 scrollbar-track-customGray-400 pr-[10px]">
-                    {place.description}
-                  </div>
-                  <div className="px-[15px] flex xxs:flex-row flex-col items-center mb-4">
-                    <span className="pr-2 font-serif text-[24px]">
-                      {place.price}
-                    </span>
-                    Price starts from
-                  </div>
+                  {/* <div className="border-[3px] border-t-0 rounded-t-none border-primary rounded-xl">
+                   
+                    <div className="text-primary py-[15px] px-[15px] font-semibold text-[15px]">
+                      From {tourDetails.converedCurrencySymbol}{" "}
+                      {(place.price * tourDetails.conversionRate).toFixed(2)}
+                      <span className="text-black ml-1 text-[15px]">
+                        Per Person
+                      </span>
+                    </div>
+                  </div> */}
                 </Link>
               ))}
             </div>

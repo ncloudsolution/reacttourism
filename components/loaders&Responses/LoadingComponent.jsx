@@ -5,7 +5,7 @@ import cog from "@/public/Others/cog.gif";
 
 const LoadingComponent = () => {
   return (
-    <div className="min-h-[90vh] flex justify-center items-center">
+    <div className="xs:h-[90vh] h-[85vh] flex justify-center items-center">
       <div className="flex flex-col items-center ">
         <div className="sm:text-[45px] xs:text-[35px] xxs:text-[30px]  xxxs:text-[24px] text-[22px] font-bold mb-8">
           Page Loading ...
