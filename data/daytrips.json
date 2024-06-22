@@ -491,5 +491,565 @@
       "Galle Face Green is a waterfront promenade that's ideal for relaxing. Following lunch, continue your journey with stops at Ponambalam Vaneswarar Temple and St. Anthony's Shrine, both of which provide insightful looks into local culture.",
       "Enjoy the memories as your tour comes to an end and you are driven back to your hotel, enhanced by the beauty and diversity of Colombo."
     ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/colombo2.jpg",
+    "minduration": 24,
+    "maxduration": null,
+    "description": "Colombo Private Day Tour and shopping",
+    "initialPrice": null,
+    "discountedPrice": 26.25,
+    "timeSlots": ["8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM"],
+    "tags": ["Pickup available", "New activity"],
+    "include": [
+      "Hotel pickup and drop-off",
+      "Air conditioned vehicle",
+      "Parking Fees and other transport related expenses",
+      "Bottled water for each guest"
+    ],
+    "exclude": [
+      "Any Other Services Not Specified Above",
+      "Expenses of Personal Nature",
+      "Food and drinks",
+      "Gangaramaya Temple (entrance ticket for 01 person - $1.50)",
+      "Lotus Tower (entrance ticket for 01 person - $23.00)",
+      "National Museum (entrance ticket for 01 person - $3.00)"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Colombo, Mirissa, Negombo, Induruwa, Unawatuna, Marawila, Galle, Weligama, Bentota, Ahungalla, Wadduwa, Kalutara, Kandy, Kosgoda, Ambalangoda, Hikkaduwa"
+      },
+      {
+        "heading": "Independence Square, Colombo",
+        "text": "Visit (40 minutes)"
+      },
+      {
+        "heading": "Gangaramaya Temple",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "View point",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Old Parliament House",
+        "text": "Photo stop (10 minutes)"
+      },
+      {
+        "heading": "Colombo Lighthouse",
+        "text": "Photo stop (10 minutes)"
+      },
+      {
+        "heading": "Old Town Hall Building",
+        "text": "Photo stop (10 minutes)"
+      },
+      {
+        "heading": "Jami Ul-Alfar Mosque",
+        "text": "Photo stop (10 minutes)"
+      },
+      {
+        "heading": "Colombo Lotus Tower",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Colombo",
+        "text": "Shopping (1 hour)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Marawila, Induruwa, Kalutara, Galle, Wadduwa, Ahungalla, Weligama, Bentota, Kosgoda, Unawatuna, Colombo, Negombo, Kandy, Mirissa, Ambalangoda, Hikkaduwa"
+      }
+    ],
+    "places": [
+      "Independence Square",
+      "National Museum",
+      "Gangarama Temple",
+      "The Lotus Tower",
+      "Old Parliment Building and Colombo Lighthouse",
+      "Colombo Petta public market"
+    ],
+    "fullDescriptionParas": [
+      "The Colombo one-day city tour offers a captivating glimpse into the vibrant capital of Sri Lanka, blending modernity with a rich historical and cultural tapestry. A bustling metropolis situated on the west coast of the island, Colombo is a fascinating mix of colonial charm, contemporary architecture, and lively local markets.",
+      "Begin your day at Independence Square, a symbolic location that commemorates Sri Lanka's independence from British rule in 1948. The picturesque square features a monument and a surrounding park, providing a serene start to your exploration.",
+      "Next, head to the National Museum of Colombo, where you can delve into the island's history. The museum houses a diverse collection, including artifacts from ancient kingdoms, traditional art, and exhibits on Sri Lanka's colonial past.",
+      "Venture to Gangaramaya Temple, a prominent Buddhist temple that seamlessly integrates various architectural styles. The temple complex includes a museum, a library, and a sacred Bodhi tree, making it a spiritual and cultural hub.",
+      "In the afternoon, immerse yourself in the vibrant chaos of Pettah Market. This bustling commercial area is a labyrinth of narrow streets filled with shops selling spices, textiles, jewelry, and an array of other goods. It's a sensory delight, and bargaining is a common practice.",
+      "Explore the architectural beauty of the Old Parliament Building, a colonial-era structure with neoclassical influences. Adjacent to it stands the Colombo Lighthouse, offering a panoramic view of the city and the Indian Ocean.",
+      "Lotus Tower is a prominent architectural landmark located in Colombo, the capital city of Sri Lanka. Also known as the Nelum Kuluna in Sinhala, the Lotus Tower stands as one of the tallest structures in South Asia and serves various purposes, including telecommunications, observation, and tourism.",
+      "Embarking on a shopping tour in Colombo, the vibrant capital city of Sri Lanka, is an exciting and rewarding experience. Colombo, with its blend of modernity and tradition, offers a diverse range of shopping opportunities that cater to various tastes and preferences. Whether you're seeking traditional handicrafts, high-end fashion, or unique souvenirs, Colombo has it all.According to this part visit textile shop, hand craft shop, gem and jewelry"
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/galle2.jpg",
+    "minduration": 12,
+    "maxduration": null,
+    "description": "From Negombo: Southern Coast Highlights Private Day Tour",
+    "initialPrice": null,
+    "discountedPrice": 120,
+    "timeSlots": ["7:00 AM", "7:30 AM"],
+    "tags": ["Pickup available", "New activity"],
+    "include": [
+      "Entrance fee to Kosgoda Turtle Hatchery",
+      "Transport throughout the tour with an air-conditioned vehicle",
+      "1 liter of bottled mineral water per person",
+      "Hotel pickup and drop-off",
+      "All taxes and service charges"
+    ],
+    "exclude": [
+      "Food and drinks",
+      "Gratuities",
+      "Expenses of a personal nature"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Negombo"
+      },
+      {
+        "heading": "Handunugoda Tea Estate",
+        "text": "Guided tour (2 hours)"
+      },
+      {
+        "heading": "Ahangama",
+        "text": "Photo stop (15 minutes)"
+      },
+      {
+        "heading": "Galle",
+        "text": "Lunch (30 minutes)"
+      },
+      {
+        "heading": "Galle Fort",
+        "text": "Guided tour (2 hours)"
+      },
+      {
+        "heading": "Kosgoda Turtle Conservation and Research Centre",
+        "text": "Visit (1 hour)"
+      },
+
+      {
+        "heading": "Arrive back at:",
+        "text": "Negombo"
+      }
+    ],
+    "places": [
+      "Handunugoda Tea Factory",
+      "Fishing at Ahangama",
+      "Colonial city of Galle",
+      "Kosgoda Turtle Hatchery"
+    ],
+    "fullDescriptionParas": [
+      "Start your day tour with pickup from your hotel in Negombo at 6:30 AM. The first stop on your tour itinerary will be the Handunugoda Tea Factory which you will reach at approximately 9:30 AM. The Handunugoda Tea Factory reawakened the ancient Chinese tradition of creating Virgin White Tea, which is untouched by human hands during the manufacturing process. During the one-and-a-half-hour tour of the factory, see how this mysterious process takes place to create one of the top luxury teas in the world.",
+      "Travel next to Ahangama to meet the stilt fishermen, who are one of the most iconic figures of Sri Lanka. Learn how they practice this unique and intricate fishing technique from a local practitioner of this ancient tradition.",
+      "At approximately 12:00 PM you will stop for a lunch at your own expense in a place of your choosing, before reaching Galle at 2:00 PM. This coastal city has withstood three foreign invasions; during which time, it grew from a bustling port which was the main stop for ships travelling east, to a fortified and yet beautiful city with many monuments which have withstood the ravages of time. See the Galle Fort which is a UNESCO World Heritage Site, the Galle Lighthouse, the National Maritime Museum, the picturesque cobblestoned streets, and many more colonial remnants.",
+      "Leave Galle at 3:30 PM to visit the Kosgoda Turtle Hatchery, a journey that takes approximately 1 hour. Learn about the 5 types of sea turtles that visit Sri Lanka for nesting, and how the nests are protected. You will be able to see and touch baby turtles and view some of the fully-grown turtles that are treated for injuries and ailments. Return to your hotel by 8:30 PM to complete the excursion."
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/sigiriya4.jpg",
+    "minduration": 24,
+    "maxduration": null,
+    "description": "From Negombo: Sigiriya Dambulla and Village Safari Day Tour",
+    "initialPrice": 89,
+    "discountedPrice": 80,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity"],
+    "include": [
+      "Free Hotel pickup and drop-off",
+      "Air-conditioned vehicle with English Speaking Driver (Car/Van)",
+      "Parking fees and other transport-related expenses",
+      "Bottled water"
+    ],
+    "exclude": [
+      "Entry ticket to all places and activities",
+      "Food and drinks",
+      "Safari Jeep"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Negombo"
+      },
+      {
+        "heading": "Car",
+        "text": "(3.5 hours)"
+      },
+      {
+        "heading": "Sigiriya Lion Rock",
+        "text": "Visit, Sightseeing, Sunrise (2.5 hours)"
+      },
+      {
+        "heading": "Habarana",
+        "text": "Visit, Walk, Food tasting (1 hour)"
+      },
+      {
+        "heading": "Minneriya",
+        "text": "Sightseeing, Game drive, Wildlife viewing (4 hours)"
+      },
+      {
+        "heading": "Dambulla Royal Cave Temple and Golden Temple",
+        "text": "Visit, Sightseeing (1.5 hours)"
+      },
+
+      {
+        "heading": "Arrive back at:",
+        "text": "Negombo"
+      }
+    ],
+    "places": [
+      "Sigiriya Lion Rock",
+      "Habarana Village Tour",
+      "Minneriya or Kaudulla National Park Jeep Safari",
+      "Dambulla Cave Temple and Golden Temple",
+      "Sri Lanka Spice Garden (Optional)"
+    ],
+    "fullDescriptionParas": [
+      "Begin with a visit to the iconic Sigiriya Lion Rock, soaking in its historical charm at sunrise. Dive into village life in Habarana, experiencing traditional Sri Lankan cooking",
+      "Continue the journey with a thrilling four-hour jeep safari at either Minneriya or Hurulu Eco National Park, home to South Asia's largest elephant gathering and diverse wildlife. On the way back to Negombo, visit the Dambulla Cave Temple for a cultural touch.",
+      "Wrap up your day with memories of ancient Sigiriya, village warmth, and wildlife encounters. Join us for a professionally curated adventure, seamlessly blending culture and nature for a day to remember."
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/ambuluwawa.jpg",
+    "minduration": 15,
+    "maxduration": null,
+    "description": "From Negombo: Ambuluwawa Tower & Tea Factory,Kandy Day Trip",
+    "initialPrice": 77.35,
+    "discountedPrice": 67.55,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity"],
+    "include": [
+      "Hotel pickup and drop-off",
+      "Transportation by private air-conditioned vehicle",
+      "Water bottle",
+      "All Taxes & fees",
+      "Wi Fi"
+    ],
+    "exclude": [
+      "Ambuluwawa Tower Entrance Fees",
+      "Temple of Tooth entrance fee",
+      "Royal Botanical Garden entrance fee",
+      "Pinnawala elephant orphanage entrance fee",
+      "the great kandy culture dance show entrance fee",
+      "Food and drinks",
+      "Optional Tips",
+      "Lunch"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Kochchikade, Dankotuwa, Waikkal, Katunayake, Seeduwa, Kimbulapitiya, Andiambalama, Katana, Negombo, Minuwangoda"
+      },
+      {
+        "heading": "Pinnawala Elephant Orphanage",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "Mawanella",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "Ambuluwawa Tower",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "The Tea Factory & The Tea Museum",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "Gem Museum",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "Temple of the Sacred Tooth Relic",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "Kandy Lake Club",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "View point",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "Kandy",
+        "text": "Photo stop, Visit, Guided tour, Sightseeing"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Andiambalama, Katana, Waikkal, Dankotuwa, Kimbulapitiya, Minuwangoda, Katunayake, Seeduwa, Kochchikade, Negombo"
+      }
+    ],
+    "places": [
+      "Ambuluwawa Tower",
+      "Pinnawala Elephant Orphanage",
+      "Tour a tea factory & tea estate",
+      "Tooth relic of Buddha at the Temple of the Tooth",
+      "Royal Botanical Garden & Gem Museum"
+    ],
+    "fullDescriptionParas": [
+      "Benefit from pickup at your hotel in Negombo, and then relax in a private air-conditioned vehicle on the journey to Ambuluwawa Tower & Pinnwala Elephant Orphanage & Tea Factory & Kandy"
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/galle3.jpg",
+    "minduration": 8,
+    "maxduration": null,
+    "description": "Colombo & Negombo To Galle | Hikkaduwa | Mirissa Day Tour",
+    "initialPrice": 105.18,
+    "discountedPrice": 94.56,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity"],
+    "include": [
+      "Bottled water",
+      "Air-conditioned vehicle",
+      "Private transportation",
+      "Parking Fees",
+      "Fuel Surcharges",
+      "Driver's Food",
+      "WiFi on board",
+      "Expressway Tolls",
+      "Entry/Admission - Galle Fort",
+      "Entry/Admission - Galle Fort Lighthouse"
+    ],
+    "exclude": [
+      "Entry/Admission - Madu Ganga Biodiversity Area",
+      "Entry/Admission - Kosgoda Sea Turtle Conservation Project",
+      "Entry/Admission - Unawatuna Beach",
+      "Entry/Admission - Sea Turtle Farm Galle Mahamodara"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Negombo, Colombo, Western Province"
+      },
+      {
+        "heading": "Car",
+        "text": "(2 hours)"
+      },
+      {
+        "heading": "Madu Ganga",
+        "text": "Guided tour, Sightseeing, Scenic views on the way (1 hour)"
+      },
+      {
+        "heading": "Kosgoda Sea Turtle Conservation",
+        "text": "Visit, Guided tour, Walk (1 hour)"
+      },
+      {
+        "heading": "Unawatuna Beach",
+        "text": "Break time, Lunch, Free time (1 hour)"
+      },
+      {
+        "heading": "Galle Fort",
+        "text": "Visit, Sightseeing, Walk (1 hour)"
+      },
+      {
+        "heading": "Secret stop",
+        "text": "Visit (30 minutes)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Colombo, Negombo, Western Province"
+      }
+    ],
+    "places": [
+      "Galle Fort",
+      "Maadu lake",
+      "Turtle conservation project in Kosgoda",
+      "Unawatuna Beach",
+      "Stilt Fisherman"
+    ],
+    "fullDescriptionParas": [
+      "The itinerary begins with a visit to Galle Fort, where guests can walk along the historic walls and take memorable photos with guidance from their tour guide. The next stop is the Madu Ganga Biodiversity Area in Balapitiya, offering an exciting mangrove boat safari. During this trip, visitors can enjoy a fish foot massage and observe various wildlife such as crocodiles, large lizards, and numerous bird species.",
+      "The tour continues to the Kosgoda Sea Turtle Conservation Project, where participants can learn about and witness the conservation efforts for sea turtles. Here, the team cares for the eggs and young turtles for up to five years before releasing them back into the wild. Afterward, lunch is served at a highly-rated beachside restaurant on Unawatuna Beach, where visitors can also enjoy a relaxing walk along the coast.",
+      "Following lunch, the tour heads back to Galle Fort to visit the iconic lighthouse and take more photographs. Another unique experience is offered at Koggala, where guests can try stilt fishing, a traditional method of fishing in Sri Lanka. The journey then proceeds to the Japanese Peace Pagoda in Rumassala, and concludes with a brief stop at the Sea Turtle Farm in Galle Mahamodara, further highlighting the region's efforts in sea turtle conservation."
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/bentota2.jpg",
+    "minduration": 10,
+    "maxduration": null,
+    "description": "Colombo & Negombo To Galle | Hikkaduwa | Mirissa Day Tour",
+    "initialPrice": null,
+    "discountedPrice": 65,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity"],
+    "include": [
+      "Pick up and drop-off at your accommodation in an air-conditioned vehicle",
+      "An English-speaking driver",
+      "Bottled water"
+    ],
+    "exclude": [
+      "Entrance fee to Lunuganga Garden",
+      "Food or drink",
+      "Gratuities"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Avengard Hotels"
+      },
+      {
+        "heading": "Car",
+        "text": "(2 hours)"
+      },
+      {
+        "heading": "Kosgoda Sea Turtle Conservation",
+        "text": "Visit, Free time, Sightseeing, Walk"
+      },
+      {
+        "heading": "Kosgoda Sea Turtle Conservation",
+        "text": "Visit, Guided tour, Walk (1 hour)"
+      },
+      {
+        "heading": "Car",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Madu Ganga",
+        "text": "Boat cruise (2 hours)"
+      },
+      {
+        "heading": "Car",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Lunuganga Geoffrey Bawa’s Country Estate",
+        "text": "Visit, Free time, Sightseeing, Walk"
+      },
+      {
+        "heading": "Car",
+        "text": "(2.5 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Avengard Hotels"
+      }
+    ],
+    "places": [
+      "Madu River",
+      "Kothduwa Temple",
+      "Turtle conservation project in Kosgoda",
+      "Lunuganga Garden"
+    ],
+    "fullDescriptionParas": [
+      "Begin your day at 8:00 AM at Madu River in Balapitiya for a boat safari. For one-hour, journey through the primitive depths of the mangrove marshes. Traverse the dark and dangerous caverns, formed by the thick mangrove forests, interspersed with stretches of bright open water. ",
+      "The next destination is the Kothduwa Temple. This Buddhist temple is located on the island and is known as the Kothduwa Raja Maha Viharaya. The island is within the Madu Ganga Estuary. Madu Ganga is an archipelago of fifteen different islands and a lagoon. It is believed that a Relic of Lord Buddha was once sheltered in the Kothduwa temple circa 340CE. ",
+      "Enjoy lunch then visit the Lunuganga Garden. Geoffrey Bawa was one of Asia's finest architects. He passed away in 2003. Lunuganga was Bawa’s country home. It sits in an enchanting atmosphere with glorious views. It is now managed by the Lunuganga Trust. Admire the home’s features and blissfulness. It is now run as a country hotel and the proceeds go to Negombo."
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/diyaluma.jpg",
+    "minduration": 13,
+    "maxduration": null,
+    "description": "Day excursion to Diyaluma waterfall from Galle Weligama",
+    "initialPrice": null,
+    "discountedPrice": 74,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity"],
+    "include": [
+      "Hotel pickup and drop-off",
+      "Transportation in an air-conditioned vehicle (car/van/bus)",
+      "English-speaking driver",
+      "Bottled water"
+    ],
+    "exclude": [
+      "Food and drinks, unless specified",
+      "Optional gratuities",
+      "Entrance fees"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Koggala, Galle, Ahangama, Weligama, Unawatuna, Mirissa"
+      },
+      {
+        "heading": "Car",
+        "text": "(3.5 hours)"
+      },
+      {
+        "heading": "Diyaluma Water Falls",
+        "text": "Hiking, Scenic views on the way"
+      },
+      {
+        "heading": "Car",
+        "text": "(3.5 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Galle, Koggala, Weligama, Ahangama, Mirissa, Unawatuna"
+      }
+    ],
+    "places": ["Diyaluma Waterfall"],
+    "fullDescriptionParas": [
+      "Explore the breathtaking natural wonders of Sri Lanka with our exclusive tour starting from the Galle area. Your adventure begins with a convenient hotel pick-up, ensuring a hassle-free start to your journey",
+      "Embark on an unforgettable excursion to witness the majestic Diyaluma Waterfall, boasting a staggering 220-meter cascade. Awe will be instilled in you as you get closer to this breathtaking example of natural beauty and grandeur. Experience the mist on your face as the tumbling waters produce an enchanting scene amidst the verdant surroundings.Discover Sri Lanka's beauty with you hotel pick-up! Marvel at Diyaluma Waterfall's 220m cascade, A day of nature and memories awaits",
+      "the chance to decompress and rest amid the wonders of Mother Nature. This tour promises an enriching experience full of wonder and exploration, whether you're a nature enthusiast, adventure seeker, or just looking for a peaceful getaway.Come along for an exciting day filled with exploration, adventure, and life-changing experiences as we travel to one of Sri Lanka's most well-known natural sites. Make your tour reservation right away, and get ready to be mesmerized by Diyaluma Waterfall's splendor."
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/udawalawa.jpg",
+    "minduration": 7,
+    "maxduration": null,
+    "description": "Udawalawe National Park Wildlife Safari from Galle",
+    "initialPrice": null,
+    "discountedPrice": 99,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity"],
+    "include": [
+      "Hotel pick-up and drop-off",
+      "Transportation by air conditioned shared vehicle",
+      "Safari drive by Jeep - shared jeep",
+      "Bottled water"
+    ],
+    "exclude": [
+      "Entrance fee to Udawalawe National Park",
+      "Food and drinks",
+      "Optional gratuities",
+      "Other own expenses & Shopping"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Galle"
+      },
+      {
+        "heading": "Car",
+        "text": "(2.5 hours)"
+      },
+      {
+        "heading": "Udawalawa National Park",
+        "text": "Game drive, Wildlife viewing (3 hours)"
+      },
+      {
+        "heading": "Local restaurant",
+        "text": "Lunch (45 minutes)"
+      },
+      {
+        "heading": "Udawalawe Elephant Transit Home",
+        "text": "Wildlife viewing (45 minutes)"
+      },
+      {
+        "heading": "Car",
+        "text": "(2.5 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Galle"
+      }
+    ],
+    "places": ["Udawalawe National Park"],
+    "fullDescriptionParas": [
+      "Your day will begin with pick-up at Galle. Then, relax on the 1 and half hour drive to Udawalawe National Park, created in the 1970s to provide a sanctuary for wild animals displaced by the construction of the Udawalawe Reservoir on the Walawe River. Udawalawe National Park is a renowned wildlife sanctuary known for its diverse and abundant wildlife, with a special focus on its large elephant population, Now the third most visited park in Sri Lanka. The park's picturesque landscapes encompass lush grasslands, forests, and a scenic reservoir Here, you'll embark on a thrilling jeep safari. Visitors can embark on thrilling jeep safaris led by expert guides to observe elephants, leopards, birds, and other fascinating creatures in their natural habitat. Udawalawe National Park is not only a wildlife haven but also a place of conservation and environmental significance, making it a must-visit destination for nature enthusiasts and wildlife lovers."
+    ]
   }
 ]
