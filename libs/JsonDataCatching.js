@@ -60,9 +60,11 @@ export function GetAllDataOfTourPackage(title) {
 
   const AllDataObject = {
     image: data.img,
-    price: data.img,
+    price: data.price,
     duration: data.duration,
     experience: data.experience,
+    include: data.include,
+    exclude: data.exclude,
   };
 
   return AllDataObject;

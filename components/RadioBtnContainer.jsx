@@ -3,9 +3,12 @@ import { TourContext } from "@/context/TourContextProvider";
 import React, { useContext, useState, useEffect } from "react";
 import { IoIosDoneAll } from "react-icons/io";
 
-const RadioBtnContainer = () => {
-  const mealOptions = ["BB", "HB", "FB"];
-  const [selectedMealOption, setSelectedMealOption] = useState("");
+const RadioBtnContainer = ({ fullboardDisable = false }) => {
+  const mealOptions = ["BB", "HB"];
+  if (!fullboardDisable) {
+    mealOptions.push("FB");
+  }
+  const [selectedMealOption, setSelectedMealOption] = useState("BB");
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
   useEffect(() => {
