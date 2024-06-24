@@ -7,7 +7,7 @@ const DayTripsPriceCrad = ({ initialPrice, discountedPrice }) => {
 
   console.log(typeof discountedPrice, "dis");
   return (
-    <div className="border-2 border-transparent xs:px-8  xs:pt-8 pt-5  rounded-lg">
+    <div className="border-2 border-transparent xs:px-8 px-4 xs:pt-8 pt-5  rounded-lg">
       <div className="flex gap-3 ">
         <div className="midxl:text-[24px] xxs:text-[22px] text-[20px] font-serif ">
           Per Person
