@@ -1,4 +1,5 @@
 import daytrips from "@/data/daytrips.json";
+import tourPackage from "@/data/tourPackage.json";
 
 export function GetDescriptionParaData(title) {
   // sorting time duration
@@ -52,4 +53,19 @@ export function GetTimeSlot(title) {
 export function GetCustomTourCheckedItems(jsonfilelocation) {
   const data = jsonfilelocation;
   return data;
+}
+
+export function GetAllDataOfTourPackage(title) {
+  const data = [...tourPackage].find((trip) => trip.description === title);
+
+  const AllDataObject = {
+    image: data.img,
+    price: data.price,
+    duration: data.duration,
+    experience: data.experience,
+    include: data.include,
+    exclude: data.exclude,
+  };
+
+  return AllDataObject;
 }
