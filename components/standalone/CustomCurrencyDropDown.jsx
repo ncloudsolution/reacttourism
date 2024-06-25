@@ -12,11 +12,11 @@ const CustomCurrencyDropDown = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
   const pathname = usePathname();
 
+  console.log("currency drop down");
+
   const [currencies] = useState(Object.entries(currency)); // Convert object to array of key-value pairs
   const [inputValue, setInputValue] = useState("");
-  const [selected, setSelected] = useState(
-    tourDetails.currencyType || currencies[1][0]
-  );
+  const [selected, setSelected] = useState(currencies[1][0]);
   const [open, setOpen] = useState(false);
 
   const selectedCurrency = useCurrency(pathname);

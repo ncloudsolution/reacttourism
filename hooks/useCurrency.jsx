@@ -53,6 +53,11 @@ const useCurrency = (pathname) => {
           );
           const result = await response.json();
           setData(result["lkr"]);
+          const cal = result["lkr"]["usd"];
+          setTourDetails((prevDetails) => ({
+            ...prevDetails,
+            slRate: 1 / cal,
+          }));
         } catch (error) {
           console.error("Fetch error:", error);
         }
@@ -63,6 +68,7 @@ const useCurrency = (pathname) => {
   }, [pathname, setTourDetails]);
 
   console.log(data, "data");
+  console.log(tourDetails.slRate, "rate");
   return data;
 };
 

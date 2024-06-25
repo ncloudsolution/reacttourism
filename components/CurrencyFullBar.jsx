@@ -13,10 +13,9 @@ const CurrencyFullBar = () => {
         } text-primary bg-black rounded-full p-1 absolute  size-[40px] lg:size-[45px] lg:right-10 bigmd:right-2 sm:right-10 xxs:right-4 xxxs:right-3 right-1 z-10`}
         onClick={() => setIsCurrencyActive(!isCurrencyActive)}
       />
-      {!isCurrencyActive && (
-        <div className="flex items-center h-[20px] w-full bg-transparent"></div>
-      )}
-      {isCurrencyActive && <CurrencyTab />}
+      <div className={`${isCurrencyActive ? "block" : "hidden"} w-full`}>
+        <CurrencyTab />
+      </div>
     </>
   );
 };

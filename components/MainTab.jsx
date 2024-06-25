@@ -100,7 +100,9 @@ const MainTab = () => {
         className="text-primary absolute text-[30px] xxs:text-[40px] bxs:text-[35px] sm:text-[40px] bigmd:text-[30px] lg:text-[40px] lg:right-10 bigmd:right-2 sm:right-10 xxs:right-5 right-3 bxs:translate-y-12 xs:translate-y-32 translate-y-12 z-10"
         onClick={() => setIsCurrencyActive(!isCurrencyActive)}
       />
-      {isCurrencyActive && <CurrencyTab />}
+      <div className={`${isCurrencyActive ? "block" : "hidden"}`}>
+        <CurrencyTab />
+      </div>
       <div className="flex justify-center w-full bg-red-300 px-0">
         <div className="flex justify-center items-center flex-col bg-black w-full">
           <div className="bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] flex justify-center">
