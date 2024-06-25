@@ -70,7 +70,7 @@ const AboutUs = () => {
                     {textcontent.aboutus_txt2}
                   </p>
                   <a
-                    href="/daytrips"
+                    href="/day-trips"
                     className="inline-flex items-center justify-center py-3 text-base  text-center text-black font-semibold border border-transparent rounded-md px-7 bg-primary hover:bg-opacity-90"
                   >
                     Explore a Day Trip

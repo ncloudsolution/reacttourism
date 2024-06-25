@@ -60,7 +60,7 @@ export function GetAllDataOfTourPackage(title) {
 
   const AllDataObject = {
     image: data.img,
-    price: data.price,
+    discountedPrice: data.discountedPrice,
     duration: data.duration,
     experience: data.experience,
     include: data.include,

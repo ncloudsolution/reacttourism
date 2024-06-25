@@ -82,7 +82,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
     console.log("noOfAdults:", noOfAdults);
     console.log("noOfKids:", noOfKids);
     if (
-      date == "" ||
+      date == undefined ||
       mobValue == "" ||
       whatsappMobValue == "" ||
       NameRef.current.value === "" ||
@@ -123,10 +123,11 @@ const DayTripsForm = ({ planPrice, trip }) => {
       totalPriceInSelectedCurrency: (
         tourDetails.conversionRate * totalPrice
       ).toFixed(2),
-      totalPriceInLKR: totalPrice.toFixed(2),
+      totalPriceInLKR: (tourDetails.slRate * totalPrice).toFixed(2),
     };
 
     console.log(dayTripDetails);
+    console.log(tourDetails.slRate, "sl rate");
 
     const formData = new FormData();
     formData.append("to", process.env.NEXT_PUBLIC_MY_EMAIL.split(",")); // Set the recipient's email here
@@ -155,7 +156,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
   return (
     <>
       {(isLoading || responseMessage) && (
-        <div className="flex w-full pt-[50px] md:pt-[130px] 2xl:pt-[20px] h-[100vh] justify-center items-center">
+        <div className="flex w-full pt-[50px] md:pt-[130px] 2xl:pt-[20px] h-[100vh] justify-center items-center  xs:mt-[5vh] mt-[10vh]">
           <div className="w-full h-[90vh] flex items-center justify-center ">
             {/* Your form or component elements go here */}
             {isLoading && (

@@ -60,6 +60,12 @@ const UpperFooter = () => {
                 <Link href="/day-trips" className="hover:text-white">
                   Day Trips
                 </Link>
+                <Link href="/tour-packages" className="hover:text-white my-2">
+                  Tour Package
+                </Link>
+                <Link href="/custom-tour-package" className="hover:text-white">
+                  Custom Tour
+                </Link>
               </div>
 
               <div className="flex flex-col  text-center mb-[40px]">

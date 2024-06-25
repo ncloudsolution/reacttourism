@@ -79,7 +79,7 @@ const DayTrips = () => {
   }, [isClickedPrice]);
 
   const handlePriceLowToHigh = () => {
-    const lowToHighValue = PriceLowToHigh();
+    const lowToHighValue = PriceLowToHigh("daytrips");
     setFinalFilterdArray(lowToHighValue);
     setTimeout(() => {
       setIsClickedPrice(false);
@@ -89,7 +89,7 @@ const DayTrips = () => {
   };
 
   const handlePriceHighToLow = () => {
-    const highToLowValue = PriceHighToLow();
+    const highToLowValue = PriceHighToLow("daytrips");
     setFinalFilterdArray(highToLowValue);
     setTimeout(() => {
       setIsClickedPrice(false);
@@ -103,7 +103,8 @@ const DayTrips = () => {
     const priceRangeValue = PriceRange(
       minVal,
       maxVal,
-      tourDetails.conversionRate
+      tourDetails.conversionRate,
+      "daytrips"
     );
     setFinalFilterdArray(priceRangeValue);
     setIsClickedPrice(false);

@@ -97,7 +97,7 @@ const PackageDetails = ({ params }) => {
             <div className="flex flex-col flex-1">
               <DayTripsPriceCrad
                 initialPrice="null"
-                discountedPrice={DataObject.price}
+                discountedPrice={DataObject.discountedPrice}
               />
               <div className="grid grid-cols-1 my-7 gap-10  mobile:px-8 px-0">
                 <div className="flex flex-col gap-2  w-full">
@@ -171,7 +171,7 @@ const PackageDetails = ({ params }) => {
             </div>
           </div>
           <TourPackageForm
-            planPrice={DataObject.price}
+            planPrice={DataObject.discountedPrice}
             trip={decodedDescription}
           />
         </div>

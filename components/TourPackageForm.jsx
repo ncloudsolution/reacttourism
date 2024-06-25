@@ -90,83 +90,85 @@ const TourPackageForm = ({ planPrice, trip }) => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // console.log("noOfAdults:", noOfAdults);
-    // console.log("noOfKids:", noOfKids);
-    // if (
-    //   date == "" ||
-    //   mobValue == "" ||
-    //   whatsappMobValue == "" ||
-    //   NameRef.current.value === "" ||
-    //   EmailRef.current.value === "" ||
-    //   NicPassportRef.current.value === "" ||
-    //   tourDetails.selectedTimeSlot == "" ||
-    //   isNaN(noOfAdults) ||
-    //   noOfAdults <= 0 ||
-    //   isNaN(noOfKids) ||
-    //   noOfKids < 0
-    // ) {
-    //   return setSubmitError("Fill all the fields ");
-    // }
+    console.log("noOfAdults:", noOfAdults);
+    console.log("noOfKids:", noOfKids);
+    if (
+      date == undefined ||
+      mobValue == "" ||
+      whatsappMobValue == "" ||
+      NameRef.current.value === "" ||
+      EmailRef.current.value === "" ||
+      NicPassportRef.current.value === "" ||
+      // tourDetails.selectedTimeSlot == "" ||
+      isNaN(noOfAdults) ||
+      noOfAdults <= 0 ||
+      isNaN(noOfKids) ||
+      noOfKids < 0
+    ) {
+      return setSubmitError("Fill all the fields ");
+    }
 
-    // setIsLoading(true);
-    // scrollToLoading();
-    // console.log("scroll done");
+    setIsLoading(true);
+    scrollToLoading();
+    console.log("scroll done");
 
     // // setTimeout(() => {
-    // document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     // // }, 500);
 
     // //lock the scrolling of the browser
 
-    // const dayTripDetails = {
-    //   pickUpDate: date.toDateString(),
-    //   timeSlot: tourDetails.selectedTimeSlot,
-    //   selectedTrip: trip,
-    //   cusName: NameRef.current.value,
-    //   cusEmail: EmailRef.current.value,
-    //   CusNicPassport: NicPassportRef.current.value,
-    //   cusMobileNo: mobValue,
-    //   cusWhatsappNo: whatsappMobValue,
-    //   noOfAdults: noOfAdults,
-    //   noOfKids: noOfKids,
-    //   selectedCurrencyType: tourDetails.currencyType,
-    //   selectedCurrencySymbol: tourDetails.converedCurrencySymbol,
-    //   totalPriceInSelectedCurrency: (
-    //     tourDetails.conversionRate * totalPrice
-    //   ).toFixed(2),
-    //   totalPriceInLKR: totalPrice.toFixed(2),
-    // };
+    const tourPackage = {
+      pickUpDate: date.toDateString(),
+      //   timeSlot: tourDetails.selectedTimeSlot,
+      selectedTrip: trip,
+      cusName: NameRef.current.value,
+      cusEmail: EmailRef.current.value,
+      cusNicPassport: NicPassportRef.current.value,
+      cusMobileNo: mobValue,
+      cusWhatsappNo: whatsappMobValue,
+      noOfAdults: noOfAdults,
+      noOfKids: noOfKids,
+      selectedCurrencyType: tourDetails.currencyType,
+      selectedCurrencySymbol: tourDetails.converedCurrencySymbol,
+      selectedMealOption: tourDetails.selectedMealOption,
+      selectedVehical: tourDetails.selectedVehical,
+      totalPriceInSelectedCurrency: (
+        tourDetails.conversionRate * totalPrice
+      ).toFixed(2),
+      totalPriceInLKR: (tourDetails.slRate * totalPrice).toFixed(2),
+    };
 
-    // console.log(dayTripDetails);
+    console.log(tourPackage);
 
-    // const formData = new FormData();
-    // formData.append("to", process.env.NEXT_PUBLIC_MY_EMAIL.split(",")); // Set the recipient's email here
-    // formData.append("clientmail", EmailRef.current.value); // Set the sender's email here
-    // formData.append("allDataBundle", JSON.stringify(dayTripDetails));
-    // try {
-    //   const response = await fetch("/api/dayTripEmail", {
-    //     method: "POST",
-    //     body: formData, // FormData will be sent as `multipart/form-data`
-    //   });
-    //   const result = await response.json();
-    //   console.log(result);
-    //   //alert(result.message);
-    //   setIsLoading(false); // Stop loading
-    //   setResponseMessage(result.message); // Set the message from the server
+    const formData = new FormData();
+    formData.append("to", process.env.NEXT_PUBLIC_MY_EMAIL.split(",")); // Set the recipient's email here
+    formData.append("clientmail", EmailRef.current.value); // Set the sender's email here
+    formData.append("allDataBundle", JSON.stringify(tourPackage));
+    try {
+      const response = await fetch("/api/tourPackageEmail", {
+        method: "POST",
+        body: formData, // FormData will be sent as `multipart/form-data`
+      });
+      const result = await response.json();
+      console.log(result);
+      //alert(result.message);
+      setIsLoading(false); // Stop loading
+      setResponseMessage(result.message); // Set the message from the server
 
-    //   console.log("msg send");
-    // } catch (error) {
-    //   console.error("Error:", error);
-    //   // alert("Failed to send the file.");
-    //   setIsLoading(false); // Stop loading
-    //   setResponseMessage("Failed to make the order. Please try again.");
-    // }
+      console.log("msg send");
+    } catch (error) {
+      console.error("Error:", error);
+      // alert("Failed to send the file.");
+      setIsLoading(false); // Stop loading
+      setResponseMessage("Failed to make the order. Please try again.");
+    }
   }
 
   return (
     <>
       {(isLoading || responseMessage) && (
-        <div className="flex w-full pt-[50px] md:pt-[130px] 2xl:pt-[20px] h-[100vh] justify-center items-center">
+        <div className="flex w-full pt-[50px] md:pt-[130px] 2xl:pt-[20px] h-[100vh] justify-center items-center xs:mt-[5vh] mt-[10vh]">
           <div className="w-full h-[90vh] flex items-center justify-center ">
             {/* Your form or component elements go here */}
             {isLoading && (
