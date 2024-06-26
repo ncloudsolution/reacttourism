@@ -144,9 +144,9 @@ const MainTab = () => {
               </div>
               <Link
                 className="p-1 px-2 bg-white text-black rounded cursor-pointer"
-                href={"/daytrips"}
+                href={"/day-trips"}
               >
-                Day tours
+                Day trips
               </Link>
             </div>
 
@@ -205,7 +205,7 @@ const MainTab = () => {
 
               <Link
                 className="flex items-center gap-x-4 "
-                href={"/daytrips"}
+                href={"/day-trips"}
                 onClick={handleDayTour}
               >
                 <IoCarSportSharp
@@ -218,7 +218,7 @@ const MainTab = () => {
                     isDayTourClick ? "bg-primary" : "bg-white"
                   }  text-[16px] flex-1 text-black  rounded bxs:py-2 py-[6px] px-4 font-semibold`}
                 >
-                  Day Tours
+                  Day Trips
                 </div>
               </Link>
             </div>

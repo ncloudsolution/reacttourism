@@ -92,7 +92,7 @@ const DayTripDetails = ({ params, searchParams }) => {
 
       <Image alt="" src={searchParams.img} width={300} height={300} /> */}
       <CurrencyFullBar />
-      <div className="flex w-full justify-center xs:my-5 my-2">
+      <div className="flex w-full justify-center xs:py-8 my-2">
         <div className="flex flex-col  midxl:w-[1320px] mobile:w-[1100px] border-2 border-transparent rounded-md xxs:pb-7 xxs:px-7 pb-5 px-5">
           {/**heading**/}
           <div className="uppercase text-slate-600 midxl:text-[20px] xxs:text-[18px] text-[16px] font-semibold translate-y-1 mb-2 bxs:mb-0">
@@ -237,7 +237,7 @@ const DayTripDetails = ({ params, searchParams }) => {
                     Experience
                   </div>
                   <div className="flex  flex-col gap-5 my-7 relative">
-                    <div className="border-dashed border-[1px] border-black absolute flex flex-col h-[93%] left-[18px] -z-10"></div>
+                    <div className="border-dashed border-[1px] border-black absolute flex flex-col bottom-[40px] top-[10px] left-[18px] -z-10"></div>
                     {experienceArray.map((experience, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="bg-black text-primary rounded-full size-[40px]  flex justify-center items-center font-semibold xxs:text-[18px] text-[16px] ">
