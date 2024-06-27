@@ -42,7 +42,7 @@ const TourPackageForm = ({ planPrice, trip }) => {
   const [noOfAdultsFunc, setNoOfAdultsFunc] = useState(1);
   const [noOfChildrensFunc, setNoOfChildrensFunc] = useState(0);
 
-  const [totalPrice, setTotalPrice] = useState(planPrice * 2);
+  const [totalPrice, setTotalPrice] = useState(planPrice);
 
   const NameRef = useRef(null);
   const EmailRef = useRef(null);
@@ -85,8 +85,17 @@ const TourPackageForm = ({ planPrice, trip }) => {
     setMealType(tourDetails.selectedMealOption);
     setVehical(tourDetails.selectedVehical);
 
-    setTotalPrice(tourpackageObject.totalPrice);
-  }, [noOfAdults, noOfKids, planPrice, mealType, vehical, tourDetails]);
+    // setTotalPrice(tourpackageObject.totalPrice);
+    setTotalPrice(totalPrice);
+  }, [
+    noOfAdults,
+    noOfKids,
+    planPrice,
+    mealType,
+    vehical,
+    tourDetails,
+    totalPrice,
+  ]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -129,14 +138,14 @@ const TourPackageForm = ({ planPrice, trip }) => {
       cusWhatsappNo: whatsappMobValue,
       noOfAdults: noOfAdults,
       noOfKids: noOfKids,
-      selectedCurrencyType: tourDetails.currencyType,
-      selectedCurrencySymbol: tourDetails.converedCurrencySymbol,
+      // selectedCurrencyType: tourDetails.currencyType,
+      // selectedCurrencySymbol: tourDetails.converedCurrencySymbol,
       selectedMealOption: tourDetails.selectedMealOption,
       selectedVehical: tourDetails.selectedVehical,
-      totalPriceInSelectedCurrency: (
-        tourDetails.conversionRate * totalPrice
-      ).toFixed(2),
-      totalPriceInLKR: (tourDetails.slRate * totalPrice).toFixed(2),
+      // totalPriceInSelectedCurrency: (
+      //   tourDetails.conversionRate * totalPrice
+      // ).toFixed(2),
+      // totalPriceInLKR: (tourDetails.slRate * totalPrice).toFixed(2),
     };
 
     console.log(tourPackage);
@@ -379,18 +388,21 @@ const TourPackageForm = ({ planPrice, trip }) => {
                 </div>
               </div>
             </div>
+            {/**YELLOW COLOR PRICE CARD**/}
             <div className="flex flex-col gap-5 flex-1 justify-center items-center">
               <div className="flex flex-col w-full mobile:w-[450px] bg-primary gap-3 px-5 bxs:px-20 mobile:px-10  mobile:py-5 py-10 rounded-lg">
                 <div>
-                  <div className="text-[20px] font-semibold">Tour Price </div>
-                  <div className="text-[25px] xxxs:text-[30px] xxs:text-[35px] xs:text-[40px] leading-[40px] font-semibold">
+                  <div className="text-[20px] font-semibold mb-2">
+                    Per Adult Approximately{" "}
+                  </div>
+                  <div className="text-[25px] xxxs:text-[30px] xxs:text-[35px] xs:text-[40px] leading-[35px] font-semibold ">
                     {tourDetails.converedCurrencySymbol}{" "}
                     {(tourDetails.conversionRate * totalPrice).toFixed(2)}
                   </div>
-                  <div className="xs:text-[20px] text-[18px] mt-[20px] font-semibold">
+                  {/* <div className="xs:text-[20px] text-[18px] mt-[20px] font-semibold">
                     Price Breakdown{" "}
-                  </div>
-                  <div className="flex flex-col w-full mt-[10px]">
+                  </div> */}
+                  {/* <div className="flex flex-col w-full mt-[10px]">
                     <div className="flex justify-between ">
                       <div className="mobile:text-[16px] xs:text-[20px] xxs:text-[16px] text-[14px]">
                         <span className="font-semibold">Adult</span>{" "}
@@ -423,6 +435,24 @@ const TourPackageForm = ({ planPrice, trip }) => {
                         </div>
                       </div>
                     )}
+                  </div> */}
+                  <div className=" mt-[15px] text-[14px]">
+                    Dear Valued Customer, The approximate price per adult is
+                    mentioned above. The total tour package price varies based
+                    on factors like the number of adults, children, meal types,
+                    and vehicle choice, which we can manage.
+                  </div>
+                  <div className=" mt-[20px] text-[14px]">
+                    However,{" "}
+                    <b>accommodation fares are set by third-party providers</b>{" "}
+                    and can fluctuate moment by moment based on demand.
+                    Therefore, we cannot provide a final price within this
+                    system.
+                  </div>
+                  <div className=" mt-[20px] text-[14px]">
+                    <b> If you are interested in our tour,</b> please fill out
+                    and submit the form. We will contact you immediately with a
+                    full quotation, Thank you.
                   </div>
                 </div>
 

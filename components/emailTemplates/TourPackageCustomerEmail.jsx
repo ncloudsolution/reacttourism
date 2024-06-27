@@ -176,65 +176,21 @@ const TourPackageCustomerEmail = ({ tourPackage }) => {
                           {tourPackage.selectedVehical}
                         </Text>
                       </Section>
-                    </Column>
 
-                    <Column>
-                      {/**TOTAL SECTION**/}
-                      <Section
-                        style={{
-                          ...section,
-                          width: 300,
-                          padding: 20,
-                        }}
-                      >
-                        <div
-                          style={{
-                            ...paragraph,
-                            marginTop: 5,
-                            display: "flex",
-                            width: "fit-content",
-                          }}
-                        >
-                          <span
-                            style={{
-                              backgroundColor: "#eab308",
-                              padding: "10px",
-                              borderRadius: "5px",
-                              marginBottom: 5,
-                            }}
-                          >
-                            <b>
-                              Total Price in {tourPackage.selectedCurrencyType}{" "}
-                              :{" "}
-                            </b>
-                            <span>
-                              {tourPackage.selectedCurrencySymbol} {""}
-                              {tourPackage.totalPriceInSelectedCurrency}
-                            </span>{" "}
-                          </span>
-                        </div>
-                        {tourPackage.selectedCurrencyType != "LKR" && (
-                          <div
-                            style={{
-                              ...paragraph,
-                              marginTop: 5,
-                              display: "flex",
-                              width: "fit-content",
-                            }}
-                          >
-                            <span
-                              style={{
-                                backgroundColor: "#eab308",
-                                padding: "10px",
-                                borderRadius: "5px",
-                                marginBottom: 5,
-                              }}
-                            >
-                              <b>Total Price in LKR : </b>
-                              <span>{`Rs ${tourPackage.totalPriceInLKR}`}</span>{" "}
-                            </span>
-                          </div>
-                        )}
+                      <Section style={section}>
+                        <Text style={paragraph}>
+                          Thank you for your interest in our tour packages. Our
+                          agent will contact you shortly to discuss your tour in
+                          detail. During the conversation, we can adjust your
+                          plans to suit your budget and preferences. We look
+                          forward to helping you plan the perfect trip!
+                        </Text>
+                        <b>
+                          <Text style={{ ...paragraph, marginTop: 10 }}>
+                            Best regards,
+                          </Text>
+                          <Text style={paragraph}>Tour Booking Sri Lanka.</Text>
+                        </b>
                       </Section>
                     </Column>
                   </Row>

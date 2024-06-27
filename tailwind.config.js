@@ -42,6 +42,11 @@ module.exports = {
         Secondary: "#14d01f",
         errorpink: "#be185d",
         navgray: "#93939311",
+        gold: {
+          DEFAULT: "#d97706", // Default gold
+          light: "#f59e0b", // Light gold
+          dark: "#eab308", // Darker gold
+        },
       },
 
       keyframes: {
