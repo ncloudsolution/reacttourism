@@ -81,7 +81,7 @@ const TourPackages = () => {
   }, [isClickedPrice]);
 
   const handlePriceLowToHigh = () => {
-    const lowToHighValue = PriceLowToHigh();
+    const lowToHighValue = PriceLowToHigh("tourPackage");
     setFinalFilterdArray(lowToHighValue);
     setTimeout(() => {
       setIsClickedPrice(false);
@@ -91,7 +91,7 @@ const TourPackages = () => {
   };
 
   const handlePriceHighToLow = () => {
-    const highToLowValue = PriceHighToLow();
+    const highToLowValue = PriceHighToLow("tourPackage");
     setFinalFilterdArray(highToLowValue);
     setTimeout(() => {
       setIsClickedPrice(false);
@@ -105,7 +105,8 @@ const TourPackages = () => {
     const priceRangeValue = PriceRange(
       minVal,
       maxVal,
-      tourDetails.conversionRate
+      tourDetails.conversionRate,
+      "tourPackage"
     );
     setFinalFilterdArray(priceRangeValue);
     setIsClickedPrice(false);
@@ -277,7 +278,9 @@ const TourPackages = () => {
                     )} */}
                     <div className="text-primary font-semibold text-[15px]">
                       From {tourDetails.converedCurrencySymbol}{" "}
-                      {(place.price * tourDetails.conversionRate).toFixed(2)}
+                      {(
+                        place.discountedPrice * tourDetails.conversionRate
+                      ).toFixed(2)}
                       <span className="text-black ml-1 text-[15px]">
                         Per Person
                       </span>

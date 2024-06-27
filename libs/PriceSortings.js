@@ -1,4 +1,5 @@
 import daytrips from "@/data/daytrips.json";
+import tourPackage from "@/data/tourPackage.json";
 
 function compareByDiscountedPriceForLowToHigh(a, b) {
   const priceA = a.discountedPrice;
@@ -12,26 +13,32 @@ function compareByDiscountedPriceForHighToLow(a, b) {
   return priceB - priceA;
 }
 
-export function PriceLowToHigh() {
+export function PriceLowToHigh(type) {
   // sorting accending
-  const sortedTours = [...daytrips].sort(compareByDiscountedPriceForLowToHigh);
+  const category = type === "daytrips" ? [...daytrips] : [...tourPackage];
+  const sortedTours = category.sort(compareByDiscountedPriceForLowToHigh);
 
   return sortedTours;
 }
 
-export function PriceHighToLow() {
+export function PriceHighToLow(type) {
   // sorting decending
-  const sortedTours = [...daytrips].sort(compareByDiscountedPriceForHighToLow);
+
+  const category = type === "daytrips" ? [...daytrips] : [...tourPackage];
+  const sortedTours = category.sort(compareByDiscountedPriceForHighToLow);
 
   return sortedTours;
 }
 
-export function PriceRange(input1, input2, rate) {
+export function PriceRange(input1, input2, rate, type) {
   // selective range
-  const sortedTours1 = [...daytrips].filter(
+
+  const category = type === "daytrips" ? [...daytrips] : [...tourPackage];
+
+  const sortedTours1 = category.filter(
     (tour) => tour.discountedPrice * rate >= input1
   );
-  const sortedTours2 = [...daytrips].filter(
+  const sortedTours2 = category.filter(
     (tour) => tour.discountedPrice * rate <= input2
   );
 

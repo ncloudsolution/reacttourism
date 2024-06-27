@@ -1051,5 +1051,675 @@
     "fullDescriptionParas": [
       "Your day will begin with pick-up at Galle. Then, relax on the 1 and half hour drive to Udawalawe National Park, created in the 1970s to provide a sanctuary for wild animals displaced by the construction of the Udawalawe Reservoir on the Walawe River. Udawalawe National Park is a renowned wildlife sanctuary known for its diverse and abundant wildlife, with a special focus on its large elephant population, Now the third most visited park in Sri Lanka. The park's picturesque landscapes encompass lush grasslands, forests, and a scenic reservoir Here, you'll embark on a thrilling jeep safari. Visitors can embark on thrilling jeep safaris led by expert guides to observe elephants, leopards, birds, and other fascinating creatures in their natural habitat. Udawalawe National Park is not only a wildlife haven but also a place of conservation and environmental significance, making it a must-visit destination for nature enthusiasts and wildlife lovers."
     ]
+  },
+  {
+    "type": "day trip",
+    "img": "/DayTrips/yala.jpg",
+    "minduration": 7,
+    "maxduration": null,
+    "description": "Yala National Park Wildlife safari from Galle",
+    "initialPrice": null,
+    "discountedPrice": 99,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity"],
+    "include": [
+      "Hotel pick-up and drop-off",
+      "Transportation by air conditioned shared vehicle",
+      "Safari drive by Jeep - shared jeep",
+      "Bottled water"
+    ],
+    "exclude": [
+      "Entrance fee to Udawalawe National Park",
+      "Food and drinks",
+      "Optional gratuities",
+      "Other own expenses & Shopping"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Galle, Hikkaduwa, Ahangama, Unawatuna, Mirissa, Weligama"
+      },
+      {
+        "heading": "Car",
+        "text": "(2.5 hours)"
+      },
+      {
+        "heading": "Yala National Park",
+        "text": "Game drive, Wildlife viewing (4 hours)"
+      },
+
+      {
+        "heading": "Car",
+        "text": "(2.5 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Galle"
+      }
+    ],
+    "places": ["Yala National Park"],
+    "fullDescriptionParas": [
+      "Your day will begin with pick-up at Galle and proceed to Yala national park. Yala National Park, located on the southeastern coast of Sri Lanka, is the country's most famous and diverse wildlife sanctuary. Known for its remarkable leopard population, it offers thrilling opportunities to spot these elusive cats. The park's picturesque landscapes encompass lush forests, arid plains, and a stunning coastline, making it a haven for wildlife enthusiasts and nature lovers. Visitors can embark on jeep safaris guided by experts, witnessing not only leopards but also elephants, birds, and other fascinating creatures in their natural habitat. With its rich biodiversity and conservation efforts, Yala National Park promises an unforgettable wildlife adventure in a pristine natural environment. You can either return to your accommodation at Galle."
+    ]
+  },
+  {
+    "type": "day trip",
+    "img": "/DayTrips/ella.jpg",
+    "minduration": 24,
+    "maxduration": null,
+    "description": "From Ella: All-Inclusive Day Trip to 5 Landmarks",
+    "initialPrice": 77.32,
+    "discountedPrice": 66.57,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity"],
+    "include": [
+      "Hotel pick-up and drop-off",
+      "Lunch at a local restaurant",
+      "Entrance fees to Ella Rock",
+      "Coffee, tea and bottled water",
+      "Snack"
+    ],
+    "exclude": [
+      "Entry tickets to Flying Ravana Mega Zipline",
+      "Gratuities (optional)"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Ella, Bandarawela, Haputale"
+      },
+      {
+        "heading": "Black cab",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Ella Rock",
+        "text": "Break time, Photo stop, Guided tour, Free time, Sightseeing, Walk, Scenic views on the way (20 minutes)"
+      },
+
+      {
+        "heading": "Black cab",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Local restaurant",
+        "text": "Coffee, Tea, Local snacks (30 minutes)"
+      },
+      {
+        "heading": "Black cab",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Demodara Railway Loop Viewpoint",
+        "text": "Break time, Photo stop, Visit, Guided tour, Free time, Sightseeing, Walk, Scenic views on the way (20 minutes)"
+      },
+
+      {
+        "heading": "Black cab",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Nine Arch Bridge",
+        "text": "Break time, Photo stop, Visit, Guided tour, Free time, Sightseeing, Walk, Scenic views on the way (20 minutes)"
+      },
+      {
+        "heading": "Black cab",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Ravana Falls",
+        "text": "Break time, Photo stop, Visit, Guided tour, Free time, Sightseeing, Walk, Scenic views on the way (20 minutes)"
+      },
+
+      {
+        "heading": "Black cab",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Local restaurant",
+        "text": "Lunch (45 minutes)"
+      },
+      {
+        "heading": "Black cab",
+        "text": "(20 minutes)"
+      },
+      {
+        "heading": "Little Adam's Peak",
+        "text": "Break time, Photo stop, Visit, Guided tour, Free time, Sightseeing, Walk, Scenic views on the way (20 minutes)"
+      },
+      {
+        "heading": "Flying Ravana Mega Zipline",
+        "text": "Break time, Photo stop, Visit, Free time, Sightseeing, Scenic views on the way, Zipline (30 minutes)"
+      },
+      {
+        "heading": "Black cab",
+        "text": "(25 minutes)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Ella, Haputale, Bandarawela"
+      }
+    ],
+    "places": [
+      "Ella Rock",
+      "Demodara Railway Loop Viewpoint",
+      "Nine Arch Bridge",
+      "Ravana Falls",
+      "Little Adam's Peak",
+      "Flying Ravana Mega Zipline"
+    ],
+    "fullDescriptionParas": [
+      "Embark on an unforgettable journey to explore the enchanting village paradise of Ella, nestled in the central highlands of Sri Lanka, with our guided tour. Immerse yourself in the spectacular scenery, tranquil atmosphere, and rich cultural heritage as you visit the most iconic tourist attractions, including the Nine Arches Bridge, Ella Rock, Little Adam’s Peak, Demodara Loop, and Rawana Waterfall. Let our experienced guide lead the way as you uncover the best of Ella's natural wonders and cultural landmarks.",
+      "Your tour begins with a pickup from your hotel in the Ella, Bandarawela , Haputhale area, where you'll meet your guide and set off on your adventure.",
+      "Start your day with a scenic hike to Ella Rock, a breathtaking vantage point offering panoramic views of the surrounding landscapes. Take a break for refreshments amidst the natural beauty.",
+      "Explore the iconic Nine Arches Bridge, a fascinating example of colonial engineering that spans across lush green valleys.",
+      "Next, marvel at the engineering marvel of Demodara Loop, where the railway line loops back under itself, creating a captivating spectacle.",
+      "Experience the majestic beauty of Rawana Waterfall, where cascading waters plunge into a serene pool surrounded by verdant foliage.",
+      "Embark on a memorable hike to Little Adam’s Peak, renowned for its stunning views of the Ella region and beyond.",
+      "Watch the mesmerizing sunset over the mountains from the summit of Little Adam's Peak, capturing unforgettable moments.",
+      "Conclude your tour with a drop-off back at your hotel in Ella,Bandarawela , Haputhale, filled with memories of your exhilarating day of exploration."
+    ]
+  },
+  {
+    "type": "guided tour",
+    "img": "/DayTrips/ella2.jpg",
+    "minduration": 4,
+    "maxduration": null,
+    "description": "Ella: Little Adam's Peak and Nine Arch Bridge Half-Day Tour",
+    "initialPrice": null,
+    "discountedPrice": 39,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["New activity", "Small Groups"],
+    "include": [
+      "Hotel pick-up and drop-off",
+      "Tuk tuk transport",
+      "Water bottles"
+    ],
+    "exclude": ["Food", "Gratuities"],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Ella, Wellawaya-Ella-Kumbalwela Highway"
+      },
+      {
+        "heading": "Little Adam's Peak",
+        "text": "Guided tour (2.5 hours)"
+      },
+      {
+        "heading": "Nine Arch Bridge",
+        "text": "Sightseeing (1.5 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Ella, Wellawaya-Ella-Kumbalwela Highway"
+      }
+    ],
+    "places": ["Little Adam's Peak", "Nine Arch Bridge"],
+    "fullDescriptionParas": [
+      "Discover the beauty of Ella on this half day tour. Your personal guide will take you to the famous Nine Arch Bridge before you witness the stunning views of Ella's natural beauty from Little Adam's Peak.",
+      "Stroll along the unique attraction of the Nine Arch Bridge railway, spanning 91 meters alongside dense jungle and agricultural settings. Stop for photos of the nine arches. With the forest booming behind the railway and the tea leaves cultivated below from the plantations, the beautiful bridge stands out from the epic scenery as a picturesque masterpiece. The bridge is built entirely from rocks and bricks, without metal or steel.",
+      "Next, your guide will take you on a small hike to Little Adam's Peak to see the greenery of Ella, surrounded by tea fields and rural beauty. The moderate trail winds through tea plantations, where you may see locals working and picking the tea leaves. The trail offers multiple platforms, rocks and viewpoints perfect for photos, with the view getting more spectacular as you walk along the ridge to the summit. Take in the unbelievable views across the mountain highlands of Sri Lanka, before you walk back down to finish the tour.",
+      "Transfers are included to bring you to and from your hotel for the half day tour via tuk tuk. Water is provided for you, to keep you hydrated throughout the walk. Chose from a morning or afternoon start time."
+    ]
+  },
+  {
+    "type": "day trip",
+    "img": "/DayTrips/ella3.jpg",
+    "minduration": 8,
+    "maxduration": null,
+    "description": "From Ella: Lipton Seat & Dambatenne Tea Factory Day Tour",
+    "initialPrice": null,
+    "discountedPrice": 47,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available"],
+    "include": [
+      "Bottled water",
+      "Transport by private vehicle",
+      "Hotel pick up and drop-off"
+    ],
+    "exclude": [
+      "Food and drinks, unless specified",
+      "Gratuities (optional)",
+      "Entrance fees"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Ella"
+      },
+      {
+        "heading": "Car",
+        "text": "(75 minutes)"
+      },
+      {
+        "heading": "Dambethenna Tea Factory",
+        "text": "Visit, Guided tour, Shopping, Walk, Self-guided tour (45 minutes)"
+      },
+      {
+        "heading": "Tuk tuk",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Lipton's Seat",
+        "text": "Walk, Self-guided tour, Scenic views on the way (45 minutes)"
+      },
+      {
+        "heading": "Car",
+        "text": "(2 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Ella"
+      }
+    ],
+    "places": ["Dambethenna Tea Factory", "Lipton's Seat"],
+    "fullDescriptionParas": [
+      "Explore the Dambatenne countryside, head past green fields and tea plantations for the chance to see traditional life in the area.",
+      "Start your tour as you head to Dambatenne Tea Factory, built in 1890 by Sir Thomas Lipton, one of the most famous figures in tea history. Take a tour through the works for an education on the processes involved in the fermentation, rolling, drying, cutting, sieving and grading of tea. Enjoy one of the most comprehensive tea factory tours around, and afterwards, take the chance to try a cup.",
+      "Move on to Lipton’s Seat Lookout, one of Sri Lanka's most impressive viewpoints. Here, Sir Thomas Lipton used to survey his burgeoning empire, and today it's said you can see across emerald hills and tea estates to no fewer than seven different provinces."
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/sigiriya5.jpg",
+    "minduration": 24,
+    "maxduration": null,
+    "description": "From Kandy: Sigiriya Rock and Dambulla Cave Temple Day Tour",
+    "initialPrice": 80.72,
+    "discountedPrice": 72.55,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available", "New activity"],
+    "include": [
+      "Free Pickup and Drop Kandy City to 10km",
+      "Bottle Water",
+      "King Coconuts water",
+      "Driver Food"
+    ],
+    "exclude": ["Guess Food", "Entry Tickets and Activity Tickets"],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Kandy"
+      },
+      {
+        "heading": "Sigiriya",
+        "text": "Sightseeing, Sunset, Scenic views on the way (3.5 hours)"
+      },
+      {
+        "heading": "Sigiriya Lion Rock",
+        "text": "Sightseeing, Sunset, Scenic views on the way (2.5 hours)"
+      },
+      {
+        "heading": "Dambulla Royal Cave Temple and Golden Temple",
+        "text": "Sightseeing (2 hours)"
+      },
+      {
+        "heading": "Car",
+        "text": "(3.5 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Kandy"
+      }
+    ],
+    "places": [
+      "Sigiriya Lion Rock",
+      "Herbal and Spice Garden",
+      "Dambulla Cave Temple and Golden Temple",
+      "Gem and Wood Crafting"
+    ],
+    "fullDescriptionParas": [
+      "Marvel at the ancient rock fortress of Sigiriya, a UNESCO World Heritage Site. Discover the historical significance and architectural brilliance of this iconic landmark.",
+      "Immerse yourself in the rich aromas and healing properties of Sri Lanka's herbs and spices. Explore a local garden to learn about the diverse flora that contributes to the country's traditional medicine.",
+      "Delve into the mystical ambiance of Dambulla Cave Temple, another UNESCO World Heritage Site. Admire the intricate cave paintings and statues that tell tales of Sri Lanka's religious and cultural heritage. Visit the nearby Golden Temple to witness its splendor",
+      "Explore the craftsmanship of local artisans as you visit gem and wood crafting centers. Discover the artistry behind Sri Lanka's gem industry and the intricate woodwork that reflects the country's cultural heritage.",
+      "This day tour promises a perfect blend of history, nature, and cultural exploration in the enchanting surroundings of Dambulla and Sigiriya"
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/sigiriya6.jpg",
+    "minduration": 24,
+    "maxduration": null,
+    "description": "Kandy to Sigiriya Dambulla & Minneriya Park Safari Day Tour",
+    "initialPrice": 47,
+    "discountedPrice": 42.2,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available", "New activity"],
+    "include": [
+      "Free Pickup and Drop Kandy City to 10km",
+      "Bottle Water",
+      "King Coconuts water",
+      "Driver Food"
+    ],
+    "exclude": ["Guess Food", "Entry Tickets and Activity Tickets"],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Kandy"
+      },
+      {
+        "heading": "Car",
+        "text": "(3.5 hours)"
+      },
+      {
+        "heading": "Sigiriya Lion Rock",
+        "text": "Visit, Sightseeing, Walk (2.5 hours)"
+      },
+      {
+        "heading": "Minneriya National Park",
+        "text": "Visit, Sightseeing, Game drive, Wildlife viewing (4 hours)"
+      },
+      {
+        "heading": "Dambulla Royal Cave Temple and Golden Temple",
+        "text": "Visit, Sightseeing, Scenic views on the way (1.5 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Kandy"
+      }
+    ],
+    "places": [
+      "Sigiriya Lion Rock",
+      "Minneriya National Park",
+      "Dambulla Cave Temple and Golden Temple",
+      "Sri Lanka Herbal and Spice Garden"
+    ],
+    "fullDescriptionParas": [
+      "Start with a hotel pickup and journey to the UNESCO-listed Dhambulla Golden Cave Temple. Marvel at ancient Buddhist statues and intricate wall paintings within the caves.",
+      "Continue to Sigiriya, the renowned 'Lion Rock.' Ascend to the top for panoramic views of the landscapes.",
+      "Visit a local village to experience traditional Sri Lankan life, engaging with locals and witnessing activities like farming and cooking.",
+      "Conclude the day with a visit to Minneriya National Park, famous for its wild elephant population. Enjoy a thrilling jeep safari for an up-close encounter with these magnificent creatures in their natural habitat"
+    ]
+  },
+  {
+    "type": "day trip",
+    "img": "/DayTrips/kandy2.jpg",
+    "minduration": 8,
+    "maxduration": null,
+    "description": "Kandy City Tours",
+    "initialPrice": 49,
+    "discountedPrice": 41.5,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available", "New activity"],
+    "include": [
+      "Visit to Bahirawakanda Temple",
+      "Visit to Nelligala Temple",
+      "Tour of Geragama Tea Factory",
+      "Exploration of Royal Botanical Garden",
+      "Sightseeing at Mahaweli River",
+      "Kandy Spice Walk",
+      "Visit to Gem Museum",
+      "Tour of Wood Carving Factory",
+      "Kandy City View Point",
+      "Visit to Batik Factory",
+      "Kandyan Culture Dancing show",
+      "Entrance to Temple of the Sacred Tooth Relic",
+      "Drop-off at your hotel"
+    ],
+    "exclude": ["Some Visiting Places of Entry Tickets are not included."],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Kandy"
+      },
+      {
+        "heading": "Bahirawakanda Temple",
+        "text": "Visit (1 hour)"
+      },
+      {
+        "heading": "Gem Museum",
+        "text": "Visit (1 hour)"
+      },
+      {
+        "heading": "Batik Factory",
+        "text": "Photo stop, Visit, Shopping, Sightseeing, Walk (2 hours)"
+      },
+      {
+        "heading": "Temple of the Sacred Tooth Relic",
+        "text": "Visit (2 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Kandy"
+      }
+    ],
+    "places": [
+      "Bahirawakanda Temple",
+      "Nelligala Temple",
+      "Geragama Tea Factory",
+      "Royal Botanical Garden",
+      "Gem Museum",
+      "Batik Factory",
+      "Temple of the Sacred Tooth Relic"
+    ],
+    "fullDescriptionParas": [
+      "Embark on an enriching journey through Kandy, the cultural heart of Sri Lanka, with a guided city tour. Visit iconic landmarks and hidden gems with a local guide.",
+      "Begin your tour with a visit to the Bahirawakanda Temple, located 4 kilometers from Kandy. Continue to the Nelligala Temple, 13 kilometers away, and the Geragama Tea Factory, 9 kilometers away.",
+      "Visit the Gem Museum, 400 meters away, and the Wood Carving Factory, 2 kilometers away. Stop at the Kandy City View Point, 4 kilometers away, and the Batik Factory, 400 meters away.",
+      "Watch a Kandyan Culture Dancing performance, 500 meters away, and visit the Temple of the Sacred Tooth Relic, 300 meters away. Finally, be dropped off back at your hotel"
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/anuradhapura.jpg",
+    "minduration": 12,
+    "maxduration": null,
+    "description": "From Sigiriya, ANURADHAPURA UNESCO CITY day tour and safari",
+    "initialPrice": 78,
+    "discountedPrice": 74.05,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available", "New activity"],
+    "include": [
+      "Professional site guide service.",
+      "Hotel pickup and drop-off",
+      "Transportation in an air-conditioned vehicle (car/van/bus)",
+      "English-speaking driver",
+      "Optional National Park Jeep safari (1 person $ 95/02 person or more $45 per person)"
+    ],
+    "exclude": [
+      "Food and drinks, unless specified.",
+      "Optional gratuities.",
+      "Entrance fees"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Sigiriya"
+      },
+      {
+        "heading": "Car",
+        "text": "(30 minutes)"
+      },
+      {
+        "heading": "Minneriya National Park",
+        "text": "Game drive, Wildlife viewing (3 hours)"
+      },
+      {
+        "heading": "Habarana",
+        "text": "Break time, Lunch (30 minutes)"
+      },
+      {
+        "heading": "Car",
+        "text": "(1.5 hours)"
+      },
+      {
+        "heading": "Anuradhapura",
+        "text": "Guided tour, Sightseeing (3 hours)"
+      },
+      {
+        "heading": "Car",
+        "text": "(1.5 hours)"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Sigiriya"
+      }
+    ],
+    "places": [
+      "Sacred Bodhi Tree",
+      "Ruwanwelisaya Stupa",
+      "The Royal Palace and Abhayagiri Monastery",
+      "Isurumuniya Vihara",
+      "Twin Ponds",
+      "Moonstone",
+      "Wessagiriya"
+    ],
+    "fullDescriptionParas": [
+      "Explore Anuradhapura's ancient marvels on a day tour from Sigiriya. We invite you to journey through one of Sri Lanka’s most historically rich cities.",
+      "Begin with a hotel pickup in Sigiriya, traveling comfortably in an air-conditioned vehicle through lush landscapes to Anuradhapura.",
+      "Discover this UNESCO World Heritage Site, renowned for its well-preserved ruins, stupas, and intricate carvings. Visit the Jaya Sri Maha Bodhi, a sacred fig tree revered in Buddhism for over 2,000 years. Marvel at the Ruwanwelisaya Stupa, a towering monument symbolizing ancient Sri Lankan engineering prowess",
+      "Explore remnants of the Royal Palace and Abhayagiri Monastery, offering insights into ancient Sri Lankan life. Admire rock carvings at Isurumuniya Vihara, showcasing the artistic talents of ancient craftsmen. Visit the Twin Ponds, an engineering marvel providing a serene setting for reflection and photography.",
+      "Experience the ancient Moonstone, a carved stone slab representing the cycle of life. Explore Wessagiriya, an ancient monastic complex nestled amidst rocky outcrops. Enjoy traditional Sri Lankan cuisine at a local restaurant.(not included) Enriched by profound experiences, return to Sigiriya with a deeper understanding of Sri Lanka’s history and culture."
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/polonnaruwa.jpg",
+    "minduration": 8,
+    "maxduration": null,
+    "description": "Fom Dambulla: Sigiriya Rock & Ancient City of Polonnaruwa",
+    "initialPrice": null,
+    "discountedPrice": 139,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available", "New activity"],
+    "include": [
+      "Transportation from hotel and back by Air-conditioned Luxury private vehicle",
+      "Entrance Fees to Sigiriya Rock Fortress & Ancient City of Polonnaruwa",
+      "The package includes fuel surcharge and driver charges, ensuring a hassle-free and comfortable journey.",
+      "Rest assured, parking fees are also covered, allowing you to focus on enjoying the tour without any additional expenses.",
+      "Stay refreshed throughout the tour with complimentary refreshments and water provided for your convenience.",
+      "All government taxes are included in the package, giving you peace of mind and transparency in pricing."
+    ],
+    "exclude": [
+      "Any others expenses which are not mentioned on Price Includes section",
+      "Lunch at a Local Restaurant",
+      "Gratuities"
+    ],
+    "experience": [
+      {
+        "heading": "Starting location",
+        "text": "Kandalama, Habarana, Sigiriya, Dambulla"
+      },
+      {
+        "heading": "Polonnaruwa Ancient City",
+        "text": "Photo stop, Visit, Guided tour, Free time, Walk"
+      },
+      {
+        "heading": "Sigiriya Lion Rock",
+        "text": "Photo stop, Visit, Guided tour, Free time, Sightseeing, Walk"
+      },
+      {
+        "heading": "Sigiriya - Fresco",
+        "text": "Photo stop, Visit, Guided tour, Free time, Sightseeing"
+      },
+      {
+        "heading": "Arrive back at:",
+        "text": "Sigiriya, Kandalama, Dambulla, Habarana"
+      }
+    ],
+    "places": [
+      "Royal Palace",
+      "Nissankamulla Palace",
+      "Gal Viharaya",
+      "Thuparama stupa",
+      "Lankathilaka stupa",
+      "Vatadage",
+      "Rankoth Vehera",
+      "Parakramabahu Statue",
+      "Sigiriya Rock Fortress,"
+    ],
+    "fullDescriptionParas": [
+      "Begin your exciting day with a pick-up from your hotel, heading towards Sigiriya.",
+      "Proceed to Polonnaruwa, another ancient city steeped in history. Embark on a guided 3.5-hour tour of Polonnaruwa Ancient City, a remarkable World Heritage Site from the 12th century. Marvel at the palaces, dagobas, and temples that exemplify the brilliance of Sri Lankan historical craftsmanship. During the tour, visit key landmarks such as the Royal Palace, Nissankamulla Palace, Gal Viharaya, Thuparama stupa, Lankathilaka stupa, Vatadage, Rankoth Vehera, and Parakramabahu Statue, each holding captivating stories from the past.",
+      "Climb and visit the majestic Sigiriya Rock Fortress, an ancient marvel built by King Kashyapa in the 5th century. Standing 660 feet tall, this Unesco World Heritage Site, also known as Lion's Rock or Sinhagiri, offers breathtaking views and a glimpse into Sri Lanka's rich history. Ascend the 1200 steps to reach the top and explore the well-preserved ruins of the ancient palace and water gardens. The impressive lion carving at the entrance and the innovative irrigational and archaeological technologies still in use make Sigiriya a wonder of the world. The well-designed ramparts and moats surrounding the rock are a testament to its powerful defense.",
+      "As the tour concludes, return to your hotel, reflecting on the awe-inspiring historical wonders and cultural heritage experienced in Sigiriya and Polonnaruwa."
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/polonnaruwa2.jpg",
+    "minduration": 5,
+    "maxduration": 8,
+    "description": "From Sigiriya : Polonnaruwa Ancient City Tour | Day Tour",
+    "initialPrice": null,
+    "discountedPrice": 46.67,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available", "Small Groups"],
+    "include": [
+      "Hotel pickup and drop-off",
+      "English Speaking Driver",
+      "Water bottle",
+      "OPTIONS - Ruins Guide (20£) Extra Pay",
+      "Safari Jeep"
+    ],
+    "exclude": ["Lunch", "Entrance fees"],
+    "experience": [],
+    "places": [
+      "Gal Vihara",
+      "Royal Palace Complex",
+      "Parakrama Samudra",
+      "Polonnaruwa Vatadage",
+      "Lotus Pond"
+    ],
+    "fullDescriptionParas": [
+      "Welcome to Polonnaruwa, where history comes alive! Step into the past as you explore ancient ruins, temples, and palaces that once served as royal residences. This tour is like a trip back in time, offering a glimpse into the rich cultural heritage of Sri Lanka. Marvel at top attractions like Gal Vihara with its incredible rock-carved Buddhas, the Royal Palace Complex that makes you feel like royalty, the vast Parakrama Samudra reservoir, the intricately carved Polonnaruwa Vatadage, and the historic Lotus Pond.",
+      "Enjoy your day in Polonnaruwa with ease as we handle all the details for you. Dress comfortably, stay hydrated, and immerse yourself in the experience. Keep an eye out for monkeys and birds that inhabit the area, adding a touch of nature to your historical journey. Don't forget to snap some photos to capture the memories of your adventure. Join us on a Polonnaruwa city tour to witness Sri Lanka's history and culture firsthand, making memories that will last a lifetime!"
+    ]
+  },
+  {
+    "type": "private tour",
+    "img": "/DayTrips/polonnaruwa3.jpg",
+    "minduration": 8,
+    "maxduration": null,
+    "description": "Polonnaruwa Ancient City Tour with Minneriya Elephant Safari",
+    "initialPrice": null,
+    "discountedPrice": 80.72,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available", "Small Groups"],
+    "include": [
+      "Hotel pickup and drop-off",
+      "Transport by Private Jeep",
+      "Guided only within the National Park",
+      "Refreshing beverages",
+      "Bottled water during the tour",
+      "Polonnaruwa ruins guide (+20£)"
+    ],
+    "exclude": [
+      "National park entrance fees",
+      "Polonnaruwa city entrance fees",
+      "Lunch"
+    ],
+    "experience": [],
+    "places": [
+      "Royal Palace Complex",
+      "Gal Vihara",
+      "sacred Quadrangle",
+      "Minneriya National Park"
+    ],
+    "fullDescriptionParas": [
+      "Begin your adventure in Polonnaruwa, a UNESCO World Heritage Site celebrated for its rich history and archaeological marvels. As you step onto its hallowed ground, you'll be transported back in time to the days of ancient Sri Lankan kingdoms. Roam among the ancient ruins, intricately carved stone sculptures, and remarkably preserved monuments that bear witness to the island's glorious past.",
+      "Our experienced guides will lead you through this open-air museum, regaling you with tales of kings and kingdoms. You'll visit the Royal Palace, where royalty once resided, the awe-inspiring Gal Vihara with its colossal Buddha statues, and the sacred Quadrangle, a spiritual center rich in history. Along the way, you'll gain a deep understanding of the art, architecture, and cultural heritage that define Polonnaruwa",
+      "After immersing yourself in the historical wonders of Polonnaruwa, it's time for an exhilarating wildlife adventure. The Minneriya National Park, just a short drive away, promises an unforgettable Minneriya Elephant Safari. This park is renowned for its incredible gatherings of elephants, often called 'The Gathering,' where herds of these magnificent creatures come together to graze, socialize, and play.",
+      "Your journey into the wild begins as you board a sturdy 4x4 safari jeep, accompanied by our experienced naturalists. They'll share their deep knowledge of the park's ecosystem and its inhabitants, ensuring you witness the awe-inspiring spectacle of Sri Lankan elephants in their natural habitat. As you watch these gentle giants up close, you'll gain a newfound appreciation for their beauty and grace."
+    ]
+  },
+  {
+    "type": "adventure",
+    "img": "/DayTrips/minneriya.jpg",
+    "minduration": 3,
+    "maxduration": null,
+    "description": "Polonnaruwa Ancient City Tour with Minneriya Elephant Safari",
+    "initialPrice": 41.56,
+    "discountedPrice": 37.31,
+    "timeSlots": ["6:30 AM", "7:00 AM"],
+    "tags": ["Pickup available", "Small Groups"],
+    "include": ["Hotel pickup and drop-off", "English Speaking Driver"],
+    "exclude": ["Entry tickets - Minneriya National Park"],
+    "experience": [],
+    "places": ["Minneriya National Park"],
+    "fullDescriptionParas": [
+      "Welcome to our thrilling wildlife tour at Minneriya National Park, where you'll embark on an unforgettable adventure into the heart of Sri Lanka's untamed wilderness. Get ready to witness the mesmerizing spectacle of the annual Minneriya Elephant Gathering, a breathtaking natural phenomenon that brings together hundreds of majestic elephants in one location. As you delve into the park's diverse ecosystem, you'll encounter a plethora of other fascinating wildlife, from elusive leopards and sloth bears to colorful birds and endemic reptiles. Our expert guides will lead you on a safari through the park's verdant landscapes, ensuring you have a safe and enriching experience while witnessing some of the most extraordinary wildlife encounters of your life."
+    ]
   }
 ]

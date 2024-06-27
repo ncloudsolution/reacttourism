@@ -162,6 +162,20 @@ function NavBar() {
                         >
                           Day Trips
                         </Link>
+                        <Link
+                          href={"/tour-packages"}
+                          className="border-b-2 border-b-white  w-full"
+                          onClick={NavFunction}
+                        >
+                          Tour Packages
+                        </Link>
+                        <Link
+                          href={"/custom-tour-package"}
+                          className="border-b-2 border-b-white  w-full"
+                          onClick={NavFunction}
+                        >
+                          Custom Tour
+                        </Link>
                       </div>
                     </div>
                   )}

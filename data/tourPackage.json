@@ -3,7 +3,7 @@
     "img": "/Tours/kandy.jpg",
     "description": "06 Days | 05 Nights Excursions from Kandy, Sigiriya & Colombo",
     "duration": 6,
-    "price": 300,
+    "discountedPrice": 300,
     "include": [
       "Meeting at the airport upon arrival and assistance during the stay",
       "Transportation by air-conditioned vehicle according to the itinerary.",
@@ -83,54 +83,54 @@
     "img": "/Tours/nallur.jpg",
     "description": "Sri Lanka Classic & Northern Tour -10 Days | 09 Nights",
     "duration": 10,
-    "price": 350
+    "discountedPrice": 350
   },
   {
     "img": "/Tours/nuwara.jpg",
     "description": "08 Days Tour - Kandy, Nuwara Eliya & Bentota",
     "duration": 8,
-    "price": 450
+    "discountedPrice": 450
   },
   {
     "img": "/Tours/buddhist.jpg",
     "description": "07 Days | 06 Nights Buddhist Cultural Tour",
     "duration": 7,
-    "price": 450
+    "discountedPrice": 450
   },
   {
     "img": "/Tours/beach.jpg",
     "description": "10 Days - Nature, Culture & East Coast",
     "duration": 10,
-    "price": 450
+    "discountedPrice": 450
   },
   {
     "img": "/Tours/kandy.jpg",
     "description": "06 Days | 05 Nights Excursions from Kandy, Sigiriya & Colombo",
-    "duration": 5,
-    "price": 250
+    "duration": 6,
+    "discountedPrice": 250
   },
   {
     "img": "/Tours/nallur.jpg",
-    "description": "Sri Lanka Classic & Northern Tour -10 Days | 09 Nights",
+    "description": "Sri Lanka Classic & Northern Tour - 10 Days | 09 Nights",
     "duration": 10,
-    "price": 350
+    "discountedPrice": 350
   },
   {
     "img": "/Tours/nuwara.jpg",
     "description": "08 Days Tour - Kandy, Nuwara Eliya & Bentota",
     "duration": 8,
-    "price": 450
+    "discountedPrice": 450
   },
   {
     "img": "/Tours/buddhist.jpg",
     "description": "07 Days | 06 Nights Buddhist Cultural Tour",
     "duration": 7,
-    "price": 450
+    "discountedPrice": 450
   },
   {
     "img": "/Tours/beach.jpg",
     "description": "10 Days - Nature, Culture & East Coast",
     "duration": 10,
-    "price": 450
+    "discountedPrice": 450
   }
 ]
