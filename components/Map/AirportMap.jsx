@@ -379,7 +379,7 @@ const AirportMap = ({ children }) => {
                         <div className="font-semibold text-[30px] px-8">
                           {vehicle.type}
                         </div>
-                        <div className="sm:w-[300px] w-[250px] sm:h-[150px] h-[120px] xs:translate-y-5 translate-y-0">
+                        <div className=" w-[250px] xs:w-[200px] bxs:w-[250px] sm:w-[300px] sm:h-[150px] h-[120px] xs:translate-y-5 translate-y-0">
                           <Image
                             src={vehicle.img}
                             alt=""

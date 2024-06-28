@@ -10,7 +10,7 @@ const DayTripsPriceCrad = ({ initialPrice, discountedPrice }) => {
     <div className="border-2 border-transparent xs:px-8 px-4 xs:pt-8 pt-5  rounded-lg">
       <div className="flex gap-3 ">
         <div className="midxl:text-[24px] xxs:text-[22px] text-[20px] font-serif ">
-          Per Person
+          Per Person Approximately
         </div>
         {initialPrice != "null" && (
           <div className="line-through midxl:text-[24px] xxs:text-[20px] text-[18px] font-semibold">

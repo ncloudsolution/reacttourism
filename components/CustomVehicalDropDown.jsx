@@ -10,10 +10,11 @@ const CustomVehicalDropDown = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
   const [vehicals, setVehicals] = useState([
-    "Sedan",
-    "Micro vans",
-    "High roof",
-    "Mini coaches",
+    "Sedan - (1-3 Passengers)",
+    "Mini car - (1-2 Passengers)",
+    "Micro vans - (1-3 Passengers)",
+    "High roof - (1-7 Passengers)",
+    "Mini coaches - (1-14 Passengers)",
   ]);
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState(vehicals[0]);
@@ -60,7 +61,7 @@ const CustomVehicalDropDown = () => {
           ref={DropDownRef}
           className={`bg-white mt-2 overflow-y-auto ${
             open
-              ? "max-h-60 border-[1px] border-black rounded  mb-2"
+              ? "max-h-64 border-[1px] border-black rounded  mb-2"
               : "max-h-0"
           } `}
         >
