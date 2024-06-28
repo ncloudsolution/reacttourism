@@ -6,48 +6,110 @@
         "trainName": "1001 Dunhinda Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
         "trainTime": ["06:30", "17:37"],
-        "travelTime": ["06:30", "09:18"],
-        "availableDays": ["Sun", "Tue - Fri"],
+        "travelTime": ["06:30", "09:40"],
+        "availableDays": ["Sun", "Tue", "Fri"],
         "types": [
           {
-            "class": "Air Conditioned Saloon",
+            "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": "LKR 10,000"
+            "price": 6000
           },
           {
-            "class": "Second Class Reserved Seats",
+            "class": "Second Class Reserved",
             "seats": 114,
-            "price": "LKR 8,000"
+            "price": 4000
           },
           {
-            "class": "Third Class Reserved Seats",
+            "class": "Third Class Reserved",
             "seats": 39,
-            "price": "LKR 8,000"
+            "price": 3000
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "travelPoints": "Colombo to Nanu Oya",
+    "trainList": [
       {
-        "trainName": "11041 Ella Odyssey ",
+        "trainName": "1001 Dunhinda Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
-        "trainTime": ["05:30", "17:30"],
-        "travelTime": ["05:30", "08:13"],
-        "availableDays": ["Tue - Sat"],
-
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["06:30", "13:53"],
+        "availableDays": ["Sun", "Tue", "Fri"],
         "types": [
           {
-            "class": "Air Conditioned Saloon",
+            "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": "LKR 12,000"
+            "price": 7000
           },
           {
-            "class": "Second Class Reserved Seats",
+            "class": "Second Class Reserved",
             "seats": 114,
-            "price": "LKR 10,000"
+            "price": 5000
           },
           {
-            "class": "Third Class Reserved Seats",
+            "class": "Third Class Reserved",
             "seats": 39,
-            "price": "LKR 9,000"
+            "price": 4000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "travelPoints": "Colombo to Ella",
+    "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["06:30", "16:36"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 8000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 6000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 5000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "travelPoints": "Colombo to Badulla",
+    "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["06:30", "17:37"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 8000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 6000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 5000
           }
         ]
       }
@@ -64,9 +126,9 @@
         "availableDays": ["Sun", "Tue - Wed", "Fri"],
         "types": [
           {
-            "class": "Second Class Reserved Seats",
+            "class": "Second Class Reserved",
             "seats": 56,
-            "price": "LKR 1,600"
+            "price": 1600
           }
         ]
       },
@@ -79,14 +141,14 @@
 
         "types": [
           {
-            "class": "Second Class Reserved Seats",
+            "class": "Second Class Reserved",
             "seats": 64,
-            "price": "LKR 1,600"
+            "price": 1600
           },
           {
-            "class": "Third Class Reserved Seats",
+            "class": "Third Class Reserved",
             "seats": 90,
-            "price": "LKR 1,200"
+            "price": 1200
           }
         ]
       },
@@ -101,12 +163,12 @@
           {
             "class": "Second Class Sleeperetts",
             "seats": 48,
-            "price": "LKR 2,600"
+            "price": 2600
           },
           {
             "class": "Third Class Sleeperetts",
             "seats": 56,
-            "price": "LKR 1,400"
+            "price": 1400
           }
         ]
       }

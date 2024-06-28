@@ -5,8 +5,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import { MdOutlineDateRange } from "react-icons/md";
+import { twMerge } from "tailwind-merge";
 
-const CustomDayTourDatePicker = ({ selectedDate, onChange }) => {
+const CustomDayTourDatePicker = ({
+  selectedDate,
+  onChange,
+  className = "",
+}) => {
   const datePickerRef = useRef(null);
 
   const handleOuterDivClick = () => {
@@ -16,7 +21,10 @@ const CustomDayTourDatePicker = ({ selectedDate, onChange }) => {
 
   return (
     <div
-      className="px-3 py-1 sm:text-[16px] text-[14px] outline-none   w-full  rounded border-[1px] border-black bg-white flex justify-between"
+      className={twMerge(
+        `px-3 py-1 sm:text-[16px] text-[14px] outline-none w-full rounded border-[1px] border-black bg-white flex justify-between`,
+        className
+      )}
       onClick={handleOuterDivClick}
     >
       <DatePicker
