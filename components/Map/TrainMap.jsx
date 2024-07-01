@@ -10,11 +10,15 @@ import { SelectVehiclesList } from "@/libs/calculations";
 import Title from "../standalone/Title";
 import Image from "next/image";
 import { BsHandbagFill } from "react-icons/bs";
+import CustomDayTourDatePicker from "../CustomDayTourDatePicker";
+import { BiSolidRightArrow } from "react-icons/bi";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
 const TrainMap = ({ children }) => {
   const router = useRouter();
+
+  const [date, setDate] = useState();
 
   const [map, setMap] = useState(/** @type google.maps.Map*/ (null));
   /** js docs types for suggesions**/
@@ -27,6 +31,8 @@ const TrainMap = ({ children }) => {
 
   const [selectedVehicalsX, setSelectedVehicalX] = useState();
   const passengerCountRef = useRef();
+
+  const [distanceX, setDistanceX] = useState();
 
   async function calculateRoute(e) {
     e.preventDefault();
@@ -42,26 +48,36 @@ const TrainMap = ({ children }) => {
         TrainSearchByTourPoints(tourDetails.trainTourPoints)
       );
 
-      let distance = undefined;
+      let newDistanceX;
 
       switch (tourDetails.trainTourPoints) {
         case "Colombo to Kandy":
-          distance = 125;
+          newDistanceX = 125;
+          break;
+        case "Colombo to Nanu Oya":
+          newDistanceX = 150;
+          break;
+        case "Colombo to Ella":
+          newDistanceX = 200;
+          break;
+        case "Colombo to Badulla":
+          newDistanceX = 220;
           break;
         case "Colombo to Polonnaruwa":
-          distance = 235;
+          newDistanceX = 235;
           break;
         // Add more cases as needed
         default:
-          distance = 10;
-
+          newDistanceX = 10;
           break;
       }
 
       const selectedVehicals = SelectVehiclesList(
         passengerCountRef.current.value,
-        distance
+        newDistanceX
       );
+
+      setDistanceX(newDistanceX);
       console.log(selectedVehicals, "vehical obj");
       console.log(tourDetails.conversionRate, "val");
 
@@ -104,9 +120,9 @@ const TrainMap = ({ children }) => {
           <FaTrain className="text-[30px] text-primary mb-2" />
           <div className="flex mb-8 mt-6 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]">
             <div className="flex flex-col gap-y-3 w-full px-8 ">
-              <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 bigmd:w-[778px] w-full">
+              <div className="flex flex-col bigmd:flex-row gap-x-3 gap-y-3 bigmd:w-[778px] w-full">
                 {/**750px**/}
-                <div className="relative w-full">
+                <div className="relative w-full flex-2">
                   <CustomTrainDropDown />
                 </div>
 
@@ -115,9 +131,13 @@ const TrainMap = ({ children }) => {
                   placeholder="No.Passengers"
                   type="number"
                   min="1"
-                  className="p-2 text-[12px] xs:text-[14px] mt-[44px] bigmd:mt-0 outline-none bigmd:w-[250px] h-[39px]  w-full shadow-md rounded border-[1px] border-black "
+                  className="p-2 text-[12px] xs:text-[14px] bigmd:mt-0 mt-[40px]  outline-none  h-[39px]  bigmd:w-[150px] w-full shadow-md rounded border-[1px] border-black "
                 />
               </div>
+
+              {/* <div className="flex bigmd:flex-row flex-col mt-[40px] w-full gap-x-3">
+                
+              </div> */}
 
               <div className="flex gap-x-3 relative  flex-col bigmd:flex-row gap-y-3">
                 <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-2  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
@@ -133,7 +153,11 @@ const TrainMap = ({ children }) => {
             </div>
           </div>
 
-          {submitError && <div className="text-errorpink">{submitError}</div>}
+          {submitError && (
+            <div className="text-errorpink bg-white px-4 py-2 rounded mb-4">
+              {submitError}
+            </div>
+          )}
         </div>
 
         {isSubmit && !submitError && (
@@ -251,15 +275,14 @@ const TrainMap = ({ children }) => {
                                 <div key={index} className="my-2">
                                   <div
                                     className={` ${
-                                      type.class === "Air Conditioned Saloon"
+                                      type.class ===
+                                      "Air Conditioned First Class Reserved"
                                         ? "bg-gradient-to-b from-gold via-gold-light to-gold-dark text-white font-medium"
                                         : type.class === "Observation Saloon"
                                         ? "bg-gradient-to-r from-black from-2% via-gold to-black to-98% text-white"
-                                        : type.class ===
-                                          "Second Class Reserved Seats"
+                                        : type.class === "Second Class Reserved"
                                         ? "bg-[#d1d5db] text-black"
-                                        : type.class ===
-                                          "Third Class Reserved Seats"
+                                        : type.class === "Third Class Reserved"
                                         ? "bg-black text-white"
                                         : type.class ===
                                           "First Class Sleeperetts"
@@ -271,10 +294,50 @@ const TrainMap = ({ children }) => {
                                           "Third Class Sleeperetts"
                                         ? "bg-gradient-to-b from-[#d1d5db] to-[#374151] text-white"
                                         : "bg-[#92400e] text-white"
-                                    } flex  justify-between gap-2 p-2 text-[11px] xxxs:text-[12px] xxs:text-[14px] bxs:text-[16px] rounded`}
+                                    } flex  justify-between items-center gap-2 p-2 text-[11px] xxxs:text-[12px] xxs:text-[14px] bxs:text-[16px] rounded`}
                                   >
-                                    <div>{type.class}</div>
-                                    <div>{type.price}</div>
+                                    <div className="flex flex-row items-center justify-between w-full">
+                                      <div className="bigmd:w-fit bxs:w-[200px] xxs:w-[150px] xxxs:w-[120px] w-[90px]">
+                                        {type.class}
+                                      </div>
+                                      <div>
+                                        {tourDetails.currencyType}{" "}
+                                        {(
+                                          type.price *
+                                          tourDetails.conversionRate
+                                        ).toFixed(2)}
+                                      </div>
+                                    </div>
+
+                                    <BiSolidRightArrow
+                                      className="cursor-pointer"
+                                      onClick={() => {
+                                        setTourDetails((prevTourDetails) => ({
+                                          ...prevTourDetails,
+                                          noOfPassengers:
+                                            passengerCountRef.current.value,
+                                          tourType: "train",
+                                          trainName: train.trainName,
+
+                                          trainPoints: train.trainPoints,
+                                          trainTime: train.trainTime,
+
+                                          travelPoints:
+                                            tourDetails.trainTourPoints,
+                                          travelTime: train.travelTime,
+
+                                          trainAvailableDays:
+                                            train.availableDays,
+
+                                          trainClass: type.class,
+                                          trainPrice: type.price,
+                                        }));
+                                        console.log(tourDetails, "all details");
+                                        router.push(
+                                          "/journey-on-rails/summary"
+                                        );
+                                      }}
+                                    />
                                   </div>
                                 </div>
                               ))}
@@ -365,60 +428,25 @@ const TrainMap = ({ children }) => {
                                 <button
                                   className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                                   onClick={() => {
-                                    console.log(startDate, "date");
+                                    // console.log(startDate, "date");
+
+                                    let placeX;
+
+                                    switch (tourDetails.trainTourPoints) {
+                                      case "Colombo to Kandy":
+                                        placeX = "Kandy";
+                                        break;
+                                      case "Colombo to Polonnaruwa":
+                                        placeX = "Polonnaruwa";
+                                        break;
+                                      // Add more cases as needed
+                                      default:
+                                        placeX = "Colombo";
+                                        break;
+                                    }
                                     //console.log(vehicle.price);
-                                    setTourDetails((prevTourDetails) => ({
-                                      ...prevTourDetails,
-                                      tourType: "train",
-                                      highwayCharge: tourDetails.highwayCharge
-                                        ? tourDetails.highwayCharge
-                                        : 0,
-                                      isReturntour: returnTour,
 
-                                      vehicleType: vehicle.type,
-                                      vehicalSeatCapacityMin:
-                                        vehicle.minpassengers,
-                                      vehicalSeatCapacityMax:
-                                        vehicle.maxpassengers,
-                                      weightFactor: vehicle.weightFactor,
-                                      price: vehicle.price,
-                                      convertedPrice: returnTour
-                                        ? (
-                                            tourDetails.conversionRate *
-                                            vehicle.price *
-                                            2
-                                          ).toFixed(2)
-                                        : (
-                                            tourDetails.conversionRate *
-                                            vehicle.price
-                                          ).toFixed(2),
-
-                                      image: vehicle.img,
-                                      luggages: vehicle.luggages,
-                                      category: vehicle.category,
-
-                                      origin: originRef.current.value,
-                                      destination: destinationRef.current.value,
-                                      noOfPassengers:
-                                        passengerCountRef.current.value,
-                                      startDate: startDate,
-                                      returnDate: returnTour
-                                        ? returnDate
-                                        : "No any Return",
-                                      distance: distance,
-                                      duration: duration,
-                                      pageTwoToken: true,
-                                    }));
-                                    console.log(
-                                      "Conversion rate:",
-                                      tourDetails.conversionRate
-                                    );
-                                    console.log(
-                                      "Vehicle price:",
-                                      vehicle.price
-                                    );
-                                    console.log("redirect");
-                                    router.push("/tour-booking");
+                                    router.push("/point-to-point");
                                   }}
                                 >
                                   Select

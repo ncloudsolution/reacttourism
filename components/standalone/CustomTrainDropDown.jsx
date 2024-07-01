@@ -36,11 +36,11 @@ const CustomTrainDropDown = () => {
 
   //function over
   return (
-    <div className="w-full absolute z-[1] left-0 right-0  h-[43px]">
+    <div className="w-full absolute z-[1] left-0 right-0  h-[39px]">
       <div
         onClick={() => setOpen(!open)}
         className={`bg-white  w-full border-[1px] text-[12px] xs:text-[14px] border-black p-2 flex items-center justify-between rounded ${
-          !selected && "text-[#8e8e8e]   h-[43px]"
+          !selected && "text-[#8e8e8e]   h-[39px]"
         }`}
       >
         {selected
