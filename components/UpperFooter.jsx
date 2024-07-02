@@ -15,7 +15,7 @@ import { IoIosMailUnread } from "react-icons/io";
 const UpperFooter = () => {
   return (
     <>
-      <div className="h-[900px]  xs:h-[750px] sm:h-[700px] bigmd:h-[550px]  w-full  overflow-hidden relative">
+      <div className="h-[980px]  xs:h-[750px] sm:h-[700px] bigmd:h-[550px]  w-full  overflow-hidden relative">
         <Image
           src={bg}
           alt=""

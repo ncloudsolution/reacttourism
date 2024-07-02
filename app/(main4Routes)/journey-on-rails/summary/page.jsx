@@ -83,7 +83,7 @@ const TrainSummary = () => {
     // //lock the scrolling of the browser
 
     const trainBookingDetails = {
-      selectedTrianName: tourDetails.trainName,
+      trainName: tourDetails.trainName,
       trainPoints: tourDetails.trainPoints,
       trainTime: tourDetails.trainTime,
 
