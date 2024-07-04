@@ -83,7 +83,117 @@
     "img": "/Tours/nallur.jpg",
     "description": "Sri Lanka Classic & Northern Tour -10 Days | 09 Nights",
     "duration": 10,
-    "discountedPrice": 350
+    "discountedPrice": 350,
+    "include": [
+      "Meeting at the airport upon arrival and assistance during the stay",
+      "Transportation by air-conditioned vehicle according to the itinerary.",
+      "Service of an English Speaking chauffer up to 6 pax and Guide service included from 7 pax onwards",
+      "Accommodation at the Hotels as selected by you when requesting the quotation on Single, Double/Twin, Triple sharing",
+      "Meal plan according to the itinerary, half board (dinner and breakfast included) will start from the dinner on the arrival day and ends with Breakfast on departure. Full board (Lunch, dinner and breakfast included) will start from Lunch on arrival day and ends with breakfast on departure.",
+      "Two water bottles per day during tour"
+    ],
+    "exclude": [
+      "International Air Fare",
+      "Peak period supplements",
+      "Entrance fees to parks and archaeological sites not entered for quote in the itinerary",
+      "Jeep charges, boat charges not mentioned in the itinerary",
+      "Permits for photos / videos, tips and extras where applicable.",
+      "Optional excursions and additional services not covered by the program.",
+      "PCR, ETA and Travel Insurance payment",
+      "Early check in and late check out. Check in at hotels is expected no earlier than 14:00 hours. The checkout is categorically expected by 11:00"
+    ],
+    "experience": [
+      {
+        "day": "Day 1",
+        "heading": "Airport - Chilaw",
+        "text": "Arrival at the Bandaranaike International Airport. Our AYUBOWAN TOURS & TRAVELS representative and transfer to Chilaw will welcome clients. Check in to the hotel and relax. Later in the afternoon, visit the city, the Cathedral and the Temple of Hindu Munneswaram, one of the four temples dedicated to Shiva the most important of the island. Overnight stay in Chilaw.",
+        "hotelName": "Anantaya Resort and Spa Chilaw",
+        "hotelLogo": "/Hotels/anantaya.png",
+        "hotelType": "Superior",
+        "hotelLink": "https://www.anantaya.lk/chilaw/"
+      },
+      {
+        "day": "Day 2",
+        "heading": "Chilaw - Anuradhapura",
+        "text": "After breakfast leave for Anuradhapura. This sacred city was built around a branch of the 'tree of enlightenment', the Buddha's fig tree, brought there in the 3rd century BC by Sanghamitta, the founder of an order of Buddhist nuns. Anuradhapura, political and religious capital of Ceylon flourished for 1300 years to be abandoned after the invasion in 993. Hidden away in dense jungle for many years, the splendid site, with its palaces, monasteries and monuments, is now accessible again. Visit the numerous archaeological treasures: The Monastery of Abayagiriya, the Royal Palace, the Bronze Palace, the statue of 'Samadhi' Buddha, ancient pools for irrigation. Overnight at Hotel in Anuradhapura",
+        "hotelName": "Palm Garden Village Hotel",
+        "hotelLogo": "/Hotels/palm.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.palmgardenvillagehotel.com/"
+      },
+      {
+        "day": "Day 3",
+        "heading": "Anuradhapura - Jaffna",
+        "text": "After breakfast depart for Jaffna. Arrival in Jaffna, around the city, Overnight at Hotel in Jaffna.",
+        "hotelName": "The Thinnai",
+        "hotelLogo": "/Hotels/thinnai.jpg",
+        "hotelType": "Vaalai One Bedroom Superior Suite",
+        "hotelLink": "https://thethinnai.com/"
+      },
+      {
+        "day": "Day 4",
+        "heading": "Jaffna",
+        "text": "After breakfast day dedicated to the visit of Jaffna and the surrounding area. Visit to Kantharodai archaeological site 10 km north of Jaffna. The original site is an unusual and very ancient grouping of miniature high dagoba 1 to 3 meters on the use of which the opinions are divided. On the way stop and visit the temple of Nallur Kandaswamy. Dedicated to Murugam (known as Kataragama Sinhalese Buddhists), it is the most impressive Hindu temple in Sri Lanka. Returned to Jaffna visit to the most interesting places in Jaffna, the library and the strong. Overnight at Hotel in Jaffna",
+        "hotelName": "The Thinnai",
+        "hotelLogo": "/Hotels/thinnai.jpg",
+        "hotelType": "Vaalai One Bedroom Superior Suite",
+        "hotelLink": "https://thethinnai.com/"
+      },
+      {
+        "day": "Day 5",
+        "heading": "Jaffna - Mihintale - Sigiriya",
+        "text": "After breakfast leave for Mihintale place of 'meeting between the Buddhist monk Mahinda and King Devanampiyatissa that sanctified the presence of Buddhism in Sri Lanka. Below proceed to Sigiriya in the afternoon climb to Sigiriya rock. Considered by some as the eighth wonder of the world, it is made up of an ancient castle built by King Kasyapa in the fifth century. The Sigiriya archaeological site contains the remains of the largest building constructed on the flat top of the hill, a mid-level terrace that includes the Lion Gate and a wall with frescoes. The secondary building that climbs on the slopes under the rock, and the moats, walls and gardens that stretch for hundreds of meters over the edge of the rock. Overnight at Hotel in Sigiriya",
+        "hotelName": "Kassapa Lion Rock",
+        "hotelLogo": "/Hotels/kassapaLionRock.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.kassapalionsrock.com/"
+      },
+      {
+        "day": "Day 6",
+        "heading": "Sigiriya - Polonnaruwa - Sigiriya",
+        "text": "After breakfast leave for Polonnaruwa the second capital of Sri Lanka after the destruction of Anuradhapura in 993. The site, besides the Brahmanic monuments built by the Cholas, presents the monumental ruins of the fabulous garden-city created by Parakramabahu in the 12th century. Among the many monuments, the Gal Vihara which includes four statues of Buddha carved from a single block of granite, the royal palace of Parakramabahu (I) with the audience hall, the home of images of Tivanca and Thuparama Gedige, only ancient Buddhist temple the roof intact. Afterwards continuation to the Minneriya National Park on the park, it covers 8960 hectares around an ancient artificial lake and despite the relatively small size offers an unusually wide range of habitats, from tropical dry forest to wetlands, grassland and land used for past for agriculture. the main attraction of the park are the elephants as well as dappled deer, macaques, purple languor, sloth bears, rare leopards and a huge number of birds. Overnight at Hotel in Sigiriya",
+        "hotelName": "Kassapa Lion Rock",
+        "hotelLogo": "/Hotels/kassapaLionRock.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.kassapalionsrock.com/"
+      },
+      {
+        "day": "Day 7",
+        "heading": "Sigiriya - Dambulla - Matale - Kandy",
+        "text": "Breakfast at hotel. Afterwards proceed to Kandy. On the way visit Dambulla Rock Cave Temple, Dambulla Cave Temple, also known as the Golden Temple of Dambulla. The largest and best-preserved cave temple complex in Sri Lanka, the rock from which the caves were carved towers 160 meters (520 ft) over the surrounding plains. A total of 153 Buddha statues, three statues of Sri Lankan kings and four statues of gods and goddesses also stand in the site. Visit Gedige at Nalanda one of the remarkable archaeological sites in Sri Lanka & enjoying the Spice garden at Matale and take part in a conducted tour to get some knowledge about the growth and use of spices in the day to day life. Enjoy some sightseeing such as the Temple of Tooth Relic, Royal Botanical Gardens Peradeniya. In the evening enjoy a cultural show. Overnight stay in Kandy.",
+        "hotelName": "The Swiss Residence",
+        "hotelLogo": "/Hotels/theSwissResidence.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.swissresidence.lk/"
+      },
+      {
+        "day": "Day 8",
+        "heading": "Kandy - Ramboda - Kandy",
+        "text": "Breakfast at hotel. Leave for Ramboda, on the way stop and visit a plantation and a tea factory. Visit the famous waterfalls, the highest of the island with a jump of over 100 meters. In the afternoon return to Kandy for overnight stay.",
+        "hotelName": "The Swiss Residence",
+        "hotelLogo": "/Hotels/theSwissResidence.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.swissresidence.lk/"
+      },
+      {
+        "day": "Day 9",
+        "heading": "Kandy - Pinnawala - Colombo - Negombo",
+        "text": "After breakfast leave for Colombo, along the way stop and visit the Pinnawala Elephant Orphanage. The elephant orphanage was founded in order to allow the care and protection of many wild elephants orphaned found wandering in and near the forests of Sri Lanka. Afterwards leave for Colombo, make a city tour in Colombo. Later drive for Negombo. Overnight stay in Negombo.",
+        "hotelName": "Goldi Sands Hotel",
+        "hotelLogo": "/Hotels/goldi.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.goldisands.com/"
+      },
+      {
+        "day": "Day 10",
+        "heading": "Negombo - Airport",
+        "text": "After breakfast transfer to airport or the possibility of extension with staying on the beach in Sri Lanka or the Maldives.",
+        "hotelName": null,
+        "hotelLogo": null,
+        "hotelType": null,
+        "hotelLink": null
+      }
+    ]
   },
   {
     "img": "/Tours/nuwara.jpg",

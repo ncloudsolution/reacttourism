@@ -116,29 +116,87 @@
     ]
   },
   {
-    "travelPoints": "Badulla to Kandy",
+    "travelPoints": "Badulla to Nanu Oya",
     "trainList": [
       {
-        "trainName": "1001 Dunhinda Odyssey",
-        "trainPoints": ["Colombo Fort", "Badulla"],
-        "trainTime": ["06:30", "17:37"],
-        "travelTime": ["06:30", "09:40"],
-        "availableDays": ["Sun", "Tue", "Fri"],
+        "trainName": "1002 Dunhinda Odyssey",
+        "trainPoints": ["Badulla", "Colombo Fort"],
+        "trainTime": ["08:00", "18:51"],
+        "travelTime": ["08:00", "12:05"],
+        "availableDays": ["Mon", "Wed", "Sat"],
         "types": [
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 6000
+            "price": 7000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 5000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 4000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "travelPoints": "Badulla to Kandy",
+    "trainList": [
+      {
+        "trainName": "1002 Dunhinda Odyssey",
+        "trainPoints": ["Badulla", "Colombo Fort"],
+        "trainTime": ["08:00", "18:51"],
+        "travelTime": ["08:00", "16:04"],
+        "availableDays": ["Mon", "Wed", "Sat"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 8000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 6000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 5000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "travelPoints": "Badulla to Colombo",
+    "trainList": [
+      {
+        "trainName": "1002 Dunhinda Odyssey",
+        "trainPoints": ["Badulla", "Colombo Fort"],
+        "trainTime": ["08:00", "18:51"],
+        "travelTime": ["08:00", "18:51"],
+        "availableDays": ["Mon", "Wed", "Sat"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 8000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 6000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 5000
           }
         ]
       }

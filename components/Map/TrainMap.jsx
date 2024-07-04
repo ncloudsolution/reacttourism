@@ -63,8 +63,14 @@ const TrainMap = ({ children }) => {
         case "Colombo to Badulla":
           newDistanceX = 220;
           break;
-        case "Colombo to Polonnaruwa":
-          newDistanceX = 235;
+        case "Badulla to Nanu Oya":
+          newDistanceX = 65;
+          break;
+        case "Badulla to Kandy":
+          newDistanceX = 120;
+          break;
+        case "Badulla to Colombo":
+          newDistanceX = 220;
           break;
         // Add more cases as needed
         default:
@@ -430,20 +436,20 @@ const TrainMap = ({ children }) => {
                                   onClick={() => {
                                     // console.log(startDate, "date");
 
-                                    let placeX;
+                                    // let placeX;
 
-                                    switch (tourDetails.trainTourPoints) {
-                                      case "Colombo to Kandy":
-                                        placeX = "Kandy";
-                                        break;
-                                      case "Colombo to Polonnaruwa":
-                                        placeX = "Polonnaruwa";
-                                        break;
-                                      // Add more cases as needed
-                                      default:
-                                        placeX = "Colombo";
-                                        break;
-                                    }
+                                    // switch (tourDetails.trainTourPoints) {
+                                    //   case "Colombo to Kandy":
+                                    //     placeX = "Kandy";
+                                    //     break;
+                                    //   case "Colombo to Polonnaruwa":
+                                    //     placeX = "Polonnaruwa";
+                                    //     break;
+                                    //   // Add more cases as needed
+                                    //   default:
+                                    //     placeX = "Colombo";
+                                    //     break;
+                                    // }
                                     //console.log(vehicle.price);
 
                                     router.push("/point-to-point");
