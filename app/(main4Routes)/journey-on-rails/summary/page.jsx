@@ -20,7 +20,30 @@ const TrainSummary = () => {
 
   const [responseMessage, setResponseMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [date, setDate] = useState();
+
+  const [startDate, setStartDate] = useState(null);
+  const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  const allowedDates = (date) => {
+    const day = date.getDay();
+
+    const weekindex = week
+      .map((d, index) =>
+        tourDetails.trainAvailableDays.includes(d) ? index : -1
+      )
+      .filter((index) => index !== -1);
+
+    return weekindex.includes(day);
+  };
+
+  // switch (day) {
+  //   case 0: // Sunday
+  //   case 6: // Saturday
+  //     return false;
+  //   default: // Monday to Friday
+  //     return true;
+  // }
+
   const [noOfPassengers, setnoOfPassengers] = useState(
     tourDetails.noOfPassengers
   );
@@ -283,8 +306,9 @@ const TrainSummary = () => {
 
                             <div className="xs:ml-4 font-normal w-full flex flex-1 gap-x-1 ">
                               <CustomDayTourDatePicker
-                                selectedDate={date}
-                                onChange={(date) => setDate(date)}
+                                filterDate={allowedDates}
+                                selected={startDate}
+                                onChange={(date) => setStartDate(date)}
                                 className="xs:w-[250px] w-[300px] border-none shadow-md sm:text-[14px]"
                               />
                             </div>

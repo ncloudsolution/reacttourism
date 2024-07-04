@@ -114,5 +114,34 @@
         ]
       }
     ]
+  },
+  {
+    "travelPoints": "Badulla to Kandy",
+    "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["06:30", "09:40"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 6000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 4000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 3000
+          }
+        ]
+      }
+    ]
   }
 ]

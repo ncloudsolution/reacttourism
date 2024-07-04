@@ -62,7 +62,7 @@ const CustomTrainDropDown = () => {
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value.toLowerCase())}
-            placeholder="Enter Your Favourite Stations"
+            placeholder="Enter Your Starting Station"
             className="placeholder:text-gray-700 placeholder:text-[12px] xs:placeholder:text-[14px] p-2 outline-none w-full"
           />
         </div>
