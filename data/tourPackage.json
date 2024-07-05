@@ -4,24 +4,6 @@
     "description": "06 Days | 05 Nights Excursions from Kandy, Sigiriya & Colombo",
     "duration": 6,
     "discountedPrice": 300,
-    "include": [
-      "Meeting at the airport upon arrival and assistance during the stay",
-      "Transportation by air-conditioned vehicle according to the itinerary.",
-      "Service of an English Speaking chauffer up to 6 pax and Guide service included from 7 pax onwards",
-      "Accommodation at the Hotels as selected by you when requesting the quotation on Single, Double/Twin, Triple sharing",
-      "Meal plan according to the itinerary, half board (dinner and breakfast included) will start from the dinner on the arrival day and ends with Breakfast on departure. Full board (Lunch, dinner and breakfast included) will start from Lunch on arrival day and ends with breakfast on departure.",
-      "Two water bottles per day during tour"
-    ],
-    "exclude": [
-      "International Air Fare",
-      "Peak period supplements",
-      "Entrance fees to parks and archaeological sites not entered for quote in the itinerary",
-      "Jeep charges, boat charges not mentioned in the itinerary",
-      "Permits for photos / videos, tips and extras where applicable.",
-      "Optional excursions and additional services not covered by the program.",
-      "PCR, ETA and Travel Insurance payment",
-      "Early check in and late check out. Check in at hotels is expected no earlier than 14:00 hours. The checkout is categorically expected by 11:00"
-    ],
     "experience": [
       {
         "day": "Day 1",
@@ -84,24 +66,6 @@
     "description": "Sri Lanka Classic & Northern Tour -10 Days | 09 Nights",
     "duration": 10,
     "discountedPrice": 350,
-    "include": [
-      "Meeting at the airport upon arrival and assistance during the stay",
-      "Transportation by air-conditioned vehicle according to the itinerary.",
-      "Service of an English Speaking chauffer up to 6 pax and Guide service included from 7 pax onwards",
-      "Accommodation at the Hotels as selected by you when requesting the quotation on Single, Double/Twin, Triple sharing",
-      "Meal plan according to the itinerary, half board (dinner and breakfast included) will start from the dinner on the arrival day and ends with Breakfast on departure. Full board (Lunch, dinner and breakfast included) will start from Lunch on arrival day and ends with breakfast on departure.",
-      "Two water bottles per day during tour"
-    ],
-    "exclude": [
-      "International Air Fare",
-      "Peak period supplements",
-      "Entrance fees to parks and archaeological sites not entered for quote in the itinerary",
-      "Jeep charges, boat charges not mentioned in the itinerary",
-      "Permits for photos / videos, tips and extras where applicable.",
-      "Optional excursions and additional services not covered by the program.",
-      "PCR, ETA and Travel Insurance payment",
-      "Early check in and late check out. Check in at hotels is expected no earlier than 14:00 hours. The checkout is categorically expected by 11:00"
-    ],
     "experience": [
       {
         "day": "Day 1",
@@ -199,7 +163,295 @@
     "img": "/Tours/nuwara.jpg",
     "description": "08 Days Tour - Kandy, Nuwara Eliya & Bentota",
     "duration": 8,
-    "discountedPrice": 450
+    "discountedPrice": 450,
+    "experience": [
+      {
+        "day": "Day 1",
+        "heading": "Airport - Colombo",
+        "text": "Upon arrival at Bandaranaike International Airport you will be greeted by the Airport Representative and Professional Chauffer. Your chauffer will drive you to Colombo in the late evening or night time Overnight Colombo.",
+        "hotelName": "Cinnamon Lakeside Colombo",
+        "hotelLogo": "/Hotels/cinnomonlakeside.jpg",
+        "hotelType": "Superior",
+        "hotelLink": "https://www.cinnamonhotels.com/cinnamonlakesidecolombo"
+      },
+      {
+        "day": "Day 2",
+        "heading": "Colombo - Pinnawala - Kandy",
+        "text": "Highlights: City Tour in Colombo, Pinnawala Elephant Orphanage, Herbal Spice Garden, Cultural Dancing Show After breakfast, your chauffeur will conduct a city tour in Colombo. (Places to be visited: Galle Face Green, Independence Square, BMICH, Port City Project, Lotus Tower, Pettah Market, Colombo Harbor, Old Dutch Hospital, Old Parliament Building, Temple Trees, and President’s House). Then proceed to Kandy, visiting the Elephant Orphanage at Pinnawala. It’s an orphanage, nursery, and captive breeding ground for wild Asian elephants. The orphanage was established to feed, nurse, and house young/baby elephants found abandoned by their mothers. It is recommended to visit an Herbal Spice Garden, which is on the way to Kandy, to learn about Sri Lanka’s world-renowned spices and various herbs. Witness the Cultural Dancing Show in the evening in Kandy. It’s a stimulating showcase of Sri Lankan arts, dance, and cultural heritage with traditional dancers' and drummers' performances. Overnight in Kandy.",
+        "hotelName": "Goldern Crown",
+        "hotelLogo": "/Hotels/golderncrown.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.thegoldencrownhotel.com/"
+      },
+      {
+        "day": "Day 3",
+        "heading": "Kandy - Peradeniya - Kandy",
+        "text": "Highlights: Peradeniya Botanical Garden, Gem & Jewelry Factory, Handicraft & Batik Factory, Temple of the Tooth After breakfast, leave for Peradeniya to visit the Royal Botanical Garden. It’s renowned for its collection of orchids. The garden includes more than 4000 species of plants, including orchids, spices, medicinal plants, and palm trees. Visit a Gem & Jewelry Factory, Handicrafts Factory, Handloom, and Batik Factory to gain knowledge about the process and also possibly purchase genuine products at outlets. Visit the Temple of the Tooth, which houses the Sacred Tooth of Lord Buddha. Visitors can observe poojas (offerings) and the ancient traditions of drumming and sacred chanting in honor of the Tooth Relic. Witness the Cultural Dancing Show in the evening in Kandy. Overnight in Kandy",
+        "hotelName": "Goldern Crown",
+        "hotelLogo": "/Hotels/golderncrown.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.thegoldencrownhotel.com/"
+      },
+      {
+        "day": "Day 4",
+        "heading": "Kandy - Ramboda - Nuwara Eliya",
+        "text": "Highlights: Tea Factory, Tea Gardens, Ramboda Falls, Hanuman Temple After breakfast, conduct a sightseeing tour in Kandy and proceed to Nuwara Eliya, visiting a tea factory and tea garden. Visiting a tea factory around Ramboda will be a fantastic stop through misty mountains, as you can enjoy a cup of world-famous Ceylon tea and buy fresh tea products from the sales outlet. If interested, you can visit Shri Bhakta Hanuman Temple at Ramboda, which is dedicated to the God Hanuman, and witness the 18-foot Hanuman statue. Leave for Nuwara Eliya, passing beautiful waterfalls and misty mountains. Evening sightseeing tour in Nuwara Eliya to witness the beauty of Nuwara Eliya City, locally called 'Little England.' Overnight in Nuwara Eliya.",
+        "hotelName": "Araliya Green Hills",
+        "hotelLogo": "/Hotels/araliya.png",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.araliyaresorts.com/araliya-green-hills/"
+      },
+      {
+        "day": "Day 5",
+        "heading": "Nuwara Eliya  - Hortan Plains - Nuwara Eliya",
+        "text": "Highlights: Horton Plains, Ambewela Milk Factory, Sita Amman Temple After breakfast, leave for Horton Plains. It is located at an elevation of 2,100–2,300 m (6,900–7,500 ft) and encompasses montane grassland and cloud forest. It is rich in biodiversity, and many species found here are endemic to the region. You can experience an amazing walk taking you to Bakers Falls and Worlds End. The Horton Plains are the headwaters of three major Sri Lankan rivers: the Mahaweli, Kelani, and Walawe. Visit Ambewela Milk Factory en route for a different experience. Return to the hotel through misty mountains. Visit Sita Amman Temple on the way back. It is the only Hindu temple dedicated to Princess Sita in Sri Lanka. Overnight in Nuwara Eliya.",
+        "hotelName": "Araliya Green Hills",
+        "hotelLogo": "/Hotels/araliya.png",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.araliyaresorts.com/araliya-green-hills/"
+      },
+      {
+        "day": "Day 6",
+        "heading": "Nuwara Eliya  - Kithulgala - Bentota",
+        "text": "Highlights: Bentota Water Sports After breakfast, leave for Bentota. If interested, you can experience white water rafting at Kitulgala en route. The journey will take about 5 to 6 hours, depending on traffic and road conditions. Enjoy water sport activities in the evening near Bentota Beach. Overnight stay in Bentota.",
+        "hotelName": "Taj Bentota Resort & Spa",
+        "hotelLogo": "/Hotels/taj.png",
+        "hotelType": "Superior Sea View",
+        "hotelLink": "https://www.tajhotels.com/en-in/hotels/taj-bentota-sri-lanka"
+      },
+      {
+        "day": "Day 7",
+        "heading": "Bentota -  Balapitiya - Galle - Bentota",
+        "text": "Highlights: Madu River Boat Safari, Turtle Hatchery, Moonstone Mines, Galle Fort After breakfast, leave for Balapitiya to experience a river boat ride on the Madu River, which rewards you with an enthralling experience. As you sail through the rippling waters, watch out for water monitors, blue-eyed cormorants perched atop floating branches, fruit bats hanging asleep upside down, and the endearing sight of infant monkeys clinging to fishermen as they sail across the river on narrow boats. Thereafter, visit the Kosgoda Turtle Hatchery, one of the very few hatcheries where all five species in the country make their nests: Olive Ridleys, Green Turtles, Leatherbacks, Loggerheads, and Hawksbills. Visit Meetiyagoda Moonstone Mines, where a guided tour will be conducted, and you will witness the pitch of the mine, the filtering out of the precious stones, and the workshops of the lapidaries. Proceed to Galle and visit the Galle Fort, located in the Bay of Galle on the southwest coast of Sri Lanka. It was first built in 1588 by the Portuguese and then extensively fortified by the Dutch during the 17th century from 1649 onwards. It is declared a World Heritage Site by UNESCO. Visit Hikkaduwa Beach en route. Return to the hotel and stay at leisure. Overnight stay in Bentota.",
+        "hotelName": "Taj Bentota Resort & Spa",
+        "hotelLogo": "/Hotels/taj.png",
+        "hotelType": "Superior Sea View",
+        "hotelLink": "https://www.tajhotels.com/en-in/hotels/taj-bentota-sri-lanka"
+      },
+      {
+        "day": "Day 8",
+        "heading": "Bentota - Airport",
+        "text": "After breakfast transfer to the Bandaranaike International Airport for the Departure Flight. It is about 90 Minutes’ Drive from Bentota on Expressway.",
+        "hotelName": null,
+        "hotelLogo": null,
+        "hotelType": null,
+        "hotelLink": null
+      }
+    ]
+  },
+  {
+    "img": "/Tours/beach.jpg",
+    "description": "10 Days - Nature, Culture & East Coast",
+    "duration": 10,
+    "discountedPrice": 450,
+    "experience": [
+      {
+        "day": "Day 1",
+        "heading": "Airport - Colombo",
+        "text": "Upon arrival at Bandaranaike International Airport you will be greeted by the Airport Representative and Professional Chauffer of Ayubowan Tours & Travels. Your chauffer will drive you to Colombo. Colombo is the commercial capital of Sri Lanka. Our chauffer will conduct a city tour in Colombo. (Places to be visited: Galle Face Green, Independence Square, BMICH, Port City Project, Lotus Tower, Pettah Market, Colombo Harbor, Old Dutch Hospital, Old Parliament Building, Temple Trees, and President’s House). Overnight Colombo.",
+        "hotelName": "Cinnamon Red",
+        "hotelLogo": "/Hotels/cinnamonRed.png",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.cinnamonhotels.com/cinnamonredcolombo/offers/resident-offer-room-only?gad_source=1&gclid=CjwKCAjwps-zBhAiEiwALwsVYfAH6eaT4DjguTcaxDMry8p1ZuSzbregb1zqCuCBGG41O0ZWPazIsxoCiuwQAvD_BwE"
+      },
+      {
+        "day": "Day 2",
+        "heading": "Colombo - Pinnawala - Ramboda - Nuwara Eliya",
+        "text": "Highlights: Pinnawala Elephant Orphanage, Tea Factory, Tea Plantations, Ramboda Falls After breakfast, leave for Nuwara Eliya, visiting the Pinnawala Elephant Orphanage en route. It's an orphanage, nursery, and captive breeding ground for wild Asian elephants. The orphanage was established to feed, nurse, and house young/baby elephants found abandoned by their mothers. You will be able to feed them according to their timetable. Proceed to Nuwara Eliya, visiting a tea factory and tea gardens. A visit to a tea factory around Ramboda will be a fantastic stop through misty mountains, where you can enjoy a cup of the world-famous Ceylon tea and buy fresh tea products from the sales outlet. If interested, you can visit Shri Bhakta Hanuman Temple at Ramboda, dedicated to the God Hanuman, where you can witness the 18-foot Hanuman statue. Continue to Nuwara Eliya, passing beautiful waterfalls and misty mountains. Overnight stay in Nuwara Eliya.",
+        "hotelName": "Ripon Grand Hill",
+        "hotelLogo": "/Hotels/rippon.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://ripongrandhill.lk/"
+      },
+      {
+        "day": "Day 3",
+        "heading": "Nuwara Eliya - Kandy",
+        "text": "Highlights: Nuwara Eliya City Tour, Sita Amman Temple, Temple of the Tooth, Cultural Dancing Show After breakfast, start the city tour in Nuwara Eliya, including Lake Gregory (a scenic reservoir with water sports), Victoria Park (a tranquil spot with birds and a playground), and the Golf Club. Visit Sita Amman Temple, the only Hindu temple in Sri Lanka dedicated to Princess Sita. Proceed to Kandy and visit the Temple of the Tooth, which houses the Sacred Tooth of Lord Buddha. Visitors can observe poojas (offerings) and the ancient traditions of drumming and sacred chanting in honor of the Tooth Relic. In the evening, witness the Cultural Dancing Show in Kandy, a stimulating display of Sri Lankan arts, dance, and cultural heritage with traditional dancers and drummers performing. Overnight stay in Kandy.",
+        "hotelName": "The Swiss Residence",
+        "hotelLogo": "/Hotels/theSwissResidence.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.swissresidence.lk/"
+      },
+      {
+        "day": "Day 4",
+        "heading": "Kandy - Dambulla - Sigiriya",
+        "text": "Highlights: Peradeniya Botanical Garden, Herbal Spice Garden, Dambulla Cave Temple After breakfast, leave for Peradeniya to visit the Royal Botanical Garden, renowned for its collection of orchids. The garden includes more than 4,000 species of plants, including orchids, spices, medicinal plants, and palm trees. En route, visit the Aluvihare Rock Temple if interested. This historic location is where the Pali Canon was first written down completely in text on ola (palm) leaves. It is recommended to visit an Herbal Spice Garden at Matale on the way to Sigiriya to learn about Sri Lanka’s world-renowned spices and various herbs. Continue to Sigiriya, visiting the Dambulla Cave Temple. Dambulla is the largest and best-preserved cave temple complex in Sri Lanka, with a rock ceiling that is one large sweep of colorful paintings related to Lord Buddha and his life. Some of these paintings are over 2,000 years old. There are 80 documented caves in the surrounding area and a total of 153 Buddha statues within the cave. Overnight stay in Sigiriya.",
+        "hotelName": "Kassapa Lion Rock",
+        "hotelLogo": "/Hotels/kassapaLionRock.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.kassapalionsrock.com/"
+      },
+      {
+        "day": "Day 5",
+        "heading": "Sigiriya - Hiriwadunna - Minneriya - Sigiriya",
+        "text": "Highlights: Begin with a visit to the ancient Sigiriya rock fortress, constructed by King Kasyapa in the 5th century, showcasing its upper palace ruins, frescoes, and the iconic Lion Gate. Follow with a Village Tour in Hiriwaduna, offering insights into rural Sri Lankan life through activities like bullock cart rides, catamaran boat rides, and a traditional lunch in a mud house. Conclude the day with an exhilarating safari in Minneriya National Park, renowned for its abundant elephant population gathering around the Minneriya tank. Overnight stay in Sigiriya.",
+        "hotelName": "Kassapa Lion Rock",
+        "hotelLogo": "/Hotels/kassapaLionRock.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.kassapalionsrock.com/"
+      },
+      {
+        "day": "Day 6",
+        "heading": "Sigiriya - Polonnaruwa - Trincomalee",
+        "text": "After breakfast leave for Polonnaruwa, medieval capital of the island (11th & 12th century). Polonnaruwa shows the interesting blend of the influence of the South Indian Hindu culture on the Sinhala Buddhist art & architecture in the scattered shrines & monuments still venerated daily by devotees. The Siva Devalas are interesting transposition of the Hindu style of décor. Other popular ruins are, the King’s Council Chamber the floral stone pillars of Nissanka Lata Mandapaya, the royal citadel, Kumara Pokuna, the Thuparama with its original vaulted roof, the exquisite circular Vatadage relic house, lavished with Goonstones, Guardstones and sculptured railings, Kiri Vehera, the best preserved of Sri Lanka’s un-restored dagobas. Visit Gal Vihare, the massive statues of Buddha cut in a row form a horizontal escarpment of streaked granite. Visit Demala Maha Seya a shrine of noval design, Thivanka Image House which is famous for Buddhist frescoes, Lankathilake Viharaya, shows a unique style of brickwork architecture. Visit Parakrama Samudraya made by King Parakramabhahu, one of the largest man made inland lakes in the world. Can be visited the statue of Parakramabahu near the lake. It’s a large statue cut in a niche carved out of rock. Proceed to Trincomelee which is located on the east coast of the island overlooking the Trincomalee Harbor (ranked as the world’s 5th largest natural harbors) Overnight Trincomalee.",
+        "hotelName": "Nilaveli Beach Resort",
+        "hotelLogo": "/Hotels/nilaweli.jpg",
+        "hotelType": "King Room With Ocean View",
+        "hotelLink": "https://www.nilavelibeachresort.com/"
+      },
+      {
+        "day": "Day 7",
+        "heading": "Nilaveli - Trincomalee",
+        "text": "Highlights: Pigeon Island, Nilaveli Beach Enjoy leisure time in Trincomalee today. Take a short boat ride to Pigeon Island near Nilaveli, renowned for diving, snorkeling, and sea bathing amidst vibrant marine life. Nilaveli Beach is a favored destination for sun worshippers seeking relaxation and scenic beauty. Overnight in Nilaveli or Trincomalee.",
+        "hotelName": "Nilaveli Beach Resort",
+        "hotelLogo": "/Hotels/nilaweli.jpg",
+        "hotelType": "King Room With Ocean View",
+        "hotelLink": "https://www.nilavelibeachresort.com/"
+      },
+      {
+        "day": "Day 8",
+        "heading": "Nilaveli & Uppuveli Overnight Nilaveli / Trincomalee",
+        "text": "Highlights: Thirukoneswaram Kovil, Kanniya Hot Water Springs, Fort Frederick, Trincomalee War Cemetery, Nilaveli & Uppuveli Beaches After breakfast, embark on a journey to explore Trincomalee's cultural and historical sites, starting with Thirukoneswaram Kovil, a renowned Hindu temple overlooking the sea. Visit the Kanniyai hot water springs, known for their therapeutic properties. Explore Fort Frederick, an ancient fort with historical significance, and pay respects at the Trincomalee War Cemetery. Enjoy leisure time at the beautiful sandy beaches of Nilaveli and Uppuveli, ideal for relaxation and scenic views. Overnight stay in Trincomalee.",
+        "hotelName": "Nilaveli Beach Resort",
+        "hotelLogo": "/Hotels/nilaweli.jpg",
+        "hotelType": "King Room With Ocean View",
+        "hotelLink": "https://www.nilavelibeachresort.com/"
+      },
+      {
+        "day": "Day 9",
+        "heading": "Trincomalee - Ritigala - Negombo",
+        "text": "After breakfast leave for Colombo, along the way stop and visit the Pinnawala Elephant Orphanage. The elephant orphanage was founded in order to allow the care and protection of many wild elephants orphaned found wandering in and near the forests of Sri Lanka. Afterwards leave for Colombo, make a city tour in Colombo. Later drive for Negombo. Overnight stay in Negombo.",
+        "hotelName": "Goldi Sands Hotel",
+        "hotelLogo": "/Hotels/goldi.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.goldisands.com/"
+      },
+      {
+        "day": "Day 10",
+        "heading": "Airport - Negombo",
+        "text": "After breakfast transfer to the Bandaranaike International Airport according to the departure flight schedule. You are advised to be there before 03 hours to the flight.",
+        "hotelName": null,
+        "hotelLogo": null,
+        "hotelType": null,
+        "hotelLink": null
+      }
+    ]
+  },
+  {
+    "img": "/Tours/cultural.png",
+    "description": "Sri Lanka Culture Nature Tour - 12 Days | 11 Nights",
+    "duration": 12,
+    "discountedPrice": 750,
+    "experience": [
+      {
+        "day": "Day 1",
+        "heading": "Negambo",
+        "text": "Arrival at the Bandaranaike International Airport. Our AYUBOWAN TOURS & TRAVELS representative and transfer to hotel in Negombo will welcome clients. Check in to the hotel and relax. Overnight stay at the hotel in Negombo.",
+        "hotelName": "Goldi Sands Hotel",
+        "hotelLogo": "/Hotels/goldi.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.goldisands.com/"
+      },
+      {
+        "day": "Day 2",
+        "heading": "Negombo - Sigiriya",
+        "text": "After a leisurely breakfast, set off to the Sigiriya. Check into the hotel & unwind. In the evening leave for visit Sigiriya rock fortress. Sigiriya Rock fortress Sigiriya. Sigiriya (Lion's rock) is an ancient rock fortress and palace built during the reign of King Kassapa I (AD 477 – 495). Contemporary with the paintings of Ajantha and Ellora Caves in India, highlights being the Frescoes, Mirror Wall and the Lion's Paw, and it is one of the Seven World Heritage Sites of Sri Lanka. Overnight stay in Sigiriya.",
+        "hotelName": "Kassapa Lion Rock",
+        "hotelLogo": "/Hotels/kassapaLionRock.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.kassapalionsrock.com/"
+      },
+      {
+        "day": "Day 3",
+        "heading": "Sigiriya - Hiriwadunna - Pollonaruwa",
+        "text": "After a leisurely breakfast leave for visit Polonnaruwa, the next majestic city in 11th Century BC, after Anuradhapura. The glories of the past heyday is still visible in the archaeological treasures unearthed and resurrected. From the tall statue assumed to be of the Great King Parakramabahu to the famed Parakrama Samudraya which is as extensive as an ocean, Polonnaruwa has it all in a compact core. The glories of the past heyday is still visible in the archaeological treasures unearthed and resurrected. From the tall statue assumed to be of the Great King Parakramabahu to the famed Parakrama Samudraya which is as extensive as an ocean, Polonnaruwa has it all in a compact core. Afterwards leave for, Hiriwaduna to live a life experience in contact with the local population. The tour includes a nature walk, a walk aboard a wagon pulled by oxen, a test kitchen and lunch. Below opportunity to attend a performance of Angampora, the ancient martial art of Sri Lanka. Angampora is a form of martial art that combines combat techniques, self-defense, sport, exercise and meditation. A key component of angampora is angam namesake, fighting hands-free, and illangam, which provides for the use of indigenous weapons such as ethunu kaduwa, sticks, knives and swords In the evening visit Ritigala, Ritigala is a world-famous ancient Buddhist monastery and mountain range in Sri Lanka. Overnight stay in Sigiriya.",
+        "hotelName": "Kassapa Lion Rock",
+        "hotelLogo": "/Hotels/kassapaLionRock.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://www.kassapalionsrock.com/"
+      },
+      {
+        "day": "Day 4",
+        "heading": "Sigiriya - Mahiyangana",
+        "text": "Breakfast at the hotel and leave for Mahiyangana, it is said that Gautama Buddha visited Mahiyanganaya on the Duruthu full moon poya day in order to settle a dispute arose between Yakkas and Nagas (two tribes then inhabited this area) and this was his first ever visit to Sri Lanka. Optional: -Dambana Aboriginal Village Tour -Mahiyangana Raja Maha Vihara -Mawaragala forest monastery Overnight stay in Mahiyangana.",
+        "hotelName": "Mapakada Village",
+        "hotelLogo": "/Hotels/mapakanda.png",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.mapakadavillage.lk/En/"
+      },
+      {
+        "day": "Day 5",
+        "heading": "Mahiyangana - Kandy",
+        "text": "Breakfast at the hotel, leave for Kandy. Here is the last capital of Sinhala monarchy veiled with white mist clinging to the top of the buildings. The most precious possession of Buddhists all over, the sacred tooth relic is enshrined at the temple of the tooth. Yet again one of Sri Lanka’s cities is acknowledged for its history naming it a UNESCO World Heritage Site. Overnight stay in Kandy.",
+        "hotelName": "The Swiss Residence",
+        "hotelLogo": "/Hotels/theSwissResidence.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.swissresidence.lk/"
+      },
+      {
+        "day": "Day 6",
+        "heading": "Kandy",
+        "text": "Breakfast at the hotel. Enjoy some sightseeing such as the Temple of Tooth Relic, Royal Botanical Gardens Peradeniya, an arts and crafts work shop, oriental market place, a bazaar and a gem lapidary where you can see how rough gems (particularly the famous Blue & Star sapphires) are mined cut and polished using traditional methods. In the evening enjoy a cultural dance show. Overnight stay in Kandy.",
+        "hotelName": "The Swiss Residence",
+        "hotelLogo": "/Hotels/theSwissResidence.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://www.swissresidence.lk/"
+      },
+      {
+        "day": "Day 7",
+        "heading": "Kandy - Nuwara Eliya",
+        "text": "Breakfast at the hotel, leave for Nuwara eliya, travel to the heart of the country at the highest elevation to reach the rolling clouds above you. Nicknamed “Little England”, Nuwara Eliya harbors many British colonial buildings and architectural wonders to be christened so. See the mountains covered with tea bushes and cascading waterfalls. Visit water falls. Overnight stay in Nuwara eliya.",
+        "hotelName": "Ripon Grand Hill",
+        "hotelLogo": "/Hotels/rippon.jpg",
+        "hotelType": "Standard",
+        "hotelLink": "https://ripongrandhill.lk/"
+      },
+      {
+        "day": "Day 8",
+        "heading": "Nuwar eliya - Ella",
+        "text": "Breakfast at the hotel. Leave for Ella. Make a scenic train ride to Ella. Visit Nine Arches Bridge. It is one of the best examples of colonial-era railway construction in the country. This bridge is 300 feet in length, 25 feet in width and 80-100 feet in height. Trekking at Little Adam`s Peak, the Little Adam`s Peak got it`s named after it`s big brother, the holy mountain Adam`s Peak, because of the similar shape. Overnight stay in Ella.",
+        "hotelName": "Ella Mountain Heaven",
+        "hotelLogo": "/Hotels/ellamountain.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://web.facebook.com/ellamountheaven/?_rdc=1&_rdr"
+      },
+      {
+        "day": "Day 9",
+        "heading": "Ella - Udawalwe",
+        "text": "Breakfast at the hotel. Leave for Udawalawe. En route visit Ravana Falls, Ravana Falls is a popular sightseeing attraction in Sri Lanka. It currently ranks as one of the widest falls in the country. Visit Elephant transit home, as a result, 'Ath Athuru Sevana'. The primary purpose of the Elephant Transit Home is to rehabilitate and release isolated baby elephants to the wild. Elephant Transit Home cares for orphaned elephant calves until they are independent and capable enough to be released back into the wild. Overnight stay in Udawalawe.",
+        "hotelName": "Grand Udawalawe Safari Resort",
+        "hotelLogo": "/Hotels/udawalawegrand.jpg",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://udawalawesafari.com/"
+      },
+      {
+        "day": "Day 10",
+        "heading": "Udawalwe - Sinharaja",
+        "text": "After breakfast at the hotel. Make a jeep safari into the Udawalawe National Park. It might as well be the local version of the great African savannahs, with its large populations of free roaming elephants, proud leopards, spotted deer and wild buffaloes. Udawalawe quite easily surpasses any other national park for elephant watching as the free jumbos are frequently seen lumbering around the park. The matriarchal leader of the herd leads her followers down to the water hole making them the best times to see the giants out in the open. The sparse vegetation and lack of densely growing trees makes spotting wildlife and game-watching easy. Leave for Sinharaja. Check in at the hotel and relax. Overnight stay in Sinharaja.",
+        "hotelName": "Rainforest Ecolodge - Boutique",
+        "hotelLogo": "/Hotels/sinharajaeco.png",
+        "hotelType": "Chalets",
+        "hotelLink": "https://www.rainforest-ecolodge.com/"
+      },
+      {
+        "day": "Day 11",
+        "heading": "Sinharaja - South West Coast",
+        "text": "Breakfast at the hotel. Make a hike in Sinharaja rain forest, it was declared UNESCO Natural World Heritage and is of great significance for the ecosystem of the entire country. Hike through the forest and see the great variety of plants and animals. More than 60% of all trees in Sinharaja are endemic, and most of them are very rare. Also, half of the endemic mammal and butterfly species live in the rain forest, as well as reptiles, insects and numerous species of birds – the whole forest is teeming with life. Afterwards leave for beach hotel in South west coast. Check in at the hotel & relax. Overnight stay in Beach hotel in South west coast.",
+        "hotelName": "The Palms Hotel",
+        "hotelLogo": "/Hotels/thepalms.png",
+        "hotelType": "Deluxe",
+        "hotelLink": "https://thepalmsberuwala.com/"
+      },
+      {
+        "day": "Day 12",
+        "heading": "South West Caost - Airport",
+        "text": "Breakfast at the hotel & leave for airport for onwards flight.",
+        "hotelName": null,
+        "hotelLogo": null,
+        "hotelType": null,
+        "hotelLink": null
+      }
+    ]
   },
   {
     "img": "/Tours/buddhist.jpg",
