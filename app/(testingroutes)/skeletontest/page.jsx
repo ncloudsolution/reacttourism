@@ -1,10 +1,11 @@
 import CarSkeleton from "@/components/skeletonUI/compoundElements/CarSkeleton";
+import RouteMapSkeleton from "@/components/skeletonUI/compoundElements/RouteMapSkeleton";
 import React from "react";
 
 const AB = () => {
   return (
     <div>
-      <CarSkeleton />
+      <RouteMapSkeleton />
     </div>
   );
 };

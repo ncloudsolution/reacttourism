@@ -6,8 +6,9 @@ import {
   DirectionsRenderer,
 } from "@react-google-maps/api";
 import CarSkeleton from "@/components/skeletonUI/compoundElements/CarSkeleton";
+import RouteMapSkeleton from "./skeletonUI/compoundElements/RouteMapSkeleton";
 
-const Page = () => {
+const PackageRouteMap = () => {
   const center = { lat: 6.9271, lng: 79.8612 };
   const [directionResponse, setDirectionResponse] = useState(null);
 
@@ -21,7 +22,7 @@ const Page = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowSkeleton(false);
-    }, 2000); // 3 seconds delay - 1s for google api load and 2 second timeout
+    }, 500); // 3 seconds delay - 1s for google api load and 2 second timeout
     return () => clearTimeout(timeoutId);
   }, []);
 
@@ -58,11 +59,15 @@ const Page = () => {
   }, [isLoaded, showSkeleton]);
 
   if (!isLoaded || showSkeleton) {
-    return <CarSkeleton />;
+    return (
+      <div className="w-full midxl:h-[350px] bxs:h-[300px] xxs:h-[250px] xxxs:h-[200px] h-[150px] rounded-md overflow-hidden border-[1px] border-black">
+        <RouteMapSkeleton />
+      </div>
+    );
   }
 
   return (
-    <div style={{ height: "500px", width: "500px" }}>
+    <div className="w-full midxl:h-[350px] bxs:h-[300px] xxs:h-[250px] xxxs:h-[200px] h-[150px] rounded-md overflow-hidden ">
       <GoogleMap
         zoom={10}
         mapContainerStyle={{ width: "100%", height: "100%" }}
@@ -76,4 +81,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default PackageRouteMap;

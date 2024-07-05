@@ -68,6 +68,17 @@ module.exports = {
           },
         },
 
+        mapmoving: {
+          "0%": {
+            opacity: "40%",
+            transform: "scale(1)",
+          },
+          "100%": {
+            opacity: "90%",
+            transform: "scale(1.2)",
+          },
+        },
+
         cartext: {
           "0%": {
             transform: "translateY(0px)",
@@ -183,6 +194,7 @@ module.exports = {
       animation: {
         carmoving: "carmoving 2s ease-out infinite alternate",
         carmoving2: "carmoving2 2s ease-out infinite alternate",
+        mapmoving: "mapmoving 1s ease-out infinite alternate",
         cartext: "cartext 2s ease-out alternate",
         cartext2: "cartext2 2s ease-out infinite alternate",
         cartext2formid: "cartext2formid 2s ease-out infinite alternate",

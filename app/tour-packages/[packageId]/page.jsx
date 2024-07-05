@@ -11,6 +11,7 @@ import TourPackageForm from "@/components/TourPackageForm";
 import { FaSquareCheck } from "react-icons/fa6";
 import { AiFillCloseSquare, AiOutlineStop } from "react-icons/ai";
 import { FaExclamationTriangle } from "react-icons/fa";
+import PackageRouteMap from "@/components/PackageRouteMap";
 
 const PackageDetails = ({ params }) => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -111,6 +112,7 @@ const PackageDetails = ({ params }) => {
             </div>
 
             <div className="flex flex-col flex-1">
+              <PackageRouteMap />
               <DayTripsPriceCrad
                 initialPrice="null"
                 discountedPrice={DataObject.discountedPrice}
