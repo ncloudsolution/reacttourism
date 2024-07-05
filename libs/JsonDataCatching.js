@@ -63,6 +63,7 @@ export function GetAllDataOfTourPackage(title) {
     discountedPrice: data.discountedPrice,
     duration: data.duration,
     experience: data.experience,
+    routeOrder: data.routeOrder,
   };
 
   return AllDataObject;

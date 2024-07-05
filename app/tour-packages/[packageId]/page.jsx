@@ -112,7 +112,7 @@ const PackageDetails = ({ params }) => {
             </div>
 
             <div className="flex flex-col flex-1">
-              <PackageRouteMap />
+              <PackageRouteMap destinations={DataObject.routeOrder} />
               <DayTripsPriceCrad
                 initialPrice="null"
                 discountedPrice={DataObject.discountedPrice}

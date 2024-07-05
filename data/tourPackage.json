@@ -4,6 +4,12 @@
     "description": "06 Days | 05 Nights Excursions from Kandy, Sigiriya & Colombo",
     "duration": 6,
     "discountedPrice": 300,
+    "routeOrder": [
+      "Bandaranaike International Airport (CMB), Katunayake",
+      "Kandy",
+      "Sigiriya",
+      "Bentota"
+    ],
     "experience": [
       {
         "day": "Day 1",
@@ -66,6 +72,15 @@
     "description": "Sri Lanka Classic & Northern Tour -10 Days | 09 Nights",
     "duration": 10,
     "discountedPrice": 350,
+    "routeOrder": [
+      "Bandaranaike International Airport (CMB), Katunayake",
+      "Chilaw",
+      "Kandy",
+      "Sigiriya",
+      "Jaffna",
+      "Anuradhapura",
+      "Negombo"
+    ],
     "experience": [
       {
         "day": "Day 1",
@@ -164,6 +179,13 @@
     "description": "08 Days Tour - Kandy, Nuwara Eliya & Bentota",
     "duration": 8,
     "discountedPrice": 450,
+    "routeOrder": [
+      "Bandaranaike International Airport (CMB), Katunayake",
+      "Kandy",
+      "Nuwara Eliya",
+      "Kithulgala",
+      "Bentota"
+    ],
     "experience": [
       {
         "day": "Day 1",
@@ -244,6 +266,14 @@
     "description": "10 Days - Nature, Culture & East Coast",
     "duration": 10,
     "discountedPrice": 450,
+    "routeOrder": [
+      "Bandaranaike International Airport (CMB), Katunayake",
+      "Kandy",
+      "Sigiriya",
+      "Polonnaruwa",
+      "Trincomalee",
+      "Negombo"
+    ],
     "experience": [
       {
         "day": "Day 1",
@@ -342,6 +372,18 @@
     "description": "Sri Lanka Culture Nature Tour - 12 Days | 11 Nights",
     "duration": 12,
     "discountedPrice": 750,
+    "routeOrder": [
+      "Bandaranaike International Airport (CMB), Katunayake",
+      "Sigiriya",
+      "Polonnaruwa",
+      "Mahiyanganaya",
+      "Kandy",
+      "Nuwara Eliya",
+      "Ella Mountain Heaven",
+      "Udawalawa",
+      "Sinharaja Forest Reserve",
+      "Beruwala"
+    ],
     "experience": [
       {
         "day": "Day 1",
@@ -458,6 +500,12 @@
     "description": "05 Days | 04 Nights - Kandy, Nuwara Eliya, Bentota, Colombo",
     "duration": 5,
     "discountedPrice": 450,
+    "routeOrder": [
+      "Bandaranaike International Airport (CMB), Katunayake",
+      "Kandy",
+      "Nuwara Eliya",
+      "Bentota"
+    ],
     "experience": [
       {
         "day": "Day 1",
@@ -511,6 +559,17 @@
     "description": "10 Days | 09 Nights Ramayana Trail Tour",
     "duration": 10,
     "discountedPrice": 450,
+    "routeOrder": [
+      "Bandaranaike International Airport (CMB), Katunayake",
+      "Negombo",
+      "Anuradhapura",
+      "Trincomalee",
+      "Kandy",
+      "Nuwara Eliya",
+      "Ella Mountain Heaven",
+      "Kataragama",
+      "Hikkaduwa"
+    ],
     "experience": [
       {
         "day": "Day 1",
@@ -610,6 +669,15 @@
     "description": "07 Days | 06 Nights Buddhist Cultural Tour",
     "duration": 7,
     "discountedPrice": 450,
+    "routeOrder": [
+      "Bandaranaike International Airport (CMB), Katunayake",
+      "Negombo",
+      "Anuradhapura",
+      "Polonnaruwa",
+      "Sigiriya",
+      "Kandy",
+      "Kelaniya"
+    ],
     "experience": [
       {
         "day": "Day 1",

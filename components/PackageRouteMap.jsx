@@ -8,14 +8,13 @@ import {
 import CarSkeleton from "@/components/skeletonUI/compoundElements/CarSkeleton";
 import RouteMapSkeleton from "./skeletonUI/compoundElements/RouteMapSkeleton";
 
-const PackageRouteMap = () => {
-  const center = { lat: 6.9271, lng: 79.8612 };
+const PackageRouteMap = ({ destinations }) => {
   const [directionResponse, setDirectionResponse] = useState(null);
 
   const [map, setMap] = useState(null);
 
-  const origin = "Colombo";
-  const destinations = ["Padukka", "Ingiriya"];
+  // const origin = "Colombo";
+  // const destinations = ["Padukka", "Ingiriya"];
 
   const [showSkeleton, setShowSkeleton] = useState(true);
 
@@ -40,10 +39,10 @@ const PackageRouteMap = () => {
         try {
           const directionService = new window.google.maps.DirectionsService();
           const results = await directionService.route({
-            origin: origin,
+            origin: destinations[0],
             destination: destinations[destinations.length - 1], // Last destination
             waypoints: destinations
-              .slice(0, -1)
+              .slice(1, -1)
               .map((location) => ({ location })), // Intermediate destinations as waypoints
             travelMode: window.google.maps.TravelMode.DRIVING,
           });
@@ -67,7 +66,7 @@ const PackageRouteMap = () => {
   }
 
   return (
-    <div className="w-full midxl:h-[350px] bxs:h-[300px] xxs:h-[250px] xxxs:h-[200px] h-[150px] rounded-md overflow-hidden ">
+    <div className="w-full midxl:h-[350px] bxs:h-[300px] xxs:h-[250px] xxxs:h-[200px] h-[150px] rounded-md overflow-hidden outline-none">
       <GoogleMap
         zoom={10}
         mapContainerStyle={{ width: "100%", height: "100%" }}
