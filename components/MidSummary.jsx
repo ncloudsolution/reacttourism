@@ -652,7 +652,7 @@ highwayExit: station,
                       <span className="bxs:w-[180px] w-[150px] bg-transparent">
                         Origin
                       </span>
-                      <span className="font-normal  bxs:w-[200px] w-[150px]">
+                      <span className="font-normal  bxs:w-[170px] w-[150px]">
                         {tourDetails.origin}
                       </span>
                     </div>
@@ -661,7 +661,7 @@ highwayExit: station,
                       <span className="bxs:w-[180px] w-[150px] bg-transparent ">
                         Destination
                       </span>
-                      <span className="font-normal bxs:w-[200px] w-[150px] ">
+                      <span className="font-normal bxs:w-[170px] w-[150px] ">
                         {tourDetails.destination}
                       </span>
                     </div>
