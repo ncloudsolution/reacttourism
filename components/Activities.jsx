@@ -1,5 +1,5 @@
 import React from "react";
-import destination1 from "@/public/Destinations/dest1.jpeg";
+import destination1 from "@/public/Destinations/dest1.jpg";
 import destination2 from "@/public/Destinations/dest2.jpg";
 import destination3 from "@/public/Destinations/dest3.jpg";
 import destination4 from "@/public/Destinations/dest4.jpg";

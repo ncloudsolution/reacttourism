@@ -2,85 +2,58 @@ import Image from "next/image";
 import React from "react";
 import ellaodyssey from "@/public/Vehicles/ellaodyssey.jpg";
 import dunhindaodyssey from "@/public/Vehicles/dunhindaodyssey.jpg";
+import bg from "@/public/Destinations/dest1.jpg";
+import { FaAnglesRight } from "react-icons/fa6";
 
 const page = () => {
-  const trainCardDetails = [
+  const places = [
     {
-      trainName: "Ella Odyssey",
-      img: ellaodyssey,
-      stops: [
-        "Horsetail Waterfall view point - (2 minutes)",
-        "Sri Pada (Adam's Peak) view point - (2 minutes)",
-        "St Clair Waterfall view point - (2 minutes)",
-        "Elgin Waterfall view point - (2 minutes)",
-        "Sumit Level - (2 minutes)",
-        "No 18 Tunnel - (3 minutes)",
-        "Kithal Ella Waterfall view point - (3 minutes)",
-        "Nine Arches Bridge - (10 minutes)",
-      ],
-    },
-    {
-      trainName: "Dunhinda Odyssey",
-      img: dunhindaodyssey,
-      stops: [
-        "Horsetail Waterfall view point - (2 minutes)",
-        "Sri Pada (Adam's Peak) view point - (2 minutes)",
-        "St Clair Waterfall view point - (2 minutes)",
-        "Elgin Waterfall view point - (2 minutes)",
-        "Sumit Level - (2 minutes)",
-        "No 18 Tunnel - (3 minutes)",
-        "Kithal Ella Waterfall view point - (3 minutes)",
-        "Nine Arches Bridge - (10 minutes)",
-        "Windbreak",
-        "Demodara Tunnel & Bridge",
-      ],
+      img: bg,
+      title: "Yala National Park",
+      description:
+        "Yala National Park, located in the southeastern region of Sri Lanka, is renowned for its remarkable biodiversity and abundant wildlife. Covering approximately 979 square kilometers, it is the most visited and second-largest national park in the country. The park is divided into five blocks, with Block 1 being the most accessible and popular among tourists. Yala is particularly famous for its high density of leopards, making it one of the best places in the world to spot these elusive big cats. In addition to leopards, the park is home to a variety of other animals, including elephants, sloth bears, crocodiles, and over 200 species of birds. The landscape of Yala is equally diverse, featuring dense jungles, open grasslands, lagoons, and beaches along the Indian Ocean. This unique combination of rich wildlife and scenic beauty makes Yala National Park a must-visit destination for nature enthusiasts and wildlife photographers.",
     },
   ];
   return (
-    <div className="flex bigmd:w-[900px] w-full items-center">
-      <div className="py-4 px-10 w-full h-full grid bigmd:grid-cols-2 grid-cols-1 gap-5">
-        {trainCardDetails.map((train, index) => {
-          return (
-            <div key={index} className="flex flex-col w-full">
-              <div className=" h-[320px]  rounded-t-lg relative overflow-hidden ">
-                <Image
-                  src={train.img}
-                  alt=""
-                  fill
-                  sizes="100vw"
-                  style={{
-                    objectFit: "cover",
-                    overflow: "hidden",
-                  }}
-                  className="transition-transform duration-500 ease-in-out transform hover:scale-110"
-                />
-                <div className="absolute z-50 bg-primary font-semibold text-black w-full py-2 bottom-0 text-center text-[22px]">
-                  {train.trainName}
+    <>
+      {places.map((place, index) => (
+        <div
+          className="xs:h-[92vh] h-[85vh] border-b-2 border-primary w-full  overflow-hidden relative"
+          key={index}
+        >
+          <Image
+            src={place.img}
+            alt=""
+            className="size-[100%]  object-cover object-right xs:object-center"
+            key={index}
+          />
+          <div className="absolute inset-0 bg-black opacity-60"></div>
+
+          <div className="text-white absolute 2xl:top-[50%] bxs:top-[30%]  xs:top-[35%] xxs:top-[20%] bottom-[10%] bigmd:right-[15%] left-[5%] bigmd:left-[15%] right-[5%]">
+            <div className="flex flex-col gap-y-5 ">
+              <div className="flex justify-between">
+                <div className="bigmd:text-[60px] bxs:text-[50px] text-[30px] bigmd:leading-[60px] bxs:leading-[50px] leading-[30px]">
+                  {place.title}
+                </div>
+                <div className="bg-primary w-[200px] hidden gap-x-1  2xl:flex justify-center items-center text-[20px] text-black rounded-md font-semibold">
+                  <div>Next</div>
+                  <FaAnglesRight className="text-[20px]" />
                 </div>
               </div>
 
-              <div className="px-5 py-3 flex flex-col flex-1  shadow-md border-[3px] border-t-0 rounded-t-none border-primary rounded-xl">
-                <div className="flex flex-col border-2 border-transparent">
-                  <div className="font-semibold flex break-keep overflow-y-auto scrollbar-thin scrollbar-thumb-customGray-900 scrollbar-track-customGray-400 ">
-                    {train.name}
-                  </div>
-                </div>
+              <div className="bxs:text-[16px] text-[14px]">
+                {place.description}
+              </div>
 
-                <div className="flex  flex-col border-2 border-transparent">
-                  <div className="text-black font-semibold text-[15px]">
-                    {train.stops.map((place, index) => (
-                      <div key={index}>
-                        <div>{place}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="bg-primary w-1/2 gap-x-1 2xl:hidden py-2 flex justify-center items-center text-[20px] text-black rounded-md font-semibold">
+                <div>Next</div>
+                <FaAnglesRight className="text-[20px]" />
               </div>
             </div>
-          );
-        })}
-      </div>
-    </div>
+          </div>
+        </div>
+      ))}
+    </>
   );
 };
 
