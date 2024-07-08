@@ -51,6 +51,7 @@
 
   .date-style {
     display: flex !important;
+    background-color: white !important;
   }
 
   .react-datepicker-wrapper,

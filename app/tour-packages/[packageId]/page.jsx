@@ -11,6 +11,7 @@ import TourPackageForm from "@/components/TourPackageForm";
 import { FaSquareCheck } from "react-icons/fa6";
 import { AiFillCloseSquare, AiOutlineStop } from "react-icons/ai";
 import { FaExclamationTriangle } from "react-icons/fa";
+import PackageRouteMap from "@/components/PackageRouteMap";
 
 const PackageDetails = ({ params }) => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
@@ -54,8 +55,24 @@ const PackageDetails = ({ params }) => {
 
   const DataObject = GetAllDataOfTourPackage(decodedDescription);
 
-  const IncludeArray = DataObject.include;
-  const ExcludeArray = DataObject.exclude;
+  const IncludeArray = [
+    "Meeting at the airport upon arrival and assistance during the stay",
+    "Transportation by air-conditioned vehicle according to the itinerary.",
+    "Service of an English Speaking chauffer up to 6 pax and Guide service included from 7 pax onwards",
+    "Accommodation at the Hotels as selected by you when requesting the quotation on Single, Double/Twin, Triple sharing",
+    "Meal plan according to the itinerary, half board (dinner and breakfast included) will start from the dinner on the arrival day and ends with Breakfast on departure. Full board (Lunch, dinner and breakfast included) will start from Lunch on arrival day and ends with breakfast on departure.",
+    "Two water bottles per day during tour",
+  ];
+  const ExcludeArray = [
+    "International Air Fare",
+    "Peak period supplements",
+    "Entrance fees to parks and archaeological sites not entered for quote in the itinerary",
+    "Jeep charges, boat charges not mentioned in the itinerary",
+    "Permits for photos / videos, tips and extras where applicable.",
+    "Optional excursions and additional services not covered by the program.",
+    "PCR, ETA and Travel Insurance payment",
+    "Early check in and late check out. Check in at hotels is expected no earlier than 14:00 hours. The checkout is categorically expected by 11:00",
+  ];
 
   // console.log(DataObject.price, "price");
   // const priceAsNumber = Number(DataObject.price);
@@ -95,6 +112,7 @@ const PackageDetails = ({ params }) => {
             </div>
 
             <div className="flex flex-col flex-1">
+              <PackageRouteMap destinations={DataObject.routeOrder} />
               <DayTripsPriceCrad
                 initialPrice="null"
                 discountedPrice={DataObject.discountedPrice}

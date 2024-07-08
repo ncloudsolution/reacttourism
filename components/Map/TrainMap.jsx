@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useRef, useState, useEffect } from "react";
+import { useContext, useRef, useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
 import { TourContext } from "@/context/TourContextProvider";
 import { FaBriefcase, FaRegSnowflake, FaTrain, FaUser } from "react-icons/fa6";
@@ -12,6 +12,7 @@ import Image from "next/image";
 import { BsHandbagFill } from "react-icons/bs";
 import CustomDayTourDatePicker from "../CustomDayTourDatePicker";
 import { BiSolidRightArrow } from "react-icons/bi";
+import CustomDatePicker from "../CustomDatePicker";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -19,6 +20,7 @@ const TrainMap = ({ children }) => {
   const router = useRouter();
 
   const [date, setDate] = useState();
+  const [startDate, setStartDate] = useState(new Date());
 
   const [map, setMap] = useState(/** @type google.maps.Map*/ (null));
   /** js docs types for suggesions**/
@@ -33,6 +35,9 @@ const TrainMap = ({ children }) => {
   const passengerCountRef = useRef();
 
   const [distanceX, setDistanceX] = useState();
+  const [otherData, setOtherData] = useState();
+
+  const [isDateActive, setIsDateActive] = useState();
 
   async function calculateRoute(e) {
     e.preventDefault();
@@ -49,22 +54,71 @@ const TrainMap = ({ children }) => {
       );
 
       let newDistanceX;
+      let otherDataX;
 
       switch (tourDetails.trainTourPoints) {
         case "Colombo to Kandy":
-          newDistanceX = 125;
+          newDistanceX = 122;
+          otherDataX = {
+            origin: "Colombo Fort Railway Station",
+            destination: "Railway Station - Kandy",
+            duration: "3 hours 17 mins",
+            distance: "122 km",
+          };
           break;
         case "Colombo to Nanu Oya":
-          newDistanceX = 150;
+          newDistanceX = 163;
+          otherDataX = {
+            origin: "Colombo Fort Railway Station",
+            destination: "Nanu Oya Railway Station",
+            duration: "4 hours 41 mins",
+            distance: "163 km",
+          };
           break;
         case "Colombo to Ella":
-          newDistanceX = 200;
+          newDistanceX = 195;
+          otherDataX = {
+            origin: "Colombo Fort Railway Station",
+            destination: "Railway Station - Ella",
+            duration: "5 hours 16 mins",
+            distance: "195 km",
+          };
           break;
         case "Colombo to Badulla":
-          newDistanceX = 220;
+          newDistanceX = 213;
+          otherDataX = {
+            origin: "Colombo Fort Railway Station",
+            destination: "Badulla Railway Station",
+            duration: "5 hours 45 mins",
+            distance: "213 km",
+          };
           break;
-        case "Colombo to Polonnaruwa":
-          newDistanceX = 235;
+        case "Badulla to Nanu Oya":
+          newDistanceX = 63;
+          otherDataX = {
+            origin: "Badulla Railway Station",
+            destination: "Nanu Oya Railway Station",
+            duration: "2 hours 7 mins",
+            distance: "63 km",
+          };
+          break;
+        case "Badulla to Kandy":
+          newDistanceX = 116;
+          otherDataX = {
+            origin: "Badulla Railway Station",
+            destination: "Railway Station - Kandy",
+            duration: "2 hours 45 mins",
+            distance: "116 km",
+          };
+          break;
+        case "Badulla to Colombo":
+          newDistanceX = 213;
+          otherDataX = {
+            origin: "Badulla Railway Station",
+            destination: "Colombo Fort Railway Station",
+            duration: "5 hours 45 mins",
+            distance: "213 km",
+          };
           break;
         // Add more cases as needed
         default:
@@ -77,6 +131,7 @@ const TrainMap = ({ children }) => {
         newDistanceX
       );
 
+      setOtherData(otherDataX);
       setDistanceX(newDistanceX);
       console.log(selectedVehicals, "vehical obj");
       console.log(tourDetails.conversionRate, "val");
@@ -112,7 +167,7 @@ const TrainMap = ({ children }) => {
   console.log(tourDetails, "outer details");
   return (
     <>
-      <div className="flex flex-col items-center w-full">
+      <div className="flex flex-col items-center w-full ">
         <div className="flex flex-col items-center justify-center bg-black rounded-lg  ">
           <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[20px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
             Journey On Rails
@@ -351,7 +406,7 @@ const TrainMap = ({ children }) => {
                       </div>
                     </div>
                   ))}
-                  <div className="my-10 2xl:w-[1056px] bigmd:w-[846px] bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]">
+                  <div className="my-10 2xl:w-[1056px] bigmd:w-[846px] bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px] ">
                     <div className="w-full text-center">
                       <Title title={"Recomondations For You"} />
                       <div className="text-[18px]">
@@ -364,8 +419,39 @@ const TrainMap = ({ children }) => {
                           {selectedVehicalsX.map((vehicle, index) => (
                             <div
                               key={index}
-                              className="bg-transparent text-black w-full flex flex-col bigmd:flex-row mb-6 p-4 rounded-lg border-[2px] border-black shadow-md justify-between hover:scale-[1.03] transition-all duration-500"
+                              className="bg-transparent relative text-black w-full flex flex-col bigmd:flex-row mb-6 p-4 rounded-lg border-[2px] border-black shadow-md justify-between "
                             >
+                              {isDateActive === index && (
+                                <div className=" bg-yellow-400 absolute z-40 w-full flex flex-col justify-center items-center -translate-x-4 -translate-y-4 h-full rounded-md ">
+                                  <div className="flex flex-col items-center">
+                                    <div className="text-[20px] font-semibold mb-3">
+                                      Select Pickup Date
+                                    </div>
+                                    <div className="my-3 z-50">
+                                      <CustomDatePicker
+                                        selectedDate={startDate}
+                                        onChange={(date) => setStartDate(date)}
+                                      />
+                                    </div>
+                                    <div
+                                      className="py-2 w-full bg-black text-white text-center rounded-md"
+                                      onClick={() => {
+                                        setTourDetails((prevTourDetails) => ({
+                                          ...prevTourDetails,
+
+                                          startDate: startDate,
+                                        }));
+
+                                        console.log(tourDetails, "tourdetails");
+
+                                        router.push("/tour-booking");
+                                      }}
+                                    >
+                                      Next
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
                               <div className="flex flex-col items-center bigmd:items-start ">
                                 <div className="font-semibold text-[30px] px-8">
                                   {vehicle.type}
@@ -430,23 +516,70 @@ const TrainMap = ({ children }) => {
                                   onClick={() => {
                                     // console.log(startDate, "date");
 
-                                    let placeX;
+                                    // let placeX;
 
-                                    switch (tourDetails.trainTourPoints) {
-                                      case "Colombo to Kandy":
-                                        placeX = "Kandy";
-                                        break;
-                                      case "Colombo to Polonnaruwa":
-                                        placeX = "Polonnaruwa";
-                                        break;
-                                      // Add more cases as needed
-                                      default:
-                                        placeX = "Colombo";
-                                        break;
-                                    }
+                                    // switch (tourDetails.trainTourPoints) {
+                                    //   case "Colombo to Kandy":
+                                    //     placeX = "Kandy";
+                                    //     break;
+                                    //   case "Colombo to Polonnaruwa":
+                                    //     placeX = "Polonnaruwa";
+                                    //     break;
+                                    //   // Add more cases as needed
+                                    //   default:
+                                    //     placeX = "Colombo";
+                                    //     break;
+                                    // }
                                     //console.log(vehicle.price);
 
-                                    router.push("/point-to-point");
+                                    //console.log(vehicle.price);
+                                    setIsDateActive(index);
+                                    setTourDetails((prevTourDetails) => ({
+                                      ...prevTourDetails,
+                                      tourType: "p2p",
+
+                                      isReturntour: false,
+
+                                      vehicleType: vehicle.type,
+                                      vehicalSeatCapacityMin:
+                                        vehicle.minpassengers,
+                                      vehicalSeatCapacityMax:
+                                        vehicle.maxpassengers,
+                                      weightFactor: vehicle.weightFactor,
+                                      price: vehicle.price,
+                                      convertedPrice: (
+                                        tourDetails.conversionRate *
+                                        vehicle.price
+                                      ).toFixed(2),
+
+                                      image: vehicle.img,
+                                      boardShow: false,
+
+                                      category: vehicle.category,
+
+                                      origin: otherData.origin,
+                                      destination: otherData.destination,
+                                      noOfPassengers:
+                                        passengerCountRef.current.value,
+                                      highwayCharge: 0,
+                                      returnDate: "No any Return",
+                                      distance: otherData.distance,
+                                      duration: otherData.duration,
+                                      pageTwoToken: true,
+                                    }));
+                                    console.log(
+                                      "Conversion rate:",
+                                      tourDetails.conversionRate
+                                    );
+                                    console.log(
+                                      "Vehicle price:",
+                                      vehicle.price
+                                    );
+                                    console.log("redirect");
+
+                                    console.log(tourDetails, "tourdetails");
+
+                                    // router.push("/tour-booking");
                                   }}
                                 >
                                   Select
