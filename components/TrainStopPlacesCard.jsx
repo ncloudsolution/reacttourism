@@ -3,7 +3,7 @@ import React from "react";
 import ellaodyssey from "@/public/Vehicles/ellaodyssey.jpg";
 import dunhindaodyssey from "@/public/Vehicles/dunhindaodyssey.jpg";
 
-const page = () => {
+const TrainStopPlacesCard = () => {
   const trainCardDetails = [
     {
       trainName: "Ella Odyssey",
@@ -37,12 +37,12 @@ const page = () => {
     },
   ];
   return (
-    <div className="flex bigmd:w-[900px] w-full items-center">
-      <div className="py-4 px-10 w-full h-full grid bigmd:grid-cols-2 grid-cols-1 gap-5">
+    <div className="flex w-full bigmd:px-0 bxs:px-8 xxs:px-0 xxxs:px-3 px-6 items-center">
+      <div className="py-5 w-full h-full grid bigmd:grid-cols-2 grid-cols-1 gap-5">
         {trainCardDetails.map((train, index) => {
           return (
             <div key={index} className="flex flex-col w-full">
-              <div className=" h-[320px]  rounded-t-lg relative overflow-hidden ">
+              <div className=" bxs:h-[320px] h-[270px]  rounded-t-lg relative overflow-hidden ">
                 <Image
                   src={train.img}
                   alt=""
@@ -54,23 +54,19 @@ const page = () => {
                   }}
                   className="transition-transform duration-500 ease-in-out transform hover:scale-110"
                 />
-                <div className="absolute z-50 bg-primary font-semibold text-black w-full py-2 bottom-0 text-center text-[22px]">
+                <div className="absolute z-50 bg-primary font-semibold text-black w-full py-2 bottom-0 text-center bxs:text-[22px] text-[18px]">
                   {train.trainName}
                 </div>
               </div>
 
-              <div className="px-5 py-3 flex flex-col flex-1  shadow-md border-[3px] border-t-0 rounded-t-none border-primary rounded-xl">
-                <div className="flex flex-col border-2 border-transparent">
-                  <div className="font-semibold flex break-keep overflow-y-auto scrollbar-thin scrollbar-thumb-customGray-900 scrollbar-track-customGray-400 ">
-                    {train.name}
-                  </div>
-                </div>
-
+              <div className="px-5 py-3 bg-white flex flex-col flex-1  shadow-md border-[3px] border-t-0 rounded-t-none border-primary rounded-xl">
                 <div className="flex  flex-col border-2 border-transparent">
                   <div className="text-black font-semibold text-[15px]">
                     {train.stops.map((place, index) => (
                       <div key={index}>
-                        <div>{place}</div>
+                        <div className="text-[12px] bxs:text-[16px]">
+                          {place}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -84,4 +80,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default TrainStopPlacesCard;

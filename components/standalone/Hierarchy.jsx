@@ -21,11 +21,11 @@ const Hierarchy = () => {
   const sections = [
     {
       name: "SEARCH",
-      url: ["/", "/airportp&d", "/pointtopoint"],
+      url: ["/", "/airport-p&d", "/point-to-point"],
       icon: <FaSearch />,
     },
-    { name: "BOOKING", url: ["/tourbooking"], icon: <FaFileAlt /> },
-    { name: "DONE", url: ["/tourbooking/summary"], icon: <FaCircleCheck /> },
+    { name: "BOOKING", url: ["/tour-booking"], icon: <FaFileAlt /> },
+    { name: "DONE", url: ["/tour-booking/summary"], icon: <FaCircleCheck /> },
   ];
 
   const isButtonEnabled = (index) => {

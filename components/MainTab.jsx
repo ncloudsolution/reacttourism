@@ -97,7 +97,7 @@ const MainTab = () => {
   return (
     <>
       <BsCoin
-        className="text-primary absolute text-[30px] xxs:text-[40px] bxs:text-[35px] sm:text-[40px] bigmd:text-[30px] lg:text-[40px] lg:right-10 bigmd:right-2 sm:right-10 xxs:right-5 right-3 bxs:translate-y-12 xs:translate-y-32 translate-y-12 z-10"
+        className="text-primary  rounded-full  border-[4px] shadow-currencyshadow border-black absolute size-[40px]  lg:size-[45px]  lg:text-[40px] lg:right-10 bigmd:right-2 sm:right-10 xxs:right-5 right-3 bxs:translate-y-12 xs:translate-y-32 translate-y-12 z-10"
         onClick={() => setIsCurrencyActive(!isCurrencyActive)}
       />
       <div className={`${isCurrencyActive ? "block" : "hidden"}`}>
