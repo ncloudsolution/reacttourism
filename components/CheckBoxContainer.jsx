@@ -1,6 +1,5 @@
 "use client";
 import { TourContext } from "@/context/TourContextProvider";
-import { GetCustomTourPlaces } from "@/libs/JsonDataCatching";
 import React, { useContext, useState, useEffect } from "react";
 import { IoIosDoneAll } from "react-icons/io";
 

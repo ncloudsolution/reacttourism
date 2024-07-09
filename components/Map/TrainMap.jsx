@@ -10,7 +10,6 @@ import { SelectVehiclesList } from "@/libs/calculations";
 import Title from "../standalone/Title";
 import Image from "next/image";
 import { BsHandbagFill } from "react-icons/bs";
-import CustomDayTourDatePicker from "../CustomDayTourDatePicker";
 import { BiSolidRightArrow } from "react-icons/bi";
 import CustomDatePicker from "../CustomDatePicker";
 import { vehicalInsteadOfTrain } from "@/libs/VehicalInsteadOfTrain";
@@ -59,8 +58,6 @@ const TrainMap = ({ children }) => {
         tourDetails.trainTourPoints
       );
 
-      console.log(vehicalInsteadOfTrian, "instead");
-
       const selectedVehicals = SelectVehiclesList(
         passengerCountRef.current.value,
         vehicalInsteadOfTrian.newDistanceX
@@ -68,8 +65,6 @@ const TrainMap = ({ children }) => {
 
       setOtherData(vehicalInsteadOfTrian.otherDataX);
       setDistanceX(vehicalInsteadOfTrian.newDistanceX);
-      console.log(selectedVehicals, "vehical obj");
-      console.log(tourDetails.conversionRate, "val");
 
       setSelectedVehicalX(selectedVehicals);
 
@@ -89,17 +84,13 @@ const TrainMap = ({ children }) => {
       console.error("Error occurred while calculating route:", error);
       // Handle error as needed
     }
-    console.log(tourDetails, "inner details");
   }
 
   // useEffect(() => {
-  //   console.log(filterdTrains);
+  //
   // }, [filterdTrains]);
-  useEffect(() => {
-    console.log(tourDetails, "updated details");
-  }, [tourDetails]);
+  useEffect(() => {}, [tourDetails]);
 
-  console.log(tourDetails, "outer details");
   return (
     <>
       <div className="flex flex-col items-center w-full border-transparent border-2">
@@ -284,7 +275,7 @@ const TrainMap = ({ children }) => {
                                       trainClass: type.class,
                                       trainPrice: type.price,
                                     }));
-                                    console.log(tourDetails, "all details");
+
                                     router.push("/journey-on-rails/summary");
                                   }}
                                 >
@@ -374,8 +365,6 @@ const TrainMap = ({ children }) => {
                                           startDate: startDate,
                                         }));
 
-                                        console.log(tourDetails, "tourdetails");
-
                                         router.push("/tour-booking");
                                       }}
                                     >
@@ -446,7 +435,7 @@ const TrainMap = ({ children }) => {
                                 <button
                                   className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                                   onClick={() => {
-                                    // console.log(startDate, "date");
+                                    //
 
                                     // let placeX;
 
@@ -462,9 +451,9 @@ const TrainMap = ({ children }) => {
                                     //     placeX = "Colombo";
                                     //     break;
                                     // }
-                                    //console.log(vehicle.price);
+                                    //
 
-                                    //console.log(vehicle.price);
+                                    //
                                     setIsDateActive(index);
                                     setTourDetails((prevTourDetails) => ({
                                       ...prevTourDetails,
@@ -499,17 +488,6 @@ const TrainMap = ({ children }) => {
                                       duration: otherData.duration,
                                       pageTwoToken: true,
                                     }));
-                                    console.log(
-                                      "Conversion rate:",
-                                      tourDetails.conversionRate
-                                    );
-                                    console.log(
-                                      "Vehicle price:",
-                                      vehicle.price
-                                    );
-                                    console.log("redirect");
-
-                                    console.log(tourDetails, "tourdetails");
 
                                     // router.push("/tour-booking");
                                   }}

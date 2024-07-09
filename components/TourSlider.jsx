@@ -7,7 +7,6 @@ import tourPackage from "@/data/tourPackage.json";
 import SliderBtn from "./standalone/SliderBtn";
 import useWindowSize from "@/hooks/useWindowSize";
 import Title from "./standalone/Title";
-import TourSliderSkeleton from "./skeletonUI/compoundElements/TourSliderSkeleton";
 import Link from "next/link";
 import { TourContext } from "@/context/TourContextProvider";
 
@@ -29,8 +28,6 @@ const TourSlider = () => {
     setIsClient(true); // Component has mounted in the client
   }, []);
 
-  console.log("customhook", windowWidth);
-
   // unlimited scroll tile
   function generateRepeatedArray(baseArray, repetitions) {
     const result = [];
@@ -42,7 +39,6 @@ const TourSlider = () => {
   }
   const multiplier = 4;
   const repeatedArray = generateRepeatedArray(tourPackage, multiplier); // Repeats array 3 times
-  console.log(repeatedArray);
 
   //array repeat over
 
@@ -81,7 +77,6 @@ const TourSlider = () => {
   }
 
   let columnSizebyScreenSizeValue = columnSizeByScreenSize();
-  console.log("column size", columnSizebyScreenSizeValue);
 
   function hoppingSize() {
     return Math.ceil(repeatedArray.length / columnSizebyScreenSizeValue);
@@ -95,13 +90,12 @@ const TourSlider = () => {
 
   const [count, setCount] = useState(0);
   // const [dotcount, setDotCount] = useState(1);
-  console.log("count", count);
-  // console.log("dotcount", dotcount);
+
+  //
   const leftHandler = () => {
     if (count > 0) {
       setCount(count - 1);
       // setDotCount((count % (multiplier + 1)) - 1);
-      console.log(count);
     }
   };
 
@@ -109,13 +103,12 @@ const TourSlider = () => {
     if (count < hoppingSizeValue - 1) {
       setCount(count + 1);
       // setDotCount((count % (multiplier + 1)) + 1);
-      console.log(count);
-      // console.log(dotcount);
+
+      //
     }
   };
 
   const translationOffset = count > 0 ? count * -3 : 0;
-  console.log("trans", translationOffset);
 
   // const dottedSizeValue = dottedSize();
 
@@ -135,10 +128,6 @@ const TourSlider = () => {
       />
     );
   }
-
-  console.log("count", count);
-  console.log("hop", hoppingSizeValue);
-  console.log(count % Math.ceil(hoppingSizeValue / multiplier));
 
   return (
     <>

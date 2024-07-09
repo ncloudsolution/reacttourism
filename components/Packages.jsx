@@ -5,8 +5,6 @@ import pack1 from "@/public/Packages/pack1.jpg";
 import pack2 from "@/public/Packages/pack2.jpg";
 import pack3 from "@/public/Packages/pack3.jpg";
 
-import Link from "next/link";
-
 const Packages = () => {
   return (
     <section className="relative z-10 overflow-hidden bg-white pt-[30px] pb-[30px]">

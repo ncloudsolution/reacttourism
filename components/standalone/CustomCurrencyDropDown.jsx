@@ -12,8 +12,6 @@ const CustomCurrencyDropDown = () => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
   const pathname = usePathname();
 
-  console.log("currency drop down");
-
   const [currencies] = useState(Object.entries(currency)); // Convert object to array of key-value pairs
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState(currencies[1][0]);
@@ -39,11 +37,8 @@ const CustomCurrencyDropDown = () => {
     }));
     setOpen(false);
     setInputValue("");
-
-    console.log(convertedCurrencySymbol, "symbol");
-    console.log(tourDetails.converedCurrencySymbol, "sym");
   };
-  console.log(tourDetails.converedCurrencySymbol, "outer sym");
+
   const DropDownRef = useRef();
 
   const handleClickOutside = (e) => {

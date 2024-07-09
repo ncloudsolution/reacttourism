@@ -5,7 +5,6 @@ import bg from "@/public/Footers/bgimg1.jpeg";
 import logo from "@/public/Navbar/tblogo.png";
 import Link from "next/link";
 
-import { SiInstagram } from "react-icons/si";
 import { FaFacebookF } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";

@@ -36,9 +36,7 @@ const CustomVehicalDropDown = () => {
     };
   }, [open]);
 
-  useEffect(() => {
-    console.log(tourDetails.selectedvehical, "selected vehical");
-  }, [tourDetails]);
+  useEffect(() => {}, [tourDetails]);
 
   //function over
   return (

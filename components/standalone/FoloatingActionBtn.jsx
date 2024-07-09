@@ -7,7 +7,7 @@ import care from "@/public/contactUs/customercare.png";
 
 const FoloatingActionBtn = () => {
   const [isClicked, setIsClicked] = useState(false);
-  console.log(isClicked, "isclicked");
+
   return (
     <div className=" fixed bottom-[30px] right-[3%] z-50 group">
       <div className="flex items-center">

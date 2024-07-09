@@ -11,7 +11,7 @@
 //       .then((data) => setData(data["lkr"]));
 //   }, []);
 
-//   console.log(data, "data");
+//
 //   return data;
 // };
 
@@ -32,7 +32,6 @@ const useCurrency = (pathname) => {
         pathname.includes("/tour-packages")
       ) {
         try {
-          console.log("daytrips");
           const response = await fetch(
             `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json`
           );
@@ -47,7 +46,6 @@ const useCurrency = (pathname) => {
         }
       } else {
         try {
-          console.log("otherRoutes");
           const response = await fetch(
             `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/lkr.json`
           );
@@ -67,8 +65,6 @@ const useCurrency = (pathname) => {
     fetchData();
   }, [pathname, setTourDetails]);
 
-  console.log(data, "data");
-  console.log(tourDetails.slRate, "rate");
   return data;
 };
 

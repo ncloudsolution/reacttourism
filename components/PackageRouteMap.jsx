@@ -5,7 +5,7 @@ import {
   GoogleMap,
   DirectionsRenderer,
 } from "@react-google-maps/api";
-import CarSkeleton from "@/components/skeletonUI/compoundElements/CarSkeleton";
+
 import RouteMapSkeleton from "./skeletonUI/compoundElements/RouteMapSkeleton";
 
 const PackageRouteMap = ({ destinations }) => {

@@ -1,7 +1,6 @@
 "use client";
 import {
   GoogleMap,
-  Marker,
   Autocomplete,
   DirectionsRenderer,
 } from "@react-google-maps/api";
@@ -50,8 +49,6 @@ const AirportMap = ({ children }) => {
 
   const mapRef = useRef();
 
-  const [highwayExitNamesState, setHighwayExitNamesState] = useState();
-  const [routeSummary, setRouteSummary] = useState();
   //scroll to after the submission
 
   // const [startDate, setStartDate] = useState(
@@ -84,7 +81,7 @@ const AirportMap = ({ children }) => {
 
   const handleDrop = () => {
     if (isDrop) return;
-    console.log("drop");
+
     setIsDrop(true);
     setIsPickup(false);
     destinationRef.current.value =
@@ -150,8 +147,6 @@ const AirportMap = ({ children }) => {
       );
       setSelectedVehiclesList(selectedVehiclesListValue);
 
-      console.log(Math.ceil(results.routes[0].legs[0].distance.value / 1000));
-
       if (returnTour) {
         const ValidReturnTime = RetrunTimeValidity(
           startDate.getTime() / (1000 * 60),
@@ -165,13 +160,10 @@ const AirportMap = ({ children }) => {
         top: 300, // Scroll down by 200px
         behavior: "smooth", // Smooth scrolling
       });
-      console.log(ValidReturnTime, "RETURN VALID");
     } catch (error) {
       console.error("Error occurred while calculating route:", error);
       // Handle error as needed
     }
-
-    console.log(durationForCalc, "calc");
   }
 
   function clearRoute() {
@@ -440,8 +432,7 @@ const AirportMap = ({ children }) => {
                         <button
                           className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                           onClick={() => {
-                            console.log(startDate, "date");
-                            //console.log(vehicle.price);
+                            //
                             setTourDetails((prevTourDetails) => ({
                               ...prevTourDetails,
                               tourType: "airport",
@@ -480,12 +471,6 @@ const AirportMap = ({ children }) => {
                               duration: duration,
                               pageTwoToken: true,
                             }));
-                            console.log(
-                              "Conversion rate:",
-                              tourDetails.conversionRate
-                            );
-                            console.log("Vehicle price:", vehicle.price);
-                            console.log("redirect");
 
                             router.push("/tour-booking");
                           }}

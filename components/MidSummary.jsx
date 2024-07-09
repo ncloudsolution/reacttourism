@@ -11,7 +11,6 @@ import otherPrices from "@/data/otherPrices.json";
 import Hierarchy from "./standalone/Hierarchy";
 import CustomHighwayDropDown from "./standalone/CustomHighwayDropDown";
 import CurrencyTab from "./standalone/CurrencyTab";
-import CustomDatePicker from "./CustomDatePicker";
 import CustomMiniDatePicker from "./CustomMiniDatePicker";
 
 import boardimg from "@/public/Others/boardshow.png";
@@ -182,8 +181,6 @@ const MidSummary = () => {
     }));
   };
 
-  console.log(tourDetails.highwayCharge, "charge"); //issue here
-
   useEffect(() => {
     if (tourDetails.tourType === "p2p") {
       setIsAirport(false);
@@ -191,7 +188,6 @@ const MidSummary = () => {
   }, [tourDetails.tourType, isAirport]);
 
   useEffect(() => {
-    console.log("ui updated");
     setHighwayCharge(tourDetails.highwayCharge);
     setHighwayExit(tourDetails.highwayExit);
   }, [tourDetails.highwayExit, tourDetails.highwayCharge]);

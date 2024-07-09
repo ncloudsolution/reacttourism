@@ -54,9 +54,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
     });
   };
 
-  useEffect(() => {
-    console.log(noOfAdults, "no");
-  }, [noOfAdults]);
+  useEffect(() => {}, [noOfAdults]);
 
   useEffect(() => {
     const dayTripPriceObject = DayTripPricingAlgorithm(
@@ -79,8 +77,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("noOfAdults:", noOfAdults);
-    console.log("noOfKids:", noOfKids);
+
     if (
       date == undefined ||
       mobValue == "" ||
@@ -99,7 +96,6 @@ const DayTripsForm = ({ planPrice, trip }) => {
 
     setIsLoading(true);
     scrollToLoading();
-    console.log("scroll done");
 
     // setTimeout(() => {
     document.body.style.overflow = "hidden";
@@ -126,9 +122,6 @@ const DayTripsForm = ({ planPrice, trip }) => {
       totalPriceInLKR: (tourDetails.slRate * totalPrice).toFixed(2),
     };
 
-    console.log(dayTripDetails);
-    console.log(tourDetails.slRate, "sl rate");
-
     const formData = new FormData();
     formData.append("to", process.env.NEXT_PUBLIC_MY_EMAIL.split(",")); // Set the recipient's email here
     formData.append("clientmail", EmailRef.current.value); // Set the sender's email here
@@ -139,12 +132,10 @@ const DayTripsForm = ({ planPrice, trip }) => {
         body: formData, // FormData will be sent as `multipart/form-data`
       });
       const result = await response.json();
-      console.log(result);
+
       //alert(result.message);
       setIsLoading(false); // Stop loading
       setResponseMessage(result.message); // Set the message from the server
-
-      console.log("msg send");
     } catch (error) {
       console.error("Error:", error);
       // alert("Failed to send the file.");

@@ -61,4 +61,4 @@ export default DayTripPricingAlgorithm;
 
 // const myprice = DayTripPricingAlgorithm(75.05, 8, 3);
 
-// console.log(myprice);
+//
