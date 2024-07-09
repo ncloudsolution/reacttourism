@@ -13,6 +13,7 @@ import { BsHandbagFill } from "react-icons/bs";
 import CustomDayTourDatePicker from "../CustomDayTourDatePicker";
 import { BiSolidRightArrow } from "react-icons/bi";
 import CustomDatePicker from "../CustomDatePicker";
+import { vehicalInsteadOfTrain } from "@/libs/VehicalInsteadOfTrain";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -53,86 +54,20 @@ const TrainMap = ({ children }) => {
         TrainSearchByTourPoints(tourDetails.trainTourPoints)
       );
 
-      let newDistanceX;
-      let otherDataX;
+      //from libs switch case function
+      const vehicalInsteadOfTrian = vehicalInsteadOfTrain(
+        tourDetails.trainTourPoints
+      );
 
-      switch (tourDetails.trainTourPoints) {
-        case "Colombo to Kandy":
-          newDistanceX = 122;
-          otherDataX = {
-            origin: "Colombo Fort Railway Station",
-            destination: "Railway Station - Kandy",
-            duration: "3 hours 17 mins",
-            distance: "122 km",
-          };
-          break;
-        case "Colombo to Nanu Oya":
-          newDistanceX = 163;
-          otherDataX = {
-            origin: "Colombo Fort Railway Station",
-            destination: "Nanu Oya Railway Station",
-            duration: "4 hours 41 mins",
-            distance: "163 km",
-          };
-          break;
-        case "Colombo to Ella":
-          newDistanceX = 195;
-          otherDataX = {
-            origin: "Colombo Fort Railway Station",
-            destination: "Railway Station - Ella",
-            duration: "5 hours 16 mins",
-            distance: "195 km",
-          };
-          break;
-        case "Colombo to Badulla":
-          newDistanceX = 213;
-          otherDataX = {
-            origin: "Colombo Fort Railway Station",
-            destination: "Badulla Railway Station",
-            duration: "5 hours 45 mins",
-            distance: "213 km",
-          };
-          break;
-        case "Badulla to Nanu Oya":
-          newDistanceX = 63;
-          otherDataX = {
-            origin: "Badulla Railway Station",
-            destination: "Nanu Oya Railway Station",
-            duration: "2 hours 7 mins",
-            distance: "63 km",
-          };
-          break;
-        case "Badulla to Kandy":
-          newDistanceX = 116;
-          otherDataX = {
-            origin: "Badulla Railway Station",
-            destination: "Railway Station - Kandy",
-            duration: "2 hours 45 mins",
-            distance: "116 km",
-          };
-          break;
-        case "Badulla to Colombo":
-          newDistanceX = 213;
-          otherDataX = {
-            origin: "Badulla Railway Station",
-            destination: "Colombo Fort Railway Station",
-            duration: "5 hours 45 mins",
-            distance: "213 km",
-          };
-          break;
-        // Add more cases as needed
-        default:
-          newDistanceX = 10;
-          break;
-      }
+      console.log(vehicalInsteadOfTrian, "instead");
 
       const selectedVehicals = SelectVehiclesList(
         passengerCountRef.current.value,
-        newDistanceX
+        vehicalInsteadOfTrian.newDistanceX
       );
 
-      setOtherData(otherDataX);
-      setDistanceX(newDistanceX);
+      setOtherData(vehicalInsteadOfTrian.otherDataX);
+      setDistanceX(vehicalInsteadOfTrian.newDistanceX);
       console.log(selectedVehicals, "vehical obj");
       console.log(tourDetails.conversionRate, "val");
 
@@ -167,13 +102,13 @@ const TrainMap = ({ children }) => {
   console.log(tourDetails, "outer details");
   return (
     <>
-      <div className="flex flex-col items-center w-full ">
+      <div className="flex flex-col items-center w-full border-transparent border-2">
         <div className="flex flex-col items-center justify-center bg-black rounded-lg  ">
           <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[20px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
             Journey On Rails
           </div>
           <FaTrain className="text-[30px] text-primary mb-2" />
-          <div className="flex mb-8 mt-6 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-[350px] xxxs:w-[290px] w-[250px]">
+          <div className="flex mb-8 mt-6 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-[320px] xxxs:w-[290px] w-[250px]">
             <div className="flex flex-col gap-y-3 w-full px-8 ">
               <div className="flex flex-col bigmd:flex-row gap-x-3 gap-y-3 bigmd:w-[778px] w-full">
                 {/**750px**/}
@@ -327,7 +262,32 @@ const TrainMap = ({ children }) => {
                             {/**class**/}
                             <div className="my-5">
                               {train.types.map((type, index) => (
-                                <div key={index} className="my-2">
+                                <div
+                                  key={index}
+                                  className="my-2"
+                                  onClick={() => {
+                                    setTourDetails((prevTourDetails) => ({
+                                      ...prevTourDetails,
+                                      noOfPassengers:
+                                        passengerCountRef.current.value,
+                                      tourType: "train",
+                                      trainName: train.trainName,
+
+                                      trainPoints: train.trainPoints,
+                                      trainTime: train.trainTime,
+
+                                      travelPoints: tourDetails.trainTourPoints,
+                                      travelTime: train.travelTime,
+
+                                      trainAvailableDays: train.availableDays,
+
+                                      trainClass: type.class,
+                                      trainPrice: type.price,
+                                    }));
+                                    console.log(tourDetails, "all details");
+                                    router.push("/journey-on-rails/summary");
+                                  }}
+                                >
                                   <div
                                     className={` ${
                                       type.class ===
@@ -364,35 +324,7 @@ const TrainMap = ({ children }) => {
                                       </div>
                                     </div>
 
-                                    <BiSolidRightArrow
-                                      className="cursor-pointer"
-                                      onClick={() => {
-                                        setTourDetails((prevTourDetails) => ({
-                                          ...prevTourDetails,
-                                          noOfPassengers:
-                                            passengerCountRef.current.value,
-                                          tourType: "train",
-                                          trainName: train.trainName,
-
-                                          trainPoints: train.trainPoints,
-                                          trainTime: train.trainTime,
-
-                                          travelPoints:
-                                            tourDetails.trainTourPoints,
-                                          travelTime: train.travelTime,
-
-                                          trainAvailableDays:
-                                            train.availableDays,
-
-                                          trainClass: type.class,
-                                          trainPrice: type.price,
-                                        }));
-                                        console.log(tourDetails, "all details");
-                                        router.push(
-                                          "/journey-on-rails/summary"
-                                        );
-                                      }}
-                                    />
+                                    <BiSolidRightArrow className="cursor-pointer" />
                                   </div>
                                 </div>
                               ))}

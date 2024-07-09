@@ -309,7 +309,7 @@ const TrainSummary = () => {
                                 filterDate={allowedDates}
                                 selected={startDate}
                                 onChange={(date) => setStartDate(date)}
-                                className="xs:w-[250px] w-[300px] border-none shadow-md sm:text-[14px]"
+                                className="xs:w-[250px] xxs:w-[300px] w-[260px] border-none shadow-md sm:text-[14px]"
                               />
                             </div>
                           </div>

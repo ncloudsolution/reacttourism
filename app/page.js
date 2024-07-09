@@ -2,7 +2,7 @@ import AboutSrilanka from "@/components/AboutSrilanka";
 import AboutUs from "@/components/AboutUs";
 import Activities from "@/components/Activities";
 import MainTab from "@/components/MainTab";
-import MainMapConfigs from "@/components/Map/PointToPointMap";
+import PlanYourOwnTripHome from "@/components/PlanYourOwnTripHome";
 
 import TourSlider from "@/components/TourSlider";
 
@@ -18,6 +18,10 @@ export default function Home() {
 
       <div className="xs:my-20 xxs:my-10 my-5">
         <AboutSrilanka />
+      </div>
+
+      <div className="xs:my-20 xxs:my-10 my-5">
+        <PlanYourOwnTripHome />
       </div>
 
       <div className="my-5">
