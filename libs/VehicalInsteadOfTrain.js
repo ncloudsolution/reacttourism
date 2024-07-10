@@ -67,6 +67,15 @@ export function vehicalInsteadOfTrain(travelpoints) {
         distance: "116 km",
       };
       break;
+    case "Kandy to Colombo":
+      newDistanceX = 122;
+      otherDataX = {
+        origin: "Railway Station - Kandy",
+        destination: "Colombo Fort Railway Station",
+        duration: "3 hours 17 mins",
+        distance: "122 km",
+      };
+      break;
     //starting from nanu oya
     case "Nanu Oya to Ella":
       newDistanceX = 61;
@@ -86,6 +95,24 @@ export function vehicalInsteadOfTrain(travelpoints) {
         distance: "62 km",
       };
       break;
+    case "Nanu Oya to Colombo":
+      newDistanceX = 163;
+      otherDataX = {
+        origin: "Nanu Oya Railway Station",
+        destination: "Colombo Fort Railway Station",
+        duration: "4 hours 41 mins",
+        distance: "163 km",
+      };
+      break;
+    case "Nanu Oya to Kandy":
+      newDistanceX = 80;
+      otherDataX = {
+        origin: "Nanu Oya Railway Station",
+        destination: "Railway Station - Kandy",
+        duration: "2 hours 50 mins",
+        distance: "80 km",
+      };
+      break;
     //starting from ella
     case "Ella to Badulla":
       newDistanceX = 25;
@@ -94,6 +121,33 @@ export function vehicalInsteadOfTrain(travelpoints) {
         destination: "Badulla Railway Station",
         duration: "47 mins",
         distance: "25 km",
+      };
+      break;
+    case "Ella to Colombo":
+      newDistanceX = 195;
+      otherDataX = {
+        origin: "Railway Station - Ella",
+        destination: "Colombo Fort Railway Station",
+        duration: "5 hours 16 mins",
+        distance: "195 km",
+      };
+      break;
+    case "Ella to Kandy":
+      newDistanceX = 136;
+      otherDataX = {
+        origin: "Railway Station - Ella",
+        destination: "Railway Station - Kandy",
+        duration: "3 hours 25 mins",
+        distance: "136 km",
+      };
+      break;
+    case "Ella to Nanu Oya":
+      newDistanceX = 61;
+      otherDataX = {
+        origin: "Railway Station - Ella",
+        destination: "Nanu Oya Railway Station",
+        duration: "2 hours 5 mins",
+        distance: "61 km",
       };
       break;
     //starting from badulla
@@ -131,63 +185,6 @@ export function vehicalInsteadOfTrain(travelpoints) {
         destination: "Colombo Fort Railway Station",
         duration: "5 hours 45 mins",
         distance: "213 km",
-      };
-      break;
-    //starting from ella
-    case "Ella to Colombo":
-      newDistanceX = 195;
-      otherDataX = {
-        origin: "Railway Station - Ella",
-        destination: "Colombo Fort Railway Station",
-        duration: "5 hours 16 mins",
-        distance: "195 km",
-      };
-      break;
-    case "Ella to Kandy":
-      newDistanceX = 136;
-      otherDataX = {
-        origin: "Railway Station - Ella",
-        destination: "Railway Station - Kandy",
-        duration: "3 hours 25 mins",
-        distance: "136 km",
-      };
-      break;
-    case "Ella to Nanu Oya":
-      newDistanceX = 61;
-      otherDataX = {
-        origin: "Railway Station - Ella",
-        destination: "Nanu Oya Railway Station",
-        duration: "2 hours 5 mins",
-        distance: "61 km",
-      };
-      break;
-    //starting from nanu oya
-    case "Nanu Oya to Colombo":
-      newDistanceX = 163;
-      otherDataX = {
-        origin: "Nanu Oya Railway Station",
-        destination: "Colombo Fort Railway Station",
-        duration: "4 hours 41 mins",
-        distance: "163 km",
-      };
-      break;
-    case "Nanu Oya to Kandy":
-      newDistanceX = 80;
-      otherDataX = {
-        origin: "Nanu Oya Railway Station",
-        destination: "Railway Station - Kandy",
-        duration: "2 hours 50 mins",
-        distance: "80 km",
-      };
-      break;
-    //starting from kandy
-    case "Kandy to Colombo":
-      newDistanceX = 122;
-      otherDataX = {
-        origin: "Railway Station - Kandy",
-        destination: "Colombo Fort Railway Station",
-        duration: "3 hours 17 mins",
-        distance: "122 km",
       };
       break;
 
