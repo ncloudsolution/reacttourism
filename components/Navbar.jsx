@@ -28,8 +28,6 @@ function NavBar() {
   const [mobilenavbar, setMobileNavbar] = useState(false);
   const [isServicesActive, setIsServicesActive] = useState(false);
 
-  console.log(windowWidth, "winwidth");
-
   useEffect(() => {
     if (windowWidth >= 768) {
       setMobileNavbar(false);

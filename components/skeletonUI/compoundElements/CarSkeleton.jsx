@@ -1,6 +1,4 @@
 import Image from "next/image";
-import car from "@/public/Vehicles/sportscar.png";
-import car2 from "@/public/Vehicles/sportscar2.png";
 import car3 from "@/public/Vehicles/optnewcar.png";
 import React from "react";
 

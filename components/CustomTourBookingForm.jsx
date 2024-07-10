@@ -4,15 +4,12 @@ import React, { useContext, useRef, useState } from "react";
 import Processing from "./loaders&Responses/Processing";
 import SuccessSubmission from "./loaders&Responses/SuccessSubmission";
 import FailedSubmission from "./loaders&Responses/FailedSubmission";
-import CurrencyFullBar from "./CurrencyFullBar";
-import CustomDayTourDatePicker from "./CustomDayTourDatePicker";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import CustomTourDatePicker from "./CustomTourDatePicker";
 import CustomHotelDropDown from "./standalone/CustomHotelDropDown";
 import CheckBoxContainer from "./CheckBoxContainer";
 import RadioBtnContainer from "./RadioBtnContainer";
-import OwnerEmail from "./emailTemplates/OwnerEmail";
 import success from "@/public/Others/successImgEmail.jpg";
 import { GetCustomTourCheckedItems } from "@/libs/JsonDataCatching";
 import customTourPlaces from "@/data/customTourPlaces.json";
@@ -69,7 +66,7 @@ const CustomTourBookingForm = ({ children }) => {
     });
 
     setIsLoading(true);
-    console.log("fine");
+
     setSubmitError("");
 
     const customTourDetails = {
@@ -93,8 +90,6 @@ const CustomTourBookingForm = ({ children }) => {
       specialRequest: SpecialRef.current.value,
     };
 
-    console.log(customTourDetails);
-
     const formData = new FormData();
     formData.append("allDataBundle", JSON.stringify(customTourDetails));
 
@@ -104,12 +99,9 @@ const CustomTourBookingForm = ({ children }) => {
         body: formData, // FormData will be sent as `multipart/form-data`
       });
       const result = await response.json();
-      console.log(result);
 
       setIsLoading(false); // Stop loading
       setResponseMessage(result.message); // Set the message from the server
-
-      console.log("msg send");
     } catch (error) {
       console.error("Error:", error);
 
@@ -134,10 +126,6 @@ const CustomTourBookingForm = ({ children }) => {
       pageTwoToken: false,
       pageThreeToken: false,
     });
-
-    console.log(tourDetails.selectedHotel),
-      console.log(tourDetails.selectedMealOption),
-      console.log(tourDetails.checkedPlaces);
   };
   return (
     <div className="mt-0 mb-4">

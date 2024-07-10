@@ -2,7 +2,6 @@
 import { TourContext } from "@/context/TourContextProvider";
 import { GetTimeSlot } from "@/libs/JsonDataCatching";
 import React, { useContext, useState, useEffect } from "react";
-import { IoIosDoneAll } from "react-icons/io";
 
 const DayTripTimer = ({ title }) => {
   // const timeSlots = ["6.00 AM", "6.30 AM", "7.00 AM", "7.30 AM"];
@@ -28,7 +27,6 @@ const DayTripTimer = ({ title }) => {
     settimeSlotsArray(timeSlotsValue);
     const size = getWidthClass(timeSlotsValue.length);
     setClassName(size);
-    console.log("heeeellll0");
   }, [title]);
 
   useEffect(() => {

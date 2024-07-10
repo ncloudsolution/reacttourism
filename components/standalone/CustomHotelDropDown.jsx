@@ -30,9 +30,7 @@ const CustomHotelDropDown = () => {
     };
   }, [open]);
 
-  useEffect(() => {
-    console.log(tourDetails.selectedHotel, "selected hotel");
-  }, [tourDetails]);
+  useEffect(() => {}, [tourDetails]);
 
   //function over
   return (

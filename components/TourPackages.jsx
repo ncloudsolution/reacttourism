@@ -35,8 +35,6 @@ const TourPackages = () => {
 
   const [finalFilterdArray, setFinalFilterdArray] = useState([...tourPackage]);
 
-  console.log(finalFilterdArray);
-
   const [isClickedPrice, setIsClickedPrice] = useState(false);
   const PriceRef = useRef();
 
@@ -63,8 +61,6 @@ const TourPackages = () => {
 
   //use for selctive hour range instant ui update and initial rendering
   useEffect(() => {
-    console.log(`Min Duration: ${durationMinVal}`);
-    console.log(`Max Duration: ${durationMaxVal}`);
     const SelectiveMinMaxDurationValue = SelectiveMinMaxDurationforTourPackage(
       durationMinVal,
       durationMaxVal
@@ -86,8 +82,6 @@ const TourPackages = () => {
     setTimeout(() => {
       setIsClickedPrice(false);
     }, 100);
-
-    console.log("low to high");
   };
 
   const handlePriceHighToLow = () => {
@@ -96,8 +90,6 @@ const TourPackages = () => {
     setTimeout(() => {
       setIsClickedPrice(false);
     }, 100);
-
-    console.log("high to low");
   };
 
   const handleSubmitRange = (e) => {
@@ -110,9 +102,6 @@ const TourPackages = () => {
     );
     setFinalFilterdArray(priceRangeValue);
     setIsClickedPrice(false);
-    console.log(minVal, "min val");
-    console.log(tourDetails.conversionRate, "rateX");
-    console.log(minVal * tourDetails.conversionRate, "minval");
   };
 
   return (

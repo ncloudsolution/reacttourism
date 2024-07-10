@@ -5,7 +5,6 @@ import AirportMap from "./Map/AirportMap";
 import TrainMap from "./Map/TrainMap";
 import CarSkeleton from "./skeletonUI/compoundElements/CarSkeleton";
 import { useJsApiLoader } from "@react-google-maps/api";
-import DayTrips from "./DayTrips";
 import Link from "next/link";
 
 import { RiPinDistanceFill } from "react-icons/ri";
@@ -15,8 +14,6 @@ import { IoCarSportSharp } from "react-icons/io5";
 import Hierarchy from "./standalone/Hierarchy";
 import { BsCoin } from "react-icons/bs";
 
-import { SetHighwayCharge } from "@/libs/HighwayFair";
-import CustomCurrencyDropDown from "./standalone/CustomCurrencyDropDown";
 import CurrencyTab from "./standalone/CurrencyTab";
 import { TourContext } from "@/context/TourContextProvider";
 
@@ -61,7 +58,6 @@ const MainTab = () => {
       </>
     );
   }
-  console.log(isLoaded, "is loaded 2");
 
   const handlePointToPoint = () => {
     setIsPointToPointClicked(true);
@@ -92,7 +88,7 @@ const MainTab = () => {
   };
 
   // const hi = SetHighwayCharge("A", "Athurugiriya");
-  // console.log(hi, "highwaycharge");
+  //
 
   return (
     <>

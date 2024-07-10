@@ -30,9 +30,7 @@ const CustomTrainDropDown = () => {
     };
   }, [open]);
 
-  useEffect(() => {
-    console.log(tourDetails.trainTourPoints, "train drop down component");
-  }, [tourDetails]);
+  useEffect(() => {}, [tourDetails]);
 
   //function over
   return (

@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import bgimage from "@/public/AboutSl/sl4.png";
 import srilanka2 from "@/public/AboutSl/sl2.jpg";
-import srilanka4 from "@/public/AboutSl/sl6.png";
 import text from "@/data/text.json";
 import Title from "./standalone/Title";
 

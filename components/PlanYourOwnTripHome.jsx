@@ -26,7 +26,7 @@ function PlanYourOwnTripHome() {
               <Title title={"Plan Your Own Trip"} />
             </div>
 
-            <div className="w-full lg:w-1/2 flex lg:justify-end justify-center ">
+            <div className="w-full lg:w-1/2 flex lg:justify-end justify-center">
               <Image
                 className=" my-7 lg:hidden lg:mb-0 w-[400px] 2xl:w-[500px] border-2 border-white rounded-md p-6 h-auto overflow-hidden transition-transform duration-500 ease-in-out transform hover:scale-105"
                 src={calander}

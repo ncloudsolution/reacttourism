@@ -31,7 +31,6 @@ const ContactUsForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(sumCaptchaValue);
 
     if (
       nameRef.current.value === "" ||
@@ -55,7 +54,7 @@ const ContactUsForm = () => {
     });
 
     setIsLoading(true);
-    console.log("fine");
+
     setSubmitError("");
 
     const emailText = `Reach to Us:
@@ -84,7 +83,7 @@ const ContactUsForm = () => {
         body: formData, // FormData will be sent as `multipart/form-data`
       });
       const result = await response.json();
-      console.log(result);
+
       //alert(result.message);
       setIsLoading(false); // Stop loading
       setResponseMessage(result.message); // Set the message from the server
@@ -92,7 +91,6 @@ const ContactUsForm = () => {
       // setTimeout(() => {
       //   setResponseMessage(false);
       // }, 2000);
-      console.log("msg send");
     } catch (error) {
       console.error("Error:", error);
       // alert("Failed to send the file.");

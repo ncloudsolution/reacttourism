@@ -1,8 +1,6 @@
 "use client";
 import {
-  useJsApiLoader,
   GoogleMap,
-  Marker,
   Autocomplete,
   DirectionsRenderer,
 } from "@react-google-maps/api";
@@ -15,9 +13,7 @@ import { SelectVehiclesList } from "@/libs/calculations";
 import { TourContext } from "@/context/TourContextProvider";
 import { RetrunTimeValidity, StartTimeValidity } from "@/libs/TimeValidity";
 
-import CarSkeleton from "../skeletonUI/compoundElements/CarSkeleton";
 import CustomDatePicker from "../CustomDatePicker";
-import ContextCheckerComp from "../TourSummary";
 
 import { IoIosCloseCircle } from "react-icons/io";
 import { RiPinDistanceFill } from "react-icons/ri";
@@ -67,7 +63,7 @@ const PointToPointMap = ({ children }) => {
 
   const [returnDate, setReturnDate] = useState(new Date());
 
-  // console.log(isLoaded, "is loaded 1");
+  //
 
   // const [showSkeleton, setShowSkeleton] = useState(true);
   // useEffect(() => {
@@ -84,7 +80,7 @@ const PointToPointMap = ({ children }) => {
   //     </>
   //   );
   // }
-  // console.log(isLoaded, "is loaded 2");
+  //
 
   async function calculateRoute() {
     if (
@@ -124,8 +120,6 @@ const PointToPointMap = ({ children }) => {
       );
       setSelectedVehiclesList(selectedVehiclesListValue);
 
-      console.log(Math.ceil(results.routes[0].legs[0].distance.value / 1000));
-
       if (returnTour) {
         const ValidReturnTime = RetrunTimeValidity(
           startDate.getTime() / (1000 * 60),
@@ -139,13 +133,10 @@ const PointToPointMap = ({ children }) => {
         top: 300, // Scroll down by 200px
         behavior: "smooth", // Smooth scrolling
       });
-      console.log(ValidReturnTime, "RETURN VALID");
     } catch (error) {
       console.error("Error occurred while calculating route:", error);
       // Handle error as needed
     }
-
-    console.log(durationForCalc, "calc");
   }
 
   function clearRoute() {
@@ -362,8 +353,7 @@ const PointToPointMap = ({ children }) => {
                         <button
                           className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                           onClick={() => {
-                            console.log(startDate, "date");
-                            //console.log(vehicle.price);
+                            //
                             setTourDetails((prevTourDetails) => ({
                               ...prevTourDetails,
                               tourType: "p2p",
@@ -402,12 +392,7 @@ const PointToPointMap = ({ children }) => {
                               duration: duration,
                               pageTwoToken: true,
                             }));
-                            console.log(
-                              "Conversion rate:",
-                              tourDetails.conversionRate
-                            );
-                            console.log("Vehicle price:", vehicle.price);
-                            console.log("redirect");
+
                             router.push("/tour-booking");
                           }}
                         >

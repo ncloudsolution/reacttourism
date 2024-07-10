@@ -98,4 +98,4 @@ export default TourPackagePricingAlgorithm;
 
 // const myprice = DayTripPricingAlgorithm(75.05, 8, 3);
 
-// console.log(myprice);
+//

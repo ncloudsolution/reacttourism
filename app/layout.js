@@ -5,7 +5,6 @@ import AbsoluteFooter from "@/components/AbsoluteFooter";
 import NavBar from "@/components/Navbar";
 
 import TourContextProvider from "../context/TourContextProvider";
-import CustomCurrencyDropDown from "@/components/standalone/CustomCurrencyDropDown";
 import UpperFooter from "@/components/UpperFooter";
 
 import Script from "next/script";

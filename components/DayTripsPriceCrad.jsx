@@ -5,7 +5,6 @@ import { TourContext } from "@/context/TourContextProvider";
 const DayTripsPriceCrad = ({ initialPrice, discountedPrice }) => {
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
-  console.log(typeof discountedPrice, "dis");
   return (
     <div className="border-2 border-transparent xs:px-8 px-4 xs:pt-8 pt-5  rounded-lg">
       <div className="flex gap-3 ">

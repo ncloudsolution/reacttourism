@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { TourContext } from "../context/TourContextProvider";
 import Image from "next/image";
 
@@ -151,7 +151,7 @@ Duration: ${tourDetails.duration}`;
         body: formData, // FormData will be sent as `multipart/form-data`
       });
       const result = await response.json();
-      console.log(result);
+
       //alert(result.message);
       setIsLoading(false); // Stop loading
       setResponseMessage(result.message); // Set the message from the server
@@ -159,8 +159,6 @@ Duration: ${tourDetails.duration}`;
       // setTimeout(() => {
       //   router.push("/"); // Redirect to the homepage after 2 seconds
       // }, 2000);
-
-      console.log("msg send");
     } catch (error) {
       console.error("Error:", error);
       // alert("Failed to send the file.");
