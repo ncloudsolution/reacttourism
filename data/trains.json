@@ -12,17 +12,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 6000
           }
         ]
       },
@@ -36,17 +36,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
@@ -65,17 +65,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 7000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 5000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 4000
+            "price": 8000
           }
         ]
       },
@@ -89,17 +89,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -118,17 +118,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 8000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 5000
+            "price": 10000
           }
         ]
       },
@@ -142,17 +142,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -171,17 +171,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 8000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 5000
+            "price": 10000
           }
         ]
       },
@@ -195,17 +195,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -225,17 +225,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 8000
           }
         ]
       }
@@ -254,17 +254,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -283,17 +283,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 10000
           }
         ]
       }
@@ -312,17 +312,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 9000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
@@ -341,17 +341,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -370,17 +370,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 2000
+            "price": 10000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 7000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1000
+            "price": 5000
           }
         ]
       }
@@ -400,17 +400,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 2000
+            "price": 10000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 7000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1000
+            "price": 5000
           }
         ]
       }
@@ -429,17 +429,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 7000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 5000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 4000
+            "price": 8000
           }
         ]
       },
@@ -453,17 +453,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -482,17 +482,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 8000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 5000
+            "price": 10000
           }
         ]
       },
@@ -506,17 +506,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -535,17 +535,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 8000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 5000
+            "price": 10000
           }
         ]
       },
@@ -559,17 +559,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -588,17 +588,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
@@ -617,17 +617,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -646,17 +646,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 15000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -675,17 +675,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
@@ -704,17 +704,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 6000
           }
         ]
       }
@@ -733,17 +733,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
