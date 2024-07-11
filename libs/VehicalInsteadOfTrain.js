@@ -150,7 +150,9 @@ export function vehicalInsteadOfTrain(travelpoints) {
         distance: "61 km",
       };
       break;
-    //starting from badulla
+      //starting from badu
+
+      lla;
     case "Badulla to Ella":
       newDistanceX = 20;
       otherDataX = {

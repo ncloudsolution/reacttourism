@@ -6,6 +6,8 @@ export const metadata = {
   title: "Custom Tour Package",
   description:
     "Discover tailored travel experiences with our custom tour packages. Book your dream vacation designed specifically to match your unique preferences and interests. Enjoy personalized itineraries, exclusive destinations, and exceptional service, ensuring a memorable journey. Start planning your perfect getaway today",
+  keywords:
+    "book-own-tour, make-my-trip, make_own-trip, plan-your-own-trip, sri_lanka_vacation_tours_packeges, holiday, book-your-trip, tours, my-trip, srilanka _tour_packege, tour-booking-sri_lanka, colombo-bandaranaike-international, airport-tranfer-sri_lanka",
 };
 
 const page = () => {

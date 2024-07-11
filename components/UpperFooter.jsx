@@ -44,7 +44,10 @@ const UpperFooter = () => {
               </div>
 
               <div className="flex flex-col text-center mb-[40px] ">
-                <Link href="/airport-p&d" className="my-2 hover:text-white">
+                <Link
+                  href="/airport-pickup-and-drop"
+                  className="my-2 hover:text-white"
+                >
                   Airport Transport
                 </Link>
                 <Link href="/point-to-point" className="hover:text-white">
