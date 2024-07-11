@@ -12,17 +12,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 6000
           }
         ]
       },
@@ -36,17 +36,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
@@ -65,17 +65,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 7000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 5000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 4000
+            "price": 8000
           }
         ]
       },
@@ -89,17 +89,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -118,17 +118,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 8000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 5000
+            "price": 10000
           }
         ]
       },
@@ -142,17 +142,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -171,17 +171,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 8000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 5000
+            "price": 10000
           }
         ]
       },
@@ -195,17 +195,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -216,6 +216,30 @@
     "travelPoints": "Kandy to Nanu Oya",
     "trainList": [
       {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["09:40", "13:51"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 12000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 10000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 8000
+          }
+        ]
+      },
+      {
         "trainName": "1041 Ella Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
         "trainTime": ["05:30", "16:01"],
@@ -225,17 +249,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 8000
           }
         ]
       }
@@ -244,6 +268,30 @@
   {
     "travelPoints": "Kandy to Ella",
     "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["09:40", "16:36"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 14000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 10000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 8000
+          }
+        ]
+      },
       {
         "trainName": "1041 Ella Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
@@ -254,17 +302,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -273,6 +321,30 @@
   {
     "travelPoints": "Kandy to Badulla",
     "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["09:40", "17:37"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 16000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 12000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 10000
+          }
+        ]
+      },
       {
         "trainName": "1041 Ella Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
@@ -283,17 +355,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 10000
           }
         ]
       }
@@ -302,6 +374,30 @@
   {
     "travelPoints": "Nanu Oya to Ella",
     "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["13:53", "16:36"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 12000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 9000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 6000
+          }
+        ]
+      },
       {
         "trainName": "1041 Ella Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
@@ -312,17 +408,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 9000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
@@ -331,6 +427,30 @@
   {
     "travelPoints": "Nanu Oya to Badulla",
     "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["13:53", "17:37"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 14000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 10000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 8000
+          }
+        ]
+      },
       {
         "trainName": "1041 Ella Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
@@ -341,17 +461,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -360,6 +480,30 @@
   {
     "travelPoints": "Ella to Badulla",
     "trainList": [
+      {
+        "trainName": "1001 Dunhinda Odyssey",
+        "trainPoints": ["Colombo Fort", "Badulla"],
+        "trainTime": ["06:30", "17:37"],
+        "travelTime": ["16:36", "17:37"],
+        "availableDays": ["Sun", "Tue", "Fri"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 10000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 7000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 5000
+          }
+        ]
+      },
       {
         "trainName": "1041 Ella Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
@@ -370,17 +514,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 2000
+            "price": 10000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 7000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1000
+            "price": 5000
           }
         ]
       }
@@ -391,6 +535,30 @@
     "travelPoints": "Badulla to Ella",
     "trainList": [
       {
+        "trainName": "1002 Dunhinda Odyssey",
+        "trainPoints": ["Badulla", "Colombo Fort"],
+        "trainTime": ["08:00", "18:51"],
+        "travelTime": ["08:00", "08:57"],
+        "availableDays": ["Mon", "Wed", "Sat"],
+        "types": [
+          {
+            "class": "Air Conditioned First Class Reserved",
+            "seats": 176,
+            "price": 10000
+          },
+          {
+            "class": "Second Class Reserved",
+            "seats": 114,
+            "price": 7000
+          },
+          {
+            "class": "Third Class Reserved",
+            "seats": 39,
+            "price": 5000
+          }
+        ]
+      },
+      {
         "trainName": "1042 Ella Odyssey",
         "trainPoints": ["Colombo Fort", "Badulla"],
         "trainTime": ["09:15", "19:20"],
@@ -400,17 +568,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 2000
+            "price": 10000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 7000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1000
+            "price": 5000
           }
         ]
       }
@@ -429,17 +597,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 7000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 5000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 4000
+            "price": 8000
           }
         ]
       },
@@ -453,17 +621,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -482,17 +650,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 8000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 5000
+            "price": 10000
           }
         ]
       },
@@ -506,17 +674,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -535,17 +703,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 8000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 6000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 5000
+            "price": 10000
           }
         ]
       },
@@ -559,17 +727,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 16000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -588,17 +756,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
@@ -617,17 +785,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 8000
           }
         ]
       }
@@ -646,17 +814,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 5000
+            "price": 15000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 4000
+            "price": 12000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 3000
+            "price": 10000
           }
         ]
       }
@@ -675,17 +843,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
@@ -704,17 +872,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 4000
+            "price": 14000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 3000
+            "price": 10000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 2000
+            "price": 6000
           }
         ]
       }
@@ -733,17 +901,17 @@
           {
             "class": "Air Conditioned First Class Reserved",
             "seats": 176,
-            "price": 3000
+            "price": 12000
           },
           {
             "class": "Second Class Reserved",
             "seats": 114,
-            "price": 2000
+            "price": 8000
           },
           {
             "class": "Third Class Reserved",
             "seats": 39,
-            "price": 1500
+            "price": 6000
           }
         ]
       }
