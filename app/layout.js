@@ -20,6 +20,7 @@ export const metadata = {
   },
   description:
     "Discover the beauty of Sri Lanka with our comprehensive taxi booking services. Whether you need airport transfers, point-to-point transfers, arranged tour packages, custom tour packages, or day tours, we've got you covered. Explore the cultural heritage, scenic landscapes, and vibrant cities of Sri Lanka with our reliable and efficient transportation services. We also offer train bookings and a wide range of other services to ensure a seamless and enjoyable travel experience. Your journey in Sri Lanka begins with us.",
+  icons: { icon: ["/favicon.ico"] },
 };
 
 export default function RootLayout({ children }) {
