@@ -11,6 +11,7 @@ export default function TourContextProvider({ children }) {
     conversionRate: 1,
     pageTwoToken: false,
     pageThreeToken: false,
+    destinationpage: false,
   });
   return (
     <TourContext.Provider value={{ tourDetails, setTourDetails }}>

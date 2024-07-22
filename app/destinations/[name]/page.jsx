@@ -16,6 +16,7 @@ import { TourContext } from "@/context/TourContextProvider";
 import { IoCaretBack } from "react-icons/io5";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { IoCarSport } from "react-icons/io5";
 
 const DestinationComp = ({ params }) => {
   const selectedLabel = params.name;
@@ -24,6 +25,7 @@ const DestinationComp = ({ params }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const places = [
     {
+      btnName: "Yala",
       urlLabel: "yala-national-park",
       img: yala,
       title: "Yala National Park",
@@ -31,6 +33,7 @@ const DestinationComp = ({ params }) => {
         "Yala National Park in southeastern Sri Lanka is famous for its biodiversity and abundant wildlife, including leopards, elephants, sloth bears, and over 200 bird species. Covering 979 square kilometers, it features diverse landscapes like jungles, grasslands, lagoons, and beaches, making it a top destination for nature lovers.",
     },
     {
+      btnName: "Sigiriya",
       urlLabel: "sigiriya",
       img: sigiriya,
       title: "Sigiriya",
@@ -38,6 +41,7 @@ const DestinationComp = ({ params }) => {
         "Sigiriya, known as the 'Lion Rock,' is an ancient fortress in Sri Lanka's Matale District. Constructed by King Kasyapa in the 5th century, it boasts frescoes, gardens, and an iconic lion staircase. This UNESCO World Heritage Site is celebrated for its historical significance, stunning views, and remarkable engineering, attracting numerous visitors.",
     },
     {
+      btnName: "Kandy",
       urlLabel: "kandy",
       img: kandy,
       title: "Kandy",
@@ -45,6 +49,7 @@ const DestinationComp = ({ params }) => {
         "Kandy, a UNESCO World Heritage Site in Sri Lanka, hosts the sacred Temple of the Tooth Relic. Surrounded by lush hills, it features colonial architecture, Kandyan arts, and Kandy Lake. The annual Esala Perahera ceremony, a vibrant procession with dancers and decorated elephants, celebrates the Tooth Relic",
     },
     {
+      btnName: "Ella",
       urlLabel: "ella",
       img: ella,
       title: "Ella",
@@ -52,6 +57,7 @@ const DestinationComp = ({ params }) => {
         "Ella, a picturesque town in Sri Lanka's hill country, is renowned for its breathtaking landscapes and serene atmosphere. Surrounded by tea plantations, Ella offers stunning views from spots like Ella Rock and Little Adam's Peak. The Nine Arches Bridge and Ravana Falls add to its charm, making it a popular destination for nature lovers and hikers.",
     },
     {
+      btnName: "Galle",
       urlLabel: "galle",
       img: galle,
       title: "Galle",
@@ -59,6 +65,7 @@ const DestinationComp = ({ params }) => {
         "Galle, a historic city on Sri Lanka's southwestern coast, is famed for its well-preserved colonial architecture and rich history. The Galle Fort, a UNESCO World Heritage Site, features cobblestone streets, Dutch-era buildings, and museums. Scenic beaches, boutique hotels, and vibrant markets enhance Galle's charm, making it a must-visit destination.",
     },
     {
+      btnName: "Nuwara Eliya",
       urlLabel: "nuwara-eliya",
       img: nuwaraeliya,
       title: "Nuwara Eliya",
@@ -66,6 +73,7 @@ const DestinationComp = ({ params }) => {
         "Nuwara Eliya, often called 'Little England,' is a charming town in Sri Lanka's central highlands. Known for its cool climate and tea plantations, it features colonial architecture, beautiful gardens, and attractions like Horton Plains, Gregory Lake, and waterfalls such as St. Clair's and Devon Falls.",
     },
     {
+      btnName: "Mirissa",
       urlLabel: "mirissa",
       img: mirissa,
       title: "Mirissa",
@@ -73,6 +81,7 @@ const DestinationComp = ({ params }) => {
         "Mirissa's charm lies on Sri Lanka's south coast. Beaches fringed with palms beckon sunbathers, while fresh catches tempt seafood lovers. Boat trips offer a glimpse of majestic whales and playful dolphins breaching the crystal-clear waters. This delightful blend of relaxation and adventure awaits.",
     },
     {
+      btnName: "Polonnaruwa",
       urlLabel: "polonnaruwa",
       img: polonnaruwa,
       title: "Polonnaruwa",
@@ -80,6 +89,7 @@ const DestinationComp = ({ params }) => {
         "Nestled in Sri Lanka's heart, Polonnaruwa whispers tales of a bygone era. Ancient ruins, like the colossal Gal Vihara statues and the intricately carved Vatadage, stand as testaments to a glorious kingdom.  Wander through royal palaces and climb the towering stupa, marveling at the engineering feats of the past.  Polonnaruwa offers a glimpse into Sri Lanka's rich history, where nature and architecture intertwine.",
     },
     {
+      btnName: "Arugambay",
       urlLabel: "arugambay",
       img: arugambay,
       title: "Arugambay",
@@ -87,6 +97,7 @@ const DestinationComp = ({ params }) => {
         "Arugam Bay, Sri Lanka's east coast gem, is a surfer's paradise. Uncrowded beaches with rolling waves and consistent winds attract surfers worldwide. Nature enthusiasts can spot wildlife in nearby Lahugala National Park, while lagoons offer opportunities for kayaking and boat safaris. Arugam Bay's charm lies in its laid-back atmosphere and vibrant surf culture.",
     },
     {
+      btnName: "Hortain Plains",
       urlLabel: "hortain-plains",
       img: hortainplains,
       title: "Hortan Plains",
@@ -95,8 +106,12 @@ const DestinationComp = ({ params }) => {
     },
   ];
 
+  const filteredIndex = places.findIndex(
+    (pla) => pla.urlLabel === selectedLabel
+  );
+
   const [indexCount, setIndexCount] = useState(
-    tourDetails.placesImagePropIndex || 0
+    filteredIndex || tourDetails.placesImagePropIndex || 0
   );
   const [selectedEntry, setSelectedEntry] = useState(places[indexCount]);
 
@@ -131,6 +146,16 @@ const DestinationComp = ({ params }) => {
         ].urlLabel
       }`
     );
+  };
+
+  const taxiHandleClick = () => {
+    setTourDetails((prevTourDetails) => ({
+      ...prevTourDetails,
+      destinationpage: true,
+      destination: selectedEntry.title,
+    }));
+
+    router.push("/point-to-point");
   };
 
   return (
@@ -179,11 +204,28 @@ const DestinationComp = ({ params }) => {
               </div>
 
               <div
-                onClick={handleClick}
-                className="bg-primary cursor-pointer w-1/2 gap-x-1 2xl:hidden py-2 flex justify-center items-center text-[20px] text-black rounded-md font-semibold"
+                onClick={taxiHandleClick}
+                className="w-full gap-x-3 hidden 2xl:flex justify-center items-center bg-primary  text-black py-2 rounded-md text-[16px] font-semibold cursor-pointer"
               >
-                <div>Next</div>
-                <FaAnglesRight className="text-[20px]" />
+                <div>{`Need a Taxi to ${selectedEntry.btnName}`}</div>
+                <IoCarSport className="text-[24px]" />
+              </div>
+
+              <div className="flex bxs:flex-row-reverse flex-col-reverse w-full gap-3">
+                <div
+                  onClick={handleClick}
+                  className="bg-primary bxs:w-[200px] w-full cursor-pointer gap-x-1 2xl:hidden py-2 flex justify-center items-center text-[16px] text-black rounded-md font-semibold"
+                >
+                  <div>Next</div>
+                  <FaAnglesRight className="text-[16px]" />
+                </div>
+                <div
+                  onClick={taxiHandleClick}
+                  className="w-full px-4  gap-x-3 2xl:hidden flex justify-center items-center bg-primary  text-black py-2 rounded-md text-[16px] font-semibold cursor-pointer"
+                >
+                  <div>{`Need a Taxi to ${selectedEntry.btnName}`}</div>
+                  <IoCarSport className="text-[24px]" />
+                </div>
               </div>
             </div>
           </div>

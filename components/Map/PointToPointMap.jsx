@@ -99,6 +99,11 @@ const PointToPointMap = ({ children }) => {
       return;
     }
 
+    setTourDetails((prevTourDetails) => ({
+      ...prevTourDetails,
+      destinationpage: false,
+    }));
+
     try {
       const directionService = new google.maps.DirectionsService();
       const results = await directionService.route({
@@ -172,6 +177,9 @@ const PointToPointMap = ({ children }) => {
                 <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
                     ref={destinationRef}
+                    defaultValue={
+                      tourDetails.destinationpage ? tourDetails.destination : ""
+                    }
                     placeholder="Destination"
                     type="text"
                     className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black "
