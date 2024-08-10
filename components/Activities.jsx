@@ -10,6 +10,12 @@ import destination7 from "@/public/Destinations/dest7.jpg";
 import destination8 from "@/public/Destinations/dest8.jpg";
 import destination9 from "@/public/Destinations/dest9.jpg";
 import destination10 from "@/public/Destinations/dest10.jpg";
+import destination11 from "@/public/Destinations/dest11.jpg";
+import destination12 from "@/public/Destinations/dest12.jpg";
+import destination13 from "@/public/Destinations/dest13.jpg";
+import destination14 from "@/public/Destinations/dest14.jpg";
+import destination15 from "@/public/Destinations/dest15.jpg";
+import destination16 from "@/public/Destinations/dest16.jpeg";
 
 import text from "@/data/text.json";
 
@@ -22,10 +28,7 @@ const Activity = ({ imageSrc, name, onclickfunc }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   return (
     <>
-      <div
-        className="w-full px-4 sm:w-1/3 lg:1/4 xl:w-1/5"
-        onClick={onclickfunc}
-      >
+      <div className="w-full px-4 sm:w-1/3 xl:w-1/4" onClick={onclickfunc}>
         <div className="mx-auto mb-10 w-full max-w-[370px]">
           <div className="relative overflow-hidden rounded-[20px]">
             <div className="h-[400px] sm:h-[300px] relative transform hover:scale-105 cursor-pointer duration-500 transition-all">
@@ -76,6 +79,36 @@ const Activities = () => {
       imageSrc: destination10,
       urlLabel: "hortain-plains",
     },
+    {
+      name: "Ahangama",
+      imageSrc: destination15,
+      urlLabel: "ahangama",
+    },
+    {
+      name: "Colombo",
+      imageSrc: destination11,
+      urlLabel: "colombo",
+    },
+    {
+      name: "Negombo",
+      imageSrc: destination12,
+      urlLabel: "negombo",
+    },
+    {
+      name: "Anuradhapura",
+      imageSrc: destination13,
+      urlLabel: "anuradhapura",
+    },
+    {
+      name: "Hikkaduwa",
+      imageSrc: destination14,
+      urlLabel: "hikkaduwa",
+    },
+    {
+      name: "Bentota",
+      imageSrc: destination16,
+      urlLabel: "bentota",
+    },
   ];
   const router = useRouter();
   const textcontent = text[0];
@@ -112,7 +145,7 @@ const Activities = () => {
                   ...prevTourDetails,
                   placesImagePropIndex: index,
                 }));
-                router.push(`/destinations/${place.urlLabel}`);
+                router.push(`/destinations/${place.urlLabel}-taxi-service`);
               }}
             />
           ))}

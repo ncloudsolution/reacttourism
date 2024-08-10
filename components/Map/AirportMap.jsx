@@ -68,6 +68,20 @@ const AirportMap = ({ children }) => {
   const [isPickDisable, setIsPickDisable] = useState(true);
   const [isDropDisable, setIsDropDisable] = useState(false);
 
+  useEffect(() => {
+    if (tourDetails.destinationpage) {
+      setIsPickup(tourDetails.isPickup);
+      setIsDrop(tourDetails.isDrop);
+      originRef.current.value = tourDetails.origin;
+      console.log(tourDetails.origin);
+      destinationRef.current.value =
+        "Bandaranaike International Airport (CMB), Katunayake";
+    } else {
+      originRef.current.value =
+        "Bandaranaike International Airport (CMB), Katunayake";
+    }
+  }, []);
+
   const handlePickup = () => {
     if (isPickup) return;
     setIsPickup(true);
@@ -91,11 +105,6 @@ const AirportMap = ({ children }) => {
     setIsDropDisable(true);
     setIsPickDisable(false);
   };
-
-  useEffect(() => {
-    originRef.current.value =
-      "Bandaranaike International Airport (CMB), Katunayake";
-  }, []);
 
   async function calculateRoute() {
     if (

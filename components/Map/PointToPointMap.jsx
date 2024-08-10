@@ -169,6 +169,7 @@ const PointToPointMap = ({ children }) => {
                   <input
                     ref={originRef}
                     placeholder="Origin"
+                    defaultValue={tourDetails.origin}
                     type="text"
                     className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black"
                   />
@@ -177,9 +178,7 @@ const PointToPointMap = ({ children }) => {
                 <Autocomplete restrictions={{ country: ["lk"] }}>
                   <input
                     ref={destinationRef}
-                    defaultValue={
-                      tourDetails.destinationpage ? tourDetails.destination : ""
-                    }
+                    defaultValue={tourDetails.destination}
                     placeholder="Destination"
                     type="text"
                     className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black "
