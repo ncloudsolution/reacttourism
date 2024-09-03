@@ -5,35 +5,37 @@ import React, { useRef, useState, useEffect } from "react";
 import Stars from "@/components/Stars";
 import Image from "next/image";
 
-import reviews from "@/data/reviews.json";
+// import reviews from "@/data/reviews.json";
 import SliderBtn from "@/components/SliderBtn";
 import useWindowSize from "@/hooks/useWindowSize";
 import Title from "@/components/standalone/Title";
 
-// async function getReviews() {
-//   const apiKey = process.env.GOOGLE_API_KEY;
-//   const placeId = process.env.PLACE_ID;
-//   const res = await fetch(
-//     `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,reviews&key=${apiKey}`,
-//     {
-//       next: {
-//         revalidate: 86400,
-//       },
-//     }
-//   );
-
-//   return res.json();
-// }
-
 const GoogleReviews = () => {
-  //const GoogleReviews = async () => {
-  // const reviewsobject = await getReviews();
-  // const reviewarray = reviewsobject.result.reviews;
-  // console.log(reviewarray);
+  const [windowWidth] = useWindowSize();
+  const [sliderWidth, setSliderWidth] = useState(0);
+  const [mounted, setMounted] = useState(false); // Track component mounting
 
-  const [windowWidth, windowHeight] = useWindowSize();
+  const [reviews, setReviews] = useState([]);
+  const [error, setError] = useState(null);
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID);
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_API_KEY);
+  useEffect(() => {
+    // const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID}&fields=name,reviews&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`;
+    const url = `/api/googlereviews`;
+    console.log(url);
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setReviews(data);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch Google reviews:", error.message);
+        setError(error.message); // Set the error message in state
+      });
+  }, []);
 
-  console.log("customhook", windowWidth);
+  console.log(reviews, "reviews");
 
   const elementRef = useRef(null);
 
@@ -44,6 +46,8 @@ const GoogleReviews = () => {
   };
 
   useEffect(() => {
+    handleResize();
+    setMounted(true); // Set mounted to true when the component mounts
     const resizeObserver = new ResizeObserver(handleResize);
     if (elementRef.current) {
       resizeObserver.observe(elementRef.current);
@@ -51,118 +55,108 @@ const GoogleReviews = () => {
     return () => {
       resizeObserver.disconnect();
     };
-  }, []);
+  }, [windowWidth]);
 
-  const [sliderWidth, setSliderWidth] = useState(0);
-
-  function columnSizeByScreenSize() {
-    if (windowWidth >= 1400) {
+  const columnSizeByScreenSize = () => {
+    if (windowWidth >= 1420) {
       return 3;
     } else if (windowWidth >= 826) {
       return 2;
     } else {
       return 1;
     }
-  }
+  };
 
-  let columnSizebyScreenSizeValue = columnSizeByScreenSize();
-  console.log("column size", columnSizebyScreenSizeValue);
+  const columnSizebyScreenSizeValue = columnSizeByScreenSize();
 
-  function hoppingSize() {
-    return Math.ceil(reviews.length / columnSizebyScreenSizeValue);
-  }
-
-  const hoppingSizeValue = hoppingSize();
+  const hoppingSizeValue = Math.ceil(
+    reviews.length / columnSizebyScreenSizeValue
+  );
 
   const [count, setCount] = useState(0);
-  console.log("count", count);
+
   const leftHandler = () => {
     if (count > 0) {
       setCount(count - 1);
-      console.log(count);
     }
   };
 
   const rightHandler = () => {
     if (count < hoppingSizeValue - 1) {
       setCount(count + 1);
-      console.log(count);
     }
   };
-  // const detectWindowSize = () => {
-  //   setWindowSize({ winWidth: window.innerWidth });
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", detectWindowSize);
-  //   console.log(windowSize);
-  //   return () => {
-  //     window.removeEventListener("resize", detectWindowSize);
-  //   };
-  // }, [windowSize]);
-
-  console.log(columnSizebyScreenSizeValue);
 
   let cal;
-
   switch (true) {
-    case columnSizebyScreenSizeValue == 3:
-      cal = 100;
+    case columnSizebyScreenSizeValue === 3:
+      cal = 132;
+      // cal = 116;
       break;
-    case columnSizebyScreenSizeValue == 2:
-      cal = 65;
+    case columnSizebyScreenSizeValue === 2:
+      cal = 96;
       break;
     default:
-      cal = 59;
+      cal = 77;
   }
 
-  console.log(
-    `w-[${(windowWidth * 0.9 - cal) / columnSizebyScreenSizeValue}px]`
-  );
+  const size = (windowWidth * 0.9 - cal) / columnSizebyScreenSizeValue;
+  // const translationOffset =
+  //   columnSizebyScreenSizeValue === 1 ? 24 * count : 20 * count;
 
-  // const translationOffset = count > 0 ? count * -3 : 0;
-  const translationOffset = count > 0 ? -24 * count : 0;
-  console.log("trans", translationOffset);
+  const translationOffset =
+    // columnSizebyScreenSizeValue != 1 ? 20 * count : 24 * count;
+    columnSizebyScreenSizeValue == 1
+      ? 18.5 * count
+      : columnSizebyScreenSizeValue == 2
+      ? 20 * count
+      : 20 * count;
+  // : 34 * count;
+
+  console.log(sliderWidth);
+
+  // Don't render the actual content until the component has mounted on the client
+  if (!mounted && reviews) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <>
-      <div className="w-full flex flex-col text-center items-center">
-        <Title title={"Our Client’s Reviews"} />
-        <div className="flex items-center justify-center w-full">
-          <div onClick={leftHandler} className="cursor-pointer">
-            <SliderBtn side={"left"} />
-          </div>
+    <div className="w-full flex flex-col text-center items-center px-5">
+      <Title title={"Our Client’s Reviews"} />
+      <div className="flex items-center justify-center w-full">
+        <div onClick={leftHandler} className="cursor-pointer">
+          <SliderBtn side={"left"} />
+        </div>
+
+        <div className="w-[90%] flex p-5 bg-red-400">
           <div
+            className="flex w-full overflow-hidden rounded-xl bg-white py-2"
             ref={elementRef}
-            className="w-[90%]  overflow-hidden flex border-2 border-black p-5 "
           >
-            <div className="py-4 flex gap-5 ">
+            <div className="flex gap-5 bg-white">
               {reviews.map((review, index) => (
-                //{reviewarray.map((review, index) => (
                 <div
                   style={{
                     transform: `translateX(-${
                       count * sliderWidth + translationOffset
                     }px)`,
-                    width: `${
-                      (windowWidth * 0.9 - cal) / columnSizebyScreenSizeValue
-                    }px`,
+                    width: `${size}px`,
                   }}
                   key={index}
-                  className="flex flex-col text-left  border-[1px] border-customGray-600 p-[20px] h-[270px]  rounded-xl xxxs:shadow-xl shadow-lg translate-x-0 transition-all duration-1000 "
+                  className="flex bg-white flex-col border-[1px] border-gray-400 text-left p-[20px] h-[270px] rounded-xl shadow-xl translate-x-0 transition-all duration-1000"
                 >
-                  <div className="flex  items-start">
-                    <div className="rounded-full max-w-[50px] ">
+                  <div className="flex items-start">
+                    <div className="rounded-full max-w-[50px]">
                       <Image
-                        className=""
                         src={review.profile_photo_url}
                         alt=""
                         width={100}
                         height={100}
                       />
                     </div>
-                    <div className="flex flex-col ml-[10px] ">
-                      <div className="font-semibold ">{review.author_name}</div>
-                      <div className="text-customGray-900 ">
+                    <div className="flex flex-col ml-[10px]">
+                      <div className="font-semibold">{review.author_name}</div>
+                      <div className="text-customGray-900">
                         {review.relative_time_description}
                       </div>
                     </div>
@@ -170,23 +164,20 @@ const GoogleReviews = () => {
                   <div>
                     <Stars count={review.rating} />
                   </div>
-                  <div className="flex  break-keep overflow-y-auto scrollbar-thin scrollbar-thumb-customGray-900 scrollbar-track-customGray-400 pr-[10px]">
+                  <div className="flex break-keep overflow-y-auto scrollbar-thin scrollbar-thumb-customGray-900 scrollbar-track-customGray-400 pr-[10px]">
                     {review.text}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div onClick={rightHandler} className="cursor-pointer">
-            <SliderBtn side={"right"} />
-          </div>
+        </div>
+
+        <div onClick={rightHandler} className="cursor-pointer">
+          <SliderBtn side={"right"} />
         </div>
       </div>
-
-      {/* {reviewarray.map((review, index) => (
-        <div key={index}>{review.author_name}</div>
-      ))} */}
-    </>
+    </div>
   );
 };
 
