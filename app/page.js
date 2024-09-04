@@ -1,6 +1,7 @@
 import AboutSrilanka from "@/components/AboutSrilanka";
 import AboutUs from "@/components/AboutUs";
 import Activities from "@/components/Activities";
+import GoogleReviews from "@/components/GoogleReviews";
 import MainTab from "@/components/MainTab";
 import PlanYourOwnTripHome from "@/components/PlanYourOwnTripHome";
 
@@ -29,6 +30,10 @@ export default function Home() {
       </div>
 
       <Activities />
+
+      <div className="my-5">
+        <GoogleReviews />
+      </div>
     </>
   );
 }
