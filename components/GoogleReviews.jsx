@@ -23,7 +23,7 @@ const GoogleReviews = () => {
   console.log(process.env.NEXT_PUBLIC_GOOGLE_API_KEY);
   useEffect(() => {
     // const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID}&fields=name,reviews&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`;
-    const url = `/api/googlereviews`;
+    const url = `https://www.tourbookingsrilanka.com/api/googlereviews`;
     console.log(url);
     fetch(url)
       .then((response) => response.json())
