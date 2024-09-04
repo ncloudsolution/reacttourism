@@ -5,11 +5,10 @@ export async function GET(request) {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data.result.reviews);
+
     return NextResponse.json(data.result.reviews, { status: 200 });
     // response.status(200).json(data.result.reviews);
   } catch (error) {
-    console.log(error, "jkkjokop");
     return NextResponse.json(
       { message: "Failed to fetch data", error: error.message },
       { status: 500 }

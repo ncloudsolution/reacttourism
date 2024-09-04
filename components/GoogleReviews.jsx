@@ -19,25 +19,21 @@ const GoogleReviews = () => {
 
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID);
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_API_KEY);
+
   useEffect(() => {
     // const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID}&fields=name,reviews&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`;
-    const url = `https://www.tourbookingsrilanka.com/api/googlereviews`;
-    console.log(url);
+    const url = `http://localhost:3000/api/googlereviews`;
+
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setReviews(data);
       })
       .catch((error) => {
-        console.error("Failed to fetch Google reviews:", error.message);
+        console.log("Failed to fetch Google reviews:", error.message);
         setError(error.message); // Set the error message in state
       });
   }, []);
-
-  console.log(reviews, "reviews");
 
   const elementRef = useRef(null);
 
@@ -118,12 +114,12 @@ const GoogleReviews = () => {
       : 20 * count;
   // : 34 * count;
 
-  console.log(sliderWidth);
-
   // Don't render the actual content until the component has mounted on the client
-  if (!mounted && reviews) {
+  if (!mounted || reviews.length == 0) {
     return <ReviewLoader />;
   }
+
+  console.log(reviews);
 
   return (
     <div className="w-full flex flex-col text-center items-center px-5 ">
