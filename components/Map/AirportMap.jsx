@@ -73,7 +73,7 @@ const AirportMap = ({ children }) => {
       setIsPickup(tourDetails.isPickup);
       setIsDrop(tourDetails.isDrop);
       originRef.current.value = tourDetails.origin;
-      console.log(tourDetails.origin);
+
       destinationRef.current.value =
         "Bandaranaike International Airport (CMB), Katunayake";
     } else {
