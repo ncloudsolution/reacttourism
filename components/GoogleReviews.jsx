@@ -22,7 +22,7 @@ const GoogleReviews = () => {
 
   useEffect(() => {
     // const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID}&fields=name,reviews&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`;
-    const url = `http://localhost:3000/api/googlereviews`;
+    const url = "api/googlereviews";
 
     fetch(url)
       .then((response) => response.json())
