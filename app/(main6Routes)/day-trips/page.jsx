@@ -3,11 +3,12 @@ import DayTrips from "@/components/DayTrips";
 import React from "react";
 
 export const metadata = {
-  title: "Day Trips",
+  title:
+    "Best Day Tours & City Tours in Sri Lanka: Negombo, Bentota, Colombo, Sigiriya, Kandy - Discounted Prices & Tour Packages Available",
   description:
-    "Discover the best of Sri Lanka with our expertly organized day trips, designed to fit within 1 to 24 hours. Whether you have just an hour to spare or a full day to explore, our curated trips offer a perfect blend of adventure, culture, and relaxation. From visiting iconic landmarks and scenic landscapes to experiencing local cuisine and cultural heritage, each trip is meticulously planned to provide you with a memorable and enriching experience. Enjoy the convenience of our professional guides, comfortable transportation, and thoughtfully crafted itineraries that ensure you make the most of your time. Join us for a day trip and uncover the hidden gems and vibrant spirit of Sri Lanka.",
+    "Discover the best day tours and city tours in Sri Lanka with our expert guides. Explore top destinations, cultural landmarks, and hidden gems. Book your unforgettable Sri Lanka tour today and experience the island’s stunning beauty and rich heritage!",
   keywords:
-    "daytrip, my daytrip, one day trip, asia, trip planner, trip, travel sri lanaka, travel asia, private transfer, transfer, local drivers, sri-lanka-tours, day_trip-excursions, ceylon-day-tours-experiences, tour-packeges, sri_lanka_vacation_tours_packeges, holiday-sri_lanka, colombo-galle_sigiriya-kandy_negombo_ella_nuwaraeliya_mirissa_yala_pinnawala, madu_gaga-river, safari-wild",
+    "Sri Lanka Tour Packages, Sri Lanka Guided Tours, Best Tours in Sri Lanka, Sri Lanka City Sightseeing, Sri Lanka Day Trips, Top City Tours Sri Lanka, Best Day Tours Sri Lanka",
   icons: {
     icon: ["/daytrips.ico"],
   },

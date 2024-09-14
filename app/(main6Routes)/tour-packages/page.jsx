@@ -2,11 +2,12 @@ import TourPackages from "@/components/TourPackages";
 import React from "react";
 
 export const metadata = {
-  title: "Tour Packages",
+  title:
+    "Explore Top Sri Lanka Tour Packages: Best Deals on Adventure, Beach, & Cultural Tours | Book Your Dream Vacation Today!",
   description:
-    "Explore our carefully curated fixed tour packages, designed to offer you the best travel experiences with ease and convenience. These pre-planned itineraries include popular destinations, top attractions, and essential activities, ensuring a hassle-free and enjoyable journey. Perfect for travelers seeking a well-organized trip with no surprises, our fixed tour packages provide excellent value and unforgettable memories",
+    "Discover the best tour packages in Sri Lanka! From breathtaking beach getaways and cultural adventures to wildlife safaris and luxury stays, our expertly crafted itineraries offer something for every traveler. Explore Sri Lanka’s hidden gems and iconic landmarks with us. Book your dream vacation today",
   keywords:
-    "sri_lanka_vacation_tours_packeges, holiday, book-your-trip, tours, my-trip, srilanka _tour_packege, tour-booking-sri_lanka, colombo-bandaranaike-international, airport-tranfer-sri_lanka",
+    "Tour Packages, Travel Experiences, Guided Tours, Top Destinations, Adventure Travel,",
   icons: {
     icon: ["/tourpackages.ico"],
   },
