@@ -3,11 +3,12 @@ import Image from "next/image";
 import man3 from "@/public/Others/man3.jpg";
 
 export const metadata = {
-  title: "Custom Tour Package",
+  title:
+    "Plan Your Sri Lanka Trip: Customize Tours, Transfers & More | Make My Tour | Best Travel Packages & Airport Transfers",
   description:
-    "Discover tailored travel experiences with our custom tour packages. Book your dream vacation designed specifically to match your unique preferences and interests. Enjoy personalized itineraries, exclusive destinations, and exceptional service, ensuring a memorable journey. Start planning your perfect getaway today",
+    "Plan your own trip to Sri Lanka with our expert guide. Discover top attractions, beautiful beaches, and cultural landmarks. Enjoy personalized airport transfers and day tours. Your ideal Sri Lankan adventure starts here!",
   keywords:
-    "book-own-tour, make-my-trip, make_own-trip, plan-your-own-trip, sri_lanka_vacation_tours_packeges, holiday, book-your-trip, tours, my-trip, srilanka _tour_packege, tour-booking-sri_lanka, colombo-bandaranaike-international, airport-tranfer-sri_lanka",
+    "Plan your own trip Sri Lanka, Sri Lanka travel guide, DIY Sri Lanka itinerary, Sri Lanka vacation planning, Sri Lanka travel tips, Sri Lanka attractions, Sri Lanka trip planning",
   icons: {
     icon: ["/customtour.ico"],
   },

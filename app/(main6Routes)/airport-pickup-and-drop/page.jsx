@@ -2,9 +2,9 @@ import AirportComp from "./AirportComp";
 
 export const metadata = {
   title:
-    "Airport Taxi Sri Lanka | Reliable Cab Services, Airport Transfers & Tours",
+    "Colombo Airport Taxi to Kandy, Mirissa, Sigiriya, Negombo, Galle - Reliable Pickup & Drop Service | Cars, Vans, Cabs | Sri Lanka Airport Transfers",
   description:
-    "Experience reliable Sri Lanka Airport Taxi service with TourBookingsrilanka.  Our top-rated taxi service offers convenient cab service and airport transfers. Book now for a comfortable and efficient travel experience!",
+    "Reliable Airport Transfers & Taxi Service in Sri Lanka. Offering comfortable rides from Colombo Airport to Kandy, Mirissa, Sigiriya, Negombo, Galle, and Colombo. Affordable, timely, and professional service. Book now for a stress-free airport taxi experience. Safe and easy transfers.",
   // keywords: [
   //   "Airport",
   //   "Airport taxi",
@@ -47,7 +47,7 @@ export const metadata = {
   //   "polonnaruwataxi-cabs-airport-transfers",
   // ],
   keywords:
-    "airport taxi srilanka, airport transfer srilanka, airport cab, airport shuttle service,",
+    "airport taxi, airport transfer, taxi service, airport shuttle, airport transportation, reliable taxi, airport pick up",
   icons: {
     icon: ["/airport.ico"],
   },
