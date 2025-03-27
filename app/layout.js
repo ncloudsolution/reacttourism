@@ -17,12 +17,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: {
     absolute:
-      "Taxi Airport | Airport Transfers, Tour Packages, Day Tours, Train Tickets, Point-to-Point & Plan Your Trip | Best Travel Deals",
+      "Taxi Airport | Airport Taxi Shuttle | Taxi Service | Airport Cab | Price List | Booking Contact | Taxis | Tours | Day Trip | Trusted Airport Transfer In Sri Lanka",
     default: "Taxi Airport",
     template: "%s | Taxi Airport",
   },
   description:
-    "Book your Sri Lanka adventure with ease! Explore top airport transfers, customized tour packages, and day tours. Need train bookings or want to plan your own trip? Find the best deals and services all in one place. Start your journey today with seamless tour booking in Sri Lanka.",
+    "Discover top-notch taxi services in Sri Lanka! Our airport taxi and cab services ensure a smooth ride to and from the airport. Enjoy affordable rates, professional drivers, and convenience. Book your airport taxi today for a stress-free travel experience!",
   keywords:
     "airport taxi,airport transfer, airport taxi transfers, taxi cab, airport taxi service, taxi cab service near me, airport cab, taxi cab service, airport cab service, cab service to airport, taxi for airport drop, taxis service, taxi service close to me, cab for airport drop, taxi, uber taxi, cab service near me, taxi service, cab service, taxi cab service, sigiriya taxi, sigiriya taxi service, Negombo taxi, Ella taxi, Kandy taxi, Polonnaruwa taxi, Ahangama taxi, Galle taxi, Bentota taxi, Weligama taxi",
   icons: { icon: ["/favicon.ico"] },
