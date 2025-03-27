@@ -23,6 +23,8 @@ import { FaRegSnowflake } from "react-icons/fa";
 import { BsHandbagFill } from "react-icons/bs";
 import { MdFlightLand } from "react-icons/md";
 import { MdFlightTakeoff } from "react-icons/md";
+import useFineCurrency from "@/hooks/useFineCurrency";
+import { IoCarSport } from "react-icons/io5";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -48,6 +50,9 @@ const AirportMap = ({ children }) => {
   const passengerCountRef = useRef();
 
   const mapRef = useRef();
+
+  const { lkrRate, usdRate, euroRate, usdSymbol, euroSymbol, lkrSymbol } =
+    useFineCurrency();
 
   //scroll to after the submission
 
@@ -201,12 +206,12 @@ const AirportMap = ({ children }) => {
   return (
     <>
       <div className="flex flex-col items-center w-full">
-        <div className="flex flex-col items-center justify-center bg-black rounded-lg   ">
-          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[20px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
+        <div className="flex flex-col items-center justify-center bg-black rounded-lg w-full">
+          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-5 mb-[10px] font-medium text-white">
             Airport Pickup / Drop
           </div>
           <MdLocalAirport className="text-[35px] text-primary" />
-          <div className="flex mt-6 mb-8 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-[294px] px-8  my-10">
+          <div className="flex mt-6 mb-8 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-full  my-10">
             <div className="flex flex-col gap-y-3 w-full text-center  ">
               <div className="flex w-full gap-x-3">
                 <div
@@ -232,8 +237,11 @@ const AirportMap = ({ children }) => {
                   <div>Drop</div>
                 </div>
               </div>
-              <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
-                <Autocomplete restrictions={{ country: ["lk"] }}>
+              <div className="flex gap-x-3 flex-col bigmd:flex-row ">
+                <Autocomplete
+                  restrictions={{ country: ["lk"] }}
+                  className="w-full"
+                >
                   <input
                     disabled={isPickDisable}
                     ref={originRef}
@@ -241,11 +249,14 @@ const AirportMap = ({ children }) => {
                     type="text"
                     className={` ${
                       isPickDisable ? "bg-white" : ""
-                    } p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black`}
+                    } p-2 text-[14px] outline-none w-full shadow-md rounded border-[1px] border-black`}
                   />
                 </Autocomplete>
 
-                <Autocomplete restrictions={{ country: ["lk"] }}>
+                <Autocomplete
+                  restrictions={{ country: ["lk"] }}
+                  className="w-full"
+                >
                   <input
                     disabled={isDropDisable}
                     ref={destinationRef}
@@ -253,7 +264,7 @@ const AirportMap = ({ children }) => {
                     type="text"
                     className={` ${
                       isDropDisable ? "bg-white" : ""
-                    } p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black`}
+                    } p-2 text-[14px] outline-none w-full shadow-md rounded border-[1px] border-black`}
                   />
                 </Autocomplete>
 
@@ -264,17 +275,27 @@ const AirportMap = ({ children }) => {
                   placeholder="No.Passengers"
                   type="number"
                   min="1"
-                  className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full shadow-md rounded border-[1px] border-black "
+                  className="p-2 text-[14px] outline-none  w-full shadow-md rounded border-[1px] border-black "
                 />
               </div>
 
-              <div className="flex gap-x-3 relative  flex-col bigmd:flex-row gap-y-3">
+              <div className="flex gap-x-3 flex-col bigmd:flex-row  ">
                 <CustomDatePicker
                   selectedDate={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
-                {returnTour ? (
-                  <>
+                <CustomDatePicker
+                  selectedDate={startDate}
+                  onChange={(date) => setStartDate(date)}
+                />
+
+                <CustomDatePicker
+                  selectedDate={startDate}
+                  onChange={(date) => setStartDate(date)}
+                />
+
+                {/* {returnTour ? (
+                  <div className="relative w-full ">
                     <CustomDatePicker
                       selectedDate={returnDate}
                       onChange={(date) => setReturnDate(date)}
@@ -282,34 +303,33 @@ const AirportMap = ({ children }) => {
 
                     <IoIosCloseCircle
                       size={25}
-                      className="absolute cursor-pointer bigmd:left-[450px] bxs:left-[320px] xxxs:left-[180px] left-[165px] bigmd:top-[6px] bxs:top-[58px] top-[58px]"
+                      className="absolute right-8 top-1/2 -translate-y-1/2 cursor-pointer "
                       onClick={() => setReturnTour(false)}
                     />
-                  </>
+                  </div>
                 ) : (
                   <div
-                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black bg-white cursor-pointer py-[6px]"
+                    className="flex w-full justify-center items-center shadow-md rounded border-[1px] border-black bg-white cursor-pointer p-2"
                     onClick={() => setReturnTour(true)}
                   >
                     Add Reurn
                   </div>
-                )}
+                )} */}
 
-                <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-[6px]  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
+                {/* <div className="flex w-full justify-between gap-x-4 xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
+                  <div className="w-full rounded-md bg-primary flex items-center gap-2 justify-center ">
+                    <IoCarSport className="text-[20px]" />
+                    <button type="submit" onClick={calculateRoute}>
+                      Search
+                    </button>
+                  </div>
                   <button
-                    type="submit"
-                    className="bg-primary text-black p-2 rounded bigmd:w-fit flex-1 bigmd:block "
-                    onClick={calculateRoute}
-                  >
-                    Calculate Route
-                  </button>
-                  <button
-                    className="bg-black text-primary border-[1px] border-primary bigmd:px-1 px-2 py-2 rounded bigmd:w-fit :flex-1 bigmd:block"
+                    className="bg-black text-primary border-[1px] border-primary px-2 py-2 rounded w-full "
                     onClick={clearRoute}
                   >
                     Clear Route
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -434,10 +454,38 @@ const AirportMap = ({ children }) => {
                                   ).toFixed(2)}
                             </div>
                           </div>
-                          {/* <div className="bigmd:text-[12px] text-[10px] text-yellow-500 w-full  px-2 text-center">
-                          Highway Charges and other Charges are Not Included
-                        </div> */}
                         </div>
+
+                        {/**price**/}
+                        {/* <div className="text-white overflow-hidden rounded w-full text-center flex flex-col items-center">
+                          <div className="flex py-1 text-[14px] bg-black w-full justify-center text-white">
+                            <div className="pr-1">{lkrSymbol}</div>
+                            <div>
+                              {returnTour
+                                ? (lkrRate * vehicle.price * 2).toFixed(2)
+                                : (lkrRate * vehicle.price).toFixed(2)}
+                            </div>
+                          </div>
+
+                          <div className="flex py-1 text-[14px] bg-slate-300 w-full justify-center text-black">
+                            <div className="pr-1">{usdSymbol}</div>
+                            <div>
+                              {returnTour
+                                ? (usdRate * vehicle.price * 2).toFixed(2)
+                                : (usdRate * vehicle.price).toFixed(2)}
+                            </div>
+                          </div>
+
+                          <div className="flex py-1 text-[14px] bg-slate-200 w-full justify-center text-black">
+                            <div className="pr-1">{euroSymbol}</div>
+                            <div>
+                              {returnTour
+                                ? (euroRate * vehicle.price * 2).toFixed(2)
+                                : (euroRate * vehicle.price).toFixed(2)}
+                            </div>
+                          </div> 
+                        </div>*/}
+
                         <button
                           className="bg-yellow-500 w-full py-2 rounded font-semibold  hover:border-black border-2 border-transparent transition-all duration-500"
                           onClick={() => {

@@ -1,11 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-import bg from "@/public/Footers/bgimg1.jpeg";
 import logo from "@/public/Navbar/tblogo.png";
 import Link from "next/link";
 
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaTripadvisor } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
@@ -15,15 +14,9 @@ const UpperFooter = () => {
   return (
     <>
       <div className="h-[980px]  xs:h-[750px] sm:h-[700px] bigmd:h-[550px]  w-full  overflow-hidden relative">
-        <Image
-          src={bg}
-          alt=""
-          className="size-[100%]  object-cover object-right xs:object-center"
-        />
-
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="absolute inset-0 bg-black opacity-90"></div>
         <div className="absolute top-0 left-0  w-full flex justify-center bigmd:py-20 py-10 ">
-          <div className="text-primary  flex flex-col midxl:w-[70%] w-[90%] bg-transparent items-center ">
+          <div className="text-white  flex flex-col midxl:w-[70%] w-[90%] bg-transparent items-center ">
             <div className="text-[34px] font-semibold  pb-[50px]">
               Get in Touch
             </div>
@@ -97,41 +90,48 @@ const UpperFooter = () => {
               </div>
             </div>
             <div>
-              <div className="flex gap-5 bigmd:mt-[30px] mt-[20px]">
+              <div className="flex gap-5 bigmd:mt-[30px] mt-[20px] ">
                 <Link
                   target="_blank"
                   href="mailto:easycabandtours@gmail.com"
-                  className="xs:size-[50px] size-[45px]  rounded-full bg-primary flex justify-center items-center"
+                  className="xs:size-[50px] size-[45px] bg-white rounded-full flex justify-center items-center"
                 >
-                  <IoIosMailUnread className="text-white text-[32px]" />
+                  <IoIosMailUnread className="text-primary text-[32px]" />
                 </Link>
                 <Link
                   target="_blank"
                   href="https://web.facebook.com/easycabandtours?mibextid=ZbWKwL&_rdc=1&_rdr"
-                  className="xs:size-[50px] size-[45px]   rounded-full bg-primary flex justify-center items-center"
+                  className="xs:size-[50px] size-[45px] bg-white  rounded-full flex justify-center items-center"
                 >
-                  <FaFacebookF className="text-white text-[25px]" />
+                  <FaFacebookF className="text-primary text-[25px]" />
                 </Link>
                 <Link
                   target="_blank"
                   href="https://wa.me/+94712100500"
-                  className="xs:size-[50px] size-[45px] rounded-full bg-primary flex justify-center items-center"
+                  className="xs:size-[50px] size-[45px] rounded-full bg-white flex justify-center items-center"
                 >
-                  <BsWhatsapp className="text-white text-[28px]" />
+                  <BsWhatsapp className="text-primary text-[28px]" />
                 </Link>
                 <Link
                   target="_blank"
                   href="https://t.me/Tourbookingsrilanka"
-                  className="xs:size-[50px] size-[45px]  rounded-full bg-primary flex justify-center items-center"
+                  className="xs:size-[50px] size-[45px]  rounded-full bg-white flex justify-center items-center"
                 >
-                  <FaTelegramPlane className="text-white text-[28px] -translate-x-[2px]" />
+                  <FaTelegramPlane className="text-primary text-[28px] -translate-x-[2px]" />
                 </Link>
                 <Link
                   target="_blank"
                   href="https://youtu.be/QXXXz8MipHA"
-                  className="xs:size-[50px] size-[45px]  rounded-full bg-primary flex justify-center items-center"
+                  className="xs:size-[50px] size-[45px]  rounded-full bg-white flex justify-center items-center"
                 >
-                  <FaYoutube className="text-white text-[28px] " />
+                  <FaYoutube className="text-primary text-[28px] " />
+                </Link>
+                <Link
+                  target="_blank"
+                  href="https://www.tripadvisor.com/Attraction_Review-g1500185-d33021905-Reviews-Airport_Cab_LK-Katunayake_Negombo_Western_Province.html"
+                  className="xs:size-[50px] size-[45px]  rounded-full bg-white flex justify-center items-center"
+                >
+                  <FaTripadvisor className="text-primary text-[28px] " />
                 </Link>
               </div>
             </div>

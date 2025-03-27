@@ -25,7 +25,12 @@ const AbsoluteFooter = () => {
               target="_blank"
               className="flex mx-[5px] mobile:h-[40px] h-[35px] py-[5px]"
             >
-              <Image src={ncloudlogo} alt="" className="size-[100%] " />
+              <Image
+                // onLoadingComplete={() => setImageLoaded(true)}
+                src={ncloudlogo}
+                alt=""
+                className="size-[100%] "
+              />
             </Link>
           </div>
         </div>

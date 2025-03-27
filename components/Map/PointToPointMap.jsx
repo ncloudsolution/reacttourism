@@ -157,12 +157,12 @@ const PointToPointMap = ({ children }) => {
   return (
     <>
       <div className="flex flex-col items-center w-full">
-        <div className=" flex flex-col items-center justify-center bg-black rounded-lg  ">
-          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[20px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
+        <div className=" flex flex-col items-center justify-center bg-black rounded-lg w-full ">
+          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-5 mb-[10px] font-medium text-white">
             Point To Point
           </div>
           <RiPinDistanceFill className="text-[35px] text-primary" />
-          <div className="flex mt-6 mb-8 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-[294px] px-8  my-10">
+          <div className="flex mt-6 mb-8 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-full  my-10">
             <div className="flex flex-col gap-y-3 w-full text-center">
               <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
                 <Autocomplete restrictions={{ country: ["lk"] }}>
