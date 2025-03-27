@@ -78,7 +78,7 @@ const TourPackageCustomerEmail = ({ tourPackage }) => {
                       marginBottom: 30,
                     }}
                   >
-                    For choosing Tour Booking Sri Lanka As Your Travel Partner
+                    For choosing Taxiairport.lk As Your Travel Partner
                   </Text>
 
                   <Heading
@@ -189,7 +189,7 @@ const TourPackageCustomerEmail = ({ tourPackage }) => {
                           <Text style={{ ...paragraph, marginTop: 10 }}>
                             Best regards,
                           </Text>
-                          <Text style={paragraph}>Tour Booking Sri Lanka.</Text>
+                          <Text style={paragraph}>Taxiairport.lk.</Text>
                         </b>
                       </Section>
                     </Column>
@@ -372,7 +372,7 @@ const TourPackageCustomerEmail = ({ tourPackage }) => {
                         margin: "20px auto",
                       }}
                     >
-                      Connect The Tour Booking Sri Lanka
+                      Connect The Taxiairport.lk
                     </Heading>
 
                     <Row style={{ width: "680px", maxWidth: "100%" }}>

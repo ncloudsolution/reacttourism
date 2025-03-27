@@ -78,7 +78,7 @@ const DayTripCustomer = ({ dayTripDetails }) => {
                       marginBottom: 30,
                     }}
                   >
-                    For choosing Tour Booking Sri Lanka As Your Travel Partner
+                    For choosing Taxiairport.lk As Your Travel Partner
                   </Text>
 
                   <Heading
@@ -382,7 +382,7 @@ const DayTripCustomer = ({ dayTripDetails }) => {
                         margin: "20px auto",
                       }}
                     >
-                      Connect The Tour Booking Sri Lanka
+                      Connect The Taxiairport.lk
                     </Heading>
 
                     <Row style={{ width: "680px", maxWidth: "100%" }}>

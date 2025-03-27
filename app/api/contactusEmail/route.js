@@ -38,7 +38,7 @@ export async function POST(request) {
     };
 
     const mailOptionsClient = {
-      from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
+      from: `"Taxiairport.lk" <${process.env.MAIL_USERNAME}>`,
       to: ContactusDetails.customerEmail,
       subject: "We Received Your Message",
       html: newCompHtmlforCustomer, // Assuming you want to send the same text; adjust if different

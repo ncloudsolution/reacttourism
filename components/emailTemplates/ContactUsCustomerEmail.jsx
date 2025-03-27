@@ -320,7 +320,7 @@ export const ContactUsCustomerEmail = ({ ContactusDetails }) => {
                         margin: "20px auto",
                       }}
                     >
-                      Connect The Tour Booking Sri Lanka
+                      Connect The Taxiairport.lk
                     </Heading>
 
                     {/* <Text style={{ ...paragraph, marginTop: -5 }}>

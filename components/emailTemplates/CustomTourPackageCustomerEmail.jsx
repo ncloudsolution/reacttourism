@@ -86,7 +86,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                       marginBottom: 30,
                     }}
                   >
-                    For choosing Tour Booking Sri Lanka As Your Travel Partner
+                    For choosing Taxiairport.lk As Your Travel Partner
                   </Text>
 
                   <Heading
@@ -224,9 +224,9 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                         with a customized itinerary and a quote as soon as
                         possible. If you have any additional questions or need
                         further assistance, please do not hesitate to reach out
-                        to us. Thank you for choosing{" "}
-                        <b>Tour Booking Sri Lanka</b>. We look forward to
-                        helping you create unforgettable travel experiences!
+                        to us. Thank you for choosing <b>Taxiairport.lk</b>. We
+                        look forward to helping you create unforgettable travel
+                        experiences!
                       </Text>
 
                       <Text
@@ -247,7 +247,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                           marginTop: 0,
                         }}
                       >
-                        <b>Tour Booking Sri Lanka.</b>
+                        <b>Taxiairport.lk.</b>
                       </Text>
                     </Column>
                   </Row>
@@ -429,7 +429,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                         margin: "20px auto",
                       }}
                     >
-                      Connect The Tour Booking Sri Lanka
+                      Connect The Taxiairport.lk
                     </Heading>
 
                     <Row style={{ width: "680px", maxWidth: "100%" }}>

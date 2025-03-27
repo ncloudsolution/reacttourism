@@ -101,7 +101,7 @@ export const CustomerEmail = ({ tourDetails }) => {
                       marginBottom: 30,
                     }}
                   >
-                    For choosing Tour Booking Sri Lanka As Your Travel Partner
+                    For choosing Taxiairport.lk As Your Travel Partner
                   </Text>
 
                   <Heading
@@ -449,7 +449,7 @@ export const CustomerEmail = ({ tourDetails }) => {
                         margin: "20px auto",
                       }}
                     >
-                      Connect The Tour Booking Sri Lanka
+                      Connect The Taxiairport.lk
                     </Heading>
 
                     {/* <Text style={{ ...paragraph, marginTop: -5 }}>
