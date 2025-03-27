@@ -461,7 +461,7 @@ export const CustomerEmail = ({ tourDetails }) => {
                       <Column align="center">
                         <Button
                           style={{ ...button, margin: "0px 5px 0px 0px" }}
-                          href={`mailto:easycabandtours@gmail.com`}
+                          href={`mailto:info@airportcab.lk`}
                         >
                           Email
                         </Button>
@@ -471,7 +471,7 @@ export const CustomerEmail = ({ tourDetails }) => {
                             backgroundColor: "#075e54",
                             margin: "0px 5px 0px 5px",
                           }}
-                          href={`https://wa.me/+94712100500`}
+                          href={`https://wa.me/+94703199556`}
                         >
                           WhatsApp
                         </Button>
@@ -491,7 +491,7 @@ export const CustomerEmail = ({ tourDetails }) => {
                             backgroundColor: "#CD201F",
                             margin: "0px 5px 0px 5px",
                           }}
-                          href={`https://youtu.be/QXXXz8MipHA`}
+                          href={`https://www.youtube.com/@airportcabsrilanka`}
                         >
                           Youtube
                         </Button>
@@ -501,7 +501,7 @@ export const CustomerEmail = ({ tourDetails }) => {
                             backgroundColor: "#1877F2",
                             margin: "0px 0px 0px 5px",
                           }}
-                          href={`https://web.facebook.com/easycabandtours?mibextid=ZbWKwL&_rdc=1&_rdr`}
+                          href={`https://facebook.com/airportcab.lk`}
                         >
                           Facebook
                         </Button>

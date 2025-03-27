@@ -67,14 +67,25 @@ const UpperFooter = () => {
                 <div className="mb-2 flex justify-center gap-1">
                   Call -
                   <div>
+                    +94703 199 556
+                    <br />
                     +94719 885 885 <br /> +94712 100 500
                     <br /> +94781 820 820
                     <br />
                     +94781 720 720
                   </div>
                 </div>
-                <div className="my-2">email - Info@tourbookingsrilanka.com</div>
-                <div className="my-2">web - www.tourbookingsrilanka.com</div>
+                <div className="my-2">email - info@airportcab.lk</div>
+
+                <div className="my-2">
+                  <div className="mb-2 flex justify-center gap-1">
+                    Web -
+                    <div>
+                      www.taxiairport.lk <br />
+                      {/* www.airportcab.lk */}
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-col text-center">
@@ -93,21 +104,21 @@ const UpperFooter = () => {
               <div className="flex gap-5 bigmd:mt-[30px] mt-[20px] ">
                 <Link
                   target="_blank"
-                  href="mailto:easycabandtours@gmail.com"
+                  href="mailto:info@airportcab.lk"
                   className="xs:size-[50px] size-[45px] bg-white rounded-full flex justify-center items-center"
                 >
                   <IoIosMailUnread className="text-primary text-[32px]" />
                 </Link>
                 <Link
                   target="_blank"
-                  href="https://web.facebook.com/easycabandtours?mibextid=ZbWKwL&_rdc=1&_rdr"
+                  href="https://facebook.com/airportcab.lk"
                   className="xs:size-[50px] size-[45px] bg-white  rounded-full flex justify-center items-center"
                 >
                   <FaFacebookF className="text-primary text-[25px]" />
                 </Link>
                 <Link
                   target="_blank"
-                  href="https://wa.me/+94712100500"
+                  href="https://wa.me/+94703199556"
                   className="xs:size-[50px] size-[45px] rounded-full bg-white flex justify-center items-center"
                 >
                   <BsWhatsapp className="text-primary text-[28px]" />
@@ -121,7 +132,7 @@ const UpperFooter = () => {
                 </Link>
                 <Link
                   target="_blank"
-                  href="https://youtu.be/QXXXz8MipHA"
+                  href="https://www.youtube.com/@airportcabsrilanka"
                   className="xs:size-[50px] size-[45px]  rounded-full bg-white flex justify-center items-center"
                 >
                   <FaYoutube className="text-primary text-[28px] " />

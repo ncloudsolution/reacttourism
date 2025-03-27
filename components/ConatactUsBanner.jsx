@@ -18,13 +18,14 @@ const ContactDetails = () => {
         <div className="flex items-start gap-x-2 bxs:text-[18px] text-[14px]">
           <FaPhoneVolume className="bigmd:text-white text-black bxs:text-[18px] text-[14px] translate-y-1" />
           <div className="flex flex-col text-left bxs:w-[250px] w-[200px]">
+            <div>+94 703 199 556</div>
             <div>+94 719 885 885</div>
             <div>+94 712 100 500</div>
           </div>
         </div>
         <div className="flex items-center gap-x-2 bxs:text-[18px] text-[14px]">
           <MdAttachEmail className="bigmd:text-white text-black bxs:text-[20px] text-[16px]" />
-          <div>easycabandtours@gmail.com</div>
+          <div>info@airportcab.lk</div>
         </div>
         <div className="flex items-start gap-x-2 bxs:text-[18px] text-[14px]">
           <IoLocation className="bigmd:text-white text-black bxs:text-[20px] text-[16px] " />

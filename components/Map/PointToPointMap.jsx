@@ -22,6 +22,7 @@ import { FaUser } from "react-icons/fa6";
 import { FaBriefcase } from "react-icons/fa";
 import { FaRegSnowflake } from "react-icons/fa";
 import { BsHandbagFill } from "react-icons/bs";
+import { IoCarSport } from "react-icons/io5";
 
 const center = { lat: 6.9271, lng: 79.8612 };
 
@@ -157,15 +158,18 @@ const PointToPointMap = ({ children }) => {
   return (
     <>
       <div className="flex flex-col items-center w-full">
-        <div className=" flex flex-col items-center justify-center bg-black rounded-lg w-full ">
+        <div className=" flex flex-col items-center justify-center bg-black rounded-lg bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-full  px-8 ">
           <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-5 mb-[10px] font-medium text-white">
             Point To Point
           </div>
           <RiPinDistanceFill className="text-[35px] text-primary" />
-          <div className="flex mt-6 mb-8 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-full  my-10">
+          <div className="flex mt-6 mb-8 w-full my-10">
             <div className="flex flex-col gap-y-3 w-full text-center">
-              <div className="flex gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
-                <Autocomplete restrictions={{ country: ["lk"] }}>
+              <div className="grid bigmd:grid-cols-3 grid-cols-1 gap-x-3 flex-col bigmd:flex-row  gap-y-3 ">
+                <Autocomplete
+                  restrictions={{ country: ["lk"] }}
+                  className="w-full"
+                >
                   <input
                     ref={originRef}
                     placeholder="Origin"
@@ -175,7 +179,10 @@ const PointToPointMap = ({ children }) => {
                   />
                 </Autocomplete>
 
-                <Autocomplete restrictions={{ country: ["lk"] }}>
+                <Autocomplete
+                  restrictions={{ country: ["lk"] }}
+                  className="w-full"
+                >
                   <input
                     ref={destinationRef}
                     defaultValue={tourDetails.destination}
@@ -194,13 +201,13 @@ const PointToPointMap = ({ children }) => {
                 />
               </div>
 
-              <div className="flex gap-x-3 relative  flex-col bigmd:flex-row gap-y-3">
+              <div className="grid bigmd:grid-cols-3 grid-cols-1 gap-x-3 flex-col bigmd:flex-row gap-y-3">
                 <CustomDatePicker
                   selectedDate={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
                 {returnTour ? (
-                  <>
+                  <div className="w-full relative">
                     <CustomDatePicker
                       selectedDate={returnDate}
                       onChange={(date) => setReturnDate(date)}
@@ -208,29 +215,28 @@ const PointToPointMap = ({ children }) => {
 
                     <IoIosCloseCircle
                       size={25}
-                      className="absolute cursor-pointer bigmd:left-[450px] bxs:left-[320px] xxxs:left-[180px] left-[165px] bigmd:top-[6px] bxs:top-[58px] top-[58px]"
+                      className="absolute right-8 top-1/2 -translate-y-1/2 cursor-pointer "
                       onClick={() => setReturnTour(false)}
                     />
-                  </>
+                  </div>
                 ) : (
                   <div
-                    className="flex flex-1 justify-center items-center shadow-md rounded border-[1px] border-black bg-white cursor-pointer py-[6px]"
+                    className="flex h-[39px] flex-1 justify-center items-center shadow-md rounded border-[1px] border-black bg-white cursor-pointer py-[6px]"
                     onClick={() => setReturnTour(true)}
                   >
                     Add Reurn
                   </div>
                 )}
 
-                <div className="flex flex-1 justify-between gap-x-4 bigmd:gap-x-2  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
+                <div className="flex h-[39px] flex-1 justify-between gap-x-4 bigmd:gap-x-2  xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
+                  <div className="w-full rounded-md bg-primary flex items-center gap-2 justify-center ">
+                    <IoCarSport className="text-[20px]" />
+                    <button type="submit" onClick={calculateRoute}>
+                      Search
+                    </button>
+                  </div>
                   <button
-                    type="submit"
-                    className="bg-primary text-black p-2 rounded bigmd:w-fit flex-1 bigmd:block "
-                    onClick={calculateRoute}
-                  >
-                    Calculate Route
-                  </button>
-                  <button
-                    className="bg-black text-primary border-[1px] border-primary bigmd:px-1 px-2 py-2 rounded bigmd:w-fit :flex-1 bigmd:block"
+                    className="bg-black text-primary border-[1px] border-primary px-2 py-2 rounded w-full "
                     onClick={clearRoute}
                   >
                     Clear Route

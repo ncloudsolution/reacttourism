@@ -52,7 +52,8 @@ const CustomCurrencyDropDown = () => {
     if (pathname.includes("/day-trips" || "/tour-packages")) {
       setSelected(selected || currencies[1][0]);
     } else {
-      setSelected(tourDetails.currencyType || currencies[0][0]);
+      // setSelected(tourDetails.currencyType || currencies[0][0]);
+      setSelected(tourDetails.currencyType || currencies[1][0]);
     }
   }, [pathname, currencies, selected, tourDetails.currencyType]);
 

@@ -83,12 +83,11 @@ const TrainSummary = () => {
     e.preventDefault();
 
     if (
-      date == undefined ||
+      startDate === "" ||
       mobValue == "" ||
       whatsappMobValue == "" ||
       cusName.current.value === "" ||
       cusEmail.current.value === "" ||
-      cusNicOrPassportNo.current.value === "" ||
       noOfPassengers === ""
     ) {
       return setSubmitError("Fill all the fields ");
@@ -114,11 +113,10 @@ const TrainSummary = () => {
       trainClass: tourDetails.trainClass,
 
       availableDates: tourDetails.trainAvailableDays,
-      selectedDate: date.toDateString(),
+      selectedDate: startDate.toDateString(),
 
       cusName: cusName.current.value,
       cusEmail: cusEmail.current.value,
-      cusNicPassport: cusNicOrPassportNo.current.value,
       cusMobileNo: mobValue,
       cusWhatsappNo: whatsappMobValue,
 
@@ -332,22 +330,6 @@ const TrainSummary = () => {
                           <input
                             ref={cusEmail}
                             placeholder="johndoe12@gmail.com"
-                            type="text"
-                            className="px-3 py-1 font-normal text-[14px] outline-none  w-full shadow-md rounded  "
-                          />
-                        </div>
-                      </div>
-
-                      <div className="flex xs:flex-row flex-col xs:items-center justify-center">
-                        <div className=" xs:w-[130px] w-[100px]">
-                          NIC / Passport
-                        </div>
-                        <div className="xs:flex hidden">:</div>
-
-                        <div className="xs:ml-4 font-normal w-full flex-1">
-                          <input
-                            ref={cusNicOrPassportNo}
-                            placeholder="N6590221"
                             type="text"
                             className="px-3 py-1 font-normal text-[14px] outline-none  w-full shadow-md rounded  "
                           />

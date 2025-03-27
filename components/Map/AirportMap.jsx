@@ -206,12 +206,12 @@ const AirportMap = ({ children }) => {
   return (
     <>
       <div className="flex flex-col items-center w-full">
-        <div className="flex flex-col items-center justify-center bg-black rounded-lg w-full">
+        <div className="bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] px-8 w-full flex flex-col items-center justify-center bg-black rounded-lg ">
           <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-5 mb-[10px] font-medium text-white">
             Airport Pickup / Drop
           </div>
           <MdLocalAirport className="text-[35px] text-primary" />
-          <div className="flex mt-6 mb-8 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-full  my-10">
+          <div className="flex mt-6 mb-8 my-10 w-full">
             <div className="flex flex-col gap-y-3 w-full text-center  ">
               <div className="flex w-full gap-x-3">
                 <div
@@ -237,7 +237,7 @@ const AirportMap = ({ children }) => {
                   <div>Drop</div>
                 </div>
               </div>
-              <div className="flex gap-x-3 flex-col bigmd:flex-row ">
+              <div className="grid bigmd:grid-cols-3 grid-cols-1 gap-x-3 flex-col bigmd:flex-row gap-y-3">
                 <Autocomplete
                   restrictions={{ country: ["lk"] }}
                   className="w-full"
@@ -279,22 +279,13 @@ const AirportMap = ({ children }) => {
                 />
               </div>
 
-              <div className="flex gap-x-3 flex-col bigmd:flex-row  ">
-                <CustomDatePicker
-                  selectedDate={startDate}
-                  onChange={(date) => setStartDate(date)}
-                />
-                <CustomDatePicker
-                  selectedDate={startDate}
-                  onChange={(date) => setStartDate(date)}
-                />
-
+              <div className="grid bigmd:grid-cols-3 grid-cols-1 gap-x-3 flex-col bigmd:flex-row gap-y-3 ">
                 <CustomDatePicker
                   selectedDate={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
 
-                {/* {returnTour ? (
+                {returnTour ? (
                   <div className="relative w-full ">
                     <CustomDatePicker
                       selectedDate={returnDate}
@@ -309,14 +300,14 @@ const AirportMap = ({ children }) => {
                   </div>
                 ) : (
                   <div
-                    className="flex w-full justify-center items-center shadow-md rounded border-[1px] border-black bg-white cursor-pointer p-2"
+                    className="flex h-[39px] w-full justify-center items-center shadow-md rounded border-[1px] border-black bg-white cursor-pointer p-2"
                     onClick={() => setReturnTour(true)}
                   >
                     Add Reurn
                   </div>
-                )} */}
+                )}
 
-                {/* <div className="flex w-full justify-between gap-x-4 xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
+                <div className="h-[39px] flex w-full gap-x-2 xxs:text-[16px] text-[12px] font-medium xxs:font-normal">
                   <div className="w-full rounded-md bg-primary flex items-center gap-2 justify-center ">
                     <IoCarSport className="text-[20px]" />
                     <button type="submit" onClick={calculateRoute}>
@@ -329,7 +320,7 @@ const AirportMap = ({ children }) => {
                   >
                     Clear Route
                   </button>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>

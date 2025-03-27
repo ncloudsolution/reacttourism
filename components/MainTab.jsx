@@ -27,11 +27,20 @@ const MainTab = () => {
 
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
+  // useEffect(() => {
+  //   setTourDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     converedCurrencySymbol: "Rs",
+  //     currencyType: "LKR",
+  //     conversionRate: 1,
+  //   }));
+  // }, [setTourDetails]);
+
   useEffect(() => {
     setTourDetails((prevDetails) => ({
       ...prevDetails,
-      converedCurrencySymbol: "Rs",
-      currencyType: "LKR",
+      converedCurrencySymbol: "$",
+      currencyType: "USD",
       conversionRate: 1,
     }));
   }, [setTourDetails]);
@@ -114,7 +123,7 @@ const MainTab = () => {
           {/* <div className="flex flex-col bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] items-start"> */}
           <div className="flex flex-col bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-full xxs:px-0 xxxs:px-2 px-4 items-start">
             <PuffAnimationArea />
-            <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px]">
+            <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px] px-8">
               <div
                 className={`${
                   isAirportClicked ? "bg-primary" : "bg-white"

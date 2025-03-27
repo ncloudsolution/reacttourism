@@ -94,7 +94,7 @@ const TrainMap = ({ children }) => {
   return (
     <>
       <div className="flex flex-col items-center w-full border-transparent border-2">
-        <div className="flex flex-col items-center justify-center bg-black rounded-lg w-full ">
+        <div className="flex flex-col items-center justify-center bg-black px-8 rounded-lg w-full ">
           <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-5 mb-[10px] font-medium text-white">
             Journey On Rails
           </div>

@@ -105,9 +105,9 @@ const DayTrips = () => {
   };
 
   return (
-    <div className="w-full flex flex-col text-center items-center mt-10 mb-5">
+    <div className="w-full flex flex-col text-center items-center  mb-5">
       <CurrencyFullBar />
-      <div className="mt-2">
+      <div className="mt-4">
         <Title title={"Day Trips"} />
       </div>
 

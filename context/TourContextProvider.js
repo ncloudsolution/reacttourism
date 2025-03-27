@@ -6,8 +6,11 @@ export const TourContext = createContext({});
 
 export default function TourContextProvider({ children }) {
   const [tourDetails, setTourDetails] = useState({
-    converedCurrencySymbol: "Rs",
-    currencyType: "LKR",
+    // converedCurrencySymbol: "Rs",
+    // currencyType: "LKR",
+    // conversionRate: 1,
+    converedCurrencySymbol: "$",
+    currencyType: "USD",
     conversionRate: 1,
     pageTwoToken: false,
     pageThreeToken: false,

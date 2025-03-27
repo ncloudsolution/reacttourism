@@ -39,8 +39,8 @@ const AirportComp = () => {
         <div className="xs:mt-10 mt-5 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-[294px] px-8 rounded-md flex justify-center bg-black">
           <Hierarchy />
         </div>
-        <div className="flex flex-col items-center  -scroll-mb-14">
-          <div className="xs:mt-8 mt-5 bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-[294px] px-8 ">
+        <div className="flex flex-col items-center px-4 -scroll-mb-14">
+          <div className="xs:mt-8 mt-5  w-full">
             <AirportMap />
           </div>
           <div className="my-10">

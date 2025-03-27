@@ -10,6 +10,7 @@ import UpperFooter from "@/components/UpperFooter";
 import Script from "next/script";
 import FoloatingActionBtn from "@/components/standalone/FoloatingActionBtn";
 import CallBtn from "@/components/CallBtn";
+import NewNavBar from "@/components/NewNavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,12 +55,11 @@ export default function RootLayout({ children }) {
 
         <TourContextProvider>
           <div className="relative min-h-[100vh] w-full">
-            <NavBar />
+            {/* <NavBar /> */}
+            <NewNavBar />
             <CallBtn />
             <FoloatingActionBtn />
-            <main className="min-h-[23vh] xs:mt-[80px] mt-[60px] px-0">
-              {children}
-            </main>
+            <main className="min-h-[23vh] pt-[60px] px-0">{children}</main>
 
             <UpperFooter />
             <AbsoluteFooter />
