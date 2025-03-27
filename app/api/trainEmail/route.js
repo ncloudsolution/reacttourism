@@ -27,7 +27,7 @@ export async function POST(request) {
     );
 
     const mailOptionsTo = {
-      from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
+      from: `"Taxiairport.lk" <${process.env.MAIL_USERNAME}>`,
       to: to,
       subject: "New Train Tour Request",
 
@@ -35,9 +35,9 @@ export async function POST(request) {
     };
 
     const mailOptionsClient = {
-      from: `"Tour Booking Sri Lanka" <${process.env.MAIL_USERNAME}>`,
+      from: `"Taxiairport.lk" <${process.env.MAIL_USERNAME}>`,
       to: clientmail,
-      subject: "Here's your new train ride from Tour Booking Sri Lanka",
+      subject: "Here's your new train ride from Taxiairport.lk",
       html: newCompHtmlforCustomer, // Assuming you want to send the same text; adjust if different
     };
 

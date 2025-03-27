@@ -222,7 +222,7 @@ export const CustomTourPackageOwnerEmail = ({ customTourDetails }) => {
               }}
             >
               © 2024 | 118/ 5 st Joseph street, Grandpass, Colombo 14, Sri
-              Lanaka | www.tourbookingsrilanka.com
+              Lanaka | www.taxiairport.lk
             </Text>
           </Container>
         </Container>

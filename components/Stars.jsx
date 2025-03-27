@@ -5,11 +5,15 @@ const Stars = ({ count }) => {
 
   for (let i = 0; i < count; i++) {
     stars.push(
-      <IoStar key={i} className="text-yellow-500 text-[25px] my-[10px] mr-1" />
+      <IoStar key={i} className="text-yellow-500 text-[20px] my-[10px] mr-1" />
     );
   }
 
-  return <div className="flex ">{stars}</div>;
+  return (
+    <div className="flex bg-white w-fit py-2 h-[30px] items-center my-2 px-2 rounded ">
+      {stars}
+    </div>
+  );
 };
 
 export default Stars;

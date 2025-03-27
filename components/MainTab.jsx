@@ -16,6 +16,7 @@ import { BsCoin } from "react-icons/bs";
 
 import CurrencyTab from "./standalone/CurrencyTab";
 import { TourContext } from "@/context/TourContextProvider";
+import PuffAnimationArea from "./PuffAnimationArea";
 
 const MainTab = () => {
   const [isPointToPointClicked, setIsPointToPointClicked] = useState(false);
@@ -26,11 +27,20 @@ const MainTab = () => {
 
   const { tourDetails, setTourDetails } = useContext(TourContext);
 
+  // useEffect(() => {
+  //   setTourDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     converedCurrencySymbol: "Rs",
+  //     currencyType: "LKR",
+  //     conversionRate: 1,
+  //   }));
+  // }, [setTourDetails]);
+
   useEffect(() => {
     setTourDetails((prevDetails) => ({
       ...prevDetails,
-      converedCurrencySymbol: "Rs",
-      currencyType: "LKR",
+      converedCurrencySymbol: "$",
+      currencyType: "USD",
       conversionRate: 1,
     }));
   }, [setTourDetails]);
@@ -101,7 +111,7 @@ const MainTab = () => {
       </div>
       <div className="flex justify-center w-full bg-red-300 px-0">
         <div className="flex justify-center items-center flex-col bg-black w-full">
-          <div className="bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] flex justify-center">
+          <div className="bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-full xxs:px-0 xxxs:px-2 px-4 flex justify-center">
             <div
               className={` ${
                 isCurrencyActive ? "mt-0" : "mt-5"
@@ -110,8 +120,10 @@ const MainTab = () => {
               <Hierarchy />
             </div>
           </div>
-          <div className="flex flex-col bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] items-start">
-            <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px] translate-y-8">
+          {/* <div className="flex flex-col bigmd:w-[778px] bxs:w-[404px] xxxs:w-[244px] w-[230px] items-start"> */}
+          <div className="flex flex-col bigmd:w-[838px] bxs:w-[464px] xxxs:w-[314px] w-full xxs:px-0 xxxs:px-2 px-4 items-start">
+            <PuffAnimationArea />
+            <div className="bigmd:flex  hidden gap-3 my-2 bxs:text-[16px] text-[12px] px-8">
               <div
                 className={`${
                   isAirportClicked ? "bg-primary" : "bg-white"

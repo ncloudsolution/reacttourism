@@ -94,13 +94,13 @@ const TrainMap = ({ children }) => {
   return (
     <>
       <div className="flex flex-col items-center w-full border-transparent border-2">
-        <div className="flex flex-col items-center justify-center bg-black rounded-lg  ">
-          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-[20px] bigmd:mt-[50px] mb-[10px] font-medium text-white">
+        <div className="flex flex-col items-center justify-center bg-black px-8 rounded-lg w-full ">
+          <div className="bxs:text-[30px] xxxs:text-[24px] text-[22px] mt-5 mb-[10px] font-medium text-white">
             Journey On Rails
           </div>
           <FaTrain className="text-[30px] text-primary mb-2" />
-          <div className="flex mb-8 mt-6 border-2 border-transparent bigmd:w-fit bxs:w-[400px] xxs:w-[320px] xxxs:w-[290px] w-[250px]">
-            <div className="flex flex-col gap-y-3 w-full px-8 ">
+          <div className="flex mb-8 mt-6 border-2 border-transparent bigmd:w-fit w-full">
+            <div className="flex flex-col gap-y-3 w-full">
               <div className="flex flex-col bigmd:flex-row gap-x-3 gap-y-3 bigmd:w-[778px] w-full">
                 {/**750px**/}
                 <div className="relative w-full flex-2">

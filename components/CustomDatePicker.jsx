@@ -16,12 +16,13 @@ const CustomDatePicker = ({ selectedDate, onChange }) => {
 
   return (
     <div
-      className="p-2 text-[14px] outline-none bigmd:w-[250px]  w-full  shadow-md rounded border-[1px] border-black bg-white flex justify-between"
+      className="w-full h-[39px] p-2 text-[14px] outline-none shadow-md rounded border-[1px] border-black bg-white flex justify-between"
       onClick={handleOuterDivClick}
     >
       <DatePicker
+        wrapperClassName="datePicker"
         ref={datePickerRef}
-        className="outline-none"
+        className="w-[150px] outline-none"
         selected={selectedDate}
         onChange={onChange}
         showTimeSelect

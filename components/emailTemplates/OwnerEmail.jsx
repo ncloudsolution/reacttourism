@@ -334,7 +334,7 @@ export const OwnerEmail = ({ tourDetails }) => {
             }}
           >
             © 2024 | 118/ 5 st Joseph street, Grandpass, Colombo 14, Sri Lanaka
-            | www.tourbookingsrilanka.com
+            | www.taxiairport.lk
           </Text>
         </Container>
       </Body>

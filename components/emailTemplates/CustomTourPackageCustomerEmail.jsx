@@ -37,14 +37,13 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                   <Img
                     height={60}
                     // src={"https://i.ibb.co/84NTTCw/bgremovedlogo.png"}
-                    src={"https://i.ibb.co/WfXK6bZ/tblogo.png"}
+                    src={"https://i.ibb.co/QvTRgxgm/taxiairport.png"}
                   />
                 </Column>
                 <Column align="right">
                   <Text style={{ ...paragraph, fontSize: 20 }}>
                     <b>
-                      Tour <span style={{ color: "#eab308" }}>Booking</span> Sri
-                      Lanka
+                      Taxi<span style={{ color: "#eab308" }}>Airport</span>.lk
                     </b>
                   </Text>
                 </Column>
@@ -74,7 +73,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                     <Img
                       style={{ paddingBottom: 10, margin: "0 auto" }}
                       height={200}
-                      src={"https://i.ibb.co/wNnSdp6/thankyou.jpg"}
+                      src={"https://i.ibb.co/9WVCmr8/thankyou-Email.jpg"}
                     />
                   </Row>
 
@@ -86,7 +85,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                       marginBottom: 30,
                     }}
                   >
-                    For choosing Tour Booking Sri Lanka As Your Travel Partner
+                    For choosing Taxiairport.lk As Your Travel Partner
                   </Text>
 
                   <Heading
@@ -224,9 +223,9 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                         with a customized itinerary and a quote as soon as
                         possible. If you have any additional questions or need
                         further assistance, please do not hesitate to reach out
-                        to us. Thank you for choosing{" "}
-                        <b>Tour Booking Sri Lanka</b>. We look forward to
-                        helping you create unforgettable travel experiences!
+                        to us. Thank you for choosing <b>Taxiairport.lk</b>. We
+                        look forward to helping you create unforgettable travel
+                        experiences!
                       </Text>
 
                       <Text
@@ -247,7 +246,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                           marginTop: 0,
                         }}
                       >
-                        <b>Tour Booking Sri Lanka.</b>
+                        <b>Taxiairport.lk.</b>
                       </Text>
                     </Column>
                   </Row>
@@ -290,7 +289,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                               width: "100%",
                               objectFit: "cover",
                             }}
-                            src={"https://i.ibb.co/ydtmqTh/airport.jpg"}
+                            src={"https://i.ibb.co/XxJX66p5/door.jpg"}
                           />
                         </div>
                         <Text
@@ -337,7 +336,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                               width: "100%",
                               objectFit: "cover",
                             }}
-                            src={"https://i.ibb.co/4d4sChq/ptop.png"}
+                            src={"https://i.ibb.co/8nYFQxmR/door3.png"}
                           />
                         </div>
                         <Text
@@ -386,7 +385,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                               width: "100%",
                               objectFit: "cover",
                             }}
-                            src={"https://i.ibb.co/VVZHbfX/train.jpg"}
+                            src={"https://i.ibb.co/27r5qLsx/train.jpg"}
                           />
                         </div>
                         <Text
@@ -429,14 +428,14 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                         margin: "20px auto",
                       }}
                     >
-                      Connect The Tour Booking Sri Lanka
+                      Connect The Taxiairport.lk
                     </Heading>
 
                     <Row style={{ width: "680px", maxWidth: "100%" }}>
                       <Column align="center">
                         <Button
                           style={{ ...button, margin: "0px 5px 0px 0px" }}
-                          href={`mailto:easycabandtours@gmail.com`}
+                          href={`mailto:info@airportcab.lk`}
                         >
                           Email
                         </Button>
@@ -446,7 +445,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                             backgroundColor: "#075e54",
                             margin: "0px 5px 0px 5px",
                           }}
-                          href={`https://wa.me/+94712100500`}
+                          href={`https://wa.me/+94703199556`}
                         >
                           WhatsApp
                         </Button>
@@ -466,7 +465,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
                             backgroundColor: "#CD201F",
                             margin: "0px 5px 0px 5px",
                           }}
-                          href={`https://youtu.be/QXXXz8MipHA`}
+                          href={`https://www.youtube.com/@airportcabsrilanka`}
                         >
                           Youtube
                         </Button>
@@ -497,7 +496,7 @@ export const CustomTourPackageCustomerEmail = ({ customTourDetails }) => {
               }}
             >
               © 2024 | 118/ 5 st Joseph street, Grandpass, Colombo 14, Sri
-              Lanaka | www.tourbookingsrilanka.com
+              Lanaka | www.taxiairport.lk
             </Text>
           </Container>
         </Container>
