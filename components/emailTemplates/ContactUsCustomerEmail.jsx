@@ -37,14 +37,13 @@ export const ContactUsCustomerEmail = ({ ContactusDetails }) => {
                   <Img
                     height={60}
                     // src={"https://i.ibb.co/84NTTCw/bgremovedlogo.png"}
-                    src={"https://i.ibb.co/WfXK6bZ/tblogo.png"}
+                    src={"https://i.ibb.co/QvTRgxgm/taxiairport.png"}
                   />
                 </Column>
                 <Column align="right">
                   <Text style={{ ...paragraph, fontSize: 20 }}>
                     <b>
-                      Tour <span style={{ color: "#eab308" }}>Booking</span> Sri
-                      Lanka
+                      Taxi<span style={{ color: "#eab308" }}>Airport</span>.lk
                     </b>
                   </Text>
                 </Column>
@@ -171,7 +170,7 @@ export const ContactUsCustomerEmail = ({ ContactusDetails }) => {
                               width: "100%",
                               objectFit: "cover",
                             }}
-                            src={"https://i.ibb.co/ydtmqTh/airport.jpg"}
+                            src={"https://i.ibb.co/XxJX66p5/door.jpg"}
                           />
                         </div>
                         <Text
@@ -218,7 +217,7 @@ export const ContactUsCustomerEmail = ({ ContactusDetails }) => {
                               width: "100%",
                               objectFit: "cover",
                             }}
-                            src={"https://i.ibb.co/4d4sChq/ptop.png"}
+                            src={"https://i.ibb.co/8nYFQxmR/door3.png"}
                           />
                         </div>
                         <Text
@@ -267,7 +266,7 @@ export const ContactUsCustomerEmail = ({ ContactusDetails }) => {
                               width: "100%",
                               objectFit: "cover",
                             }}
-                            src={"https://i.ibb.co/VVZHbfX/train.jpg"}
+                            src={"https://i.ibb.co/27r5qLsx/train.jpg"}
                           />
                         </div>
                         <Text
@@ -401,7 +400,7 @@ export const ContactUsCustomerEmail = ({ ContactusDetails }) => {
               }}
             >
               © 2024 | 118/ 5 st Joseph street, Grandpass, Colombo 14, Sri
-              Lanaka | www.tourbookingsrilanka.com
+              Lanaka | www.taxiairport.lk
             </Text>
           </Container>
         </Container>

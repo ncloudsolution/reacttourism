@@ -150,7 +150,7 @@ const ContactUsOwnerEmail = ({ ContactusDetails }) => {
             }}
           >
             © 2024 | 118/ 5 St Joseph Street, Grandpass, Colombo 14, Sri Lanka |
-            www.tourbookingsrilanka.com
+            www.taxiairport.lk
           </Text>
         </Container>
       </Body>
