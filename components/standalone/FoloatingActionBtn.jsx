@@ -13,7 +13,7 @@ const FoloatingActionBtn = () => {
       <div className="flex items-center">
         <div className="flex flex-col gap-y-1">
           <Link
-            href="mailto:info@airportcab.lk"
+            href="mailto:info@taxiairport.lk"
             target="_blank"
             className={` ${
               isClicked

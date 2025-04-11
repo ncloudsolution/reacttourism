@@ -201,7 +201,7 @@ function NavBar() {
                   </li>
                   <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
                     <a
-                      href="mailto:info@airportcab.lk"
+                      href="mailto:info@taxiairport.lk"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={NavFunction}

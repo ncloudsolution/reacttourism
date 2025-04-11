@@ -145,7 +145,7 @@ const NewNavBar = () => {
               >
                 <FaFacebook className="text-[24px] hover:text-secondary" />
               </a>
-              <a href="mailto:info@airportcab.lk">
+              <a href="mailto:info@taxiairport.lk">
                 <IoMdMail className="text-[24px] hover:text-secondary" />
               </a>
             </div>
@@ -255,7 +255,7 @@ const NewNavBar = () => {
               >
                 <FaFacebook className="text-[24px] hover:text-secondary" />
               </a>
-              <a href="mailto:info@airportcab.lk">
+              <a href="mailto:info@taxiairport.lk">
                 <IoMdMail className="text-[24px] hover:text-secondary" />
               </a>
             </div>
