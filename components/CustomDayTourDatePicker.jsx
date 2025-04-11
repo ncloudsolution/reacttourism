@@ -8,7 +8,7 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { twMerge } from "tailwind-merge";
 
 const CustomDayTourDatePicker = ({
-  selected,
+  selectedDate,
   filterDate,
   onChange,
   className = "",
@@ -31,7 +31,7 @@ const CustomDayTourDatePicker = ({
       <DatePicker
         ref={datePickerRef}
         className="outline-none"
-        selected={selected}
+        selected={selectedDate}
         filterDate={filterDate}
         onChange={onChange}
         minDate={new Date()}

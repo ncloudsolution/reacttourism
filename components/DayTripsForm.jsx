@@ -17,7 +17,7 @@ const DayTripsForm = ({ planPrice, trip }) => {
 
   const [mobValue, setMobValue] = useState();
   const [whatsappMobValue, setWhatsappMobValue] = useState();
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(new Date());
 
   const [noOfAdults, setNoOfAdults] = useState(1);
   const [noOfKids, setNoOfKids] = useState(0);
