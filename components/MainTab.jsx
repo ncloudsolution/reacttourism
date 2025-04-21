@@ -17,6 +17,7 @@ import { BsCoin } from "react-icons/bs";
 import CurrencyTab from "./standalone/CurrencyTab";
 import { TourContext } from "@/context/TourContextProvider";
 import PuffAnimationArea from "./PuffAnimationArea";
+import NewLoading from "./NewLoading";
 
 const MainTab = () => {
   const [isPointToPointClicked, setIsPointToPointClicked] = useState(false);
@@ -47,14 +48,11 @@ const MainTab = () => {
 
   const [showSkeleton, setShowSkeleton] = useState(true);
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShowSkeleton(false);
-    }, 2000); // 3 seconds delay - 1s for google api load and 2 second timeout
-    return () => clearTimeout(timeoutId);
+    setShowSkeleton(false);
   }, []);
 
   const libraries = ["places"];
-  setTimeout(() => {}, 1000);
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
     region: "lk",
@@ -64,7 +62,7 @@ const MainTab = () => {
   if (!isLoaded || showSkeleton) {
     return (
       <>
-        <CarSkeleton />
+        <NewLoading />
       </>
     );
   }
