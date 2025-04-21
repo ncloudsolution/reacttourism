@@ -187,7 +187,7 @@ function NavBar() {
                 <div className=" flex justify-center py-2">
                   <li className="px-1 md:border-b-0 md:hover:text-secondary md:hover:bg-transparent">
                     <a
-                      href="https://facebook.com/airportcab.lk"
+                      href="https://www.facebook.com/share/18rN4V2chV/"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={NavFunction}

@@ -15,6 +15,7 @@ import CustomMiniDatePicker from "./CustomMiniDatePicker";
 
 import boardimg from "@/public/Others/boardshow.png";
 import BlankContext from "./Exceptions/BlankContext";
+import CustomCurrencyDropDown from "./standalone/CustomCurrencyDropDown";
 
 const MidSummary = () => {
   const router = useRouter();
@@ -206,7 +207,7 @@ const MidSummary = () => {
       <div className="mt-0 mb-4">
         {tourDetails.vehicleType && (
           <div className="flex flex-col items-center">
-            <CurrencyTab />
+            {/* <CurrencyTab /> */}
             <div className="mb-10 w-[100vw] flex justify-center bg-black">
               <Hierarchy />
             </div>
@@ -232,92 +233,106 @@ const MidSummary = () => {
                     <div className="text-[16px]">Vehicle</div>
                     <div className="w-full bg-primary h-[2px] mb-4"></div>
 
-                    <div className="w-full flex justify-between">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        Selected Vehicle
-                      </span>
-                      <span className="font-normal">
-                        {tourDetails.vehicleType}
-                      </span>
-                    </div>
-
-                    <div className="w-full flex justify-between">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        Seat Capacity
-                      </span>
-                      <span className="font-normal">
-                        {tourDetails.vehicalSeatCapacityMax} Seats
-                      </span>
-                    </div>
-
-                    <div className="w-full flex justify-between">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        Price for Vehical
-                      </span>
-                      <span className="font-normal">
-                        {tourDetails.converedCurrencySymbol}{" "}
-                        {tourDetails.convertedPrice}
-                      </span>
-                    </div>
-
-                    {boardShow && (
-                      <div className="w-full flex justify-between">
-                        <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                          Board Show
-                        </span>
-                        <span className="font-normal">
-                          {tourDetails.converedCurrencySymbol}{" "}
-                          {(
-                            otherPrices[0].boardShow *
-                            tourDetails.conversionRate
-                          ).toFixed(2)}
-                        </span>
+                    {/** new currency **/}
+                    <div className="w-full flex h-[30px] justify-between">
+                      <div className="bxs:w-[180px] w-[150px] flex items-center">
+                        Selected Currency
                       </div>
-                    )}
+                      <div className="relative xs:w-[170px] xxs:w-[150px] w-[140px] h-fit">
+                        <CustomCurrencyDropDown />
+                      </div>
+                    </div>
 
-                    {/* 
-highwayExit: station,
-                    highwayCharge: highwayChargeValue, */}
-
-                    {highwayExit &&
-                      highwayExit !== "None" &&
-                      highwayCharge !== "No any Charge" && (
-                        <div className="bxs:w-[400px] w-full flex ">
+                    <div className="flex relative w-full">
+                      <div className="w-full">
+                        <div className="w-full flex justify-between mt-[10px]">
                           <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                            Highway Charges
+                            Selected Vehicle
+                          </span>
+                          <span className="font-normal">
+                            {tourDetails.vehicleType}
+                          </span>
+                        </div>
+
+                        <div className="w-full flex justify-between">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Seat Capacity
+                          </span>
+                          <span className="font-normal">
+                            {tourDetails.vehicalSeatCapacityMax} Seats
+                          </span>
+                        </div>
+
+                        <div className="w-full flex justify-between">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Price for Vehical
                           </span>
                           <span className="font-normal">
                             {tourDetails.converedCurrencySymbol}{" "}
+                            {tourDetails.convertedPrice}
+                          </span>
+                        </div>
+
+                        {boardShow && (
+                          <div className="w-full flex justify-between">
+                            <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                              Board Show
+                            </span>
+                            <span className="font-normal">
+                              {tourDetails.converedCurrencySymbol}{" "}
+                              {(
+                                otherPrices[0].boardShow *
+                                tourDetails.conversionRate
+                              ).toFixed(2)}
+                            </span>
+                          </div>
+                        )}
+
+                        {/* 
+highwayExit: station,
+                    highwayCharge: highwayChargeValue, */}
+
+                        {highwayExit &&
+                          highwayExit !== "None" &&
+                          highwayCharge !== "No any Charge" && (
+                            <div className="bxs:w-[400px] w-full flex ">
+                              <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                                Highway Charges
+                              </span>
+                              <span className="font-normal">
+                                {tourDetails.converedCurrencySymbol}{" "}
+                                {(
+                                  tourDetails.highwayCharge *
+                                  tourDetails.conversionRate
+                                ).toFixed(2)}
+                              </span>
+                            </div>
+                          )}
+
+                        <div className="w-full flex mt-5 justify-between">
+                          <span className="bxs:w-[180px] w-[150px] bg-transparent">
+                            Total Price
+                          </span>
+                          <span className="font-normal border-double border-y-4 border-black">
+                            {tourDetails.converedCurrencySymbol}{" "}
                             {(
-                              tourDetails.highwayCharge *
-                              tourDetails.conversionRate
+                              parseFloat(tourDetails.convertedPrice) + // Convert to float to handle potential string values
+                              (boardShow
+                                ? parseFloat(
+                                    (
+                                      otherPrices[0]?.boardShow *
+                                      tourDetails.conversionRate
+                                    ).toFixed(2)
+                                  ) // Apply toFixed to the product of boardShow and conversionRate
+                                : 0) +
+                              parseFloat(
+                                tourDetails.highwayCharge *
+                                  tourDetails.conversionRate
+                              )
                             ).toFixed(2)}
                           </span>
                         </div>
-                      )}
-
-                    <div className="w-full flex mt-5 justify-between">
-                      <span className="bxs:w-[180px] w-[150px] bg-transparent">
-                        Total Price
-                      </span>
-                      <span className="font-normal border-double border-y-4 border-black">
-                        {tourDetails.converedCurrencySymbol}{" "}
-                        {(
-                          parseFloat(tourDetails.convertedPrice) + // Convert to float to handle potential string values
-                          (boardShow
-                            ? parseFloat(
-                                (
-                                  otherPrices[0]?.boardShow *
-                                  tourDetails.conversionRate
-                                ).toFixed(2)
-                              ) // Apply toFixed to the product of boardShow and conversionRate
-                            : 0) +
-                          parseFloat(
-                            tourDetails.highwayCharge *
-                              tourDetails.conversionRate
-                          )
-                        ).toFixed(2)}
-                      </span>
+                      </div>
                     </div>
 
                     {/**highway section**/}

@@ -111,7 +111,7 @@ const UpperFooter = () => {
                 </Link>
                 <Link
                   target="_blank"
-                  href="https://facebook.com/airportcab.lk"
+                  href="https://www.facebook.com/share/18rN4V2chV/"
                   className="xs:size-[50px] size-[40px] bg-white  rounded-full flex justify-center items-center"
                 >
                   <FaFacebookF className="text-primary xs:text-[25px] text-[22px]" />

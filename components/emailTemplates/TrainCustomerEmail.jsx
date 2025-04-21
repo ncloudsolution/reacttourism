@@ -497,7 +497,7 @@ const TrainCustomerEmail = ({ trainBookingDetails }) => {
                             backgroundColor: "#1877F2",
                             margin: "0px 0px 0px 5px",
                           }}
-                          href={`https://facebook.com/airportcab.lk`}
+                          href={`https://www.facebook.com/share/18rN4V2chV/`}
                         >
                           Facebook
                         </Button>

@@ -139,7 +139,7 @@ const NewNavBar = () => {
             {/* Social Icons */}
             <div className="hidden lg:flex items-center gap-3">
               <a
-                href="https://facebook.com/airportcab.lk"
+                href="https://www.facebook.com/share/18rN4V2chV/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -249,7 +249,7 @@ const NewNavBar = () => {
             {/* Social Icons for Mobile */}
             <div className="flex justify-center gap-3 mt-2">
               <a
-                href="https://facebook.com/airportcab.lk"
+                href="https://www.facebook.com/share/18rN4V2chV/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
